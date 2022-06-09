@@ -1,0 +1,35 @@
+# room_duplicate
+
+This will duplicate a given room and return the duplicates index to be
+used in all further calls to reference the new room. **NOTE** : New
+rooms are not part of usual room ordering, so they do not have a
+"previous" or "next" room (meaning that the functions [ room_next()
+](room_next) and [ room_previous() ](room_previous) will not
+work). To jump from the added room to another, you must use the index of
+the room itself.
+
+#### Syntax:
+
+``` gml
+room_duplicate(index);
+```
+
+|          |                                                            |                                                  |
+|----------|------------------------------------------------------------|--------------------------------------------------|
+| Argument | Type                                                       | Description                                      |
+| index    |  [Room Asset](../../../../../The_Asset_Editors/Rooms)  | The index of the original room to be duplicated. |
+
+#### Returns:
+
+``` gml
+ Room Asset
+```
+
+#### Example:
+
+``` gml
+global.myroom = room_duplicate(rm_level);
+```
+
+This will duplicate the room indexed by "rm_level" and assign the room
+index of this new room to the variable "global.myroom".

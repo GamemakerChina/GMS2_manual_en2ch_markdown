@@ -1,0 +1,44 @@
+# gamepad_set_axis_deadzone
+
+This function can be used to set the "dead zone" of the joystick axis.
+You specify the device slot to set, and then set a value from 0 to 1 and
+if the input amount is lower than the given value, the joystick axis is
+considered to be at 0. Note that this is a global setting that will
+affect *all* axis of all joysticks connected to the device slot
+specified. Using this function does not mean that the axis value will
+start from the deadzone value, as the function [ gamepad_axis_value()
+](gamepad_axis_value) will *always* return a normalised value
+between -1 and 0 or 0 and 1. For example, setting the deadzone to 0.2
+will mean that pushing the stick right will only start returning a value
+from 0 - 1 when the *raw* axis value is over 0.2 - so when the raw value
+is 0.2, the return value will be 0, when the raw value is at 0.5, the
+return value will be 0.375, or if the raw value is 0.9, then the return
+value would be 0.875.
+
+#### Syntax:
+
+``` gml
+gamepad_set_axis_deadzone(device, deadzone);
+```
+
+|          |                                                                         |                                       |
+|----------|-------------------------------------------------------------------------|---------------------------------------|
+| Argument | Type                                                                    | Description                           |
+| device   |  [Real](../../../../../GameMaker_Language/GML_Overview/Data_Types)  | Which gamepad device "slot" to check. |
+| deadzone |  [Real](../../../../../GameMaker_Language/GML_Overview/Data_Types)  | The dead zone value from 0 to 1.      |
+
+#### Returns:
+
+``` gml
+N/A
+```
+
+#### Example:
+
+``` gml
+if gamepad_is_connected(0) gamepad_set_axis_deadzone(0, 0.05); if gamepad_is_connected(1) gamepad_set_axis_deadzone(1, 0.05); if gamepad_is_connected(2) gamepad_set_axis_deadzone(2, 0.05); if gamepad_is_connected(3) gamepad_set_axis_deadzone(3,
+0.05);
+```
+
+The above code will set the dead zone of the joystick axis on any of 4
+connected devices to 0.05.

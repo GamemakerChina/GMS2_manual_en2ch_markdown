@@ -1,0 +1,42 @@
+# audio_start_sync_group
+
+With this function you can start playing a previously created sync
+group. You need to supply the *group index* which is the value returned
+when you created the group using the function [
+audio_create_sync_group() ](audio_create_sync_group) . **NOTE** :
+This functionality is not available for the HTML5 target platform.
+
+#### Syntax:
+
+``` gml
+audio_start_sync_group(group_index);
+```
+
+|             |                                                                                                                                                      |                          |
+|-------------|------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------|
+| Argument    | Type                                                                                                                                                 | Description              |
+| group_index |  [Audio Sync Group ID](../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Synchronisation/audio_create_sync_group)  | The group index to play. |
+
+#### Returns:
+
+``` gml
+N/A
+```
+
+#### Example:
+
+``` gml
+sg = audio_create_sync_group(true);
+audio_play_in_sync_group(sg, sound1);
+audio_play_in_sync_group(sg, sound2);
+audio_sound_gain(sound2, 0, 0);
+audio_play_in_sync_group(sg, sound3);
+audio_sound_gain(sound3, 0, 0);
+audio_play_in_sync_group(sg, sound4);
+audio_sound_gain(sound4, 0, 0);
+audio_start_sync_group(sg);
+```
+
+The above creates a new sync group and assigns the index of the group to
+the variable "sg". Four sounds are then added to the group, with the
+gain for three of them set to 0. Finally the sync group is played.

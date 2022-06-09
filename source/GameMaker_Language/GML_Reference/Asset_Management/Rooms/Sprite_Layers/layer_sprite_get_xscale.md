@@ -1,0 +1,41 @@
+# layer_sprite_get_xscale
+
+This function can be used to get the current scale multiplier along the
+x axis for the sprite element. You give the sprite element ID (which you
+get when you create a sprite element using [ layer_sprite_create()
+](layer_sprite_create) or when you use the function [
+layer_sprite_get_id() ](layer_sprite_get_id) ), and the function
+will return real value for the x scale, where 1 is no scaling.
+
+#### Syntax:
+
+``` gml
+layer_sprite_get_xscale(sprite_element_id);
+```
+
+|                   |                                                                                                                                        |                                                                       |
+|-------------------|----------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------|
+| Argument          | Type                                                                                                                                   | Description                                                           |
+| sprite_element_id |  [Sprite Element ID](../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Sprite_Layers/layer_sprite_get_id)  | The unique ID value of the sprite element to get the information from |
+
+#### Returns:
+
+``` gml
+ Real
+```
+
+#### Example:
+
+``` gml
+var lay_id = layer_get_id("sprite_sky");
+var spr_id = layer_sprite_get_id(lay_id, "Clouds");
+if layer_sprite_get_xscale(spr_id) != 1
+{
+    layer_sprite_xscale(spr_id, 1);
+}
+```
+
+The above code will get the layer ID for the layer named "sprite_sky"
+and then use that to get the ID of the sprite element on that layer.
+This ID is then used to check the xscale value and if it is anything
+other than 1 it is set to 1.

@@ -1,0 +1,274 @@
+# Data Structure Action Library
+
+  
+![](https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/Lib_DS.png)  
+In games you often need to store information in a precise and ordered
+way. For example, you may need to store lists of items that a person
+carries or you may want to store a grid of places that still need to be
+visited. Now, you can use multiple variables for this, but if you want
+to do more complicated operations, like sorting the data or searching
+for a particular item, you need to write large chunks of action block
+code which can be slow to execute, difficult to debug and a real pain to
+write! To remedy this, GameMaker has a number of built-in data
+structures that can be accessed through specialist functions. There are
+four different types of data structure available through GML Visual
+(there are six if you use
+[GML](../../../GameMaker_Language/GML_Reference/Data_Structures/Data_Structures)
+), each one having its own pros and cons depending on the type of
+information that you are looking to store and how you wish to manipulate
+it later - the four types are:
+
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_List.png" /><br />
+</td>
+<td><strong>Lists</strong></td>
+<td><span> A list is a data-structure that stores information
+sequentially as it is added. List indexes start at 0 and will go up for
+each item that is added onto the end of the list, although you can also
+insert data into a position other than the last one. Unlike the Stack
+data structure (explained below) you can access the data from any index
+of the list at any time. </span></td>
+</tr>
+<tr class="even">
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_Map.png" /><br />
+</td>
+<td><strong>Maps</strong></td>
+<td><span> The map data structure is an exceptionally useful one as it
+lets you store </span> <em>key</em> <span> and </span> <em>value</em>
+<span> pairs. For example, a character in your game can have a quantity
+of different items (keys) and for each individual item he can have a
+number of them (values), like in an RPG where you can have 10 health
+potions, 5 mana potions and 100 gold. Maps maintain such pairs all
+together in the one place and you can add pairs to the map and search
+for the value corresponding to certain keys as well using some simple
+functions. Maps are not sorted in any (recognisable) way, meaning that
+to find a certain key you may have to iterate through the whole thing
+(which is very slow), and there is also no way to hold two keys that are
+the same, nor can you assign one key two values. </span></td>
+</tr>
+<tr class="odd">
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_Grid.png" /><br />
+</td>
+<td><strong>Grids</strong></td>
+<td><span> A grid is two-dimensional array of values where you define
+its width and height. This sets the total number of grid "cells" within
+the grid (the width and height multiplied) and these cells are then used
+to hold different data values, which can be any of the permitted data
+types. This type of structure allows you to set and retrieve the value
+of cells in the grid by giving the x (column) and y (row) position of it
+(both rows and columns start at 0 and go up to the grid width - 1 and
+the grid height -1). When accessing grid data structures, you should
+always try to use integer values for the cell position, and all
+non-integer indices will be floored by </span> GameMaker Studio 2 <span>
+if you do not. If that is not what you require, then you will need to do
+the rounding yourself previously before passing the index that you wish
+to check. </span></td>
+</tr>
+<tr class="even">
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_Stack.png" /><br />
+</td>
+<td><strong>Stacks</strong></td>
+<td><span> A stack data structure is a so called last-in-first-out
+(LIFO) structure. You can push values onto a stack and the remove them
+again by popping them from the stack, and the value that was pushed on
+the stack most recently is the first to be popped from it again (just
+think of a stack of coins, where each coin that you add has to be
+removed again first before you can get to the rest of the coins
+beneath). Stacks are often used when there are interrupts to handle, or
+when having recursive functions, or even when constructing a rudimentary
+AI for your games. </span></td>
+</tr>
+</tbody>
+</table>
+
+Essentially, all data structures work in the same way - You create a
+data structure and store its index value in a variable. You then use
+this index to reference the data structure in all further function calls
+that can perform operations on it. Finally, once you are done you
+destroy the data structure again to remove it from memory. You can use
+as many of the structures at the same time as you need, and all
+structures can store both strings and real values. **NOTE** : As with
+all dynamic resources, data structures take up memory and so should
+**always be destroyed when no longer needed** to prevent memory leaks
+which will slow down and eventually crash your game. The **Data
+Structure** library has the following actions:
+
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_List.png" /><br />
+</td>
+<td><a href="Create_List">Create List</a></td>
+</tr>
+<tr class="even">
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_Map.png" /><br />
+</td>
+<td><a href="Create_Map">Create Map</a></td>
+</tr>
+<tr class="odd">
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_Grid.png" /><br />
+</td>
+<td><a href="Create_Grid">Create Grid</a></td>
+</tr>
+<tr class="even">
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_Stack.png" /><br />
+</td>
+<td><a href="Create_Stack">Create Stack</a></td>
+</tr>
+<tr class="odd">
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Clear_Data_Structure.png" /><br />
+</td>
+<td><a href="Clear_Data_Structure">Clear Data Structure</a></td>
+</tr>
+<tr class="even">
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Free_Data_Structure.png" /><br />
+</td>
+<td><a href="Free_Data_Structure">Free Data Structure</a></td>
+</tr>
+<tr class="odd">
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Add_To_List.png" /><br />
+</td>
+<td><a href="Add_To_List">Add To List</a></td>
+</tr>
+<tr class="even">
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Remove_From_List.png" /><br />
+</td>
+<td><a href="Remove_From_List">Remove From List</a></td>
+</tr>
+<tr class="odd">
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Get_List_Item_At.png" /><br />
+</td>
+<td><a href="Get_List_Item_At">Get List Item At</a></td>
+</tr>
+<tr class="even">
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Get_Index_Of_List_Item.png" /><br />
+</td>
+<td><a href="Get_Index_Of_List_Item">Get Index Of List Item</a></td>
+</tr>
+<tr class="odd">
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Insert_Into_List.png" /><br />
+</td>
+<td><a href="Insert_Into_List">Insert Into List</a></td>
+</tr>
+<tr class="even">
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Get_List_Item_Count.png" /><br />
+</td>
+<td><a href="Get_List_Item_Count">Get List Item Count</a></td>
+</tr>
+<tr class="odd">
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Set_Map_Value.png" /><br />
+</td>
+<td><a href="Set_Map_Value">Set Map Value</a></td>
+</tr>
+<tr class="even">
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Get_Map_Value.png" /><br />
+</td>
+<td><a href="Get_Map_Value">Get Map Value</a></td>
+</tr>
+<tr class="odd">
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Remove_Map_Entry.png" /><br />
+</td>
+<td><a href="Remove_Map_Entry">Remove Map Entry</a></td>
+</tr>
+<tr class="even">
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Set_Grid_Value.png" /><br />
+</td>
+<td><a href="Set_Grid_Value">Set Grid Value</a></td>
+</tr>
+<tr class="odd">
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Get_Grid_Value.png" /><br />
+</td>
+<td><a href="Get_Grid_Value">Get Grid Value</a></td>
+</tr>
+<tr class="even">
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Clear_Grid.png" /><br />
+</td>
+<td><a href="Clear_Grid">Clear Grid</a></td>
+</tr>
+<tr class="odd">
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Push_Onto_Stack.png" /><br />
+</td>
+<td><a href="Push_Onto_Stack">Push Onto Stack</a></td>
+</tr>
+<tr class="even">
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Pop_Stack.png" /><br />
+</td>
+<td><a href="Push_Onto_Stack">Pop Stack</a></td>
+</tr>
+<tr class="odd">
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_If_Data_Structure_Exists.png" /><br />
+</td>
+<td><a href="If_Data_Structure_Exists">If Data Structure
+Exists</a></td>
+</tr>
+<tr class="even">
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_If_Data_Structure_Empty.png" /><br />
+</td>
+<td><a href="If_Data_Structure_Empty">If Data Structure
+Empty</a></td>
+</tr>
+</tbody>
+</table>

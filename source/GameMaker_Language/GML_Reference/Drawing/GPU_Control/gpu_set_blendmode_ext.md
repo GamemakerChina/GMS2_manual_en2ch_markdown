@@ -1,0 +1,90 @@
+# gpu_set_blendmode_ext
+
+When GameMaker goes to draw a pixel there is a source colour (the colour
+of the pixel we're going to draw) and a destination colour (the colour
+that's already in the pixel we're drawing to), so when determining the
+new colour of the pixel, the source and destination colours are
+calculated according to the chosen blend mode. Each component of the
+colours is stored as a floating point value between 0 and 1, and the new
+colour is calculated by multiply each component of the source colour by
+some factor and by multiplying each component of destination colour by
+some other factor and then adding the results together component by
+component. This function permits you to set the different component
+parts that should be factored together to create a custom blend mode.
+The source and destination both have a red, green, blue and alpha
+component, and in the following chart the source's RGBA are considered
+(Rs, Gs, Bs, As) while the destination's are (Rd, Gd, Bd, Ad). The
+eleven constants that are available for use can be either source or
+destination (or both) when used in this function.
+
+|                    |                                        |
+|--------------------|----------------------------------------|
+| Constant           | Blend factor (Red, Green, Blue, Alpha) |
+| bm_zero            | (0, 0, 0, 0)                           |
+| bm_one             | (1, 1, 1, 1)                           |
+| bm_src_colour      | (Rs, Gs, Bs, As)                       |
+| bm_inv_src_colour  | (1-Rs, 1-Gs, 1-Bs, 1-As)               |
+| bm_src_alpha       | (As, As, As, As)                       |
+| bm_inv_src_alpha   | (1-As, 1-As, 1-As, 1-As)               |
+| bm_dest_alpha      | (Ad, Ad, Ad, Ad)                       |
+| bm_inv_dest_alpha  | (1-Ad, 1-Ad, 1-Ad, 1-Ad)               |
+| bm_dest_colour     | (Rd, Gd, Bd, Ad)                       |
+| bm_inv_dest_colour | (1-Rd, 1-Gd, 1-Bd, 1-Ad)               |
+| bm_src_alpha_sat   | (f, f, f, 1) where f = min(As, 1-Ad)   |
+
+**IMPORTANT!** HTML5 without WebGL enabled will **not** be able to
+display the following modes correctly:
+
+-    bm_src_colour
+-    bm_inv_src_colour
+-    bm_dest_colour
+-    bm_inv_dest_colour
+-    bm_src_alpha_sat
+
+Note that you can either supply two individual arguments to this
+function or you can supply an array of arguments (as returned by the
+function [ gpu_get_blendmode_ext() ](gpu_get_blendmode_ext) for
+example). If supplying an array it should have the following two
+elements:
+
+-   \[0\] = Source blend mode (default is bm_src_alpha )
+-   \[1\] = Destination blend mode (default is bm_inv_src_alpha )
+
+To help you get the most from blend modes and to help understand how
+they work and how they affect the final image being drawn to the screen,
+we recommend that you read the following guide:
+
+-   [Guide To Using
+    Blendmodes](../../../../Additional_Information/Guide_To_Using_Blendmodes)
+
+#### Syntax:
+
+``` gml
+gpu_set_blendmode(src, dest);
+```
+
+|          |                                                                                                                               |                                                     |
+|----------|-------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------|
+| Argument | Type                                                                                                                          | Description                                         |
+| src      |  [Blend Mode Factor Constant](../../../../../GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_get_blendmode_ext)  | Source blend mode factor (see constants above).     |
+| dest     |  [Blend Mode Factor Constant](../../../../../GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_get_blendmode_ext)  | Destination blend mode factor (see constants above) |
+
+#### Returns:
+
+``` gml
+N/A
+```
+
+#### Example:
+
+``` gml
+gpu_set_blendmode_ext(bm_src_alpha, bm_one);
+draw_circle_colour(100, 100, 50, c_white, c_black, 0);
+gpu_set_blendmode(bm_normal);
+```
+
+This will turn the black into transparency, creating a 'glow' effect
+from the white being strong on the outside and gradually weakening
+further from the circle centre. The blend mode is reset after the circle
+is drawn to ensure additive blending is not also applied to everything
+else after it.

@@ -1,0 +1,54 @@
+# Web And HTML5
+
+GameMaker provides various functions for interacting with the internet
+or with a server, and they can be used on all the available target
+platforms. These functions are:
+
+-   [url_open](url_open)
+-   [url_open_ext](url_open_ext)
+-   [url_open_full](url_open_full)
+-   [url_get_domain](url_get_domain)
+-   [http_request](../Asynchronous_Functions/HTTP/http_request)
+-   [http_get](../Asynchronous_Functions/HTTP/http_get)
+-   [http_get_file](../Asynchronous_Functions/HTTP/http_get_file)
+-   [http_post_string](../Asynchronous_Functions/HTTP/http_post_string)
+
+Apart from the general functions listed above, the **HTML5 target** has
+some additional web functions that are specifically designed to be used
+by the games that target it:
+
+-   [browser_height](browser_height)
+-   [browser_width](browser_width)
+-   [browser_input_capture](browser_input_capture)
+-   [webgl_enabled](webgl_enabled)
+-   [clickable_exists](clickable_exists)
+-   [clickable_add](clickable_add)
+-   [clickable_add_ext](clickable_add_ext)
+-   [clickable_change](clickable_change)
+-   [clickable_change_ext](clickable_change_ext)
+-   [clickable_set_style](clickable_set_style)
+-   [clickable_delete](clickable_delete)
+-   [analytics_event](analytics_event)
+-   [analytics_event_ext](analytics_event_ext)
+-   [os_browser](../OS_And_Compiler/os_browser)
+-   [http_get_request_crossorigin](../Asynchronous_Functions/HTTP/http_get_request_crossorigin)
+-   [http_set_request_crossorigin](../Asynchronous_Functions/HTTP/http_set_request_crossorigin)
+
+Apart from these functions for the HTML5 target module, there is also a
+special **JavaScript variable** that can be used on those rare occasions
+when the contents of the html5game folder are stored in a completely
+different place (URL). Normally this path is hard-coded in the
+JavaScript file and is relative to the location from where the
+JavaScript is called, but you can set the variable
+**g_GameMakerHTML5Dir** before the call to the game script and the game
+will be run from the newly defined location. For example:
+
+``` gml
+&amp;lt;script&amp;gt;var g_GameMakerHTML5Dir = "http://mygamealternatedirectory.com/";&amp;lt;/script&amp;gt;
+```
+
+It's also worth noting that you can flag script functions using the
+prefix gmcallback\_ which means they won't be obfuscated when you
+compile the project for HTML5. This is very uiseful when using the above
+listed clickable\_\* functions (for more information, please see
+[here](../../GML_Overview/Script_Functions) ).

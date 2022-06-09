@@ -1,0 +1,42 @@
+# File System
+
+There exists in GameMaker a number of functions that enable you to
+manipulate files of all types in different ways:
+
+-   [file_exists](file_exists)
+-   [file_delete](file_delete)
+-   [file_rename](file_rename)
+-   [file_copy](file_copy)
+-   [file_find_first](file_find_first)
+-   [file_find_next](file_find_next)
+-   [file_find_close](file_find_close)
+-   [file_attributes](file_attributes)
+
+The following functions can be used to change file names: NOTE These
+functions do not work on the actual files! They only deal with the
+strings related to the different path elements and should be used in
+conjunction with the other file functions.
+
+-   [filename_name](filename_name)
+-   [filename_path](filename_path)
+-   [filename_dir](filename_dir)
+-   [filename_drive](filename_drive)
+-   [filename_ext](filename_ext)
+-   [filename_change_ext](filename_change_ext)
+
+Finally there are some special functions for getting filenames that can
+be used for loading and saving files with file-type filters. These
+functions will open an explorer window, and therefor cause the game to
+lose focus. This means that any input the game is depending on may not
+be correctly registered, and as such we recommend that (if using these
+functions in a keyboard event) you use the key *up* event and not the
+pressed or down events. NOTE These functions are **Windows** and
+**macOS** only. WARNING These function may not work as you expect due to
+GameMaker being sandboxed! Please see the section on [The File
+System](../../../../Additional_Information/The_File_System) for more
+information.
+
+-   [get_open_filename](get_open_filename)
+-   [get_open_filename_ext](get_open_filename_ext)
+-   [get_save_filename](get_save_filename)
+-   [get_save_filename_ext](get_save_filename_ext)

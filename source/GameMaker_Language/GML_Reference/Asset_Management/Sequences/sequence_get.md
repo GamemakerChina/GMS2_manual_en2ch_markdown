@@ -1,0 +1,38 @@
+# sequence_get
+
+With this function you can retrieve the [Sequence Object
+Struct](Sequence_Structs/The_Sequence_Object_Struct) from a sequence
+asset index. You supply the asset index for the sequence as defined in
+the asset browser, and the function will return the sequence object
+struct that can then be accessed, or -1 if the sequence doesn't exist or
+the asset index given is not a sequence.
+
+#### Syntax:
+
+``` gml
+sequence_get(sequence_index);
+```
+
+|                |                                                                    |                                                     |
+|----------------|--------------------------------------------------------------------|-----------------------------------------------------|
+| Argument       | Type                                                               | Description                                         |
+| sequence_index |  [Sequence Asset](../../../../../The_Asset_Editors/Sequences)  | The sequence asset as defined in the Asset Browser. |
+
+#### Returns:
+
+``` gml
+ Sequence Object Struct
+
+or -1
+```
+
+#### Example:
+
+``` gml
+var _seq = sequence_get(seq_Logo);
+seq.loopmode = seqplay_pingpong;
+```
+
+The above code retrieves the sequence object struct from the sequence
+object "seq_Loop" and then sets the loop mode for the sequence (all
+subsequently created sequence instances will now use this loop mode).

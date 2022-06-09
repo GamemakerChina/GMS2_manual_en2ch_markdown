@@ -1,0 +1,32 @@
+# random_get_seed
+
+To generate a random number GameMaker starts with a random *seed*
+number. With this function you can retrieve that seed, which can then be
+stored to reproduce a specific series of random events. For example, say
+you have a procedurally generated game, but want the player to be able
+to go back to previously discovered areas. Well, at the start of each
+area, you can store the random seed with this function and so every time
+you need to go back there, you can use [ random_set_seed()
+](random_set_seed) to set the seed to what it was previously and so
+force GameMaker to reproduce the same set of "random" functions that it
+used previously.
+
+#### Syntax:
+
+``` gml
+random_get_seed();
+```
+
+#### Returns:
+
+``` gml
+ Real
+```
+
+#### Example:
+
+``` gml
+ini_open("Save.ini") ini_write_real("Levels", string(level), random_get_seed()); ini_close();
+```
+
+The above code will get the random seed and store it in an ini file.

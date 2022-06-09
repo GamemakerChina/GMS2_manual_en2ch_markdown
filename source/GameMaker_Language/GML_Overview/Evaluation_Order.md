@@ -1,0 +1,48 @@
+# Evaluation Order
+
+When programming your game using the GameMaker Language you should be
+aware that function call arguments **are not guaranteed an evaluation
+order** . What this means is that the order in which functions placed in
+your code are run will change from platform to platform, so you should
+code them in an explicit manner. This is due to optimisation differences
+between the different target platforms, for example on the Windows
+target function arguments may be evaluated from right to left, but on
+the HTML5 target, they may be evaluated from left to right. So to avoid
+any issues you are best not to call multiple functions in the arguments
+of a single function call as you may well be building in a reliance on
+the order of evaluation. To see an example of what this means, consider
+the following code which has a [script function](Script_Functions) "
+buffer_get_info " which is calling several [runtime
+functions](Runtime_Functions) and using them as arguments:
+
+``` gml
+buffer_seek(buff, buffer_seek_start, 0);
+buffer_get_info(buffer_read(buff, buffer_s8), buffer_read(buff, buffer_s16),buffer_read(buff, buffer_s16));
+```
+
+Now, the problem here is that on some platforms, the *last*
+buffer_read() will be called *first* , and so all the arguments of the
+script will be wrong as the data is being read from the buffer in
+"reverse" order as you would perceive it. This has the knock-on effect
+here of affecting all further values for the buffer_read() function so
+all the arguments being passed to this script function will be wrong! To
+get around this you should *explicitly* call the functions in the
+required order and store the returned values in variables, like this:
+
+``` gml
+var val[0] = buffer_read(buff, buffer_s8);
+var val[1] = buffer_read(buff, buffer_s16);
+var val[2] = buffer_read(buff, buffer_s16);
+buffer_get_info(val[0], val[1], val[2]);
+```
+
+While it may seem a more verbose method, it keeps everything clear and
+avoids any possible problems with evaluation order. You should also take
+care when using expression s too, as the order in which they are
+evaluated in will change depending on which target you are compiling to.
+So, when using expressions in your code, ensure you use brackets () to
+properly control the order of operations. This is very important to
+ensure the correct behaviour of your games across all the target
+platforms games and is *essential* for the HTML5 platform. The page on
+[expressions](Expressions_And_Operators) explains this in more
+detail.

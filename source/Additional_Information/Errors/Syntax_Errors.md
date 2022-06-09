@@ -1,0 +1,443 @@
+# Syntax Errors
+
+The first level of error reporting when programming your games in
+GameMaker is in the code or GML Visual editor, and it's the syntax
+checker. As you right your code - or add your actions - GameMaker will
+check that it follows the established syntax for the language, and flag
+any issues that it finds so you can fix them before it comes to running
+the game or compiling an executable.  
+![](https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/Errors_Syntax_Example.png)  
+These errors fall into two main categories:
+
+-     
+    ![](https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxWarning.png)  
+    **Warnings** : These are shown for things that may be an error, but
+    may not be, and probably won't stop the game from compiling, but
+    might provoke runtime errors. The most common causes of these
+    warnings is when a variable is used in an expression and it hasn't
+    been defined yet anywhere else, or when a variable has been defined
+    but hasn't been used.
+-     
+    ![](https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png)  
+    **Errors** : These are problems that will not permit the game to
+    compile, let alone run. These should be fixed before doing anything
+    further with the code. The table below shows the most common causes
+    of these.
+
+Syntax errors will update as you write your code (there will be a short
+pause between typing something and any errors appearing in this window
+to prevent errors being reported for unfinished code), and will follow
+the format:
+
+``` gml
+[object] - [event] - [Line Number] - [Position In Line]: [error string]
+```
+
+Or if the error is in a script, it will be:
+
+``` gml
+[script] - [Line Number] - [Position in line]: [error string]
+```
+
+Double clicking  
+![](https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png)  
+on any of the errors shown in the output console will take you to the
+line in the object event or script that has the error so you can edit
+it. It should be noted that some of these errors will be shown at
+specific places in your code, but the actual error may be cause by
+something elsewhere, or one single issue may provoke multiple error
+messages:  
+![](https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/Error_MultipleSyntaxErrors.png)  
+In the above image, all three  
+![](https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png)  
+errors have been provoked  by a single mistake - the use of a semi colon
+" ; " instead of a comma " , " at line 220 for the function
+variable_instance_exists() . The table below lists the different syntax
+errors and their main causes:
+
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="header">
+<th>Error</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+
+<tr class="odd">
+<td>Malformed reference [val]</td>
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" /><br />
+</td>
+<td>This means there is an internal AST Validation Error (you should
+never see this error, but if you do please consider filing a bug report
+from the <a href="../../IDE_Navigation/Menus/The_Help_Menu">Help
+Menu</a> )</td>
+</tr>
+<tr class="even">
+<td>Malformed hexadecimal character escape sequence</td>
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" /><br />
+</td>
+<td>This can happen when you have used the hexadecimal value for an
+escape character in a string and this has the wrong format.</td>
+</tr>
+<tr class="odd">
+<td>Unexpected node [val]</td>
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" /><br />
+</td>
+<td>This means there is an internal AST Validation Error (you should
+never see this error, but if you do please consider filing a bug report
+from the <a href="../../IDE_Navigation/Menus/The_Help_Menu">Help
+Menu</a> )</td>
+</tr>
+<tr class="even">
+<td>Exception while parsing [val]</td>
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" /><br />
+</td>
+<td>This means there is an internal AST Validation Error (you should
+never see this error, but if you do please consider filing a bug report
+from the <a href="../../IDE_Navigation/Menus/The_Help_Menu">Help
+Menu</a> )</td>
+</tr>
+<tr class="odd">
+<td>Malformed id reference [val]</td>
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" /><br />
+</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Unnecessary expression [val] used as a statement</td>
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" /><br />
+</td>
+<td>This error occurs when the syntax checker detects an expression
+(shown in [val]) where it was expecting a statement. For example, the
+following code will throw the error as it's expecting the ternary
+operator ? but encounters 32: <span> temp_x = x &lt; (room_width / 2) 
+32: room_width - 32; </span></td>
+</tr>
+<tr class="odd">
+<td>Malformed array reference [val]</td>
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" /><br />
+</td>
+<td>This means you have tried to reference an array in an incorrect way,
+and [val] will show the reference.</td>
+</tr>
+<tr class="even">
+<td>Unexpected binary operator [val]</td>
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" /><br />
+</td>
+<td>This error occurs when you use one of the bitwise operators in a
+place where it shouldn't be getting used, with [val] showing where.</td>
+</tr>
+<tr class="odd">
+<td>Unterminated string literal</td>
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" /><br />
+</td>
+<td>This error will occur when you open a string using <span> @“ </span>
+or <span> “ </span> but you do not close it before the end of code.</td>
+</tr>
+<tr class="even">
+<td>Single quotes no longer allowed for string</td>
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" /><br />
+</td>
+<td>This error occurs when you try to use strings wrapped in single
+quotes, eg: 'Hello World', instead of double quotes, eg: "Hello
+World".</td>
+</tr>
+<tr class="odd">
+<td>Unexpected syntax error</td>
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" /><br />
+</td>
+<td>This error denotes a syntax error which the parser is not able to
+identify more specifically.</td>
+</tr>
+<tr class="even">
+<td>Got "[val1]", expected "[val2]"</td>
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" /><br />
+</td>
+<td>This happens when the syntax checker expects some value or symbol
+but gets a different one, where [val1] is the current symbol or value,
+and [val2] is the expected symbol or value. For example: <span> Got "{",
+expected "(" </span></td>
+</tr>
+<tr class="odd">
+<td>Got "[val1]", expected "[val2]" or "[val3]"</td>
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" /><br />
+</td>
+<td>As above, but for when there are multiple possible expected
+symbols.</td>
+</tr>
+<tr class="even">
+<td>Expected expression</td>
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" /><br />
+</td>
+<td>This error occurs when the syntax checker expects an expression but
+one isn't given.</td>
+</tr>
+<tr class="odd">
+<td>Empty [val] statement</td>
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" /><br />
+</td>
+<td>This happens when you terminate a statement and leave it empty. For
+example, the following code will give the error (note the terminating
+semi-colon): <span> if (x &lt; 0); </span></td>
+</tr>
+<tr class="even">
+<td>Nested function calls are not allowed</td>
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" /><br />
+</td>
+<td>This can happen when you are trying to nest function calls within a
+statement, eg: <span> ds_list_find_value(list, 0)).sprite_index
+</span></td>
+</tr>
+<tr class="odd">
+<td>Number of arguments for function [val1] expected [val2] got
+val[3]</td>
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" /><br />
+</td>
+<td>This error tells you that you have not supplied the correct number
+of arguments to the function shown for [val1], which expects the number
+shown in [val2] but got those shown in [val3].</td>
+</tr>
+<tr class="even">
+<td>Number of arguments for function [val1] expected [val2] - [val3] got
+[val4]</td>
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" /><br />
+</td>
+<td>As above only for a range of arguments.</td>
+</tr>
+<tr class="odd">
+<td>Duplicate enum entry found</td>
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" /><br />
+</td>
+<td>This error tells you that you have duplicated an enum variable entry
+name</td>
+</tr>
+<tr class="even">
+<td>Duplicate enum found</td>
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" /><br />
+</td>
+<td>This error tells you that you have defined two or more enums with
+the same name.</td>
+</tr>
+<tr class="odd">
+<td>Missing variable name in globalvar</td>
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" /><br />
+</td>
+<td>This tells you that you have used the <span> globalvar </span>
+declaration but omitted to supply a variable name.</td>
+</tr>
+<tr class="even">
+<td>Missing variable name in var</td>
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" /><br />
+</td>
+<td>This tells you that you have used the <span> var </span> declaration
+but omitted to supply a variable name.</td>
+</tr>
+<tr class="odd">
+<td>No matching #region found for #endregion</td>
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" /><br />
+</td>
+<td>This error means you have declared an end region in your code,
+without defining a start region.</td>
+</tr>
+<tr class="even">
+<td>Unclosed #region found at end of script</td>
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" /><br />
+</td>
+<td>This error means you have declared a region somewhere in the code
+but have not defined an end region anywhere for it.</td>
+</tr>
+<tr class="odd">
+<td>Unexpected terminal operator [val]</td>
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" /><br />
+</td>
+<td>This means there is an internal AST Validation Error (you should
+never see this error, but if you do please consider filing a bug report
+from the <a href="../../IDE_Navigation/Menus/The_Help_Menu">Help
+Menu</a> )</td>
+</tr>
+<tr class="even">
+<td>Unexpected unary operator [val]</td>
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" /><br />
+</td>
+<td>This happens when a unary operator (like +, -, =, etc...) has been
+found in your code at a place when it isn't expected, where [val] will
+show you the operator.</td>
+</tr>
+<tr class="odd">
+<td>Unexpected ternary operator [val]</td>
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" /><br />
+</td>
+<td>This error means you have used one of the parts of the ternary
+operator incorrectly somewhere in your code, where [val] shows the part
+that is in error.</td>
+</tr>
+<tr class="even">
+<td>Try needs to have catch or finally clause</td>
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" /><br />
+</td>
+<td>This error means you have called the <span> try </span> function but
+have omitted to include a <span> catch </span> or <span> finally </span>
+clause.</td>
+</tr>
+<tr class="odd">
+<td>Macro [val] already exists</td>
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" /><br />
+</td>
+<td>You can get this error when you try to define a macro [val] with the
+same name as one that has been previously defined.</td>
+</tr>
+<tr class="even">
+<td>Malformed variable reference, got [val]</td>
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" /><br />
+</td>
+<td>This means there is an internal AST Validation Error (you should
+never see this error, but if you do please consider filing a bug report
+from the <a href="../../IDE_Navigation/Menus/The_Help_Menu">Help
+Menu</a> )</td>
+</tr>
+<tr class="odd">
+<td>Assignment to multi-relational-equality expression - GML does not
+support multiple assignments in an expression</td>
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" /><br />
+</td>
+<td>This error tells you there is an issue with a multi-operator
+assignment (also called a compound assignment) which is not supported by
+the GameMaker Language. This includes things like " <span> *= </span> "
+or " <span> /= </span> ", etc...</td>
+</tr>
+<tr class="even">
+<td>Macro [val] is unused</td>
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxWarning.png" /><br />
+</td>
+<td>This happens when the macro [val] is unused anywhere in your
+code.</td>
+</tr>
+<tr class="odd">
+<td>Variable [val] only referenced once</td>
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxWarning.png" /><br />
+</td>
+<td>This means that the given variable [val] is only referenced once in
+your code.</td>
+</tr>
+<tr class="even">
+<td>Unassigned variable [val] referenced</td>
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxWarning.png" /><br />
+</td>
+<td>This means that the variable [val] has been referenced in your code,
+but has not been assigned a value anywhere previously.</td>
+</tr>
+<tr class="odd">
+<td>Only functions that are declared as constructors can use
+inheritance</td>
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" /><br />
+</td>
+<td>This error tells you that you have tried to use inheritance on a
+function which has not been declared as a constructor.</td>
+</tr>
+<tr class="even">
+<td>Unknown function attribute [val]</td>
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" /><br />
+</td>
+<td>This error means that you have tried to use an invalid or
+unidentified function modifier ([val]) when declaring an in-kine
+function (a function modifier is something like the <span> constructor
+</span> keyword, which is supported).</td>
+</tr>
+<tr class="odd">
+<td>Inherited argument \"[val]\" is not in function arguments</td>
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" /><br />
+</td>
+<td>This error happens when you try to reference an argument in an
+inherited function that has not been declared in the parent function
+definition.</td>
+</tr>
+<tr class="even">
+<td>[val] Creation Code</td>
+<td><br />
+<img
+src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" /><br />
+</td>
+<td>This happens when you have an error [val] in the room creation code
+somewhere.</td>
+</tr>
+</tbody>
+</table>

@@ -1,0 +1,36 @@
+# image_number
+
+This **read only** variable can be used to get the number of sub-images
+in a sprite that has been assigned to an instance (if you need the
+number of sub-images for a sprite other than the one assigned to the
+instance you should use [ sprite_get_number()
+](../Sprite_Information/sprite_get_number) ). Please note that when
+there is (for example) 1 sub-image this variable will return "1" but the
+image_index of that sub-image is 0.
+
+#### Syntax:
+
+``` gml
+image_number;
+```
+
+#### Returns:
+
+``` gml
+ Real
+
+(single precision floating point value)
+```
+
+#### Example:
+
+``` gml
+if image_speed &amp;gt; 0
+{
+    if image_index &amp;gt; image_number - 1 instance_destroy();
+}
+```
+
+The above code checks to see if the sprite is animating, and if it is it
+then checks to see if the current image_index is greater than the number
+of sub-images and if it is it destroys the instance.
