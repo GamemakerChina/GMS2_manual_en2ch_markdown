@@ -1,0 +1,96 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   ds_map_secure_save_buffer
+  </h1>
+  This function will save a previously created DS map to a buffer. You supply the DS map ID value (as returned by the function
+  <a href="ds_map_create.htm">
+   <span>
+    ds_map_create()
+   </span>
+  </a>
+  ) and the ID of the buffer to write to (as returned by the function
+  <a href="../../Buffers/buffer_create.htm">
+   <span>
+    buffer_create()
+   </span>
+  </a>
+  ). Note that if the DS map being saved contains an array, this will be converted into a DS list instead when saved.
+  <b>
+   IMPORTANT!
+  </b>
+  The secure saved DS map file can only be loaded on the device that created it, and if you try to load a file that was saved on a different device, then it will not work.
+  <strong>
+   NOTE
+  </strong>
+  : This function is not supported on HTML5 and UWP.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">ds_map_secure_save_buffer(filename);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/ds_map_create.htm">
+        DS Map ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The DS map ID value.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      buffer
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Buffers/buffer_create.htm">
+        Buffer ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The buffer to save to.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">buff = buffer_create(128,buffer_grow,4);
+var map = ds_map_create();
+ds_map_add(map,"bob","ajob");
+ds_map_add(map,"money",10);
+ds_map_secure_save_buffer(map, buff);
+ds_map_destroy(map);
+</code></pre>
+  The above code will create a buffer and a DS map, then populate the map with some values and write it to the buffer before deleting the map.
+ </body>
+</html>

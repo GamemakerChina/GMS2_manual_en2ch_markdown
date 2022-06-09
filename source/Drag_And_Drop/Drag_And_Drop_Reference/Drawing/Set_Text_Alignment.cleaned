@@ -1,0 +1,111 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/i_Drawing_Set_Text_Alignment.png"/><br/>
+   Set Text Alignment
+  </h1>
+  This action will set the font alignment for all subsequent draw text actions. You can set the horizontal alignment to be the left, center or right, and the vertical alignment to be top, middle or bottom and the text will be aligned relative to the x/y
+    position of the draw action, as shown in the images below:
+  <table>
+   <tbody>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/fa_left.png"/><br/>
+     </td>
+     <td>
+      Text is horizontally aligned to the left
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/fa_center.png"/><br/>
+     </td>
+     <td>
+      Text is horizontally aligned to the center
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/fa_right.png"/><br/>
+     </td>
+     <td>
+      Text is horizontally aligned to the right
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/fa_top.png"/><br/>
+     </td>
+     <td>
+      Text is vertically aligned to the top
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/fa_middle.png"/><br/>
+     </td>
+     <td>
+      Text is vertically aligned to the middle
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/fa_bottom.png"/><br/>
+     </td>
+     <td>
+      Text is vertically aligned to the bottom
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  Note that this will set the alignment to use for
+  <i>
+   all
+  </i>
+  subsequent draw text calls, and so can be called, for example, once at the beginning of the game - in any event, not just the Draw Event - and all draw text actions will use the set alignment.
+    However if you require multiple draw text actions to align in different ways, then you will need to call this action before every draw text action you wish to align differently.
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/a_Drawing_Set_Text_Alignment.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      H.Align
+     </td>
+     <td>
+      The horizontal alignment value (Left, Center, Right)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      V.Align
+     </td>
+     <td>
+      The vertical alignment value (Top, Middle, Bottom)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/e_Drawing_Draw_Value.png"/><br/>
+  The above action block code sets the font, the draw colour, and the alignment for some text
+    that is drawn.
+ </body>
+</html>

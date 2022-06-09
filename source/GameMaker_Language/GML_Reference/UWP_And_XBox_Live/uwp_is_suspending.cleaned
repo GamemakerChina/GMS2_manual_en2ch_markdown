@@ -1,0 +1,51 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   uwp_is_suspending
+  </h1>
+  This function will return
+  <span>
+   true
+  </span>
+  for a single frame (and
+  <span>
+   false
+  </span>
+  otherwise) in a similar manner to
+  <a href="../OS_And_Compiler/os_is_paused.htm">
+   <span>
+    os_is_paused()
+   </span>
+  </a>
+  . The game then has one second to save the game state before it is potentially terminated by the system. Once the game has finished saving data it should call
+  <a href="uwp_suspend.htm">
+   <span>
+    uwp_suspend()
+   </span>
+  </a>
+  to suspend cleanly. The game should probably also enter a pause state so that if it is resumed by the system (if it hasn't been fully terminated) the player is not thrown straight back into a gameplay situation.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">uwp_is_suspending();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if uwp_is_suspending()
+{
+    scr_Save_Game_Data();
+    uwp_suspend();
+}
+</code></pre>
+  The above code checks to see if the app is going into suspension and if it is it calls a script to save the game data before suspending the game.
+ </body>
+</html>

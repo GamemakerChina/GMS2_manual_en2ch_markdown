@@ -1,0 +1,66 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Set_Map_Value.png"/><br/>
+   Set Map Value
+  </h1>
+  With this action you can add a key/value pair into the map data structure. You supply the variable that holds the map index (as returned by the action
+  <a href="Create_Map.htm">
+   Create Map
+  </a>
+  ) and then give a "key" (which is the identifier
+    within the map for a value), and then the "value" to be associated with that key. Both keys can be either integer values (like 0, 200, 36712, etc...) or strings (like "Name", "Shield" etc...), but the value can be any
+    valid data type.
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/a_DS_Set_Map_Value.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Map
+     </td>
+     <td>
+      The index (stored in a variable) of the map to set
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Key
+     </td>
+     <td>
+      The key to set (integer or string)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Value
+     </td>
+     <td>
+      The value to be stored with the given key
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/e_DS_Set_Map_Value.png"/><br/>
+  The above action block code creates a new map data structure and then sets three key/value
+    entries in it.
+ </body>
+</html>

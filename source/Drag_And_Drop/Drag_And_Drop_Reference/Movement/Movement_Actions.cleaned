@@ -1,0 +1,165 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Movement Action Library
+  </h1>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/Lib_Movement.png"/><br/>
+  In any game, movement and position are of paramount importance and so
+  <span>
+   GameMaker
+  </span>
+  has a complete selection of actions to deal with every situation. The two main ways of moving an instance is to either set the actual position (x/y) within the
+    room, or to set a speed/direction vector. The actions shown here cover both methods and you can use the
+  <strong>
+   Common
+  </strong>
+  Action
+  <a href="../Common/Assign_Variable.htm">
+   Assign Variable
+  </a>
+  to directly set the x and y position yourself.
+  
+  
+   The
+  <b>
+   Movement
+  </b>
+  actions available are as follows:
+  <table>
+   <tbody>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/i_Movement_Set_Direction_Fixed.png"/><br/>
+     </td>
+     <td>
+      <a href="Set_Direction_Fixed.htm">
+       Set Direction Fixed
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/i_Movement_Set_Direction_Variable.png"/><br/>
+     </td>
+     <td>
+      <a href="Set_Direction_Variable.htm">
+       Set Direction Variable
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/i_Movement_Set_Point_Direction.png"/><br/>
+     </td>
+     <td>
+      <a href="Set_Point_Direction.htm">
+       Set Point Direction
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/i_Movement_Set_Direction_Random.png"/><br/>
+     </td>
+     <td>
+      <a href="Set_Direction_Random.htm">
+       Set Direction Random
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/i_Movement_Set_Speed.png"/><br/>
+     </td>
+     <td>
+      <a href="Set_Speed.htm">
+       Set Speed
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/i_Movement_Set_Gravity_Direction.png"/><br/>
+     </td>
+     <td>
+      <a href="Set_Gravity_Direction.htm">
+       Set Gravity Direction
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/i_Movement_Set_Gravity_Force.png"/><br/>
+     </td>
+     <td>
+      <a href="Set_Gravity_Force.htm">
+       Set Gravity Force
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/i_Movement_Reverse.png"/><br/>
+     </td>
+     <td>
+      <a href="Reverse.htm">
+       Reverse
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/i_Movement_Set_Friction.png"/><br/>
+     </td>
+     <td>
+      <a href="Set_Friction.htm">
+       Set Friction
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/i_Movement_Jump_To_Point.png"/><br/>
+     </td>
+     <td>
+      <a href="Jump_To_Point.htm">
+       Jump To Point
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/i_Movement_Jump_To_Start.png"/><br/>
+     </td>
+     <td>
+      <a href="Jump_To_Start.htm">
+       Jump To Start
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/i_Movement_Snap_To_Grid.png"/><br/>
+     </td>
+     <td>
+      <a href="Snap_Position.htm">
+       Snap Position
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/i_Movement_Wrap_Room.png"/><br/>
+     </td>
+     <td>
+      <a href="Wrap_Around_Room.htm">
+       Wrap Around Room
+      </a>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </body>
+</html>

@@ -1,0 +1,52 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   window_has_focus
+  </h1>
+  With this function you can poll the window (or tab) state and if it loses focus the function will return
+  <span>
+   false
+  </span>
+  otherwise it will return
+  <span>
+   true
+  </span>
+  . In most cases you can simply use the
+  <a href="../../OS_And_Compiler/os_is_paused.htm">
+   <span>
+    os_is_paused()
+   </span>
+  </a>
+  function to test this, but in some very specific cases (for example games on Chrome Apps) that function will not trigger, in which case you should use this function instead.
+  <b>
+   NOTE
+  </b>
+  : This function is only valid for the HTML5, Windows, and MacOS.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">window_has_focus();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if !window_has_focus()
+{
+    PauseGame();
+}
+</code></pre>
+  The above code will check to see if the game window is in focus or not, and if the function returns
+  <span>
+   false
+  </span>
+  a function will be called.
+ </body>
+</html>

@@ -1,0 +1,75 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Generating Object Events
+  </h1>
+  <span>
+   GameMaker
+  </span>
+  is completely event driven, and that all actions happen as the result of certain events that are triggered in a specific order or by a specific occurrence within the game. There are a number of different events, each one with a specific task or timing and some of them are even split into separate "sub" events. Normally these events are run by
+  <span>
+   GameMaker
+  </span>
+  when it detects an in-game trigger, or every game tick (as is the case with the step and draw events), but you can also apply an event to an instance in the current room from within a piece of code.
+  
+  
+   The following functions exist that deal with generating events:
+  <ul>
+   <li>
+    <a href="event_inherited.htm">
+     event_inherited
+    </a>
+   </li>
+   <li>
+    <a href="event_perform.htm">
+     event_perform
+    </a>
+   </li>
+   <li>
+    <a href="event_perform_async.htm">
+     event_perform_async
+    </a>
+   </li>
+   <li>
+    <a href="event_perform_object.htm">
+     event_perform_object
+    </a>
+   </li>
+   <li>
+    <a href="event_user.htm">
+     event_user
+    </a>
+   </li>
+  </ul>
+  There are also a number of read only variables that can be used with the functions listed above which are particularly useful for debugging:
+  <ul>
+   <li>
+    <a href="event_action.htm">
+     event_action
+    </a>
+   </li>
+   <li>
+    <a href="event_number.htm">
+     event_number
+    </a>
+   </li>
+   <li>
+    <a href="event_object.htm">
+     event_object
+    </a>
+   </li>
+   <li>
+    <a href="event_type.htm">
+     event_type
+    </a>
+   </li>
+  </ul>
+  For more information on events please see the section
+  <a href="../../../../../The_Asset_Editors/Object_Properties/Object_Events.htm">
+   Object Events
+  </a>
+  .
+ </body>
+</html>

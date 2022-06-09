@@ -1,0 +1,62 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance_Vars/i_IV_Set_Health.png"/><br/>
+   Set Health
+  </h1>
+  With this action you can create or set an instance variable for health. You supply the value to either set the health variable to or to add to the health variable (if you tick the
+  <i>
+   relative
+  </i>
+  checkbox then the value will be added to the current
+    "health" value). Note that if you wish to use the
+  <a href="../Drawing/Draw_Instance_Health.htm">
+   Draw Instance Healthbar
+  </a>
+  action then this value should be between 0 and 100, otherwise it can be any amount you require. Also note that unlike
+    regular instance variables the variable name for "health" is stored internally so to retrieve the score value you need to use the action
+  <a href="Get_Health.htm">
+   Get Health
+  </a>
+  .
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance_Vars/a_IV_Set_Health.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Health
+     </td>
+     <td>
+      The amount to set the health to (or to add on to the health if
+      <i>
+       relative
+      </i>
+      is checked)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance_Vars/e_IV_Set_Score.png"/><br/>
+  The above action block code will check to see if the room is the first in the game and if it is
+    it sets up "score", "lives" and "health" variables for the instance.
+ </body>
+</html>

@@ -1,0 +1,92 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   ds_queue_enqueue
+  </h1>
+  This function will add a value (real or string) onto the tail of the
+  <span>
+   DS queue
+  </span>
+  . The function can take a further 14 optional arguments (making a total of 15 possible additions), permitting you to add multiple values
+    consecutively to the tail of the queue in a single call.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">ds_queue_enqueue(id, val [, val2, ... val15]);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Queues/ds_queue_create.htm">
+        DS Queue ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The id of the queue to add to.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      val
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm#variable">
+        Variable
+       </a>
+      </span>
+     </td>
+     <td>
+      The value to add to the queue.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      [val2, ... val15]
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm#variable">
+        Variable
+       </a>
+      </span>
+     </td>
+     <td>
+      Optional values to be added to the queue.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">move_queue = ds_queue_create(); ds_queue_enqueue(move_queue, x + 200); ds_queue_enqueue(move_queue, y); ds_queue_enqueue(move_queue, x + 200); ds_queue_enqueue(move_queue, y + 200); ds_queue_enqueue(move_queue, x); ds_queue_enqueue(move_queue,
+y + 200); ds_queue_enqueue(move_queue, x); ds_queue_enqueue(move_queue, y);
+</code></pre>
+  The above code creates a new DS queue and stores its index in the variable "move_queue". It then pushes a number of values onto the queue for future use.
+ </body>
+</html>

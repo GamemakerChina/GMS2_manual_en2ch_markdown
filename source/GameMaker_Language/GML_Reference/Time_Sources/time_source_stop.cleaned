@@ -1,0 +1,76 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   time_source_stop
+  </h1>
+  This function stops the given
+  <span>
+   Time Source
+  </span>
+  and resets its timer.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">time_source_stop(id);
+</code></pre>
+  <table>
+   <colgroup>
+    <col/>
+    <col/>
+    <col/>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Time_Sources/time_source_create.htm">
+        Time Source ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The
+      <span>
+       Time Source
+      </span>
+      to stop
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if (time_source_get_state(time_source) != time_source_state_stopped)
+{
+    time_source_stop(time_source);
+}
+</code></pre>
+  The code above will stop a
+  <span>
+   Time Source
+  </span>
+  when it's not already stopped.
+ </body>
+</html>

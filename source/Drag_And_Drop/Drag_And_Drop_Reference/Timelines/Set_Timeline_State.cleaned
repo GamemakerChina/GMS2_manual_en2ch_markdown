@@ -1,0 +1,98 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Timelines/i_Timelines_Set_Timeline_State.png"/><br/>
+   Set Timeline State
+  </h1>
+  This action can be used to start, stop, pause or resume a timeline. The timeline must first have been set for the instance using the action
+  <a href="Set_Instance_Timeline.htm">
+   Set Instance Timeline
+  </a>
+  , and then you can use this action at any time to
+    change its running state from the following options
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Option
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Start
+     </td>
+     <td>
+      Start the timeline assigned to the instance (if the timeline was paused this will set the start position to moment 0 again).
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Resume
+     </td>
+     <td>
+      Resume a paused timeline (if the timeline was stopped and not paused this will do nothing).
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Paused
+     </td>
+     <td>
+      Pause the timeline assigned to the instance (while paused the moments in a timeline will not advance with the game frames).
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Stop
+     </td>
+     <td>
+      Stop the timeline assigned to the instance.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Timelines/a_Timelines_Set_Timeline_State.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      State
+     </td>
+     <td>
+      The state to put the timeline in (see the table above)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Timelines/e_Timelines_Set_Timeline_State.png"/><br/>
+  The above action block code will check the value held in a global variable and
+    if it is
+  <span>
+   true
+  </span>
+  then the timeline is paused, and if it is
+  <span>
+   false
+  </span>
+  then the timeline will be resumed.
+ </body>
+</html>

@@ -1,0 +1,68 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Our Knowledge Base
+  </h1>
+  The
+  <span>
+   GameMaker
+  </span>
+  manual that you are reading now has all the information that you need to use the product and start making games. However, it does not include information on setting up for the various different platforms that
+  <span>
+   GameMaker
+  </span>
+  can make games for, nor does it include any guides or help for the various extensions that are available to extend functionality for some platforms. It also doesn't contain any last-minute information that may be relevant to the product or to specific platforms that hasn't been able to be included in this manual. However, all this information and more is available from the
+  <strong>
+   YoYo Games Knowledge Base
+  </strong>
+  and below you can find links to various sections of the website that you may find useful:
+  <ul>
+   <li>
+    <a href="https://help.yoyogames.com/hc/en-us">
+     YoYo Games Knowledge Base Main Page
+    </a>
+   </li>
+   <li>
+    <a href="https://help.yoyogames.com/hc/en-us/categories/204246668">
+     <span>
+      GameMaker
+     </span>
+    </a>
+    <ul>
+     <li>
+      <a href="https://help.yoyogames.com/hc/en-us/articles/227860547">
+       Required SDKs
+      </a>
+     </li>
+     <li>
+      <a href="https://help.yoyogames.com/hc/en-us/articles/230492887">
+       Free Licence
+      </a>
+     </li>
+     <li>
+      <a href="https://help.yoyogames.com/hc/en-us/articles/115002637011">
+       Which Licence Is Right For Me?
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <a href="https://help.yoyogames.com/hc/en-us/categories/202590258">
+     YoYo Account
+    </a>
+   </li>
+   <li>
+    <a href="https://help.yoyogames.com/hc/en-us/categories/202590208">
+     GameMaker Marketplace
+    </a>
+   </li>
+   <li>
+    <a href="https://help.yoyogames.com/hc/en-us/categories/202590198">
+     Education
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

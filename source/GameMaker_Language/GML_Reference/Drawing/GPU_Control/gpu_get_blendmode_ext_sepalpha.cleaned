@@ -1,0 +1,197 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   gpu_get_blendmode_ext_sepalpha
+  </h1>
+  This function can be used to retrieve the current extended blend mode being used for drawing, separating out the blend modes into two parts - the RGB component and the Alpha component. The function returns a 4 element 1D array with the following elements in it:
+  <ul>
+   <li>
+    [0] = Source blend mode minus the alpha component (default is
+    <span>
+     bm_src_alpha
+    </span>
+    (As, As, As))
+   </li>
+   <li>
+    [1] = Destination blend mode minus the alpha component (default is
+    <span>
+     bm_inv_src_alpha
+    </span>
+    (1-As, 1-As, 1-As))
+   </li>
+   <li>
+    [2] = Source alpha component (default is
+    <span>
+     bm_src_alpha
+    </span>
+    (As))
+   </li>
+   <li>
+    [3] = Destination alpha component (default is
+    <span>
+     bm_inv_src_alpha
+    </span>
+    (1-As))
+   </li>
+  </ul>
+  The values of the array will be one of the following constants ("s" denotes a value taken from the source while a "d" denotes a value from the destination):
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Constant
+     </th>
+     <th>
+      Blend factor (Red, Green, Blue, Alpha)
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       bm_zero
+      </span>
+     </td>
+     <td>
+      (0, 0, 0, 0)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       bm_one
+      </span>
+     </td>
+     <td>
+      (1, 1, 1, 1)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       bm_src_colour
+      </span>
+     </td>
+     <td>
+      (Rs, Gs, Bs, As)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       bm_inv_src_colour
+      </span>
+     </td>
+     <td>
+      (1-Rs, 1-Gs, 1-Bs, 1-As)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       bm_src_alpha
+      </span>
+     </td>
+     <td>
+      (As, As, As, As)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       bm_inv_src_alpha
+      </span>
+     </td>
+     <td>
+      (1-As, 1-As, 1-As, 1-As)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       bm_dest_alpha
+      </span>
+     </td>
+     <td>
+      (Ad, Ad, Ad, Ad)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       bm_inv_dest_alpha
+      </span>
+     </td>
+     <td>
+      (1-Ad, 1-Ad, 1-Ad, 1-Ad)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       bm_dest_colour
+      </span>
+     </td>
+     <td>
+      (Rd, Gd, Bd, Ad)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       bm_inv_dest_colour
+      </span>
+     </td>
+     <td>
+      (1-Rd, 1-Gd, 1-Bd, 1-Ad)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       bm_src_alpha_sat
+      </span>
+     </td>
+     <td>
+      (f, f, f, 1) where f = min(As, 1-Ad)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  When creating the extended blend modes in this way, the RGB components will be taken from one blend mode and the Alpha component will be taken from another, so that - for example - if you use
+  <span>
+   bm_zero
+  </span>
+  (0, 0, 0, 0) as the RGB blend mode and
+  <span>
+   bm_one
+  </span>
+  as the alpha blend mode, you will get a composite blend of (0,0,0,1).
+  
+  
+   Note that you can change these values directly within the array and pass the full array to the function as a single argument (as shown in the example below).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">gpu_get_blendmode_ext_sepalpha();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Arrays.htm">
+ Array
+</a>
+(4 elements only; see above for constants)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var bm = gpu_get_blendmode_ext_sepalpha();
+bm[0] = bm_src_alpha;
+bm[1] = bm_inv_src_alpha;
+gpu_set_blendmode_ext_sepalpha(bm);
+</code></pre>
+  The above code creates a local array and gets the current extended blend mode with separate alpha values. This array is then manipulated and returned to set the blend mode.
+ </body>
+</html>

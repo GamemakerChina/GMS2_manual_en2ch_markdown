@@ -1,0 +1,262 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   tag_get_asset_ids
+  </h1>
+  With this function you can get all the assets of a given type that have the given tags assigned to them. You supply either a single tag (as a string) or an array, where each item in the array is a tag (as a string), as well as the type of asset to check. the type of asset should be one of the following constants:
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Constant
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       asset_object
+      </span>
+     </td>
+     <td>
+      The given name refers to an
+      <a href="../../../../The_Asset_Editors/Objects.htm">
+       object
+      </a>
+      .
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       asset_sprite
+      </span>
+     </td>
+     <td>
+      The given name refers to a
+      <a href="../../../../The_Asset_Editors/Sprites.htm">
+       sprite
+      </a>
+      .
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       asset_sound
+      </span>
+     </td>
+     <td>
+      The given name refers to a
+      <a href="../../../../The_Asset_Editors/Sounds.htm">
+       sound
+      </a>
+      .
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       asset_room
+      </span>
+     </td>
+     <td>
+      The given name refers to a
+      <a href="../../../../The_Asset_Editors/Rooms.htm">
+       room
+      </a>
+      .
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       asset_tiles
+      </span>
+     </td>
+     <td>
+      The given name refers to a
+      <a href="../../../../The_Asset_Editors/Tile_Sets.htm">
+       tile set
+      </a>
+      .
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       asset_path
+      </span>
+     </td>
+     <td>
+      The given name refers to a
+      <a href="../../../../The_Asset_Editors/Paths.htm">
+       path
+      </a>
+      .
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       asset_script
+      </span>
+     </td>
+     <td>
+      The given name refers to a
+      <a href="../../../../The_Asset_Editors/Scripts.htm">
+       script
+      </a>
+      .
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       asset_font
+      </span>
+     </td>
+     <td>
+      The given name refers to a
+      <a href="../../../../The_Asset_Editors/Fonts.htm">
+       font
+      </a>
+      .
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       asset_timeline
+      </span>
+     </td>
+     <td>
+      The given name refers to a
+      <a href="../../../../The_Asset_Editors/Timelines.htm">
+       time line
+      </a>
+      .
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       asset_shader
+      </span>
+     </td>
+     <td>
+      The given name refers to a
+      <a href="../../../../The_Asset_Editors/Shaders.htm">
+       shader
+      </a>
+      .
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       asset_animationcurve
+      </span>
+     </td>
+     <td>
+      The given name refers to an
+      <a href="../../../../The_Asset_Editors/Animation_Curves.htm">
+       Animation Curve
+      </a>
+      .
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       asset_sequence
+      </span>
+     </td>
+     <td>
+      The given name refers to a
+      <a href="../../../../The_Asset_Editors/Sequences.htm">
+       Sequence
+      </a>
+      .
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  The function will return an array, where each item in the array will be a single asset index value. If there are no assets of the type that have the given tag(s), an empty array will be returned.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">tag_get_asset_ids(tags, asset_type);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      tags
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+      or
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Arrays.htm">
+        Array
+       </a>
+      </span>
+      of Strings
+     </td>
+     <td>
+      A single asset tag string or an array with various asset tags.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      asset_type
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Assets_And_Tags/asset_get_type.htm">
+        Asset Type Constant
+       </a>
+      </span>
+     </td>
+     <td>
+      An asset type constant (listed above)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Arrays.htm">
+ Array
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var _paths = tag_get_asset_ids("enemy", asset_path);
+var _num = irandom(array_length(_paths) - 1);
+path_start(_paths[_num], 1, path_action_reverse, false);
+</code></pre>
+  The above code uses the tag "enemy" to find all the path assets with that tag, before choosing one at random and assigning it to the instance running the code.
+ </body>
+</html>

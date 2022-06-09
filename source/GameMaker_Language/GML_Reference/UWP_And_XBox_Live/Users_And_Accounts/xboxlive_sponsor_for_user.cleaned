@@ -1,0 +1,58 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   xboxlive_sponsor_for_user
+  </h1>
+  This function retrieves the ID of the given user's sponsor.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">xboxlive_sponsor_for_user(user_id);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      user_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/UWP_And_XBox_Live/Users_And_Accounts/xboxlive_get_user.htm">
+        Xbox User ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The ID pointer of the user to check.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Reference/UWP_And_XBox_Live/Users_And_Accounts/xboxlive_sponsor_for_user.htm">
+ Xbox Sponsor ID
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var _uid = xboxlive_user_for_pad(0);
+sponsor = xboxlive_sponsor_for_user(_uid);
+</code></pre>
+  The above code gets the user ID pointer for the user assigned to the gamepad [0] slot, and then uses that ID to retrieve the users sponsor ID.
+ </body>
+</html>

@@ -1,0 +1,27 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   audio_get_listener_count
+  </h1>
+  Certain target platforms permit more than one listener, so it is important that you know how many the target has before changing or using different listeners. This function will return the number of listeners available.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">audio_get_listener_count();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">global.listener_num = audio_get_listener_count();
+</code></pre>
+  The above code gets the number of available listeners and stores the return value in a global variable.
+ </body>
+</html>

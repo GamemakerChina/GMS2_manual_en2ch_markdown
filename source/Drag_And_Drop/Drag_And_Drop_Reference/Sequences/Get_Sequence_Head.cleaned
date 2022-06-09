@@ -1,0 +1,72 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Sequences/i_sequence_get_head.png"/><br/>
+   Get Sequence Head
+  </h1>
+  With this action you can retrieve the current
+  <a>
+   playhead
+  </a>
+  position of the given sequence element in the room. You supply the sequence element ID (as returned by the action
+  <a href="Create_Sequence_Element.htm">
+   Create Sequence
+  </a>
+  ),
+    and this action will return the current frame that the sequence playhead is on, in the target variable. For information on the playhead, see
+  <a href="../../../The_Asset_Editors/Sequence_Properties/Using_The_Dope_Sheet.htm">
+   Using The Dope Sheet
+  </a>
+  .
+  
+  
+   Note that the target variable can be flagged as temporary (local), which will be created for the action and can be used in all subsequent actions for the event the action is in.
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Sequences/a_sequence_get_head.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Variable
+     </td>
+     <td>
+      The ID of the sequence element to get the head position of.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Target
+     </td>
+     <td>
+      The target variable to hold the head position.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Sequences/e_sequence_head.png"/><br/>
+  The above action block retrieves the current head position of the sequence element ID stored in
+    the variable "
+  <span>
+   seq_id
+  </span>
+  ". That value is then used to set the head position of the same sequence element, advancing it by 4 frames.
+ </body>
+</html>

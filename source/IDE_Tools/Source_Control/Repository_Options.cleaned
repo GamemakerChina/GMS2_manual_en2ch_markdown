@@ -1,0 +1,67 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Repository Options
+  </h1>
+  Having
+  <a href="Setting_Up_Git_Plugin.htm">
+   set up the Git executable and enabled Source Control for you project
+  </a>
+  , you now need to link the
+  <span>
+   GameMaker
+  </span>
+  IDE to a repository, which is done in one of two ways:
+  <ul>
+   <li>
+    Create a project repository
+   </li>
+   <li>
+    Clone an existing repository
+   </li>
+  </ul>
+  In the first case,
+  <strong>
+   creating a project repository
+  </strong>
+  , this will create a Git repository directly where your project is. In Git parlance this is a "
+  <em>
+   non-bare repository
+  </em>
+  ", so
+  <strong>
+   Push
+  </strong>
+  /
+  <strong>
+   Pull
+  </strong>
+  make no sense in this case, but you can still commit and keep track of project changes, as well as revert changes and revisions if need be. To set this up, you just need to click
+  <strong>
+   Source Control
+  </strong>
+  >
+  <strong>
+   Create Project Repository
+  </strong>
+  on the main menu.
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/IDE%20Tools/SCM_CreateProjectRepository.png"/><br/>
+  As a convenience function, you can also
+  <strong>
+   Clone
+  </strong>
+  an external repository through the IDE. Again, you'll need the username and password for the repository you are going to connect to setup in your identity preferences, and then it's just a case of clicking
+  <strong>
+   Source Control
+  </strong>
+  >
+  <strong>
+   Clone Repository
+  </strong>
+  . Fill out the URL (using the HTTPS variant rather than SSH) and say where you want it to go:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/IDE%20Tools/SCM_CloneRepository.png"/><br/>
+  Once the clone is done, it will automatically open up a file browser for you to open the project if you wish.
+ </body>
+</html>

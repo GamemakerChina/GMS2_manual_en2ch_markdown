@@ -1,0 +1,111 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Ini Files
+  </h1>
+  INI files are small, lightweight files which are compatible with most platforms. They are ideal for storing
+  <i>
+   small
+  </i>
+  pieces of information, like interface preferences, local high scores, level data etc... and as such are a great and easy way for you to start saving information from your games. However, it is worth noting that they do have a limit on the data they can store, which is a maximum of 64KB, so if you are saving things like Data Structures, you may wish to look at some of the other file functions like
+  <a href="../Text_Files/Text_Files.htm">
+   Text Files
+  </a>
+  .
+  <b>
+   IMPORTANT!
+  </b>
+  All
+  <span>
+   GameMaker
+  </span>
+  projects have a file called "
+  <span>
+   <span>
+    options.ini
+   </span>
+  </span>
+  ", so you
+  <b>
+   cannot
+  </b>
+  name any file with that name (you will get a uid failure when you try to compile your game project).
+  
+  
+   Please note that for games with localizations it is very important that accented letters can be read from external files. This means that you should create the ini file in
+  <b>
+   UTF8
+  </b>
+  format
+  <i>
+   first
+  </i>
+  and then add it into
+  <span>
+   GameMaker
+  </span>
+  as an included file so that it is exported on running the game and used instead of the default ANSI format ini file that is created by the ini functions when none has been previously supplied. In this way, you can read and write to it correctly with all accents and non-Roman letters being maintained.
+  
+  
+   The following functions exist for ini files:
+  <ul>
+   <li>
+    <a href="ini_open.htm">
+     ini_open
+    </a>
+   </li>
+   <li>
+    <a href="ini_close.htm">
+     ini_close
+    </a>
+   </li>
+   <li>
+    <a href="ini_write_real.htm">
+     ini_write_real
+    </a>
+   </li>
+   <li>
+    <a href="ini_write_string.htm">
+     ini_write_string
+    </a>
+   </li>
+   <li>
+    <a href="ini_read_real.htm">
+     ini_read_real
+    </a>
+   </li>
+   <li>
+    <a href="ini_read_string.htm">
+     ini_read_string
+    </a>
+   </li>
+   <li>
+    <a href="ini_key_exists.htm">
+     ini_key_exists
+    </a>
+   </li>
+   <li>
+    <a href="ini_section_exists.htm">
+     ini_section_exists
+    </a>
+   </li>
+   <li>
+    <a href="ini_key_delete.htm">
+     ini_key_delete
+    </a>
+   </li>
+   <li>
+    <a href="ini_section_delete.htm">
+     ini_section_delete
+    </a>
+   </li>
+   <li>
+    <a href="ini_open_from_string.htm">
+     ini_open_from_string
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

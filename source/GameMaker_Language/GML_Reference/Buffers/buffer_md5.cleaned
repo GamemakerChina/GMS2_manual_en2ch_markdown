@@ -1,0 +1,102 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   buffer_md5
+  </h1>
+  In cryptography, MD5 (Message-Digest algorithm 5) is a widely used cryptographic
+  <a>
+   hashing
+  </a>
+  function with a 128-bit hash value and has been employed in a wide variety of security applications.
+    It is also commonly used to check the integrity of data. This function will take the input data from a given buffer (or part of the buffer) and return the 32-character hexadecimal MD5 hash that is unique to that data. In this way you can generate
+    a secure key which can be stored and used to check the integrity of the information being sent to (or received from) an external server (for example). When applying this to buffers using this function you must specify the buffer id of the buffer to
+    use, then an offset value (in bytes) for where to begin, and then a size (again in bytes) for the region to be hashed.
+  <strong>
+   NOTE
+  </strong>
+  : MD5 is not completely secure and can be broken. See
+  <a href="https://en.wikipedia.org/wiki/MD5">
+   this page
+  </a>
+  for more info.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">buffer_md5(buffer, offset, size);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      buffer
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Buffers/buffer_create.htm">
+        Buffer ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the buffer to use.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      offset
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The data offset value.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      size
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The size of the buffer.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">check_string = buffer_md5(buff, 0, buffer_get_size(buff));
+</code></pre>
+  The above code will create an md5 hash for the full data stored in the buffer indexed by the variable "buff", and store the returned hash in the variable "check_string".
+ </body>
+</html>

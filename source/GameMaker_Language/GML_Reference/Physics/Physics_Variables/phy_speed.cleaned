@@ -1,0 +1,52 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   phy_speed
+  </h1>
+  This
+  <b>
+   read-only
+  </b>
+  variable returns the current speed of the physics enabled instance, defined in pixels per step. Should you need to change this value, you must do so by changing the x and y vectors using the variables
+  <a href="phy_speed_x.htm">
+   <span>
+    phy_speed_x
+   </span>
+  </a>
+  and
+  <span>
+   <a href="phy_speed_y.htm">
+    phy_speed_y
+   </a>
+   .
+  </span>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">phy_speed;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a>
+(single precision floating point value, or undefined if the instance is not physics enabled)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if phy_speed &amp;amp;gt; 10
+{
+    phy_linear_damping += 0.01;
+}
+else
+{
+    phy_linear_damping = 2;
+}
+</code></pre>
+  The above code checks the speed of the physics enabled instance and then changes the linear damping based on the returned value.
+ </body>
+</html>

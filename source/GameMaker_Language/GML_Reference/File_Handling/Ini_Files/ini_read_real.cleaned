@@ -1,0 +1,101 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   ini_read_real
+  </h1>
+  You can use this function to read a number from an ini data file. Ini Files are split into
+  <b>
+   sections
+  </b>
+  and then each section is subsequently split into
+  <b>
+   key
+  </b>
+  -
+  <b>
+   value
+  </b>
+  pairs. So a typical ini file would look something like this:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/GML/Reference/Files/IniExample.png"/><br/>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">ini_read_real(section, key, default);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      section
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The section of the .ini to read from.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      key
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The key within the relevant section of the .ini to read from.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      default
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The value to return if a value is not found in the defined place (or the .ini file does not exist). Must be a real number.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">ini_open("savedata.ini"); score = ini_read_real("save1", "score", 0 ); ini_close();
+</code></pre>
+  This will open "savedata.ini" and set score to the value under "save1" > "score" in it, then close the .ini again. Should there be no value under "save1" > "score", or there no "savedata.ini"
+    file present, score will be set to 0.
+ </body>
+</html>

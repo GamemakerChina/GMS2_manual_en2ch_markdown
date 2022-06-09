@@ -1,0 +1,298 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Date And Time
+  </h1>
+  <span>
+   GameMaker
+  </span>
+  has a great many functions and variables related to getting the date and time and calculating other values based off of them. By default these functions return the
+  <b>
+   local
+  </b>
+  time as set by the system, but you can use the following function to switch between local and UTC time:
+  <ul>
+   <li>
+    <a href="date_set_timezone.htm">
+     date_set_timezone
+    </a>
+   </li>
+   <li>
+    <a href="date_get_timezone.htm">
+     date_get_timezone
+    </a>
+   </li>
+  </ul>
+  The following built in variables can be used to get specific date and time components:
+  <ul>
+   <li>
+    <a href="current_time.htm">
+     current_time
+    </a>
+   </li>
+   <li>
+    <a href="current_second.htm">
+     current_second
+    </a>
+   </li>
+   <li>
+    <a href="current_minute.htm">
+     current_minute
+    </a>
+   </li>
+   <li>
+    <a href="current_hour.htm">
+     current_hour
+    </a>
+   </li>
+   <li>
+    <a href="current_day.htm">
+     current_day
+    </a>
+   </li>
+   <li>
+    <a href="current_weekday.htm">
+     current_weekday
+    </a>
+   </li>
+   <li>
+    <a href="current_month.htm">
+     current_month
+    </a>
+   </li>
+   <li>
+    <a href="current_year.htm">
+     current_year
+    </a>
+   </li>
+  </ul>
+  The following functions can be used to get specific date and time components, as well as for creating new ones or for getting the span of days/hours between two given dates etc...
+  <ul>
+   <li>
+    <a href="date_create_datetime.htm">
+     date_create_datetime
+    </a>
+   </li>
+   <li>
+    <a href="date_current_datetime.htm">
+     date_current_datetime
+    </a>
+   </li>
+   <li>
+    <a href="date_compare_date.htm">
+     date_compare_date
+    </a>
+   </li>
+   <li>
+    <a href="date_compare_datetime.htm">
+     date_compare_datetime
+    </a>
+   </li>
+   <li>
+    <a href="date_compare_time.htm">
+     date_compare_time
+    </a>
+   </li>
+   <li>
+    <a href="date_valid_datetime.htm">
+     date_valid_datetime
+    </a>
+   </li>
+   <li>
+    <a href="date_date_of.htm">
+     date_date_of
+    </a>
+   </li>
+   <li>
+    <a href="date_time_of.htm">
+     date_time_of
+    </a>
+   </li>
+   <li>
+    <a href="date_is_today.htm">
+     date_is_today
+    </a>
+   </li>
+   <li>
+    <a href="date_leap_year.htm">
+     date_leap_year
+    </a>
+   </li>
+   <li>
+    <a href="date_date_string.htm">
+     date_date_string
+    </a>
+   </li>
+   <li>
+    <a href="date_datetime_string.htm">
+     date_datetime_string
+    </a>
+   </li>
+   <li>
+    <a href="date_time_string.htm">
+     date_time_string
+    </a>
+   </li>
+   <li>
+    <a href="date_second_span.htm">
+     date_second_span
+    </a>
+   </li>
+   <li>
+    <a href="date_minute_span.htm">
+     date_minute_span
+    </a>
+   </li>
+   <li>
+    <a href="date_hour_span.htm">
+     date_hour_span
+    </a>
+   </li>
+   <li>
+    <a href="date_day_span.htm">
+     date_day_span
+    </a>
+   </li>
+   <li>
+    <a href="date_week_span.htm">
+     date_week_span
+    </a>
+   </li>
+   <li>
+    <a href="date_month_span.htm">
+     date_month_span
+    </a>
+   </li>
+   <li>
+    <a href="date_year_span.htm">
+     date_year_span
+    </a>
+   </li>
+   <li>
+    <a href="date_days_in_month.htm">
+     date_days_in_month
+    </a>
+   </li>
+   <li>
+    <a href="date_days_in_year.htm">
+     date_days_in_year
+    </a>
+   </li>
+   <li>
+    <a href="date_get_second.htm">
+     date_get_second
+    </a>
+   </li>
+   <li>
+    <a href="date_get_minute.htm">
+     date_get_minute
+    </a>
+   </li>
+   <li>
+    <a href="date_get_hour.htm">
+     date_get_hour
+    </a>
+   </li>
+   <li>
+    <a href="date_get_day.htm">
+     date_get_day
+    </a>
+   </li>
+   <li>
+    <a href="date_get_weekday.htm">
+     date_get_weekday
+    </a>
+   </li>
+   <li>
+    <a href="date_get_week.htm">
+     date_get_week
+    </a>
+   </li>
+   <li>
+    <a href="date_get_month.htm">
+     date_get_month
+    </a>
+   </li>
+   <li>
+    <a href="date_get_year.htm">
+     date_get_year
+    </a>
+   </li>
+   <li>
+    <a href="date_get_second_of_year.htm">
+     date_get_second_of_year
+    </a>
+   </li>
+   <li>
+    <a href="date_get_minute_of_year.htm">
+     date_get_minute_of_year
+    </a>
+   </li>
+   <li>
+    <a href="date_get_hour_of_year.htm">
+     date_get_hour_of_year
+    </a>
+   </li>
+   <li>
+    <a href="date_get_day_of_year.htm">
+     date_get_day_of_year
+    </a>
+   </li>
+   <li>
+    <a href="date_inc_second.htm">
+     date_inc_second
+    </a>
+   </li>
+   <li>
+    <a href="date_inc_minute.htm">
+     date_inc_minute
+    </a>
+   </li>
+   <li>
+    <a href="date_inc_hour.htm">
+     date_inc_hour
+    </a>
+   </li>
+   <li>
+    <a href="date_inc_day.htm">
+     date_inc_day
+    </a>
+   </li>
+   <li>
+    <a href="date_inc_week.htm">
+     date_inc_week
+    </a>
+   </li>
+   <li>
+    <a href="date_inc_month.htm">
+     date_inc_month
+    </a>
+   </li>
+   <li>
+    <a href="date_inc_year.htm">
+     date_inc_year
+    </a>
+   </li>
+  </ul>
+  We also have two special time functions that give you a higher level of precision and control when running your game:
+  <ul>
+   <li>
+    <a href="get_timer.htm">
+     get_timer
+    </a>
+   </li>
+   <li>
+    <a href="delta_time.htm">
+     delta_time
+    </a>
+   </li>
+  </ul>
+  If you're looking for timing-related functions, see
+  <a href="../../Time_Sources/Time_Sources.htm">
+   Time Sources
+  </a>
+  .
+ </body>
+</html>

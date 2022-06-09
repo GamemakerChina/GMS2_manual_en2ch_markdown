@@ -1,0 +1,69 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   script_get_name
+  </h1>
+  This function will return the name
+  <i>
+   as a string
+  </i>
+  of the specified script. This name is the one that has been specified for the script in the Asset Browser of the main
+  <span>
+   GameMaker
+  </span>
+  window. For more information about scripts, see
+  <a href="../../../../The_Asset_Editors/Scripts.htm">
+   The Script Editor
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">script_get_name(scr);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      scr
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Scripts.htm">
+        Script Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the script that you want to get the name of.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">scr_name = script_get_name(Help_File);
+</code></pre>
+  The above example code will store the name of the indicated script index in the variable "scr_name".
+ </body>
+</html>

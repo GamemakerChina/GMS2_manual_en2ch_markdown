@@ -1,0 +1,90 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   shader_is_compiled
+  </h1>
+  This function will check a shader at run-time to make sure that it has been successfully compiled. If it has then the function returns
+  <span>
+   true
+  </span>
+  otherwise it returns
+  <span>
+   false
+  </span>
+  . This function should be used at the start of the game to make sure that the platform running your game has successfully compiled any shaders used (particularly on Windows where some computers may be using DX9 with Shader Level 2.0 and not a later version using shader level 3.0).
+  
+  
+   If your shader has
+  <i>
+   NOT
+  </i>
+  been compiled and you call
+  <a href="shader_set.htm">
+   <span>
+    shader_set()
+   </span>
+  </a>
+  the game will crash, so it is worth while having some sort of check whenever you are using anything other than simple GLSL ES shaders.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">shader_is_compiled(shader);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      shader
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Shaders.htm">
+        Shader Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The shader to check.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">global.GFX = false;
+if (shader_is_compiled(sh_glass) &amp;amp;amp;&amp;amp;amp; shader_is_compiled(sh_warp))
+{
+    global.GFX = true;
+}
+</code></pre>
+  The above code will set a global variable to
+  <span>
+   false
+  </span>
+  , and then if both the shaders being checked have compiled correctly, it will be set to
+  <span>
+   true
+  </span>
+  .
+ </body>
+</html>

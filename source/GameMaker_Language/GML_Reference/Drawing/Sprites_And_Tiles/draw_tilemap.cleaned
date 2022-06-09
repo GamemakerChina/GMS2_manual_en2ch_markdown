@@ -1,0 +1,104 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   draw_tilemap
+  </h1>
+  This function can be used to draw a given tilemap anywhere in the room. You give the tilemap element ID (which you get when you create a tilemap element using
+  <a href="../../Asset_Management/Rooms/Tile_Map_Layers/layer_tilemap_create.htm">
+   <span>
+    layer_tilemap_create()
+   </span>
+  </a>
+  or when you use the function
+  <a href="../../Asset_Management/Rooms/Tile_Map_Layers/layer_tilemap_get_id.htm">
+   <span>
+    layer_tilemap_get_id()
+   </span>
+  </a>
+  ), then give the x/y position for drawing (in the room). Note that this will simply draw the tilemap at the specified point, using the layer depth of the instance that is calling the function. It does
+  <i>
+   not
+  </i>
+  move the tilemap - nor change it in any way - and does not matter if the tilemap is flagged as visible or not.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">draw_tilemap(tilemap_element_id, x, y);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      tilemap_element_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/layer_tilemap_get_id.htm">
+        Tile Map Element ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The unique ID value of the tilemap element to draw
+     </td>
+    </tr>
+    <tr>
+     <td>
+      x
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x position within the room to draw at
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y position within the room to draw at
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var lay_id = layer_get_id("Tiles_Effects");
+var map_id = layer_tilemap_get_id(lay_id);
+draw_tilemap(map_id, mouse_x, mouse_y);
+</code></pre>
+  The above code gets the layer ID then uses that to get a specific tilemap ID which in turn is used to draw the tilemap at the mouse's position.
+ </body>
+</html>

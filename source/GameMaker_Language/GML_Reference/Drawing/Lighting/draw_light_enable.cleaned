@@ -1,0 +1,89 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   draw_light_enable
+  </h1>
+  This function is used to enable a defined light. When you define a positional or a directional light you must assign it an index number which is then used by this function to switch the light on or off. Default is disabled (
+  <span>
+   false
+  </span>
+  ).
+  <b>
+   NOTE
+  </b>
+  : There are only 8 hardware lights available, so only 8 defined lights can be enabled at any one time (although more can be defined).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">draw_light_enable(ind, enable);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      ind
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The index number of the light (from 0 to 7)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      enable
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Enable or disable all lighting (
+      <span>
+       true
+      </span>
+      or
+      <span>
+       false
+      </span>
+      )
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">draw_set_lighting(true);
+draw_light_define_direction(1, 0, 1, 0, c_white);
+draw_light_enable(1, true);
+</code></pre>
+  The above code will enable lighting for the whole scene, then define a white directional light in the room space, and then finally turn that light on.
+ </body>
+</html>

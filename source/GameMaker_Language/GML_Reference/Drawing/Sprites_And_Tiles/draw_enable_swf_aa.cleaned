@@ -1,0 +1,74 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   draw_enable_swf_aa
+  </h1>
+  With this function you can enable or disable anti-aliasing (AA) for SWF format vector sprites. AA simply smooths the edges of vector images to give them a nicer look. The amount of AA used will depend on the value set using the function
+  <a href="draw_set_swf_aa_level.htm">
+   <span>
+    draw_set_swf_aa_level()
+   </span>
+  </a>
+  . By default this is disabled.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">draw_enable_swf_aa(enable);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      enable
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Enable (
+      <span>
+       true
+      </span>
+      ) or disable (
+      <span>
+       false
+      </span>
+      ) AA for all SWF sprites.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if draw_get_swf_aa_level() == 0
+{
+    draw_enable_swf_aa(true);
+    draw_set_swf_aa_level(0.5);
+}
+</code></pre>
+  The above code will check the AA value for SWF format sprites, and if it is 0 it enables AA and sets the value to 0.5.
+ </body>
+</html>

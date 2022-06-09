@@ -1,0 +1,58 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   base64_decode
+  </h1>
+  This function will convert a string encoded previously using base64 format, into standard text. Base64 is a commonly used encoding scheme that is often used for any media that needs to be stored or transferred over the internet as text, and renders
+    the output unreadable to the human eye.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">base64_decode(string)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      string
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The string to decode.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var str, file; str = base64_encode(game_data); file = file_text_open_read("save.txt"); str = file_text_read_string(file); level_data = base64_decode(str); file_text_close(file);
+</code></pre>
+  The above code will open a text file and read a string from it into the local variable "str". This string is then decoded and the result stored in the instance variable "level_data".
+ </body>
+</html>

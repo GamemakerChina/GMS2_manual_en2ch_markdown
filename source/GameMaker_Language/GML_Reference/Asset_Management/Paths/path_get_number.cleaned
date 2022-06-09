@@ -1,0 +1,60 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   path_get_number
+  </h1>
+  This function can be used to return the number of points on a path.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">path_get_number(index);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Paths.htm">
+        Path Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the path to check.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if (path_get_number(pth_AI) &amp;amp;gt; 1)
+{
+    path_start( pth_AI, 4, 3, 0);
+}
+</code></pre>
+  The above code checks to see if a path has more than one point on it and if so it starts the instance moving along that path.
+ </body>
+</html>

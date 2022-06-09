@@ -1,0 +1,91 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   skeleton_find_slot
+  </h1>
+  With this function you can find which slots are at a specified room-space position in the Spine sprite associated with the current instance. You create a
+  <a href="../../../../Data_Structures/DS_Lists/DS_Lists.htm">
+   DS list
+  </a>
+  and supply its ID along with an x/y position to check and the list will be populated with name string for each of the available attachment slots for the sprite (including any attachment modifications). Note that the list is always sorted in descending order starting from the top-most slot.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">skeleton_find_slot(x, y, list);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      x
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x position in the room to check.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y position in the room to check.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      list
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Lists/ds_list_create.htm">
+        DS List ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The ID of the DS list to populate with the DS maps.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">slot_list = ds_list_create();
+skeleton_find_slot(mouse_x, mouse_y, slot_list);
+</code></pre>
+  The above code creates a DS list and then populates it with the slot names found at the position of the mouse in the room.
+ </body>
+</html>

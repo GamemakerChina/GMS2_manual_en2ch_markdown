@@ -1,0 +1,196 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   YUV Videos
+  </h1>
+  Platforms that use the YUV colour format for videos require extra steps for drawing those videos. This involves using a shader to draw two surfaces on a primitive quad.
+   
+   
+    Read the
+  <span>
+   <a href="video_draw.htm">
+    video_draw()
+   </a>
+  </span>
+  reference page first for information on what data that function returns for YUV videos, and then continue reading below for instructions on using that data to draw the video.
+  <h2>
+   YUV Shader
+  </h2>
+  Create a shader asset in your project, and replace its Fragment Shader (
+  <span>
+   .fsh
+  </span>
+  ) code with this:
+  <pre><code class="language-gml">//
+// CUSTOM fragment shader for handling YUV content
+//
+varying vec2 v_vTexcoord;
+varying vec4 v_vColour;
+uniform sampler2D v_chroma;
+const float x = 1.164383;
+const float y = 1.138393;
+const float z = 1.138393;
+const vec3 src_bias = vec3(16.0 / 255.0, 128.0 / 255.0, 128.0 / 255.0);
+const mat3 src_xform = mat3(1.00000000 * x,  0.00000000 * y,  1.57480000 * z,
+1.00000000 * x, -0.18732427 * y, -0.46812427 * z,
+			1.00000000 * x,  1.85560000 * y,  0.00000000 * z);
+void main()
+{
+float yy = texture2D(gm_BaseTexture, vec2(v_vTexcoord.x, v_vTexcoord.y)).r;
+vec2 cbcr = texture2D(v_chroma, vec2(v_vTexcoord.x, v_vTexcoord.y)).rg;
+vec3 yuv = vec3(yy, cbcr);
+yuv -= src_bias;
+yuv *= src_xform;
+gl_FragColor = vec4(yuv, 1.0);
+}
+</code></pre>
+  <h2>
+   Get Sampler
+  </h2>
+  In the Create event of your object, get the sampler ID of the
+  <span>
+   v_chroma
+  </span>
+  shader uniform, only if the video is YUV:
+  <pre><code class="language-gml">var _format = video_get_format();
+if (_format == video_format_yuv)
+{
+videochromasampler = shader_get_sampler_index(shader_YUV, "v_chroma");
+}
+</code></pre>
+  <h2>
+   Draw Video
+  </h2>
+  In the Draw event of your object, call
+  <span>
+   <a href="video_draw.htm">
+    video_draw()
+   </a>
+  </span>
+  , and if its first array position is
+  <strong>
+   0
+  </strong>
+  (meaning the video is playing), draw the video.
+   
+   
+    In the code below, we're using a switch statement on the
+  <span>
+   <a href="video_get_format.htm">
+    video_get_format()
+   </a>
+  </span>
+  function. If the video is using the RGBA format, then it simply draws the surface in position
+  <span>
+   [1]
+  </span>
+  of the array.
+   
+   
+    If the video is using the YUV format, it uses the shader to draw the two surfaces (in positions
+  <span>
+   [1]
+  </span>
+  and
+  <span>
+   [2]
+  </span>
+  ) onto a primitive quad.
+  <pre><code class="language-gml">var _data = video_draw();
+if(_data[0] == 0)
+{
+	switch(video_get_format())
+	{
+		case video_format_rgba:
+			var _surf = _data[1];
+			draw_surface(_surf,0,0);
+		break;
+	
+		//  #### YUV PART HERE ####
+		case video_format_yuv:
+			var _surf = _data[1];
+			var _chromasurf = _data[2];
+			if(surface_exists(_surf) and surface_exists(_chromasurf))
+			{
+				shader_set(shader_YUV);
+			
+				var _tex_id = surface_get_texture(_surf);
+				var _chroma_tex_id = surface_get_texture(_chromasurf);
+				texture_set_stage(videochromasampler, _chroma_tex_id);
+				gpu_set_texfilter(false);
+			
+				draw_primitive_begin_texture(pr_trianglestrip, _tex_id);
+			draw_vertex_texture(0, 0, 0, 0);
+				draw_vertex_texture(surface_get_width(_chromasurf), 0, 1, 0);
+				draw_vertex_texture(0, surface_get_height(_chromasurf), 0, 1);
+				draw_vertex_texture(surface_get_width(_chromasurf), surface_get_height(_chromasurf), 1, 1);
+				draw_primitive_end();
+			
+				gpu_set_texfilter(true);
+				shader_reset();
+			}
+		break;
+	}
+}
+</code></pre>
+  The code under
+  <span>
+   case video_format_yuv:
+  </span>
+  does the following:
+  <ul>
+   <li>
+    Gets the video surface (
+    <span>
+     _surf
+    </span>
+    ) and the chroma surface (
+    <span>
+     _chromasurf
+    </span>
+    )
+   </li>
+   <li>
+    Makes sure that they exist, using
+    <span>
+     <a href="../Surfaces/surface_exists.htm">
+      surface_exist()
+     </a>
+    </span>
+    <ul>
+     <li>
+      Sets the shader to
+      <span>
+       shader_YUV
+      </span>
+      (which is our newly created YUV shader)
+     </li>
+     <li>
+      Gets the textures of both surfaces
+     </li>
+     <li>
+      Assigns the texture of the chroma surface to the sampler we retrieved in the Create event
+     </li>
+     <li>
+      Disables texture filtering
+     </li>
+     <li>
+      Begins drawing a triangle strip primitive, with the video surface's texture assigned to it
+     </li>
+     <li>
+      Draws a rectangle to cover the video surface, uses the width and height of the chroma surface for that rectangle
+     </li>
+     <li>
+      Ends the primitive
+     </li>
+     <li>
+      Re-enables texture filtering and resets the shader
+     </li>
+    </ul>
+   </li>
+  </ul>
+  Here the main video surface is being drawn by the primitive, and the chroma surface is being blended on to it by the shader. That is the reason why the texture of the chroma surface was passed into the shader via a sampler.
+ </body>
+</html>

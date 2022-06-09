@@ -1,0 +1,32 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   In App Purchase
+  </h1>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Async_IAP.png"/><br/>
+  This event can only be triggered by the various
+  <strong>
+   In App Purchase
+  </strong>
+  (IAP) extensions for the different target platforms available on the
+  <a href="../../../Introduction/The_Marketplace.htm">
+   Marketplace
+  </a>
+  .
+    This event will always generate a DS map that is exclusive to this event and stored in the special variable
+  <a href="../../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">
+   <span>
+    async_load
+   </span>
+  </a>
+  .
+    This DS map will have different key/value pairs depending on the extension function that triggered it, but there will always be an "
+  <span>
+   id
+  </span>
+  " key which can then be used to identify the type of In App Purchase event
+    that it is. For exact details of the possible return values and functions that generate this event, please see the individual PDF manuals included with each of the extensions.
+ </body>
+</html>

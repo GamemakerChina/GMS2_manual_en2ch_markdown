@@ -1,0 +1,110 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   instance_furthest
+  </h1>
+  This function will check all the instances of the given object to see which is furthest from the given x/y point. All checks will be from the given x/y position to the
+  <i>
+   origin
+  </i>
+  (the x/y position) of instances of the object specified. If no instances of the object exist, the function will return the keyword
+  <a href="../../../GML_Overview/Instance_Keywords.htm">
+   noone
+  </a>
+  , but if there are instances then it will return the
+  <a href="Instance_Variables/id.htm">
+   <span>
+    id
+   </span>
+  </a>
+  of the instance found. Please note that if the instance running the code has the same object index as the object being checked, then it will be included in the check (this includes checks for parent objects if the calling instance is also a child of the parent).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">instance_furthest(x, y, obj);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      x
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x position to check for instances far from.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y position to check for instances far from.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      obj
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Objects.htm">
+        Object Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The object to check for instances of.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/id.htm">
+ Instance ID
+</a>
+or
+<a href="../../../../../GameMaker_Language/GML_Overview/Instance_Keywords.htm">
+ noone
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var inst;
+inst = instance_furthest(x, y, object_index);
+if inst != id
+{
+    draw_line(x, y, inst.x, inst.y);
+}
+</code></pre>
+  The above code will find the furthest instance that shares the same object index as the instance running the code and store the id in a variable. This variable is then checked to see if it is the same as the id of the calling instance and, if it is not, a line is drawn between the two instances.
+ </body>
+</html>

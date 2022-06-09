@@ -1,0 +1,105 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   skeleton_get_bounds
+  </h1>
+  This function will return an array of values associated with any given bounding box for the currently assigned skeleton animation sprite. You supply the index number for the bounding box to get the details of (you can retrieve the total number of bounding boxes for the sprite using the function
+  <a href="skeleton_get_num_bounds.htm">
+   <span>
+    skeleton_get_num_bounds()
+   </span>
+  </a>
+  ) and the function will return an array with the following elements:
+  <ul>
+   <li>
+    [0] - the number of points on the bounding box (a real)
+   </li>
+   <li>
+    [1] - the name of the bounding box (a string)
+   </li>
+   <li>
+    [2] - the x position of the first point
+   </li>
+   <li>
+    [3] - the y position of the first point
+   </li>
+   <li>
+    [etc...] - further x/y position data up to the number of points on the bounding box
+   </li>
+  </ul>
+  <span>
+   NOTE
+  </span>
+  The bounding box of a Spine sprite is set up in Spine itself, not in
+  <span>
+   GameMaker
+  </span>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">skeleton_get_bounds(index);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The bounding box index to get the values of.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../../GameMaker_Language/GML_Overview/Arrays.htm">
+ Array
+</a>
+(minimum 2 elements: numPoints, name [, xPos, yPos, etc...])
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var num = skeleton_get_num_bounds();
+var yy = 60;
+for(var i = 0; i &amp;amp;lt; num; i++)
+{
+    var b_info = skeleton_get_bounds(i);
+    if b_info[0] &amp;amp;gt; 0
+    {
+        var data = b_info[1] + ":";
+        for(var j = 0; j &amp;amp;lt; b_info[0]; j++)
+        {
+            data += " (" + string(b_info[(j * 2) + 2]) + ", " + string(b_info[(j * 2) + 2 + 1]) + ")";
+        }
+        draw_text(20, yy, data);
+        yy += 20;
+    }
+}
+</code></pre>
+  The above code will loop through each of the bounding boxes associated with the currently assigned sprite and then draw that data as a string to the screen.
+ </body>
+</html>

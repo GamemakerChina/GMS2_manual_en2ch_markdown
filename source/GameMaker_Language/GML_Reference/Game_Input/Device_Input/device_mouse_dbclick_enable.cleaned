@@ -1,0 +1,91 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   device_mouse_dbclick_enable
+  </h1>
+  This function can be used to set the device to detect a double tap of the
+  <span>
+   mb_left
+  </span>
+  (left mouse button) as an
+  <span>
+   mb_right
+  </span>
+  (right mouse button) input.
+  
+  
+   By default this is set to
+  <span>
+   true
+  </span>
+  , meaning that every time the user taps the device screen twice quickly and consecutively, the return value is the same as if the right mouse button had been clicked. When this is on, the first tap will be detected as
+  <span>
+   mb_left
+  </span>
+  , and the second as
+  <span>
+   mb_right
+  </span>
+  , so make sure that any code you use takes this into account.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">device_mouse_dbclick_enable(bool);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      bool
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Set double-click detection on (
+      <span>
+       true
+      </span>
+      ) or off (
+      <span>
+       false
+      </span>
+      ).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if os_type == os_windows || os_type == os_mac
+{
+    device_mouse_dbclick_enable(false);
+}
+</code></pre>
+  The above code checks to see if the device running the game is a Windows PC or a Mac and if it is either of them, it disables the double tap function.
+ </body>
+</html>

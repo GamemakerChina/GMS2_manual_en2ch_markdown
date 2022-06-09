@@ -1,0 +1,81 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   string_pos
+  </h1>
+  This function will return the character position of an instance of a sub-string within a string, searching from the beginning of the string (to search from the end, use the function
+  <a href="string_last_pos.htm">
+   <span>
+    string_last_pos()
+   </span>
+  </a>
+  ). The function will return 0 if it's not found at all, or the position of the first character of the sub-string if it is found. Keep in mind that for legacy support strings are indexed from 1, so 1 is the first position in the string, not 0 as you may expect. One use for this is for filtering words that may be considered offensive, or for finding the correct place to insert some text into another string.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">string_pos(substr, str);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      substr
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The substring to look for in the string.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      str
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The string.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if (string_pos(",", text) != 0)
+{
+    string_insert(name, text, string_pos(",", text));
+}
+</code></pre>
+  The above code searches the string stored in the variable "text" for a comma, and if it finds one it inserts the substring "name" at that position.
+ </body>
+</html>

@@ -1,0 +1,77 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   directory_destroy
+  </h1>
+  This function will remove a directory with the given name in the save area.
+  <strong>
+   NOTE
+  </strong>
+  : This function will not work on HTML5 as you cannot create or remove directories in the browser local storage.
+  <b>
+  </b>
+  <b>
+   WARNING!
+  </b>
+  This function may not work as you expect due to
+  <span>
+   GameMaker
+  </span>
+  being sandboxed! Please see the section on the
+  <a href="../../../../Additional_Information/The_File_System.htm">
+   File System
+  </a>
+  for more information.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">directory_destroy(dname)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      dname
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The name of the directory to remove.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if directory_exists("DLC")
+{
+    directory_destroy("DLC");
+}
+</code></pre>
+  This will check to see if the specified directory exists in the local data folder and, if it does, it is removed.
+ </body>
+</html>

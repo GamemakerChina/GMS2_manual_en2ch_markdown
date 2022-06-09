@@ -1,0 +1,113 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   network_connect_raw_async
+  </h1>
+  With this function you can send a request to connect to a server. The function takes the
+  <i>
+   socket id
+  </i>
+  to connect through (see
+  <a href="network_create_socket.htm">
+   <span>
+    network_create_socket()
+   </span>
+  </a>
+  ) and requires you to give the IP address to connect
+    to (a string) as well as the port to connect through, and if the connection fails a value of less than 0 will be returned. The difference between this function and
+  <a href="network_connect_async.htm">
+   <span>
+    network_connect_async()
+   </span>
+  </a>
+  is that this
+    function can connect to any server and does nothing to the raw data, meaning that you have to implement the protocols yourself at the server end. Note that this function is asynchronous, generating an
+  <a href="../../../The_Asset_Editors/Object_Properties/Async_Events/Networking.htm">
+   Asynchronous Networking
+  </a>
+  event of the type
+  <span>
+   network_type_non_blocking_connect
+  </span>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">network_connect_raw_async(socket, url, port);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      socket
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Networking/network_create_socket.htm">
+        Network Socket ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The id of the socket to use.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      url
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The URL or IP to connect to (a string).
+     </td>
+    </tr>
+    <tr>
+     <td>
+      port
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The port to connect to.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">client = network_create_socket(network_socket_tcp); network_connect_raw_async(client, "www.macsweeneygames.com", 6510);
+</code></pre>
+  The above code will create a new TCP socket then attempt to create a "raw" asynchronous connection through that to the given URL on port 6510.
+ </body>
+</html>

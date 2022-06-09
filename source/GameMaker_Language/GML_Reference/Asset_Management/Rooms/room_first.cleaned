@@ -1,0 +1,42 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   room_first
+  </h1>
+  This
+  <b>
+   read only
+  </b>
+  variable returns the index of the very first room in the game (this is defined by the order in which the rooms appear in the
+  <a href="../../../../Settings/The_Room_Manager.htm">
+   Room Manager
+  </a>
+  and
+  <i>
+   not
+  </i>
+  by the order in which they were created).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">room_first;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../The_Asset_Editors/Rooms.htm">
+ Room Asset
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if lives &amp;amp;lt; 1
+{
+    room_goto(room_first);
+}
+</code></pre>
+  The above code will check the "lives" variable and if it is less than 1 go to the first room in the game.
+ </body>
+</html>

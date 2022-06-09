@@ -1,0 +1,119 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Types/i_Types_String_To_Number.png"/><br/>
+   String To Number
+  </h1>
+  This action can convert a string into a number. You provide the string to change and then give a target variable to return the real number back to (this variable can be flagged as a temporary local variable). Note that if the string has any characters
+    other than numbers and a decimal point, it will
+  <i>
+   not
+  </i>
+  be converted, although if the string
+  <i>
+   starts
+  </i>
+  with a number then those will be converted and the rest of the string excluded. It is important to note that when passing decimals into this
+    action, the returned string will be rounded to
+  <i>
+   two
+  </i>
+  decimal places only. Below is a table of input values and what you'd expect returned
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      String
+     </th>
+     <th>
+      Returned Value
+     </th>
+    </tr>
+    <tr>
+     <td>
+      "123"
+     </td>
+     <td>
+      123
+     </td>
+    </tr>
+    <tr>
+     <td>
+      "123 Hello World"
+     </td>
+     <td>
+      123
+     </td>
+    </tr>
+    <tr>
+     <td>
+      "Hello World"
+     </td>
+     <td>
+      0 (by default if the string can't be converted, 0 will be returned)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      "Hello World 123"
+     </td>
+     <td>
+      0
+     </td>
+    </tr>
+    <tr>
+     <td>
+      "123.45678"
+     </td>
+     <td>
+      123.46
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Types/a_Types_String_To_Number.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Value
+     </td>
+     <td>
+      The string to convert
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Target
+     </td>
+     <td>
+      The target variable to hold the returned value
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Types/e_Types_String_To_Number.png"/><br/>
+  The above action block code initialises a global variable and then loads a file with
+    a buffer saved in it. Two strings are read from the buffer and stored in a temporary local variables before one of them is converted into a real number and stored in another temporary local variable. These are then assigned to global variables, and
+    the buffer is deleted.
+ </body>
+</html>

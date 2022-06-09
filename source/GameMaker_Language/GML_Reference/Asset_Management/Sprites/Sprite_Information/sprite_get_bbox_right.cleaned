@@ -1,0 +1,63 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   sprite_get_bbox_right
+  </h1>
+  This function returns the relative position of the right of the sprite bounding box. This value is given as a relative value based on the upper left corner of the base sprite asset being (0,0). it is the same value as can be found in the sprite editor
+    for the
+  <a href="../../../../../The_Asset_Editors/Sprites.htm">
+   collision mask properties
+  </a>
+  . The image below shows how it is calculated:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/GML/Reference/Sprites/spr_bbox.png"/><br/>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">sprite_get_bbox_right(ind);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      ind
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../The_Asset_Editors/Sprites.htm">
+        Sprite Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the sprite to check.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var ww, hh; ww = sprite_get_bbox_left(sprite_index) - sprite_get_bbox_right(sprite_index); hh = sprite_get_bbox_bottom(sprite_index) - sprite_get_bbox_top(sprite_index);
+</code></pre>
+  The above code calculates the width and height of the collision mask based on the relative bounding box side positions.
+ </body>
+</html>

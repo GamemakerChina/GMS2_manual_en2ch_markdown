@@ -1,0 +1,211 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Device Input
+  </h1>
+  When your game is being targeted at those platforms that permit multi-touch, you should be using these functions. They work the same way a PC would work if it had multiple mice attached and the constants that are being checked for are the same as those used for the
+  <a href="../Mouse_Input/Mouse_Input.htm">
+   standard mouse functions
+  </a>
+  :
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Constant
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      mb_left
+     </td>
+     <td>
+      The left mouse button
+     </td>
+    </tr>
+    <tr>
+     <td>
+      mb_middle
+     </td>
+     <td>
+      The middle mouse button (this may not be valid for all target platforms)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      mb_right
+     </td>
+     <td>
+      The right mouse button
+     </td>
+    </tr>
+    <tr>
+     <td>
+      mb_side1*
+     </td>
+     <td>
+      Mouse side button 1
+     </td>
+    </tr>
+    <tr>
+     <td>
+      mb_side2*
+     </td>
+     <td>
+      Mouse side button 2
+     </td>
+    </tr>
+    <tr>
+     <td>
+      mb_any
+     </td>
+     <td>
+      Any of the mouse buttons
+     </td>
+    </tr>
+    <tr>
+     <td>
+      mb_none
+     </td>
+     <td>
+      No mouse button
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <span>
+   <strong>
+    NOTE
+   </strong>
+  </span>
+  * The
+  <strong>
+   mb_side1
+  </strong>
+  and
+  <strong>
+   mb_side2
+  </strong>
+  buttons are only available on Windows, macOS, Ubuntu and HTML5.
+  
+  
+   The functions can all take a "touch" value that corresponds to a touch on the device display, however the maximum number of touches that can be detected will depend very much on the device and the OS being run. For example, some low end Android devices may only be able to detect 2 or 3 touches at the same time, while a UWP device may be able to detect up to 10. Note too that on touch screen devices, a double tap is returned as the equivalent of a
+  <b>
+   right mouse button
+  </b>
+  event. So, if you need to detect multiple taps in quick succession, for example, you will need to check for
+  <b>
+   both
+  </b>
+  the
+  <span>
+   mb_left
+  </span>
+  and
+  <span>
+   mb_right
+  </span>
+  . This functionality can be toggled on or off using
+  <a href="device_mouse_dbclick_enable.htm">
+   <span>
+    device_mouse_dbclick_enable()
+   </span>
+  </a>
+  .
+  
+  
+   Below you can find a list of all the device specific control functions:
+  <ul>
+   <li>
+    <a href="device_mouse_check_button.htm">
+     device_mouse_check_button
+    </a>
+   </li>
+   <li>
+    <a href="device_mouse_check_button_pressed.htm">
+     device_mouse_check_button_pressed
+    </a>
+   </li>
+   <li>
+    <a href="device_mouse_check_button_released.htm">
+     device_mouse_check_button_released
+    </a>
+   </li>
+   <li>
+    <a href="device_mouse_dbclick_enable.htm">
+     device_mouse_dbclick_enable
+    </a>
+   </li>
+   <li>
+    <a href="device_mouse_x.htm">
+     device_mouse_x
+    </a>
+   </li>
+   <li>
+    <a href="device_mouse_y.htm">
+     device_mouse_y
+    </a>
+   </li>
+   <li>
+    <a href="device_mouse_raw_x.htm">
+     device_mouse_raw_x
+    </a>
+   </li>
+   <li>
+    <a href="device_mouse_raw_y.htm">
+     device_mouse_raw_y
+    </a>
+   </li>
+   <li>
+    <a href="device_mouse_x_to_gui.htm">
+     device_mouse_x_to_gui
+    </a>
+   </li>
+   <li>
+    <a href="device_mouse_y_to_gui.htm">
+     device_mouse_y_to_gui
+    </a>
+   </li>
+   <li>
+    <a href="device_is_keypad_open.htm">
+     device_is_keypad_open
+    </a>
+   </li>
+   <li>
+    <a href="device_get_tilt_x.htm">
+     device_get_tilt_x
+    </a>
+   </li>
+   <li>
+    <a href="device_get_tilt_y.htm">
+     device_get_tilt_y
+    </a>
+   </li>
+   <li>
+    <a href="device_get_tilt_z.htm">
+     device_get_tilt_z
+    </a>
+   </li>
+  </ul>
+  Please note that on mobile devices (Android, iOS and Windows Phone), you can use the back button at any time, as it is mapped to the keyboard
+  <b>
+   backspace
+  </b>
+  which is the
+  <span>
+   GameMaker
+  </span>
+  <a href="../Keyboard_Input/Keyboard_Input.htm">
+   keyboard constant
+  </a>
+  <span>
+   vk_backspace
+  </span>
+  , so you can do checks for that key and perform actions on those devices as if the back button had been used.
+ </body>
+</html>

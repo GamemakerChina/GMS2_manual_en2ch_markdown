@@ -1,0 +1,46 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   view_visible
+  </h1>
+  This variable can be used to find out if a particular view port is currently visible or not. You can also set this variable to effectively turn "on" or "off" a view by setting the value to
+  <span>
+   true
+  </span>
+  (visible) or
+  <span>
+   false
+  </span>
+  (invisible). Note that even if you have a view port set to visible, if view ports are not enabled (using the built-in variable
+  <a href="view_enabled.htm">
+   <span>
+    view_enabled
+   </span>
+  </a>
+  or enabling them in the Room Editor) then they will not be drawn to the screen.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">view_visible[0 ... 7];
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a>
+(true: enabled, false: disabled)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if !view_visible[0]
+{
+    view_visible[0] = true;
+}
+</code></pre>
+  The above code checks to see if view[0] is visible or not and if it is not, it then sets it to be visible.
+ </body>
+</html>

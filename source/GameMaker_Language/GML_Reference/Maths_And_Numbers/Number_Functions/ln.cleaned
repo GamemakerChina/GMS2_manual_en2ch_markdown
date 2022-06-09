@@ -1,0 +1,66 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   ln
+  </h1>
+  The natural logarithm
+  <span>
+   ln(n)
+  </span>
+  is the amount of time needed to reach a certain level of continuous growth, where n is the level reached. So if we want to find out how many time units we need to get 20 growth we would use
+  <span>
+   ln(20)
+  </span>
+  which
+    returns 2.99 units of time to get that amount of growth.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">ln(n);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      n
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The input value.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">alarm[0] = ln(age) * room_speed;
+</code></pre>
+  The above code uses the natural logarithm of the value stored in the variable "age" to set an alarm.
+ </body>
+</html>

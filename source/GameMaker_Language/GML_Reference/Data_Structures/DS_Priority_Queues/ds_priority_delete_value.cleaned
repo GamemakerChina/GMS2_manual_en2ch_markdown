@@ -1,0 +1,78 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   ds_priority_delete_value
+  </h1>
+  This function will simply delete the given value, along with its priority, from the indexed priority queue.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">ds_priority_delete_value(id,val);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Priority_Queues/ds_priority_create.htm">
+        DS Priority ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The id of the priority queue to use.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      val
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm#variable">
+        Variable
+       </a>
+      </span>
+     </td>
+     <td>
+      The value to delete from the priority queue.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if (ai_move == false)
+{
+    ds_priority_delete_value(ai_priority, AI_Move);
+}
+</code></pre>
+  The above code checks an instance variable and if it returns
+  <span>
+   false
+  </span>
+  it will remove the indexed script function from the priority queue.
+ </body>
+</html>

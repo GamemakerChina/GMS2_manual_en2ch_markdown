@@ -1,0 +1,35 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   draw_flush
+  </h1>
+  With this function you can flush the entire draw pipeline. This is a
+  <b>
+   debug only
+  </b>
+  function and in general
+  <i>
+   it should not be used
+  </i>
+  unless indicated by a member of the YoYo Games Support
+      staff, as indiscriminate use will cause serious performance issues with your game.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">draw_flush();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">draw_flush();
+</code></pre>
+  The above code flushes the draw pipeline.
+ </body>
+</html>

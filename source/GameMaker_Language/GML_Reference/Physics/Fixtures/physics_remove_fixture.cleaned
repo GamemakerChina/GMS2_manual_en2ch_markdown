@@ -1,0 +1,77 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   physics_remove_fixture
+  </h1>
+  This function removes (or "un-binds") a fixture from an instance or instances. It requires the unique "id" of the bound fixture (as returned by the function
+  <a href="physics_fixture_bind.htm">
+   <span>
+    physics_fixture_bind()
+   </span>
+  </a>
+  and it will remove all the currently defined physics properties for the instance, permitting you to redefine a new fixture and bind that to the instance. In this way you can change the instances physical properties without having to destroy and re-create it.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">physics_remove_fixture(id, fixture)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/id.htm">
+        Instance ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The ID of the instance to remove the fixture from
+     </td>
+    </tr>
+    <tr>
+     <td>
+      fixture
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Physics/Fixtures/physics_fixture_create.htm">
+        Physics Fixture ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The ID of the fixture that is to be removed from the instance
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">physics_remove_fixture(id, my_fix);
+</code></pre>
+  The code above will remove the fixture with the "id" stored in the variable "my_fix" from the instance.
+ </body>
+</html>

@@ -1,0 +1,90 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   view_set_visible
+  </h1>
+  This function can be used to set the visibility of the given view port. The function takes the view port index (from 0 to 7) and a boolean
+  <span>
+   true
+  </span>
+  if it is visible and
+  <span>
+   false
+  </span>
+  if it is not.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">view_set_visible(view_port, visible)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      view_port
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The view port to target (0 - 7)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      visible
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Visibility toggle (
+      <span>
+       true
+      </span>
+      is visible and
+      <span>
+       false
+      </span>
+      is invisible)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if !view_get_visible(0)
+{
+    view_set_visible(0, true);
+}
+</code></pre>
+  The above code will check to see if the view port[0] is visible and if it is not it is set to visible.
+ </body>
+</html>

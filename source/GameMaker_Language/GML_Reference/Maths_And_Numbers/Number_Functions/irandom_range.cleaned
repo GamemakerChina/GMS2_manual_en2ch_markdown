@@ -1,0 +1,110 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   irandom_range
+  </h1>
+  This function is similar to
+  <a href="random_range.htm">
+   <span>
+    random_range()
+   </span>
+  </a>
+  only with integer values as the input. You supply the low value for the range as well as the high value, and the function will return a random integer value within (and
+    including) the given range. For example,
+  <span>
+   irandom_range(10, 35)
+  </span>
+  will return an integer between 10 and 35
+  <i>
+   inclusive
+  </i>
+  .
+  
+  
+   As with the
+  <a href="irandom.htm">
+   <span>
+    irandom()
+   </span>
+  </a>
+  function, real numbers can be used, in which case they will be rounded down to the nearest integer EG: irandom_range(6.2,9.9) will give a value between 6 and 9.
+  <b>
+   <span>
+    NOTE
+   </span>
+  </b>
+  This function will return the same value every time the game is run afresh due to the fact that GameMaker: Studio generates the same initial random seed every time to make debugging code a far easier task. To avoid this behaviour use
+  <span>
+   <a href="randomise.htm">
+    <span>
+     randomise()
+    </span>
+   </a>
+  </span>
+  at the start of your game.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">irandom_range(n1, n2);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      n1
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The low end of the range from which the random number will be selected.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      n2
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The high end of the range from which the random number will be selected.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">score += irandom_range(500, 600);
+</code></pre>
+  This will add an integer value anywhere between 500 and 600 (inclusive) to the total score.
+ </body>
+</html>

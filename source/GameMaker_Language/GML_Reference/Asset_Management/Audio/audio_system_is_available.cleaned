@@ -1,0 +1,67 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   audio_system_is_available
+  </h1>
+  This function can be used to check and see if the audio system has been initialised, or if the audio context is running. On all platforms, this function will return true immediately after Game Start when the audio engine is initialised,
+  <i>
+   except on the
+   <b>
+    HTML5
+   </b>
+   target
+  </i>
+  . On HTML5, the audio context status can change at any time depending on user input, the browser being used, and its version, so this function can be used to check and see if audio can be played or not. If the function returns
+  <span>
+   false
+  </span>
+  (ie: the audio context status is not running), then only unstreamed sounds
+  <i>
+   may
+  </i>
+  play (but it's not guaranteed, and you should assume that no audio can be played), while if it returns
+  <span>
+   true
+  </span>
+  then all audio will play.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">audio_system_is_available();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if audio_system_is_available()
+{
+    if audio_is_paused(global.Music)
+    {
+        audio_resume_sound(global.Music)
+    }
+    else
+    {
+        if !audio_is_playing(global.Music)
+        {
+            global.Music = audio_play_sound(snd_Music, 0, true);
+        }
+    }
+}
+else
+{
+    if audio_is_playing(global.Music)
+    {
+        audio_pause_sound(global.Music);
+    }
+}
+</code></pre>
+  The above code will pause/unpause an audio track depending on whether the audio system is initialised and available or not.
+ </body>
+</html>

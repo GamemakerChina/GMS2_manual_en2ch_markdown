@@ -1,0 +1,107 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   instance_deactivate_all
+  </h1>
+  This function will deactivate
+  <b>
+   all
+  </b>
+  instances that are in the room at the moment that the code is run. This may include the instance running the code if the "notme" flag is set to
+  <span>
+   false
+  </span>
+  , but normally you would want that instance to be active, in which case the "notme" flag should be set to
+  <span>
+   true
+  </span>
+  . Note that deactivation is not instantaneous, and an instance that has been deactivated in this way will not be considered to be inactive until the end of the event in which the function was called.
+  <b>
+   NOTE
+  </b>
+  : If you deactivate an instance on room start (ie:from the room creation code, or from an instance create event of an instance within the room) all instances that are placed within the room from the room editor
+  <b>
+   will still run their create event
+  </b>
+  before being deactivated.
+  <b>
+  </b>
+  <b>
+   WARNING
+  </b>
+  : Deactivating instances that have physics enabled will
+  <b>
+   NOT
+  </b>
+  stop their fixtures from interacting within the physics simulation. For that you should set their
+  <span>
+   <a href="../../../Physics/Physics_Variables/phy_active.htm">
+    <span>
+     phy_active
+    </span>
+   </a>
+  </span>
+  variable to
+  <span>
+   true
+  </span>
+  or
+  <span>
+   false
+  </span>
+  as you activate/deactivate the instances.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">instance_deactivate_all(notme);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      notme
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Whether to keep the calling instance activated (true) or not (false).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">instance_deactivate_all(true);
+var _vx = camera_get_view_x(view_camera[0]);
+var _vy = camera_get_view_y(view_camera[0]);
+var _vw = camera_get_view_width(view_camera[0]);
+var _vh = camera_get_view_height(view_camera[0]);
+instance_activate_region(_vx - 64, _vy - 64, _vw + 128, _vh + 128, false);
+</code></pre>
+  The above code deactivates all instances except the one that is running the code and then activates a region within the room.
+ </body>
+</html>

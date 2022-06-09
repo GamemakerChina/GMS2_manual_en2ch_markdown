@@ -1,0 +1,82 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   path_get_kind
+  </h1>
+  Paths can be either
+  <i>
+   smooth
+  </i>
+  or
+  <i>
+   straight
+  </i>
+  (a smooth path calculates a curved path around the defining points, whereas a straight path just goes straight from one point to another). This
+    function can be used to find out whether the given path is smooth (
+  <span>
+   true
+  </span>
+  ) or not (
+  <span>
+   false
+  </span>
+  ).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">path_get_kind(index);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Paths.htm">
+        Path Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the path to check.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">path_kind = path_get_kind(pth_Patrol);
+</code></pre>
+  This will set the "path_kind" variable to
+  <span>
+   true
+  </span>
+  or
+  <span>
+   false
+  </span>
+  depending on the kind of path the given path index is.
+ </body>
+</html>

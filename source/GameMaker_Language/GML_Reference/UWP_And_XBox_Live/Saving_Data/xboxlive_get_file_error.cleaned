@@ -1,0 +1,108 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   xboxlive_get_file_error
+  </h1>
+  This function will return a constant (shown below) to help debug why a file function failed so that you can take appropriate action in your game code. When one of the file functions fails you can call the function to find out exactly what the error was.
+  <b>
+   NOTE
+  </b>
+  : When using the asynchronous
+  <a href="../../Buffers/buffer_save_async.htm">
+   save
+  </a>
+  /
+  <a href="../../Buffers/buffer_load_async.htm">
+   load
+  </a>
+  functions, the
+  <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">
+   <span>
+    async_load
+   </span>
+  </a>
+  map will have an extra key, "
+  <b>
+   error
+  </b>
+  " which will also contain one of the constants (shown below).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">xboxlive_get_file_error();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Reference/UWP_And_XBox_Live/Saving_Data/xboxlive_get_file_error.htm">
+ Xbox File Error Constant
+</a></code></pre>
+  <table>
+   <colgroup>
+    <col/>
+    <col/>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/UWP_And_XBox_Live/Saving_Data/xboxlive_get_file_error.htm">
+        Xbox File Error Constant
+       </a>
+      </span>
+     </th>
+    </tr>
+    <tr>
+     <th>
+      Constant
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       xboxlive_fileerror_outoflocalstorage
+      </span>
+     </td>
+     <td>
+      If this occurs while saving this means that all available save game space has been used up, and the user has declined the offer (presented by the OS) of freeing up space. The game should confirm with the user that they intend to continue playing without saving. If they still want to be able to save, the game should retry the save operation.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       xboxlive_fileerror_quotaexceeded
+      </span>
+     </td>
+     <td>
+      If this occurs the game should notify the user that they can't save any more data until they free up some space, and then present them with a way of doing this.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       xboxlive_fileerror_noerror
+      </span>
+     </td>
+     <td>
+      The file save or load function was carried out without issues.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">buffer_save(buff, "SaveGame.bin");
+if (xboxlive_get_file_error() != xboxlive_fileerror_noerror)
+{
+    show_debug_message("Save failed. Error code = " + string(xboxlive_get_file_error()));
+}
+</code></pre>
+  The above code checks to see if there was an error with saving and if so the error code is printed out to the console.
+ </body>
+</html>

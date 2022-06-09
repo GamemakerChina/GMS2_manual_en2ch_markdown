@@ -1,0 +1,46 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <span>
+    GML Visual
+   </span>
+  </h1>
+  <span>
+   GML Visual
+  </span>
+  is the
+  <strong>
+   visual scripting
+  </strong>
+  method for programming with the
+  <a href="../GameMaker_Language/GameMaker_Language_Index.htm">
+   GameMaker Language
+  </a>
+  (GML). It consists of using
+  <strong>
+   action blocks
+  </strong>
+  to construct game logic in a visual and intuitive way, and is an ideal tool for people who are learning programming, or for people that have a more visual inclination.
+  
+  
+   The
+  <span>
+   GML Visual
+  </span>
+  section of the manual is split into the following sections:
+  <ul>
+   <li>
+    <a href="Drag_And_Drop_Overview/DnD_Overview.htm">
+     Overview
+    </a>
+   </li>
+   <li>
+    <a href="Drag_And_Drop_Reference/DnD_Reference.htm">
+     Reference
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

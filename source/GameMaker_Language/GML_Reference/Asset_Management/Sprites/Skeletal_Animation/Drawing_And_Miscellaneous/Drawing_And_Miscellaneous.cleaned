@@ -1,0 +1,71 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Drawing And Miscellaneous
+  </h1>
+  The following functions are additional tools for getting various different sets of data about a skeleton animation sprite:
+  <ul>
+   <li>
+    <a href="skeleton_get_minmax.htm">
+     skeleton_get_minmax
+    </a>
+   </li>
+   <li>
+    <a href="skeleton_get_num_bounds.htm">
+     skeleton_get_num_bounds
+    </a>
+   </li>
+   <li>
+    <a href="skeleton_get_bounds.htm">
+     skeleton_get_bounds
+    </a>
+   </li>
+  </ul>
+  You can also use various draw functions designed specifically for these types of sprite (apart from the regular
+  <a href="../../../../Drawing/Sprites_And_Tiles/Sprites_And_Tiles.htm">
+   <span>
+    draw_sprite()
+   </span>
+  </a>
+  functions). These functions give you more control over what is being drawn and permit you to change animation specific features, such as timing and skins:
+  <ul>
+   <li>
+    <a href="skeleton_collision_draw_set.htm">
+     skeleton_collision_draw_set
+    </a>
+   </li>
+   <li>
+    <a href="draw_skeleton.htm">
+     draw_skeleton
+    </a>
+   </li>
+   <li>
+    <a href="draw_skeleton_instance.htm">
+     draw_skeleton_instance
+    </a>
+   </li>
+   <li>
+    <a href="draw_skeleton_collision.htm">
+     draw_skeleton_collision
+    </a>
+   </li>
+   <li>
+    <a href="draw_skeleton_time.htm">
+     draw_skeleton_time
+    </a>
+   </li>
+   <li>
+    <a href="draw_enable_skeleton_blendmodes.htm">
+     draw_enable_skeleton_blendmodes
+    </a>
+   </li>
+   <li>
+    <a href="draw_get_enable_skeleton_blendmodes.htm">
+     draw_get_enable_skeleton_blendmodes
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

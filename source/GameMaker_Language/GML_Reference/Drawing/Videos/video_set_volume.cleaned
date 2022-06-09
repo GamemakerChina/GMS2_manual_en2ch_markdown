@@ -1,0 +1,103 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   video_set_volume
+  </h1>
+  This function changes the audio volume of the video that is currently loaded. It takes a value between
+  <span>
+   0
+  </span>
+  and
+  <span>
+   1
+  </span>
+  , where
+  <span>
+   0
+  </span>
+  is silent and
+  <span>
+   1
+  </span>
+  is the maximum volume.
+   
+   
+    Ensure that this is only called after a
+  <span>
+   <a href="video_open.htm">
+    video_open()
+   </a>
+  </span>
+  call but before a
+  <span>
+   <a href="video_close.htm">
+    video_close()
+   </a>
+  </span>
+  call, otherwise it will not do anything (as there will not be a video loaded).
+   
+   
+    On some platforms, this function will only work after the video has been loaded completely, so use
+  <a href="Videos.htm#h">
+   Async Callbacks
+  </a>
+  to find out when the video is ready and then change the volume.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">video_set_volume(value);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      value
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      Volume value between 0 and 1
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">my_video = video_open("splash.mp4");
+video_set_volume(0.5);
+</code></pre>
+  The code above loads
+  <span>
+   splash.mp4
+  </span>
+  from the Included Files of the game, and changes its volume to
+  <span>
+   0.5
+  </span>
+  (50% of its maximum volume).
+ </body>
+</html>

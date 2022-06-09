@@ -1,0 +1,59 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   The Physics World
+  </h1>
+  Before any physical reactions can occur in
+  <span>
+   GameMaker
+  </span>
+  you must first define the physics world in which they are going to happen. If you do not do this,
+  <span>
+   GameMaker
+  </span>
+  will default to the basic collision functions, and all other physics related code or settings will be ignored. You can set up the physics world from the
+  <a href="../../../../The_Asset_Editors/Room_Properties/Room_Properties.htm">
+   Room Editor
+  </a>
+  , but you can also set the same properties using code with the following functions:
+  <ul>
+   <li>
+    <a href="physics_world_create.htm">
+     physics_world_create
+    </a>
+   </li>
+   <li>
+    <a href="physics_world_gravity.htm">
+     physics_world_gravity
+    </a>
+   </li>
+   <li>
+    <a href="physics_world_update_iterations.htm">
+     physics_world_update_iterations
+    </a>
+   </li>
+   <li>
+    <a href="physics_world_update_speed.htm">
+     physics_world_update_speed
+    </a>
+   </li>
+   <li>
+    <a href="physics_world_draw_debug.htm">
+     physics_world_draw_debug
+    </a>
+   </li>
+   <li>
+    <a href="physics_draw_debug.htm">
+     physics_draw_debug
+    </a>
+   </li>
+   <li>
+    <a href="physics_pause_enable.htm">
+     physics_pause_enable
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

@@ -1,0 +1,83 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   weak_ref_create
+  </h1>
+  With this function you can create a
+  <a>
+   weak reference
+  </a>
+  to a struct which can then be used to check if the struct is still "alive" (referenced) or not in the game. You supply the reference to the struct you want to track, and the function will return another struct which is a weak reference to that struct. Note that you can check whether a reference is "strong" or "weak" by using the function
+  <span>
+   <a href="../Variable_Functions/instanceof.htm">
+    instanceof()
+   </a>
+  </span>
+  , as a strong reference will return either "
+  <span>
+   struct
+  </span>
+  " or the name of the constructor function that created the struct, or "
+  <span>
+   weakref
+  </span>
+  " if it's a weak reference. Also note that the weak reference struct will have a variable "
+  <span>
+   ref
+  </span>
+  " which can be accessed to get the strong reference to the struct in question, unless it has been garbage collected, in which case it will return
+  <span>
+   undefined
+  </span>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">weak_ref_create(struct_to_track);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      struct_to_track
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Structs.htm">
+        Struct
+       </a>
+      </span>
+     </td>
+     <td>
+      The struct that you want to create a weak reference for
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Reference/Garbage_Collection/weak_ref_create.htm">
+ Struct Weak Reference
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">inventory_ref = weak_ref_create(inventory);
+</code></pre>
+  The above code creates a weak reference to a struct and stores it in an instance variable for later use.
+ </body>
+</html>

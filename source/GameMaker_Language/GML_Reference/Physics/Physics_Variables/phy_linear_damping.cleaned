@@ -1,0 +1,36 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   phy_linear_damping
+  </h1>
+  This variable can be used to set the linear damping of the instance, or it can be used to get the current linear damping. The damping is the amount of "resistance" to forward movement that the physics enabled instance has, with a lower value permitting the instance to move and accelerate faster and a higher value making it require a more forceful push
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">phy_linear_damping;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a>
+(single precision floating point value, or undefined if the instance is not physics enabled)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if place_meeting(phy_position_x, phy_position_y, obj_Water)
+{
+    phy_linear_damping = 10;
+}
+else
+{
+    phy_linear_damping = 3;
+}
+</code></pre>
+  The above code will check for a collision between the calling instance and instances of "obj_Water" and change the linear damping accordingly.
+ </body>
+</html>

@@ -1,0 +1,94 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   path_append
+  </h1>
+  With this code you can append one path onto another one, effectively joining them together, and for this to work, both paths must previously exist. In general you would want to use this function on paths created using
+  <span>
+   <a href="path_add.htm">
+    path_add()
+   </a>
+  </span>
+  , since if you use it on a path asset,
+  <strong>
+   it will permanently affect the path for instances in the game
+  </strong>
+  from the moment the function is used until the end of the game.
+  <span>
+   NOTE
+  </span>
+  This will not remove the path being appended from the game. It is still there, only it now has no points in it and if you no longer wish to use it you should remove it with the function
+  <span>
+   <a href="path_delete.htm">
+    <span>
+     path_delete()
+    </span>
+   </a>
+  </span>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">path_append(index, path);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../The_Asset_Editors/Paths.htm">
+        Path Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The new index of the path.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      path
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../The_Asset_Editors/Paths.htm">
+        Path Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the path that will be appended to 'index'.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">path_append(mypath, mppath);
+path_delete(mppath);
+</code></pre>
+  The above code appends the path data indexed in the variable "mppath" to the path indexed in the variable "mypath" and then deletes the "mppath" from memory.
+ </body>
+</html>

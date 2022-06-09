@@ -1,0 +1,45 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   gpu_get_alphatestenable
+  </h1>
+  With this function you can check to see whether alpha testing is enabled (returns
+  <span>
+   true
+  </span>
+  ) or not (returns
+  <span>
+   false
+  </span>
+  ). For more information on alpha testing, see the function
+  <a href="gpu_set_alphatestref.htm">
+   <span>
+    gpu_set_alphatestref()
+   </span>
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">gpu_get_alphatestenable();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if !gpu_get_alphatestenable()
+{
+    gpu_set_alphatestenable(true);
+    gpu_set_alphatestref(128);
+}
+</code></pre>
+  The above code will check to see if alpha testing is enabled and if not it will switch on alpha testing and set the test threshold to 128 (only pixels with an alpha over 0.5 will be drawn).
+ </body>
+</html>

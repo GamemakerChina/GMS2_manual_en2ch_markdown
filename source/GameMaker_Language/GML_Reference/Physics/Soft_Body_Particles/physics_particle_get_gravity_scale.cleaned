@@ -1,0 +1,33 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   physics_particle_get_gravity_scale
+  </h1>
+  With this function you can find out what the current gravity scale factor is for particles in the physics simulation (you can set this value using
+  <a href="physics_particle_set_gravity_scale.htm">
+   <span>
+    physics_particle_set_gravity_scale()
+   </span>
+  </a>
+  ).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">physics_particle_get_gravity_scale()
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">physics_particle_set_gravity_scale(physics_particle_get_gravity_scale() + 0.1);
+</code></pre>
+  The above code will set the gravity scale.
+ </body>
+</html>

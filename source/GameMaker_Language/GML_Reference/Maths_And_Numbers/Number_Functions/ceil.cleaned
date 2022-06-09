@@ -1,0 +1,65 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   ceil
+  </h1>
+  This function takes any real number and rounds it up to the nearest integer. Care should be taken with this function as one common mistake is to use it round up a random value and expect it always to be greater than 1, ie:
+  <pre><code class="language-gml">int = ceil(random(5));
+</code></pre>
+  Now, you would expect this code to
+  <i>
+   always
+  </i>
+  give an integer between 1 and 5, but this may not always be the case as there is a very small possibility that the random function will return 0, and rounding up 0 still gives you 0. This is a remote
+    possibility but should be taken into account when using this function.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">ceil(val);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      x
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The number to change.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">val = ceil( 3.4 );
+</code></pre>
+  This will set val to 4.
+ </body>
+</html>

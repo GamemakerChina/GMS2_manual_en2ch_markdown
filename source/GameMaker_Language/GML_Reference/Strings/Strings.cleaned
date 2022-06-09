@@ -1,0 +1,457 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Strings
+  </h1>
+  At some time when making your game you will need to use text. Text in games is dealt with by using the
+  <b>
+   string
+  </b>
+  functions (a string is just another way of saying a line of text) and
+  <span>
+   GameMaker
+  </span>
+  has a complete set of functions that permit you to manipulate strings in many ways, including the insertion of one string in another, the copying of strings and the ability to parse strings for the digits or the letters that they contain. In general a string can
+  <i>
+   only
+  </i>
+  be created by adding text within double quotes " " and
+  <em>
+   single quote strings are not accepted
+  </em>
+  , nor can you split the string over multiple lines and expect
+  <span>
+   GameMaker
+  </span>
+  to render it as if the line breaks were newlines (unless a
+  <strong>
+   string literal
+  </strong>
+  <span>
+   @
+  </span>
+  identifier is used, as explained below).
+  
+  
+   It is worth noting that there are certain conventions that you can use when creating strings, mostly concerned with using
+  <i>
+   escape characters
+  </i>
+  . These are characters that are preceded by a "
+  <span>
+   \
+  </span>
+  " symbol. So, for example, if you wanted to put quotation marks within a string you would have something like this:
+  <pre><code class="language-gml">str = "Hello\"World\"";
+</code></pre>
+  <span>
+   GameMaker
+  </span>
+  also has full four byte wide Unicode character support, allowing you to decode and encode Unicode characters in the upper bounds of the standard (including - but not limited to - emoji). To deal with Unicode characters, you can use the "
+  <span>
+   \
+  </span>
+  " to precede any Unicode literal - digits of hex preceded a "
+  <span>
+   u
+  </span>
+  ", for example "
+  <span>
+   <span>
+    \u00e2
+   </span>
+  </span>
+  " for "á"- where the digits are the number of the Unicode character. When working with Unicode in this way, you need to be aware of the fact that
+  <span>
+   GameMaker
+  </span>
+  will interpret
+  <i>
+   all
+  </i>
+  digits following the "
+  <span>
+   u
+  </span>
+  ", so if you wanted to write "áa" for example, you should use:
+  <pre><code class="language-gml">"\u00e2\a"
+</code></pre>
+  or
+  <pre><code class="language-gml">"\u00e2\u61"
+</code></pre>
+  or
+  <pre><code class="language-gml">"\u00e2" + "a"
+</code></pre>
+  as just using "
+  <span>
+   \u00e2a
+  </span>
+  " would actually result in the Unicode character "
+  <span>
+   ส
+  </span>
+  " (essentially becoming "
+  <span>
+   \ue2a
+  </span>
+  ").
+  <i>
+  </i>
+  <span>
+   GameMaker
+  </span>
+  can also handle any hexadecimal literal - normally written as digits of hex following "
+  <span>
+   0x
+  </span>
+  ", for example "
+  <span>
+   0xff
+  </span>
+  ", where the digits are the number of the character to use. In
+  <span>
+   GameMaker
+  </span>
+  these are written using "
+  <span>
+   \x
+  </span>
+  " and then the hex value. These and other predefined escape characters are listed in the table below:
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Constant
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      \n
+     </td>
+     <td>
+      Newline
+     </td>
+    </tr>
+    <tr>
+     <td>
+      \r
+     </td>
+     <td>
+      Carriage return
+     </td>
+    </tr>
+    <tr>
+     <td>
+      \b
+     </td>
+     <td>
+      Backspace (0x08)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      \f
+     </td>
+     <td>
+      Form Feed (0x0c)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      \t
+     </td>
+     <td>
+      Horizontal Tab (0x09)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      \v
+     </td>
+     <td>
+      Vertical Tab (0x0b)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      \\
+     </td>
+     <td>
+      Backslash itself (0x5c)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      \a
+     </td>
+     <td>
+      Alert (0x07)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      \u[Hex Digits]
+     </td>
+     <td>
+      Insert Unicode character
+     </td>
+    </tr>
+    <tr>
+     <td>
+      \x[Hex Digits]
+     </td>
+     <td>
+      Insert hex literal character
+     </td>
+    </tr>
+    <tr>
+     <td>
+      \[Octal Digits]
+     </td>
+     <td>
+      Insert octal Unicode character
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <b>
+   NOTE
+  </b>
+  : Strings support form feed, vertical tab etc... but this does not mean to say that
+  <b>
+   rendering
+  </b>
+  does, and when drawing strings these characters may be ignored.
+  
+  
+   You can also create verbatim
+  <i>
+   string literals
+  </i>
+  by preceding the whole string with the
+  <span>
+   @
+  </span>
+  character:
+  <pre><code class="language-gml">var test = @"
+Line breaks
+over multiple
+lines
+";
+</code></pre>
+  The above code will render the string over multiple lines as if there was a line break escape character included. A verbatim string literal is similar to previous GameMaker version string literals but they also use double or single quotes and must be prefixed by an
+  <span>
+   @
+  </span>
+  symbol, they can be broken over multiple lines in the code file and they DO NOT support escaped characters i.e.
+  <span>
+   @"Hello\World"
+  </span>
+  will
+  <em>
+   not
+  </em>
+  try to escape the W on World and will be stored verbatim. Note though that when using string literals like this, you will need to break the string if you wish to include quotation marks as part of the string, ie:
+  <pre><code class="language-gml">var test = @"Hello " + "\"" + @"World" + "\""
+</code></pre>
+  Another thing to note is that the Unicode character 9647 (▯) is used to substitute any missing glyphs that you may have in your designated font when rendering it in the draw event. So if your font doesn't have, for example, the ° symbol, then writing 90° will actually produce 90▯.
+  
+  
+   The following list of functions are all for dealing with strings:
+  <ul>
+   <li>
+    <a href="ansi_char.htm">
+     ansi_char
+    </a>
+   </li>
+   <li>
+    <a href="chr.htm">
+     chr
+    </a>
+   </li>
+   <li>
+    <a href="ord.htm">
+     ord
+    </a>
+   </li>
+   <li>
+    <a href="real.htm">
+     real
+    </a>
+   </li>
+   <li>
+    <a href="string.htm">
+     string
+    </a>
+   </li>
+   <li>
+    <a href="string_byte_at.htm">
+     string_byte_at
+    </a>
+   </li>
+   <li>
+    <a href="string_byte_length.htm">
+     string_byte_length
+    </a>
+   </li>
+   <li>
+    <a href="string_set_byte_at.htm">
+     string_set_byte_at
+    </a>
+   </li>
+   <li>
+    <a href="string_char_at.htm">
+     string_char_at
+    </a>
+   </li>
+   <li>
+    <a href="string_ord_at.htm">
+     string_ord_at
+    </a>
+   </li>
+   <li>
+    <a href="string_copy.htm">
+     string_copy
+    </a>
+   </li>
+   <li>
+    <a href="string_count.htm">
+     string_count
+    </a>
+   </li>
+   <li>
+    <a href="string_delete.htm">
+     string_delete
+    </a>
+   </li>
+   <li>
+    <a href="string_digits.htm">
+     string_digits
+    </a>
+   </li>
+   <li>
+    <a href="string_format.htm">
+     string_format
+    </a>
+   </li>
+   <li>
+    <a href="string_insert.htm">
+     string_insert
+    </a>
+   </li>
+   <li>
+    <a href="string_length.htm">
+     string_length
+    </a>
+   </li>
+   <li>
+    <a href="string_letters.htm">
+     string_letters
+    </a>
+   </li>
+   <li>
+    <a href="string_lettersdigits.htm">
+     string_lettersdigits
+    </a>
+   </li>
+   <li>
+    <a href="string_lower.htm">
+     string_lower
+    </a>
+   </li>
+   <li>
+    <a href="string_pos.htm">
+     string_pos
+    </a>
+   </li>
+   <li>
+    <a href="string_pos_ext.htm">
+     string_pos_ext
+    </a>
+   </li>
+   <li>
+    <a href="string_last_pos.htm">
+     string_last_pos
+    </a>
+   </li>
+   <li>
+    <a href="string_last_pos_ext.htm">
+     string_last_pos_ext
+    </a>
+   </li>
+   <li>
+    <a href="string_repeat.htm">
+     string_repeat
+    </a>
+   </li>
+   <li>
+    <a href="string_replace.htm">
+     string_replace
+    </a>
+   </li>
+   <li>
+    <a href="string_replace_all.htm">
+     string_replace_all
+    </a>
+   </li>
+   <li>
+    <a href="string_upper.htm">
+     string_upper
+    </a>
+   </li>
+   <li>
+    <a href="string_height.htm">
+     string_height
+    </a>
+   </li>
+   <li>
+    <a href="string_height_ext.htm">
+     string_height_ext
+    </a>
+   </li>
+   <li>
+    <a href="string_width.htm">
+     string_width
+    </a>
+   </li>
+   <li>
+    <a href="string_width_ext.htm">
+     string_width_ext
+    </a>
+   </li>
+   <li>
+    <a href="string_hash_to_newline.htm">
+     string_hash_to_newline
+    </a>
+   </li>
+   <li>
+    <a href="../Variable_Functions/is_string.htm">
+     is_string
+    </a>
+   </li>
+  </ul>
+  Other than those functions that relate specifically to strings, some targets also give you access to the clipboard to get and set text information:
+  <ul>
+   <li>
+    <a href="clipboard_has_text.htm">
+     clipboard_has_text
+    </a>
+   </li>
+   <li>
+    <a href="clipboard_get_text.htm">
+     clipboard_get_text
+    </a>
+   </li>
+   <li>
+    <a href="clipboard_set_text.htm">
+     clipboard_set_text
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

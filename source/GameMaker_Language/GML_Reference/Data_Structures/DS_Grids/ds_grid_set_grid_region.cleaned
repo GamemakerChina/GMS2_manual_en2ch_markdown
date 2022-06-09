@@ -1,0 +1,167 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   ds_grid_set_grid_region
+  </h1>
+  This function can be used to copy the contents of a rectangular area of grid cells from one (previously defined) DS grid to another,
+  <i>
+   or
+  </i>
+  it can be used to copy a region from within the same grid. The following images illustrate both ways that
+    this function can be used:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/GML/Reference/Data_Structures/ds_grid_set_grid_region.png"/><br/>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">ds_grid_set_grid_region(index, source, x1, y1, x2, y2, xpos, ypos);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Grids/ds_grid_create.htm">
+        DS Grid ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the destination grid.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      source
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Grids/ds_grid_create.htm">
+        DS Grid ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the source grid.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      x1
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The left position of the region of cells to copy from the source grid.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y1
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The top position of the region of cells to copy from the source grid.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      x2
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The right position of the region of cells to copy from the source grid.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y2
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The bottom position of the region of cells to copy from the source grid.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      xpos
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x position on the destination grid to copy the source region to.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      ypos
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y position on the destination grid to copy the source region to.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">ds_grid_set_grid_region(grid, t_grid, 0, 0, 5, 5, 10, 10)
+</code></pre>
+  This would copy the region of cells from (0,0) to (5,5) of the grid indexed in the variable "t_grid" and copy them to position (10,10) in the grid indexed in the variable "grid".
+ </body>
+</html>

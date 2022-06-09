@@ -1,0 +1,174 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   JSDoc Script Comments
+  </h1>
+  If you wish your custom functions to have code completion and to show the required arguments in a specific manner in the code editor, then you need to add some
+  <a href="https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html">
+   JSDoc style
+  </a>
+  comments. These comments are used to tell the auto-complete feature how the function should be used and filled out in the
+  <a href="../Scripts.htm">
+   script editor
+  </a>
+  .
+  
+  
+   The format for a typical function header would be to have the function name, the description of the function, and then the list of the different arguments (parameters) that the function takes, making sure to start each line with a triple backslash "
+  <span>
+   ///
+  </span>
+  " as that tells
+  <span>
+   GameMaker
+  </span>
+  to parse the comment as being JSDoc style. The comments themselves need to be given an identifier (preceded by "
+  <span>
+   @
+  </span>
+  ") and content, and the available
+    identifiers are as follows:
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Identifier
+     </th>
+     <th>
+      Content
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       @function
+      </span>
+      /
+      <span>
+       @func
+      </span>
+     </td>
+     <td>
+      The full function name and arguments for the function, eg:
+      <span>
+       <span>
+        my_func(x, y, colour)
+       </span>
+      </span>
+      .
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       @description
+      </span>
+      /
+      <span>
+       @desc
+      </span>
+     </td>
+     <td>
+      A general description of what the function does.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       @param
+      </span>
+      /
+      <span>
+       @arg
+      </span>
+      /
+      <span>
+       @argument
+      </span>
+     </td>
+     <td>
+      The argument type (optional), enclosed in
+      <span>
+       {}
+      </span>
+      , the argument name, and a short description (with spaces in between)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  To get an idea of how this would work when writing your own functions, let's take this basic example:
+  <pre><code class="language-gml">function is_same_object(_id, _obj) {
+     if (_id.object_index == _obj)     {         return true;     }     else return false; }
+</code></pre>
+  All this script does is check to see if an instance has the same
+  <span>
+   object_index
+  </span>
+  as a given object and would be called simply as:
+  <pre><code class="language-gml">if is_same_object(id, obj_Player) {
+     instance_destroy() }
+</code></pre>
+  However, writing that into the code editor will show you the argument variable names directly (
+  <span>
+   _id
+  </span>
+  and
+  <span>
+   _obj
+  </span>
+  ) which in most cases is not very descriptive. You can use JSDoc to define custom argument names and descriptions, along with
+    information for the function as well:
+  <pre><code class="language-gml">/// @function                is_same_object(id, object) /// @description             Compare an instance index with an object index. /// @param {real} inst_id    The unique instance ID value of the instance to check. /// @param {real}
+object_id  The object index to be checked against.
+ function is_same_object(_id, _obj) {
+     if (_id.object_index == _obj)     {         return true;     }     else return false; }
+</code></pre>
+  Now, when calling this function anywhere in your project, you will see the new argument names that were entered in the JSDoc comments:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/JavaDoc_Example.png"/><br/>
+  In the image above, the top part shows the function in the auto-complete and the bottom part shows how the argument helper at the bottom works. Note that both the optional "type" and the obligatory "description" parts of
+  <span>
+   @param
+  </span>
+  are not displayed by default in the IDE code complete, and to see them you must activate the options in the
+  <a href="../../Setting_Up_And_Version_Information/IDE_Preferences/GML_Code_Preferences.htm">
+   GML Preferences
+  </a>
+  .
+  
+  
+   You can wrap an argument name in
+  <span>
+   []
+  </span>
+  brackets to indicate that it is optional. The code editor will then expect any number of arguments between the minimum required arguments and the total number of arguments. For example, see the following
+    function:
+  <pre><code class="language-gml">/// @function    animate_position(end_x, end_y, start_x, start_y) /// @desc        Animates the instance to ending point, from optional starting point /// @arg end_x /// @arg end_y /// @arg [start_x] /// @arg [start_y]
+ function animate_position (x1, y1, x2, y2) {
+     // Function code }
+</code></pre>
+  The
+  <span>
+   start_x
+  </span>
+  and
+  <span>
+   start_y
+  </span>
+  arguments are marked as optional, which means the code editor will now expect 2 to 4 arguments, as can be seen in the warning message:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/JavaDoc_Optional.png"/><br/>
+  <strong>
+   NOTE
+  </strong>
+  : You will get the same behaviour if you use optional arguments in the function declaration. See
+  <a href="../../GameMaker_Language/GML_Overview/Script_Functions.htm">
+   script functions
+  </a>
+  for more information.
+  
+  
+   Since scripts can have multiple functions in them, you can add JSDoc comments for each of them before its declaration:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/JavaDoc_MultipleFunctions.png"/><br/>
+ </body>
+</html>

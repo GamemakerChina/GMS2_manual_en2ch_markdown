@@ -1,0 +1,93 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   logn
+  </h1>
+  This function is similar to the
+  <a href="log2.htm">
+   <span>
+    log2(n)
+   </span>
+  </a>
+  and
+  <span>
+   <a href="log10.htm">
+    log10(n)
+   </a>
+  </span>
+  functions, only you stipulate the log base value. For example,
+  <span>
+   logn(5,25)
+  </span>
+  will return how many 5's we need to multiply
+    to get 25 (which is 2).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">logn(n, val);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      n
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The log base.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      val
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The input value.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">logval = logn(5, num);
+</code></pre>
+  The above code gets the
+  <span>
+   log5
+  </span>
+  of the value stored in "num".
+ </body>
+</html>

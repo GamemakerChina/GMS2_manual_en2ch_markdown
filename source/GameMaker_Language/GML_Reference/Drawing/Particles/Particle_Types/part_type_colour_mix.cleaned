@@ -1,0 +1,86 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   part_type_colour_mix
+  </h1>
+  With this function you can set the given particle type to be a random blend of two colours.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">part_type_colour_mix(ind, colour1, colour2);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      ind
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Types/part_type_create.htm">
+        Particle Type ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the particle type to change.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      colour1
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Colour_And_Alpha/Colour_And_Alpha.htm">
+        Colour
+       </a>
+      </span>
+     </td>
+     <td>
+      The first colour the blend will take from.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      colour2
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Colour_And_Alpha/Colour_And_Alpha.htm">
+        Colour
+       </a>
+      </span>
+     </td>
+     <td>
+      The second colour the blend will take from.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">part_type_colour_mix(global.P_Damage, c_red, c_yellow);
+</code></pre>
+  The above code will set the colour for each particle emitted of the particle type indexed in the global variable "P_Damage" to be a random mix between the colours red and yellow.
+ </body>
+</html>

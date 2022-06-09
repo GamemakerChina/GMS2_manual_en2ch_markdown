@@ -1,0 +1,94 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   window_set_fullscreen
+  </h1>
+  With this function you can set the game window to be full screen (
+  <span>
+   true
+  </span>
+  ) or not (
+  <span>
+   false
+  </span>
+  ). Please note that for the
+  <b>
+   macOS
+  </b>
+  target, you
+  <i>
+   must
+  </i>
+  have unchecked the "Start In Fullscreen" option and checked the "Allow the player to resize the game window" option in the
+  <a href="../../../../Settings/Game_Options.htm">
+   Game Options
+  </a>
+  , otherwise this function will fail. Also note that this function will
+  <i>
+   not
+  </i>
+  work on HTML5 unless it's added in as a "clickable" callback (see
+  <a href="../../Web_And_HTML5/clickable_add.htm">
+   here
+  </a>
+  for more details).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">window_set_fullscreen(full);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      full
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Whether to set the screen to fullscreen (true) or not (false).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if mouse_check_button_pressed(mb_left)
+{
+    if window_get_fullscreen()
+    {
+        window_set_fullscreen(false);
+    }
+    else
+    {
+        window_set_fullscreen(true);
+    }
+}
+</code></pre>
+  The above code checks for a mouse button press and then sets the window to fullscreen if it is not already, or sets it to windowed if it is already.
+ </body>
+</html>

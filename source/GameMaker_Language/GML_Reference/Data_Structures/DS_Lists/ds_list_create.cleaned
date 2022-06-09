@@ -1,0 +1,63 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   ds_list_create
+  </h1>
+  This function will create a new list data-structure and return the index value. This value should be stored in a variable and used in all further function calls relating to the list. Note that if you try and access a value in the list
+  <i>
+   before
+  </i>
+  it has been populated - i.e. the list is "empty" - then the return value may be 0 since internally the first few entries in the list are set when created to minimize performance issues when initially adding items to the list (although the
+  <a href="ds_list_size.htm">
+   <span>
+    ds_list_size()
+   </span>
+  </a>
+  function will still return 0 on a newly created list). If you wish to ensure that the list is "truly" empty on create, then you should call
+  <a href="ds_list_clear.htm">
+   <span>
+    ds_list_clear()
+   </span>
+  </a>
+  after creating the list, which will then mean that any values returned for unpopulated list slots will be
+  <span>
+   undefined
+  </span>
+  .
+  <b>
+   IMPORTANT!
+  </b>
+  When you create a data structure, the index value to identify it is an integer value starting at 0. This means that data structures of different types can have the
+  <b>
+   same
+  </b>
+  index value, so if in doubt you should be using the
+  <span>
+   <a href="../ds_exists.htm">
+    <span>
+     ds_exists()
+    </span>
+   </a>
+  </span>
+  function before accessing them. Also note that indexes are re-used, so a destroyed data structure index value may be used by a newly created one afterwards.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">ds_list_create();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Lists/ds_list_create.htm">
+ DS List ID
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">list = ds_list_create();
+</code></pre>
+  This will create a new list and assign its index id to the instance variable "list".
+ </body>
+</html>

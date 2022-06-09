@@ -1,0 +1,95 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   string_set_byte_at
+  </h1>
+  This function sets a byte directly in a string (based on the UTF8 format) and returns a copy of the string with the changes.
+  <span>
+   NOTE
+  </span>
+  This function is incredibly slow so consider carefully whether it is necessary and where you use it.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">string_set_byte_at(str, pos, byte);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      str
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The string to change the byte of.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      pos
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The position within the string (starting at 1) to change the byte of.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      byte
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The new byte value.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">str = string_set_byte_at("hello", 2, 97);
+</code></pre>
+  The above code would change the byte value of the second letter in the string, and so set the variable
+  <span>
+   str
+  </span>
+  to hold "hallo".
+ </body>
+</html>

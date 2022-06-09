@@ -1,0 +1,70 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   How to Disable Extensions?
+  </h1>
+  GameMaker has extensions for some target platforms, e.g.
+  <a href="https://marketplace.yoyogames.com/assets/10709/steamworks-ext">
+   Steamworks
+  </a>
+  and
+  <a href="https://github.com/YoYoGames/GDKExtension">
+   GDK
+  </a>
+  .
+   
+   
+    If you're using both of these extensions, you'll want to disable the GDK extension when building for Steam, and vice-versa.
+   
+   
+    This problem is not limited to these two extensions, and applies to any extension that is meant for a specific target.
+  <h2>
+   Disabling extensions selectively
+  </h2>
+  First,
+  <a href="../../Settings/Configurations.htm">
+   set up a configuration
+  </a>
+  for each one of your target platforms, if you haven't done so already.
+   
+   
+    This example only uses Steamworks and GDK.
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Disabling_Extensions/DisExt_Configs.png"/><br/>
+  Select the configuration for one target platform. Let's assume you selected the
+  <strong>
+   GDK
+  </strong>
+  configuration.
+   
+   
+    Open an extension that should not be used for GDK. For this example, open the Steamworks extension.
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Disabling_Extensions/DisExt_CopiesTo.png"/><br/>
+  Disable all of the targets under
+  <strong>
+   Copies To
+  </strong>
+  . This will ensure that the Steamworks extension is not executed when using the GDK configuration.
+   
+   
+    Now, switch over to your
+  <strong>
+   Steamworks
+  </strong>
+  configuration. Open the GDK extension, and disable all of its targets.
+  <h2>
+   Done!
+  </h2>
+  Now, whenever you build for GDK, use the GDK configuration; when you build for Steam, use the Steamworks configuration, and so on.
+   
+   
+    Using configurations this way allows you to control which extensions are used for building which platforms.
+   
+   
+    If you have more extensions, give them the same treatment: disable their exports in configurations that don't need them.
+   
+   
+    If you have more target platforms, add configurations for them, and modify which extensions are used for them.
+ </body>
+</html>

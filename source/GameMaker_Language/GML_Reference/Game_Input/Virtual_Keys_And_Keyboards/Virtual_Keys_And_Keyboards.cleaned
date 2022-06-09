@@ -1,0 +1,193 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Virtual Keys And Virtual Keyboards
+  </h1>
+  <b>
+  </b>
+  When developing games for touchscreen devices, it's often important to get keyboard input from the user. When using
+  <span>
+   GameMaker
+  </span>
+  this can be done in one of two ways:
+  <ul>
+   <li>
+    Create your own on-screen
+    <b>
+     virtual keys
+    </b>
+    to get input
+   </li>
+   <li>
+    Pop up the OS
+    <b>
+     virtual keyboard
+    </b>
+    and get input from that
+   </li>
+  </ul>
+  What you use will depend very much on the game and what you need, but in general you would use virtual keys when you want to have onscreen buttons for player control or for menus, while you'd use the virtual keyboard when you need player input, like getting a name or setting a value.
+  
+  
+   In order for your games to work properly on mobile devices with a touch screen, you may need to be able to assign areas of the screen to respond to certain things when they are touched by the user. This is done by assigning a "virtual Key" to an internally mapped standard keyboard key and then using the keyboard events that they generate to control your application. It is worth noting that these "virtual keys" are mapped to the
+  <i>
+   screen
+  </i>
+  position rather than room position and so the x/y values are absolute, based on the display size. This means that you don't need to worry about the use of views or the relative room coordinates, and can simply define the keys in the Create Event of an object (you only need to define a virtual key once per-room), then draw your key sprites in the
+  <a href="../../../../The_Asset_Editors/Object_Properties/Draw_Events.htm">
+   Draw GUI Event
+  </a>
+  , sizing the GUI layer to be the same as the screen.
+  <b>
+   <span>
+    NOTE
+   </span>
+  </b>
+  These functions will not work on the Windows, Ubuntu (Linux), nor the MacOS, target platforms using a touch screen, although they will receive mouse clicks as "touches".
+  
+  
+   The available virtual key functions are:
+  <ul>
+   <li>
+    <a href="virtual_key_add.htm">
+     virtual_key_add
+    </a>
+   </li>
+   <li>
+    <a href="virtual_key_show.htm">
+     virtual_key_show
+    </a>
+   </li>
+   <li>
+    <a href="virtual_key_hide.htm">
+     virtual_key_hide
+    </a>
+   </li>
+   <li>
+    <a href="virtual_key_delete.htm">
+     virtual_key_delete
+    </a>
+   </li>
+  </ul>
+  If you require text or numeric input in your game on a touchscreen device, then you can use the
+  <b>
+   virtual keyboard
+  </b>
+  functions provided to use the device OS keyboard. These functions will call up or hide the OS keyboard and accept input from it, however it will
+  <i>
+   not
+  </i>
+  trigger the regular keyboard events, but rather update the
+  <span>
+   <a href="../Keyboard_Input/keyboard_string.htm">
+    keyboard_string
+   </a>
+  </span>
+  variable with the user input (this is due to the fact that the virtual keyboard can input whole words and not just single characters).
+  
+  
+   Opening or closing the virtual keyboard will generate
+  <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events.htm">
+   System Asynchronous Events
+  </a>
+  , in which the
+  <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">
+   <span>
+    async_load
+   </span>
+  </a>
+  DS map will be populated with the following key/value pairs:
+  <ul>
+   <li>
+    "
+    <b>
+     event_type
+    </b>
+    " - the type of system event received, which will be "
+    <b>
+     virtual keyboard status
+    </b>
+    " for virtual keyboards.
+   </li>
+   <li>
+    "
+    <b>
+     screen_height
+    </b>
+    " - the height of the virtual keyboard (in pixels). This will be 0 if the keyboard is invisible.
+   </li>
+   <li>
+    "
+    <b>
+     keyboard_status
+    </b>
+    " - the current status of the keyboard, returned as one of the following strings:
+    <ul>
+     <li>
+      "hiding"
+     </li>
+     <li>
+      "hidden"
+     </li>
+     <li>
+      "showing"
+     </li>
+     <li>
+      "visible"
+     </li>
+    </ul>
+   </li>
+  </ul>
+  The available virtual keyboard functions are:
+  <b>
+   <span>
+    NOTE
+   </span>
+  </b>
+  These functions are only valid for the
+  <strong>
+   Android
+  </strong>
+  (including
+  <strong>
+   AndroidTV
+  </strong>
+  ),
+  <strong>
+   iOS
+  </strong>
+  (including
+  <strong>
+   tvOS
+  </strong>
+  ), and
+  <strong>
+   UWP
+  </strong>
+  target platforms.
+  <ul>
+   <li>
+    <a href="keyboard_virtual_show.htm">
+     keyboard_virtual_show
+    </a>
+   </li>
+   <li>
+    <a href="keyboard_virtual_hide.htm">
+     keyboard_virtual_hide
+    </a>
+   </li>
+   <li>
+    <a href="keyboard_virtual_status.htm">
+     keyboard_virtual_status
+    </a>
+   </li>
+   <li>
+    <a href="keyboard_virtual_height.htm">
+     keyboard_virtual_height
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

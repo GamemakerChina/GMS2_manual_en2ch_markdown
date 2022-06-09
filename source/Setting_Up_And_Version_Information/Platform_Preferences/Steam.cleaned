@@ -1,0 +1,28 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Steam Preferences
+  </h1>
+  The Steam SDK is used for Windows, macOS and Ubuntu (Linux) builds that are to be distributed through the Steam platform. This section contains the setup options required to get it working within your projects:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Setup_And_Version/Platform_Preferences/Steam_Prefs.png"/><br/>
+  <ul>
+   <li>
+    <strong>
+     Path To Steam SDK
+    </strong>
+    : The system path to where you have installed the Steam SDK. Once you have set this path to the SDK, you will then need to activate Steam in the
+    <a href="../../Settings/Game_Options.htm">
+     Game Options
+    </a>
+    and then
+      for each platform add the
+    <strong>
+     App ID
+    </strong>
+    .
+   </li>
+  </ul>
+ </body>
+</html>

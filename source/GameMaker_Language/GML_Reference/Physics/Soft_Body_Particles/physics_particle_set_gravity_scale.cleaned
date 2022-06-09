@@ -1,0 +1,76 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   physics_particle_set_gravity_scale
+  </h1>
+  With this function you can set the gravity scale factor for particles in the physics simulation. The function is designed to help prevent instability in the physics simulation, especially when using very small particles which may behave unpredictably
+    (i.e. break conservation of momentum) in scenarios such as explosions. Slowing these particles down by reducing gravity scale can stabilize their behaviour. This function is
+  <i>
+   global
+  </i>
+  in scope, in that it will change the gravity scale not just
+    for new particles created after the change, but also for those already present in the simulation.
+  <b>
+   NOTE
+  </b>
+  : Adjusting the number of update iterations per step (using the function
+  <span>
+   <a href="../The_Physics_World/physics_world_update_iterations.htm">
+    <span>
+     physics_world_update_iterations()
+    </span>
+   </a>
+  </span>
+  can also affect the effect of gravity on particles. Larger iteration sizes confer greater resistance to gravity.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">physics_particle_set_gravity_scale(scale)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      scale
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The scaling factor to be applied to gravity for all particles.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">physics_particle_set_radius(15); physics_particle_set_density(0.5);
+ physics_particle_set_damping(1);
+ physics_particle_set_gravity_scale(1);
+</code></pre>
+  The above code will set the base properties for all particles in the simulation.
+ </body>
+</html>

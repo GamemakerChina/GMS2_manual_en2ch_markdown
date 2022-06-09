@@ -1,0 +1,51 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   health
+  </h1>
+  This variable is
+  <b>
+   global
+  </b>
+  in scope and is used to hold a numeric value which is usually used for the player health. This variable is only designed to support legacy projects from previous versions of
+  <i>
+   GameMaker
+  </i>
+  and should
+  <b>
+   <i>
+    not be used in new projects
+   </i>
+  </b>
+  as it may be deprecated in the future.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">health;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a>
+(single precision floating point value)
+</code></pre>
+  <h4>
+   Example
+  </h4>
+  <pre><code class="language-gml">if (health &amp;amp;lt;= 0)
+{
+    global.state = "Game Over";
+    instance_destroy();
+}
+</code></pre>
+  The above code checks the
+  <span>
+   health
+  </span>
+  variable and if it is less than or equal to 0, a global variable is set and the instance is destroyed.
+ </body>
+</html>

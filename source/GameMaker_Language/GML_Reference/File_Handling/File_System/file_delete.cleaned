@@ -1,0 +1,88 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   file_delete
+  </h1>
+  This function will delete the specified file from the system. It should be noted that this function will only delete those files that
+  <span>
+   GameMaker
+  </span>
+  is able to create and parse: ini files, text files and binary files, or those files made to store game created resources like sprites or surfaces. However, it will
+  <i>
+   not
+  </i>
+  delete any other file. The function will also return
+  <span>
+   true
+  </span>
+  if the file has successfully been removed, or
+  <span>
+   false
+  </span>
+  in any other circumstances.
+  <b>
+   WARNING!
+  </b>
+  This function may not work as you expect due to
+  <span>
+   GameMaker
+  </span>
+  being sandboxed! Please see the section on
+  <a href="../../../../Additional_Information/The_File_System.htm">
+   File System Limits
+  </a>
+  for more information.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">file_delete(fname);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      fname
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The name of the file to delete.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if file_exists("level.txt")
+{
+    file_delete("level.txt");
+}
+</code></pre>
+  This would check for a file and if it exists it is deleted.
+ </body>
+</html>

@@ -1,0 +1,262 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   event_perform_async
+  </h1>
+  This function is used to perform any one of the
+  <a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events.htm">
+   Asynchronous Events
+  </a>
+  provided in
+  <span>
+   GameMaker
+  </span>
+  . You supply the Async event constant (shown in the table below) and a DS map which will be available in the called Async event in the
+  <span>
+   async_load
+  </span>
+  variable.
+  <table>
+   <colgroup>
+    <col/>
+    <col/>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Objects/Object_Events/event_perform_async.htm">
+        Async Event Type Constant
+       </a>
+      </span>
+     </th>
+    </tr>
+    <tr>
+     <th>
+      Constant
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <b>
+       ev_async_web_image_load
+      </b>
+     </td>
+     <td>
+      Image Loaded event
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <b>
+       ev_async_web
+      </b>
+     </td>
+     <td>
+      HTTP event
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <b>
+       ev_async_dialog
+      </b>
+     </td>
+     <td>
+      Dialog event
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <strong>
+       ev_async_web_iap
+      </strong>
+     </td>
+     <td>
+      In-App Purchase event
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <strong>
+       ev_async_web_cloud
+      </strong>
+     </td>
+     <td>
+      Cloud event
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <strong>
+       ev_async_web_networking
+      </strong>
+     </td>
+     <td>
+      Networking event
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <strong>
+       ev_async_web_steam
+      </strong>
+     </td>
+     <td>
+      Steam event
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <strong>
+       ev_async_social
+      </strong>
+     </td>
+     <td>
+      Social event
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <strong>
+       ev_async_push_notification
+      </strong>
+     </td>
+     <td>
+      Push Notification event
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <strong>
+       ev_async_save_load
+      </strong>
+     </td>
+     <td>
+      Save/Load Event
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <strong>
+       ev_async_audio_recording
+      </strong>
+     </td>
+     <td>
+      Audio Recording event
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <strong>
+       ev_async_audio_playback
+      </strong>
+     </td>
+     <td>
+      Audio Playback event
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <strong>
+       ev_async_system_event
+      </strong>
+     </td>
+     <td>
+      System event
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  Non-asynchronous events can be called using
+  <a href="event_perform.htm">
+   <span>
+    event_perform()
+   </span>
+  </a>
+  .
+  
+  
+   Note that the DS map specified in the second argument does not have to be destroyed manually as it will automatically be destroyed by the function after the Async event has been performed.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">event_perform_async(type, ds_map);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      type
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Objects/Object_Events/event_perform_async.htm">
+        Async Event Type Constant
+       </a>
+      </span>
+     </td>
+     <td>
+      The type of event to perform (see the table above).
+     </td>
+    </tr>
+    <tr>
+     <td>
+      ds_map
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/ds_map_create.htm">
+        DS Map ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The DS map to use as
+      <span>
+       async_load
+      </span>
+      in the called event.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var _map = ds_map_create();
+
+_map[? "id"] = "custom_async_event";
+_map[? "result"] = true;
+_map[? "data"] = { a: 13, b: 16 };
+
+event_perform_async(ev_async_social, _map);
+</code></pre>
+  The above code creates a DS map and populates it with custom entries to be read in the Async event. It then performs the Async Social event with the newly created map passed in as
+  <span>
+   async_load
+  </span>
+  for the called event.
+ </body>
+</html>

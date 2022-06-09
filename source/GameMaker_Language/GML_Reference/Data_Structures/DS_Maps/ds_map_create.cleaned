@@ -1,0 +1,43 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   ds_map_create
+  </h1>
+  This function is used to create a new, empty, DS map and will return its id which is then used to access the data structure in all other DS map functions.
+  <b>
+   IMPORTANT!
+  </b>
+  When you create a data structure, the index value to identify it is an integer value starting at 0. This means that data structures of different types can have the
+  <b>
+   same
+  </b>
+  index value, so if in doubt you should be using the
+  <span>
+   <a href="../ds_exists.htm">
+    <span>
+     ds_exists()
+    </span>
+   </a>
+  </span>
+  function before accessing them. Also note that indices are re-used, so a destroyed data structure index value may be used by a newly created one afterwards.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">ds_map_create();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/ds_map_create.htm">
+ DS Map ID
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">inventory = ds_map_create();
+</code></pre>
+  The above code will create a new, empty DS map and store its id index in the variable "inventory".
+ </body>
+</html>

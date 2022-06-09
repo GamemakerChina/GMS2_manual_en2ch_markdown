@@ -1,0 +1,176 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Applying Actions To Other Instances
+  </h1>
+  Most actions in the GML Visual libraries have an option to apply the action in different ways. This is called setting the
+  <strong>
+   action scope
+  </strong>
+  and it can be one of several things:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Applies_To.png"/><br/>
+  Essentially what you are telling
+  <span>
+   GameMaker
+  </span>
+  is the which instance should run the action. The default action scope
+    is
+  <span>
+   self
+  </span>
+  , which means that once the object is created as an instance in the room, that instance will run the action code. However this isn't always what you want, and you may want some actions to affect other, or even
+    all, instances in the room. This is where changing the action scope comes in.
+  
+  
+   The different scopes for performing actions are listed below, but it should be noted that changing the scope on an action in this way will only apply the new scope to that action
+  <em>
+   and not to subsequent actions in the chain
+  </em>
+  . If you want to apply
+    a change of action scope to multiple chained actions, then use the
+  <a href="../Drag_And_Drop_Reference/Common/Apply_To...htm">
+   Apply to...
+  </a>
+  action first.
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Overview/i_Scope_Self.png"/><br/>
+  <a href="#">
+   <span>
+    Self
+   </span>
+   <span>
+    Self
+   </span>
+  </a>
+  This is the default scope for an action and simply states that the action should only be called by the instance that is running the code.
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Overview/i_Scope_Other.png"/><br/>
+  <a href="#">
+   <span>
+    Other
+   </span>
+   <span>
+    Other
+   </span>
+  </a>
+  The
+  <span>
+   other
+  </span>
+  scope has two main functions, and the value it returns will depend on where and how you use it. In the
+  <strong>
+   Collision Event
+  </strong>
+  ,
+  <span>
+   other
+  </span>
+  will return the unique instance ID value
+      (a unique value that is used to distinguish individual instances of every object), so you can, for example, create a "bullet" instance and have a collision event with a "player" instance and in that use the
+  <span>
+   other
+  </span>
+  scope to remove hit points from the "player" object and then return to
+  <span>
+   self
+  </span>
+  scope to destroy the "bullet" instance.
+   
+   
+    Outside of the collision event the
+  <span>
+   other
+  </span>
+  setting will behave as if it was set to
+  <span>
+   noone
+  </span>
+  unless it is being called from within a scoped block of actions. What this means is that if you change the
+      scope of a group of actions to a specific object, then while those actions are being called, the
+  <span>
+   other
+  </span>
+  scope will return the instance ID of the instance that initially called the action group. For example, you could run
+      an
+  <a href="../Drag_And_Drop_Reference/Common/Apply_To...htm">
+   Apply to...
+  </a>
+  action and then in the next code block set the scope to
+  <span>
+   other
+  </span>
+  to perform an action on the instance running the whole event block, and not the
+      instance that is being scoped in the apply to code blocks. The image below gives an example:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Scope_Other.png"/><br/>
+  In the image, we are checking for a mouse press in the instance, and if one is detected we change scope using the
+  <strong>
+   Apply To...
+  </strong>
+  action. The next two action blocks are now being called from the "obj_Player" instance (if there is more than one then it will run for all of them) and so the object will change its sprite and then create an object at the other position,
+      ie: the position of the object that is running the event and detected the mouse press.
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Overview/i_Scope_All.png"/><br/>
+  <a href="#">
+   <span>
+    All
+   </span>
+   <span>
+    All
+   </span>
+  </a>
+  When you scope an action for all, you are telling
+  <span>
+   GameMaker
+  </span>
+  to run that block for
+  <strong>
+   every single active instance within the current room
+  </strong>
+  . For example creating a
+  <a href="../Drag_And_Drop_Reference/Instance/Destroy_Object_Instance.htm">
+   Destroy Object Instance
+  </a>
+  action
+      and setting its scope to
+  <span>
+   all
+  </span>
+  will cause every instance in the room to disappear, no matter what object they have been created from.
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Overview/i_Scope_Object.png"/><br/>
+  <a href="#">
+   <span>
+    Object
+   </span>
+   <span>
+    Object
+   </span>
+  </a>
+  An action can also be given an
+  <strong>
+   object
+  </strong>
+  as it's scope. What this means is that all instances of the given object will run that action at the same time it is called. So if you have 100 enemy instances in the room, for example, and
+      you want to set them all to point towards a specific point. You'd call the
+  <a href="../Drag_And_Drop_Reference/Movement/Set_Point_Direction.htm">
+   Set Point Direction
+  </a>
+  and set the action scope to the object "obj_Enemy" and when it
+      is called, all instances of that object will change direction.
+  <a href="#">
+   <span>
+    Expression
+   </span>
+   <span>
+    Expression
+   </span>
+  </a>
+  The Expression input field is for you to input the ID of a specific instance that you want the action to work on. It can be the unique ID value assigned to an instance from the Room Editor or it can be the ID of an instance that you've stored
+      in a variable (where the variable would be the input value) or it can even be an expression using code, as shown in the image below:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Scope_Target.png"/><br/>
+  In this case, an instance calls the
+  <a href="../Drag_And_Drop_Reference/Instance/Set_Sprite.htm">
+   Set Sprite
+  </a>
+  from
+      the instance created by the code given for the Expression. Note that in this case, the instance being created will run its Create Event first before the action is applied to it.
+ </body>
+</html>

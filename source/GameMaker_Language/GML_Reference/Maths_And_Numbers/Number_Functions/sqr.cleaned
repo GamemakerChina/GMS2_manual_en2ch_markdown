@@ -1,0 +1,61 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   sqr
+  </h1>
+  Multiplies a number by itself and so returns the square of that number. EG:
+  <span>
+   sqr(5)
+  </span>
+  would return 25 since 5*5=25.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">sqr(val);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      val
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The number to square.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">score += sqr(dmg);
+</code></pre>
+  The above code will add on the square of the variable "dmg" to the score.
+ </body>
+</html>

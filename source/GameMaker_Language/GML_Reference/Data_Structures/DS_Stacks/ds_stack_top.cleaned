@@ -1,0 +1,79 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   ds_stack_top
+  </h1>
+  This function will
+  <i>
+   only
+  </i>
+  read the first value of the stack (that which is "on top"). It will not
+  <i>
+   pop
+  </i>
+  the value, meaning that it can still be read in the future by this function or the
+  <a href="ds_stack_pop.htm">
+   <span>
+    ds_stack_pop()
+   </span>
+  </a>
+  . If the stack is empty then the function will return the constant
+  <span>
+   undefined
+  </span>
+  , otherwise it will return the real or string value contained in the stack.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">ds_stack_top(id);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Stacks/ds_stack_create.htm">
+        DS Stack ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The id of the data structure to read from.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm#variable">
+ Variable
+</a>
+(Data type value that is stored in the stack) or
+<a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ undefined
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">num = ds_stack_top(control_stack);
+</code></pre>
+  The above code will read the value from the stack indexed in the variable "control_stack" and store the return value in the variable "num".
+ </body>
+</html>

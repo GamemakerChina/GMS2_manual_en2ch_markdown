@@ -1,0 +1,62 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   physics_particle_group_delete
+  </h1>
+  With this function you can delete (remove) a particle group from the physics simulation in the current room. The function takes the unique group ID of the group to delete, as returned by the function
+  <a href="physics_particle_group_end.htm">
+   <span>
+    physics_particle_group_end()
+   </span>
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">physics_particle_group_delete(ind)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      ind
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Physics/Soft_Body_Particles/physics_particle_group_end.htm">
+        Physics Particle Group ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index (ID) of the particle group to delete.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">physics_particle_group_delete(gp1);
+</code></pre>
+  The above code will delete all the particles that comprise the group with the ID stored in the variable "gp1" from the simulation.
+ </body>
+</html>

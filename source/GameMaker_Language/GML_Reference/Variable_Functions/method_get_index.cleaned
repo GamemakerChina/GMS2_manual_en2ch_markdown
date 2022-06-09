@@ -1,0 +1,69 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   method_get_index
+  </h1>
+  With this function you can retrieve the
+  <a href="../../GML_Overview/Script_Functions.htm">
+   Script
+  </a>
+  index for the script where the method was defined. If the method was not defined in a script then the function will return -1, otherwise it will return the index value for the script.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">method_get_index(method);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      method
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Method_Variables.htm">
+        Method
+       </a>
+      </span>
+     </td>
+     <td>
+      The method variable to check
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../The_Asset_Editors/Scripts.htm">
+ Script Asset
+</a>
+or
+<a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var _index = method_get_index(light_setup);
+if _index != -1
+{
+    show_debug_message(script_get_name(_index));
+}
+</code></pre>
+  The above code will check the script index for the method "light_setup" and then if it is not -1 it will output the script name to the console.
+ </body>
+</html>

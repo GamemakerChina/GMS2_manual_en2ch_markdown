@@ -1,0 +1,91 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   int64
+  </h1>
+  This function will attempt to convert a given value into a 64bit integer, where the value
+  <i>
+   must
+  </i>
+  be either a real, a string, an
+  <span>
+   int64
+  </span>
+  , an
+  <span>
+   int32
+  </span>
+  , or a
+  <span>
+   ptr
+  </span>
+  . Anything else will cause the game to crash with an error message. You can check to see if a variable holds an int64 using the function
+  <a href="is_int64.htm">
+   <span>
+    is_int64()
+   </span>
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">int64(val);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      val
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+      ,
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+      , or
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Pointer
+       </a>
+      </span>
+     </td>
+     <td>
+      The value to convert.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ int64 (64-bit integer)
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">steam_handle = int64(global.fileReadString);
+</code></pre>
+  The above code converts the value held in the global variable to a 64bit integer.
+ </body>
+</html>

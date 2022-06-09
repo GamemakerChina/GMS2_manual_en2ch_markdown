@@ -1,0 +1,215 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   xboxlive_matchmaking_join_session
+  </h1>
+  This function permits you to join a specific session via a session handle. This is similar to joining a session invite but is useful when you have your own server performing the matchmaking rather than relying on xbox live matchmaking.
+  
+  
+   The function requires you to provide the user ID - which you can retrieve for a particular game pad by calling the
+  <a href="../Users_And_Accounts/xboxlive_user_for_pad.htm">
+   <span>
+    xboxlive_user_for_pad()
+   </span>
+  </a>
+  function - as well as the Secure Device Association template, which you should have created beforehand in the XDP dashboard.
+  
+  
+   For the session handle, you will need to have first retrieved the "correlation id" from the session you wish to join. When the original session is created the Asynchronous Social event will be "
+  <span>
+   session_created
+  </span>
+  " and it will include a "
+  <b>
+   correlationid
+  </b>
+  " entry in the returned map (see
+  <a href="xboxlive_matchmaking_create.htm">
+   <span>
+    xboxlive_matchmaking_create()
+   </span>
+  </a>
+  ). You will need to have this ID passed back to the server for it to then be passed out when receiving a matchmaking request. Once the joining game has received the "correlation id" back from the server they can then call this function passing the correlation ID as the session handle argument.
+  
+  
+   The function will return -1 if there has been an error (in which case there should be console output detailing the issue), or a Request ID value otherwise. The Request ID value can then be used to identify the correct
+  <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Social.htm">
+   Social Asynchronous Event
+  </a>
+  for this function. This event will be triggered when the session has been created and will contain a DS Map in the variable
+  <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">
+   <span>
+    async_load
+   </span>
+  </a>
+  with the following key/value pairs:
+  <ul>
+   <li>
+    "
+    <b>
+     requestid
+    </b>
+    " - contains the request ID as returned by the calling function
+   </li>
+   <li>
+    "
+    <b>
+     status
+    </b>
+    " - contains the string "session_player_joined" to inform you of what type of event has been triggered.
+   </li>
+   <li>
+    "
+    <b>
+     sessionid
+    </b>
+    " - contains the session ID, or -1 in case of failure.
+   </li>
+   <li>
+    "
+    <b>
+     sessionOwner<
+     <i>
+      index
+     </i>
+     >
+    </b>
+    " - contains the ID of the session host if a session has been found (<
+    <i>
+     index
+    </i>
+    > is a value from 0 to "num_results" - 1)
+   </li>
+   <li>
+    "
+    <b>
+     id
+    </b>
+    " - contains the constant
+    <span>
+     MATCHMAKING_SESSION
+    </span>
+   </li>
+   <li>
+    "
+    <b>
+     error
+    </b>
+    " - will be 0 if everything is fine, or -1 if something failed
+   </li>
+  </ul>
+  When a new player joins the session, the DS map will have these key/value pairs:
+  <ul>
+   <li>
+    "
+    <b>
+     id
+    </b>
+    " - contains the constant
+    <span>
+     MATCHMAKING_SESSION
+    </span>
+   </li>
+   <li>
+    "
+    <b>
+     sessionid
+    </b>
+    " - contains the session ID
+   </li>
+   <li>
+    "
+    <b>
+     status
+    </b>
+    " - contains the string "session_player_joined"
+   </li>
+   <li>
+    "
+    <b>
+     requestid
+    </b>
+    " - The ID value that was returned by the function that created the request
+   </li>
+  </ul>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">xboxlive_matchmaking_join_session(user_id, session_handle, sdatemplate);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      user_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/UWP_And_XBox_Live/Users_And_Accounts/xboxlive_get_user.htm">
+        Xbox User ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The User ID pointer to use
+     </td>
+    </tr>
+    <tr>
+     <td>
+      session_handle
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The "correlation id" to use for the session ID (see description, above)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      sdatemplate
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The name of the secure device association template to use
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Reference/Asynchronous_Functions/Asynchronous_Functions.htm">
+ Async Request ID
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">Request_ID = xboxlive_matchmaking_join_session(global.UserID, global.SessionID, "PeerServerTraffic");
+</code></pre>
+  The above will send a request to join the given multiplayer session, storing the request ID value in a variable so it can be checked in the asynchronous event.
+ </body>
+</html>

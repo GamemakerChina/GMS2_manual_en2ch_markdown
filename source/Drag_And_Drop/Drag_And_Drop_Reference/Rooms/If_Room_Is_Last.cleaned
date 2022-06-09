@@ -1,0 +1,51 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Rooms/i_Rooms_If_Room_Is_Last.png"/><br/>
+   If Room Is Last
+  </h1>
+  This action will check to see if the current room is the last room as listed in the
+  <a href="../../../Settings/The_Room_Manager.htm">
+   Room Manager
+  </a>
+  . The action will return
+  <span>
+   true
+  </span>
+  if the current room is the last in the Room Manager and
+  <span>
+   false
+  </span>
+  if it is not. You can flag the
+  <i>
+   not
+  </i>
+  checkbox to turn this into "If Room Is NOT Last".
+  
+  
+   Note that to add actions into the "if" block, they should be dropped to the side of the action, as shown in the image below:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Rooms/Room_Is_Last_Drop.png"/><br/>
+  These actions will now be run if the "if" evaluates to
+  <span>
+   true
+  </span>
+  , while any actions
+    dropped elsewhere will be performed after the "if" block.
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Rooms/a_Rooms_If_Room_Is_Last.png"/><br/>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Rooms/e_Rooms_If_Room_Is_Last.png"/><br/>
+  The above action block code checks to see if the current room is
+  <i>
+   not
+  </i>
+  the last one as
+    listed in the Room Manager. If it is not then the game will go to the next room in the Asset Browser, otherwise it will go to a specific room.
+ </body>
+</html>

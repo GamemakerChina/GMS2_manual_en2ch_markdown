@@ -1,0 +1,64 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   sequence_get
+  </h1>
+  With this function you can retrieve the
+  <a href="Sequence_Structs/The_Sequence_Object_Struct.htm">
+   Sequence Object Struct
+  </a>
+  from a sequence asset index. You supply the asset index for the sequence as defined in the asset browser, and the function will return the sequence object struct that can then be accessed, or -1 if the sequence doesn't exist or the asset index given is not a sequence.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">sequence_get(sequence_index);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      sequence_index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Sequences.htm">
+        Sequence Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The sequence asset as defined in the Asset Browser.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Sequences/Sequence_Structs/The_Sequence_Object_Struct.htm">
+ Sequence Object Struct
+</a>
+or -1
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var _seq = sequence_get(seq_Logo);
+seq.loopmode = seqplay_pingpong;
+</code></pre>
+  The above code retrieves the sequence object struct from the sequence object "seq_Loop" and then sets the loop mode for the sequence (all subsequently created sequence instances will now use this loop mode).
+ </body>
+</html>

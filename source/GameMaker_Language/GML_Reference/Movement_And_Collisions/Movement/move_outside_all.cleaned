@@ -1,0 +1,78 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   move_outside_all
+  </h1>
+  With this function you can tell an instance to move out of a collision in any direction and any number of pixels each step, with a value of -1 or 0 for the maxdist being a default 1000px, ie:
+  <span>
+   GameMaker
+  </span>
+  will move the instance continually up 1000 pixels until it is out of collision.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">move_outside_all(dir, maxdist);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      dir
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The direction to move in.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      maxdist
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The maximum distance the object can travel (-1 or 0 a default value of 1000 pixels).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if place_meeting(x, y, all)
+{
+    move_outside_all(90, 1);
+}
+</code></pre>
+  The above code will move the instance up 1 pixel each step that it is in collision with any other instance.
+ </body>
+</html>

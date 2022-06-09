@@ -1,0 +1,68 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   part_system_get_layer
+  </h1>
+  This function can be used to retrieve the unique layer ID value for the given particle system. You supply the particle system ID value (as returned by the function
+  <a href="part_system_create_layer.htm">
+   <span>
+    part_system_create_layer()
+   </span>
+  </a>
+  ) and the function will return the ID value of the layer.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">part_system_get_layer(ind);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      ind
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Systems/part_system_create.htm">
+        Particle System ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The particle system ID value to get the layer ID of
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/General_Layer_Functions/layer_get_id.htm">
+ Layer ID
+</a>
+or 0 (if the layer is an internally managed one)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if (part_system_get_layer(global.p_sys) != "effects_layer")
+{
+    part_system_layer(global.p_sys, "effects_layer";
+}
+</code></pre>
+  The above code will check a particle system to see what layer it is on and if it is not on the given layer it will be changed.
+ </body>
+</html>

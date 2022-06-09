@@ -1,0 +1,50 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   path_positionprevious
+  </h1>
+  This variable can be used to get or to set the position of an instance along its current path in the previous step, and is a normalised value between 0 and 1 ie: 0 is the start position of the path and 1 would be the end position. It is similar to the
+  <a href="../../Instances/Instance_Variables/xprevious.htm">
+   <span>
+    xprevious
+   </span>
+  </a>
+  and
+  <a href="../../Instances/Instance_Variables/yprevious.htm">
+   <span>
+    yprevious
+   </span>
+  </a>
+  variables in how it works, only it is specific for paths. It can be useful for things like temporarily stopping a path follower if something is in the way (see the example code below).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">path_positionprevious;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var _x = x + lengthdir_x(16, direction);
+var _y = y + lengthdir_y(16, direction);
+if collision_circle(xx, yy, 16, obj_Player, false,true)
+{
+    path_position = path_positionprevious;
+}
+</code></pre>
+  The above code checks an area in front of the instance for a collision with the object "obj_Player" and if there is one, it sets the instance back to the previous position it occupied on the current path, as assigned by the function
+  <span>
+   <a href="../path_start.htm">
+    path_start()
+   </a>
+  </span>
+  .
+ </body>
+</html>

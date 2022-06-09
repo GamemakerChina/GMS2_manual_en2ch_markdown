@@ -1,0 +1,82 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   time_source_get_reps_remaining
+  </h1>
+  This function returns the number of repetitions the given
+  <span>
+   Time Source
+  </span>
+  has left until it completely stops.
+   
+   
+    The function will return
+  <span>
+   undefined
+  </span>
+  if the given
+  <span>
+   Time Source
+  </span>
+  runs indefinitely, or if it's a
+  <a href="Built_In_Time_Sources.htm">
+   built-in
+   <span>
+    Time Source
+   </span>
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">time_source_get_reps_remaining(id);
+</code></pre>
+  <table>
+   <colgroup>
+    <col/>
+    <col/>
+    <col/>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Time_Sources/time_source_create.htm">
+        Time Source ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The
+      <span>
+       Time Source
+      </span>
+      to get information for
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+ </body>
+</html>

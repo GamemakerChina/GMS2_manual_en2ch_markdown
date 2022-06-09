@@ -1,0 +1,68 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   surface_get_target_ext
+  </h1>
+  This function will retrieve the surface ID assigned to one of the 4 render targets available to surfaces. You supply the index of the render target to check, and the function will return -1 if no surface is assigned, or an integer value >= 0, representing the ID of the surface assigned (as returned by the function
+  <a href="surface_create.htm">
+   <span>
+    surface_create()
+   </span>
+  </a>
+  ).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">surface_get_target_ext(index);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The render target index to check (from 0 to 3).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Reference/Drawing/Surfaces/surface_create.htm">
+ Surface ID
+</a>
+or -1 (if no target surface is set)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if surface_get_target_ext(0) == -1
+{
+    surface_set_target_ext(0, global.Surf);
+}
+</code></pre>
+  The above code will first check and see if the shader render target 0 has been set to a surface, and if not, then one is assigned.
+ </body>
+</html>

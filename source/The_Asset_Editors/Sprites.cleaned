@@ -1,0 +1,909 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   The Sprite Editor
+  </h1>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Sprites.png"/><br/>
+  The
+  <strong>
+   Sprite Editor
+  </strong>
+  is where you set the general properties for
+  <a>
+   sprites
+  </a>
+  that you make. You can open this window by creating a new sprite (right-click
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_RMB.png"/><br/>
+  on the
+  <a href="../Introduction/The_Asset_Browser.htm">
+   Asset Browser
+  </a>
+  and select "Create Sprite"), by double-clicking
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  on an existing sprite or by right-clicking
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_RMB.png"/><br/>
+  an existing sprite and selecting "
+  <strong>
+   Properties
+  </strong>
+  ".
+  
+  
+   The parts that make up the Sprite Editor are as follows:
+  <a href="#">
+   <span>
+    Sprite Name
+   </span>
+   <span>
+    Sprite Name
+   </span>
+  </a>
+  Here you can name the sprite. The sprite name is what will be used throughout your game project to identify the sprite as a resource and can only be alpha-numeric and may only use the underbar "_" symbol. While you can use numbers in the
+      sprites name, the name cannot start with a number as that would make it an invalid resource name when using GML or GML Visual.
+  <a href="#">
+   <span>
+    Image Properties
+   </span>
+   <span>
+    Image Properties
+   </span>
+  </a>
+  In this section you can set the image size by clicking the
+  <strong>
+   Sprite Size
+  </strong>
+  button
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_SpriteSize.png"/><br/>
+  . This will open the following window:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Sprites_ResizeProperties.png"/><br/>
+  Here you can see a preview of the sprite before and after applying the chosen transforms, and the section below is
+      for setting the new sprite properties and is split into two parts:
+  <ul>
+   <li>
+    <strong>
+     Scale Image
+    </strong>
+    : With this option you can resize the sprite draw canvas and any images contained on the sprite will be stretched and scaled to fit the new size. You can choose to scale and maintain the aspect ratio of the base image,
+        and you can also choose whether to scale in Pixels or in Percentage. Depending on the type of image you are working with you may also want to enable linear interpolation or not (in general, linear interpolation will "smooth" pixels over
+        an area and so is best left off for pixel art).
+   </li>
+   <li>
+    <strong>
+     Resize Canvas
+    </strong>
+    : This option will resize the draw canvas to the new size without scaling the contents. You can set the "anchor" point for the resize using the directional arrows then set the size value. There is an option
+        to maintain aspect ratio when resizing the canvas and at the bottom you can choose to set the resize values in either pixels or as a percentage.
+   </li>
+  </ul>
+  When you are happy with the new size, you can click
+  <em>
+   Apply
+  </em>
+  to apply the changes and close the Resize properties window. Note that when applying a change in scale or size to a sprite, you can choose to have the change applied to the origin
+      of the sprite too, by checking the
+  <strong>
+   Apply to Origin
+  </strong>
+  checkbox beside the
+  <em>
+   Apply
+  </em>
+  button. When checked - if the origin is not one of the default settings and is not locked in the sprite - then its position will be scaled to
+      match the change to the size of the sprite. When un-checked, no scaling will be applied to the origin. If the origin is not a custom value or is locked, then it will be grayed out and unavailable. You can set this option for all sprites from the
+  <a href="../Setting_Up_And_Version_Information/IDE_Preferences/Sprite_Editor_Preferences.htm">
+   Sprite Editor Preferences
+  </a>
+  .
+  <span>
+   NOTE
+  </span>
+  This option is only available for
+  <a>
+   bitmap
+  </a>
+  sprites and will be greyed out for SWF or skeleton animation sprites.
+   
+   
+    In this section you can also either open the
+  <a href="Image_Editor.htm">
+   Image Editor
+  </a>
+  to draw your sprite, or you can click on the "
+  <em>
+   Import
+  </em>
+  " button to import a previously created sprite. Sprites can be imported from most common
+      bitmap formats (
+  <span>
+   PNG
+  </span>
+  ,
+  <span>
+   JPG
+  </span>
+  ,
+  <span>
+   GIF
+  </span>
+  , etc...) but
+  <span>
+   GameMaker
+  </span>
+  also supports vector sprites (
+  <span>
+   SWF
+  </span>
+  ) and skeletal animation sprites (
+  <span>
+   Spine
+  </span>
+  ). For more information on these formats, please see the section on
+  <a href="../Settings/Texture_Information/Non-Bitmap_Sprites.htm">
+   Non-Bitmap Sprites
+  </a>
+  . Note that when importing bitmap sprites you can select
+      multiple image files in the file explorer and each one will be added to the same sprite as separate sub-images (frames).
+  <a href="#">
+   <span>
+    Texture Settings
+   </span>
+   <span>
+    Texture Settings
+   </span>
+  </a>
+  This section of the sprite properties window deals with how
+  <span>
+   GameMaker
+  </span>
+  stores the images that make up your sprite on
+  <a>
+   texture page
+  </a>
+  <span>
+   s
+  </span>
+  for use with
+      devices and browsers. For desktop platforms this may not be too important, but when you start to develop for mobile or web the proper management of your image assets (textures) becomes very important as poorly managed textures can have detrimental
+      effect on your game, causing performance issues.
+   
+   
+    The
+  <strong>
+   Tile Horizontally
+  </strong>
+  and
+  <strong>
+   Tile Vertically
+  </strong>
+  check boxes are, by default, not normally checked as most times you do not want to tile sprites. However, in certain circumstances you may wish them to tile, meaning that
+      you should check these options, especially if you are going to be scaling the view or room as scaling can introduce artefacts into the graphics of a game if the texture page is not generated properly.
+   
+   
+    If your sprite is going to be used as a texture map in a 3D game, then you should check the
+  <strong>
+   Separate Texture Page
+  </strong>
+  box and the sprite will be given a texture page all of its own (note that each sub-image will also get its own texture
+      page, so if your sprite has 10 images you will generate 10 texture pages). This will increase the texture memory needs of your game and so great care must be taken when using this option. Also note that in general if your sprite is using this option
+      for 3D, then the textures should be a power of 2 (ie: 128x128, 256x256, 512x512 etc...).
+   
+   
+    The next option is to enable
+  <strong>
+   Pre-Multiplied Alpha
+  </strong>
+  for the sprite images. When enabled, this will pre-multiply the alpha of all sub-images of the sprite. This is normally only necessary drawing sprites to surfaces, or for some specific
+      special effects. For normal sprite use you should not see any noticeable difference between the normal sprite and the pre-multiplied one.
+   
+   
+    We also have an
+  <strong>
+   Edge Filtering
+  </strong>
+  option. This option is specifically for when you have
+  <a>
+   linear interpolation
+  </a>
+  enabled for your game and you are seeing "halos"
+      of colour around your sprites. This is caused by the hardware interpolating from multiple source
+  <a>
+   texel
+  </a>
+  <span>
+   s
+  </span>
+  on the texture page all at once, and can be particularly
+      obvious when you scale games up in resolution. Enabling this will filter the edge pixels to take on the colour of the nearest full alpha sprite pixel and so blend the interpolated pixels without the halo that was present previously.
+   
+   
+    Finally, you can chose the
+  <strong>
+   texture group
+  </strong>
+  that you wish the sprite resource to belong to. Basically, a texture group (previously defined in the
+  <a href="../Settings/Texture_Groups.htm">
+   Texture Group Manager
+  </a>
+  ) is something that you
+      can set up so that all the image resources that you need for specific rooms or levels of your game can be stored together. So, for example, you can have all your level 1 images in one texture group, all your level 2 images in another etc... and
+  <span>
+   GameMaker
+  </span>
+  will try to place all those grouped resources on the same texture page to reduce texture page swapping while your game is running on the chosen target platform.
+  <strong>
+   NOTE
+  </strong>
+  : This may not always be necessary and the performance increase from this method will depend on whether the target device is CPU bound or GPU bound.
+   
+   
+    You can find out more about texture pages
+  <a href="../Settings/Texture_Information/Texture_Pages.htm">
+   here
+  </a>
+  .
+   
+   
+    Texture groups are only relevant to
+  <a>
+   bitmap
+  </a>
+  images, and non-bitmap sprites will not be assigned to texture groups and some of the above options will not be available
+      for them. Some non-bitmap sprites will already have their own unique texture page (skeleton animation sprites) while others just don't require textures as they are comprised of
+  <a>
+   vector
+  </a>
+  <span>
+   s
+  </span>
+  (SWF sprites). For more information please see the following section:
+  <ul>
+   <li>
+    <a href="../Settings/Texture_Information/Non-Bitmap_Sprites.htm">
+     Non-Bitmap Sprites
+    </a>
+   </li>
+  </ul>
+  <a href="#">
+   <span>
+    Collision Mask
+   </span>
+   <span>
+    Collision Mask
+   </span>
+  </a>
+  All sprites have a
+  <strong>
+   collision mask
+  </strong>
+  which corresponds to the area of the sprite that will be used to detect collisions when the sprite is assigned to an instance. You can first set the
+  <strong>
+   Mode
+  </strong>
+  for the collision mask, which
+      can be one of the following:
+  <ul>
+   <li>
+    <strong>
+     Automatic
+    </strong>
+    :
+    <span>
+     GameMaker
+    </span>
+    will calculate the collision mask automatically based on the sprite alpha values (this will depend on the Tolerance setting explained below).
+   </li>
+   <li>
+    <strong>
+     Full Image
+    </strong>
+    : The mask will be calculated with it's bounds being the same as the left, right, top and bottom bounds of the sprite.
+   </li>
+   <li>
+    <strong>
+     Manual
+    </strong>
+    : Selecting this means that you wish to set the bounds of the collision mask using the input values for left, right, top and bottom.
+   </li>
+  </ul>
+  Apart from the collision mask Mode, there are also various
+  <strong>
+   types
+  </strong>
+  of collision mask which you can choose from the drop down menu:
+  <ul>
+   <li>
+    <strong>
+     Rectangle
+    </strong>
+    : A simple rectangular collision mask. This is the fastest to resolve when used in your project.
+   </li>
+   <li>
+    <strong>
+     Rotated Rectangle
+    </strong>
+    : This is a simple rectangular collision mask which will rotate along with the
+    <span>
+     image_angle
+    </span>
+    value of the instance with the sprite assigned. This is slower to resolve than the regular rectangular
+        collision mask, but faster than a precise collision mask.
+   </li>
+   <li>
+    <strong>
+     Ellipse
+    </strong>
+    : Creates an elliptical collision mask. This is slower to resolve than the rectangular mask.
+   </li>
+   <li>
+    <strong>
+     Diamond
+    </strong>
+    : Creates a "diamond" collision mask. This is slower to resolve and generates more CPU overhead than both the rectangular and ellipitical masks.
+   </li>
+   <li>
+    <strong>
+     Precise
+    </strong>
+    : This creates a precise collision mask based on the outline of the sprite. If the sprite has multiple sub-images, then this will be a
+    <em>
+     composite
+    </em>
+    of the edges of
+    <em>
+     all
+    </em>
+    the sub-images placed over each other.
+        Note that the precise mask will be clipped to the
+    <a>
+     bounding box
+    </a>
+    if the Mode is set to Manual and you change the default values. This is very slow and generates a lot of CPU overhead.
+   </li>
+   <li>
+    <strong>
+     Precise (per frame)
+    </strong>
+    : This creates a precise collision mask on a per-frame basis (ie: the mask will change to conform to the outline of each different frame). Note that the precise mask will be clipped to the
+    <a>
+     bounding box
+    </a>
+    if the Mode is set to Manual and you change the default values. This is by far the slowest type of collision mask to resolve and should be avoided except in very, very specific and infrequent
+        cases.
+   </li>
+  </ul>
+  The following image illustrates the different mask options:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/bbox_image.png"/><br/>
+  The collision checking options are very important ones for your game, as they will directly influence how your objects interact and how your game runs, with
+      the wrong settings even having a negative impact on the over all performance. Why is that? Well, whenever two instances meet, and both instances have a valid mask, a collision event is generated by checking the overlap of the bounding box
+  <em>
+   and
+  </em>
+  the
+      mask, which can either be precise or not, and adapted to the image index or not. Below is an image to illustrate this:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/basic_collisions_image.png"/><br/>
+  Beneath the collision mask setting, you have the
+  <strong>
+   alpha tolerance
+  </strong>
+  slider, which indicates the tolerance for creating the mask with respect to the transparency of the sprites pixels - with a higher tolerance pixels that are partially
+      transparent are left outside the mask, while with a lower tolerance the mask will take into account those pixels. This influences both the bounding box (when not set to manual) and the mask for precise collision checking.
+   
+   
+    Finally you can set the
+  <strong>
+   Bounding Box
+  </strong>
+  limits for the mask. The bounding box is the name given to the rectangular area that the sprite mask fits in. Only pixels inside this bounding box are used for the mask and will be involved in
+      collision checking, and by default this is automatically computed, taking the alpha tolerance into account. If you have "precise (per frame)" checked then this will be separate for each sub-image too. When setting it yourself, you can
+      input the values in the boxes for left, right top and bottom, or you can click
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  in the sprite preview window and drag to "draw" it over
+      the sprite. Note that when "drawing" the bounding box, the mask is automatically generated to fit within the end values, and the bounding box can "clip" the mask.
+   
+   
+    It is worth noting that if you go to the Preview window, you can adjust the collision mask using the "handles" found in each corner. Clicking and dragging these will adjust the collision mask just the same as inputing values for the bounding
+      box would.
+  <a href="#">
+   <span>
+    Nine Slice
+   </span>
+   <span>
+    Nine Slice
+   </span>
+  </a>
+  <strong>
+   <span>
+    Nine Slicing
+   </span>
+  </strong>
+  (also known as 9-slicing) is a technique used to scale rectangular images for preserving details, making them retain their original form after scaling. See the page on
+  <a href="Sprite_Properties/Nine_Slices.htm">
+   Nine Slice
+  </a>
+  for more information.
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Nine_Slice_0_Preview.png"/><br/>
+  The
+  <strong>
+   Nine Slice
+  </strong>
+  section of the Sprite Editor allows you to enable
+  <span>
+   Nine Slicing
+  </span>
+  on a sprite, and preview it in action inside the
+  <strong>
+   Nine Slice Preview
+  </strong>
+  window on the right.
+   
+   
+    The
+  <strong>
+   Nine Slice Preview
+  </strong>
+  window allows you to resize the image and shows how the final image will look, after it is scaled using the Nine Slice technique. This preview sprite can also be rotated.
+   
+   
+    The
+  <strong>
+   Nine Slice
+  </strong>
+  section has the following options:
+  <ul>
+   <li>
+    <strong>
+     Activate Nine Slice:
+    </strong>
+    This option controls whether Nine Slice scaling is used when the sprite is scaled. When enabled, Nine Slice scaling will be used for the sprite (and any object instances using that sprite) placed in a Sequence or a Room Layer, and scaled sprites drawn using
+    <a href="../GameMaker_Language/GML_Reference/Drawing/Sprites_And_Tiles/draw_sprite_ext.htm">
+     draw_sprite_ext()
+    </a>
+    and other similar functions.
+    <span>
+     <span>
+      <strong>
+       NOTE
+      </strong>
+      : Nine Slicing will not work with functions that draw only a part of the sprite or distort it, such as
+      <span>
+       <a href="../GameMaker_Language/GML_Reference/Drawing/Sprites_And_Tiles/draw_sprite_part.htm">
+        draw_sprite_part()
+       </a>
+      </span>
+      or
+      <span>
+       <a href="../GameMaker_Language/GML_Reference/Drawing/Sprites_And_Tiles/draw_sprite_pos.htm">
+        draw_sprite_pos()
+       </a>
+       .
+      </span>
+     </span>
+    </span>
+   </li>
+   <li>
+    <strong>
+     Guides:
+    </strong>
+    This section displays the offset of each guide on its axis, and can be used to change those offsets. These guides can also be moved inside the
+    <strong>
+     Sprite Preview
+    </strong>
+    window by simply dragging them with the mouse.
+    <span>
+     <strong>
+      <span>
+       NOTE
+      </span>
+     </strong>
+     Any guides on the same axis cannot cross each other, and dragging one over the other will result in the second guide being pushed.
+    </span>
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Nine_Slice_GIF_Guides.gif"/><br/>
+    The offset of each guide is relative to its corresponding edge. For example, the left guide is offset from the left edge, the right edge is offset from the right edge, and so on.
+        
+        The color and alpha of each guide can be changed by clicking on the colored button next to the guide’s position.
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Nine_Slice_4_Color.png"/><br/>
+   </li>
+   <li>
+    <strong>
+     Highlight
+    </strong>
+    : This option affects how a selected slice appears in the Sprite Preview window.
+    <strong>
+     "Inverted"
+    </strong>
+    highlights the sprite with an overlay except for the selected slice, and
+    <strong>
+     "Overlay"
+    </strong>
+    highlights only the selected slice with an overlay.
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Nine_Slice_5_Highlight.png"/><br/>
+    The color and alpha of the overlay can be changed by clicking on the colored button next to the drop-down menu.
+   </li>
+   <li>
+    <strong>
+     Selected Slice:
+    </strong>
+    This option can be used to select a slice, choosing one from the edge slices (left, top, right, bottom) and the centre one. A slice can also be selected by
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+    left clicking on it in the
+    <strong>
+     Sprite Preview
+    </strong>
+    window, and clicking on it again will de-select it.
+   </li>
+   <li>
+    <strong>
+     Tile Mode:
+    </strong>
+    This option is used in conjunction with the
+    <strong>
+     Selected Slice
+    </strong>
+    option, to control how the slice appears when the sprite is scaled. You can apply one of the following Tile Modes to each slice:
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Nine_Slice_3_TileModes.png"/><br/>
+    <ul>
+     <li>
+      <strong>
+       Stretch
+      </strong>
+      <strong>
+       :
+      </strong>
+      The slice will be stretched to fill the gap between its connected corners.
+     </li>
+     <li>
+      <strong>
+       Repeat
+      </strong>
+      <strong>
+       :
+      </strong>
+      The slice will be repeated or tiled to preserve detail.
+     </li>
+     <li>
+      <strong>
+       Mirror
+      </strong>
+      <strong>
+       :
+      </strong>
+      The slice will be repeated by mirroring.
+     </li>
+     <li>
+      <strong>
+       Blank Repeat
+      </strong>
+      <strong>
+       :
+      </strong>
+      The slice will only appear once, resulting in a blank area after it.
+     </li>
+     <li>
+      <strong>
+       Hide
+      </strong>
+      <strong>
+       :
+      </strong>
+      The slice will not appear at all.
+     </li>
+    </ul>
+   </li>
+  </ul>
+  <a href="#">
+   <span>
+    Broadcast Messages
+   </span>
+   <span>
+    Broadcast Messages
+   </span>
+  </a>
+  This button will add a
+  <strong>
+   broadcast message
+  </strong>
+  to the sprite timeline, opening a dialog where you can add the message to be broadcast. The message will be added wherever the
+  <a>
+   playhead
+  </a>
+  is in the frame view and consists of a simple string that can be picked up in the
+  <a href="Sequence_Properties/Broadcast_Messages.htm">
+   Broadcast Message Event
+  </a>
+  when it is triggered and then acted on.
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Sprite_Broadcast_Message.gif"/><br/>
+  Once added, the message will be shown in the Frame View, and you can click the right mouse button
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_RMB.png"/><br/>
+  on it to open a menu where you can delete the message or edit it. For more information on Broadcast Messages please see
+  <a href="Sequence_Properties/Broadcast_Messages.htm">
+   here
+  </a>
+  .
+  <a href="#">
+   <span>
+    Frame Speed
+   </span>
+   <span>
+    Frame Speed
+   </span>
+  </a>
+  In this section you can set the
+  <strong>
+   speed
+  </strong>
+  at which the animation frames should be played back from the input box on the left. The frame speed setting can either be based on "
+  <strong>
+   Frames per second
+  </strong>
+  ", or "
+  <strong>
+   Frames per game frame
+  </strong>
+  ",
+      where a setting of 30 "Frames per second" will show 30 frames of the animation in one second, while a setting of 30 "Frames per game frame" will try to show all 30 frames in a single game step, so "Frames per game frame"
+      values are usually set to 1 or lower (eg: a frames per game frame speed of 0.5 will show a new frame every two game steps).
+   
+   
+    It's important to note that the Frame Speed settings will not only affect the playback of the animation in the preview window, but
+  <strong>
+   will also govern how the sprite is animated in your games
+  </strong>
+  . The speed you set here will show the
+      sprite preview as it will run in the game with an image speed multiplier of 1, but this can be set in code using the
+  <a href="../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_speed.htm">
+   <span>
+    image_speed
+   </span>
+  </a>
+  variable
+      meaning the sprite can run faster or slower depending on what is programmed. So, for example, if you set the sprite to use 10 "frames per second" and then set the
+  <span>
+   image_speed
+  </span>
+  to 0.5, the game will draw the sprite
+      at half speed - 5 frames per second. Conversely, if we set the
+  <span>
+   image_speed
+  </span>
+  for the same sprite to 2, in the game it will be drawn animated twice as fast - 20 frames per second. Note that the frame speed can also be set
+      in the
+  <a href="Image_Editor.htm">
+   Image Editor
+  </a>
+  .
+  <a href="#">
+   <span>
+    Sprite Origin
+   </span>
+   <span>
+    Sprite Origin
+   </span>
+  </a>
+  The top bar of the sprite editor contains the
+  <strong>
+   sprite origin
+  </strong>
+  properties. This is the point on the sprite that corresponds to its position within the room, ie: when you create an instance at a particular x/y position, the origin of
+      the sprite is placed there.
+   
+   
+    By default the origin is the
+  <em>
+   top left
+  </em>
+  corner of the sprite but it is often more convenient to use the
+  <em>
+   middle centre
+  </em>
+  or you may wish to have some other position used (like for a platform game character you might want
+  <em>
+   bottom centre
+  </em>
+  ),
+      so you can click
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  on the origin drop-down menu and select one of the default values. You can also set the origin manually by clicking
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  in the sprite preview image which will move the origin marker cross to the point you clicked, or by inputting different values for x and y in the corresponding boxes. Note that you can even set an origin outside the area of sprite by using negative
+      numbers (for left and up) or positive numbers larger than the sprite width and height (for right and down), which can be very useful when dealing with objects that need to draw composite sprites.
+  <a href="#">
+   <span>
+    Zoom Controls
+   </span>
+   <span>
+    Zoom Controls
+   </span>
+  </a>
+  To the top right of the Preview window you have the
+  <strong>
+   zoom controls
+  </strong>
+  . These buttons control the current preview sprite zoom level. You can zoom in or out and clicking the
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_ZoomReset.png"/><br/>
+  button will reset the preview to be 1:1 with the sprite being edited. You can also click the Window Fit button
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_CanvasFit.png"/><br/>
+  to make the entire sprite preview fit within
+      the current editor window (this will zoom in/out as appropriate to make it fit). Note that you can zoom in and out using the
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Ctrl.png"/><br/>
+  /
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Cmd.png"/><br/>
+  and the Mouse Wheel
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_MMB.png"/><br/>
+  , and pressing
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Ctrl.png"/><br/>
+  /
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Cmd.png"/><br/>
+  +
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Enter.png"/><br/>
+  will set the preview
+      to be 1:1 with the actua sprite size.
+  <a href="#">
+   <span>
+    Preview
+   </span>
+   <span>
+    Preview
+   </span>
+  </a>
+  The sprite
+  <strong>
+   preview
+  </strong>
+  window shows the sprite as it will look in the game, and can be zoomed in or out by using the mouse wheel
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_MMB.png"/><br/>
+  , and panned around using the
+      middle mouse button
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_MMB.png"/><br/>
+  and draggging, or alternatively use the combination
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Space.png"/><br/>
+  +
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  and dragging. You can use the Frame controls (explained below) to change how the preview image is displayed too.
+   
+   
+    This window will also show a "cross" that marks the
+  <strong>
+   origin
+  </strong>
+  of the sprite (see the Sprite Origin section above for more details), and it can also show the
+  <strong>
+   collision mask
+  </strong>
+  if that option is being edited (see
+      the Collision Mask section, above).
+  <a href="#">
+   <span>
+    Playback Controls
+   </span>
+   <span>
+    Playback Controls
+   </span>
+  </a>
+  The
+  <strong>
+   Playback controls
+  </strong>
+  are for playing back in the preview window the animation of the frames, with the play button
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Sprite_Play.png"/><br/>
+  starting/stopping the
+      animation and the Loop button
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Sprite_Loop.png"/><br/>
+  used to set whether the sprite loops
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Sprite_LoopOn.png"/><br/>
+  (goes back to frame 1 when the last frame is reached) or ping-pongs
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Sprite_PingPong.png"/><br/>
+  (goes backwards through the frames when the last frame is reached).
+   
+   
+    Note that the loop/ping-pong option
+  <strong>
+   will not affect how the sprite is displayed in the game
+  </strong>
+  , so setting these options in the sprite will not change the way it is shown when the game is compiled and run. This is also true for loop-points
+      that can be set in the
+  <strong>
+   Frame View
+  </strong>
+  (see below for more information) - these are purely visible in the sprite editor and designed to help you test out your animations, but will have no effect on how the sprite animation is displayed
+      in your games.
+   
+   
+    An additional part of the Frame Controls is the
+  <strong>
+   current frame
+  </strong>
+  display and input a bit further over on the left. The box shows the total number of frames of the sprite animation as well as the current frame being shown. You can change
+      the current frame at any time by clicking on the input box and typing in the frame number you want to view.
+  <strong>
+   IMPORTANT!
+  </strong>
+  Frames are shown numbered from 1 to
+  <em>
+   maxframe number
+  </em>
+  , however in your game code, frames will be numbered from 0 to
+  <em>
+   maxframe number - 1
+  </em>
+  .
+  <a href="#">
+   <span>
+    Frames
+   </span>
+   <span>
+    Frames
+   </span>
+  </a>
+  This part of the sprite editor shows each of the different
+  <strong>
+   frames
+  </strong>
+  that make up a single sprite set along a sequence timeline. You can click
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  on any frame and drag it left or right to change the order in which they will be animated, and you can also double click
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  on any frame to launch
+      the
+  <a href="Image_Editor.htm">
+   Image Editor
+  </a>
+  and edit them. You can cut, copy and paste frames using the standard keyboard shortcuts or by using the right-mouse button
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_RMB.png"/><br/>
+  menu options, and you can also select multiple frames to operate on using
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Ctrl.png"/><br/>
+  /
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Cmd.png"/><br/>
+  +
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  .
+   
+   
+    The right mouse button menu has the following options:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Sprite_RMB_Frame_menu.png"/><br/>
+  <ul>
+   <li>
+    <strong>
+     Add Frame
+    </strong>
+    - Add a new frame to the animation at the end.
+   </li>
+   <li>
+    <strong>
+     Insert Frame
+    </strong>
+    - Insert a new frame in the animation after the currently selected frame.
+   </li>
+   <li>
+    <strong>
+     Cut
+    </strong>
+    /
+    <strong>
+     Copy
+    </strong>
+    /
+    <strong>
+     Paste
+    </strong>
+    - Cut, copy and paste one or more frames.
+   </li>
+   <li>
+    <strong>
+     Delete Selected Frames
+    </strong>
+    - Delete the currently selected frame or frames.
+   </li>
+  </ul>
+  Apart from the option given above to stretch a frame, you can also position the mouse on the edge of a frame and then when the cursor changes to a double arrow, simply click
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  and drag to resize the frame so it takes more time:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Sprite_Stretch_Frame.gif"/><br/>
+  A stretched frame will take more time to be shown, just as if you'd duplicated the same frame multiple times.
+   
+   
+    Finallly, you can also zoom in on the frame timeline using the "handles" on either side of the frame view as shown in the image below:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Sprite_Loop_Markers.gif"/><br/>
+ </body>
+</html>

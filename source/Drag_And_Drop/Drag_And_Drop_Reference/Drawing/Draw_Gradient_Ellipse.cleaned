@@ -1,0 +1,98 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/i_Drawing_Draw_Ellipse_Gradient.png"/><br/>
+   Draw Gradient Ellipse
+  </h1>
+  This action will draw an ellipse at a given position within the room, using a set of blend colours to create a gradient. You give the top left position and the bottom right position of the area that the ellipse is to "fit" into, and the ellipse
+    will be drawn between them. The position can either be an absolute position within the room, or a position relative to the instance calling the action and you can set the colours to blend from the edge of the ellipse and from its center. The ellipse
+    can be drawn filled or outlined by checking the
+  <b>
+   fill
+  </b>
+  box at the bottom.
+  <b>
+   NOTE
+  </b>
+  : This action is only for use in the various
+  <a href="../../../The_Asset_Editors/Object_Properties/Draw_Events.htm">
+   Draw Events
+  </a>
+  , and will not draw anything if used elsewhere.
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/a_Drawing_Draw_Gradient_Ellipse.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Left
+     </td>
+     <td>
+      The left position to start drawing from
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Top
+     </td>
+     <td>
+      The top position to start drawing from
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Right
+     </td>
+     <td>
+      The right position to end drawing from
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Bottom
+     </td>
+     <td>
+      The bottom position to end drawing from
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Center
+     </td>
+     <td>
+      The colour to blend from the center
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Edge
+     </td>
+     <td>
+      The colour to blend from the edge
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/e_Drawing_Draw_Gradient_Ellipse.png"/><br/>
+  The above action block code draws a gradient ellipse at the position of the
+    instance of "obj_Player".
+ </body>
+</html>

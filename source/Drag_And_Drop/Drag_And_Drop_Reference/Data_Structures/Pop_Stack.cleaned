@@ -1,0 +1,57 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Pop_Stack.png"/><br/>
+   Pop Stack
+  </h1>
+  With this action you can pop a value off the top of a stack data structure. You supply the variable that holds the stack index (as returned by the action
+  <a href="Create_Stack.htm">
+   Create Stack
+  </a>
+  ) and then give the target variable that should hold
+    the returned variable (which can be flagged as a temporary local variable).
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/a_DS_Pop_Stack.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Stack
+     </td>
+     <td>
+      The index (stored in a variable) of the stack to use
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Target
+     </td>
+     <td>
+      The target variable to hold the returned value
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/e_DS_Pop_Stack.png"/><br/>
+  The above action block code checks to see if the given stack is empty, and if it is not, it pops
+    the top value off and stores it in a temporary variable. This is then used to set an alarm, while if the stack is empty, 10 random values are pushed onto the stack.
+ </body>
+</html>

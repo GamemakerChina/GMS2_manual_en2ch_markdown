@@ -1,0 +1,57 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   network_resolve
+  </h1>
+  This function will return the IP address of the given URL.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">network_resolve(url);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      url
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The URL to get the IP of (a string).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">game_ip = network_resolve("www.macsweeneygames.com");
+</code></pre>
+  The above code will return the IP address of the given URL and store it in the variable "game_ip".
+ </body>
+</html>

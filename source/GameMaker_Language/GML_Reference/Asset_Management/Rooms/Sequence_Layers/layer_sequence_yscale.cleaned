@@ -1,0 +1,140 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   layer_sequence_yscale
+  </h1>
+  With this function you can set the Y scale for the given sequence element. You supply the sequence element ID as returned by
+  <a href="layer_sequence_create.htm">
+   <span>
+    layer_sequence_create()
+   </span>
+  </a>
+  or by one of the
+  <a href="../General_Layer_Functions/General_Layer_Functions.htm">
+   layer element functions
+  </a>
+  along with the new scale to set on the Y axis and the sequence will be scaled by this amount. A scale of 1 indicates no scaling (1:1), smaller values will scale down (0.5, for example, will half the width of the sequence), larger values will scale up and negative values will flip the sequence about its origin
+  <i>
+   and
+  </i>
+  scale it unless the value used is exactly -1 (in which case the sequence is just flipped about its origin with no scaling).
+  
+  
+   It is very important to note that applying
+  <em>
+   uneven
+  </em>
+  scaling (eg: scaling the X axis by 3 and the Y axis by 2) to sequence elements that contain any instance which uses
+  <em>
+   rotation
+  </em>
+  ,
+  <strong>
+   may cause issues with the instance drawing, collisions, culling, and many other things
+  </strong>
+  . Basically, if your sequence relies on
+  <em>
+   any
+  </em>
+  instance properties then we do not recommend that you combine uneven scaling along with instance rotation.
+  
+  
+   Also note that you shouldn't change the
+  <span>
+   image_xscale
+  </span>
+  \
+  <span>
+   image_yscale
+  </span>
+  \
+  <span>
+   image_angle
+  </span>
+  \
+  <span>
+   x
+  </span>
+  \
+  <span>
+   y
+  </span>
+  variables for any instances in a sequence that uses this function as they will be overwritten as soon as the sequence updates after calling the function.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">layer_sequence_yscale(sequence_element_id, xscale)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      sequence_element_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Sequence_Layers/layer_sequence_create.htm">
+        Sequence Element ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The unique ID value of the sequence element to target
+     </td>
+    </tr>
+    <tr>
+     <td>
+      yscale
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The new Y axis scale value to apply to the sequence element
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if seq_scale &amp;amp;lt; 2
+{
+    seq_scale += 0.01;
+    layer_sequence_xscale(my_seq, seq_scale);
+    layer_sequence_yscale(my_seq, seq_scale);
+}
+</code></pre>
+  The above code checks the value held in the
+  <span>
+   seq_scale
+  </span>
+  variable, and if it is less than 2 then it adds to it then uses the value to set the X and Y scale of the sequence element referenced in the variable
+  <span>
+   my_seq
+  </span>
+  .
+ </body>
+</html>

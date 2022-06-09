@@ -1,0 +1,51 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Sequences/i_sequence_destroy.png"/><br/>
+   Destroy Sequence
+  </h1>
+  You can call this action whenever you wish to "destroy" a previously created sequence element. You give the element ID, as returned by the action
+  <a href="Create_Sequence_Element.htm">
+   Create Sequence Element
+  </a>
+  , and this action will destroy it, removing it from the room.
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Sequences/a_sequence_destroy.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Variable
+     </td>
+     <td>
+      The ID of the sequence element to destroy.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Sequences/e_sequence_exists.png"/><br/>
+  The above action block code checks for to see if the sequence element stored in the variable "
+  <span>
+   my_seq
+  </span>
+  " exists and if it does, it then destroys it.
+ </body>
+</html>

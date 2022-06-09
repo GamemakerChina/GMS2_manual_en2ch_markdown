@@ -1,0 +1,64 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   browser_input_capture
+  </h1>
+  With this function you can set whether the browser window should capture all input (set it to
+  <span>
+   false
+  </span>
+  ) or whether the game should capture the input (set it to
+  <span>
+   true
+  </span>
+  ). Note that this function is for use with the HTML5 module only.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">browser_input_capture(enable);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      enable
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Enable or disable game input capture
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">browser_input_capture(true);
+</code></pre>
+  The above code sets the game to capture all browser input on the HTML5 target platform.
+ </body>
+</html>

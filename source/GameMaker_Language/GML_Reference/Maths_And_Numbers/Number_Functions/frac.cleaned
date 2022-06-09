@@ -1,0 +1,69 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   frac
+  </h1>
+  This function returns the fractional part of n, that is, the part behind the decimal dot. It will return
+  <i>
+   only
+  </i>
+  the decimals behind the dot of a value, so
+  <span>
+   frac(3.125)
+  </span>
+  will return 0.125,
+  <span>
+   frac(6.921)
+  </span>
+  will return 0.921, etc...
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">frac(n);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      n
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The number to change.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">val = frac(3.4);
+</code></pre>
+  This will set val to 0.4.
+ </body>
+</html>

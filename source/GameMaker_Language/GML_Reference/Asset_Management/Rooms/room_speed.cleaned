@@ -1,0 +1,56 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   room_speed (deprecated)
+  </h1>
+  This variable holds the running speed of
+  <b>
+   all
+  </b>
+  rooms (and the game) in game frames per second. Note that this is
+  <i>
+   NOT
+  </i>
+  the FPS (frames per second) but rather the number of game steps that
+  <span>
+   GameMaker
+  </span>
+  will try to maintain each
+    second.
+  <b>
+   IMPORTANT!
+  </b>
+  This variable is maintained for Legacy Support only, and should not be used as it no longer sets the speed for a single room, but for ALL rooms in the game. To change game speed you should instead be using the function
+  <span>
+   <a href="../../General_Game_Control/game_set_speed.htm">
+    <span>
+     game_set_speed()
+    </span>
+   </a>
+  </span>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">room_speed;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">alarm[0] = room_speed * 10;
+</code></pre>
+  The above code uses
+  <span>
+   room_speed
+  </span>
+  to set an alarm to run for 10 seconds. Using the variable in this way will ensure that the alarm runs for 10 seconds, no matter what speed is set for the room.
+ </body>
+</html>

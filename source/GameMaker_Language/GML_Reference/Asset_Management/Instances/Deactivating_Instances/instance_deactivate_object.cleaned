@@ -1,0 +1,109 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   instance_deactivate_object
+  </h1>
+  With this function you can deactivate a single instance or all instances of a specific object from all those that have been activated previously. Note that if you have deactivated an instance or object that has been flagged as
+  <b>
+   Persistent
+  </b>
+  , then
+    you will need to reactivate it again with the function
+  <a href="instance_activate_object.htm">
+   <span>
+    instance_activate_object()
+   </span>
+  </a>
+  before changing room, otherwise it will
+  <i>
+   not
+  </i>
+  be carried over and will be discarded instead. Note too that deactivation
+    is not instantaneous, and an instance that has been deactivated in this way will not be considered to be inactive until the end of the event in which the function was called.
+  <b>
+   NOTE
+  </b>
+  : If you deactivate an instance on room start (ie:from the room creation code, or from an instance create event of an instance within the room) all instances that are placed within the room from the room editor
+  <b>
+   will still run their create event
+  </b>
+  before being deactivated.
+  <b>
+   WARNING
+  </b>
+  : Deactivating instances that have physics enabled will
+  <b>
+   NOT
+  </b>
+  stop their fixtures from interacting within the physics simulation. For that you should set their
+  <span>
+   <a href="../../../Physics/Physics_Variables/phy_active.htm">
+    <span>
+     phy_active
+    </span>
+   </a>
+  </span>
+  variable
+    to
+  <span>
+   true
+  </span>
+  or
+  <span>
+   false
+  </span>
+  as you activate/deactivate the instances.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">instance_deactivate_object(obj);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      obj
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../The_Asset_Editors/Objects.htm">
+        Object Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The object or instance to deactivate (the keyword
+      <b>
+       all
+      </b>
+      can also be used).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">instance_deactivate_object(obj_Enemy); var _vx = camera_get_view_x(view_camera[0]); var _vy = camera_get_view_y(view_camera[0]); var _vw = camera_get_view_width(view_camera[0]); var _vh = camera_get_view_height(view_camera[0]);instance_activate_region(_vx - 64, _vy - 64, _vw + 128, _vh + 128, false);
+</code></pre>
+  The above code deactivates all instances of the object "obj_Enemy" and then activates a region within the room.
+ </body>
+</html>

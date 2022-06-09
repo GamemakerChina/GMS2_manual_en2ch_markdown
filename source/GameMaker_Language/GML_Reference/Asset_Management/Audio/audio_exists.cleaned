@@ -1,0 +1,80 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   audio_exists
+  </h1>
+  This function returns whether a sound exists (
+  <span>
+   true
+  </span>
+  ) or not (
+  <span>
+   false
+  </span>
+  ). Note that if the index you search for has not been initialised previously, this function will cause an error as it is searching for non-existent asset indices. The sound to check can either be a single instance of a sound (the index for individual sounds being played can be stored in a variable when using the
+  <a href="audio_play_sound.htm">
+   <span>
+    audio_play_sound()
+   </span>
+  </a>
+  or
+  <a href="audio_play_sound_at.htm">
+   <span>
+    audio_play_sound_at()
+   </span>
+  </a>
+  functions) or a sound asset.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">audio_exists(index);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Sounds.htm">
+        Sound Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the sound to check the existence of.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if audio_exists(global.Music)
+{
+    audio_play_sound(global.Music, 0, true);
+}
+</code></pre>
+  The above code checks to see if a sound exists. If it does it is set to play in a loop.
+ </body>
+</html>

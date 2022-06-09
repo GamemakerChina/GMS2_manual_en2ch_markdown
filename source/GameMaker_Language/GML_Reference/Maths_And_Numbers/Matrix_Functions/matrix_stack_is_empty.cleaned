@@ -1,0 +1,38 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   matrix_stack_is_empty
+  </h1>
+  This function can be used to check whether the matrix stack is empty (returns
+  <span>
+   true
+  </span>
+  ) or not (returns
+  <span>
+   false
+  </span>
+  ).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">matrix_stack_is_empty();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if !matrix_stack_is_empty()
+{
+    matrix_stack_clear();
+}
+</code></pre>
+  The above code checks the matrix stack to see if it is empty and if it is not it clears it.
+ </body>
+</html>

@@ -1,0 +1,91 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   path_assign
+  </h1>
+  With this function you can copy the path data from one path to another. The path being copied
+  <i>
+   to
+  </i>
+  will be cleared first (should it have any path points) and be
+  <strong>
+   completely overwritten
+  </strong>
+  by the path being
+    copied from. Neither path is deleted in the process and the result is two paths, with two different indexes, but the exact same form and points. In general you would want to use this function on a path created using
+  <span>
+   <a href="path_add.htm">
+    path_add()
+   </a>
+  </span>
+  ,
+    since if you use it on a path asset,
+  <strong>
+   it will permanently affect the path for all instances in the game
+  </strong>
+  from the moment the function is used until the end of the game.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">path_assign(index, path);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../The_Asset_Editors/Paths.htm">
+        Path Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the path to be overwritten.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      path
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../The_Asset_Editors/Paths.htm">
+        Path Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the path that will overwrite 'index'.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">mypath = path_add(); path_assign(mypath, choose(path_1, path_2, path_3));
+</code></pre>
+  The above code will create a new, empty path indexed in the variable "mypath" and then copy over the path data from one of the three available path resources.
+ </body>
+</html>

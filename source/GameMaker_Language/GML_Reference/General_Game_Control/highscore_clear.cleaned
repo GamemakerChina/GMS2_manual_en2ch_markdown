@@ -1,0 +1,26 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   highscore_value
+  </h1>
+  With this function you can clear the internal global high score list, resetting all names to the default value of "Unknown" and all scores to the default value of 0.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">highscore_clear();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">highscore_clear();
+</code></pre>
+  This would clear the high score list.
+ </body>
+</html>

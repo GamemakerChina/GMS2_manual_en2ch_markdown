@@ -1,0 +1,240 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   external_define
+  </h1>
+  This function can be used to define an external function call to a specific dll (for Windows) or dylib (for Mac). This file can be either an included file or part of an extension.
+  
+  
+   You supply the name (and path) of the file, then the name of the function that you wish to define. Next you need to define the calling convention to be used (see the constants list below) as well as the type of result to be expected (also a constant, as listed below).
+  
+  
+   Finally you must give the number of arguments that the function can take (from 0 to 15) and for each of the arguments you must specify its type too. Please note that for functions with 4 or more arguments, all of them
+  <i>
+   must
+  </i>
+  be of type
+  <span>
+   ty_real
+  </span>
+  .
+  <b>
+   NOTE
+  </b>
+  : This is only for dll or dylib that have been added as "Included Files" to the
+  <span>
+   GameMaker
+  </span>
+  IDE. It will not work with those files added as extensions, since those require that you define the functions in the extension package itself.
+  <table>
+   <colgroup>
+    <col/>
+    <col/>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      External Call Type Constants
+     </th>
+    </tr>
+    <tr>
+     <th>
+      Constant
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       dll_cdecl
+      </span>
+     </td>
+     <td>
+      This is the default C, C++ call
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       dll_stdcall
+      </span>
+     </td>
+     <td>
+      This is the standard WinAPI call (Windows
+      <span>
+       dll
+      </span>
+      only)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <table>
+   <colgroup>
+    <col/>
+    <col/>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      External Data Type Constants
+     </th>
+    </tr>
+    <tr>
+     <th>
+      Constant
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       ty_real
+      </span>
+     </td>
+     <td>
+      A real number argument
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       ty_string
+      </span>
+     </td>
+     <td>
+      A null-terminated string argument
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">external_define(dll, name, calltype, restype, argnumb, argtype[0], argtype[1], ...argtype[10]);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      dll
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The name of the DLL file (string)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      name
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The name of the function (string)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      calltype
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/OS_And_Compiler/external_define.htm">
+        External Call Type Constant (dll_*)
+       </a>
+      </span>
+     </td>
+     <td>
+      The calling convention used
+     </td>
+    </tr>
+    <tr>
+     <td>
+      restype
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/OS_And_Compiler/external_define.htm">
+        External Data Type Constant (ty_*)
+       </a>
+      </span>
+     </td>
+     <td>
+      The type of the result to expect
+     </td>
+    </tr>
+    <tr>
+     <td>
+      argnumb
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The number of arguments (0 - 10)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      argtype[0 ... 10]
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/OS_And_Compiler/external_define.htm">
+        External Data Type Constant (ty_*)
+       </a>
+      </span>
+     </td>
+     <td>
+      The types of the arguments being used
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Reference/OS_And_Compiler/external_define.htm">
+ External Function
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">my_funcion = external_define("MyDLL.dll", "MyMin", dll_cdecl, ty_real, 2, ty_real, ty_real);
+</code></pre>
+  The above example code will define an external function called "MyMin" with two arguments.
+ </body>
+</html>

@@ -1,0 +1,136 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   path_add_point
+  </h1>
+  With this function you can add a point to the specified path and set its speed factor. This point is added onto the end of the path, irrespective of the position of the point, and the factor is equal to the percentage of
+  <a href="../Path_Variables/path_speed.htm">
+   <span>
+    path_speed
+   </span>
+  </a>
+  that the following instance actually goes at when it reaches this point in the path. If you wish to place a path point at some other position that is not the end, you should use
+  <a href="path_insert_point.htm">
+   <span>
+    path_insert_point()
+   </span>
+  </a>
+  .
+  
+  
+   If used on a path from the Asset Browser, note that
+  <strong>
+   the function will change the actual asset
+  </strong>
+  , and so will permanently affect how the path is used by all instances in the game from the moment the function is used until the end of the game. If this is not what you require, then you should use a function like
+  <span>
+   <a href="path_duplicate.htm">
+    path_duplicate()
+   </a>
+  </span>
+  to create a copy of the path first, then call this function on the duplicated asset (don't forget to call
+  <span>
+   <a href="path_delete.htm">
+    path_delete()
+   </a>
+  </span>
+  on the asset when it is no longer required).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">path_add_point(index, x, y, speed);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../The_Asset_Editors/Paths.htm">
+        Path Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the path to add the point to.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      x
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x coordinate of the new point.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y coordinate of the new point.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      speed
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The speed factor of the point (default value is 100).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">my_path = path_add();
+for (var i = 0; i &amp;amp;lt;= 360; i += 36;)
+{
+    path_add_point(my_path, x + lengthdir_x(50, i), y + lengthdir_y(50, i), 100);
+}
+</code></pre>
+  The above code will create a circular path around the x/y position of the instance running the code.
+ </body>
+</html>

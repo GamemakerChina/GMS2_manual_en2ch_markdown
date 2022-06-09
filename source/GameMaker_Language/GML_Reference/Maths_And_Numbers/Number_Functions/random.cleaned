@@ -1,0 +1,84 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   random
+  </h1>
+  This function is good for probabilities where returning an integer (whole number) is not necessary. For example,
+  <span>
+   random(100)
+  </span>
+  will return a value from 0 to 99, but that value can be 22.56473! You can also use real numbers and not integers in this function like this -
+  <span>
+   random(0.5)
+  </span>
+  , which will return a value between 0 and 0.4999999.
+  <b>
+   NOTE
+  </b>
+  : This function will return the same value every time the game is run afresh due to the fact that
+  <span>
+   GameMaker
+  </span>
+  generates the same initial random seed every time to make debugging code a far easier task. To avoid this behaviour use
+  <span>
+   <a href="randomise.htm">
+    <span>
+     randomise()
+    </span>
+   </a>
+  </span>
+  at the start of your game.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">random(n);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      n
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The upper range from which the random number will be selected.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if (random(10) &amp;amp;gt;= 9)
+{
+    score += 100;
+}
+</code></pre>
+  This will produce approximately a one in ten chance of adding 100 to the score.
+ </body>
+</html>

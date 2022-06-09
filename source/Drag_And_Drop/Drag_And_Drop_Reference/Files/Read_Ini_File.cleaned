@@ -1,0 +1,110 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/i_Files_Read_Ini_File.png"/><br/>
+   Read Ini File
+  </h1>
+  With this action you can read a piece of data from an Ini file. You must previously have opened the Ini file for reading/writing using the action
+  <a href="Open_Ini_File.htm">
+   Open Ini File
+  </a>
+  , and then with this action you give the type of data to read
+    (either a real number or a string enclosed in ""), as well as the section header and the key within that section to get the data from. You can also supply a default value which can be either a real number of a string, and the type should
+    coincide with the "Type" set in the action. This default action will be returned by the action should any of the following occur:
+  <ul>
+   <li>
+    The Ini file you have opened does not exist
+   </li>
+   <li>
+    The section header you reference does not exist
+   </li>
+   <li>
+    The key you are trying to get data from does not exist
+   </li>
+  </ul>
+  Under any of the above circumstances, you will get the default value returned rather than a value from the Ini file. Whatever value is returned will be stored in the target variable that you specify, which can also be created at that moment if flagged
+    as a temporary local variable.
+  <b>
+   IMPORTANT!
+  </b>
+  trying to read data from an Ini file that has not been opened previously using the
+  <a href="Open_Ini_File.htm">
+   Open Ini File
+  </a>
+  action will cause a serious error and crash your game.
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/a_Files_Read_Ini_File.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Type
+     </td>
+     <td>
+      The type of data to read, either a
+      <span>
+       string
+      </span>
+      (enclosed in quotes ""), or a
+      <span>
+       real number
+      </span>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Section
+     </td>
+     <td>
+      The section of the Ini file to read from (as a string)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Key
+     </td>
+     <td>
+      The key within the section to read from (as a string)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Default
+     </td>
+     <td>
+      The default value to return should either the file, section or key not exist
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Target
+     </td>
+     <td>
+      The target variable for holding the return value from the action
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/e_Files_Read_Ini_File.png"/><br/>
+  The above action block code will open an Ini file for reading then use data read from it to set
+    3 different global variables before closing the file again.
+ </body>
+</html>

@@ -1,0 +1,145 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   instance_find
+  </h1>
+  All instances have a unique identifier (
+  <a href="Instance_Variables/id.htm">
+   <span>
+    id
+   </span>
+  </a>
+  ) which can be used to modify and manipulate them while a game is running, but you may not always know what the id for a specific instance is and so this function can help as you can use it to iterate through all of them to find what you need. You specify the object that you want to find the instance of and a number, and if there is an instance at that position in the instance list then the function returns the id of that instance, and if not it returns the special
+  <a href="../../../GML_Overview/Instance_Keywords.htm">
+   keyword
+  </a>
+  <span>
+   <b>
+    noone
+   </b>
+  </span>
+  . You can also use the keyword
+  <span>
+   <b>
+    all
+   </b>
+  </span>
+  to iterate through all the instances in a room, as well as a parent object to iterate through all the instances that are part of that parent / child hierarchy, and you can even specify an instance (if you have its
+  <span>
+   id
+  </span>
+  ) as a check to see if it actually exists in the current room. Please note that as instances are sorted in an
+  <i>
+   arbitrary
+  </i>
+  manner, there is no specific order to how the instances are checked by this function, and any instance can be in any position.
+  
+  
+   The maximum value for "n" in this function would be
+  <ul>
+   <li>
+    For the keyword
+    <span>
+     <b>
+      all
+     </b>
+    </span>
+    :
+    <a href="instance_count.htm">
+     <span>
+      instance_count - 1
+     </span>
+    </a>
+   </li>
+   <li>
+    For an object index:
+    <a href="instance_number.htm">
+     <span>
+      instance_number(OBJ) - 1
+     </span>
+    </a>
+   </li>
+  </ul>
+  <h4>
+   <b>
+    Syntax:
+   </b>
+  </h4>
+  <pre><code class="language-gml">instance_find(obj, n);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      obj
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Objects.htm">
+        Object Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The object to find the nth instance of
+     </td>
+    </tr>
+    <tr>
+     <td>
+      n
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The number of the instance to find.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/id.htm">
+ Instance ID
+</a>
+or
+<a href="../../../../../GameMaker_Language/GML_Overview/Instance_Keywords.htm">
+ noone
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">for (var i = 0; i &amp;amp;lt; instance_number(obj_Enemy); ++i;)
+{
+    enemy[i] = instance_find(obj_Enemy,i);
+}
+</code></pre>
+  The above code will use a
+  <span>
+   for
+  </span>
+  loop to iterate through all the instances of "obj_Enemy" and store their
+  <b>
+   id
+  </b>
+  in the array "enemy[]".
+ </body>
+</html>

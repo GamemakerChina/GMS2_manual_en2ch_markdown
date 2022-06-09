@@ -1,0 +1,62 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/i_Files_Delete_File.png"/><br/>
+   Delete File
+  </h1>
+  With this action you can delete a file that has been created previously. You supply the file name (as a string) of the file to be deleted. Note that you
+  <i>
+   cannot
+  </i>
+  delete any files that are included in the game bundle, only those that have been created
+    using the
+  <a href="Close_Ini_File.htm">
+   Close Ini
+  </a>
+  or
+  <a href="Save_Buffer.htm">
+   Save Buffer
+  </a>
+  actions (see the section on
+  <a href="../../../Additional_Information/The_File_System.htm">
+   The File System
+  </a>
+  for more information).
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/a_Files_Delete_File.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Filename
+     </td>
+     <td>
+      The name (as a string) of the file to delete
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/e_Files_Rename_File.png"/><br/>
+  The above action block code will check to see if the file "checkpoint.sav" exists, and if
+    it does it then checks to see if the file "checkpoint_OLD.sav" exists. If that file exists as well, then it is deleted, and then the original "checkpoint.sav" file is renamed to "checkpoint_OLD.sav". Finally a buffer
+    is saved as "checkpoint.sav" (essentially we are backing up a saved buffer file each time we save it, so that there is always a "current" save and an "old" save file).
+ </body>
+</html>

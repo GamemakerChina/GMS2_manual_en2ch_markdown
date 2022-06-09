@@ -1,0 +1,95 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   ds_map_secure_save
+  </h1>
+  This function will save the contents of the given DS map to a file that is linked to the device it was created on (meaning it can't be read if transferred to any other device). The file itself can have almost any extension (for example,
+  <span>
+   *.dat
+  </span>
+  ,
+  <span>
+   *.json
+  </span>
+  ,
+  <span>
+   *.bin
+  </span>
+  , etc...) and will be obfuscated and stored to local storage on the target platform. You can then re-load the ds_map using the function
+  <a href="ds_map_secure_load.htm">
+   <span>
+    ds_map_secure_load()
+   </span>
+  </a>
+  . Note that if
+    the DS map being saved contains an array, this array will be converted into a DS list instead when saved.
+  <b>
+   IMPORTANT!
+  </b>
+  One of the features of a secure saved file is that it is locked to the device that it was created on, so you cannot load a file saved on one device into a project running on another device.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">ds_map_secure_save(map, filename);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      map
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/ds_map_create.htm">
+        DS Map ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The id of the data structure to use
+     </td>
+    </tr>
+    <tr>
+     <td>
+      filename
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The name of the file to save the map to
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">ds_map_secure_save(purchase_map, "p_data.dat");
+</code></pre>
+  The above code will save the DS map indexed in the variable "p_data" to the given file for later retrieval.
+ </body>
+</html>

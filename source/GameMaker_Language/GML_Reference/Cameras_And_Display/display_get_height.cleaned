@@ -1,0 +1,31 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   display_get_height
+  </h1>
+  This function will return the height of the display (in pixels). Note that on the HTML5 target, this value is the height of the
+  <i>
+   browser window
+  </i>
+  , rather than the physical display size.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">display_get_height();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">myheight = display_get_height();
+</code></pre>
+  This would set the variable "myheight" to the display's height.
+ </body>
+</html>

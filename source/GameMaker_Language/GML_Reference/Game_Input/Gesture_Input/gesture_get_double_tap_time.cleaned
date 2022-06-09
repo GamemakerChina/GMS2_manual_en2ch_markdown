@@ -1,0 +1,38 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   gesture_get_double_tap_time
+  </h1>
+  This function is used to get the time it takes between two touches/clicks to trigger a
+  <a href="../../../../The_Asset_Editors/Object_Properties/Gesture_Events.htm">
+   Double Tap Gesture
+  </a>
+  event. The time is measured in seconds and has a default value of 0.10.
+  <h4>
+   <b>
+    Syntax:
+   </b>
+  </h4>
+  <pre><code class="language-gml">gesture_get_double_tap_time();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a>
+(seconds)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if gesture_get_double_tap_time() != 0.16
+{
+    gesture_double_tap_time(0.16);
+}
+</code></pre>
+  The above code checks to see if double tap time for gestures is set to 0.16 seconds and if it is not, it sets it to that value.
+ </body>
+</html>

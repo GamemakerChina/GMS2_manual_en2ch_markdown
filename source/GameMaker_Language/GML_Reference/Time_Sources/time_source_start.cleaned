@@ -1,0 +1,141 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   time_source_start
+  </h1>
+  This function starts the given
+  <span>
+   Time Source
+  </span>
+  , changing its
+  <a href="Time_Source_States.htm">
+   state
+  </a>
+  to
+  <span>
+   time_source_state_active
+  </span>
+  .
+   
+   
+    The specified
+  <span>
+   Time Source
+  </span>
+  may be a new
+  <span>
+   Time Source
+  </span>
+  that was never started, was paused, stopped or expired with no repetitions.
+   
+   
+    This function will "soft-reset" the given
+  <span>
+   Time Source
+  </span>
+  , resetting its
+  <a href="time_source_get_time_remaining.htm">
+   expiry time
+  </a>
+  and
+  <a href="time_source_get_reps_remaining.htm">
+   reps remaining
+  </a>
+  to the values that were configured for it.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">time_source_start(id);
+</code></pre>
+  <table>
+   <colgroup>
+    <col/>
+    <col/>
+    <col/>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Time_Sources/time_source_create.htm">
+        Time Source ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The
+      <span>
+       Time Source
+      </span>
+      to start
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var _my_method = function()
+{
+    instance_destroy();
+}
+
+var _time_source = time_source_create(time_source_game, 300, time_source_units_frames, _my_method);
+
+time_source_start(_time_source);
+</code></pre>
+  In this example, we want the instance to destroy itself 300 frames later.
+   
+   
+    The code first creates a method that simply calls
+  <a href="../Asset_Management/Instances/instance_destroy.htm">
+   <span>
+    instance_destroy()
+   </span>
+  </a>
+  .
+   
+   
+    It then creates a
+  <span>
+   Time Source
+  </span>
+  , inheriting from the Game
+  <span>
+   Time Source
+  </span>
+  . It sets its period to
+  <strong>
+   300 frames
+  </strong>
+  .
+   
+   
+    Finally, it starts the
+  <span>
+   Time Source
+  </span>
+  .
+ </body>
+</html>

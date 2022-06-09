@@ -1,0 +1,68 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   delete
+  </h1>
+  The
+  <span>
+   delete
+  </span>
+  operator is used to
+  <strong>
+   de-reference
+  </strong>
+  a
+  <a href="../Structs.htm">
+   struct
+  </a>
+  , and has the following syntax:
+  <pre><code class="language-gml">delete &amp;amp;lt;variable&amp;amp;gt;;
+</code></pre>
+  What this means is that you call the delete operator along with the variable that holds a struct and it will remove the specific
+  <em>
+   reference
+  </em>
+  to the struct stored in the given variable (a reference is simply a value that points to the memory area
+    that is storing the struct and its contents). If this reference was the last reference to the struct in your game, then the
+  <a>
+   garbage collector
+  </a>
+  will remove the struct from memory in
+    a following
+  <a>
+   iteration
+  </a>
+  , typically at the very start of the next step.
+  <strong>
+   NOTE
+  </strong>
+  :
+  <span>
+   delete
+  </span>
+  can only be used along with variables, and
+  <i>
+   not
+  </i>
+  expressions
+  
+  
+   By default, structs with no further references in code will be garbage collected automatically in the steps following their use, but it is good practice to use this operator to flag them explicitly for the garbage collector to remove from memory at
+    the very start of the following step, freeing the memory quickly and more efficiently.
+  
+  
+   The following example shows a struct being created - for example in the Create Event of an instance:
+  <pre><code class="language-gml">mystruct = {
+     a : 0,     b : 100,     c : "Hello World" }
+</code></pre>
+  This struct will then be used in the instance events as usual, before finally being flagged for garbage collection in the
+  <a href="../../../The_Asset_Editors/Object_Properties/Object_Events.htm">
+   Clean Up
+  </a>
+  event, like this:
+  <pre><code class="language-gml">delete mystruct;
+</code></pre>
+ </body>
+</html>

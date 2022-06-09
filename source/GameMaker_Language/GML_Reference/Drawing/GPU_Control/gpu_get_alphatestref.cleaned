@@ -1,0 +1,41 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   gpu_get_alphatestref
+  </h1>
+  You can use this function to find the current value for the alpha test reference (default is 0, but you can use
+  <a href="gpu_set_alphatestref.htm">
+   <span>
+    gpu_set_alphatestref()
+   </span>
+  </a>
+  to set this value to something other than this).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">gpu_get_alphatestref();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a>
+(from 0 - 255)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if gpu_get_alphatestenable()
+{
+    if gpu_get_alphatestref() &amp;amp;lt; 254
+    {
+        gpu_set_alphatestref(254);
+    }
+}
+</code></pre>
+  The above code checks to see if alpha testing is enabled, and if it is, it then checks the current alpha test reference value and sets it if it is less than 254.
+ </body>
+</html>

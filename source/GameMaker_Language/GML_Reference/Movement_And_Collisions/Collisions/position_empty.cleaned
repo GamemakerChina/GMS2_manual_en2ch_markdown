@@ -1,0 +1,82 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   position_empty
+  </h1>
+  This function will check to see if a given position enters into collision with
+  <i>
+   any instance
+  </i>
+  with a valid collision mask at the given position.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">position_empty(x, y);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      x
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x position to check.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y position to check.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var xx, yy;
+xx = random(room_width);
+yy = random(room_height);
+if position_empty(xx, yy)
+{
+    instance_create_layer(xx, yy, "Bullets", obj_Bomb);
+}
+</code></pre>
+  This will check a random position somewhere in the room for a collision and if there is none it will create an instance of obj_Bomb.
+ </body>
+</html>

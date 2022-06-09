@@ -1,0 +1,44 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   video_pause
+  </h1>
+  This function pauses the video file that is currently loaded. You can resume it by calling
+  <span>
+   <a href="video_resume.htm">
+    video_resume()
+   </a>
+  </span>
+  any time after this function.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">video_pause();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var _status = video_get_status();
+
+if (keyboard_check_pressed(vk_space))
+{
+    if (_status == video_status_playing)
+    {
+        video_pause();
+    }
+    else if (status == video_status_paused)
+    {
+        video_resume();
+    }
+}
+</code></pre>
+  The above code gets the status of the video and then checks if the player has pressed Space. In that case it pauses the video if it's playing, and resumes it if it's paused.
+ </body>
+</html>

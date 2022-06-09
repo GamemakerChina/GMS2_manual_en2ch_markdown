@@ -1,0 +1,93 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   display_set_gui_size
+  </h1>
+  This function will only affect things drawn in the
+  <a href="../../../The_Asset_Editors/Object_Properties/Draw_Events.htm">
+   Draw GUI Event
+  </a>
+  and can be used to set a specific width and height for all GUI components in that event, and no matter what
+    size of display or window is used to display the GUI, it will be scaled to fit correctly. Where the GUI is positioned (ie: the (0,0) position) will depend on whether you have used the function
+  <a href="display_set_gui_maximise.htm">
+   <span>
+    display_set_gui_maximise()
+   </span>
+  </a>
+  or not. If you do not use this function (the default setting) then the GUI layer will be positioned with its (0,0) point at the same position as that for the application surface (the area where your game is being drawn) and the width and height will
+    be stretched to fit the this surface, such that setting a GUI width of 256px with this function when the application surface is 512px would stretch those 256 pixels to fit, effectively making the pixels twice as large. This is ideal for those games
+    that have aspect ratio correction set in the global Game Settings.
+  
+  
+   If you have used the
+  <span>
+   display_set_gui_maximise()
+  </span>
+  function then the (0,0) position for the GUI layer will default to the top left corner of the game window, or display (when in fullscreen or on devices), with the scaling factor set by that function,
+    and the width and height set by this one. You can reset the GUI layer at any time to the default configuration by calling this function using -1 as both the width and height - this will set the (0, 0) position to the application surface and the width
+    and height will be reset to 1:1 with the surface too.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">display_set_gui_size(width, height);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      width
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The width of the GUI
+     </td>
+    </tr>
+    <tr>
+     <td>
+      height
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The height of the GUI
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">display_set_gui_size(768, 1024);
+</code></pre>
+  The above code will lock the draw GUI event to the given width and height, scaling all components to fit either the application surface, or the display, using that proportion.
+ </body>
+</html>

@@ -1,0 +1,279 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   audio_falloff_set_model
+  </h1>
+  To add more versatility to the audio engine,
+  <span>
+   GameMaker
+  </span>
+  permits you to select the falloff model that suits your game. This model will be used for
+  <b>
+   all
+  </b>
+  the audio functions in the game or app, and so you should make sure that the model you choose is the correct one, as each one will affect how the listener perceives the sounds you play through emitters or with the function
+  <span>
+   <a href="audio_play_sound_at.htm">
+    audio_play_sound_at()
+   </a>
+  </span>
+  .
+  
+  
+   The default falloff model is
+  <span>
+   audio_falloff_none
+  </span>
+  , meaning there is no falloff when using emitters or positioned audio unless you change the falloff model.
+  <h2>
+   Falloff Models
+  </h2>
+  When playing audio through
+  <span>
+   <a href="audio_play_sound_at.htm">
+    audio_play_sound_at()
+   </a>
+  </span>
+  or setting the
+  <a href="Audio_Emitters/audio_emitter_falloff.htm">
+   falloff for an emitter
+  </a>
+  , there are three arguments that you will need to set, and each one is appropriate to a specific model and will affect the way the final sound is heard by the player depending on the distance that the listener is from the source. The three arguments are:
+  <ul>
+   <li>
+    <b>
+     Reference distance
+    </b>
+    : this is the distance from the listener the distance under which the volume for the sound playing would normally drop by half before being influenced by roll-off factor or the specified maximum distance.
+    <b>
+    </b>
+   </li>
+   <li>
+    <b>
+     Maximum distance
+    </b>
+    : this sets the distance where there will no longer be any attenuation of the source sound. This can be the point at which the sound is no longer heard
+    <i>
+     or
+    </i>
+    the point at which the sound volume no longer decreases below the minimum threshold defined by the model chosen.
+    <b>
+    </b>
+   </li>
+   <li>
+    <b>
+     Falloff factor
+    </b>
+    : The falloff factor is used in distance attenuation based on the inverse distance model and sets the final minimum threshold for a sound with falloff.
+   </li>
+  </ul>
+  The falloff models that are affected by these arguments are represented in
+  <span>
+   GameMaker
+  </span>
+  by the following constants (the table shows the exact calculations used too):
+  <table>
+   <colgroup>
+    <col/>
+    <col/>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/audio_falloff_set_model.htm">
+        Audio Falloff Constant
+       </a>
+      </span>
+     </th>
+    </tr>
+    <tr>
+     <th>
+      Constant
+     </th>
+     <th>
+      Gain Calculation
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       audio_falloff_exponent_distance
+      </span>
+     </td>
+     <td>
+      <span>
+       gain = (listener_distance / reference_distance) ^ (-falloff_factor)
+      </span>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       audio_falloff_exponent_distance_clamped
+      </span>
+     </td>
+     <td>
+      <span>
+       distance = clamp(listener_distance, reference_distance, maximum_distance)
+            gain = (distance / reference_distance) ^ (-falloff_factor)
+      </span>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       audio_falloff_exponent_distance_scaled
+      </span>
+     </td>
+     <td>
+      <span>
+       distance = clamp(listener_distance, reference_distance, maximum_distance)
+            
+            gain = ((distance / reference_distance) ^ (-falloff_factor)) * (((maximum_distance - distance) / (maximum_distance - reference_distance)) ^ (distance / maximum_distance))
+      </span>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       audio_falloff_inverse_distance
+      </span>
+     </td>
+     <td>
+      <span>
+       gain = reference_distance / (reference_distance + falloff_factor * (listener_distance - reference_distance))
+      </span>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       audio_falloff_inverse_distance_clamped
+      </span>
+     </td>
+     <td>
+      <span>
+       distance = clamp(listener_distance, reference_distance, maximum_distance)
+            gain = reference_distance / (reference_distance + falloff_factor * (distance - reference_distance))
+      </span>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       audio_falloff_inverse_distance_scaled
+      </span>
+     </td>
+     <td>
+      <span>
+       distance = clamp(listener_distance, reference_distance, maximum_distance)
+            
+            gain = (reference_distance / (reference_distance + falloff_factor * (distance - reference_distance))) * (((maximum_distance - distance) / (maximum_distance - reference_distance)) ^ (distance / maximum_distance))
+      </span>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       audio_falloff_linear_distance
+      </span>
+     </td>
+     <td>
+      <span>
+       distance = min(distance, maximum_distance)
+            gain = (1 - falloff_factor * (distance - reference_distance) / (maximum_distance - reference_distance))
+      </span>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       audio_falloff_linear_distance_clamped
+      </span>
+     </td>
+     <td>
+      <span>
+       distance = clamp(listener_distance, reference_distance, maximum_distance)
+            gain = (1 - falloff_factor * (distance - reference_distance) / (maximum_distance - reference_distance))
+      </span>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       audio_falloff_none
+      </span>
+     </td>
+     <td>
+      <span>
+       gain = 1
+      </span>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  The "
+  <span>
+   _scaled
+  </span>
+  " models are scaled in such a way that sounds are guaranteed to fall off entirely by the maximum distance.
+  
+  
+   The following graphs are visual representations of how some of the above constants work and affect the sound being played:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/GML/Reference/Audio/Distance_Models.png"/><br/>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">audio_falloff_set_model(model);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      model
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/audio_falloff_set_model.htm">
+        Audio Falloff Constant
+       </a>
+      </span>
+     </td>
+     <td>
+      The
+      <b>
+       constant
+      </b>
+      used to set the falloff model.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">audio_falloff_set_model(audio_falloff_exponent_distance_clamped);
+audio_play_sound_at(snd_Waterfall, x, y, 0, 100, 300, 1, true, 1);
+</code></pre>
+  The above code sets the falloff model and then plays the sound indexed in the variable "snd_Waterfall", which will be looped at its room position, with a fall-off reference of 100, a falloff distance of 300, a falloff factor of 1 and a low priority.
+ </body>
+</html>

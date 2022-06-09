@@ -1,0 +1,40 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   gpu_pop_state
+  </h1>
+  This function pops the previous GPU state from the stack and applies it. See
+  <a href="gpu_push_state.htm">
+   <span>
+    gpu_push_state()
+   </span>
+  </a>
+  for more information.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">gpu_pop_state();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">gpu_push_state();
+gpu_set_blendmode(bm_add);
+gpu_set_blendenable(false);
+gpu_set_cullmode(true);
+with (obj_Effect_Parent)
+{
+    draw_self();
+}
+gpu_pop_state();
+</code></pre>
+  The above code will "save" the current GPU state on the stack, then change certain GPU settings and draw a group of instances before resetting the GPU state to what it was previously.
+ </body>
+</html>

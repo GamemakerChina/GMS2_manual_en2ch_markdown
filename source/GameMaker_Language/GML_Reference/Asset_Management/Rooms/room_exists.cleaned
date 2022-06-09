@@ -1,0 +1,102 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   room_exists
+  </h1>
+  With this function you can check and see whether the room you specify exists or not. This function takes the room
+  <i>
+   index
+  </i>
+  (a real number) and
+  <b>
+   not
+  </b>
+  the room name (a string). This function is most useful when you are creating rooms dynamically using the function
+  <a href="room_add.htm">
+   <span>
+    room_add()
+   </span>
+  </a>
+  , but you can also use the
+  <b>
+   read only
+  </b>
+  variables
+  <a href="room_first.htm">
+   <span>
+    room_first
+   </span>
+  </a>
+  and
+  <a href="room_last.htm">
+   <span>
+    room_last
+   </span>
+  </a>
+  or the functions
+  <a href="room_next.htm">
+   <span>
+    room_next()
+   </span>
+  </a>
+  and
+  <a href="room_previous.htm">
+   <span>
+    room_previous()
+   </span>
+  </a>
+  to get a specific room index, or provide a variable that has stored the index of any other room in your game.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">room_exists(index);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Rooms.htm">
+        Room Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the room to check.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if room_exists(global.rm[0])
+{
+    room_goto(global.rm[0]);
+}
+</code></pre>
+  The above code checks to see if the room indexed in the array "global.rm[]" exists and if it does it then goes to that room.
+ </body>
+</html>

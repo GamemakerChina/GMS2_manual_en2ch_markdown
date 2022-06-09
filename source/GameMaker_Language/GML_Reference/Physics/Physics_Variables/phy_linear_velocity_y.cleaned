@@ -1,0 +1,38 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   phy_linear_velocity_y
+  </h1>
+  This variable can be used to get or change the y component of the instance's linear velocity vector and is defined in pixels per second (for pixels per step, see
+  <a href="phy_speed_y.htm">
+   <span>
+    phy_speed_y
+   </span>
+  </a>
+  ). Altering this for a static instance (ie: an instance with 0 density) will turn it into a kinematic instance
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">phy_linear_velocity_y;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a>
+(single precision floating point value, or undefined if the instance is not physics enabled)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if (phy_linear_velocity_y != 0)
+{
+    phy_linear_velocity_y = 0;
+}
+</code></pre>
+  The above code will check the y component of the linear velocity vector and if it is anything other than 0 it will set it to 0.
+ </body>
+</html>

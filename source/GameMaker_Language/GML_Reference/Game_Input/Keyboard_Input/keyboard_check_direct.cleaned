@@ -1,0 +1,122 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   keyboard_check_direct
+  </h1>
+  This function will return
+  <span>
+   true
+  </span>
+  if the key with the particular keycode is pressed, or
+  <span>
+   false
+  </span>
+  if it is not, by checking the hardware directly. It allows for a few more checks, in particular you can use keycodes
+  <b>
+   vk_lshift
+  </b>
+  ,
+  <b>
+   vk_lcontrol
+  </b>
+  ,
+  <b>
+   vk_lalt
+  </b>
+  ,
+  <b>
+   vk_rshift
+  </b>
+  ,
+  <b>
+   vk_rcontrol
+  </b>
+  and
+  <b>
+   vk_ralt
+  </b>
+  to check whether the left or right shift, control or alt key is pressed. The function will take a keycode value as returned by the function
+  <a href="../../Strings/ord.htm">
+   <span>
+    ord()
+   </span>
+  </a>
+  (only
+  <i>
+   capital
+  </i>
+  letters from A-Z or numbers from 0-9), or any of the
+  <span>
+   vk_*
+  </span>
+  constants listed on the main
+  <a href="Keyboard_Input.htm">
+   Keyboard Input
+  </a>
+  page.
+  <b>
+   <span>
+    NOTE
+   </span>
+  </b>
+  This function is only available for the standard Windows target and the result is independent of which application has focus.
+  <h4>
+   <b>
+    Syntax:
+   </b>
+  </h4>
+  <pre><code class="language-gml">keyboard_check_direct(key);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      key
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Game_Input/Keyboard_Input/Keyboard_Input.htm">
+        Virtual Key Constant (vk_*)
+       </a>
+      </span>
+     </td>
+     <td>
+      The key to check the down state of.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   <b>
+    Returns:
+   </b>
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   <b>
+    Example:
+   </b>
+  </h4>
+  <pre><code class="language-gml">if keyboard_check_direct(vk_ralt) || keyboard_check_direct(vk_lalt)
+{
+    crouch = true;
+}
+</code></pre>
+  The above code will check to see if either the left or right alt keys have been pressed, and if they have it sets the variable "crouch" to true.
+ </body>
+</html>

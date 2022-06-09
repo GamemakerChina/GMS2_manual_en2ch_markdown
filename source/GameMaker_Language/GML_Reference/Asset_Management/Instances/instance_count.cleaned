@@ -1,0 +1,50 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   instance_count
+  </h1>
+  With this
+  <b>
+   read only
+  </b>
+  variable you can get a count of all active instances that are in the room. This will include the instance running the code, but does
+  <i>
+   not
+  </i>
+  include those instances that have been deactivated using the
+  <a href="Deactivating_Instances/Deactivating_Instances.htm">
+   instance deactivate
+  </a>
+  functions. Note that this variable will only give you the number of instances at the
+  <i>
+   start
+  </i>
+  of the step, so any changes to the instances in the room made after the step has started will not be taken into consideration.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">instance_count;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if (instance_count &amp;amp;lt; 100)
+{
+    var dif = 100 - instance_count;
+    while (--dif &amp;amp;gt; 0)
+    {
+        instance_create_layer(random(room_width), random(room_height), "Effects", obj_Star);
+    }
+}
+</code></pre>
+  The above code will create multiple instances of the object "obj_Star" until the total instance count reaches 100.
+ </body>
+</html>

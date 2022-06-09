@@ -1,0 +1,66 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   skeleton_animation_get_ext
+  </h1>
+  A single skeletal animation sprite can have various animation sets, and these sets can be assigned different tracks so that you can "mix and match" animation sets. This function will return the name of the animation set currently used by the given track number (as set by the function
+  <a href="skeleton_animation_set_ext.htm">
+   <span>
+    skeleton_animation_set_ext
+   </span>
+  </a>
+  ).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">skeleton_animation_get_ext(track);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      track
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The track number to get the animation set name of.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if skeleton_animation_get_ext(1) != "bodyfight"
+{
+    skeleton_animation_set_ext("bodyfight", 1);
+}
+</code></pre>
+  The above code will change the animation set being used by track 1 to "bodyfight" if it is not already.
+ </body>
+</html>

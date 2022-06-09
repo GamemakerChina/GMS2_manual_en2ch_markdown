@@ -1,0 +1,71 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   os_is_paused
+  </h1>
+  When developing for mobile devices, you need to have a way to check that the device is still focused on your game or not, especially as if your game is on an iOS, Android or Windows Phone device then it can be interrupted by phone calls and other apps. You can use this function to check if the device is paused or not.
+  
+  
+   It is worth noting that this function will run any code that is contained within the code block on devices but then
+  <span>
+   GameMaker
+  </span>
+  will be paused immediately after as the device caches the game as a background process. So if you have something like the example code provided below, the instance to be created will not actually appear or run any of its events
+  <i>
+   until after the game has been restarted from the cached state
+  </i>
+  . This means that you may prefer to have the
+  <span>
+   os_is_paused
+  </span>
+  function call an alarm and then in the alarm event (which will be set when the device is paused but not run until it is un-paused) create a pause menu, restart music etc...
+  
+  
+   If you are using this function on Windows, Ubuntu (Linux), MacOS or HTML5 platforms, then the function is only toggled for
+  <b>
+   one step
+  </b>
+  to
+  <span>
+   true
+  </span>
+  when the game loses focus, and then it will return
+  <span>
+   false
+  </span>
+  again until the game is returned to focus (and loses it again). This is because these platforms do not cache apps and games, and so these will continue to run in the background.
+  <b>
+   NOTE
+  </b>
+  : On mobile devices, sounds and music will be stopped when the os is paused. They will
+  <b>
+   not
+  </b>
+  restart again unless you specifically start them with the appropriate function.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">os_is_paused()
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if os_is_paused()
+{
+    if !instance_exists(obj_PauseMenu)
+    {
+        instance_create_layer(0, 0, "Controllers", obj_PauseMenu);
+    }
+}
+</code></pre>
+  The above code checks to see if the game has been paused, and if it has then it creates an instance of the object "obj_PauseMenu" if none exist already.
+ </body>
+</html>

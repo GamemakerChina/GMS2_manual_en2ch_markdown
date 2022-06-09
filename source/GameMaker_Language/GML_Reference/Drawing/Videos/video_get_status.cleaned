@@ -1,0 +1,112 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   video_get_status
+  </h1>
+  This function returns the status of the currently loaded video. The status can be any one of the following constants:
+  <table>
+   <colgroup>
+    <col/>
+    <col/>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      <span>
+       Video Status Constant
+      </span>
+     </th>
+    </tr>
+    <tr>
+     <th>
+      Constant
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       video_status_closed
+      </span>
+     </td>
+     <td>
+      No video is currently loaded, or the video was closed with
+      <span>
+       <a href="video_close.htm">
+        video_close()
+       </a>
+      </span>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       video_status_preparing
+      </span>
+     </td>
+     <td>
+      The video is currently preparing and has not started playing yet
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       video_status_playing
+      </span>
+     </td>
+     <td>
+      The video is currently playing
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       video_status_paused
+      </span>
+     </td>
+     <td>
+      The video is paused (see
+      <span>
+       <a href="video_pause.htm">
+        video_pause()
+       </a>
+      </span>
+      )
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">video_get_status();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">Video Status Constant
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var _status = video_get_status();
+
+if (keyboard_check_pressed(vk_space))
+{
+    if (_status == video_status_playing)
+    {
+        video_pause();
+    }
+    else if (status == video_status_paused)
+    {
+        video_resume();
+    }
+}
+</code></pre>
+  The above code gets the status of the video and then checks if the player has pressed Space. In that case it pauses the video if it's playing, and resumes it if it's paused.
+ </body>
+</html>

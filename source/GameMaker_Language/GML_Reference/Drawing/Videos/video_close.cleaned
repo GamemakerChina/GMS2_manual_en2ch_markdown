@@ -1,0 +1,35 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   video_close
+  </h1>
+  This function closes the video file that is currently loaded. Ensure that this is only called after a
+  <span>
+   <a href="video_open.htm">
+    video_open()
+   </a>
+  </span>
+  call, otherwise it will not do anything.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">video_close();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if (keyboard_check_pressed(vk_escape))
+{
+    video_close();
+}
+</code></pre>
+  The above code closes the video when the Escape key is pressed.
+ </body>
+</html>

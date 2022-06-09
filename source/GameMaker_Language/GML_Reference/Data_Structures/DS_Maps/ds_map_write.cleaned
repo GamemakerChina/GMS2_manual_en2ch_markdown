@@ -1,0 +1,71 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   ds_map_write
+  </h1>
+  This function will turn the DS map data of the specified map into string format which can then be written to an *.ini or a *.txt file for easy storage. This string can then be later read back into a new ds_map using
+  <a href="ds_map_read.htm">
+   <span>
+    ds_map_read()
+   </span>
+  </a>
+  .
+  <b>
+   NOTE
+  </b>
+  : The returned string is not a human readable string, but rather a dump of the contents of the data-structure.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">ds_map_write(id);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/ds_map_create.htm">
+        DS Map ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The id of the data structure to use
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">ini_open("map.ini"); var t_string; t_string = ds_map_write(inventory); ini_write_string("Saved", "0", t_string); ini_close();
+</code></pre>
+  The above code opens an ini file ready to be written to. It then uses
+  <span>
+   ds_map_write()
+  </span>
+  to generate a string which is stored in the temporary variable "t_string". Finally, it writes that string to the ini file before closing it.
+ </body>
+</html>

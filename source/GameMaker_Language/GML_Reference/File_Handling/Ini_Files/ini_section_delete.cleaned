@@ -1,0 +1,57 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   ini_section_delete
+  </h1>
+  With this function you can delete a whole section of an ini file, which will also remove all key-value pairs that are associated with it.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">ini_section_delete(section);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      section
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The section to delete.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">ini_open("savedata.ini"); ini_write_real("save1", "Score", score ); ini_section_delete("save1");
+ ini_close();
+</code></pre>
+  This example will open "savedata.ini" and write a value to "save1" > "Score". It will then delete the "save1" section and close the .ini file.
+ </body>
+</html>

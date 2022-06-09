@@ -1,0 +1,42 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   gesture_get_drag_time
+  </h1>
+  This function is used to get the time it takes for a
+  <a href="../../../../The_Asset_Editors/Object_Properties/Gesture_Events.htm">
+   Drag Start Gesture
+  </a>
+  event to be triggered by a touch or click. This time will also affect how the
+  <b>
+   Tap Event
+  </b>
+  is triggered as a touch/click and release before this time is up will be considered a Tap. The time is measured in seconds and has a default value of 0.16.
+  <h4>
+   <b>
+    Syntax:
+   </b>
+  </h4>
+  <pre><code class="language-gml">gesture_get_drag_time();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a>
+(time in seconds)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if gesture_get_drag_time() != 0.16
+{
+    gesture_drag_time(0.16);
+}
+</code></pre>
+  The above code checks to see if the drag time for gestures is set to 0.16 seconds and if it is not it sets it to that value.
+ </body>
+</html>

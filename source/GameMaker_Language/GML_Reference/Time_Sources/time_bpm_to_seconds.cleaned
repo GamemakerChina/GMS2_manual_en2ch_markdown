@@ -1,0 +1,102 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   time_bpm_to_seconds
+  </h1>
+  This function takes a beats-per-minute value, and returns the length of each beat in seconds.
+   
+   
+    This can be used when
+  <a href="time_source_create.htm">
+   creating a Time Source
+  </a>
+  to use a BPM value for the
+  <span>
+   Time Source
+  </span>
+  . It's important that such a
+  <span>
+   Time Source
+  </span>
+  uses
+  <strong>
+   seconds
+  </strong>
+  as its
+  <a href="Time_Source_Units.htm">
+   unit
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">time_bpm_to_seconds(bpm);
+</code></pre>
+  <table>
+   <colgroup>
+    <col/>
+    <col/>
+    <col/>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      bpm
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The beats-per-minute value to convert into seconds-per-beat
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var _bpm = 90;
+var _seconds = time_bpm_to_seconds(_bpm);
+
+time_source = time_source_create(time_source_game, _seconds, time_source_units_seconds, function()
+{
+    show_debug_message("BEAT!");
+}, [], -1);
+</code></pre>
+  This code converts a value of 90 BPM into seconds, and uses that to create a
+  <span>
+   Time Source
+  </span>
+  that runs indefinitely.
+   
+   
+    On each beat, it prints the message
+  <span>
+   "BEAT!"
+  </span>
+  to the output log.
+ </body>
+</html>

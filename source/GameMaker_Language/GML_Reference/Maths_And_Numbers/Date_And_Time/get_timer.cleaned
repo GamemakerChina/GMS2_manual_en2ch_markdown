@@ -1,0 +1,27 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   get_timer
+  </h1>
+  This function returns the time that your game has been running on the chosen platform in microseconds (there are 1 million microseconds per second).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">get_timer();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">time = get_timer();
+</code></pre>
+  This would store the timer value in the variable "time".
+ </body>
+</html>

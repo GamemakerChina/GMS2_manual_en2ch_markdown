@@ -1,0 +1,88 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   script_exists
+  </h1>
+  This function will return
+  <span>
+   true
+  </span>
+  or
+  <span>
+   false
+  </span>
+  depending on whether the script or
+  <a href="../../../GML_Overview/Script_Functions.htm">
+   script function
+  </a>
+  with the given index exists. Note, that this is
+  <i>
+   not
+  </i>
+  a string, but rather the asset name which holds the unique index for each script (as it would appear in the IDE) or the named script function, as defined within the script asset (note that this will not work for
+  <a href="../../../GML_Overview/Method_Variables.htm">
+   method variables
+  </a>
+  ). For more information on scripts, see
+  <a href="../../../../The_Asset_Editors/Scripts.htm">
+   The Script Editor
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">script_exists(scr);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      scr
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Scripts.htm">
+        Script Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The script index that you want to check.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">script[0] = -1;
+script[1] = AI_Left;
+script[2] = AI_Right;
+var script_num = choose(0, 1, 2);
+if script_exists(script[script_num])
+{
+    script_execute(script[script_num]);
+}
+</code></pre>
+  The above example adds two script functions and a value into an array, then proceeds to get a random number and use that to choose a script function to run, unless the -1 is chosen in which case nothing will happen.
+ </body>
+</html>

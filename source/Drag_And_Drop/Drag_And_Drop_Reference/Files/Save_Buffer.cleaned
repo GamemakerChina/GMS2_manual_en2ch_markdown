@@ -1,0 +1,61 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/i_Files_Save_Buffer.png"/><br/>
+   Save Buffer
+  </h1>
+  With this action you can save a file containing the data from a buffer. You supply the unique buffer ID (as returned when you created the buffer with
+  <a href="../Buffers/Create_Buffer.htm">
+   Create Buffer
+  </a>
+  ) and give a name for the file (as a string,
+    with the extension of your choice) and the buffer will be written out to this file ready to be loaded again using
+  <a href="Load_Buffer.htm">
+   Load Buffer
+  </a>
+  .
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/a_Files_Save_Buffer.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Buffer
+     </td>
+     <td>
+      The unique buffer ID value of the buffer to save
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Filename
+     </td>
+     <td>
+      The name (as a string) of the file to save
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/e_Files_Load_Buffer.png"/><br/>
+  The above action block code will create a variable to hold buffer data and then check to see if a
+    buffer save file has been made previously. If the file exists, then it is loaded into the buffer variable that we created, but if it doesn't exist, it is created, written to and then saved out ready for loading the next time.
+ </body>
+</html>

@@ -1,0 +1,127 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   layer_sequence_headdir
+  </h1>
+  With this function you can set the direction for the given sequence
+  <a>
+   playhead
+  </a>
+  . You supply the sequence element ID as returned by
+  <a href="layer_sequence_create.htm">
+   <span>
+    layer_sequence_create()
+   </span>
+  </a>
+  or by one of the
+  <a href="../General_Layer_Functions/General_Layer_Functions.htm">
+   layer element functions
+  </a>
+  , and then give the playhead direction which should be one of the following constants:
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Constant
+     </th>
+     <th>
+      Description
+     </th>
+     <th>
+      Value
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       seq_dir_right
+      </span>
+     </td>
+     <td>
+      The sequence will play frames in an incremental order from left to right
+     </td>
+     <td>
+      1
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       seq_dir_left
+      </span>
+     </td>
+     <td>
+      The sequence will play frames in a decremental order from right to left
+     </td>
+     <td>
+      -1
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">layer_sequence_headdir(sequence_element_id, direction)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      sequence_element_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Sequence_Layers/layer_sequence_create.htm">
+        Sequence Element ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The unique ID value of the sequence element to target
+     </td>
+    </tr>
+    <tr>
+     <td>
+      direction
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Sequences/Sequence_Structs/The_Sequence_Instance_Struct.htm">
+        Sequence Direction Constant
+       </a>
+      </span>
+     </td>
+     <td>
+      The playhead direction, a constant, listed above
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var _seq = layer_sequence_create("Background", 0, 0, seq_AnimatedBackground);
+layer_sequence_headdir(_seq, seq_dir_left);
+</code></pre>
+  The above code creates a new sequence and stores its ID in a local variable. This ID is then used to set the playhead direction to decrement frames (right to left playback).
+ </body>
+</html>

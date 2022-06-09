@@ -1,0 +1,92 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   skeleton_collision_draw_set
+  </h1>
+  With this function, you can toggle on (
+  <span>
+   true
+  </span>
+  ) or off (
+  <span>
+   false
+  </span>
+  ) drawing the collision data for the current skeletal animation sprite being used by the instance. If this is switched on, the bounding box and the precise collision mask will be drawn as outlines around the sprite.
+  
+  
+   This function only works when the skeletal sprite drawing is being handled by the object. To draw the collision bounding box when drawing a skeletal sprite manually, use
+  <span>
+   <a href="draw_skeleton_collision.htm">
+    draw_skeleton_collision()
+   </a>
+  </span>
+  .
+  <span>
+   NOTE
+  </span>
+  The bounding box of a Spine sprite is set up in Spine itself, not in
+  <span>
+   GameMaker
+  </span>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">skeleton_collision_draw_set(flag);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      flag
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Set to
+      <span>
+       true
+      </span>
+      to turn on drawing, and
+      <span>
+       false
+      </span>
+      to turn it off.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if debug_mode == true
+{
+    skeleton_collision_draw_set(true);
+}
+</code></pre>
+  The above code checks to see if the game is being run in debug mode and if it is, it toggles the skeletal collision data for the instance to be shown.
+ </body>
+</html>

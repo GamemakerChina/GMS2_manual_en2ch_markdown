@@ -1,0 +1,57 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   audio_free_buffer_sound
+  </h1>
+  With this function you can free up the pointer index value associated with the sound ID. Freed sounds will not be available for playing, and if multiple instances of the sound are being played they will all be stopped. Note that before you can delete
+    the buffer itself, you must first free all sound ID's associated with it.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">audio_free_buffer_sound(index);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../The_Asset_Editors/Sounds.htm">
+        Sound Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the buffered sound to free.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">audio_free_buffer_sound(soundID);
+</code></pre>
+  The above code frees the buffered sound indexed in the variable "soundID".
+ </body>
+</html>

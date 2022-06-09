@@ -1,0 +1,70 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   xboxlive_gamerscore_for_user
+  </h1>
+  This function will return the XBox Live gamerscore for the given user ID pointer.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">xboxlive_gamerscore_for_user(user_id);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      user_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/UWP_And_XBox_Live/Users_And_Accounts/xboxlive_get_user.htm">
+        Xbox User ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The user ID (a pointer) to check
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var _a = 0;
+var _num = xboxlive_get_user_count();
+for (var i = 0; i &amp;amp;lt; _num; ++i;)
+{
+    var _uid = xboxlive_get_user(i);
+    if _uid != pointer_null
+    {
+        global.UserName[_a] = xboxlive_gamedisplayname_for_user(_uid);
+        global.UserScore[_a] = xboxlive_gamerscore_for_user(_uid);
+        global.UserRep[_a] = xboxlive_reputation_for_user(_uid);
+        global.UserAvatar[_a] = xboxlive_sprite_add_from_gamerpicture(_uid, 256, 0, 0);
+        ++a;
+    }
+}
+</code></pre>
+  The above code loops through the logged in users and stores their gamer data in various global arrays.
+ </body>
+</html>

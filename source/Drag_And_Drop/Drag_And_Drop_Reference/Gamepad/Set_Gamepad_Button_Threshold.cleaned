@@ -1,0 +1,81 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Gamepad/i_GamePad_Set_Button_Threshold.png"/><br/>
+   Set Gamepad Button Threshold
+  </h1>
+  This action can be used to set the "threshold" of the gamepad analogue buttons. You specify the gamepad index to set, and then set a value from 0 to 1 and if the analogue button input amount is lower than the given value, the gamepad button
+    is considered to be at 0. Note that this is a
+  <em>
+   global
+  </em>
+  setting that will affect
+  <i>
+   all
+  </i>
+  analogue buttons connected gamepad. This value will be used in all
+  <a href="If_Gamepad_Button_Down.htm">
+   down
+  </a>
+  ,
+  <a href="If_Gamepad_Button_Pressed.htm">
+   pressed
+  </a>
+  and
+  <a href="If_Gamepad_Button_Released.htm">
+   released
+  </a>
+  checks for the given gamepad, but will be
+  <em>
+   ignored
+  </em>
+  by the action
+  <a href="Get_Gamepad_Trigger.htm">
+   Get Gamepad Trigger
+  </a>
+  .
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Gamepad/a_GamePad_Set_Button_Threshold.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Gamepad
+     </td>
+     <td>
+      The gamepad index.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Deadzone
+     </td>
+     <td>
+      The threshold value (0 - 1)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Gamepad/e_GamePad_Set_Button_Threshold.png"/><br/>
+  The above action block code sets the button threshold for all
+    gamepad indices to 0.2.
+ </body>
+</html>

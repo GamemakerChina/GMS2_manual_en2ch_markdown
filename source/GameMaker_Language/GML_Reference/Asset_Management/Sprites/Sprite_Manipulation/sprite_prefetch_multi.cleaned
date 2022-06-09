@@ -1,0 +1,88 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   sprite_prefetch_multi
+  </h1>
+  This function can be used to prefetch (place into texture memory) a number of texture pages that contain the sprites given. You supply an array populated with the sprite indices (as defined when you created the sprite asset) and the texture pages that they are on will be loaded into memory. Note that the function will return
+  <span>
+   -1
+  </span>
+  if prefetch is not supported for the chosen resource or the target platform is HTML5, or it will return
+  <span>
+   0
+  </span>
+  if all worked correctly.
+  <b>
+   NOTE
+  </b>
+  : There is a performance hit as the texture is uploaded to texture memory on most devices, so it's recommended that you call
+  <span>
+   <span>
+    sprite_prefetch_multi()
+   </span>
+  </span>
+  on any required graphics at the start of a level to avoid any stalls.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">sprite_prefetch_multi
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      array
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Arrays.htm">
+        Array
+       </a>
+      </span>
+      of
+      <span>
+       <a href="../../../../../../The_Asset_Editors/Sprites.htm">
+        Sprite Asset
+       </a>
+      </span>
+      s
+     </td>
+     <td>
+      Array with the sprite indices to fetch
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a>
+(-1 or 0)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">spr_a[0] = spr_Player_Aura1;
+spr_a[1] = spr_Player_Aura2;
+spr_a[2] = spr_Player_Aura3;
+spr_a[3] = spr_Player_Aura4;
+sprite_prefetch_multi(spr_a);
+</code></pre>
+  The above code creates an array where each element holds a sprite index. This array is then used to place those sprite textures into memory.
+ </body>
+</html>

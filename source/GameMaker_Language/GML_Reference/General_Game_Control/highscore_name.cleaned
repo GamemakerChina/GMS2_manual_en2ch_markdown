@@ -1,0 +1,62 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   highscore_name
+  </h1>
+  With this function you can retrieve the name string that has been stored in the high score list at the given position. If no name has been entered, the string "Unknown" will be returned.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">highscore_name(place);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      place
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The place on the table (1-10).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var i = 9;
+repeat(10)
+{
+    name[i] = highscore_name(i + 1);
+    i -= 1;
+}
+</code></pre>
+  The above code will loop through the high score list and store all the names in an array.
+ </body>
+</html>

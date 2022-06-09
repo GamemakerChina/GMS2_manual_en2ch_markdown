@@ -1,0 +1,107 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Plugin Preferences
+  </h1>
+  The
+  <strong>
+   Plugins Preferences
+  </strong>
+  are used to control any extra plugins that have been added to the
+  <span>
+   GameMaker
+  </span>
+  IDE. By default this has one section dedicated to the
+  <strong>
+   Source Control
+  </strong>
+  plugin for integrating
+  <span>
+   GameMaker
+  </span>
+  projects with
+  <a href="https://git-scm.com/">
+   Git
+  </a>
+  .
+  <a href="#">
+   <span>
+    Source Control (Git)
+   </span>
+   <span>
+    Source Control (Git)
+   </span>
+  </a>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Setup_And_Version/Preferences/Plugins_Git_Prefs.png"/><br/>
+  This section deals with the preferences that are required to get the
+  <a href="../../IDE_Tools/Source_Control.htm">
+   Git SCM
+  </a>
+  plugin to work with
+  <span>
+   GameMaker
+  </span>
+  .
+  <ul>
+   <li>
+    <strong>
+     Git executable path
+    </strong>
+    : This is the location of the Git executable which GameMaker uses for all Source Control commands. As shown in the image above, this will be located in the
+    <span>
+     cmd
+    </span>
+    folder of your Git installation.
+   </li>
+  </ul>
+  Below this you can set up the
+  <em>
+   Merge Tool
+  </em>
+  and the
+  <em>
+   Diff Tool
+  </em>
+  for Source Control with these settings (
+  <strong>
+   optional
+  </strong>
+  ):
+  <ul>
+   <li>
+    <strong>
+     Merge (Tool location)
+    </strong>
+    : Here you specify the full file path to the Git merge tool.
+   </li>
+   <li>
+    <strong>
+     <strong>
+      Merge (Tool options)
+     </strong>
+    </strong>
+    : In this field you can add any extra commands to be run whenever you use the merge Tool.
+   </li>
+   <li>
+    <strong>
+     <strong>
+      Diff (Tool location)
+     </strong>
+    </strong>
+    : Here you specify the full file path to the Git diff tool.
+   </li>
+   <li>
+    <strong>
+     <strong>
+      <strong>
+       Diff (Tool options)
+      </strong>
+     </strong>
+    </strong>
+    : In this field you can add any extra commands to be run whenever you use the diff Tool.
+   </li>
+  </ul>
+ </body>
+</html>

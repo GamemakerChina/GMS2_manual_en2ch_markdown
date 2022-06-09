@@ -1,0 +1,45 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   delta_time
+  </h1>
+  This variable returns the frame delta time, which is the time difference between the previous frame and the current frame. This value is in microseconds, where 1 microsecond is 1,000,000th of a second.
+  
+  
+   The purpose of delta timing is to eliminate the effects of the lag or slowness of computers that try to handle complex graphics or a lot of code. It is a value that can be added on to the speed of objects so that they will eventually move at the same speed, regardless of lag. This is achieved in
+  <span>
+   GameMaker
+  </span>
+  by using the
+  <span>
+   delta_time
+  </span>
+  variable every step as it measures the time that has passed between one step and the next in microseconds. Therefore the variable
+  <span>
+   delta_time
+  </span>
+  can be used to calculate how much faster (for example) a game character has to move to make up for a lag spike in the game.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">delta_time
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a>
+(integer)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var _dt = delta_time / 1000000;
+speed = spd * _dt;
+</code></pre>
+  The above code will set the speed of the instance using delta-time to correct for lag. The variable "_dt" would be used to hold the previously calculated delta time value so that the ratio can be used to multiply the base speed value (held in the variable "spd") and so get a consistent speed for the instance.
+ </body>
+</html>

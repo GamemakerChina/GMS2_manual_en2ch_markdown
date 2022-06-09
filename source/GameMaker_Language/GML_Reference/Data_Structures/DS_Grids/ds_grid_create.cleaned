@@ -1,0 +1,88 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   ds_grid_create
+  </h1>
+  With this function you can create a new DS grid data structure of the specified cell width and height. This function returns an id which must be used in all further functions that deal with this DS grid.
+  <b>
+   IMPORTANT!
+  </b>
+  When you create a data structure, the index value to identify it is an integer value starting at 0. This means that data structures of different types can have the
+  <b>
+   same
+  </b>
+  index value, so if in doubt you should be using the
+  <span>
+   <a href="../ds_exists.htm">
+    <span>
+     ds_exists()
+    </span>
+   </a>
+  </span>
+  function before accessing them. Also note that indices are re-used, so a destroyed data structure index value may be used by a newly created one afterwards.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">ds_grid_create(w, h);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      w
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The width of the grid to be created.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      h
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The height of the grid to be created.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Grids/ds_grid_create.htm">
+ DS Grid ID
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">mygrid = ds_grid_create(10, 10)
+</code></pre>
+  This creates a grid 10 cells high and 10 cells wide.
+ </body>
+</html>

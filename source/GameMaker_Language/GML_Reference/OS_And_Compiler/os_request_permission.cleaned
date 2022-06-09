@@ -1,0 +1,177 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   os_check_permission
+  </h1>
+  With this function you can request a specific permission. You supply the permission to request as a string using the format "
+  <span>
+   android.permission.
+  </span>
+  ", so to request the
+  <span>
+   RECORD_AUDIO
+  </span>
+  permission (for example) you would call
+  <pre><code class="language-gml">os_request_permission("android.permission.RECORD_AUDIO");
+</code></pre>
+  The function will return trigger a
+  <a href="../../../The_Asset_Editors/Object_Properties/Async_Events/System.htm">
+   System Asynchronous Event
+  </a>
+  where the built in
+  <a href="../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">
+   <span>
+    async_load
+   </span>
+  </a>
+  DS map will contain the following key/value pairs:
+  <ul>
+   <li>
+    "
+    <b>
+     type
+    </b>
+    ": This is the event type that was triggered and the value will be the string "
+    <span>
+     permission_request_result
+    </span>
+    ".
+   </li>
+   <li>
+    "
+    <b>
+    </b>
+    ": This will the permission requested by the function as a string, which will contain one of the following constants:
+   </li>
+  </ul>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Constant
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       os_permission_granted
+      </span>
+     </td>
+     <td>
+      This indicates that the permission has been granted
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       os_permission_denied
+      </span>
+     </td>
+     <td>
+      This indicates that the permission has not been granted
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  It is worth noting that the following permission are supported natively by
+  <span>
+   GameMaker
+  </span>
+  , but are considered "dangerous" by Google and as such they
+  <i>
+   must
+  </i>
+  be explicitly requested (note too that some permissions can be requested using the
+  <a href="../../../Settings/Game_Options/Android.htm">
+   Android Game Options
+  </a>
+  without the need for this function):
+  <ul>
+   <li>
+    <span>
+     android.permission.WRITE_EXTERNAL_STORAGE
+    </span>
+   </li>
+   <li>
+    <span>
+     android.permission.READ_PHONE_STATE
+    </span>
+   </li>
+   <li>
+    <span>
+     android.permission.RECORD_AUDIO
+    </span>
+   </li>
+  </ul>
+  For more information on app permissions, please see the
+  <a href="https://developer.android.com/guide/topics/permissions/overview">
+   Android Documentation
+  </a>
+  .
+  <b>
+   IMPORTANT!
+  </b>
+  This function is for the
+  <b>
+   Android
+  </b>
+  target only.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">os_request_permission(permission)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      permission
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The permission to request (a string)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if (os_type == os_android)
+{
+    if (os_check_permission("android.permission.INTERNET") == os_permission_denied)
+    {
+        os_request_permission("android.permission.INTERNET");
+    }
+}
+</code></pre>
+  The above code checks the OS type and if is Android, it performs a check on the permissions and if the "INTERNET" permission has not yet been granted, it requests it.
+ </body>
+</html>

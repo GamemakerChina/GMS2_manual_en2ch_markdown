@@ -1,0 +1,59 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   xboxlive_matchmaking_stop
+  </h1>
+  This function can be used to end a matchmaking session for the given user.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">xboxlive_matchmaking_stop(user_id);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      user_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/UWP_And_XBox_Live/Users_And_Accounts/xboxlive_get_user.htm">
+        Xbox User ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The user ID pointer to use
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if !xboxlive_user_is_signed_in(user_id[0])
+{
+    xboxlive_matchmaking_stop(user_id[0]);
+}
+</code></pre>
+  The above code will end the matchmaking session for the given user.
+ </body>
+</html>

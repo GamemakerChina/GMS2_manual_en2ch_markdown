@@ -1,0 +1,65 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   clickable_delete
+  </h1>
+  This function must be used to remove a clickable icon previously created with
+  <a href="clickable_add.htm">
+   <span>
+    clickable_add()
+   </span>
+  </a>
+  from the game window.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">clickable_delete(index);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Web_And_HTML5/clickable_add.htm">
+        Clickable ID
+       </a>
+      </span>
+     </td>
+     <td>
+      Index of the clickable icon to remove.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if clickable_exists(global.Help_Icon)
+{
+    clickable_delete(global.Help_Icon);
+}
+</code></pre>
+  The above code removes the clickable icon indexed in the global variable "Help_Icon" from the game window, if it exists.
+ </body>
+</html>

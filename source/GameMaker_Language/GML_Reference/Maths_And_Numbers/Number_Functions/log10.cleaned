@@ -1,0 +1,89 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   log10
+  </h1>
+  This function is similar to the
+  <a href="log2.htm">
+   <span>
+    log2(n)
+   </span>
+  </a>
+  function, only that
+  <span>
+   log10(n)
+  </span>
+  gets the number of 10's that we need to multiply together to get n. So
+  <span>
+   log10(100)
+  </span>
+  returns 2, as multiplying 10 by itself gives
+    100,
+  <span>
+   log10(1000)
+  </span>
+  returns 3 as 10x10x10=1000 etc... The number does
+  <i>
+   not
+  </i>
+  have to be divisible by ten, however, but this will still return an appropriate value, for example if we have
+  <span>
+   log10(101)
+  </span>
+  we get 2.00432137... which is
+    how many times you could divide 101 by 10.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">log10(n);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      n
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The input value.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">logval = log10(num);
+</code></pre>
+  The above code gets the
+  <span>
+   log10
+  </span>
+  of the value stored in "num".
+ </body>
+</html>

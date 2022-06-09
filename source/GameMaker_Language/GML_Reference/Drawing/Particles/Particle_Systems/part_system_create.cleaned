@@ -1,0 +1,33 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   part_system_create
+  </h1>
+  This function is used to create a new particle system and will return a unique index number that should be stored and used in all further functions relating to that system. The system will be assigned a managed layer and will be set to have a depth of 0. Managed layers are not accessible to the user and used only for internal management when depth is used instead of layers. Normally you would use the function
+  <a href="part_system_create_layer.htm">
+   <span>
+    part_system_create_layer()
+   </span>
+  </a>
+  instead of this one.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">part_system_create();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Systems/part_system_create.htm">
+ Particle System ID
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">global.Sname = part_system_create();
+</code></pre>
+  This will create a new particle system and store the index in the global variable "Sname".
+ </body>
+</html>

@@ -1,0 +1,151 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   point_distance_3d
+  </h1>
+  This function takes the supplied components of the vector and returns the length (distance) of the vector. It works in exactly the same way as
+  <a href="point_distance.htm">
+   <span>
+    point_distance()
+   </span>
+  </a>
+  but with the addition of factoring in the z value (depth) for use in 3D space.
+  <h4>
+   <b>
+    Syntax:
+   </b>
+  </h4>
+  <pre><code class="language-gml">point_distance_3d(x1, y1, z1, x2, y2, z2);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      x1
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x coordinate of the first component of the vector
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y1
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y coordinate of the first component of the vector
+     </td>
+    </tr>
+    <tr>
+     <td>
+      z1
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The z coordinate of the first component of the vector
+     </td>
+    </tr>
+    <tr>
+     <td>
+      x2
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x coordinate of the second component of the vector
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y2
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y coordinate of the second component of the vector
+     </td>
+    </tr>
+    <tr>
+     <td>
+      z2
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The z coordinate of the second component of the vector
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var inst, ex, ey, ez;
+inst = instance_nearest(x, y, enemy);
+if inst
+{
+    ex = inst.x;
+    ey = inst.y;
+    ez = inst.z;
+    if point_distance_3d(x, y, z, ex, ey, ez) &amp;amp;lt; 200
+    {
+        instance_create_layer(x, y, "Bullets", obj_Missile)
+    }
+}
+</code></pre>
+  The above code will get the x and y and z coordinates of the nearest enemy and then use them to check the distance (length) of the vector formed by them and the player coordinates. If the value is less than 200, the player object will create an instance of "obj_Missile".
+ </body>
+</html>

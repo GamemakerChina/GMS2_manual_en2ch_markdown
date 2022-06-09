@@ -1,0 +1,50 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   GameMaker IDE
+  </h1>
+  GameMaker's
+  <strong>
+   I
+  </strong>
+  ntegrated
+  <strong>
+   D
+  </strong>
+  evelopment
+  <strong>
+   E
+  </strong>
+  nvironment (or IDE) is the main interface where you create your games and make use of all functionality provided by the software. Essentially, the program itself -- from the Start Screen to every editor window you use to make your game -- is known and referred to as the
+  <strong>
+   IDE
+  </strong>
+  throughout the manual and various tutorials.
+  <figure>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/The_IDE/The_IDE.png"/><br/>
+   <figcaption>
+    The IDE
+   </figcaption>
+  </figure>
+  The following sections cover information regarding the IDE:
+  <ul>
+   <li>
+    <a href="Preferences_And_Information/Preferences_And_Features.htm">
+     Preferences And Features
+    </a>
+   </li>
+   <li>
+    <a href="../IDE_Navigation/IDE_Input.htm">
+     IDE Input And Navigation
+    </a>
+   </li>
+   <li>
+    <a href="../IDE_Tools/Additional_IDE_Tools.htm">
+     Additional IDE Tools
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

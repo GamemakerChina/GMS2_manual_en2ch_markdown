@@ -1,0 +1,87 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   variable_struct_exists
+  </h1>
+  With this function you can check whether a variable exists within the given struct or not. You supply the struct reference to use as well as the variable name to check for
+  <i>
+   as a string
+  </i>
+  (see example code below). The function will return
+  <span>
+   true
+  </span>
+  if a variable with the given name exists for the struct and
+  <span>
+   false
+  </span>
+  otherwise.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">variable_struct_exists(struct, name);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      struct
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Structs.htm">
+        Struct
+       </a>
+      </span>
+     </td>
+     <td>
+      The struct reference to check
+     </td>
+    </tr>
+    <tr>
+     <td>
+      name
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The name of the struct variable to check for (as a string)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if !variable_struct_exists(mystruct, "shields")
+{
+    mystruct.shields = 0;
+}
+</code></pre>
+  The above code will check to see if the variable called "shields" exists in the given struct and if it does not then it is created and initialised to 0.
+ </body>
+</html>

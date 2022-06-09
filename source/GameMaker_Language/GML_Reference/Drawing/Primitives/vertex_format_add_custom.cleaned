@@ -1,0 +1,443 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   vertex_format_add_custom
+  </h1>
+  This function permits you to use a custom data type for specific vertex format attributes as part of the new vertex format being created. The available values to use are defined by the data type constant that you choose, listed below:
+  <table>
+   <colgroup>
+    <col/>
+    <col/>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Drawing/Primitives/vertex_format_add_custom.htm">
+        Vertex Data Type Constant
+       </a>
+      </span>
+     </th>
+    </tr>
+    <tr>
+     <th>
+      Constant
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       vertex_type_float1
+      </span>
+     </td>
+     <td>
+      A single floating point value
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       vertex_type_float2
+      </span>
+     </td>
+     <td>
+      Two floating point values
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       vertex_type_float3
+      </span>
+     </td>
+     <td>
+      Three floating point values
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       vertex_type_float4
+      </span>
+     </td>
+     <td>
+      Four floating point values
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       vertex_type_colour
+      </span>
+     </td>
+     <td>
+      Four component values (r, g, b, a)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       vertex_type_ubyte4
+      </span>
+     </td>
+     <td>
+      Four component unsigned byte values (from 0 to 255)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  The use that these constants will be put too also needs to be defined so that the values can be "bound" properly within the shader being created. This is necessary due to the fact that DX and OpenGL have different requirements so if you don't bind them properly, they won't come through right in the shader. The available usage constants that you can choose are listed below and those you use will depend on the specifics of the shader being created:
+  <table>
+   <colgroup>
+    <col/>
+    <col/>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Drawing/Primitives/vertex_format_add_custom.htm">
+        Vertex Usage Type Constant
+       </a>
+      </span>
+     </th>
+    </tr>
+    <tr>
+     <th>
+      Constant
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       vertex_usage_position
+      </span>
+     </td>
+     <td>
+      position values (x, y, z)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       vertex_usage_colour
+      </span>
+     </td>
+     <td>
+      colour values (r, g, b, a)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       vertex_usage_normal
+      </span>
+     </td>
+     <td>
+      vertex normal values (nx, ny, nz)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       vertex_usage_textcoord
+      </span>
+     </td>
+     <td>
+      UV coordinates (u, v)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       vertex_usage_blendweight
+      </span>
+     </td>
+     <td>
+      the blendweight of the input matrix (for skeletal animation, for example)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       vertex_usage_blendindices
+      </span>
+     </td>
+     <td>
+      the indices of the matrices to use (for skeletal animation, for example)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       vertex_usage_depth
+      </span>
+     </td>
+     <td>
+      vertex depth buffer value
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       vertex_usage_tangent
+      </span>
+     </td>
+     <td>
+      tangent values
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       vertex_usage_binormal
+      </span>
+     </td>
+     <td>
+      binormal values
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       vertex_usage_fog
+      </span>
+     </td>
+     <td>
+      fog values
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       vertex_usage_sample
+      </span>
+     </td>
+     <td>
+      sampler index
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  There are some important things to note when using custom formats like these:
+  <ul>
+   <li>
+    The
+    <span>
+     vertex_format_add_custom()
+    </span>
+    function only supports
+    <span>
+     vertex_usage_position
+    </span>
+    ,
+    <span>
+     vertex_usage_colour
+    </span>
+    ,
+    <span>
+     vertex_usage_normal
+    </span>
+    and
+    <span>
+     vertex_usage_textcoord
+    </span>
+    when using GLSL shaders. These will map to the shader attributes
+    <span>
+     in_Position
+    </span>
+    ,
+    <span>
+     in_Colour[0 - ...]
+    </span>
+    ,
+    <span>
+     in_Normal
+    </span>
+    respectively (anything that is not one of these three attributes - eg: texture coordinates - can be mapped to any attribute you define).
+   </li>
+   <li>
+    In general you should use
+    <span>
+     vertex_usage_textcoord
+    </span>
+    for all extra parameters where possible, as types like
+    <span>
+     vertex_usage_blendweight
+    </span>
+    and
+    <span>
+     vertex_usage_tangent
+    </span>
+    are close to deprecated in most shader languages, and probably won't convert properly. Instead use
+    <span>
+     vec
+    </span>
+    ,
+    <span>
+     vec2
+    </span>
+    ,
+    <span>
+     vec3
+    </span>
+    or
+    <span>
+     vec4
+    </span>
+    types
+    <span>
+     vertex_usage_textcoord
+    </span>
+    and everything should work fine.
+   </li>
+   <li>
+    GLSL ES does
+    <i>
+     not
+    </i>
+    support integer attributes, so passing in
+    <span>
+     ivec4
+    </span>
+    's does not work (this type is usually used when passing in
+    <span>
+     vertex_usage_blendindices
+    </span>
+    ). What you need to do is pass in texture coordinates and then in the shader, convert them to
+    <span>
+     ivec4
+    </span>
+    like this:
+   </li>
+  </ul>
+  <pre><code class="language-gml">attribute vec3 in_Position;
+attribute vec4 in_BlendIndices;
+attribute vec4 in_BlendWeights;
+
+varying vec4 v_vColour;
+varying mat4 v_mat;
+
+void main()
+{
+    gl_Position = gm_Matrices[MATRIX_WORLD_VIEW_PROJECTION] * vec4( in_Position.xyz, 1.0);
+    v_vColour = in_BlendWeights;
+     ivec4 t = ivec4(in_BlendIndices);
+     v_mat = gm_Matrices[ t.x ];
+}
+</code></pre>
+  <ul>
+   <li>
+    Blend weights are usually stored in an array and then accessed using blend indices, but you can see here that instead of defining
+    <span>
+     in_BlendIndices
+    </span>
+    as an
+    <span>
+     ivec4
+    </span>
+    attribute, it's a
+    <span>
+     vec4
+    </span>
+    , then cast to an
+    <span>
+     ivec4
+    </span>
+    in the code. This is then used to index the array created using the
+    <span>
+     gm_Matrix
+    </span>
+    (you can only access an array using an
+    <span>
+     INT
+    </span>
+    value - not a float).
+   </li>
+  </ul>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">vertex_format_add_custom(type, usage);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      type
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Drawing/Primitives/vertex_format_add_custom.htm">
+        Vertex Data Type Constant
+       </a>
+      </span>
+     </td>
+     <td>
+      The data type that this custom vertex data will hold (see the
+      <b>
+       <i>
+        type constants
+       </i>
+      </b>
+      listed above).
+     </td>
+    </tr>
+    <tr>
+     <td>
+      usage
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Drawing/Primitives/vertex_format_add_custom.htm">
+        Vertex Usage Type Constant
+       </a>
+      </span>
+     </td>
+     <td>
+      The use that the data will get(see the
+      <b>
+       <i>
+        usage constants
+       </i>
+      </b>
+      listed above).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">vertex_format_begin();
+vertex_format_add_textcoord();
+vertex_format_add_custom(vertex_type_float3, vertex_usage_position);
+my_format = vertex_format_end();
+</code></pre>
+  The above code will create a new vertex format with just texture and 3 custom floating point values for position. It is then stores the format id in the variable "my_format".
+ </body>
+</html>

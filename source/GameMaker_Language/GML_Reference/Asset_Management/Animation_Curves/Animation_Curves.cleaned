@@ -1,0 +1,72 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Animation Curves
+  </h1>
+  Animation curves can be set up in the
+  <a href="../../../../Introduction/The_Asset_Browser.htm">
+   Asset Browser
+  </a>
+  as assets using the
+  <a href="../../../../The_Asset_Editors/Animation_Curves.htm">
+   Animation Curve Editor
+  </a>
+  and they can then be used in the
+  <a href="../../../../The_Asset_Editors/Sequences.htm">
+   Sequences Editor
+  </a>
+  to control tracks in a sequence. However they can also be used in your code to change values over time in your games for anything from tweening effects on buttons, to movement, to colour changing and more. You can also create your own animation curves at runtime using the functions listed here, making them a very flexible tool for your games.
+  
+  
+   The available functions for Animation Curves are as follows:
+  <ul>
+   <li>
+    <a href="animcurve_get.htm">
+     animcurve_get
+    </a>
+   </li>
+   <li>
+    <a href="animcurve_get_channel_index.htm">
+     animcurve_get_channel_index
+    </a>
+   </li>
+   <li>
+    <a href="animcurve_get_channel.htm">
+     animcurve_get_channel
+    </a>
+   </li>
+   <li>
+    <a href="animcurve_channel_evaluate.htm">
+     animcurve_channel_evaluate
+    </a>
+   </li>
+   <li>
+    <a href="animcurve_create.htm">
+     animcurve_create
+    </a>
+   </li>
+   <li>
+    <a href="animcurve_exists.htm">
+     animcurve_exists
+    </a>
+   </li>
+   <li>
+    <a href="animcurve_channel_new.htm">
+     animcurve_channel_new
+    </a>
+   </li>
+   <li>
+    <a href="animcurve_point_new.htm">
+     animcurve_point_new
+    </a>
+   </li>
+   <li>
+    <a href="animcurve_destroy.htm">
+     animcurve_destroy
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

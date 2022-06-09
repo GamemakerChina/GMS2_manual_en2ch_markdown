@@ -1,0 +1,32 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Preferences And Features
+  </h1>
+  The following pages provide information regarding the GameMaker preferences and various other IDE features:
+  <ul>
+   <li>
+    <a href="../../Setting_Up_And_Version_Information/IDE_Preferences.htm">
+     IDE Preferences
+    </a>
+   </li>
+   <li>
+    <a href="../../Setting_Up_And_Version_Information/Platform_Preferences.htm">
+     Platform Preferences
+    </a>
+   </li>
+   <li>
+    <a href="../../Setting_Up_And_Version_Information/The_Device_Manager.htm">
+     The Device Manager
+    </a>
+   </li>
+   <li>
+    <a href="../../Setting_Up_And_Version_Information/Error_Reporting.htm">
+     IDE Error Reporting
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

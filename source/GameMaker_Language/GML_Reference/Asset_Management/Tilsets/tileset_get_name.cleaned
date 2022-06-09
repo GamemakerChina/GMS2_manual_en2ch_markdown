@@ -1,0 +1,92 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   tileset_get_name
+  </h1>
+  This function will return the name
+  <i>
+   as a string
+  </i>
+  of the specified tile set asset. This name is the one that has been specified for the tile set in the Asset Browser of the main
+  <span>
+   GameMaker
+  </span>
+  window. Please note that this is
+  <i>
+   only
+  </i>
+  a string and cannot be used to reference the tile set directly - for that you would need the
+  <i>
+   tile set index
+  </i>
+  . You can, however, use this string to get the
+  <i>
+   tile set index
+  </i>
+  using the returned string along with the function
+  <a href="../Assets_And_Tags/asset_get_index.htm">
+   <span>
+    asset_get_index()
+   </span>
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">tileset_get_name(index);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Tile_Sets.htm">
+        Tile Set Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the tile set to get the name of.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   <b>
+    Example:
+   </b>
+  </h4>
+  <pre><code class="language-gml">var _l = layer_get_id("tilemap_trees");
+var _m = layer_tilemap_get_id(_l);
+var _t = tilemap_get_tileset(_m);
+tileset_name = tileset_get_name(_t);
+</code></pre>
+  The above code will get the name of the tile set index for the given layer, storing the return string in the variable
+  <span>
+   tileset_name
+  </span>
+  .
+ </body>
+</html>

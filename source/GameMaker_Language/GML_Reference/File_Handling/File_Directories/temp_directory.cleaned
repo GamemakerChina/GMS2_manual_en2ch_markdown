@@ -1,0 +1,42 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   temp_directory
+  </h1>
+  This can be used to return the temporary directory created for your game each time it is run (the root does not contain the final "\"). This directory will hold files and can be accessed while the game is running, but it will be removed (along
+    with all files that it contains) when the game is closed.
+  <b>
+  </b>
+  <b>
+   WARNING!
+  </b>
+  This function may not work as you expect due to
+  <span>
+   GameMaker
+  </span>
+  being sandboxed! Please see the section on the
+  <a href="../../../../Additional_Information/The_File_System.htm">
+   File System
+  </a>
+  for more information.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">temp_directory
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">ini_open(temp_directory + "\temp_ini.ini");
+</code></pre>
+  This will open an ini file in the temporary directory of the game (creating it if it does not already exist).
+ </body>
+</html>

@@ -1,0 +1,71 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   file_bin_position
+  </h1>
+  This function will returns the current position in bytes, where 0 is the first position, of the file with the given file id. You supply the file ID value, as returned by the function
+  <a href="file_bin_open.htm">
+   <span>
+    file_bin_open()
+   </span>
+  </a>
+  .
+  <b>
+   NOTE
+  </b>
+  : These functions
+  <b>
+   do not
+  </b>
+  work when the target module is HTML5.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">file_bin_position(binfile);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      binfile
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/File_Handling/Binary_Files/file_bin_open.htm">
+        Binary File ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The ID of the file to get the position in.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">pos = file_bin_position(file);
+</code></pre>
+  This would store the current position in the variable "pos".
+ </body>
+</html>

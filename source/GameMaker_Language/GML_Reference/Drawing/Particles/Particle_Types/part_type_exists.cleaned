@@ -1,0 +1,60 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   part_type_exists
+  </h1>
+  With this function you can check to see if the given particle type indexed exists in the game or not. Note that if the variable being checked is an uninitialised variable (that a particle type would otherwise have its index assigned to) this will throw an error.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">part_type_exists(ind);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      ind
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Types/part_type_create.htm">
+        Particle Type ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the particle type to check for.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if !part_type_exists(global.p1)
+{
+    global.p1 = part_type_create();
+}
+</code></pre>
+  The above code checks to see if the global variable "p1" stores the index of a particle type and if it does not it creates one.
+ </body>
+</html>

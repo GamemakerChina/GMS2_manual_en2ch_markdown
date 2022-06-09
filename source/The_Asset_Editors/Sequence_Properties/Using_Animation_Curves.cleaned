@@ -1,0 +1,427 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Using Animation Curves
+  </h1>
+  An important feature of the
+  <a href="Using_The_Dope_Sheet.htm">
+   dope sheet
+  </a>
+  is the ability to assign
+  <a href="../Animation_Curves.htm">
+   Animation Curves
+  </a>
+  to parameter tracks within the sequence to create
+  <strong>
+   parameter curves
+  </strong>
+  instead
+    of parameter keyframes. There are two types of curves that can be used for parameter tracks:
+  <ul>
+   <li>
+    <strong>
+     Embedded Curves
+    </strong>
+    : These are curves that are embedded in the sequence and are unique to the parameter track they are used on.
+   </li>
+   <li>
+    <strong>
+     Shared Curves
+    </strong>
+    : These are curves that are created independently of the sequence using the
+    <a href="../Animation_Curves.htm">
+     Animation Curve Editor
+    </a>
+    .
+   </li>
+  </ul>
+  We'll start by explaining how to use an Animation Curve asset, which is simply a case of creating a new curve, setting up the channels in the Animation Curve Editor, and then dragging the curve asset into the dope sheet to apply it to a parameter
+    track:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Dope_Sheet_AddAnimCurve.gif"/><br/>
+  You can also use the right mouse button
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_RMB.png"/><br/>
+  menu option
+  <strong>
+   Assign Shared Curve (Import)
+  </strong>
+  <strong>
+  </strong>
+  to add an animation curve asset
+    to the selected parameter track. This will open the Asset Explorer where you can select the required curve from the ones presented to you:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Dope_Sheet_Shared_Curve.gif"/><br/>
+  It is important to note that the animation curve asset
+  <strong>
+   must have the correct number of channels for the track it is being applied to
+  </strong>
+  , as each
+    type of parameter track will require a different number of channels in the animation curve. Any animation curves that do not have enough channels will be shown with a
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Invalid_Triangle_Yellow.png"/><br/>
+  indicator in the asset browser.
+  
+  
+   Below is a list of the different parameter tracks and the channels that they will require in each curve asset (channels should be added in the order given for each parameter type):
+  <ul>
+   <li>
+    <strong>
+     Position
+    </strong>
+    : 2 channels, X and Y.
+   </li>
+   <li>
+    <strong>
+     Rotation
+    </strong>
+    : 1 channel.
+   </li>
+   <li>
+    <strong>
+     Colour Multiply
+    </strong>
+    : 4 channels, Alpha, Red, Green and Blue, and the range
+    <em>
+     must
+    </em>
+    be between 0 and 255.
+   </li>
+   <li>
+    <strong>
+     Image Index
+    </strong>
+    : 1 channel.
+   </li>
+   <li>
+    <strong>
+     Image Speed
+    </strong>
+    : 1 channel.
+   </li>
+   <li>
+    <strong>
+     Origin
+    </strong>
+    : 2 channels, X and Y.
+   </li>
+   <li>
+    <strong>
+     Scale
+    </strong>
+    : 2 channels, X scale and Y scale, and note that the value is a multiplier, so the base value is 1 (no scale) and greater than one will make the image bigger, and less than 1 will make it smaller. Negative values will flip or
+      mirror the image as well as apply scale.
+   </li>
+   <li>
+    <strong>
+     Pitch
+    </strong>
+    : 1 channel, which
+    <em>
+     must
+    </em>
+    be a minimum of 0, where 1 is the default pitch of the sound.
+   </li>
+   <li>
+    <strong>
+     Volume
+    </strong>
+    : 1 channel, which
+    <em>
+     must
+    </em>
+    be a minimum of 0 and a maximum of 1.
+   </li>
+  </ul>
+  If you import an animation curve that does not have enough channels for the parameter track, you will be prompted to choose whether any missing channels should be added into the animation curve:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Sequences_Invalid_Curve.png"/><br/>
+  Shared curves can also be made invalid if any required channels are deleted in an external animation curve editor. In such a case the shared curve will appear as invalid in the dope sheet, and you can click on "Add Channel(s)" to create any
+    missing channels which will make the curve valid again:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Sequences_Invalid_Curve_Error.png"/><br/>
+  By default, the animation curve will be applied along the entire length of the asset key it is attached to, however, much like with keyframes, you can click
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  on a curve and drag it to re-position it on the timeline, and you can also hold down the
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Alt.png"/><br/>
+  key and and drag to resize the length of the curve
+    (this also applies to
+  <strong>
+   embedded curves
+  </strong>
+  ):
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Dope_Sheet_ResizeCurve.gif"/><br/>
+  The other way to add a parameter curve to a track is to embed it. This can be done by either clicking the right mouse button
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_RMB.png"/><br/>
+  on the parameter track and selecting "
+  <em>
+   Convert to Curve
+  </em>
+  ", or by clicking on the
+  <strong>
+   Toggle Curve Mode
+  </strong>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Seq_ToggleCurves.png"/><br/>
+  button, which will show you the track as an animation curve in the full dope sheet area, and you can then click the
+  <strong>
+   Convert To Curve
+  </strong>
+  button:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Dope_Sheet_ConvertToCurve.gif"/><br/>
+  Once you have converted the parameter keyframe track to a curve it can be edited within the dope sheet, exactly the same way
+    that you can edit
+  <a href="../Animation_Curves.htm">
+   animation curve assets
+  </a>
+  , this includes adding or removing points, changing their position, changing the curve type (linear, smooth or bezier), applying presets, and renaming channels and the colours
+    associated with them.
+  <strong>
+   IMPORTANT
+  </strong>
+  : You can also edit animation curve assets that have been applied to parameter tracks in this way, however any changes you make
+  <strong>
+   will be applied to all tracks that use the animation curve
+  </strong>
+  , as you are editing
+    the curve asset and not a single copy of it. To edit an animation curve asset that has been applied to a track
+  <strong>
+   only
+  </strong>
+  on that track, you must first use the right mouse menu
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_RMB.png"/><br/>
+  on the parameter track and select
+  <b>
+   Embed Curve
+  </b>
+  . This will duplicate the animation curve asset and embed it in the pararmeter track as an independent curve only for that track. Conversely, you can convert an embedded animation curve
+    into an Animation Curve asset using the right mouse button
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_RMB.png"/><br/>
+  menu option
+  <strong>
+   Export To Shared Curve
+  </strong>
+  . This will convert the embedded
+    curve into a new asset which can then be edited as normal as well as applied to other parameter tracks if required.
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Dope_Sheet_EmbeddedCurves.png"/><br/>
+  The image above shows how the embedded animation curve editor looks, and it's very similar to the
+  <a href="../Animation_Curves.htm">
+   Animation Curve Editor
+  </a>
+  . Expand each section below for more information on the different sections.
+  <a href="#">
+   <span>
+    Curve Name
+   </span>
+   <span>
+    Curve Name
+   </span>
+  </a>
+  This will be the name of the external animation curve asset or the name of the parameter track for an embedded curve.
+  <a href="#">
+   <span>
+    Curve Library
+   </span>
+   <span>
+    Curve Library
+   </span>
+  </a>
+  The
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Animation_Curve_Library_Button.png"/><br/>
+  button opens the
+  <strong>
+   <span>
+    Animation Curve Library
+   </span>
+  </strong>
+  window,
+      which allows you to change the Curve Type of the embedded or shared curve, and apply a preset to the selected channel.
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Animation_Curves_Library.png"/><br/>
+  See the section on
+  <a href="../Animation_Curve_Properties/Animation_Curve_Library.htm">
+   Animation Curve Library
+  </a>
+  for
+      information on Curve Types and Presets. Note that opening the window through the
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Animation_Curve_Library_Button.png"/><br/>
+  button will have the
+  <strong>
+   "Overwrite"
+  </strong>
+  Apply Mode selected by default.
+  <ul>
+  </ul>
+  <a href="#">
+   <span>
+    Channel List
+   </span>
+   <span>
+    Channel List
+   </span>
+  </a>
+  The channel list is where you can edit the different channels that comprise your parameter curve. Each channel must have a unique name (using
+  <span>
+   alphanumeric characters and the "_" underscore symbol only
+  </span>
+  ),
+      and you can also set the colour for the channel by double clicking
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  on the colour swatch to the left, which will open the colour picker to let you choose a new colour.
+      To rename the channel, you can do a slow double click
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  and rename, and you can also use the right mouse button
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_RMB.png"/><br/>
+  to open a menu where you can choose to rename, change the colour or copy the channel. Channels can be expanded by clicking the arrow beside the name to show each of the points on the channel curve, and these points can be edited manually by clicking
+      the current value and typing in the new value. You can also toggle the channel visibility in the dope sheet by clicking on the "eye" icon
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_ToggleVisibility.png"/><br/>
+  .
+  <a href="#">
+   <span>
+    Conversion Control
+   </span>
+   <span>
+    Conversion Control
+   </span>
+  </a>
+  Here keyframes can be converted into parameter curves (as explained fiurther up this page) but there is also a button to convert parameter curves into keyframes. However, you should be aware that when doing this there are a couple of caveats. Keyframes
+      cannot be "between" frames, and so some curve values will need to be rounded to the nearest frame, which in turn will change the way the parameter track behaves. Also, if the parameter curve uses catmull-rom or bezier interpolation,
+  <strong>
+   this will be lost
+  </strong>
+  and
+      the interpolation between keyframes will be set to linear interpolation.
+  <a href="#">
+   <span>
+    Curve Menu
+   </span>
+   <span>
+    Curve Menu
+   </span>
+  </a>
+  This menu contains options available elsewhere in the editor, but all in one place. The options are:
+  <ul>
+   <li>
+    <strong>
+     Set Range
+    </strong>
+    : Set the vertical range of the parameter curve (see
+    <em>
+     Channel Range
+    </em>
+    , below).
+   </li>
+   <li>
+    <strong>
+     Convert To Curve
+    </strong>
+    : Convert the selected parameter track using keyframes into a parameter curve.
+   </li>
+   <li>
+    <strong>
+     Embed Curve
+    </strong>
+    : Embed the shared curve asset being used by the parameter track into the track.
+   </li>
+   <li>
+    <strong>
+     Assigned Shared Curve (Import)
+    </strong>
+    : Assign an Animation Curve asset to be used as a shared curve for the parameter track.
+   </li>
+   <li>
+    <strong>
+     Convert To Keys
+    </strong>
+    : Convert the selected parameter track using parameter curves into keyframes.
+   </li>
+   <li>
+    <strong>
+     Export to Shared Curve
+    </strong>
+    : Convert the embedded curve into a shared curve asset.
+   </li>
+  </ul>
+  <a href="#">
+   <span>
+    Channel Range
+   </span>
+   <span>
+    Channel Range
+   </span>
+  </a>
+  The Channel Range button is used for setting the visual vertical range for the Channel Editor. By default this will be set from -1 to 1, but clicking this button will open the following window:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Animation_Curves_Range.png"/><br/>
+  Changing these values will change the way the data is represented in the Channel Editor section, permitting you to have higher/lower values along the channel curve than just -1 to 1. Note that this is purely visual and does not clamp the values for
+      the channel.
+  <a href="#">
+   <span>
+    Channel Editor
+   </span>
+   <span>
+    Channel Editor
+   </span>
+  </a>
+  The Channel Editor shows a visual representation of the different channels used in the parameter curve. By default, all channels will be shown here, but you can only edit the channel currently selected from the Channel List, which will be highlighted
+      in the editor. You can change the position of any of the points along the channel curve by clicking
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  on them and dragging them around within the editor, but note that
+      the first and last point can only be changed along the vertical axis and their horizontal value will always be 0 and 1 respectively.
+   
+   
+    
+     You can add points directly to the channel curve by moving the mouse close to the main channel line and then clicking
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  when the cursor changes to the "
+  <strong>
+   Add Point
+  </strong>
+  "
+        tool, and you can then edit these points by clicking
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  and dragging or by changing their values in the expanded channel options in the Channel List:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Dope_Sheet_Channel_Editor.gif"/><br/>
+  You can edit multiple points at once by clicking
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  and dragging within the editor to select all the points you want to edit or by using
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Ctrl.png"/><br/>
+  /
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Cmd.png"/><br/>
+  +
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  to add points to the selection individually. Releasing the mouse button and then clicking again on any of the points in the selection and dragging will move them all together:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Dope_Sheet_Channel_Editor_Move.gif"/><br/>
+  You can
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_RMB.png"/><br/>
+  right-click anywhere in the Channel Editor to open the
+  <a href="../Animation_Curve_Properties/Animation_Curve_Library.htm">
+   Animation Curve Library
+  </a>
+  window (only when the selected Curve Type is
+  <strong>
+   Bezier
+  </strong>
+  ). Applying a preset in this way will affect the whole channel. To modify only a part of the channel, you can
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_RMB.png"/><br/>
+  right-click on an individual line to apply a preset to it, or select multiple lines by clicking
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  and dragging, then
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_RMB.png"/><br/>
+  right-click on the selection to apply a preset to the selected lines.
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Dope_Sheet_Channel_Editor_Library.gif"/><br/>
+  Note that opening the
+  <strong>
+   Animation Curve Library
+  </strong>
+  window through the Channel Editor will have the
+  <strong>
+   "Between"
+  </strong>
+  Apply Mode selected by default.
+   
+  
+  
+  
+  
+   Once you are finished editing the parameter curves you can go back to the regular dope sheet view of the different tracks by clicking on the the
+  <strong>
+   Toggle Curve Mode
+  </strong>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Seq_ToggleCurves.png"/><br/>
+  button.
+ </body>
+</html>

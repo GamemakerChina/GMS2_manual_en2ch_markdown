@@ -1,0 +1,76 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   part_system_depth
+  </h1>
+  With this function you can set the draw depth for the particle system, much the same as you can set the
+  <i>
+   render depth
+  </i>
+  of different layers within the room, where a low draw depth means that it will appear on top of all things drawn with a higher depth, and a high draw depth placing it below everything with a lower draw depth.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">part_system_depth( ind, depth );
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      ind
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Systems/part_system_create.htm">
+        Particle System ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the particle system to change.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      depth
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The depth at which to set the particle system.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">global.Sname = part_system_create();
+part_system_depth(global.Sname, -1000 );
+</code></pre>
+  The above code will create a particle system and store its index in the global variable "Sname". this system is then given a low depth of -1000, meaning that it will appear above everything with a higher draw depth.
+ </body>
+</html>

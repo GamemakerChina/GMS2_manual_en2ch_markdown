@@ -1,0 +1,50 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/i_Movement_Set_Gravity_Direction.png"/><br/>
+   Set Gravity Direction
+  </h1>
+  This action is used to set the direction of the built in
+  <span>
+   gravity
+  </span>
+  variable. Each instance can have it's own gravity effect, and if the gravity value is set to anything other than zero, then the instance will be "pulled" in the
+    direction set by this action. You can set a direction between 0° and 360° where right is 0°, up is 90°, left is 180° and down is 270°. Note that you can set this to be relative to the current gravity value, so whatever you input will be added/subtracted
+    from that.
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/a_Movement_Set_Gravity_Direction.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      direction
+     </td>
+     <td>
+      Direction from 0° to 360° (values outside of the range will be wrapped).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/e_Movement_Set_Gravity_Direction.png"/><br/>
+  The above action block code sets various instance properties related to
+    movement: gravity direction is set to down (270°), gravity force is set to 0.05, and friction is set to 0.2.
+ </body>
+</html>

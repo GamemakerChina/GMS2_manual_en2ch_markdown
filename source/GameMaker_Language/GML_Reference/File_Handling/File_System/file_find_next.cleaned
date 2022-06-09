@@ -1,0 +1,85 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   file_find_next
+  </h1>
+  This function returns the name of the next file that satisfies the previously given mask and the attributes (defined by
+  <a href="file_find_first.htm">
+   <span>
+    file_find_first()
+   </span>
+  </a>
+  ). If no such file exists, the empty string is returned.
+  <b>
+  </b>
+  WARNING This function may not work as you expect due to
+  <span>
+   GameMaker
+  </span>
+  being sandboxed! Please see the section on the
+  <a href="../../../../Additional_Information/The_File_System.htm">
+   File System
+  </a>
+  for more information.
+  
+  
+   NOTE This function works on all the C++ target platforms (Windows, Mac, iOS, Android), BUT the filter flags only work on Windows.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">file_find_next();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if directory_exists("\User Content")
+{
+    fileA = file_find_first("/User Content/*.doc", fa_readonly);
+    fileB = file_find_next();
+    fileC = file_find_next();
+    file_find_close();
+}
+</code></pre>
+  This code checks if the specified directory exists and if it does, goes there and returns the first "read only"
+  <span>
+   .doc
+  </span>
+  file found. It then looks for two more files and closes the file finder.
+  
+  
+   You can look for any number of files using a
+  <a href="../../../GML_Overview/Language_Features/while.htm">
+   while
+  </a>
+  loop:
+  <pre><code class="language-gml">var files = [];
+var file_name = file_find_first("/User Content/*.doc", fa_readonly);
+
+while (file_name != "")
+{
+    array_push(files, file_name);
+
+    file_name = file_find_next();
+}
+
+file_find_close();
+</code></pre>
+  The above code creates an empty array to store all the file names that were found, and starts looking for read only
+  <span>
+   .doc
+  </span>
+  files. If that file name is not an empty string, it pushes it into the
+  <span>
+   files
+  </span>
+  array, and then attempts to find the next file. The loop will keep repeating until an empty string is found (meaning there are no more matching files), which is when it ends the loop and closes the file finder at the end.
+ </body>
+</html>

@@ -1,0 +1,40 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   gpu_push_state
+  </h1>
+  With this function you can push the current GPU state onto a stack to be used later. You would generally use this if you want to "save" the current GPU state (things like blend mode, alpha writing, culling, etc... will all be pushed to the stack), then draw something with different settings, and then reset the GPU stack to what it was before (by calling
+  <a href="gpu_pop_state.htm">
+   <span>
+    gpu_pop_state()
+   </span>
+  </a>
+  ).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">gpu_push_state();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">gpu_push_state();
+gpu_set_blendmode(bm_add);
+gpu_set_blendenable(false);
+gpu_set_cullmode(true);
+with (obj_Effect_Parent)
+{
+    draw_self();
+}
+gpu_pop_state();
+</code></pre>
+  The above code will "save" the current GPU state on the stack, then change certain GPU settings and draw a group of instances before resetting the GPU state to what it was previously.
+ </body>
+</html>

@@ -1,0 +1,94 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   room_assign
+  </h1>
+  This function will copy one room to another, removing all instances, tiles etc... from the room that is being copied to and replacing them completely with the new room contents. You supply the index to for the room to be copied to (either as defined in the asset browser or as returned by the function
+  <a href="room_add.htm">
+   <span>
+    room_add()
+   </span>
+  </a>
+  ) as well as the index of the source room. Note that calling this function on a room asset created in the Asset Browser
+  <strong>
+   will permanently change the contents of the room
+  </strong>
+  , and even calling
+  <span>
+   game_restart()
+  </span>
+  will not return the room to it's original state (only ending the game and opening it again will start with the room in its original state again).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">room_assign(ind, source);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      ind
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Rooms.htm">
+        Room Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the room to be
+      <i>
+       copied to
+      </i>
+      .
+     </td>
+    </tr>
+    <tr>
+     <td>
+      source
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Rooms.htm">
+        Room Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the room to be
+      <i>
+       copied from
+      </i>
+      .
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">global.rm = room_add();
+room_assign(global.rm, rm_Base);
+</code></pre>
+  The above code will add a new room to the game and then copy the contents of the room indexed as "rm_Base" into it.
+ </body>
+</html>

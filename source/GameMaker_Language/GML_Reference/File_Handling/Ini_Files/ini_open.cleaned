@@ -1,0 +1,94 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   ini_open
+  </h1>
+  This opens an ini_file for reading and/writing. If the ini_file does not exist at the location you are checking,
+  <span>
+   GameMaker
+  </span>
+  may create one, but only if you write data to it. If you have only read information from the ini file, then the
+    default values for the read function will be returned, but the ini file will
+  <i>
+   not
+  </i>
+  actually be created.
+  
+  
+   Please note that you can only have
+  <b>
+   one
+  </b>
+  ini file open at any one time and remember to use
+  <a href="ini_close.htm">
+   <span>
+    ini_close()
+   </span>
+  </a>
+  once you're finished reading/writing from the .ini file as the information is not actually stored to
+    disk until then (it is also stored in memory until the file is closed).
+  <b>
+  </b>
+  <b>
+   WARNING!
+  </b>
+  This function may not work as you expect due to
+  <span>
+   GameMaker
+  </span>
+  being sandboxed! Please see the section on the
+  <a href="../../../../Additional_Information/The_File_System.htm">
+   File System
+  </a>
+  for more information.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">ini_open(name);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      name
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The filename for the .ini file.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">ini_open("Settings/savedata.ini"); score = ini_read_real("save1", "score", 0); ini_close();
+</code></pre>
+  This will open 'savedata.ini' and read the score value under the section "save1" with the key "score" in it, then close the .ini again. Should there be no value under "save1", "score" or there is no "savedata.ini"
+    file present, score will be set to 0 (the default value). Note that the ini file has been placed in the sub-directory "Settings", which is the folder that holds the ini file in the Asset Browser included files.
+ </body>
+</html>

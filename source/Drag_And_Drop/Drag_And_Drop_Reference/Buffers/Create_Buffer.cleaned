@@ -1,0 +1,76 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Create_Buffer.png"/><br/>
+   Create Buffer
+  </h1>
+  This action can be used to allocate a portion of memory as a buffer in your game, with the function returning the unique
+  <i>
+   buffer id
+  </i>
+  value that should be stored in a variable and used for all further function calls to the buffer. You can supply
+    a global variable, an instance variable or have the action create a temporary local variable for storing the buffer ID. Note that you can create additional buffers by clicking the plus icon
+  <span>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Icon_Expand_Arguments.png"/><br/>
+  </span>
+  beside
+    the action, and selecting another variable to hold the buffer ID.
+  <b>
+   NOTE
+  </b>
+  : It's important that you remove any dynamically created resources like this from memory when you no longer need them to prevent memory leaks, so when you are finished with the buffer that you have created you should free it up again
+    using
+  <a href="Delete_Buffer.htm">
+   Delete Buffer
+  </a>
+  action (in the
+  <a href="../../../The_Asset_Editors/Object_Properties/Object_Events.htm">
+   Other - Clean Up
+  </a>
+  event, for example). This is especially important to remember when using a temporary local
+    variable, as if you do not remove the buffer again before the end of the event or action script then you will no longer be able access it and can have issues later.
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/a_Buffers_Create_Buffer.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Buffer
+     </td>
+     <td>
+      The buffer index (stored in a variable)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Value
+     </td>
+     <td>
+      The value to add into the list
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/e_Buffers_Create_Buffer.png"/><br/>
+  The above action block code creates a global variable and then a buffer, assigning the unique
+    buffer ID to the variable. This buffer than has two pieces of data written to it.
+ </body>
+</html>

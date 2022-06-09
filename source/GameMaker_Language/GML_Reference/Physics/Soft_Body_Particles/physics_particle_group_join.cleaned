@@ -1,0 +1,85 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   physics_particle_group_join
+  </h1>
+  With this function you can join two particle groups together, and the joined groups will then behave as if they were both part of a single entity. The groups should have been created with over-lapping edges, as, if they are not already touching, they will not be joined. The function takes the unique group IDs of the groups to join, as returned by the function
+  <a href="physics_particle_group_end.htm">
+   <span>
+    physics_particle_group_end()
+   </span>
+  </a>
+  , and you can use the function any number of times for a single group to join various soft bodies together.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">physics_particle_group_join(to, from)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      to
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Physics/Soft_Body_Particles/physics_particle_group_end.htm">
+        Physics Particle Group ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The first particle group to join.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      from
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Physics/Soft_Body_Particles/physics_particle_group_end.htm">
+        Physics Particle Group ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The second particle group to join.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var flags = phy_particle_flag_water | phy_particle_flag_viscous | phy_particle_flag_tensile;
+var groupflags = phy_particle_group_flag_solid;
+physics_particle_group_begin(flags, groupflags, mouse_x- 45, mouse_y, 0, 0, 0, 0, c_white, 1, 1, 2);
+physics_particle_group_circle(50);
+var g1 = physics_particle_group_end();
+physics_particle_group_begin(flags, groupflags, mouse_x + 45, mouse_y, 0, 0, 0, 0, c_white, 1, 1, 2);
+physics_particle_group_circle(50);
+var g2 = physics_particle_group_end();
+physics_particle_group_join(g1, g2);
+</code></pre>
+  The above code creates two circular particle groups and joins them together.
+ </body>
+</html>

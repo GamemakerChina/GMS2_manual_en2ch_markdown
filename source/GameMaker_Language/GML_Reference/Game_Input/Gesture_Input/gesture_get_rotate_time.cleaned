@@ -1,0 +1,42 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   gesture_get_rotate_time
+  </h1>
+  This function is used to get the time within which a pair of touches must be rotating in a consistent direction for a
+  <a href="../../../../The_Asset_Editors/Object_Properties/Gesture_Events.htm">
+   Rotate Start Gesture
+  </a>
+  to be triggered. The time is measured in seconds and has a default value of 0.16s.
+  <b>
+   IMPORTANT!
+  </b>
+  Currently for a 60fps game you can only set this to a maximum of one second otherwise no rotations will be detected. This will increase for a lower framrate, for example a 30fps game can have a maximum time of 2 seconds.
+  <h4>
+   <b>
+    Syntax:
+   </b>
+  </h4>
+  <pre><code class="language-gml">gesture_get_rotate_time();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a>
+(inches)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if gesture_get_rotate_time() != 0.1
+{
+    gesture_rotate_time(0.1);
+}
+</code></pre>
+  The above code checks to see if the rotate time for gestures is set to 0.1 seconds and if it is not it sets it to that value.
+ </body>
+</html>

@@ -1,0 +1,76 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Audio/i_Audio_Set_Audio_Position.png"/><br/>
+   Set Audio Position
+  </h1>
+  With this action you can set a sound to play at a specific time. You give the sound to play, and the time to start it from, but this action will
+  <i>
+   not
+  </i>
+  play the sound for you, it will simply set the play position for the sound. To use this action
+    you must
+  <i>
+   first
+  </i>
+  set the position
+  <i>
+   then
+  </i>
+  play the sound using the action
+  <a href="Play_Audio.htm">
+   Play Audio
+  </a>
+  , otherwise you will here no change in position until the next time you play the same sound resource (which will start at the
+    new position). The position is set in seconds - you can use decimal values - and you can get the total sound length using the action
+  <a href="Get_Audio_Length.htm">
+   Get Audio Length
+  </a>
+  , although if you provide a value greater than the length of the
+    desired sound this will be wrapped so if the sound is 10 seconds long and you give 12 seconds as the start position, the sound will start at 2 second in.
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Audio/a_Audio_Set_Audio_Position.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Sound
+     </td>
+     <td>
+      The sound resource to set the play position of
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Time
+     </td>
+     <td>
+      The time to set (in seconds)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Audio/e_Audio_Get_Audio_Length.png"/><br/>
+  The above action block code gets the playing length of the given sound resource and stores
+    it in a temporary local variable. This is then used to generate a random value between 0 and the length of the sound, which is then stored in a different temporary local variable. This new random value is then used to set the start position for the
+    sound and the sound is then played.
+ </body>
+</html>

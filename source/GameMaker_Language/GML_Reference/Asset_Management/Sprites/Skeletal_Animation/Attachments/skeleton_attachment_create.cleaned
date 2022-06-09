@@ -1,0 +1,183 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   skeleton_attachment_create
+  </h1>
+  When you create you skeletal animation sprite, you can assign
+  <i>
+   attachment slots
+  </i>
+  and
+  <i>
+   attachments
+  </i>
+  to go in them. These are simply images that are apart from the animation but when attached will move along with the bone they are attached to. Normally you would assign these attachments in your animation program (Spine), but with this function you can create your own at run-time using a sprite asset from your game. the function requires that you give the attachment a name (as a string) and then set the sprite_index and image_index to use, as well as the x and y origin (which can be different to that defined by the sprite in the sprite properties), and you can also set any transforms that you wish to be applied to the image when attached. If the attachment was successfully created the function will return
+  <span>
+   1
+  </span>
+  and if it was not (you supplied an invalid sprite index, or the base sprite is not a Spine sprite) then it will return
+  <span>
+   -1
+  </span>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">skeleton_attachment_create(name, sprite, ind, xorigin, yorigin, xscale, yscale, rot);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      name
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The name (as a string) of the attachment to create.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      sprite
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../../The_Asset_Editors/Sprites.htm">
+        Sprite Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The sprite_index to get the attachment image from.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      ind
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The image_index to get the attachment image from.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      xorigin
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x origin for the image being used.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      yorigin
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y origin for the image being used.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      xscale
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The horizontal scaling of the image, as a multiplier: 1 = normal scaling, 0.5 is half etc...
+     </td>
+    </tr>
+    <tr>
+     <td>
+      yscale
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The vertical scaling of the image, as a multiplier: 1 = normal scaling, 0.5 is half etc...
+     </td>
+    </tr>
+    <tr>
+     <td>
+      rot
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The rotation of the image. 0=normal, 90=turned 90 degrees counter-clockwise etc.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a>
+(1 if successful, -1 if not)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">skeleton_attachment_create("sword", spr_Weapons, 0, 0, 80, 1, 1, 90);
+skeleton_attachment_create("knife", spr_Weapons, 1, 0, 45, 1, 1, 90);
+skeleton_attachment_create("crossbow", spr_Weapons, 0, 10, 30, 1, 1, 0);
+skeleton_attachment_set("slot_leftHand", choose("sword", "knife", "crossbow"));
+</code></pre>
+  The above code would check the currently assigned attachment name for the slot named "slot_leftHand" and if an empty string is returned, a new sprite is attached.
+ </body>
+</html>

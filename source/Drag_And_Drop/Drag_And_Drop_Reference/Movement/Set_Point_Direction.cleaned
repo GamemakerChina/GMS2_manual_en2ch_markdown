@@ -1,0 +1,61 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/i_Movement_Set_Point_Direction.png"/><br/>
+   Set Point Direction
+  </h1>
+  This action is used to set a direction from a vector formed by the current position of the instance and the position given. You supply the x and y position to "point" at - these can be flagged as relative to the instance position - and the
+    direction from the instance to that point will be used for the instance.
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/a_Movement_Set_Point_Direction.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      x
+     </td>
+     <td>
+      The x component of the direction vector.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y
+     </td>
+     <td>
+      The y component of the direction vector.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/e_Movement_Set_Point_Direction.png"/><br/>
+  The above action block code checks checks to see if an instance of the object
+    "
+  <span>
+   obj_Player
+  </span>
+  " exists in the room and if it does it then sets the direction of the instance to point towards the x/y position of "
+  <span>
+   obj_Player
+  </span>
+  ".
+ </body>
+</html>

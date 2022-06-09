@@ -1,0 +1,74 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   layer_sequence_get_headpos
+  </h1>
+  With this function you supply the sequence element ID - as returned by
+  <a href="layer_sequence_create.htm">
+   <span>
+    layer_sequence_create()
+   </span>
+  </a>
+  or by one of the
+  <a href="../General_Layer_Functions/General_Layer_Functions.htm">
+   layer element functions
+  </a>
+  - and it will return the current
+  <a>
+   playhead
+  </a>
+  position (the current frame the playhead is on).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">layer_sequence_get_headpos(sequence_element_id)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      sequence_element_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Sequence_Layers/layer_sequence_create.htm">
+        Sequence Element ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The unique ID value of the sequence element to target
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if layer_sequence_get_headpos(title_sequence) != 0
+{
+    layer_sequence_headpos(title_sequence, 0);
+}
+</code></pre>
+  The above code checks the current playhead position of the sequence element ID stored in the variable "title_sequence", and if it's not set to 0, it is set to this value.
+ </body>
+</html>

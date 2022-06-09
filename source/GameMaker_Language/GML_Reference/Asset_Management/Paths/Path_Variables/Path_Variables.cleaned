@@ -1,0 +1,52 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Path Variables
+  </h1>
+  The following variables are built-in to all instances when created and can be used to get information about a path, or to change certain properties:
+  <ul>
+   <li>
+    <a href="path_index.htm">
+     path_index
+    </a>
+   </li>
+   <li>
+    <a href="path_position.htm">
+     path_position
+    </a>
+   </li>
+   <li>
+    <a href="path_positionprevious.htm">
+     path_positionprevious
+    </a>
+   </li>
+   <li>
+    <a href="path_speed.htm">
+     path_speed
+    </a>
+   </li>
+   <li>
+    <a href="path_scale.htm">
+     path_scale
+    </a>
+   </li>
+   <li>
+    <a href="path_orientation.htm">
+     path_orientation
+    </a>
+   </li>
+   <li>
+    <a href="path_endaction.htm">
+     path_endaction
+    </a>
+   </li>
+  </ul>
+  Note that you can find further information on instance variables here:
+  <a href="../../Instances/Instance_Variables/Instance_Variables.htm">
+   Instance Variables
+  </a>
+  .
+ </body>
+</html>

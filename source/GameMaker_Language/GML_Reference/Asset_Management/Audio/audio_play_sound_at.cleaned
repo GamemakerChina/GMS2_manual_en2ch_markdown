@@ -1,0 +1,223 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   audio_play_sound_at
+  </h1>
+  With this function you can play any sound resource at a given position within the audio space. You provide the sound index and then assign it a position within the 3D space. The default listener position is (0, 0, 0) so this means that if the listener has not been moved and you want the sound to come from the left (for example), you should set the x position to a negative value (for more information on setting the listener position see
+  <a href="Audio_Listeners/audio_listener_position.htm">
+   <span>
+    audio_listener_position()
+   </span>
+  </a>
+  ).
+  
+  
+   You can also set a fall-off distance (0 will make the sound silent, default is 100) which will make the sound fade out as it gets further from the listener position. How the fade itself is heard will depend on the falloff reference (which is the distance under which the volume for the source would normally drop by half) and the roll off factor (which affects the sound past the falloff reference distance only). The default factor is normally 1, and the effect of the different falloff values will depend on the model chosen (for a complete guide to the different falloff models and how these values are used, please see the function
+  <a href="audio_falloff_set_model.htm">
+   <span>
+    audio_falloff_set_model()
+   </span>
+  </a>
+  ).
+  
+  
+   The last two arguments are to set the sound is to loop or not and, finally, for assigning a priority to the sound. This priority is then used to determine how sounds are dealt with when the number of sounds playing is over the limit set by the function
+  <a href="audio_channel_num.htm">
+   <span>
+    audio_channel_num()
+   </span>
+  </a>
+  . Lower priority sounds will be stopped in favour of higher priority sounds, and the priority value can be any real number (the actual value is arbitrary, and can be from 0 to 1 or 0 to 100, as
+  <span>
+   GameMaker
+  </span>
+  will prioritize them the same). Note that when dealing with priority, the
+  <i>
+   higher
+  </i>
+  the number the
+  <i>
+   higher
+  </i>
+  the priority, such that a sound with priority 100 will be favoured over a sound with priority 1.
+  
+  
+   This function will return a unique index number for the sound being played which can then be stored in a variable so that you can then pause it or stop it with the appropriate functions. This means that if you have multiple instances of the same sound playing at any one time you can target just one instance of that sound to deal with using the audio functions.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">audio_play_sound_at(index, x, y, z, falloff_ref, falloff_max, falloff_factor, loop, priority);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Sounds.htm">
+        Sound Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the sound to play.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      x
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x position.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y position.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      z
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The z position.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      falloff_ref
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The falloff reference relative to the listener (clamp).
+     </td>
+    </tr>
+    <tr>
+     <td>
+      falloff_max
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The maximum falloff distance relative to the listener.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      falloff_factor
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The falloff factor (default 1).
+     </td>
+    </tr>
+    <tr>
+     <td>
+      loop
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Flags the sound as looping or not.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      priority
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      Set the channel priority for the sound.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/audio_play_sound.htm">
+ Sound Instance ID
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if global.SFX
+{
+    audio_play_sound_at(snd_Waterfall, x, y, 0, 100, 300, 1, true, 1);
+}
+</code></pre>
+  The above code checks the global variable "SFX" and if it returns
+  <span>
+   true
+  </span>
+  then the sound indexed in the variable "snd_Waterfall" will be looped at its room position, with a fall-off reference of 100, a falloff distance of 300, a falloff factor of 1 and a low priority.
+ </body>
+</html>

@@ -1,0 +1,63 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   layer_get_element_layer
+  </h1>
+  You can use this function to get the
+  <i>
+   Layer ID
+  </i>
+  that the given element is on. You supply the unique element ID value (for example, as returned by the function that created the element or from the room editor) and the function will return the unique ID of the layer that the element is found on. If the element ID given is not a valid one, then the function will return -1.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">layer_get_element_layer(element_id)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      element_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/General_Layer_Functions/layer_get_all_elements.htm">
+        Layer Element ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The unique ID value of the element to get the layer of
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/General_Layer_Functions/layer_get_id.htm">
+ Layer ID
+</a>
+or -1 (if the element is invalid)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">element = layer_get_element_layer(asset_1);
+</code></pre>
+  The above code gets layer ID for the element with the ID stored in the variable "asset_1" and stores it in a variable.
+ </body>
+</html>

@@ -1,0 +1,77 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   xboxlive_fire_event
+  </h1>
+  This function can be used to fire a stat event. The "event_name" argument is the name of the event to be fired as defined in the XDP console for your game, and the following additional parameters will also depend on what you have a set up for the stat. The function will return 0 if the event was sent (and should be received/processed by the server) or -1 if there was an error (ie: your event was not setup as the event manifest file included in the project says another number).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">xboxlive_fire_event(event_name, [stat_parameters...]);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      event_name
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The name of the event to fire.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      stat_parameters
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm#variable">
+        Variable
+       </a>
+      </span>
+     </td>
+     <td>
+      <span>
+       OPTIONAL
+      </span>
+      Additional parameters to add to the event.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var _user = xboxlive_get_user(0);
+var _uid = xboxlive_user_id_for_user(_user);
+result = xboxlive_fire_event("PlayerSessionStart", _uid, global.guid_str, 0, 42, 42);
+</code></pre>
+  The above code gets some information about the user then fires off a stat event along with this (and additional) data.
+ </body>
+</html>

@@ -1,0 +1,129 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   physics_test_overlap
+  </h1>
+  This function can be used to check and see if a physical body (ie: the fixture of an instance) overlaps, or
+  <i>
+   will
+  </i>
+  overlap, when rotated and placed at a given position in the room. the "angle" argument is the angle of rotation that the calling instance has (or will have) at the position to be checked, and the "obj" argument can be either a single instance id, and object index or the
+  <a href="../../GML_Overview/Instance_Keywords.htm">
+   <i>
+    keywords
+   </i>
+  </a>
+  <b>
+   all
+  </b>
+  or
+  <b>
+   other
+  </b>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">physics_test_overlap(xpos, ypos, angle, obj);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      xpos
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x position in the room to check
+     </td>
+    </tr>
+    <tr>
+     <td>
+      ypos
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y position in the room to check
+     </td>
+    </tr>
+    <tr>
+     <td>
+      angle
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The angle to check (of the calling instance)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      obj
+     </td>
+     <td>
+      <span>
+       <a href="../../../../The_Asset_Editors/Objects.htm">
+        Object Asset
+       </a>
+      </span>
+      or
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/id.htm">
+        Instance ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The object to check for
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if physics_test_overlap(x+20, y-35, 0, obj_Bomb)
+{
+    alarm[0] = room_speed;
+    ignited = true;
+}
+</code></pre>
+  The above code will check a position for a physics fixture overlap, and if there is one, it sets a variable and an alarm.
+ </body>
+</html>

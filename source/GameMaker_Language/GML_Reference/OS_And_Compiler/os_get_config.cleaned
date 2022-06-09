@@ -1,0 +1,35 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   os_get_config
+  </h1>
+  This function returns the name (as a string) of the currently selected configuration for your game. For more information on configurations please see the section
+  <a href="../../../Settings/Configurations.htm">
+   Configurations
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">os_get_config()
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if os_get_config() = "Free_Version"
+{
+    global.Ads = true;
+}
+else global.Ads = false;
+</code></pre>
+  The above code will check to see which configuration is being used and if it is the one called "Free_Version", ads will be enabled in the game.
+ </body>
+</html>

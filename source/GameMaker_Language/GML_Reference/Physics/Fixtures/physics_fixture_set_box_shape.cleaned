@@ -1,0 +1,98 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   physics_fixture_set_box_shape
+  </h1>
+  This function defines a box shape for your fixture. It takes the
+  <i>
+   half
+  </i>
+  width and height as the physics world uses this value far more than whole width/height values to determine things like collisions.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">physics_fixture_set_box_shape(fixture, halfWidth, halfHeight)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      fixture
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Physics/Fixtures/physics_fixture_create.htm">
+        Physics Fixture ID
+       </a>
+      </span>
+     </td>
+     <td>
+      the index of the fixture
+     </td>
+    </tr>
+    <tr>
+     <td>
+      halfWidth
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      the
+      <i>
+       half
+      </i>
+      width of the box
+     </td>
+    </tr>
+    <tr>
+     <td>
+      halfHeight
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      the
+      <i>
+       half
+      </i>
+      height of the box
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">physics_fixture_set_box_shape(fix_Border, room_width/2, 10);
+</code></pre>
+  The code above will apply a box shape to the fixture indexed in the variable "fix_Border" with a width of the room and a height of 20 pixels.
+ </body>
+</html>

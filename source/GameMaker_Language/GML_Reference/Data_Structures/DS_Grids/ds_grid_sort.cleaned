@@ -1,0 +1,95 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   ds_grid_sort
+  </h1>
+  This function can be used to sort a DS grid based on the values from a given column (much as you would sort files by date, size etc... in the OS file explorer). The following image shows an example:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/GML/Reference/Data_Structures/ds_grid_sort.png"/><br/>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">ds_grid_sort(index, column, ascending);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Grids/ds_grid_create.htm">
+        DS Grid ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the grid to sort.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      column
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The column to use for sorting the rows
+     </td>
+    </tr>
+    <tr>
+     <td>
+      ascending
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Whether to sort lowest to highest (
+      <span>
+       true
+      </span>
+      ), or highest to lowest (
+      <span>
+       false
+      </span>
+      ).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">ds_grid_sort(grid, 3, false)
+</code></pre>
+  This would take all the values in the DS grid indexed in the variable "grid" and sort them according to the values found in the 3rd column of the grid (as shown in the above image).
+ </body>
+</html>

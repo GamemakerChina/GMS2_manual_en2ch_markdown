@@ -1,0 +1,106 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   draw_highscore
+  </h1>
+  This simple function will draw the current list of internally stored high scores using the currently set font, colour and alpha values within the specified rectangle. You provide the coordinates for the upper left corner and lower right corner of the
+    rectangular area to draw the text, and
+  <span>
+   GameMaker
+  </span>
+  will take care of the rest, with spacing and position being done automatically.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">draw_highscore( x1, y1, x2, y2 );
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      x1
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x coordinate of the left of the highscore rectangle.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y1
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y coordinate of the top of the highscore rectangle.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      x2
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x coordinate of the right of the highscore rectangle.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y2
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y coordinate of the bottom of the highscore rectangle.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">draw_highscore(100, 100, room_width - 100, room_height - 100);
+</code></pre>
+  This would draw the highscore table in a rectangle in the middle of the room with a 100px border.
+ </body>
+</html>

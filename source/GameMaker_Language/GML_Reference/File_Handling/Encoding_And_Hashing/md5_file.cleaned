@@ -1,0 +1,66 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   md5_file
+  </h1>
+  In cryptography, MD5 (Message-Digest algorithm 5) is a widely used cryptographic hash function with a 128-bit hash value and has been employed in a wide variety of security applications. It is also commonly used to check the integrity of files and strings.
+    This function will take the given file and generate a unique MD5 for that file which can then be stored for later use.
+  <strong>
+   NOTE
+  </strong>
+  : MD5 is not completely secure and can be broken. See
+  <a href="https://en.wikipedia.org/wiki/MD5">
+   this page
+  </a>
+  for more info.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">md5_file(filename)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      filename
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The file to generate the MD5 hash for.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">hash = md5_file(working_directory + "game_data.ini")
+</code></pre>
+  The above code will generate an MD5 hash for the specified file and store the returned value in the variable "hash".
+ </body>
+</html>

@@ -1,0 +1,86 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Maths And Numbers
+  </h1>
+  <span>
+   GameMaker
+  </span>
+  contains a large number functions to deal with different areas of mathematics, numbers of all types and the date and time. Most of these functions can be found in the sections listed below:
+  <ul>
+   <li>
+    <a href="Date_And_Time/Date_And_Time.htm">
+     Date And Time
+    </a>
+   </li>
+   <li>
+    <a href="Number_Functions/Number_Functions.htm">
+     Number Functions
+    </a>
+   </li>
+   <li>
+    <a href="Angles_And_Distance/Angles_And_Distance.htm">
+     Angles And Distance
+    </a>
+   </li>
+   <li>
+    <a href="Matrix_Functions/Matrix_Functions.htm">
+     Matrix Functions
+    </a>
+   </li>
+  </ul>
+  There are a few built in constants that also can be evaluated as real numbers (although you should always check for the constant rather than the value):
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Constant
+     </th>
+     <th>
+      Value
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       true
+      </span>
+     </td>
+     <td>
+      1 (although any value equal to or greater than 1 will evaluate as
+      <span>
+       true
+      </span>
+      )
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       false
+      </span>
+     </td>
+     <td>
+      0 (although any value less than 1 will also evaluate as
+      <span>
+       false
+      </span>
+      )
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       pi
+      </span>
+     </td>
+     <td>
+      3.141592653589793280etc... (the exact value will depend on various factors like the platform being targeted)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </body>
+</html>

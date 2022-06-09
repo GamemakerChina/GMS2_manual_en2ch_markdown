@@ -1,0 +1,75 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   load_csv
+  </h1>
+  This function will load a CSV format file and convert it into a DS grid, returning the unique ID value for the grid created.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">load_csv(filename)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      filename
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The name of the file to open (as a string)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Grids/ds_grid_create.htm">
+ DS Grid ID
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">file_grid = load_csv("spreadsheet.csv");
+var ww = ds_grid_width(file_grid);
+var hh = ds_grid_height(file_grid);
+var xx = 32;
+var yy = 32;
+for (var i = 0; i &amp;amp;lt; ww; i++;)
+{
+    for (var j = 0; j &amp;amp;lt; hh; j++;)
+    {
+        draw_text(xx, yy, string(file_grid[# i, j]));
+        yy += 32;
+    }
+    yy = 32;
+    xx += 32;
+}
+</code></pre>
+  The above code will open the given CSV file and store the returned DS grid in the variable "file_grid". This grid is then parsed in a couple of
+  <span>
+   for
+  </span>
+  lops and the contents drawn to the screen.
+ </body>
+</html>

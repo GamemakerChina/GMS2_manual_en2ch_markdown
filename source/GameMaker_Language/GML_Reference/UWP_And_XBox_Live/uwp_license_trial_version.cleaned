@@ -1,0 +1,38 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   uwp_license_trial_version
+  </h1>
+  This function can be used to check whether the game is under a trial licence or not. If it is the function will return
+  <span>
+   true
+  </span>
+  , or
+  <span>
+   false
+  </span>
+  otherwise.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">uwp_license_trial_version();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if uwp_license_trial_version()
+{
+    global.LevelCap = 10;
+}
+</code></pre>
+  The above code checks to see if the app is under a trial licence and, if so, it sets a global variable.
+ </body>
+</html>

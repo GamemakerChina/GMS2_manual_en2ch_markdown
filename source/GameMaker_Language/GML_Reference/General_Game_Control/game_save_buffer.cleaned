@@ -1,0 +1,103 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   game_save_buffer
+  </h1>
+  This is a variant of the
+  <span>
+   <a href="game_save.htm">
+    game_save()
+   </a>
+  </span>
+  function, so please read
+  <a href="game_save.htm">
+   its page
+  </a>
+  first as it contains important information related to its use and to this function's as well.
+  
+  
+   With this function you can save the current state of the game to a previously created "grow" buffer (see
+  <a href="../Buffers/Buffers.htm">
+   Buffers
+  </a>
+  ) which can then be loaded again at any time using
+  <a href="game_load_buffer.htm">
+   <span>
+    game_load_buffer()
+   </span>
+  </a>
+  function. This function is designed for use in a single room at a time (ie: it's not advised to do a buffer save in one room, then try and load the buffer from another one) and should ideally be used only for checkpoints or level restarts.
+  <b>
+   NOTE
+  </b>
+  : This function is
+  <i>
+   very
+  </i>
+  limited and it is designed for the beginner to get a checkpoint system up and running quickly, but more advanced users may prefer to code their own system using the
+  <a href="../File_Handling/File_Handling.htm">
+   File
+  </a>
+  functions, due to the fact that the game will
+  <i>
+   not
+  </i>
+  save any of the dynamic resources like data structures, surfaces, added sprites etc.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">game_save_buffer(buffer);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      buffer
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Buffers/buffer_create.htm">
+        Buffer ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The buffer id to save to.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if keyboard_check_pressed(ord("S"))
+{
+    global.Checkpoint = true;
+    game_save_buffer(save_buff);
+}
+</code></pre>
+  The above code will set a global variable to
+  <span>
+   true
+  </span>
+  and then save the current game state to the buffer indexed in the variable "save_buff" when the key "S" is pressed.
+ </body>
+</html>

@@ -1,0 +1,154 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   draw_surface_stretched
+  </h1>
+  This function simply takes a surface and stretches it over the given width and height so that it occupies the area. As with
+  <a href="draw_surface.htm">
+   <span>
+    draw_surface()
+   </span>
+  </a>
+  you can specify a surface and then the x / y position in the room for the surface to be drawn at and finally a width and a height (which must be pixel values).
+  <b>
+  </b>
+  <span>
+   NOTE
+  </span>
+  When working with surfaces there is the possibility that they can cease to exist at any time due to them being stored in texture memory. You should
+  <b>
+   ALWAYS
+  </b>
+  check that a surface exists using
+  <span>
+   <a href="surface_exists.htm">
+    <span>
+     surface_exists()
+    </span>
+   </a>
+  </span>
+  before referencing them directly.
+  <span>
+   TIP
+  </span>
+  How a surface appears depends on its contents, especially the alpha values inside the surface. A surface
+  <a href="../Colour_And_Alpha/draw_clear_alpha.htm">
+   cleared
+  </a>
+  with an alpha of 0 may appear different from a surface cleared with an alpha of 1, due to the way they blend with the background. Take care of this whenever you notice a difference in the way something renders on a custom surface as opposed to the
+  <span>
+   <a href="application_surface.htm">
+    application_surface
+   </a>
+  </span>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">draw_surface_stretched(id, x, y, w, h);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Drawing/Surfaces/surface_create.htm">
+        Surface ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The unique ID value of the surface to draw.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      x
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x position of where to draw the surface.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y position of where to draw the surface.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      w
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The width at which to draw the surface.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      h
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The height at which to draw the surface.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">draw_surface_stretched(surf, 10, 10, 100, 100);
+</code></pre>
+  This will draw the surface indexed in the variable "surf" with its left corner at (10,10). Its width and height are both set to 100, which is how much space it will occupy regardless of the surface's actual width and height.
+ </body>
+</html>

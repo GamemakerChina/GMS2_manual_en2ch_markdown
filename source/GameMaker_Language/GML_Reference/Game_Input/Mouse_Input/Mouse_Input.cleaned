@@ -1,0 +1,218 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Mouse Input
+  </h1>
+  Mouse input is accepted on all platforms (on mobile devices it is accepted as a single screen touch - if you need to use multi-touch, you should be using the
+  <a href="../Device_Input/Device_Input.htm">
+   device specific functions
+  </a>
+  ) and has a few constants that are used to specify the buttons being pressed. These constants are shown in the following table:
+  <table>
+   <colgroup>
+    <col/>
+    <col/>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Game_Input/Mouse_Input/mouse_check_button.htm">
+        Mouse Button Constant
+       </a>
+      </span>
+     </th>
+    </tr>
+    <tr>
+     <th>
+      Constant
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <tt>
+       mb_left
+      </tt>
+     </td>
+     <td>
+      The left mouse button
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <tt>
+       mb_middle
+      </tt>
+     </td>
+     <td>
+      The middle mouse button (this may not be valid for all target platforms)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <tt>
+       mb_right
+      </tt>
+     </td>
+     <td>
+      The right mouse button
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <tt>
+       mb_side1
+      </tt>
+      *
+     </td>
+     <td>
+      Mouse side button 1
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <tt>
+       mb_side2
+      </tt>
+      *
+     </td>
+     <td>
+      Mouse side button 2
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <tt>
+       mb_any
+      </tt>
+     </td>
+     <td>
+      Any of the mouse buttons
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <tt>
+       mb_none
+      </tt>
+     </td>
+     <td>
+      No mouse button
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  *
+  <strong>
+   NOTE
+  </strong>
+  : The
+  <strong>
+   mb_side1
+  </strong>
+  and
+  <strong>
+   mb_side2
+  </strong>
+  buttons are only for use on Windows, macOS, Ubuntu and HTML5.
+   
+  
+  
+   The following functions exist for the standard mouse button controls:
+  <ul>
+   <li>
+    <a href="mouse_button.htm">
+     mouse_button
+    </a>
+   </li>
+   <li>
+    <a href="mouse_check_button.htm">
+     mouse_check_button
+    </a>
+   </li>
+   <li>
+    <a href="mouse_check_button_pressed.htm">
+     mouse_check_button_pressed
+    </a>
+   </li>
+   <li>
+    <a href="mouse_check_button_released.htm">
+     mouse_check_button_released
+    </a>
+   </li>
+   <li>
+    <a href="mouse_clear.htm">
+     mouse_clear
+    </a>
+   </li>
+   <li>
+    <a href="mouse_lastbutton.htm">
+     mouse_lastbutton
+    </a>
+   </li>
+   <li>
+    <a href="mouse_wheel_up.htm">
+     mouse_wheel_up
+    </a>
+   </li>
+   <li>
+    <a href="mouse_wheel_down.htm">
+     mouse_wheel_down
+    </a>
+   </li>
+   <li>
+    <a href="mouse_x.htm">
+     mouse_x
+    </a>
+   </li>
+   <li>
+    <a href="mouse_y.htm">
+     mouse_y
+    </a>
+   </li>
+  </ul>
+  Note that there are also a set of window functions related to using the mouse on desktop targets:
+  <ul>
+   <li>
+    <a href="../../Cameras_And_Display/The_Game_Window/window_mouse_get_x.htm">
+     window_mouse_get_x
+    </a>
+   </li>
+   <li>
+    <a href="../../Cameras_And_Display/The_Game_Window/window_mouse_get_y.htm">
+     window_mouse_get_y
+    </a>
+   </li>
+   <li>
+    <a href="../../Cameras_And_Display/The_Game_Window/window_mouse_set.htm">
+     window_mouse_set
+    </a>
+   </li>
+   <li>
+    <a href="../../Cameras_And_Display/The_Game_Window/window_view_mouse_get_x.htm">
+     window_view_mouse_get_x
+    </a>
+   </li>
+   <li>
+    <a href="../../Cameras_And_Display/The_Game_Window/window_view_mouse_get_y.htm">
+     window_view_mouse_get_y
+    </a>
+   </li>
+   <li>
+    <a href="../../Cameras_And_Display/The_Game_Window/window_views_mouse_get_x.htm">
+     window_views_mouse_get_x
+    </a>
+   </li>
+   <li>
+    <a href="../../Cameras_And_Display/The_Game_Window/window_views_mouse_get_y.htm">
+     window_views_mouse_get_y
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

@@ -1,0 +1,64 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   draw_enable_skeleton_blendmodes
+  </h1>
+  This function is used to enable (
+  <span>
+   true
+  </span>
+  ) or disable (
+  <span>
+   false
+  </span>
+  ) per-slot blend modes for skeletal sprites.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">draw_enable_skeleton_blendmodes(enable)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      enable
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Whether to enable or disable blend modes
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">draw_enable_skeleton_blendmodes(true);
+</code></pre>
+  The above code enables per-slot blend modes for skeletal sprites.
+ </body>
+</html>

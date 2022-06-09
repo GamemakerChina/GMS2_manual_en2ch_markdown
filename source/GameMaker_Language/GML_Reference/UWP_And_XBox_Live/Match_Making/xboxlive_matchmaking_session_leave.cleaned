@@ -1,0 +1,75 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   xboxlive_matchmaking_session_leave
+  </h1>
+  This function causes the user who created or found the specified session to leave it. You can get the session ID pointer from the
+  <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">
+   <span>
+    async_load
+   </span>
+  </a>
+  DS map that is returned in the
+  <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Social.htm">
+   Asynchronous Social Event
+  </a>
+  when you created or found a session (see
+  <a href="xboxlive_matchmaking_create.htm">
+   <span>
+    xboxlive_matchmaking_create()
+   </span>
+  </a>
+  for more details).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">xboxlive_matchmaking_session_leave(session_id);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      session_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The Session ID pointer of the session to leave.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if gamepad_button_check_pressed(0, gp_start)
+{
+    xboxlive_matchmaking_session_leave(global.SessionID);
+}
+</code></pre>
+  The above code checks for a gamepad button press and if one is detected then the user will logged out of the given matchmaking session.
+ </body>
+</html>

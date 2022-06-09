@@ -1,0 +1,77 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   part_emitter_clear
+  </h1>
+  With this function you can clear the given emitter from the specified particle system back to its default state. This will also stop any particles that are being streamed from the emitter at the time, and if you wish to use the emitter again you will need to set the region position and particle type using the
+  <a href="part_emitter_region.htm">
+   <span>
+    part_emitter_region()
+   </span>
+  </a>
+  function.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">part_emitter_clear(ps, ind);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      ps
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Systems/part_system_create.htm">
+        Particle System ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The particle system that the emitter is in.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      ind
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Emitters/part_emitter_create.htm">
+        Particle Emitter ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the emitter to clear.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">part_emitter_clear(Sname, p_emit1 );
+</code></pre>
+  The above code will clear the particle emitter indexed in the variable "p_emit1".
+ </body>
+</html>

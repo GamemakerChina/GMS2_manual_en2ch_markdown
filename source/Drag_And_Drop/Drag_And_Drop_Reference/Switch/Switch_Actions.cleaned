@@ -1,0 +1,77 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Switch Action Library
+  </h1>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Switch/Lib_Switch.png"/><br/>
+  The
+  <b>
+   Switches
+  </b>
+  action library contains those actions that are required for
+    creating switch statements in your game action code. In a number of situations you want to let your instances complete an action depending on a particular value, and while you can do this using a number of consecutive "if" statements, this
+    can get messy when the possible choices gets above two or three. In these cases it is better to use the "switch" action. A switch action works as follows:
+  <ul>
+   <li>
+    You supply value a (usually from some kind of expression or variable)
+   </li>
+   <li>
+    The value is compared with the value assigned to the various "case" statements
+   </li>
+   <li>
+    If the value is the same as the case value, the contents of the case are performed otherwise the next case is evaluated, etc...
+   </li>
+   <li>
+    Once a case has been performed
+    <i>
+     or
+    </i>
+    all cases have been evaluated and failed, the code will continue from the end of the switch
+   </li>
+   <li>
+    If all cases failed and you have a default case, then that will be performed before the code continues from the end of the switch
+   </li>
+  </ul>
+  The
+  <b>
+   Switches
+  </b>
+  library has the following actions:
+  <table>
+   <tbody>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Switch/i_Switches_Switch.png"/><br/>
+     </td>
+     <td>
+      <a href="Switch.htm">
+       Switch
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Switch/i_Switches_Case.png"/><br/>
+     </td>
+     <td>
+      <a href="Case.htm">
+       Case
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Switch/i_Switches_Default.png"/><br/>
+     </td>
+     <td>
+      <a href="Default.htm">
+       Default
+      </a>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </body>
+</html>

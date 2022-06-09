@@ -1,0 +1,117 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   window_set_rectangle
+  </h1>
+  With this function you can set the position of the game window within the browser (HTML5) or display (Windows, Ubuntu (Linux) or macOS)
+  <i>
+   and
+  </i>
+  set the scale of the window too. For more information on window position and window size, see
+  <a href="../The_Game_Window/window_set_position.htm">
+   <span>
+    window_set_position()
+   </span>
+  </a>
+  and
+  <a href="../The_Game_Window/window_set_size.htm">
+   <span>
+    window_set_size()
+   </span>
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">window_set_rectangle(x, y, w, h);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      x
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The new x coordinate of the window.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The new y coordinate of the window.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      w
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The new width of the window.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      h
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The new height of the window.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">window_set_rectangle(0, 0, display_get_width(), display_get_height());
+</code></pre>
+  The above code will set the game window to occupy the whole display area (either the browser or the screen, depending on the target platform).
+ </body>
+</html>

@@ -1,0 +1,86 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/i_Instance_Exists.png"/><br/>
+   If Instance Exists
+  </h1>
+  This action can be used to check if an instance of a specific object exists in the game room, or if a specific instance itself exists. You give the object from the asset explorer, and if any instance exists in the room then the action will return
+  <span>
+   true
+  </span>
+  otherwise it will return
+  <span>
+   false
+  </span>
+  . Note that you can use a variable here with the unique ID for specific instance (for example as returned by the action
+  <a href="Create_Object_Instance.htm">
+   Create Object Instance
+  </a>
+  ) or even the instance ID
+    value as returned by the room editor when you added the instance.
+  
+  
+   If you flag the "Not" argument, then the action will check to see if
+  <i>
+   no
+  </i>
+  instance exists and if none are found it will return
+  <span>
+   true
+  </span>
+  and if even one exists it will return
+  <span>
+   false
+  </span>
+  .
+  
+  
+   Note that to add actions into the "if" block, they should be dropped to the side of the action, as shown in the image below:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/a_Instance_Exists_Drop.png"/><br/>
+  These actions will now be run if the "if" evaluates to
+  <span>
+   true
+  </span>
+  , while any actions dropped elsewhere will be performed after the "if" block.
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/a_Instance_Exists.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Object
+     </td>
+     <td>
+      The name of the object to check for an instance of (or an instance ID).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/e_Instance_Exists.png"/><br/>
+  The above action block code checks for a collision and returns the unique ID value of the instance
+    that is being collided with. This value is stored in a temporary variable and then checked to see if the value corresponds to an instance that is currently within the room (if no collision is found then the variable will hold the keyword "
+  <span>
+   noone
+  </span>
+  "),
+    and if it does, then a variable is set in the instance being collided with.
+ </body>
+</html>

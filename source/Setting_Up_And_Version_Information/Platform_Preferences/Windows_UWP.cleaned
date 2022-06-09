@@ -1,0 +1,67 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Windows UWP Preferences
+  </h1>
+  The Windows UWP preferences have the following options:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Setup_And_Version/Platform_Preferences/Windows_UWP_Prefs.png"/><br/>
+  <ul>
+   <li>
+    <strong>
+     Visual Studio location
+    </strong>
+    : This option is for pointing
+    <span>
+     GameMaker
+    </span>
+    to the Microsoft Visual Studio installation on the build PC.
+   </li>
+   <li>
+    <strong>
+     Win UWP Tools location
+    </strong>
+    : This option is for pointing
+    <span>
+     GameMaker
+    </span>
+    to the UWP tools installation path on the build PC.
+   </li>
+   <li>
+    <strong>
+     Default package architecture
+    </strong>
+    : By default, you are shown a dialog window to choose between the
+    <strong>
+     x86
+    </strong>
+    ,
+    <strong>
+     x64
+    </strong>
+    and
+    <strong>
+     ARM
+    </strong>
+    architectures when compiling a UWP executable. You can set this option
+      to one of those three which will then be selected by default whenever you choose to compile an executable.
+   </li>
+   <li>
+    <strong>
+     Automatic response to creating store package
+    </strong>
+    : In the dialog window shown on compile, you can choose to create a store package. You can set this option to either
+    <strong>
+     Yes
+    </strong>
+    or
+    <strong>
+     No
+    </strong>
+    which will be used by default
+      whenever you choose to compile an executable.
+   </li>
+  </ul>
+ </body>
+</html>

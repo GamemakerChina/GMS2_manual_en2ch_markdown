@@ -1,0 +1,41 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   throw
+  </h1>
+  The
+  <span>
+   throw
+  </span>
+  runtime statement permits you to generate your own
+  <a href="../../../Additional_Information/Errors/Runner_Errors.htm">
+   runtime exceptions
+  </a>
+  , ending the game and showing an error message, using the following syntax:
+  <pre><code class="language-gml">throw (&amp;amp;lt;expression&amp;amp;gt;);
+</code></pre>
+  The expression used can be a value or a string or any other data type, and this will then generate an exception error which is - by default - shown on the screen and on closing the error message the game will end. For example calling this:
+  <pre><code class="language-gml">throw ("Hello World!");
+</code></pre>
+  will cause the following unhandled exception error to be shown:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/GML/Overview/ThrowUnhandledMessage.png"/><br/>
+  You can, however, take over this error message and use your own handler code by calling
+    the function
+  <a href="../../GML_Reference/Debugging/exception_unhandled_handler.htm">
+   <span>
+    exception_unhandled_handler()
+   </span>
+  </a>
+  . This
+  <a href="../Runtime_Functions.htm">
+   runtime function
+  </a>
+  permits you to supply a custom
+  <a href="../Method_Variables.htm">
+   method
+  </a>
+  to use that will be called whenever any unhandled exceptions occur in your game.
+ </body>
+</html>

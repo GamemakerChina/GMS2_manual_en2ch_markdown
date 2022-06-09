@@ -1,0 +1,62 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   file_text_close
+  </h1>
+  Once you have finished working with a given file (whether reading from it or writing to it), you must close the file again, or else you risk losing the information contained within. This also prevents memory leaks and makes sure that you never go over the file limit by having more than 32 files open.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">file_text_close(fileid);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      fileid
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/File_Handling/Text_Files/file_text_open_read.htm">
+        Text File ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The id of the file to close.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var file = file_text_open_write(working_directory + "Game_Data.txt");
+while (!file_text_eof(file))
+{
+    file_text_readln(file);
+}
+file_text_write_string(file, level_data);
+file_text_close(file);
+</code></pre>
+  The above code opens a file for writing then loops through the lines of text already written to the file until it reaches the end. At this point it writes a string and then closes the file again.
+ </body>
+</html>

@@ -1,0 +1,74 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   is_numeric
+  </h1>
+  This function returns whether a given variable is a numeric value (real, int32, int64 or boolean) or not. In some cases you want to check and see if a variable in
+  <span>
+   GameMaker
+  </span>
+  holds any numeric value, and that's when you would use this function. The function will return
+  <span>
+   true
+  </span>
+  if the given input is numeric, and
+  <span>
+   false
+  </span>
+  otherwise.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">is_numeric(n);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      n
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm#variable">
+        Variable
+       </a>
+      </span>
+     </td>
+     <td>
+      The input to check.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   <b>
+    Example:
+   </b>
+  </h4>
+  <pre><code class="language-gml">if is_numeric(val)
+{
+    current_val += val;
+}
+</code></pre>
+  The above code checks the variable "val" to see if it is a numeric value and if it is it then adds it to the given variable.
+ </body>
+</html>

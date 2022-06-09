@@ -1,0 +1,102 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   sequence_track_new
+  </h1>
+  With this function you can create a new sequence track
+  <a href="../../../GML_Overview/Structs.htm">
+   struct
+  </a>
+  , supplying the type of track that you wish to make. The
+  <span>
+   type
+  </span>
+  argument can be any one of the
+  <span>
+   <a href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Sequences/Sequence_Structs/The_Track_Struct.htm#type">
+    Sequence Track Type Constant
+   </a>
+  </span>
+  s
+  <a href="Sequence_Structs/The_Track_Struct.htm">
+   listed on this page
+  </a>
+  .
+  
+  
+   The function will return a sequence
+  <a href="Sequence_Structs/The_Track_Struct.htm">
+   track struct
+  </a>
+  which can then have data added to it before being assigned to a
+  <a href="Sequence_Structs/The_Sequence_Object_Struct.htm">
+   sequence object
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">sequence_track_new(type);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      type
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Sequences/Sequence_Structs/The_Track_Struct.htm#type">
+        Sequence Track Type Constant
+       </a>
+      </span>
+     </td>
+     <td>
+      The type of track to create.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Sequences/Sequence_Structs/The_Track_Struct.htm">
+ Sequence Track Struct
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">myseq = sequence_create();
+var mytracks = array_create(1);
+mytracks[0] = sequence_track_new(seqtracktype_graphic);
+var graphickeys = array_create(1);
+graphickeys[0] = sequence_keyframe_new(seqtracktype_graphic);
+graphickeys[0].frame = 0;
+graphickeys[0].length = 1;
+graphickeys[0].stretch = true;
+graphickeys[0].disabled = false;
+var graphickeydata = array_create(1);
+graphickeydata[0] = sequence_keyframedata_new(seqtracktype_graphic);
+graphickeydata[0].spriteIndex = spr_Platform;
+graphickeydata[0].channel = 0;
+graphickeys[0].channels = graphickeydata;
+mytracks[0].name = "TestGraphicTrack";
+mytracks[0].keyframes = graphickeys;
+myseq.tracks = mytracks;
+</code></pre>
+  The above code creates a new sequence and then creates a graphic asset track and sets some keyframe data on the track. This track is then assigned to the instance.
+ </body>
+</html>

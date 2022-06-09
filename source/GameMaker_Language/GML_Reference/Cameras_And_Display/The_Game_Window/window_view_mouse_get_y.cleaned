@@ -1,0 +1,74 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   window_view_mouse_get_y
+  </h1>
+  This function will return the mouse y position relative to the view selected.
+  <b>
+   NOTE
+  </b>
+  : For regular mouse functions see the section on
+  <a href="../../Game_Input/Mouse_Input/Mouse_Input.htm">
+   Mouse Input
+  </a>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">window_view_mouse_get_y( id );
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The id of the view to compare the mouse position to.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if mouse_check_button_pressed(mb_left)
+{
+    var xx, yy;
+    xx = window_view_mouse_get_x(0);
+    yy = window_view_mouse_get_y(0);
+
+    if xx &amp;amp;gt; 0 &amp;amp;amp;&amp;amp;amp; xx &amp;amp;lt; 32 &amp;amp;amp;&amp;amp;amp; yy &amp;amp;gt; 0 &amp;amp;amp;&amp;amp;amp; yy &amp;amp;lt; 32
+    {
+        b_press[0] = true;
+    }
+}
+</code></pre>
+  The above code will check for a mouse button being pressed, and if it is it then gets the mouse position relative to the view[0] and compares it to see if a variable should be set to true.
+ </body>
+</html>

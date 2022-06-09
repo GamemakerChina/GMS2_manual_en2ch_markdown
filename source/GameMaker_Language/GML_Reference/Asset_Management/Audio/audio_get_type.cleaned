@@ -1,0 +1,70 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   audio_get_type
+  </h1>
+  When adding audio to
+  <span>
+   GameMaker
+  </span>
+  it can be either
+  <i>
+   streamed
+  </i>
+  or
+  <i>
+   in memory
+  </i>
+  . If you need to know whether a given sound index is for streamed audio or not you can
+    use this function which will return 1 for streamed, 0 for sound in memory, and -1 if there is any error or the index does not point to a valid sound resource.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">audio_get_type(index);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Sounds.htm">
+        Sound Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the sound to check.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">type = audio_get_type(snd_Music_1);
+</code></pre>
+  The above code checks the type of audio indexed in the variable "snd_Music_1" and stores the returned value in the variable "type".
+ </body>
+</html>

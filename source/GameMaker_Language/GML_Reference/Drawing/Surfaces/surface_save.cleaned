@@ -1,0 +1,82 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   surface_save
+  </h1>
+  This function will save a surface to disc using the given filename. The surface
+  <i>
+   must
+  </i>
+  be saved as a
+  <span>
+   *.png
+  </span>
+  format file.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">surface_save(surface_id, fname);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      surface_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Drawing/Surfaces/surface_create.htm">
+        Surface ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The ID of the surface to set as the drawing target.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      fname
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The name of the saved image file.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if keyboard_check_pressed(ord("S")
+{
+    surface_save(surf, "test.png");
+}
+</code></pre>
+  The above code will check to see if the user presses the "S" key on the keyboard and if they do it will save the surface indexed in the variable "surf" to disc.
+ </body>
+</html>

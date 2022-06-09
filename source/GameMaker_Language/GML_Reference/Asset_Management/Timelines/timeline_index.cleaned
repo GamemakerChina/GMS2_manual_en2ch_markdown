@@ -1,0 +1,40 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   timeline_index
+  </h1>
+  This variable holds the index of the timeline currently associated with the instance. You can set this to a particular time line to use that one, or set it to -1 to stop using a time line for the instance (if no time line is defined for the instance, -1 is returned too). Note that this does
+  <i>
+   not
+  </i>
+  start the time line - for that use the variable
+  <a href="timeline_running.htm">
+   <span>
+    timeline_running
+   </span>
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">timeline_index;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../The_Asset_Editors/Timelines.htm">
+ Timeline Asset
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if timeline_exists(global.tl)
+{
+    timeline_index = global.tl;
+}
+</code></pre>
+  The above code will assign the instance running the code a time line indexed in the variable "global.tl" if that time line exists.
+ </body>
+</html>

@@ -1,0 +1,109 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   sprite_set_nineslice
+  </h1>
+  This function is used to apply a
+  <a href="../Nine_Slice_Struct.htm">
+   Nine Slice struct
+  </a>
+  to a sprite. You supply the sprite index and the Nine Slice struct to apply, which can be retrieved using
+  <a href="sprite_nineslice_create.htm">
+   <span>
+    sprite_nineslice_create()
+   </span>
+  </a>
+  or
+  <a href="../Sprite_Information/sprite_get_nineslice.htm">
+   <span>
+    sprite_get_nineslice()
+   </span>
+  </a>
+  .
+  <b>
+   <span>
+    NOTE
+   </span>
+  </b>
+  This function affects the sprite
+  <strong>
+   asset
+  </strong>
+  so any changes you make with this function will affect
+  <strong>
+   all
+  </strong>
+  instances that are using this sprite and all future instances too.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">sprite_set_nineslice(ind, nineslice);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      ind
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../The_Asset_Editors/Sprites.htm">
+        Sprite Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the sprite to modify
+     </td>
+    </tr>
+    <tr>
+     <td>
+      nineslice
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Nine_Slice_Struct.htm">
+        Nine Slice Struct
+       </a>
+      </span>
+     </td>
+     <td>
+      The Nine Slice struct to apply
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var _nineslice = sprite_nineslice_create();
+
+_nineslice.enabled = true;
+_nineslice.left = 10;
+_nineslice.right = 10;
+_nineslice.top = 10;
+_nineslice.bottom = 10;
+
+sprite_set_nineslice(spr_box_0, _nineslice);
+</code></pre>
+  The code above creates a new Nine Slice struct, enables it and sets the offsets for the guides. The struct is then applied to a sprite, changing its Nine Slice properties.
+ </body>
+</html>

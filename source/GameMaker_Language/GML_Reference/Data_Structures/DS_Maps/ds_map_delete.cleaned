@@ -1,0 +1,75 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   ds_map_delete
+  </h1>
+  With this function you can remove any given key (and its corresponding value) from the given, previously created,
+  <span>
+   DS
+  </span>
+  map .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">ds_map_delete(id, key);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/ds_map_create.htm">
+        DS Map ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The id of the map to change.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      key
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The key to delete (along with its associated value).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">ds_map_delete(inventory, "shield");
+</code></pre>
+  The above code will delete the key "shield" (and the value it is paired with) from the DS map (inventory).
+ </body>
+</html>

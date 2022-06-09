@@ -1,0 +1,112 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   event_perform_object
+  </h1>
+  This functions works the same as
+  <a href="event_perform.htm">
+   <span>
+    event_perform()
+   </span>
+  </a>
+  except that this time you can specify events from another object. There are many options here which allow complete simulation of all possible events, but note that this literally just performs all the code in the event and the game will not modify anything to make it trigger itself manually, for example if you choose to perform a keyboard press event, the event will be triggered but the relevant key will not be recognised as having been pressed. Or if you perform an alarm event, the alarm counter will not be set to -1 but rather continue to count down. You can find a complete list of the available constants this function requires from the the page for the function
+  <a href="event_perform.htm">
+   <span>
+    event_perform()
+   </span>
+  </a>
+  .
+  <span>
+   NOTE
+  </span>
+  Actions in the event called with this function are applied to the
+  <b>
+   current instance
+  </b>
+  , and not to instances of the given object.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">event_perform_object(obj, type, numb);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      obj
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../The_Asset_Editors/Objects.htm">
+        Object Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The object that should have its event triggered.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      type
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Objects/Object_Events/event_perform.htm">
+        Event Type Constant
+       </a>
+      </span>
+     </td>
+     <td>
+      The type of event to perform.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      numb
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+      or
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Objects/Object_Events/event_perform.htm">
+        Event Number Constant
+       </a>
+      </span>
+     </td>
+     <td>
+      The specific event, if one is necessary (otherwise, just use 0).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">event_perform_object(obj_Player, ev_keypress, ord("W"));
+</code></pre>
+  This would perform the event associated with Keyboard Check Pressed > W key from the object "obj_Player" in the current instance.
+ </body>
+</html>

@@ -1,0 +1,176 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   network_send_raw
+  </h1>
+  With this function you can send a "raw" data packet through the network. The function takes the
+  <i>
+   socket id
+  </i>
+  to connect through and then you must supply the
+  <i>
+   buffer id
+  </i>
+  which contains the data to be sent (for more information on buffers see
+  <a href="../Buffers/Buffers.htm">
+   Reference - Buffers
+  </a>
+  ) and finally the size (in bytes) of the data packet. The data sent is not formatted by
+  <span>
+   GameMaker
+  </span>
+  in any way and the receiving devices will get the data as a stream which means you will have to handle it yourself. The function will return the number of bytes of data sent, or a number less than 0 if the send has failed.
+  <h2>
+   Options Argument
+  </h2>
+  The last argument is optional, and is only used with WebSockets. It allows you to choose between sending binary or text data. Either of these constants can be specified in this argument:
+  <table>
+   <colgroup>
+    <col/>
+    <col/>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Networking/network_send_raw.htm">
+        Network Send Type Constant
+       </a>
+      </span>
+     </th>
+    </tr>
+    <tr>
+     <th>
+      Constant
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       network_send_binary
+      </span>
+     </td>
+     <td>
+      Send a binary message
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       network_send_text
+      </span>
+     </td>
+     <td>
+      Send a text message
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  The APIs for some platforms only accept text messages when using WebSockets (e.g. Twitch), so the
+  <span>
+   network_send_text
+  </span>
+  constant can be used in such cases. If this argument is not specified, binary data is sent by default.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">network_send_raw(socket, bufferid, size, [options]);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      socket
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Networking/network_create_socket.htm">
+        Network Socket ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The id of the socket to use.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      bufferid
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Buffers/buffer_create.htm">
+        Buffer ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The id of the buffer to get the data from.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      size
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The size (in bytes) of the data.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      options
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Networking/network_send_raw.htm">
+        Network Send Type Constant
+       </a>
+      </span>
+     </td>
+     <td>
+      <span>
+       OPTIONAL
+      </span>
+      Used for WebSockets to choose between text and binary data; if not specified, binary data is sent.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">buff = buffer_load("player_save.dat");
+network_send_raw(sock, buff, buffer_get_size(buff));
+</code></pre>
+  The above information loads a previously saved buffer data into memory and returns the buffer id to be stored in the variable "buff". This complete buffer is then send as a raw data packet over the network using the socket identified by the variable "sock".
+ </body>
+</html>

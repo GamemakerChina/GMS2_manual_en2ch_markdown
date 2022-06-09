@@ -1,0 +1,27 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   window_get_x
+  </h1>
+  With this function you can get the x position (in pixels) within the browser if it is an HTML5 game or within the display if it is a Windows, Ubuntu (Linux) or macOS game.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">window_get_x();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">wx = window_get_x();
+</code></pre>
+  The above code stores the current x axis window position in the variable "wx".
+ </body>
+</html>

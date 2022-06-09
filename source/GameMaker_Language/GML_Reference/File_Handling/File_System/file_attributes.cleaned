@@ -1,0 +1,153 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   file_attributes
+  </h1>
+  You can use this function to check the attributes of a given file. You can add up the following constants to see the type of files you want:
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Constant
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       fa_readonly
+      </span>
+     </td>
+     <td>
+      Read-only files
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       fa_hidden
+      </span>
+     </td>
+     <td>
+      Hidden files
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       fa_sysfile
+      </span>
+     </td>
+     <td>
+      System files
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       fa_volumeid
+      </span>
+     </td>
+     <td>
+      Volume-id files
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       fa_directory
+      </span>
+     </td>
+     <td>
+      Directories
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       fa_archive
+      </span>
+     </td>
+     <td>
+      Archived files
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <b>
+  </b>
+  <b>
+   NOTE
+  </b>
+  : This is a Windows only function.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">file_attributes(fname, attr);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      fname
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The name of the file to check.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      attr
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/File_Handling/File_System/file_find_first.htm">
+        File Attribute Constant
+       </a>
+      </span>
+     </td>
+     <td>
+      The attributes to check for.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if !file_attributes(file, fa_hidden)
+{
+    file_delete(file);
+}
+</code></pre>
+  This would check a file to see if it is hidden or not, and if not it is deleted.
+ </body>
+</html>

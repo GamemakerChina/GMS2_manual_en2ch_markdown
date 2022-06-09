@@ -1,0 +1,73 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   part_system_update
+  </h1>
+  With this function you can force a particle system to draw all the current particles on the screen. If
+  <a href="part_system_automatic_draw.htm">
+   <span>
+    part_system_automatic_draw()
+   </span>
+  </a>
+  is switched off then this function will show the particles when used in the draw event of an instance, or it can be used when the drawing target is set to a surface (using
+  <a href="../../Surfaces/surface_set_target.htm">
+   <span>
+    surface_set_target()
+   </span>
+  </a>
+  ) to draw the particles in the system to that surface.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">part_system_drawit(ind);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      ind
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Systems/part_system_create.htm">
+        Particle System ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the particle system to draw the particles of.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if surface_exists(surf)
+{
+    surface_set_target(surf);
+    part_system_drawit(global.psys);
+    surface_reset_target();
+}
+</code></pre>
+  The above code checks to see if the surface indexed in the variable "surf" exists, and if it does it then sets the drawing target to the surface, draws the particle system with the ID stored in the global variable, and then resets the drawing target so all normal drawing appears on the screen once more.
+ </body>
+</html>

@@ -1,0 +1,66 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   audio_group_name
+  </h1>
+  This function will return a string containing the name of the given audio group for displaying or checking. When you define an audio group in the Game Options, you give it a unique "name" which is really a constant to use as an ID
+  <i>
+   v
+  </i>
+  alue for the group. All this function does is take the ID and return a string of the ID name you gave.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">audio_group_name(groupID);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      groupID
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Groups/Audio_Groups.htm">
+        Audio Group ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index value constant of the audio group to check (as defined in the
+      <a href="../../../../../Settings/Audio_Groups.htm">
+       Audio Groups Window
+      </a>
+      )
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var name = audio_group_name(audiogroup_level1);
+draw_text(32, 32, "Now Playing Group: " + name);
+</code></pre>
+  The above code retrieves the name of the given audio group constant and displays it on the screen.
+ </body>
+</html>

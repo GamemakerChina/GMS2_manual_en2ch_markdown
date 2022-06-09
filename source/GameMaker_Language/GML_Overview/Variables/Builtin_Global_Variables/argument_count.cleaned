@@ -1,0 +1,79 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   argument_count
+  </h1>
+  This
+  <b>
+   read-only
+  </b>
+  variable returns the number of "arguments" that are passed through to a
+  <a href="../../Script_Functions.htm">
+   script function
+  </a>
+  or a
+  <a href="../../Method_Variables.htm">
+   method
+  </a>
+  . Normally used in conjunction with an argument array (
+  <a href="argument.htm">
+   <span>
+    argument[0...15]
+   </span>
+  </a>
+  ) to permit varying input arguments for a given function.
+  <strong>
+   NOTE
+  </strong>
+  : This isn't strictly required any more and is provided for legacy support more than anything else. All user-defined functions will accept variable arguments, and any argument passed into a function that is not part of the named inputs will be initialised to
+  <span>
+   undefined
+  </span>
+  by default, which can be checked using the
+  <a href="../../../GML_Reference/Variable_Functions/is_undefined.htm">
+   is_undefined()
+  </a>
+  function.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">argument_count;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">function my_array()
+{
+    var i, arg;
+    for (i = 0; i &amp;amp;lt; 5; i += 1;)
+    {
+        if argument_count &amp;amp;gt; i
+        {
+            arg[i] = argument[i]
+        }
+        else
+        {
+            arg[i] = -1;
+        }
+    }
+}
+</code></pre>
+  The above code uses the
+  <span>
+   argument_count
+  </span>
+  variable along with the
+  <span>
+   argument
+  </span>
+  array to initialize variables, and is an example of how to permit a user-defined function to accept a variable number of arguments.
+ </body>
+</html>

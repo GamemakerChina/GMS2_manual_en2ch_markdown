@@ -1,0 +1,92 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   shader_get_sampler_index
+  </h1>
+  Since you cannot change the value of a shader sampler within the shader itself, you have to set it before calling the shader using one of the available
+  <strong>
+   uniform set
+  </strong>
+  functions. However, to be able to do
+  <i>
+   that
+  </i>
+  you must first call this function to get the "handle" of the shader sampler that you will want to set.
+  <span>
+   NOTE
+  </span>
+  Although a shader is made up of two discreet programs (vertex and fragment) this function will not differentiate between the two and will return the handle of the shader sample from either of them.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">shader_get_sampler_index(shader, uniform);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      shader
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Shaders.htm">
+        Shader Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the shader to use.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      uniform
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The shader sampler to get the handle of (a string).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Shaders/shader_get_sampler_index.htm">
+ Shader Sampler Handle
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">glassshader_bgsampler = shader_get_sampler_index(GlassShader, "s_BackgroundSampler")
+spr = sprite_get_texture(sprite_index, 0);
+shader_set(GlassShader);
+texture_set_stage(glassshader_bgsampler, spr);
+shader_reset();
+</code></pre>
+  The above code will get the
+  <i>
+   handle
+  </i>
+  for the sampler within the shader indexed as "GlassShader" and then set that shader constant to the given sprite texture.
+ </body>
+</html>

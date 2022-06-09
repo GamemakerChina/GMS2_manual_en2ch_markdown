@@ -1,0 +1,92 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Nine Slice
+  </h1>
+  <span>
+   Nine Slicing
+  </span>
+  (also known as 9-slicing) is a technique used to scale rectangular images for preserving details, making them retain their original form after scaling.
+  
+  
+   This is achieved by dividing the image into nine separate parts or "slices". The corner slices are moved during scaling and drawn at the same scale, then the edge and centre slices are stretched or repeated (depending on your setting) to fill the space.
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Nine_Slice_0_Preview.png"/><br/>
+  Four
+  <strong>
+   guides
+  </strong>
+  are placed on a sprite to divide the image into nine slices. The following visual demonstrates how the guides stay in place after the sprite is scaled using Nine Slice:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Nine_Slice_1_Guides.png"/><br/>
+  The
+  <strong>
+   Tile Mode
+  </strong>
+  of a slice determines how that slice is displayed when the sprite is scaled. It can only be set for the edge and centre slices (as corner slices are not scaled).
+  
+  
+   The following visual demonstrates each Tile Mode when applied to the centre slice:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Nine_Slice_3_TileModes.png"/><br/>
+  If
+  <strong>
+   Nine Slicing
+  </strong>
+  is enabled for a sprite, it will be used for resizing the sprite wherever it appears, and will work in any existing places where the sprite was used without any other changes being required.
+  <strong>
+   NOTE
+  </strong>
+  : Nine Slicing will not work with functions that draw only a part of the sprite or distort it, such as
+  <span>
+   <a href="../../GameMaker_Language/GML_Reference/Drawing/Sprites_And_Tiles/draw_sprite_part.htm">
+    draw_sprite_part()
+   </a>
+  </span>
+  or
+  <span>
+   <a href="../../GameMaker_Language/GML_Reference/Drawing/Sprites_And_Tiles/draw_sprite_pos.htm">
+    draw_sprite_pos()
+   </a>
+  </span>
+  .
+  
+  
+   In conjunction with
+  <a href="../Sequences.htm">
+   Sequences
+  </a>
+  , this feature can be used to build user interfaces, and can be used, for example, to create rectangular walls in a game level. Texture memory can also be saved using
+  <strong>
+   <span>
+    Nine Slicing
+   </span>
+  </strong>
+  , as a smaller image can be used to cover a larger area on-screen.
+  <span>
+   Nine Slicing
+  </span>
+  can be enabled on Sprites in the IDE. For more information, see
+  <a href="../Sprites.htm">
+   The Sprite Editor
+  </a>
+  .
+  
+  
+   For information on the
+  <a>
+   Runtime
+  </a>
+  functions available for
+  <span>
+   Nine Slicing
+  </span>
+  , see the following page:
+  <ul>
+   <li>
+    <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Nine_Slice_Functions.htm">
+     Nine Slice Functions
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

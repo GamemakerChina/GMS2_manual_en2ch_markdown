@@ -1,0 +1,62 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   gamepad_hat_count
+  </h1>
+  This function will return the
+  <i>
+   total
+  </i>
+  number of hats available for the gamepad connected to the given device "slot". Hats generally refer to up/down/left/right buttons, and note that on the Windows target, hats are only available on DirectInput
+    controllers (so, from slot 4 upwards).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">gamepad_hat_count(device);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      device
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      Which gamepad device "slot" to check.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">h_num = gamepad_hat_count(4);
+</code></pre>
+  The above code will return the number of hats available on the gamepad plugged into device "slot" 4 and store the value in the variable "h_num".
+ </body>
+</html>

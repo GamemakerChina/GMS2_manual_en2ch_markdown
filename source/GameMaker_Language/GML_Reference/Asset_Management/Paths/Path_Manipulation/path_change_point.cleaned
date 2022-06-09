@@ -1,0 +1,143 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   path_change_point
+  </h1>
+  With this function you can change the position and/or the speed factor of any point previously defined for a path (the path can have been created in the path editor or through code using
+  <a href="path_add.htm">
+   <span>
+    path_add()
+   </span>
+  </a>
+  ). If used on a path from the Asset Browser, note that
+  <strong>
+   the function will change the actual asset
+  </strong>
+  , and so will permanently affect how the path is used by all instances in the game from the moment the function is used until the end of the game. If this is not what you require, then you should use a function like
+  <span>
+   <a href="path_duplicate.htm">
+    path_duplicate()
+   </a>
+  </span>
+  to create a copy of the path first, then call this function on the duplicated asset (don't forget to call
+  <span>
+   <a href="path_delete.htm">
+    path_delete()
+   </a>
+  </span>
+  on the asset when it is no longer required).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">path_change_point(index, n, x, y, speed);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../The_Asset_Editors/Paths.htm">
+        Path Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the path to change a point of.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      n
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The defining point to change the attributes of.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      x
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The new x coordinate (relative to the path) of the point.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The new y coordinate (relative to the path) of the point.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      speed
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The new speed factor of the point.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">for (var i = 0; i &amp;amp;lt; path_get_number(path0); ++i;)
+{
+    var px = path_get_point_x(pth_Patrol, i) + 64 - random(128);
+    var py = path_get_point_y(pth_Patrol, i) + 64 - random(128);
+    path_change_point(pth_Patrol, i, px, py, 100);
+}
+</code></pre>
+  The above code loops through all the points in the path indexed as "path0" and re-positions all the points to a random position within an area of 128x128 pixels.
+ </body>
+</html>

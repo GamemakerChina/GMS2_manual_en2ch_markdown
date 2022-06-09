@@ -1,0 +1,73 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   sprite_delete
+  </h1>
+  This function will delete a sprite from the game, freeing any memory that was reserved for it. This is a very important function for those moments when you need to create and change sprites from external sources (like loading a sprite from a file with
+  <span>
+   <a href="sprite_add.htm">
+    sprite_add()
+   </a>
+  </span>
+  , or duplicating a sprite using
+  <span>
+   <a href="sprite_duplicate.htm">
+    sprite_duplicate()
+   </a>
+  </span>
+  ) and should always be used to remove those assets that are no longer
+    needed by a game, or to clear an indexed asset from a variable before re-assigning another asset to that variable.
+  <b>
+   This cannot be used to delete sprites that are included in the game as part of the assets in the Asset Browser
+  </b>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">sprite_delete(index);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../The_Asset_Editors/Sprites.htm">
+        Sprite Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the sprite to be deleted.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var spr = sprite_create_from_surface(application_surface, 0, 0, 32, 32, false, false, 16, 16); sprite_merge(spr_Player, spr); sprite_delete(spr);
+</code></pre>
+  The above code creates a local variable and then stores the index of the sprite created from the application surface. This sprite is then merged with the asset indexed in the variable "spr_Player" before being removed from memory again.
+ </body>
+</html>

@@ -1,0 +1,72 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   filename_change_ext
+  </h1>
+  This function returns the indicated file name with the extension (including the dot) changed to the new extension. By using an empty string as the new extension you can remove the extension part all together.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">filename_change_ext(fname, newext);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      fname
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The file to use.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      newext
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The new extension to use.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">ext = filename_change_ext(file_find_first(working_directory + "*.*", 0), "");
+</code></pre>
+  The above code gets the name of the file (as a string) with the extension part removed.
+ </body>
+</html>

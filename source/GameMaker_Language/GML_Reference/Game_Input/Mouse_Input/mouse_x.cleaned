@@ -1,0 +1,31 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   mouse_x
+  </h1>
+  This
+  <b>
+   read-only
+  </b>
+  variable returns the current x axis position of the mouse within the room.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">mouse_x;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">x = median(64, mouse_x, room_width - 64);
+</code></pre>
+  The above code will maintain the instance at the mouse x position as long as it is within the limits of 64 pixels from either side of the room.
+ </body>
+</html>

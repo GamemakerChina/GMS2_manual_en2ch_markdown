@@ -1,0 +1,86 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   room_previous
+  </h1>
+  With this function you can retrieve the index of the room
+  <i>
+   before
+  </i>
+  the room input into the function. For example you can use the variable
+  <a href="room.htm">
+   <span>
+    room
+   </span>
+  </a>
+  to get the index of the current room and then use this function to find the room that comes before it, as listed in the
+  <a href="../../../../Settings/The_Room_Manager.htm">
+   Room Manager
+  </a>
+  . If there is no room before the one you input then -1 is returned. Note that this function will not recognise or take into consideration rooms that have been added dynamically using
+  <span>
+   <a href="room_add.htm">
+    room_add()
+   </a>
+  </span>
+  or
+  <span>
+   <a href="room_duplicate.htm">
+    room_duplicate()
+   </a>
+  </span>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">room_previous(numb);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      numb
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the room to get the one before from.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../The_Asset_Editors/Rooms.htm">
+ Room Asset
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if room_previous(room) != -1
+{
+    room_goto_previous();
+}
+</code></pre>
+  The above code will check to see if the previous room exists and if so, it will go to it.
+ </body>
+</html>

@@ -1,0 +1,93 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   camera_set_view_pos
+  </h1>
+  You can use this function to update the position of the camera view within the room. You give the unique camera ID value (as returned by the different
+  <span>
+   <a href="camera_create.htm">
+    camera_create()
+   </a>
+  </span>
+  functions) and then give the x and y positions
+    to set the camera to.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">camera_set_view_pos(camera_id, x, y)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      camera_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Cameras_And_Display/Cameras_And_Viewports/camera_create.htm">
+        Camera ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The unique camera ID value returned when you created the camera.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      x
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x position to place the view at (in the room)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y position to place the view at (in the room)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">camera_set_view_pos(view_camera[0], x - (view_wport[0] / 2), y - (view_hport[0] / 2));
+</code></pre>
+  The above code will set the view camera position for the camera assigned to view port[0].
+ </body>
+</html>

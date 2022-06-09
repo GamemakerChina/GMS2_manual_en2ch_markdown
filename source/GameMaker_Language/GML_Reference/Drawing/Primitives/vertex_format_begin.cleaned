@@ -1,0 +1,38 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   vertex_format_begin
+  </h1>
+  Before you can define your new vertex format you must tell
+  <span>
+   GameMaker
+  </span>
+  that you're doing so using this function. You must call this first, then define the format values using the appropriate functions, and finally call
+  <a href="vertex_format_end.htm">
+   <span>
+    vertex_format_end()
+   </span>
+  </a>
+  to finish the definition and return the new format "handle".
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">vertex_format_begin();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">vertex_format_begin(); vertex_format_add_colour();
+ vertex_format_add_position();
+ my_format = vertex_format_end();
+</code></pre>
+  The above code will create a new vertex format with just colour and position values and then store the format id in the variable "my_format".
+ </body>
+</html>

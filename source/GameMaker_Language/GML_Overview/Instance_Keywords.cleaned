@@ -1,0 +1,604 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Instance Keywords
+  </h1>
+  To make certain things easier in
+  <span>
+   GameMaker
+  </span>
+  , you can use one of several
+  <b>
+   instance keywords
+  </b>
+  in your code (whether GML or GML Visual). These keywords are used primarily to identify instances - and in some cases structs - under different situations, and each one is explained in the text below.
+  
+  
+   Note that all the given keywords are represented by
+  <strong>
+   negative integer values
+  </strong>
+  internally, so care must be taken when assigning or checking variable values against or with these keywords, as you may get unexpected results later as
+  <span>
+   GameMaker
+  </span>
+  interprets the value you have used as something else. You should also note that using the integer values directly instead of the keywords in your code is
+  <b>
+   not recommended at all
+  </b>
+  and could cause issues later on.
+  <a href="#">
+   <span>
+    <span>
+     self
+    </span>
+   </span>
+   <span>
+    <span>
+     self
+    </span>
+   </span>
+  </a>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Keyword
+     </th>
+     <th>
+      Description
+     </th>
+     <th>
+      value
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       self
+      </span>
+     </td>
+     <td>
+      The instance/struct which is executing the current block of code.
+     </td>
+     <td>
+      -1
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <span>
+   self
+  </span>
+  can be used to identify the current struct or instance that is in scope in the current block of code. For example:
+  <pre><code class="language-gml">var val = 100;
+
+with (instance_create_layer(x, y, "Instances", obj_Fire))
+
+{
+
+self.val = val;
+
+}
+</code></pre>
+  In this example you can see that we have a
+  <i>
+   local
+  </i>
+  variable called
+  <span>
+   val
+  </span>
+  and we want it to set the
+  <i>
+   instance
+  </i>
+  variable with the same name in the newly created object instance. To identify the instance variable correctly and tell
+  <span>
+   GameMaker
+  </span>
+  to set it in the instance calling the code block, we use the
+  <span>
+   self
+  </span>
+  keyword. In most cases you can also use the
+  <span>
+   id
+  </span>
+  built-in instance variable instead of
+  <span>
+   self
+  </span>
+  , but
+  <span>
+   self
+  </span>
+  offers certain benefits. To start with, it is faster for the compiler to identify the instance (or struct) using
+  <span>
+   self
+  </span>
+  rather than
+  <span>
+   id
+  </span>
+  , as the
+  <span>
+   id
+  </span>
+  value goes through the instance lookup table while
+  <span>
+   self
+  </span>
+  does not. Secondly, for those people making extensions, it is very useful to ensure the correct scoping of variables, since it is possible that a project which uses an extension may have a global scope variable or something with the same name as a variable in the extension.
+  <strong>
+   NOTE
+  </strong>
+  : The
+  <span>
+   self
+  </span>
+  keyword is
+  <strong>
+   not
+  </strong>
+  a shortcut for the actual ID value of an instance or struct and should only be used in the context explained above. If you require the ID
+  <strong>
+   value
+  </strong>
+  for an instance then you need to use
+  <span>
+   self.id
+  </span>
+  , eg:
+  <pre><code class="language-gml">var myID = id;
+
+with (all)
+
+{
+
+if self.id == myID
+
+{
+
+// do something
+
+}
+
+}
+</code></pre>
+  It is also worth noting that
+  <span>
+   self
+  </span>
+  can also be used within
+  <a href="Structs.htm">
+   structs
+  </a>
+  - under very specific circumstances - to reference member variables for the struct.
+  <a href="#">
+   <span>
+    <span>
+     other
+    </span>
+   </span>
+   <span>
+    <span>
+     other
+    </span>
+   </span>
+  </a>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Keyword
+     </th>
+     <th>
+      Description
+     </th>
+     <th>
+      value
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       other
+      </span>
+     </td>
+     <td>
+      The other instance involved in a collision event, in a
+      <span>
+       with
+      </span>
+      function or in a function.
+     </td>
+     <td>
+      -2
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  The special keyword
+  <span>
+   other
+  </span>
+  has multiple ways that it can be used to reference a specific instance (and in some cases, a struct): it can be used in a
+  <span>
+   with
+  </span>
+  statement (explained
+  <a href="Language_Features/with.htm">
+   here
+  </a>
+  ), in a
+  <a href="../../The_Asset_Editors/Object_Properties/Object_Events.htm">
+   collision event
+  </a>
+  , or in a function. This section is going to explain the last two use cases.
+   
+   
+    Do note that in events other than the collision event, when outside of any function calls and
+  <span>
+   with()
+  </span>
+  blocks,
+  <span>
+   other
+  </span>
+  simply returns the struct for the current instance.
+  <h2>
+   Collision Event
+  </h2>
+  A collision event can only happen between
+  <strong>
+   two
+  </strong>
+  instances. You
+  <i>
+   can
+  </i>
+  have multiple collisions between multiple instances, but they are all resolved by
+  <span>
+   GameMaker
+  </span>
+  on a 1-on-1 basis, with the "self" instance that has the collision event and the "other" instance that is colliding with it.
+   
+   
+    Imagine you have a player instance, multiple enemy instances and multiple bullet instances that the enemy can fire at you. You can assign each enemy a single bullet instance but with a different damage variable randomly assigned to it when created, for example:
+  <pre><code class="language-gml">var bullet;
+
+bullet = instance_create_layer(x, y, "Bullets", obj_Bullet);
+
+bullet.damage = 5 + irandom(5);
+
+bullet.speed = 8;
+
+bullet.direction = point_direction(x, y, obj_Player.x, obj_Player.y);
+</code></pre>
+  You can see how we set its variables using the dot notation as outlined in the section on
+  <a href="Addressing_Variables_In_Other_Instances.htm">
+   Addressing Variables In Other Instances
+  </a>
+  . This will give each bullet instance a different damage value, but how will the player detect the damage that it has to take when it's hit by a bullet?
+   
+   
+    For this, the player will need to have a collision event with
+  <span>
+   obj_Bullet
+  </span>
+  , and within that event use
+  <span>
+   other
+  </span>
+  to read variables from the colliding bullet instance:
+  <pre><code class="language-gml">hp -= other.damage;
+
+if hp &amp;amp;lt;= 0 instance_destroy();
+</code></pre>
+  The above code will deduct the amount stored in the
+  <i>
+   other
+  </i>
+  instance's "damage" variable from the player's "hp" variable, then it will check to see if the "hp" is lower than or equal to 0. If it is then it will destroy the player instance. Please note that the other instance must have the variable being checked or else an error will be thrown.
+  <strong>
+   NOTE
+  </strong>
+  : The Collision event is the only event that has a special meaning for the
+  <span>
+   other
+  </span>
+  keyword. In all other events and scripts, the behaviour of
+  <span>
+   other
+  </span>
+  will be defined by the context it is being used in (such as a
+  <span>
+   with()
+  </span>
+  block, a function, struct declaration, etc.).
+   
+   
+    You can assign values to variables, or even create new ones, using
+  <span>
+   other
+  </span>
+  in the collision event, like this:
+  <pre><code class="language-gml">// add ten to the other instance "mana" variable
+
+other.mana += 10;
+
+// set the other instance variable "hit" to true, creating the variable if it doesn't already exist
+
+other.hit = true;
+</code></pre>
+  <h2>
+   Struct Declaration
+  </h2>
+  When used inside a struct declaration,
+  <span>
+   other
+  </span>
+  refers to the instance that is initialising the struct:
+  <pre><code class="language-gml">var _struct =
+
+{
+
+parent_instance : other
+
+}
+
+
+show_debug_message(_struct.parent_instance == self);
+
+// This prints '1' (true) meaning that both sides refer to the same instance
+</code></pre>
+  However, you do not need to use
+  <span>
+   other
+  </span>
+  to read variables from the instance as any variables you reference directly will be read from that instance's scope, as described
+  <a href="Structs.htm#inst_in_struct">
+   in this section
+  </a>
+  of the manual. You would only need to use this if you wanted to store a reference to that instance's struct.
+  <h2>
+   Instance Method
+  </h2>
+  Using
+  <span>
+   other
+  </span>
+  within another instance's
+  <a href="Method_Variables.htm">
+   method
+  </a>
+  refers to the instance that called that method.
+   
+   
+    For example, let's say
+  <span>
+   Object2
+  </span>
+  has a method that references
+  <span>
+   self
+  </span>
+  and
+  <span>
+   other
+  </span>
+  . This method is then called in
+  <span>
+   Object1
+  </span>
+  . Since the method was created in
+  <span>
+   Object2
+  </span>
+  , it is
+  <strong>
+   bound
+  </strong>
+  to it and will always use the
+  <span>
+   Object2
+  </span>
+  instance as the "self", no matter which instance calls it. In such a case, the calling instance becomes
+  <span>
+   other
+  </span>
+  .
+  <pre><code class="language-gml">// In Object2
+
+my_method = function()
+
+{
+
+show_debug_message(object_get_name(self.object_index));
+
+show_debug_message(object_get_name(other.object_index));
+
+}
+
+
+// In Object1
+
+Object2.my_method();
+</code></pre>
+  This would cause the instance to first print its own object name ("Object2") and then the object name of the calling instance ("Object1").
+   
+   
+    The same will apply to a method that is bound to a struct.
+  <h2>
+   Constructor Function
+  </h2>
+  When used within a constructor function,
+  <span>
+   other
+  </span>
+  will reference the instance that is calling that function, however this is not recommended for general use as any external data that a constructor needs to use should be passed in as arguments.
+  <a href="#">
+   <span>
+    <span>
+     all
+    </span>
+   </span>
+   <span>
+    <span>
+     all
+    </span>
+   </span>
+  </a>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Keyword
+     </th>
+     <th>
+      Description
+     </th>
+     <th>
+      value
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       all
+      </span>
+     </td>
+     <td>
+      All instances currently active in the room.
+     </td>
+     <td>
+      -3
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  This keyword is used to tell
+  <span>
+   GameMaker
+  </span>
+  that a function is to be applied, or to check, all active instances within a room (deactivated instances will not be checked or accessed). You
+  <b>
+   cannot
+  </b>
+  use
+  <span>
+   all
+  </span>
+  to access or set variables in other instances using the point method (see
+  <a href="Addressing_Variables_In_Other_Instances.htm">
+   here
+  </a>
+  ), but you
+  <strong>
+   can
+  </strong>
+  use it when calling
+  <a href="Language_Features/with.htm">
+   <span>
+    with()
+   </span>
+  </a>
+  , for example:
+  <pre><code class="language-gml">with (all)
+
+{
+
+speed = 0;
+
+}
+</code></pre>
+  The above code will set the speed of all instances in the room to 0. You can also use
+  <span>
+   all
+  </span>
+  within functions to target or check all instances in the room for example:
+  <pre><code class="language-gml">// Check a point for any active instance in the room
+
+inst = instance_position(mouse_x, mouse_y, all);
+
+
+// Check all instances for a collision along a line
+
+if collision_line(x, y, mouse_x, mouse_y, all, false, true) {}
+
+
+// Add all instances in the room into a motion planning grid
+
+mp_grid_add_instances(grid, all, false);
+</code></pre>
+  <span>
+   all
+  </span>
+  is a very useful keyword and can be used in numerous situations within your code and actions, often cutting down on the amount of code you need to write to achieve a desired effect.
+  <a href="#">
+   <span>
+    <span>
+     noone
+    </span>
+   </span>
+   <span>
+    <span>
+     noone
+    </span>
+   </span>
+  </a>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Keyword
+     </th>
+     <th>
+      Description
+     </th>
+     <th>
+      value
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       noone
+      </span>
+     </td>
+     <td>
+      No instance at all.
+     </td>
+     <td>
+      -4
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  It may seem odd, but many times while programming your games will you find the need to check if there are no instances found at a location, or in a collision etc... In those cases you would use this keyword to check for nothing, something like this:
+  <pre><code class="language-gml">if instance_nearest(x, y, obj_enemy) != noone
+
+{
+
+//do something as there is an enemy instance near
+
+}
+</code></pre>
+  In this example, the function
+  <span>
+   instance_nearest()
+  </span>
+  will return either
+  <span>
+   noone
+  </span>
+  or the unique ID of the nearest found instance. Basically, any time that you need to check for an instance, you can expect to get either
+  <span>
+   noone
+  </span>
+  or a unique instance ID returned.
+ </body>
+</html>

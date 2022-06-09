@@ -1,0 +1,86 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   part_type_life
+  </h1>
+  This is the function that governs how long each individual particle of the indicated type remains on the screen. As with other particle functions, you provide a minimum and a maximum value (in steps)and each particle lifespan will be a random number of steps from within the specified range. To have all particles with the same lifetime, set the two values to be the same.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">part_type_life(ind, life_min, life_max);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      ind
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Types/part_type_create.htm">
+        Particle Type ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the particle type to change.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      life_min
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The minimum lifespan of the particles.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      life_max
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The maximum lifespan of the particles.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">part_type_life(part_Flare, room_speed, room_speed * 2);
+</code></pre>
+  The above code will set all particles created of the particle type indexed in the variable "part_Flare" to have a lifetime of between 1 and 2 seconds, based on the current room-speed.
+ </body>
+</html>

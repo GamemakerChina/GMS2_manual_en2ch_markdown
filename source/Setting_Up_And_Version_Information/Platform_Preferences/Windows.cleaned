@@ -1,0 +1,42 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Windows Preferences
+  </h1>
+  The Windows preferences have the following options:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Setup_And_Version/Platform_Preferences/Windows_Prefs.png"/><br/>
+  <ul>
+   <li>
+    <strong>
+     Visual Studio location:
+    </strong>
+    This option is for pointing
+    <span>
+     GameMaker
+    </span>
+    to the Microsoft Visual Studio installation on the build PC.
+   </li>
+   <li>
+    <strong>
+     Default packaging type
+    </strong>
+    : When building a final Windows executable package, you can choose between creating either an installer (using
+    <a href="https://sourceforge.net/projects/nsis/">
+     NSIS
+    </a>
+    ) or a compressed
+    <span>
+     ZIP
+    </span>
+    file
+      that will have the game and any additional files within it. By default you will be shown a dialog to choose between these two options on compile, but you can set this preference to always use one or the other. Note that when this option is set to
+    <em>
+     Show Dialog
+    </em>
+    , in the actual dialog window that pops up on compile, enabling "Remember Packaging Option" will set this preference to the option you select.
+   </li>
+  </ul>
+ </body>
+</html>

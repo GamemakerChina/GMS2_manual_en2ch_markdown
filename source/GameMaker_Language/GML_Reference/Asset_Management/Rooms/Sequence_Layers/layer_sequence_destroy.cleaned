@@ -1,0 +1,73 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   layer_sequence_destroy
+  </h1>
+  With this function you can destroy (remove from the room) a sequence element. You supply the sequence element ID as returned by
+  <a href="layer_sequence_create.htm">
+   <span>
+    layer_sequence_create()
+   </span>
+  </a>
+  or by one of the
+  <a href="../General_Layer_Functions/General_Layer_Functions.htm">
+   layer element functions
+  </a>
+  and the sequence will be destroyed.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">layer_sequence_destroy(sequence_element_id)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      sequence_element_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Sequence_Layers/layer_sequence_create.htm">
+        Sequence Element ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The unique ID value of the sequence element to target
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var a = layer_get_all_elements(layer);
+for (var i = 0; i &amp;amp;lt; array_length(a); i++;)
+{
+    if layer_get_element_type(a[i]) == layerelementtype_sequence
+    {
+        layer_sequence_destroy(a[i])
+    }
+}
+</code></pre>
+  The above code gets the IDs for all the elements assigned to the layer of the instance running the code. The code then checks to see if any of the returned elements are sequence assets and if they then they are destroyed.
+ </body>
+</html>

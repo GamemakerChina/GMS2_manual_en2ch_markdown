@@ -1,0 +1,45 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   phy_bullet
+  </h1>
+  This variable defines whether or not the instance is extremely fast moving (for example a bullet). The default value is
+  <span>
+   false
+  </span>
+  but if set to
+  <span>
+   true
+  </span>
+  this tells
+  <span>
+   GameMaker
+  </span>
+  that the instance will be moving at such high speeds that it will require more expensive collision detection to ensure it doesn't pass through other instances undetected
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">phy_bullet;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a>
+(or undefined if the instance is not physics enabled)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">with (instance_create_layer(x, y, "Bullets", obj_Shoot))
+{
+    phy_bullet = true;
+    physics_apply_local_impulse(0, 10, 0, 200);
+}
+</code></pre>
+  The above code creates a new instance and then defines it as being a "bullet" in the physics world before giving it a massive impulse along the y axis.
+ </body>
+</html>

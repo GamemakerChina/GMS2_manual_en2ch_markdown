@@ -1,0 +1,64 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   os_get_region
+  </h1>
+  This function returns a string with the two or three letter Regional Code for the OS that is running the game, as set by the
+  <a href="http://en.wikipedia.org/wiki/ISO_3166-1">
+   ISO3166-1
+  </a>
+  standard. If the information is not available, it will hold simply an empty string "".
+  <b>
+   NOTE
+  </b>
+  : This is not the location regional code that is returned, but the regional language code of the OS.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">os_get_region()
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">switch (os_get_language())
+{
+    case "zh":
+        var region = os_get_region();
+        if (region == "HK" || region == "MO" || region == "TW")
+        {
+            ini_open("chinese_traditional.ini");
+        }
+        else
+        {
+            ini_open("chinese_simplified.ini");
+        }
+    break;
+
+    case "fr":
+        ini_open("french.ini");
+    break;
+
+    case "it":
+        ini_open("italian.ini");
+    break;
+
+    default:
+        ini_open("english.ini");
+    break;
+}
+</code></pre>
+  The above code checks the OS language and if it is Chinese, it then checks the OS region, opening a different
+  <span>
+   *.ini
+  </span>
+  file depending on the returned values.
+ </body>
+</html>

@@ -1,0 +1,102 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   skeleton_animation_mix
+  </h1>
+  You can switch animation sets easily using the
+  <a href="skeleton_animation_set.htm">
+   <span>
+    skeleton_animation_set()
+   </span>
+  </a>
+  function, but this may cause a skip or stutter as one animation is swapped for another. To prevent this, you can set the mix value between two animation sets and the sprite will interpolate between them. Normally you would want to do this in the Create Event of the instance with the skeletal animation as it only needs set once, and
+  <span>
+   GameMaker
+  </span>
+  will interpolate all further changes to the sprite using the animation sets in that instance. Note that the duration value is from 0 to 1, where a value of 0.5 would have a "half and half" interpolation from one set to the other.
+  <span>
+   NOTE
+  </span>
+  Spine 4.0 changes how rotational animation works, as it no longer interpolates rotation using the shortest route possible, but uses the absolute values in your keyframes for interpolation. This may cause unexpected behaviour if you are upgrading your Spine animation from an older version, and changes within your Spine project may be required for rotations to behave as required.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">skeleton_animation_mix(animfrom, animto, duration);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      animfrom
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The name (a string) of the first animation set to interpolate from.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      animto
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The name (a string) of the second animation set to interpolate to.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      duration
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The duration of the interpolation (from 0 to 1)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">skeleton_animation_set("walk");
+skeleton_animation_mix("walk", "jump", 0.2);
+skeleton_animation_mix("jump", "walk", 0.4);
+</code></pre>
+  The above code would go in the Create Event of an instance with a skeletal animation sprite and sets the animation mix duration for interpolating between the two animations sets "walk" and "jump".
+ </body>
+</html>

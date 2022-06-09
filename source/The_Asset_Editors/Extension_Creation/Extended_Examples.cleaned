@@ -1,0 +1,370 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Source Examples
+  </h1>
+  This page contains examples and information on extension source code for Android and iOS, to help you create your own native extensions for those platforms.
+  <a href="#">
+   <span>
+    Android (Base Example)
+   </span>
+   <span>
+    Android (Base Example)
+   </span>
+  </a>
+  Our example extension for Android will contain functions that do the following:
+  <ul>
+   <li>
+    Return two numbers added together
+   </li>
+   <li>
+    Return a string consisting of an input string and value
+   </li>
+   <li>
+    Return a string consisting of two input strings
+   </li>
+   <li>
+    Trigger the
+    <a href="../Object_Properties/Async_Events/Social.htm">
+     Async - Social
+    </a>
+    event and fill values in its
+    <span>
+     async_load
+    </span>
+    map
+   </li>
+  </ul>
+  This extension will make use of a
+  <span>
+   .java
+  </span>
+  file, the contents of which are given below (click to open):
+  <a href="Source_Files/GenericTest.htm">
+   GenericTest.java
+  </a>
+  To add such a file to your extension, you need to go under its
+  <a href="Android_Extensions.htm">
+   Android Properties
+  </a>
+  and first enter a class name (for this example, "GenericTest"), then click on "Add Source" and select the
+  <span>
+   .java
+  </span>
+  file. This will add the selected file to your project directory -- you can right-click on your extension, select "Open in Explorer" and see the source files there.
+   
+   
+    You can now add a new placeholder file to your extension and create functions inside it with the following properties:
+  <ul>
+   <li>
+    <em>
+     function / external name:
+    </em>
+    <span>
+     <span>
+     </span>
+    </span>
+    <span>
+     AddTwoNumbers
+    </span>
+    <em>
+     help:
+    </em>
+    <span>
+     <span>
+     </span>
+    </span>
+    <span>
+     AddTwoNumbers(value1, value2)
+    </span>
+    <em>
+     arguments:
+    </em>
+    <span>
+     <span>
+     </span>
+    </span>
+    <span>
+     double,
+    </span>
+    <span>
+     double
+    </span>
+    <em>
+     return type:
+    </em>
+    <span>
+     <span>
+     </span>
+    </span>
+    <span>
+     double
+    </span>
+   </li>
+   <li>
+    <em>
+     function / external name:
+    </em>
+    <span>
+    </span>
+    <span>
+     HowManyObjects
+    </span>
+    <em>
+     help:
+    </em>
+    <span>
+     <span>
+     </span>
+    </span>
+    <span>
+     HowManyObjects(value1, value2, string)
+    </span>
+    <em>
+     arguments:
+    </em>
+    <span>
+     <span>
+     </span>
+    </span>
+    <span>
+     double,
+    </span>
+    <span>
+     double,
+    </span>
+    <span>
+     string
+    </span>
+    <em>
+     return type:
+    </em>
+    <span>
+     <span>
+     </span>
+    </span>
+    <span>
+     string
+    </span>
+   </li>
+   <li>
+    <em>
+     function / external name:
+    </em>
+    <span>
+     <span>
+     </span>
+    </span>
+    <span>
+     BuildAString
+    </span>
+    <em>
+     help:
+    </em>
+    <span>
+     <span>
+     </span>
+    </span>
+    <span>
+     BuildAString(string1, string2)
+    </span>
+    <em>
+     arguments:
+    </em>
+    <span>
+     <span>
+     </span>
+    </span>
+    <span>
+     string,
+    </span>
+    <span>
+     string
+    </span>
+    <em>
+     return type:
+    </em>
+    <span>
+     <span>
+     </span>
+    </span>
+    <span>
+     string
+    </span>
+   </li>
+   <li>
+    <em>
+     function / external name:
+    </em>
+    <span>
+     <span>
+     </span>
+    </span>
+    <span>
+     ReturnAsync
+    </span>
+    <em>
+     help:
+    </em>
+    <span>
+     <span>
+     </span>
+    </span>
+    <span>
+     ReturnAsync(value1, value2)
+    </span>
+    <em>
+     arguments:
+    </em>
+    <span>
+     <span>
+     </span>
+    </span>
+    <span>
+     double,
+    </span>
+    <span>
+    </span>
+    <span>
+     double
+    </span>
+    <em>
+     return type:
+    </em>
+    <span>
+     <span>
+     </span>
+    </span>
+    <span>
+     double
+    </span>
+   </li>
+  </ul>
+  Here is an example of the
+  <span>
+   AddTwoNumbers()
+  </span>
+  function:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Extensions_EE1_Function.png"/><br/>
+  You can now call these functions from your game code and use them like any other built-in function:
+  <pre><code class="language-gml">var result1 = string(AddTwoNumbers(irandom(100), 50));
+  var result2 = BuildAString("Hello", "World");
+  var result3 = HowManyObjects(irandom(1000), irandom(1000), "Targets");
+  ReturnAsync(irandom(1000), irandom(1000));
+</code></pre>
+  The
+  <span>
+   ReturnAsync()
+  </span>
+  function will trigger the
+  <a href="../Object_Properties/Async_Events/Social.htm">
+   Async - Social
+  </a>
+  event, so you will need to add that event to your object and read data from its
+  <span>
+   async_load
+  </span>
+  map (which is filled by the extension's source code given above).
+  <pre><code class="language-gml">var type = async_load[? "type"];
+  
+  if (type == "finished")
+  {
+      var result4 = "value1: " + string(async_load[? "argument0"]) + ", ";
+      result4 += "value2: " + string(async_load[? "argument1"]);
+  }
+</code></pre>
+  <a href="#">
+   <span>
+    iOS (Base Example)
+   </span>
+   <span>
+    iOS (Base Example)
+   </span>
+  </a>
+  The example provided for iOS is the same as the Android example given above; only the source files differ, which we'll cover in this section.
+   
+   
+    iOS extensions make use of an
+  <span>
+   .h
+  </span>
+  and an
+  <span>
+   .mm
+  </span>
+  file, and the contents of both are given below (click to open):
+  <a href="Source_Files/GenericTest-iOS.htm">
+   GenericTest iOS Source Files
+  </a>
+  To add these files to your extension, you first need to go under its
+  <a href="iOS_Extensions.htm">
+   iOS Properties
+  </a>
+  and enter a class name (for this example, "GenericTest"). You can then use either the "Enter framework path" option (if the files are present on your macOS machine used for building) or the "Add Source" option (if they are on your development machine); regardless of the option you use, you will need to point them to the directory that contains your
+  <span>
+   .h
+  </span>
+  and
+  <span>
+   .mm
+  </span>
+  files.
+   
+   
+    You can add these source files to the same extension that was set up in the previous section for Android, meaning that any functions already defined in that extension will now work on iOS too (given that the
+  <em>
+   External Names
+  </em>
+  of all functions on Android and iOS are the same). If you are creating a new extension, you can simply create the functions in the same way as previously described.
+  <a href="#">
+   <span>
+    Android (Callbacks)
+   </span>
+   <span>
+    Android (Callbacks)
+   </span>
+  </a>
+  You can use the following callback functions in your
+  <span>
+   .java
+  </span>
+  extension files:
+  <pre><code class="language-gml">public void onStart()public void onRestart()public void onStop()public void onDestroy()public void onPause()public void onResume()public void onActivityResult(int requestCode, int resultCode, Intent data)public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults)public void onNewIntent(android.content.Intent newIntent)public void onWindowFocusChanged(boolean hasFocus)public void onConfigurationChanged(Configuration newConfig)
+</code></pre>
+  <a href="#">
+   <span>
+    iOS (Callbacks)
+   </span>
+   <span>
+    iOS (Callbacks)
+   </span>
+  </a>
+  You can use the following callback functions in your
+  <span>
+   .mm
+  </span>
+  extension files:
+  <pre><code class="language-gml">-(void) Init
+  -(void) onLaunch:(NSDictionary*)launchOptions
+  -(void) onResume
+  -(void) onPause
+  -(void) applicationDidEnterBackground:(UIApplication *)application
+  -(void) applicationWillEnterForeground:(UIApplication *)application
+  -(void) onStop
+  -(void) applicationProtectedDataDidBecomeAvailable:(UIApplication *)application
+  -(void) applicationProtectedDataWillBecomeUnavailable:(UIApplication *)application
+  -(void) applicationDidReceiveMemoryWarning:(UIApplication *)application
+  -(void) applicationSignificantTimeChange:(UIApplication *)application
+  -(void) application:(UIApplication *)application willEncodeRestorableStateWithCoder:(NSCoder *)coder
+  -(void) application:(UIApplication *)application didDecodeRestorableStateWithCoder:(NSCoder *)coder
+  -(void) application:(UIApplication *)application didUpdateUserActivity:(NSUserActivity *)userActivity
+  -(void) application:(UIApplication *)application didFailToContinueUserActivityWithType:(NSString *)userActivityType error:(NSError *)error
+  -(void) application:(UIApplication *)application handleWatchKitExtensionRequest:(NSDictionary *)userInfo reply:(void (^)(NSDictionary *replyInfo))reply
+  -(void) applicationShouldRequestHealthAuthorization:(UIApplication *)application
+  -(void) openURL:(NSURL *)url sourceApplication:(NSString *) sourceApplication annotation:(id)annotation
+  -(void) application:(UIApplication *)application userDidAcceptCloudKitShareWithMetadata:(CKShareMetadata *)cloudKitShareMetadata
+</code></pre>
+ </body>
+</html>

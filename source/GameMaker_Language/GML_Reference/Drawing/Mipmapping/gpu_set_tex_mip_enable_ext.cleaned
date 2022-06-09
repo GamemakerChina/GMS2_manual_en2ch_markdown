@@ -1,0 +1,137 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   gpu_set_tex_mip_enable_ext
+  </h1>
+  With this function you can set whether mipmapping is switched off, switched on for everything or switched on only for texture groups selected in the
+  <a href="../../../../Settings/Texture_Groups.htm">
+   Texture Group Manager
+  </a>
+  on a shader sampler. You supply the index value for the shader sampler (as returned by the function
+  <a href="../../Asset_Management/Shaders/shader_get_sampler_index.htm">
+   <span>
+    shader_get_sampler_index()
+   </span>
+  </a>
+  , and then one of the constants listed below.
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Constant
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       mip_off
+      </span>
+     </td>
+     <td>
+      Mipmapping is disabled.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       mip_on
+      </span>
+     </td>
+     <td>
+      Mipmapping for all textures is enabled.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       mip_markedonly
+      </span>
+     </td>
+     <td>
+      Mipmapping is enabled for textures that have it enabled in the Texture Group options (default).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">gpu_set_tex_mip_enable_ext(sampler_index, setting);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      sampler_index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Shaders/shader_get_sampler_index.htm">
+        Shader Sampler Handle
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the shader sampler to get
+     </td>
+    </tr>
+    <tr>
+     <td>
+      setting
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Drawing/Mipmapping/gpu_get_tex_mip_enable.htm">
+        Mipmapping Constant
+       </a>
+      </span>
+     </td>
+     <td>
+      The mipmap setting (a constant, default:
+      <span>
+       mip_markedonly
+      </span>
+      )
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <span>
+  </span>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var _sampleIndex = shader_get_sampler_index(shd_Glass, "s_Background");
+var _spriteTex = sprite_get_texture(sprite_index, 0);
+shader_set(shd_Glass);
+if gpu_get_tex_mip_enable_ext(_sampleIndex) != mip_on
+{
+    gpu_set_tex_mip_enable_ext(_sampleIndex, mip_on);
+}
+texture_set_stage(_sampleIndex , _spriteTex);
+shader_reset();
+</code></pre>
+  The above code enables mipmapping for the given shader texture sampler if it has not already been enabled.
+ </body>
+</html>

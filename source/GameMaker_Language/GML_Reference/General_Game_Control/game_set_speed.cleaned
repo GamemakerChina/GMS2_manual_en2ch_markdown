@@ -1,0 +1,116 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   game_set_speed
+  </h1>
+  This function can be used to set the game speed. You can set this in one of two ways - as either game frames per second (FPS) or as microseconds per game frame (MPF) - using one of the following two constants:
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Constant
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       gamespeed_fps
+      </span>
+     </td>
+     <td>
+      Sets the game speed using frames per second.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       gamespeed_microseconds
+      </span>
+     </td>
+     <td>
+      Sets the game speed using microseconds per frame.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  So, for example, a game speed of 30 frames per second would be 33333 microseconds per game game frame, which would then be expressed by this function as either:
+  <pre><code class="language-gml">game_set_speed(30, gamespeed_fps);
+</code></pre>
+  or:
+  <pre><code class="language-gml">game_set_speed(33333, gamespeed_microseconds);
+</code></pre>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">game_set_speed(speed, type);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      speed
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The new game speed (as either FPS or MPF).
+     </td>
+    </tr>
+    <tr>
+     <td>
+      type
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/General_Game_Control/game_get_speed.htm">
+        Game Speed Constant
+       </a>
+      </span>
+     </td>
+     <td>
+      The type of method used to set the game speed (see the constants above).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if os_browser == browser_not_a_browser
+{
+    game_set_speed(60, gamespeed_fps);
+}
+else
+{
+    game_set_speed(30, gamespeed_fps);
+}
+</code></pre>
+  The above code checks to see if the game is running in a browser and sets the game speed accordingly as an FPS value.
+ </body>
+</html>

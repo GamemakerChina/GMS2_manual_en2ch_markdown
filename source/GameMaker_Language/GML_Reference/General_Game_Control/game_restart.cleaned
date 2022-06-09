@@ -1,0 +1,75 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   game_restart
+  </h1>
+  With this function you can restart the game. This is essentially the same as running the game for the first time and so the
+  <a href="../../../The_Asset_Editors/Object_Properties/Other_Events.htm">
+   Game Start Event
+  </a>
+  will be triggered,
+  <i>
+   as well as
+  </i>
+  the
+  <a href="../../../The_Asset_Editors/Object_Properties/Other_Events.htm">
+   Game End Event
+  </a>
+  .
+  <span>
+   NOTE
+  </span>
+  You will not be able to create new instances in the same event after this function has been called.
+   
+  
+  
+   It should be noted that certain things will
+  <b>
+   not
+  </b>
+  be reset when this function is called:
+  <ul>
+   <li>
+    Global variables will not be re-initialised unless explicitly coded as such - for example, the built-in global variable
+    <span>
+     score
+    </span>
+    will not start at zero after a game restart if it has been modified in the game already.
+   </li>
+   <li>
+    The GPU state will not be changed (so if you have set the draw colour or alpha, for example, it will remain at the changed value).
+   </li>
+   <li>
+    The game speed will remain at whatever you set it in your game code (if you changed it this change will be perpetuated).
+   </li>
+   <li>
+    Any asset from the Asset Browser that has been changed at run time within the game - for example if you change the origin for a sprite resource or shift the position of a path resource - will
+    <i>
+     not
+    </i>
+    be reset.
+   </li>
+   <li>
+    Dynamic resources like buffers, surfaces, data-structures or imported sprites will also not be cleaned up or removed (although you may lose references to them, so take care when using this function to either use global references for the dynamic resource, or to clean them up before the function is called).
+   </li>
+  </ul>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">game_restart();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if keyboard_check_pressed(ord("R")) game_restart();
+</code></pre>
+  This would restart the game when the player presses the "R" key.
+ </body>
+</html>

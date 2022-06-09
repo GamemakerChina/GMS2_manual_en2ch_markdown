@@ -1,0 +1,68 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/i_Common_Macro.png"/><br/>
+   Macro
+  </h1>
+  This action permits you to define one or more
+  <b>
+   macros
+  </b>
+  . Macros are simply unique
+  <i>
+   constant
+  </i>
+  values - or expressions that evaluate to a unique constant value - which can then be used in a similar way to a regular constant. You can also use
+    a function call in this this action to generate a single return value, in which case the macro will evaluate the function every time it is called. Note that macros are
+  <span>
+   global
+  </span>
+  in scope, and once declared they can be used by any instance, script
+    or action block in your game, but they
+  <i>
+   cannot be changed
+  </i>
+  after being defined. Note that you can define additional macros in the same action by clicking the plus icon
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Icon_Expand_Arguments.png"/><br/>
+  beside the action. For more information on macros, please see
+  <a href="../../../GameMaker_Language/GML_Overview/Variables/Constants.htm">
+   here
+  </a>
+  .
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/a_Common_Macro.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Return
+     </td>
+     <td>
+      The return value.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Macro.png"/><br/>
+  The above action will create three new macros called to generate new colour constants which can then be used
+    in any other action in your game.
+ </body>
+</html>

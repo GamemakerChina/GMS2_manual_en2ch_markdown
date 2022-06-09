@@ -1,0 +1,61 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   move_bounce_solid
+  </h1>
+  With this function you can command an instance to bounce off only those instances marked as
+  <b>
+   solid
+  </b>
+  within the room. You can also tell it to use precise collision checking when enabled, but be aware that this requires all instances to have precise
+    masks enabled and will greatly slow down your game when many instances are involved due to the amount of processing that has to be done. This should normally go in the step event of an instance, but can be used selectively in a collision event too.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">move_bounce_solid(adv);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      adv
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Whether to enable advanced bouncing (true) or not (false).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">move_bounce_solid(false);
+</code></pre>
+  This will enable non-precise bouncing off instances flagged as "solid".
+ </body>
+</html>

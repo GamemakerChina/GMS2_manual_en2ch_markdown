@@ -1,0 +1,42 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Tile Sets
+  </h1>
+  The following functions are available when working with tile set assets, as created in the
+  <a href="../../../../The_Asset_Editors/Tile_Sets.htm">
+   Asset Browser
+  </a>
+  . These functions are
+  <em>
+   only
+  </em>
+  for dealing with the asset itself, and not for working with tiles or tile maps when they are present in your game (for that see the appropriate layer functions on the section on
+  <a href="../Rooms/Tile_Map_Layers/Tile_Map_Layers.htm">
+   Rooms
+  </a>
+  ).
+  
+  
+   The functions available are:
+  <ul>
+   <li>
+    <a href="tileset_get_name.htm">
+     tileset_get_name
+    </a>
+   </li>
+   <li>
+    <a href="tileset_get_texture.htm">
+     tileset_get_texture
+    </a>
+   </li>
+   <li>
+    <a href="tileset_get_uvs.htm">
+     tileset_get_uvs
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

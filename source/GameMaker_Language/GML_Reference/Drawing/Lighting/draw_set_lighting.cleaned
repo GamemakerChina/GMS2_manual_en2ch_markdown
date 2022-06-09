@@ -1,0 +1,66 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   draw_set_lighting
+  </h1>
+  This function is used to enable all lighting effects. Default is disabled (
+  <span>
+   false
+  </span>
+  ).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">draw_set_lighting(enable);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      enable
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Enable or disable all lighting (
+      <span>
+       true
+      </span>
+      or false)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">draw_set_lighting(true);
+draw_light_define_direction(1, 0, 1, 0, c_white);
+draw_light_enable(1, true);
+</code></pre>
+  The above code will enable lighting for the whole scene, then define a white directional light in the room space, and then finally turn that light on.
+ </body>
+</html>

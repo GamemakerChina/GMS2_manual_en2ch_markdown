@@ -1,0 +1,85 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   sprite_get_name
+  </h1>
+  This function will return the name
+  <i>
+   as a string
+  </i>
+  of the specified sprite. This name is the one that has been specified for the sprite in the resource tree of the main
+  <span>
+   GameMaker
+  </span>
+  window. Please note that this is
+  <i>
+   only
+  </i>
+  a string and cannot be used to reference the sprite directly - for that you would need the
+  <i>
+   sprite index
+  </i>
+  . You can, however, use this string to get the
+  <i>
+   sprite index
+  </i>
+  using the returned string along with the function
+  <a href="../../Assets_And_Tags/asset_get_index.htm">
+   <span>
+    asset_get_index()
+   </span>
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">sprite_get_name(index);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../The_Asset_Editors/Sprites.htm">
+        Sprite Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the sprite to get the name of.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   <b>
+    Example:
+   </b>
+  </h4>
+  <pre><code class="language-gml">str = sprite_get_name(sprite_index);
+</code></pre>
+  The above code will get the name of the sprite index for the instance running the code and store the return value in the variable "str".
+ </body>
+</html>

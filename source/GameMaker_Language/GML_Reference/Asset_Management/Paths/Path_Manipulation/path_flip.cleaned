@@ -1,0 +1,73 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   path_flip
+  </h1>
+  This function takes all the path points and flips them along the horizontal axis.
+  <strong>
+   This function changes the actual path asset
+  </strong>
+  , and so will permanently affect how the path is used by all instances in the game from the moment the function is used until the end of the game.If this is not what you require, then you should use a function like
+  <span>
+   <a href="path_duplicate.htm">
+    path_duplicate()
+   </a>
+  </span>
+  to create a copy of the path first, then call this function on the duplicated asset (don't forget to call
+  <span>
+   <a href="path_delete.htm">
+    path_delete()
+   </a>
+  </span>
+  on the asset when it is no longer required).
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/GML/Reference/Paths/pathflip.png"/><br/>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">path_flip(index);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../The_Asset_Editors/Paths.htm">
+        Path Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the path to flip.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">path_flip(mypath);
+</code></pre>
+  This would flip the path indexed in the variable "mypath" along the horizontal axis.
+ </body>
+</html>

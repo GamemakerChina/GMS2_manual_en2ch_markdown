@@ -1,0 +1,64 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_If_End_Of_Buffer.png"/><br/>
+   If End Of Buffer
+  </h1>
+  This action can be used to check if the read/write position has reached the end of the buffer. You supply the unique buffer ID value as returned by the action
+  <a href="Create_Buffer.htm">
+   Create Buffer
+  </a>
+  and then the action will return
+  <span>
+   true
+  </span>
+  if the read/write position has reached the end of all the available data in the buffer, or
+  <span>
+   false
+  </span>
+  if it has not. You can flag "not" to make the action check if the read/write position is
+  <i>
+   not
+  </i>
+  at the end of the buffer.
+  
+  
+   Note that to add actions into the "if" block, they should be dropped to the side of the action, as shown in the image below:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/If_End_Drop.png"/><br/>
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/a_Buffers_If_End_Of_Buffer.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Buffer
+     </td>
+     <td>
+      The buffer index (stored in a variable)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/e_Buffers_If_End_Of_Buffer.png"/><br/>
+  The above action block code creates a DS list in the instance and then loops through the
+    data within the given buffer reading out the data and adding it to the list. This continues until the end of the buffer is reached at which time the loop is broken.
+ </body>
+</html>

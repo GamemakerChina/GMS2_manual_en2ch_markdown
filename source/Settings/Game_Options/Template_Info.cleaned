@@ -1,0 +1,20 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Template Info
+  </h1>
+  This section allows you to set information for your project which is used when it's
+  <a href="../../IDE_Navigation/Menus/The_File_Menu.htm#export">
+   exported as a template
+  </a>
+  .
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Settings/Game_Options/Template_Info.png"/><br/>
+  Here you can assign an image, icon and description for the template project, however this will only be used when it's actually exported as a template. You can do that by opening the
+  <a href="../../IDE_Navigation/Menus/The_File_Menu.htm">
+   File Menu
+  </a>
+  , hovering on "Export Project" and selecting "As Template".
+ </body>
+</html>

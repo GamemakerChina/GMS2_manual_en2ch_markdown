@@ -1,0 +1,33 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   phy_com_y
+  </h1>
+  This
+  <b>
+   read-only
+  </b>
+  variable will return the y position of the instance's center of mass. This is calculated automatically based on the density, inertia and mass of the instance as defined by the appropriate functions
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">phy_com_y;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a>
+(single precision floating point value, or undefined if the instance is not physics enabled)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">xx = phy_com_x; yy = phy_com_y;
+</code></pre>
+  The above code sets two variables to the x and y position of the instances center of mass.
+ </body>
+</html>

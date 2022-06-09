@@ -1,0 +1,155 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Objects
+  </h1>
+  In
+  <span>
+   GameMaker
+  </span>
+  you have objects and you have instances. Objects are essentially the base template for an instance, and as such are
+  <i>
+   never
+  </i>
+  present in a room directly... only
+  <i>
+   instances
+  </i>
+  of the object are placed in the room. This
+    means that if you want to change something for all instances you are going to create, then you can do it by changing the
+  <i>
+   object
+  </i>
+  .
+  <b>
+   IMPORTANT!
+  </b>
+  Changing anything about an object will
+  <b>
+   not
+  </b>
+  change any instances currently present in the room, only those that are created after the change.
+  
+  
+   You can also access information about a base object and use it to dictate behaviors or changes in the game. For example, you can do a check for a parent object ID, and in the following code if an instance with that parent is found you can then check
+    its
+  <span>
+   object_index
+  </span>
+  to decide what should be done.
+  <span>
+   GameMaker
+  </span>
+  gives you a number of functions that permit you to get various details about an object. Note, an object is
+  <i>
+   not
+  </i>
+  an instance (an in-game entity), it is purely a resource from which all instances are created. This means
+    that the return values of these functions may be different to the actual values shown by instances in the room, as once an instance is created it can be changed through code and GML Visual actions.
+  <ul>
+   <li>
+    <a href="object_index.htm">
+     object_index
+    </a>
+   </li>
+   <li>
+    <a href="object_exists.htm">
+     object_exists
+    </a>
+   </li>
+   <li>
+    <a href="object_get_name.htm">
+     object_get_name
+    </a>
+   </li>
+   <li>
+    <a href="object_get_mask.htm">
+     object_get_mask
+    </a>
+   </li>
+   <li>
+    <a href="object_get_parent.htm">
+     object_get_parent
+    </a>
+   </li>
+   <li>
+    <a href="object_get_persistent.htm">
+     object_get_persistent
+    </a>
+   </li>
+   <li>
+    <a href="object_get_solid.htm">
+     object_get_solid
+    </a>
+   </li>
+   <li>
+    <a href="object_get_sprite.htm">
+     object_get_sprite
+    </a>
+   </li>
+   <li>
+    <a href="object_get_visible.htm">
+     object_get_visible
+    </a>
+   </li>
+   <li>
+    <a href="object_get_physics.htm">
+     object_get_physics
+    </a>
+   </li>
+   <li>
+    <a href="object_is_ancestor.htm">
+     object_is_ancestor
+    </a>
+   </li>
+  </ul>
+  There are also a number of functions that permit you set the properties for an object. It should be noted that any instances of this object that already exist in the room
+  <i>
+   may not be affected by these functions
+  </i>
+  , but all new instances of this object
+    created in the room will be, so it is recommend that you never change an objects properties when instances of that object are present in the current room.
+  <ul>
+   <li>
+    <a href="object_set_mask.htm">
+     object_set_mask
+    </a>
+   </li>
+   <li>
+    <a href="object_set_persistent.htm">
+     object_set_persistent
+    </a>
+   </li>
+   <li>
+    <a href="object_set_solid.htm">
+     object_set_solid
+    </a>
+   </li>
+   <li>
+    <a href="object_set_sprite.htm">
+     object_set_sprite
+    </a>
+   </li>
+   <li>
+    <a href="object_set_visible.htm">
+     object_set_visible
+    </a>
+   </li>
+  </ul>
+  You can also use certain functions to generate events from code from within a specific instance or object. These functions can be very useful, especially when dealing with
+  <a href="../../../../The_Asset_Editors/Object_Properties/Parent_Objects.htm">
+   Parents and Children
+  </a>
+  ,
+    and are outlined in the following section:
+  <ul>
+   <li>
+    <a href="Object_Events/Generating_Object_Events.htm">
+     Generating Object Events
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

@@ -1,0 +1,75 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   camera_set_default
+  </h1>
+  This function can be used to set the default camera to use a custom camera that you have previously created using one of the
+  <a href="camera_create.htm">
+   <span>
+    camera_create()
+   </span>
+  </a>
+  functions. When you create a room with
+  <i>
+   no
+  </i>
+  active view ports
+    or view cameras,
+  <span>
+   GameMaker
+  </span>
+  still uses a camera to show the action in the game. This camera is called the
+  <b>
+   default
+  </b>
+  camera and can be set and manipulated (and even destroyed) just like any other camera.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">camera_set_default(camera_id)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      camera_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Cameras_And_Display/Cameras_And_Viewports/camera_create.htm">
+        Camera ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The unique camera ID value returned when you created the camera
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var new_cam = camera_create_view(0, 0, 640, 480, 0, obj_Player, 5, 5, -1, -1); camera_set_default(new_cam);
+</code></pre>
+  The above code creates a new camera and then assigns it as the default camera to use.
+ </body>
+</html>

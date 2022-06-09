@@ -1,0 +1,80 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   highscore_add
+  </h1>
+  With this function you can add a name and a score to the internal global high score list. There is no need to check the value to see if it is high enough to enter into the score list as
+  <span>
+   GameMaker
+  </span>
+  will only store those values that are greater than the tenth position stored.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">highscore_add(str, numb);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      str
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The string (name) to attribute the score to.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      numb
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The number (score) to add.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if (lives == 0)
+{
+    highscore_add(global.Name, score);
+    score = 0;
+    room_goto(rm_MainMenu);
+}
+</code></pre>
+  The above code will check the lives and if they are set to 0, it will add the current score and the string held in the global variable "Name" into the high score list, before finally setting the score to 0 and sending the player to the room indexed in "rm_MainMenu".
+ </body>
+</html>

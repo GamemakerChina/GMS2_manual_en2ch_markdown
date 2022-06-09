@@ -1,0 +1,108 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   surface_depth_disable
+  </h1>
+  This function disables the automatic depth buffer generation for
+  <i>
+   all
+  </i>
+  surfaces that are created after it has been disabled. Normally all surfaces have depth buffers so if you draw 3D objects to them then it'll sort them properly by depth in
+    order to maintain functional parity between rendering to surfaces and rendering to the back buffer, however allocating depth buffers essentially doubles the amount of memory required for surfaces, which could be an excessive and unnecessary overhead
+    especially if your game is very memory intensive, and for 2D games they aren't generally required.
+  
+  
+   To use this function you would call it
+  <i>
+   before
+  </i>
+  creating a surface, and then you can enable it again after (if required). All surfaces created when the depth buffer is disabled will no longer use a depth buffer when being drawn to, this results
+    in the things being drawn to the surface having parity of depth. The images below illustrate this in practice:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/GML/Reference/Drawing/Surface_Depth_Buffer.png"/><br/>
+  In the above image, we are drawing a rectangle and a triangle using a vertex buffer in 3D. The
+    coordinates for the red triangle places it behind the green rectangle, but the code for drawing the triangle is called
+  <i>
+   after
+  </i>
+  the code for the rectangle, and when the depth buffer is enabled, the triangle is still drawn behind the rectangle
+    as the 3D depth is being respected. However when we disable the depth buffer for the surface, only the code order is respected and so the triangle is drawn over the rectangle.
+  <b>
+   NOTE
+  </b>
+  : To properly preserve depth in 3D when using surfaces, not only should you have the depth buffer enabled, but you should also have z-writing and z-testing enabled. See the functions
+  <a href="../GPU_Control/gpu_get_ztestenable.htm">
+   <span>
+    <span>
+     gpu_set_ztestenable()
+    </span>
+   </span>
+  </a>
+  and
+  <a href="../GPU_Control/gpu_get_zwriteenable.htm">
+   <span>
+    <span>
+     gpu_set_zwriteenable()
+    </span>
+   </span>
+  </a>
+  for more information.
+  <b>
+   NOTE
+  </b>
+  : If your game is 100% 2D or you know that you don't need a surface depth buffer, then it should be fine to simply call this function once at the start of the game to disable the buffer.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">surface_depth_disable(disable);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      disable
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      If set to
+      <span>
+       true
+      </span>
+      the depth buffer will be disabled for created surfaces.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var _depth_setting = surface_get_depth_disable(); surface_depth_disable(false);
+ surface_with_depth = surface_create(room_width, room_height); surface_depth_disable(true);
+ surface_without_depth = surface_create(room_width, room_height); surface_depth_disable(_depth_setting);
+</code></pre>
+  The above code stores the current depth buffer setting in a variable and then creates two surfaces, one with depth buffering enabled and one without, before restoring the original setting again.
+ </body>
+</html>

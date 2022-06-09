@@ -1,0 +1,95 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   part_type_scale
+  </h1>
+  This function will set the horizontal and vertical scale of the particle before any other size changes are made. This function works on the ratio of the sprite size, so a value of 1 (the default value) is a 1:1 ratio, meaning that 0.5 would be half and 2 double.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">part_type_scale(ind, xscale, yscale);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      ind
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Types/part_type_create.htm">
+        Particle Type ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the particle type to change.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      xscale
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The horizontal scaling of the base particle.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      yscale
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The vertical scaling of the base particle.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">part_type_shape(particle1, pt_shape_flare);
+part_type_size(particle1, 2, 2, 0.10, 1);
+part_type_scale(particle1, 8, 0.50);
+part_type_colour3(particle1, 8388608, 4227327, 8454143);
+part_type_alpha3(particle1, 0.10, 0.10, 0);
+part_type_speed(particle1, 0, 1, 0.18, 20);
+part_type_direction(particle1, 0, 359, 0, 0);
+part_type_orientation(particle1, 0, 0, 0, 0, 1);
+part_type_blend(particle1, 1);
+part_type_life(particle1, 10, 40);
+</code></pre>
+  The above code will set various particle values including the scale which sets the xscale to eight times the size and the yscale to half the size.
+ </body>
+</html>

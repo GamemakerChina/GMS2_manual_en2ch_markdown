@@ -1,0 +1,38 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   draw_get_lighting
+  </h1>
+  This function will return whether lighting is enabled (
+  <span>
+   true
+  </span>
+  ) or not (
+  <span>
+   false
+  </span>
+  ) for the whole scene.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">draw_get_lighting()
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if !draw_get_lighting()
+{
+    draw_set_lighting(true);
+}
+</code></pre>
+  The above code will check to see if lighting is enabled for the scene, and if not it enables it.
+ </body>
+</html>

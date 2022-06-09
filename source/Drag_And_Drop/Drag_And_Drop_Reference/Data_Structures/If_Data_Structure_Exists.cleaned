@@ -1,0 +1,91 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_If_Data_Structure_Exists.png"/><br/>
+   If Data Structure Exists
+  </h1>
+  With this action you can check a variable to see if it indexes a data structure or not . You first need to pick the type of data structure to check for (either a List, a Map, a Grid or a Stack) and then you supply the variable that holds the data structure
+    index (as returned by the actions
+  <a href="Create_List.htm">
+   Create List
+  </a>
+  ,
+  <a href="Create_Map.htm">
+   Create Map
+  </a>
+  ,
+  <a href="Create_Grid.htm">
+   Create Grid
+  </a>
+  , and
+  <a href="Create_Stack.htm">
+   Create Stack
+  </a>
+  ). The action will return
+  <span>
+   true
+  </span>
+  if the data structure exists, and
+  <span>
+   false
+  </span>
+  if it does not. Note that you can flag "not" in the action to check if a variable does
+  <i>
+   not
+  </i>
+  hold a data structure index.
+  
+  
+   Note that to add actions into the "if" block, they should be dropped to the side of the action, as shown in the image below:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/If_Exists_Drop.png"/><br/>
+  These actions will now be run if the "if" evaluates to
+  <span>
+   true
+  </span>
+  , while any
+    actions dropped elsewhere will be performed after the "if" block.
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/a_DS_If_Data_Structure_Exists.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Structure
+     </td>
+     <td>
+      The type of data structure to check for (List, Map, Grid or Stack)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Variable
+     </td>
+     <td>
+      The variable holding the data structure index
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/e_DS_If_Data_Structure_Exists.png"/><br/>
+  The above action block code checks to see if the given data structure
+    exists and if it does it is freed from memory.
+ </body>
+</html>

@@ -1,0 +1,169 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   xboxlive_matchmaking_find
+  </h1>
+  This function will search for a multi-player session using the Session Template, matchmaking hopper and Secure Device Association template, which you should have created beforehand in the XDP dashboard. The user ID you can retrieve for a particular game pad by calling the
+  <a href="../Users_And_Accounts/xboxlive_user_for_pad.htm">
+   <span>
+    xboxlive_user_for_pad()
+   </span>
+  </a>
+  function. The function will return a unique Request ID value, which can then be used to identify the correct
+  <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Social.htm">
+   Social Asynchronous Event
+  </a>
+  for this function. This event will be triggered when the session has been created and will contain a DS Map in the variable
+  <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">
+   <span>
+    async_load
+   </span>
+  </a>
+  with the following key/value pairs:
+  <ul>
+   <li>
+    "requestid" – contains the request ID as returned by the calling function
+   </li>
+   <li>
+    "status" – contains the string "session_created" to inform you of what type of event has been triggered.
+   </li>
+   <li>
+    "num_results" – contains 1 or more if a session has been found, otherwise contains 0.
+   </li>
+   <li>
+    "sessionid
+    <i>
+    </i>
+    " – contains the session ID, or -1 in case of failure  (
+    <i>
+     is a value from 0 to "num_results" - 1).
+    </i>
+   </li>
+   <li>
+    "sessionOwner
+    <i>
+    </i>
+    " – contains the ID of the session host if a session has been found  (
+    <i>
+    </i>
+    is a value from 0 to "num_results" - 1).
+   </li>
+   <li>
+    "error" – contains 0 on success, or -1 in case of failure
+   </li>
+  </ul>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">xboxlive_matchmaking_find(user_id, template, hopper, sdatemplate, [matchattributes]);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      user_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/UWP_And_XBox_Live/Users_And_Accounts/xboxlive_get_user.htm">
+        Xbox User ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The user ID pointer to use
+     </td>
+    </tr>
+    <tr>
+     <td>
+      template
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The name of the session template
+     </td>
+    </tr>
+    <tr>
+     <td>
+      hopper
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The name of the matchmaking hopper
+     </td>
+    </tr>
+    <tr>
+     <td>
+      sdatemplate
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The name of the secure device association template
+     </td>
+    </tr>
+    <tr>
+     <td>
+      matchattributes
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      <span>
+       OPTIONAL
+      </span>
+      The match attributes
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Reference/Asynchronous_Functions/Asynchronous_Functions.htm">
+ Async Request ID
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var userID = xboxone_user_for_pad(global.PadIndex);
+result = xboxone_matchmaking_find(userID, "MatchTicketSession", "MatchTicketHopper", "PeerServerTraffic");
+</code></pre>
+  The above will retrieve the user ID for the user on the given gamepad and then try to find a matchmaking session for them.
+ </body>
+</html>

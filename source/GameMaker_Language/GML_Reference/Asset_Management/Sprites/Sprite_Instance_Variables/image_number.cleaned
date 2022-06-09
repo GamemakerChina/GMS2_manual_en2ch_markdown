@@ -1,0 +1,42 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   image_number
+  </h1>
+  This
+  <b>
+   read only
+  </b>
+  variable can be used to get the number of sub-images in a sprite that has been assigned to an instance (if you need the number of sub-images for a sprite other than the one assigned to the instance you should use
+  <a href="../Sprite_Information/sprite_get_number.htm">
+   <span>
+    sprite_get_number()
+   </span>
+  </a>
+  ). Please note that when there is (for example) 1 sub-image this variable will return "1" but the image_index of that sub-image is 0.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">image_number;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a>
+(single precision floating point value)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if image_speed &amp;amp;gt; 0
+{
+    if image_index &amp;amp;gt; image_number - 1 instance_destroy();
+}
+</code></pre>
+  The above code checks to see if the sprite is animating, and if it is it then checks to see if the current image_index is greater than the number of sub-images and if it is it destroys the instance.
+ </body>
+</html>

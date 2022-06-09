@@ -1,0 +1,114 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   gxc_start_movie_recording
+  </h1>
+  This function is used to start recording your challenge on GXC. You specify the width, height and frame rate of the recording, and a boolean for whether the audio should be recorded or not.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">gxc_start_movie_recording(width, height, fps, record_audio);
+</code></pre>
+  <table>
+   <colgroup>
+    <col/>
+    <col/>
+    <col/>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      width
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The width of the recording
+     </td>
+    </tr>
+    <tr>
+     <td>
+      height
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The height of the recording
+     </td>
+    </tr>
+    <tr>
+     <td>
+      fps
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The frame rate (frames-per-second) of the recording
+     </td>
+    </tr>
+    <tr>
+     <td>
+      record_audio
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Whether audio should be recorded (
+      <span>
+       true
+      </span>
+      ) or not (
+      <span>
+       false
+      </span>
+      )
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">gxc_start_movie_recording(320, 240, 4, false);
+</code></pre>
+  This will start a video recording at a resolution of 320x240 at 4 frames-per-second, without any audio being recorded.
+ </body>
+</html>

@@ -1,0 +1,84 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Object Editor Preferences
+  </h1>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Setup_And_Version/Preferences/Object_Editor_Prefs.png"/><br/>
+  The
+  <strong>
+   Object Editor Preferences
+  </strong>
+  are used to define certain properties for the
+  <a href="../../The_Asset_Editors/Objects.htm">
+   Object Editor
+  </a>
+  window. The main section contains the following option:
+  <ul>
+   <li>
+    <strong>
+     Click to open Event method
+    </strong>
+    : This option controls whether you need to perform a double click or a single click on an object event to open it. By default this is set to double-click.
+   </li>
+   <li>
+    <strong>
+     Inherited Events alpha
+    </strong>
+    : This option permits you to change the alpha that any ¡inherited events will be drawn with in the events list of the object. By default this is set to 0.5 (values should be between 0 and 1).
+   </li>
+   <li>
+    <strong>
+     Events label format
+    </strong>
+    : Here you can enable or disable the different possible texts that can be applied to the event label in the object editor events list. By default the Event Description is enabled only.
+   </li>
+   <li>
+    <strong>
+     Add default event content
+    </strong>
+    : By default this option is enabled and all it does is add a simple comment into the code editor for all new events to remind you that you can add your code there.
+   </li>
+   <li>
+    <strong>
+     Default event content
+    </strong>
+    : Here you can edit the comments that are added by default in the code window for new events.
+   </li>
+  </ul>
+  The following sub-category also exists for the Object Editor:
+  <a href="#">
+   <span>
+    Confirm Dialogs
+   </span>
+   <span>
+    Confirm Dialogs
+   </span>
+  </a>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Setup_And_Version/Preferences/Object_Editor_Confirm_Prefs.png"/><br/>
+  This section deals with the dialogs that may be be shown while using the Object Editor, with the following option available:
+  <ul>
+   <li>
+    <strong>
+     Automatic response to GML Visual conversion to Gamemaker Language
+    </strong>
+    : You can use the right mouse button
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_RMB.png"/><br/>
+    within the GML Visual workspace to select the option to turn all GML Visual for that event into GML code. The default action here is to show a warning message asking if you want to continue, but you can set this to "Okay" and the dialog will not be shown before the conversion.
+   </li>
+   <li>
+    <strong>
+     Automatic response to exceeding physics vertex limit
+    </strong>
+    : This option can be used to control the pop up message that is shown when you exceed the permitted vertex number in the physics shape editor. The default action here is to show a warning message, but you can set this to "Okay" and the dialog will not be shown.
+   </li>
+   <li>
+    <strong>
+     Automatic choice on event deletion
+    </strong>
+    : This option can be used to control the pop up message that is shown when you delete an event in the Object editor events list. The default action here is to show a warning message, but you can set this to "Okay" and the dialog will not be shown.
+   </li>
+  </ul>
+ </body>
+</html>

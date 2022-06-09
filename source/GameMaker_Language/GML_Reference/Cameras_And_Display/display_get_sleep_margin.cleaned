@@ -1,0 +1,44 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   display_get_sleep_margin
+  </h1>
+  This function can be used to get the current sleep margin value used for the render timing of your game, and will return a millisecond value. For more information on display timing, please see
+  <a href="display_set_timing_method.htm">
+   <span>
+    display_set_timing_method()
+   </span>
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">display_get_sleep_margin();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if display_get_timing_method() != tm_sleep
+{
+    display_set_timing_method(tm_sleep);
+    if display_get_sleep_margin() != 20
+    {
+        display_set_sleep_margin(20);
+    }
+}
+</code></pre>
+  The above code will check the timing method and then if it's not set to
+  <span>
+   tm_sleep
+  </span>
+  it will be set to that and the sleep margin set to 20.
+ </body>
+</html>

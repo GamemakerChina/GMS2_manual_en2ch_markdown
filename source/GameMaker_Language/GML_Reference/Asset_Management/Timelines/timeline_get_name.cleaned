@@ -1,0 +1,91 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   timeline_get_name
+  </h1>
+  This function can be used to get the name of a time line as a string. if the time line has been created dynamically using the
+  <a href="timeline_add.htm">
+   <span>
+    timeline_add()
+   </span>
+  </a>
+  function, the name returned will have the
+    format "__newtimeline
+  <i>
+   N
+  </i>
+  " where "
+  <i>
+   N
+  </i>
+  " is the number of the time line (starting from 0). Please note that this is
+  <i>
+   only
+  </i>
+  a string and cannot be used to reference the timeline directly - for
+    that you would need the
+  <i>
+   timeline index
+  </i>
+  . You can, however, use this string to get the
+  <i>
+   timeline index
+  </i>
+  using the returned string along with the function
+  <a href="../Assets_And_Tags/asset_get_index.htm">
+   <span>
+    asset_get_index()
+   </span>
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">timeline_get_name(ind);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      ind
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Timelines.htm">
+        Timeline Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the time line to check the name of.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var _str = timeline_get_name(timeline_index); show_debug_message("Current timeline = " + _str);
+</code></pre>
+  The above code get the name of the currently assigned timeline and output it to the console.
+ </body>
+</html>

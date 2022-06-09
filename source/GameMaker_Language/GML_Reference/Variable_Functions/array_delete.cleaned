@@ -1,0 +1,88 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <span>
+    array_delete
+   </span>
+  </h1>
+  With this function you can delete a value (or values) from an array at any given position. The function requires you to provide a variable that holds the array, the index (position) in the array to delete from, as well as the number of values to delete.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">array_delete(variable, index, number);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      variable
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Arrays.htm">
+        Array
+       </a>
+      </span>
+     </td>
+     <td>
+      The variable that holds the array.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The index (position) in the array to delete the value(s) from.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      number
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The number of values to delete.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">array_delete(score_array, 0, 10);
+</code></pre>
+  The above code will delete the first 10 values in the given array starting at index 0 (so indices 0 to 9 will be removed from the array).
+ </body>
+</html>

@@ -1,0 +1,148 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   instanceof
+  </h1>
+  This function can be used to get the name of the
+  <a href="../../GML_Overview/Structs.htm">
+   constructor function
+  </a>
+  that was used to create a struct. The struct itself should have been created using the
+  <a href="../../GML_Overview/Language_Features/new.htm">
+   <span>
+   </span>
+  </a>
+  <a href="../../GML_Overview/Language_Features/new.htm">
+   <span>
+    new
+   </span>
+  </a>
+  operator along with the constructor itself. You supply the variable with the struct reference to check and the function will return either a string with the constructor name or
+  <span>
+   undefined
+  </span>
+  .
+  
+  
+   Note that if you pass the function a struct literal (i.e.: a struct that was created without using a constructor function) then it will simply return the string
+  <span>
+   "struct"
+  </span>
+  .
+  
+  
+   This function can also be used to check if a struct reference is a
+  <strong>
+   <a>
+    weak reference
+   </a>
+  </strong>
+  or not, in which case the function will return the string
+  <span>
+   "weakref"
+  </span>
+  instead of the name of the function that created the struct. For more information, see the function
+  <a href="../Garbage_Collection/weak_ref_create.htm">
+   <span>
+    weak_ref_create()
+   </span>
+  </a>
+  .
+  
+  
+   The returned constructor name will include additional text if the constructor function was not created in a script. If it was created inside an object, its name will include the object and the event where it was created. For example, a constructor called
+  <span>
+   test_constructor
+  </span>
+  created in the Create event of
+  <strong>
+   Object1
+  </strong>
+  will be returned as
+  <span>
+   "test_constructor_gml_Object_Object1_Create_0"
+  </span>
+  . To avoid this, create your constructors in a
+  <a href="../../GML_Overview/Script_Functions.htm">
+   script
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">instanceof(struct_id);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      struct
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Structs.htm">
+        Struct
+       </a>
+      </span>
+     </td>
+     <td>
+      The struct reference to use.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a>
+or
+<a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ undefined
+</a></code></pre>
+  <h4>
+   Extended Example:
+  </h4>
+  In this example we must first define the function that will be used as the constructor for our struct. The following function is defined in a script asset:
+  <pre><code class="language-gml">function init_struct(_a, _b, _c) constructor
+{
+    a = _a;
+    b = _b;
+    c = _c;
+}
+</code></pre>
+  This function can then be used along with the
+  <span>
+   new
+  </span>
+  operator to create a struct and populate it with the variables set to the values of the arguments used in the function:
+  <pre><code class="language-gml">mystruct = new init_struct(10, 100, "Hello World");
+</code></pre>
+  We can then get the name of the constructor function that was used like this:
+  <pre><code class="language-gml">var _name = instanceof(mystruct);
+if is_string(_name)
+{
+    show_debug_message(_name);
+}
+</code></pre>
+  This will print the string
+  <span>
+   "init_struct"
+  </span>
+  to the output log, which is the name of the constructor function as defined in its script.
+ </body>
+</html>

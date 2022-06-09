@@ -1,0 +1,38 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   gc_is_enabled
+  </h1>
+  With this function you can check to see if the garbage collector is enabled or not. The function will return
+  <span>
+   true
+  </span>
+  if it is enabled or
+  <span>
+   false
+  </span>
+  otherwise.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">gc_is_enabled();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if (!gc_is_enabled())
+{
+    gc_enable(true);
+}
+</code></pre>
+  The above code checks to see if the garbage collector is enabled and if it isn't it enables it.
+ </body>
+</html>

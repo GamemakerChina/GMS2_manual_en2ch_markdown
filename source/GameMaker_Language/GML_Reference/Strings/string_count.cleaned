@@ -1,0 +1,80 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   string_count
+  </h1>
+  This function will return the amount of times the given substring appears within a specific string. In this way you can check for how many times a single letter or a phrase is repeated in a section of stored text.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">string_count(substr, str);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      substr
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The substring to check the string for.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      str
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The string to check.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">str1 = "Hello World"; ocount = string_count( "o", str1 );
+</code></pre>
+  This will set the variable
+  <span>
+   ocount
+  </span>
+  to the number of "o"s in
+  <span>
+   str1
+  </span>
+  , in this case 2.
+ </body>
+</html>

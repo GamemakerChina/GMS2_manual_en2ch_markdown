@@ -1,0 +1,107 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   draw_line
+  </h1>
+  With this function you can draw a 1 pixel wide line between any two points in the game room. Please note that the line being drawn may need different values (+/-1 on the x, y) to be drawn with the desired dimensions due to differences across the various
+    supported platforms.
+  <b>
+   NOTE
+  </b>
+  : If you are wanting to draw a shape using a shader, you should be aware that most shaders expect the following inputs: vertex, texture, Colour. However, when using this function, only vertex and colour data are being passed in, and so the
+    shader may not draw anything (or draw something but not correctly). If you need to draw shapes in this way then the shader should be customised with this in mind.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">draw_line(x1, y1, x2, y2);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      x1
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x coordinate of the start of the line.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y1
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y coordinate of the start of the line.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      x2
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x coordinate of the end of the line.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y2
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y coordinate of the end of the line.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">draw_set_colour(c_lime); draw_line(50,50,150,50);
+</code></pre>
+  This will draw a light green horizontal line from point (50,50) to point (150,50).
+ </body>
+</html>

@@ -1,0 +1,102 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   gamepad_hat_value
+  </h1>
+  With this function you can get the current value of a gamepad "hat". Each hat value is a bit-mask for the different directions where:
+  <ul>
+   <li>
+    Up = 1
+   </li>
+   <li>
+    Right = 2
+   </li>
+   <li>
+    Down = 4
+   </li>
+   <li>
+    Left = 8
+   </li>
+  </ul>
+  Note that these can be combined (for example, supplying a hat index of 3 would be checking up and right, or you can use the
+  <span>
+   |
+  </span>
+  operator to combine the various values) but only at most 2 bits can be pressed at once. The function will return a real value between 0 and 1, where 0 is not pressed and 1 is fully pressed (and there may be values in between depending on whether the gamepad supports analog input for hats).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">gamepad_hat_value(device, hatindex);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      device
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      Which gamepad device "slot" to check.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      hatindex
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      Which gamepad hat (or hats) to check for.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var _dir = gamepad_hat_value(global.PadIndex, 0);
+switch (_dir)
+{
+    case 1: y -= 3; break;
+    case 2: x += 3; break;
+    case 3: y -= 3; x += 3; break;
+    case 4: x -= 3; break;
+    case 6: y += 3; x += 3; break;
+    case 8: y += 3; break;
+    case 9: y -= 3; x -= 3; break;
+    case 12: y += 3; x -= 3; break;
+}
+</code></pre>
+  The above code stores the state of the hat "0" in a local variable, then checks to see what the return value is and acts accordingly.
+ </body>
+</html>

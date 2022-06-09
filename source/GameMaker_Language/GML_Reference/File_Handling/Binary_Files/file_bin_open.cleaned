@@ -1,0 +1,104 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   file_bin_open
+  </h1>
+  This function will open the binary file with the indicated name. The mode indicates what can be done with the file:
+  <ul>
+   <li>
+    0 = reading
+   </li>
+   <li>
+    1 = writing
+   </li>
+   <li>
+    2 = both reading and writing
+   </li>
+  </ul>
+  When the file does not exist it is created, and the function returns the id of the file that must be used in the other functions. You can open multiple files at the same time (32 max), but don't forget to close them once you are finished with them.
+  <b>
+   WARNING!
+  </b>
+  This function may not work as you expect due to
+  <span>
+   GameMaker
+  </span>
+  being sandboxed! Please see the section on the
+  <a href="../../../../Additional_Information/The_File_System.htm">
+   File System
+  </a>
+  for more information.
+  <b>
+   NOTE
+  </b>
+  : These functions
+  <b>
+   do not
+  </b>
+  work when the target module is HTML5.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">file_bin_open(fname, mode);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      fname
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The name of the file to read from.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      mode
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The indicator of what can be done with the file.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Reference/File_Handling/Binary_Files/file_bin_open.htm">
+ Binary File ID
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">file = file_bin_open("myfile.bin", 2);
+</code></pre>
+  This would open a file from the same directory as the game, and assign its index to the variable "file".
+ </body>
+</html>

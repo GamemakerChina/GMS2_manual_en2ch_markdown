@@ -1,0 +1,64 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Data Types Action Library
+  </h1>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Types/lib_Type.png"/><br/>
+  <span>
+   GameMaker
+  </span>
+  has a number of different data types, like integers, strings, pointers, etc...
+    and some of those can be converted to others. This section of the manual shows the different actions available for dealing with and converting different data types.
+  <b>
+   NOTE
+  </b>
+  : you can find out more about the different data types
+  <a href="../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+   here
+  </a>
+  .
+  
+  
+   The
+  <b>
+   Types
+  </b>
+  library has the following actions:
+  <table>
+   <tbody>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Types/i_Types_Decimal_To_Integer.png"/><br/>
+     </td>
+     <td>
+      <a href="Decimal_To_Integer.htm">
+       Decimal To Integer
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Types/i_Types_String_To_Number.png"/><br/>
+     </td>
+     <td>
+      <a href="String_To_Number.htm">
+       String To Number
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Types/i_Types_Number_To_String.png"/><br/>
+     </td>
+     <td>
+      <a href="Number_To_String.htm">
+       Number To String
+      </a>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </body>
+</html>

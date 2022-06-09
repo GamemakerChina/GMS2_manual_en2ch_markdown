@@ -1,0 +1,78 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   physics_fixture_set_restitution
+  </h1>
+  In physics, restitution is defined as "the return of an object or system to its original state after elastic deformation", but as the fixtures in the
+  <span>
+   GameMaker
+  </span>
+  are really rigid bodies and cannot be deformed, restitution is
+    really a way of saying how "bouncy" the fixture is. This setting will affect how much an object "bounces" when it collides with other objects and is co-dependent on other forces that act on the instance like gravity and friction,
+    and is usually a value between 0 and 1 (higher values can be used but may give unpredictable results). Here is an illustration of how it works:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/GML/Reference/Physics/physics_fixture_set_restitution_image.png"/><br/>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">physics_fixture_set_restitution(fixture, restitution)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      fixture
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Physics/Fixtures/physics_fixture_create.htm">
+        Physics Fixture ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the fixture
+     </td>
+    </tr>
+    <tr>
+     <td>
+      restitution
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The restitution of the fixture (usually between 0 and 1)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">physics_fixture_set_restitution(fix_Ball, 0.9);
+</code></pre>
+  The code above will set the restitution of the fixture indexed in "fix_ball" to 0.9.
+ </body>
+</html>

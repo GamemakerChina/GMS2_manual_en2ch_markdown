@@ -1,0 +1,114 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   layer_set_target_room
+  </h1>
+  When you call this function you are telling
+  <span>
+   GameMaker
+  </span>
+  that
+  <i>
+   all further layer functions should be applied to the given room
+  </i>
+  . In this way you can procedurally change or generate layers and layer contents in a room that is not the current room. When you are finished adding layers or layer elements to a room, call the function
+  <a href="layer_reset_target_room.htm">
+   <span>
+    layer_reset_target_room()
+   </span>
+  </a>
+  to reset the room target (or call this function again with a room argument of -1). Note that this function can only be used on
+  <i>
+   rooms other than the current room
+  </i>
+  , and is designed so that you can add/remove layers and layer elements to rooms other than the room that is currently running.
+  <b>
+   WARNING!
+  </b>
+  While targeting another room, you can use all the regular layer functions
+  <b>
+   except
+  </b>
+  you cannot create instances using
+  <span>
+   <a href="../../Instances/instance_create_layer.htm">
+    <span>
+     instance_create_layer()
+    </span>
+   </a>
+  </span>
+  or
+  <span>
+   <a href="../../Instances/instance_create_depth.htm">
+    <span>
+     instance_create_depth()
+    </span>
+   </a>
+  </span>
+  , nor will the layer function
+  <a href="layer_add_instance.htm">
+   <span>
+    <span>
+     layer_add_instance()
+    </span>
+   </span>
+  </a>
+  be available.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">layer_set_target_room(room)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      room
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../The_Asset_Editors/Rooms.htm">
+        Room Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The room to target for all further layer functions
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">layer_set_target_room(rm_Game);
+var l = layer_get_id("SpriteAssets");
+repeat(50)
+{
+    var _x = irandom(1000);
+    var _y = irandom(1000);
+    layer_sprite_create(l, _x, _y, spr_Trees);
+}
+layer_reset_target_room();
+</code></pre>
+  The above code sets the target room to the room "rm_Game" and then gets the layer ID for the layer called "SpriteAssets" in that room. This layer ID is then used to add 50 random sprite assets to the layer, before the layer target is reset to the current room.
+ </body>
+</html>

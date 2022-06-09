@@ -1,0 +1,63 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   sin
+  </h1>
+  In a right angled triangle sin(val) = Opposite / Hypotenuse where val is one of the three angles.
+  <b>
+  </b>
+  <strong>
+   NOTE
+  </strong>
+  : This function takes a value in radians not degrees.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">sin(val);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      val
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The angle (in radians) to return the sine of.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">val = sin( pi/2 );
+</code></pre>
+  This will set val to 1.
+ </body>
+</html>

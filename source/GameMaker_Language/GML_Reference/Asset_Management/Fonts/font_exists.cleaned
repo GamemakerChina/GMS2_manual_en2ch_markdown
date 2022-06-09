@@ -1,0 +1,68 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   font_exists
+  </h1>
+  This function returns whether a font with the specified index exists or not. You can check font indices as defined from the Asset Browser, or fonts that have been added using functions like
+  <span>
+   font_add()
+  </span>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">font_exists(ind);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      ind
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Fonts.htm">
+        Font Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      Index of the font to check.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if font_exists(fnt_Main)
+{
+    draw_set_font(fnt_Main);
+}
+</code></pre>
+  This will set the active drawing font to
+  <span>
+   fnt_Main
+  </span>
+  if it exists.
+ </body>
+</html>

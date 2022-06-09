@@ -1,0 +1,42 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Attachments
+  </h1>
+  Skeleton animation sprites can have "slots" where you can place "attachments". An attachment is simply an image that can used as a prop by the sprite, and is placed in a slot so that it will move along with the animation of the part where the slot is positioned. If you imagine the sprite of a warrior with an attachment slot on his hand - you can then place different weapon sprites on this slot and make the warrior look like he's using a sword or a pike or a shield or whatever.
+  
+  
+   This section deals specifically with attachments and their sprites, however you can also setup slots and get information about them from the functions listed
+  <a href="../Slots/Slots.htm">
+   here
+  </a>
+  .
+  
+  
+   The available attachment functions are:
+  <ul>
+   <li>
+    <a href="skeleton_attachment_get.htm">
+     skeleton_attachment_get
+    </a>
+   </li>
+   <li>
+    <a href="skeleton_attachment_set.htm">
+     skeleton_attachment_set
+    </a>
+   </li>
+   <li>
+    <a href="skeleton_attachment_create.htm">
+     skeleton_attachment_create
+    </a>
+   </li>
+   <li>
+    <a href="skeleton_attachment_create_colour.htm">
+     skeleton_attachment_create_colour
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

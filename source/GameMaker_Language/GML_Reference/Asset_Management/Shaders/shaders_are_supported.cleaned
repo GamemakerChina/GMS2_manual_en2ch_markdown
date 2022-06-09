@@ -1,0 +1,61 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   shaders_are_supported
+  </h1>
+  This function will do a check to see if the chosen target platform supports shaders, returning
+  <span>
+   true
+  </span>
+  if they do, and
+  <span>
+   false
+  </span>
+  if they do not. It is important to note that on
+  <b>
+   Android
+  </b>
+  , if the project does not have any shader resources defined, then the function will
+  <i>
+   always return
+   <span>
+    false
+   </span>
+  </i>
+  , regardless of whether the device supports shaders or not.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">shaders_are_supported();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">global.GFX = false;
+if shaders_are_supported()
+{
+    if shader_is_compiled(sh_glass) &amp;amp;amp;&amp;amp;amp; shader_is_compiled(sh_warp)
+    {
+        global.GFX = true;
+    }
+}
+</code></pre>
+  The above code will set a global variable to
+  <span>
+   false
+  </span>
+  , and then if the platform supports shaders and both the shaders being checked have compiled correctly, it will be set to
+  <span>
+   true
+  </span>
+  .
+ </body>
+</html>

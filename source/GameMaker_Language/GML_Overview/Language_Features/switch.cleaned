@@ -1,0 +1,254 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   switch
+  </h1>
+  In a number of situations you want to let your instances perform different actions depending on a particular value. You can do this using a number of consecutive
+  <a href="If_Else_and_Conditional_Operators.htm">
+   <span>
+    if / else
+   </span>
+  </a>
+  statements, but when the possible choices gets above two or three it is usually easier to use the
+  <span>
+   switch
+  </span>
+  statement.
+  
+  
+   A
+  <span>
+   switch
+  </span>
+  statement has the following syntax:
+  <pre><code class="language-gml">switch (&amp;amp;lt;expression&amp;amp;gt;)
+{
+    case &amp;amp;lt;constant1&amp;amp;gt;:
+        &amp;amp;lt;code&amp;amp;gt;
+    break;
+
+    case &amp;amp;lt;constant2&amp;amp;gt;:
+        &amp;amp;lt;code&amp;amp;gt;
+    break;
+    
+    // more cases (with breaks)
+
+    default:
+        &amp;amp;lt;code&amp;amp;gt;;
+}
+</code></pre>
+  This works as follows:
+  <ul>
+   <li>
+    First the
+    <a>
+     expression
+    </a>
+    is executed.
+   </li>
+   <li>
+    Next, its result is compared with the different constants after each of the
+    <span>
+     case
+    </span>
+    <a>
+     statement
+    </a>
+    <span>
+     s
+    </span>
+    . When we say "constant" what we mean is that the value in the case cannot be a variable expression and must be a fixed value of any
+    <a href="../Data_Types.htm">
+     data type
+    </a>
+    , like
+    <span>
+     "fight"
+    </span>
+    or
+    <span>
+     3
+    </span>
+    or the keyword
+    <span>
+     <span>
+      <a href="../Instance_Keywords.htm">
+       noone
+      </a>
+     </span>
+    </span>
+    .
+   </li>
+   <li>
+    The execution begins from the first
+    <span>
+     case
+    </span>
+    statement with the matching value,
+    <i>
+     until a
+     <a href="break.htm">
+      break
+     </a>
+     statement is encountered
+    </i>
+    .
+   </li>
+   <li>
+    If no
+    <span>
+     case
+    </span>
+    statement has the matching value, then the
+    <span>
+     default
+    </span>
+    statement will be executed. It is not required to have a
+    <span>
+     default
+    </span>
+    statement, and if none is supplied then no action will be taken when there are no matching cases. The
+    <span>
+     default
+    </span>
+    statement can be placed anywhere in a switch block, however it's traditionally placed at the bottom, after all the cases.
+   </li>
+  </ul>
+  <span>
+   NOTE
+  </span>
+  The switch statement will continue to execute code within a
+  <span>
+   case
+  </span>
+  , until a
+  <span>
+   break
+  </span>
+  is encountered. If you do not use
+  <span>
+   break
+  </span>
+  s at the end of your cases, it will cause the switch to "leak" to the next
+  <span>
+   case
+  </span>
+  , and even to a
+  <span>
+   default
+  </span>
+  section, if there are no
+  <span>
+   break
+  </span>
+  s in the way. This can cause unintended behaviour as the execution of one
+  <span>
+   case
+  </span>
+  can result in multiple
+  <span>
+   case
+  </span>
+  s being executed, so ensure to use
+  <span>
+   break
+  </span>
+  where appropriate.
+  
+  
+   A simple example of using a switch statement would be something like this:
+  <pre><code class="language-gml">switch (player_lives)
+{
+    case 3:
+        draw_sprite(20, 20, spr_face_healthy);
+    break;
+
+    case 2:
+        draw_sprite(20, 20, spr_face_hurt);
+    break;
+
+    case 1:
+        draw_sprite(20, 20, spr_face_fatal);
+    break;
+
+    default:
+        draw_sprite(20, 20, spr_face_fainted);
+    break;
+}
+</code></pre>
+  Note that multiple
+  <span>
+   case
+  </span>
+  statements can be used to execute the same statement, as the
+  <span>
+   break
+  </span>
+  is not always required for each and every
+  <span>
+   case
+  </span>
+  . If there is no
+  <span>
+   break
+  </span>
+  statement for a particular
+  <span>
+   case
+  </span>
+  , the execution simply continues with the code for the next case, e.g.:
+  <pre><code class="language-gml">switch (keyboard_key)
+{
+    case vk_left:
+    case ord("A"):
+        x -= 4;
+    break;
+
+    case vk_right:
+    case ord("D"):
+        x += 4;
+    break;
+
+    case vk_up:
+    case ord("W"):
+        y -= 4;
+    break;
+
+    case vk_down:
+    case ord("S"):
+        y += 4;
+    break;
+}
+</code></pre>
+  The above code uses
+  <span>
+   switch
+  </span>
+  to check for a keyboard event and then compares that to each
+  <span>
+   case
+  </span>
+  listed. If it meets any of the required values then the corresponding code is executed. Note how the
+  <span>
+   switch
+  </span>
+  can check multiple
+  <span>
+   cases
+  </span>
+  and execute code until the next
+  <span>
+   break
+  </span>
+  , to permit various keys to be used to get the same result.
+  
+  
+   Each
+  <span>
+   case
+  </span>
+  can have its own code, so you can set up a sort of "inheritance" system where a case executes its own code and then the code for the next case as well.
+ </body>
+</html>

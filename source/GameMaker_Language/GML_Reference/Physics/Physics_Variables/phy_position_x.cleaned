@@ -1,0 +1,34 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   phy_position_x
+  </h1>
+  This variable can be used to get (or to set) the x position of the instance within the game room physics world. Please note that the physics world may present errors when instances are moved by directly setting this variable as it will interrupt the
+    continuous simulation. This variable is the physics equivalent of the instance variable
+  <a href="../../Asset_Management/Instances/Instance_Variables/x.htm">
+   x
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">phy_position_x;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a>
+(single precision floating point value, or undefined if the instance is not physics enabled)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">xx = phy_position_x; yy = phy_position_y;
+</code></pre>
+  The above code stores the instance x and y position in two variables.
+ </body>
+</html>

@@ -1,0 +1,111 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Installation Guide
+  </h1>
+  <span>
+   GameMaker
+  </span>
+  is designed for use on
+  <strong>
+   macOS
+  </strong>
+  and
+  <strong>
+   Windows
+  </strong>
+  desktop computers with the minimum specifications mentioned
+  <a href="http://www.yoyogames.com/get#sysreq">
+   here
+  </a>
+  .
+  
+  
+   You can download the
+  <span>
+   GameMaker
+  </span>
+  installer from your YoYo Account page on the
+  <a href="https://accounts.yoyogames.com/login">
+   YoYo Games Website
+  </a>
+  . Once installed, the first time you run
+  <span>
+   GameMaker
+  </span>
+  you may be prompted to update before being able to use the product. After any updates have been installed, you will be required to supply the licence details for your YoYo Games Account (see
+  <a href="Licencing_Information.htm">
+   here
+  </a>
+  for more information) before being able to use the product, meaning that the first time you use
+  <span>
+   GameMaker
+  </span>
+  <strong>
+   you must have an internet connection
+  </strong>
+  . After the initial login, you should be able to use the product offline, however it will periodically require that you connect to verify the login account.
+  
+  
+   It is worth noting that - depending on the licence type that you have - you may be required to install additional components or follow addition steps to set up and use
+  <span>
+   GameMaker
+  </span>
+  for specific platforms. For full information on what each platform requires, please see this article on the YoYo Games Helpdesk:
+  <a href="https://help.yoyogames.com/hc/en-us/articles/227860547-GMS2-Required-SDKs">
+   <span>
+    GameMaker
+   </span>
+   Required SDKs
+  </a>
+  .
+  <h1>
+   Stable And Beta Versions
+  </h1>
+  The version you download from the YoYo Games web page should be the current
+  <strong>
+   Stable
+  </strong>
+  version of
+  <span>
+   GameMaker
+  </span>
+  , but there may also be another "
+  <strong>
+   Beta
+  </strong>
+  " version available which is used to showcase or test new functionality before it goes into a final stable build. The full version details are as follows:
+  <ul>
+   <li>
+    <strong>
+     Stable
+    </strong>
+    : This version is the one you would be using for general development and is recommended for use with any commercial product. It may lack certain features available in the Beta versions, but this is because they haven't been fully tested or require additional work.
+   </li>
+   <li>
+    <strong>
+     Beta
+    </strong>
+    : The Beta version of
+    <span>
+     GameMaker
+    </span>
+    is for those that wish to try out new features before they get added to the Stable build, or for those that require a coming fix for an issue. It is not recommended that you use the Beta build for final game production unless it contains an important fix for a bug that is holding up your project. You can get the Beta build of
+    <span>
+     GameMaker
+    </span>
+    from your YoYo Account "Downloads" page, and it can be installed and run side-by-side with the Stable build. Please note that if you are running
+    <span>
+     GameMaker
+    </span>
+    through
+    <strong>
+     Steam
+    </strong>
+    then you will not have access to the Beta build of the product using Steam itself, although you can still download and use the desktop version.
+   </li>
+  </ul>
+ </body>
+</html>

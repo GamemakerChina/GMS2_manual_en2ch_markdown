@@ -1,0 +1,53 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   scheduler_resolution_get
+  </h1>
+  This function is used to retrieve the resolution of the Windows thread scheduler in milliseconds. If the scheduler's resolution is set to the default value (as set by Windows), the function will return -1.
+  
+  
+   For information on the thread scheduler, see the page for
+  <span>
+   <a href="scheduler_resolution_set.htm">
+    scheduler_resolution_set()
+   </a>
+  </span>
+  .
+  <strong>
+   NOTE
+  </strong>
+  : This function is for
+  <strong>
+   Windows
+  </strong>
+  only.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">scheduler_resolution_get();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a>
+(or -1 for default)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">scheduler_resolution = scheduler_resolution_get();
+</code></pre>
+  This example retrieves the resolution of the Windows thread scheduler, and stores it in the
+  <span>
+   "
+  </span>
+  <span>
+   scheduler_resolution"
+  </span>
+  variable.
+ </body>
+</html>

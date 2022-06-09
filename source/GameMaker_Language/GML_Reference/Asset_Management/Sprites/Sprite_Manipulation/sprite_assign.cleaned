@@ -1,0 +1,96 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   sprite_assign
+  </h1>
+  This function takes two previously created (or included) sprite indexes, and copies the image from one to the other. In this way you can copy (or "clone") one sprite into another index. Note that
+  <i>
+   you cannot copy to a game resource
+  </i>
+  . You have to have created the sprite to be copied to previously using the
+  <a href="sprite_add.htm">
+   <span>
+    sprite_add()
+   </span>
+  </a>
+  or
+  <a href="sprite_duplicate.htm">
+   <span>
+    sprite_duplicate()
+   </span>
+  </a>
+  functions.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">sprite_assign(index, sprite);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../The_Asset_Editors/Sprites.htm">
+        Sprite Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the sprite to be copied to (ie: overwritten).
+     </td>
+    </tr>
+    <tr>
+     <td>
+      sprite
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../The_Asset_Editors/Sprites.htm">
+        Sprite Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The sprite to be copied from.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if sprite_exists(global.Player_Sprite)
+{
+    var t_spr = sprite_add("player.png", 16, true, true, 0, 0);
+    sprite_assign(global.Player_Sprite, t_spr);
+    sprite_delete(t_spr);
+}
+else
+{
+    global.Player_Sprite = sprite_add("player.png", 16, true, true, 0, 0);
+}
+</code></pre>
+  The above code checks to see if the global variable "Player_Sprite" contains a sprite and if it does it uses sprite_assign to change it for one that has been loaded from an external file. If it does not contain a sprite one is loaded and its index is stored in that variable.
+ </body>
+</html>

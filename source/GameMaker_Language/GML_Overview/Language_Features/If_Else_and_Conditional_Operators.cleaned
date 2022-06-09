@@ -1,0 +1,340 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   if / else and Conditional Operators
+  </h1>
+  A fundamental feature of most programming languages is the ability to ask a simple question that gives a boolean
+  <span>
+   true
+  </span>
+  or
+  <span>
+   false
+  </span>
+  answer, and in GML this is achieved using the
+  <span>
+   if
+  </span>
+  keyword. A simple
+  <span>
+   if
+  </span>
+  condition takes an
+  <a>
+   expression
+  </a>
+  and will perform one or more
+  <a>
+   statement
+  </a>
+  <span>
+   s
+  </span>
+  if the expression resolves as
+  <span>
+   true
+  </span>
+  , with the following basic form:
+  <pre><code class="language-gml">if (&amp;amp;lt;expression&amp;amp;gt;)
+{
+    &amp;amp;lt;statement&amp;amp;gt;;
+    &amp;amp;lt;statement&amp;amp;gt;;
+    ...
+}
+</code></pre>
+  Here you are saying that if an expression resolves as
+  <span>
+   true
+  </span>
+  then do something. Note that the "then" part of the condition is
+  <em>
+   implicit
+  </em>
+  , but there is a
+  <span>
+   then
+  </span>
+  keyword that can be used (although it's almost always omitted), so you can also create conditionals like this:
+  <pre><code class="language-gml">if (&amp;amp;lt;expression&amp;amp;gt;) then
+{
+    &amp;amp;lt;statement&amp;amp;gt;;
+    &amp;amp;lt;statement&amp;amp;gt;;
+    ...
+}
+</code></pre>
+  Apart from
+  <span>
+   if
+  </span>
+  and
+  <span>
+   then
+  </span>
+  , you can also use the
+  <span>
+   else
+  </span>
+  keyword to do something else if the expression being checked evaluates as
+  <span>
+   false
+  </span>
+  . This "
+  <span>
+   if... then... else...
+  </span>
+  " form looks like this:
+  <pre><code class="language-gml">if (&amp;amp;lt;expression&amp;amp;gt;)
+{
+    &amp;amp;lt;statement&amp;amp;gt;;
+}
+else
+{
+    &amp;amp;lt;statement&amp;amp;gt;;
+}
+</code></pre>
+  In this case the expression will be evaluated, and if it evaluates as
+  <span>
+   false
+  </span>
+  , the statement after
+  <span>
+   else
+  </span>
+  is executed, otherwise the initial statement is executed (it's
+  <span>
+   true
+  </span>
+  ).
+  <span>
+   NOTE
+  </span>
+  In the GameMaker language any value that is less than or equal to 0 will evaluate as
+  <span>
+   false
+  </span>
+  , while any value that is greater than 0 will evaluate as
+  <span>
+   true
+  </span>
+  .
+  
+  
+   It is a good habit to always put brackets around the expressions and curly brackets {} around the statements in the
+  <span>
+   if
+  </span>
+  (otherwise only the first statement will be executed), and take a new line in the block for each statement, for example:
+  <pre><code class="language-gml">// This will work
+if &amp;amp;lt;expression&amp;amp;gt; &amp;amp;lt;statement&amp;amp;gt;;
+
+// Example:
+if test == true variable = false else variable = true;
+</code></pre>
+  <pre><code class="language-gml">// This is better
+if (&amp;amp;lt;expression&amp;amp;gt;)
+{
+    &amp;amp;lt;statement&amp;amp;gt;
+}
+else
+{
+    &amp;amp;lt;statement&amp;amp;gt;
+}
+
+// Example
+if (test == true)
+{
+    variable = false;
+}
+else
+{
+    variable = true;
+}
+</code></pre>
+  Note that while this is slightly more verbose, it means that there is no ambiguity in the code and that it will compile correctly on ail platforms at all times. However, the initial example may not, as explained on the section in the
+  <a href="../Expressions_And_Operators.htm">
+   Expressions And Operators
+  </a>
+  page.
+  <strong>
+   NOTE
+  </strong>
+  : When comparing two values to see if they are equal, you should use the "
+  <span>
+   ==
+  </span>
+  " operator, and only use the "
+  <span>
+   =
+  </span>
+  " one for assignment. Currently GameMaker will treat them as interchangeable, but this may change in the future and your code is cleaner and more obvious when using the correct operators for comparisons and assignments.
+  
+  
+   To give a proper example of using
+  <span>
+   if
+  </span>
+  , consider the following code which will move an instance towards the position
+  <span>
+   x=200
+  </span>
+  in the room when placed in the Step Event:
+  <pre><code class="language-gml">if (x &amp;amp;lt; 200)
+{
+    x += 4;
+}
+else
+{
+    x = 200;
+}
+</code></pre>
+  Note that you can also do
+  <i>
+   compound
+  </i>
+  checks in an
+  <span>
+   if
+  </span>
+  , ie: check various values or expressions in the same statement. These checks can use the various
+  <a href="../Expressions_And_Operators.htm">
+   Combining Operators
+  </a>
+  (
+  <span>
+   &amp;&amp;
+  </span>
+  and,
+  <span>
+   ||
+  </span>
+  or, and
+  <span>
+   ^^
+  </span>
+  xor). When you do this,
+  <span>
+   GameMaker
+  </span>
+  will evaluate each of them one at a time, and depending on how they evaluate, then the rest may be skipped. For example:
+  <pre><code class="language-gml">if (keyboard_check_pressed(vk_enter)) &amp;amp;amp;&amp;amp;amp; (instance_exists(obj_Player))
+{
+    go = false;
+    alarm[0] = room_speed;
+}
+</code></pre>
+  Here we are checking using the
+  <span>
+   &amp;&amp;
+  </span>
+  "and" operator, so it's checking if
+  <em>
+   both
+  </em>
+  of the conditions in the
+  <span>
+   if
+  </span>
+  evaluate to
+  <span>
+   true
+  </span>
+  , and if the first one is
+  <span>
+   false
+  </span>
+  then the second one won't even be checked. This is called "short circuiting" the code, so when combining expressions to check, you should ensure that the "cheapest" one for performance is always the first to avoid evaluating the more expensive ones if the first evaluates to
+  <span>
+   false
+  </span>
+  . In a similar vein, if a condition will can be evaluated as
+  <span>
+   true
+  </span>
+  or
+  <span>
+   false
+  </span>
+  at compile time, then the entire condition will be removed from the code, for example, say you have a
+  <a href="../Variables/Constants.htm">
+   macro
+  </a>
+  <span>
+   DEBUG_ON
+  </span>
+  for debugging and it can be either
+  <span>
+   true
+  </span>
+  or
+  <span>
+   false
+  </span>
+  - when it is set to
+  <span>
+   false
+  </span>
+  then the following code block will be stripped from the game when it is compiled:
+  <pre><code class="language-gml">if DEBUG_ON == true
+{
+    show_debug_message("Instances = " + string(instance_count));
+}
+</code></pre>
+  You can also perform
+  <b>
+   conditional operations
+  </b>
+  (also know as
+  <b>
+   ternary
+  </b>
+  operations), which are essentially a "shortcut" way of performing a basic
+  <span>
+   if
+  </span>
+  . It has the following syntax:
+  <pre><code class="language-gml">variable = &amp;amp;lt;condition&amp;amp;gt; ? &amp;amp;lt;statement1 (if
+<i>
+ true
+</i>
+)&amp;amp;gt; : &amp;amp;lt;statement2 (if
+<i>
+ false
+</i>
+)&amp;amp;gt;
+</code></pre>
+  The conditional operator "
+  <span>
+   ?
+  </span>
+  " will return one of two given values depending on whether the condition expression evaluates to
+  <span>
+   true
+  </span>
+  or
+  <span>
+   false
+  </span>
+  , for example:
+  <pre><code class="language-gml">var temp_x = (x &amp;amp;lt; (room_width / 2)) ? 32 : (room_width - 32);
+</code></pre>
+  The above code will check the value of "x" against the value of half the room width and then if it is less it will set "
+  <span>
+   temp_x
+  </span>
+  " to 32 otherwise "
+  <span>
+   temp_x
+  </span>
+  " will be room width - 32. Here are a few more examples of use:
+  <pre><code class="language-gml">draw_text(x, y, "The fee is " + (global.Member ? "$2.00" : "$10.00"));
+path_start(((global.level &amp;amp;gt; 10) ? path_hard : path_easy;), 2, path_action_reverse, true);
+(--hp &amp;amp;lt;= 0) ? instance_destroy() : score += 10;
+</code></pre>
+  It is worth noting too that you can nest conditional operations but that if you do then each operation will need to be enclosed in brackets, for example:
+  <pre><code class="language-gml">var c = a ? "foo" : (b ? "bar" : "whee"); // Correct
+var c = a ? "foo" : b ? "bar" : "whee";   // Will cause an error
+</code></pre>
+ </body>
+</html>

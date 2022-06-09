@@ -1,0 +1,563 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   The Room Editor
+  </h1>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Room.png"/><br/>
+  The room editor is where you create your game
+  <strong>
+   rooms
+  </strong>
+  . Every game requires
+  <em>
+   at least one room to run
+  </em>
+  , and in the room you can place instances, sprites, tiles, paths and backgrounds. Each of these different assets can be placed on their own unique
+  <strong>
+   layer
+  </strong>
+  which can then be ordered however you wish in the
+  <strong>
+   Layers Editor
+  </strong>
+  . Due to the complexity of the room editor, we'll give you first a brief overview of the most important features, and then you can find more in-depth details from the section links listed below.
+  
+  
+   When you create a room resource, you can right click
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_RMB.png"/><br/>
+  on it in the Asset Browser to open the context menu, which will permit you to create
+  <strong>
+   child rooms
+  </strong>
+  (see the page on
+  <a href="Room_Properties/Room_Inheritance.htm">
+   Inheritance
+  </a>
+  for more information), open up the room for editing, add a new resource group to better organise the rooms, rename the room or delete it. Note that to change the room order and/or inheritance you need to use the
+  <a href="../Settings/The_Room_Manager.htm">
+   Room Manager
+  </a>
+  , which you can open using the menu in the top right of the Asset Browser.
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Room_RoomManager.png"/><br/>
+  The room editor is itself a
+  <a href="../Introduction/Workspaces.htm">
+   workspace
+  </a>
+  and as such you can click
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  on the tab and drag it off of the main window into a new window of its own - perhaps in another display, for example. You can also place it back into the main window by dragging the tab to the top of the IDE and releasing the mouse button.
+  
+  
+   The user interface for the room editor is simple to navigate and split in various discrete sections. Those parts of the editor that are docked - the
+  <strong>
+   room properties
+  </strong>
+  and the
+  <strong>
+   layer editor
+  </strong>
+  as well as the different layer property sections - can also be removed from the dock by simply dragging them out into the workspace, and they can be added back into the docks again by dragging them to the sides or the bottom of the workspace.
+  
+  
+   Below is a brief overview of each of the Room Editor sections:
+  <a href="#">
+   <span>
+    Rulers / Guides
+   </span>
+   <span>
+    Rulers / Guides
+   </span>
+  </a>
+  The rulers along the edge of the canvas show you the position of the things that are placed within it, and are marked from (0, 0) which is the center of the canvas and the origin for the room. You can click and drag on the rulers to pull a horizontal or vertical guide into the room, and this guide can then be used to accurately position the different assets that are being used, as moving an asset close to one will "snap" it to the guide. While positioning assets within the room, smart guides will also be temporarily shown indicating the distance between assets, as well as the distance from the room boundary or center point.
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Sequences_Guides.png"/><br/>
+  The distance that assets "snap" to guides, as well as other properties, can be set in the
+  <a href="../Setting_Up_And_Version_Information/IDE_Preferences/Room_Editor_Preferences.htm">
+   Room Editor Preferences
+  </a>
+  .
+  <a href="#">
+   <span>
+    Layer Editor
+   </span>
+   <span>
+    Layer Editor
+   </span>
+  </a>
+  The room editor places things onto layers within the room. Each layer is at a discrete "depth", where those that appear at the bottom of the list in the layer window will be drawn under those that appear near the top.
+  <strong>
+   IMPORTANT!
+  </strong>
+  There is a minimum and maximum layer depth of -16000 to 16000. Anything placed on a layer outside that range will not be drawn although all events will still run as normal.
+   
+   
+    Layers are created by clicking  the appropriate button for the type of layer you want to create, which are:
+  <table>
+   <tbody>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Instance.png"/><br/>
+     </td>
+     <td>
+      <strong>
+       Instances
+      </strong>
+     </td>
+     <td>
+      This layer is for placing
+      <a href="../Quick_Start_Guide/Objects_And_Instances.htm">
+       instances
+      </a>
+      that will be used in the room.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Tilemap.png"/><br/>
+     </td>
+     <td>
+      <strong>
+       Tile Maps
+      </strong>
+     </td>
+     <td>
+      This layer is for placing tiles from
+      <a href="../Quick_Start_Guide/Creating_Tile_Sets.htm">
+       tile sets
+      </a>
+      as
+      <a>
+       tile map
+      </a>
+      <span>
+       s
+      </span>
+      .
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Paths.png"/><br/>
+     </td>
+     <td>
+      <strong>
+       Paths
+      </strong>
+     </td>
+     <td>
+      This layer is for showing and adding
+      <a href="Paths.htm">
+       paths
+      </a>
+      in the room.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Assets.png"/><br/>
+     </td>
+     <td>
+      <strong>
+       Assets
+      </strong>
+     </td>
+     <td>
+      This layer is for visual assets to be added to the room, like
+      <a href="../Quick_Start_Guide/Creating_Sprites.htm">
+       sprites
+      </a>
+      and
+      <a href="../Quick_Start_Guide/Sequences.htm">
+       sequences
+      </a>
+      .
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_FX_Layer.png"/><br/>
+     </td>
+     <td>
+      <strong>
+       Filter/Effect
+      </strong>
+     </td>
+     <td>
+      This type of layer defines a
+      <a href="Room_Properties/Filters_and_Effects.htm">
+       filter/effect
+      </a>
+      that is applied to all layers below it.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Background.png"/><br/>
+     </td>
+     <td>
+      <strong>
+       Background
+      </strong>
+     </td>
+     <td>
+      This type of layer defines a background, which is essentially a single colour or sprite image that may be tiled over the whole room.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  You can also create a layer folder using the folder button
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Folder.png"/><br/>
+  where you can group selected layers together, as well as delete the selected layers with the delete button
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_DeleteLayer.png"/><br/>
+  . Each of these layer types are discussed
+  <a href="Room_Properties/Layer_Properties.htm">
+   here
+  </a>
+  in more detail.
+   
+   
+    Note that you can toggle
+  <a href="Room_Properties/Room_Inheritance.htm">
+   inheritance
+  </a>
+  for the layer editor which will affect layer order and visibility. The visibility itself can be set by clicking the eye icon
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Eye.png"/><br/>
+  beside each of the layers, or you can click the one at the very top to enable/disable all layers at once. You also have the possibility to "lock" a layer (or all of them) so that they cannot be changed by clicking the padlock icon
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Padlock.png"/><br/>
+  . Note that layers which are flagged as invisible will
+  <strong>
+   not
+  </strong>
+  be shown when the game is run.
+  <a href="#">
+   <span>
+    Layer Properties
+   </span>
+   <span>
+    Layer Properties
+   </span>
+  </a>
+  The room layer properties window will change depending on the currently selected layer in the layer editor.
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Room_LayerProperties.png"/><br/>
+  Each window will have the different properties and lists associated with the currently selected layer type, and you will be able to edit fundamental details for how the layer is displayed and what is actually on the layer. Please see
+  <a href="Room_Properties/Layer_Properties.htm">
+   here
+  </a>
+  for more detail.
+  <a href="#">
+   <span>
+    Room Properties
+   </span>
+   <span>
+    Room Properties
+   </span>
+  </a>
+  This section of the room editor is where you can define all the base properties for the room, like it's size, whether it uses physics, or any cameras and viewports it requires. This section is dicussed in more detail
+  <a href="Room_Properties/Room_Properties.htm">
+   here
+  </a>
+  .
+  <a href="#">
+   <span>
+    Layer Toolbox
+   </span>
+   <span>
+    Layer Toolbox
+   </span>
+  </a>
+  Certain layer types will have additional tools added to the top of the IDE in the
+  <strong>
+   Layer Toolbox
+  </strong>
+  (for example, tile layers or path layers). The exact tools will change based on the layer type currently being edited, and so are explained on the page explaining each layer,
+  <a href="Room_Properties/Layer_Properties.htm">
+   here
+  </a>
+  .
+  <a href="#">
+   <span>
+    Room Toolbox
+   </span>
+   <span>
+    Room Toolbox
+   </span>
+  </a>
+  At the top of the main Room Editor canvas you have a few controls to deal with how things are displayed. They are:
+  <ul>
+   <li>
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_CanvasGrid.png"/><br/>
+    <strong>
+     Toggle Canvas Grid
+    </strong>
+    : This will toggle on/off the Room Editor canvas grid. This is a grid that
+    <span>
+     GameMaker
+    </span>
+    draws over the main canvas to divide it into sections, and by default is set to 32x32px in size. However if you click the Grid Menu icon
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_CanvasOptions.png"/><br/>
+    you will open the grid options:
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_RoomGridControls.png"/><br/>
+    These options permit you to set the grid colour and alpha, as well as the cell values for the grid along the X and Y axis. You also have an option to enable or disable grid snapping here (enabled by default). You can use the keyboard shortcuts "G" and
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Shift.png"/><br/>
+    + "G" to toggle the grid visibility and grid snapping respectively.
+   </li>
+   <li>
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_CanvasZoom.png"/><br/>
+    <strong>
+     Canvas Zoom Controls
+    </strong>
+    : These buttons control the current canvas zoom level. You can zoom in or out and clicking the
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_ZoomReset.png"/><br/>
+    button will reset the canvas to be 1:1 with the room being edited. You can also click the Window Fit button
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_CanvasFit.png"/><br/>
+    to make the entire room canvas fit within the current editor workspace (this will zoom in/out as appropriate to make it fit). Note that you can also zoom in and out using the
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Ctrl.png"/><br/>
+    /
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Cmd.png"/><br/>
+    and the Mouse Wheel
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_MMB.png"/><br/>
+    , and pressing
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Ctrl.png"/><br/>
+    /
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Cmd.png"/><br/>
+    +
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Enter.png"/><br/>
+    will set the room canvas to be 1:1 with the room settings.
+   </li>
+   <li>
+    <strong>
+     <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_CanvasViews.png"/><br/>
+     Show Views
+    </strong>
+    : Clicking this will enable or disable the view rectangle. When enabled you will see a highlighted area that signifies the different views that are enabled for the room.
+   </li>
+   <li>
+    <strong>
+     <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_PlayRoom.png"/><br/>
+     Play Animations
+    </strong>
+    : When adding sprites, sequences or animated tiles, you may want to get an idea of how these will look within the room itself without having to compile the whole project, and so you can click this to start all the different animations playing. Clicking it again will stop the animation.
+   </li>
+   <li>
+    <strong>
+     <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_CanvasSelect.png"/><br/>
+     Canvas Select From Any Layer
+    </strong>
+    : By default when you click on an element in the room canvas you will only be able to select those assets that are on the layer currently being edited, however if you enable this option you can then click on any element and it will be selected, changing the target layer to the one that the element is on. You can use the keyboard shortcut "
+    <span>
+     P
+    </span>
+    " to temporarily enable this (hold "
+    <span>
+     P
+    </span>
+    " to enable and release to disable)
+   </li>
+  </ul>
+  <a href="#">
+   <span>
+    Room Canvas
+   </span>
+   <span>
+    Room Canvas
+   </span>
+  </a>
+  The center of the room editor window is taken up with the area where all the actual editing takes place. Here is where you'll be placing your instances and assets, drawing your tiles, or positioning your paths. You can zoom in and out using the mouse wheel or the room controls at the top, and you can pan around by holding the middle mouse button
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_MMB.png"/><br/>
+  down and moving the mouse around or using
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Space.png"/><br/>
+  +
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  while moving.
+   
+   
+    When creating asset layers or instance layers, you can place the asset or instance by simply dragging it from the Asset Browser and then dropping it where you want it to be positioned. Alternatively you can select an asset or instance from the Asset Browser and then press and hold
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Alt.png"/><br/>
+  to preview the resource "in-situ", and if you additionally click the left mouse button
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  you can add the instance and even "paint" it into the room layer by maintaining the button pressed and dragging the mouse. Note that by default instances and sprites that are added to a room in this way will be snapped to the defined room grid settings, but you can hold down
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Ctrl.png"/><br/>
+  /
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Cmd.png"/><br/>
+  to have the instance follow the mouse precisely and not snap (releasing
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Ctrl.png"/><br/>
+  /
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Cmd.png"/><br/>
+  will permit snapping again).
+   
+   
+    For paths you can create a new path layer and path resource right from within the Room Editor- or create a new path resource and then drag it into the main editor window as you would for an instance - and then edit the path and its connections in the editor window too. For tile sets, you can "paint" them in from the tile set editor.
+   
+   
+    Note that you can select and move or delete multiple assets from the same layer by holding down
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Ctrl.png"/><br/>
+  /
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Cmd.png"/><br/>
+  +
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  on the ones you want, and most resources in the room editor will permit you to rotate and scale them (singly or as a group) by clicking and holding
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  along the outside edges or corners and dragging the mouse. You can also double click
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  on any single asset (tiles, instances, sprites) to have the editor pan to it and open up the properties window for the asset selected.
+  <a href="#">
+   <span>
+    Status Bar
+   </span>
+   <span>
+    Status Bar
+   </span>
+  </a>
+  The status bar is used to show you context specific information. The status bar will always show you where in the room the mouse cursor is, but it will also show additional information based on the layer being edited, the tool being used and the state of that tool.
+   
+   
+   
+  
+  
+  
+  
+   You can get more information about some of the above mentioned sections from the following pages:
+  <ul>
+   <li>
+    <a href="Room_Properties/Layer_Properties.htm">
+     Layer Types And Properties
+    </a>
+   </li>
+   <li>
+    <a href="Room_Properties/Room_Properties.htm">
+     Room Properties
+    </a>
+   </li>
+   <li>
+    <a href="Room_Properties/Room_Inheritance.htm">
+     Room Inheritance
+    </a>
+   </li>
+   <li>
+    <a href="Room_Properties/Filters_and_Effects.htm">
+     Filters and Effects
+    </a>
+   </li>
+  </ul>
+  <h2>
+   Room Menu
+  </h2>
+  Apart from the in-editor tools, you will also see a new drop down menu has been added to the top of the IDE.
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_RoomContextMenu.png"/><br/>
+  These menus are explained below:
+  <ul>
+   <li>
+    <strong>
+     Layer View
+    </strong>
+    : This will re-open the Layer Editor window should you have closed it at any time.
+   </li>
+   <li>
+    <strong>
+     Room Properties
+    </strong>
+    : This will re-open the Room Properties window should you have closed it at any time.
+   </li>
+   <li>
+    <strong>
+     Layer Properties
+    </strong>
+    : This will re-open the
+    <a href="Room_Properties/Layer_Properties.htm">
+     Layer Properties Window
+    </a>
+    should you have closed it at any time.
+   </li>
+   <li>
+    <strong>
+     Instance Creation Order
+    </strong>
+    : This will open the
+    <strong>
+     Instance Creation Order Window
+    </strong>
+    (which can also be opened by using the button in the
+    <a href="Room_Properties/Room_Properties.htm">
+     Room Properties
+    </a>
+    <strong>
+    </strong>
+    window):
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Room_CreationOrder.png"/><br/>
+    This window lists all the instances in the room in the order that they will be created (from top to bottom). Should you require a specific instance to be created before any other, you can simply click
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+    and drag it to the position your require.
+   </li>
+   <li>
+    <strong>
+     Reset Windows On Current Desktop
+    </strong>
+    : This will reset the room editor window layout to its default values for the desktop workspace currently focused.
+   </li>
+  </ul>
+  <ul>
+   <li>
+    <strong>
+     Tile Editing
+    </strong>
+    : When working with a tile layer, this option will be highlighted in the drop down menu. It has the following sub-menu:
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Room_TileMenu.png"/><br/>
+    When editing the tile layer you can select multiple tiles by clicking, holding down and dragging the left mouse button
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+    , or you can select and group individual tiles using
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Ctrl.png"/><br/>
+    /
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Cmd.png"/><br/>
+    +
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+    , or remove individual tiles from the selection using
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Alt.png"/><br/>
+    +
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+    . From this menu you can then clear the selection or invert it as well as cut, copy or paste the selection to another layer (or even the same layer but in another position). The final option will re-open the tile set editor docked window should you have closed it.
+   </li>
+   <li>
+    <strong>
+     Convert Image To Tile Map
+    </strong>
+    : The Convert Image To Tile Map option is a powerful tool that can be used to import a single image and then extract the tiles used from the image and recreate it as a tile map layer in the room editor, creating the required tile set and sprite as part of process. When you select this tool, you will be asked to supply an uncompressed image file (
+    <span>
+     PNG
+    </span>
+    ,
+    <span>
+     GIF
+    </span>
+    or
+    <span>
+     BMP
+    </span>
+    ) which will then be loaded. On load you will be presented with the
+    <strong>
+     Image Import
+    </strong>
+    tool:
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Room_ConvertImage.png"/><br/>
+    Here you are given options on how to split up the tile when creating the tile set, and you can set the cell width and height as well as any offsets required around the edges. You can also set the approximate width (in pixels) for the final sprite that is created. For example, if the tile set is made up of 64x64 tile cells and you set a width here of 200, the final sprite that is created for use in the tile set will be 192 pixels wide (ie: 3 tile cells). If you leave it at the default value of 0, then
+    <span>
+     GameMaker
+    </span>
+    will attempt to make as "square" a sprite as possible with approximately the same number of horizontal and vertical tile cells.
+      
+      After setting the way the image is to be split, clicking the swatch beside the
+    <strong>
+     Remove Colour
+    </strong>
+    option will open the colour picker and permit you to select a colour that is to be removed from the final sprite. This is usually a background colour that you want to remove and setting this swatch to anything other than 100% transparent (alpha 0) will remove the selected colour on import.
+      
+      Finally, you have the option to name the sprite, tile set and tile map layer that will be created for you by this tool. When you finalise the import, a sprite with all the images laid out in a grid will be created, as well as a tile set from this sprite. In the room, a new tile map layer will be created and the image reproduced using the generated tile set. Note that the tool will
+    <em>
+     not
+    </em>
+    duplicate tiles and will instead recognise when a cell has image data that coincides with another cell (this includes rotated tiles). You can see this in the following image where only one flower tile has been created and one crate tile too, yet there are multiple instances of both, with some instances rotated in the base image:
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Room_TileExample.png"/><br/>
+   </li>
+  </ul>
+ </body>
+</html>

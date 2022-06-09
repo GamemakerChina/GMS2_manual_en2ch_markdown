@@ -1,0 +1,73 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   arcsin
+  </h1>
+  Returns the inverse sine of x, in that if
+  <span>
+   sin(x)=n
+  </span>
+  ,
+  <span>
+   arcsin(n)=x
+  </span>
+  , and the resulting number will be between -pi/2 and pi/2.
+  <b>
+   NOTE
+  </b>
+  : This will only accept a value between -1 and 1 (anything else will throw an error).
+  <strong>
+   NOTE
+  </strong>
+  : This function returns a value in radians, not degrees.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">arcsin(x);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      x
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The value to return the inverse sine of.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">val = arcsin(0);
+</code></pre>
+  This will set val to 0.
+ </body>
+</html>

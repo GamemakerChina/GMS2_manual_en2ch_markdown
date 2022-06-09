@@ -1,0 +1,117 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   sprite_get_speed
+  </h1>
+  This function can be used to retrieve the sprite speed as defined for the sprite resource in the
+  <a href="../../../../../The_Asset_Editors/Sprites.htm">
+   Sprite Editor
+  </a>
+  . The value returned can then be used, for example, to calculate how
+    many frames may be drawn for different
+  <a href="../Sprite_Instance_Variables/image_speed.htm">
+   <span>
+    image_speed
+   </span>
+  </a>
+  . Note that the return value will be very different depending on the
+  <i>
+   type
+  </i>
+  of speed
+    that was applied in the Sprite Editor, either
+  <i>
+   Frames Per Second
+  </i>
+  , or
+  <i>
+   Frames Per Game Frame
+  </i>
+  . The following two examples illustrate this:
+  <ul>
+   <li>
+    If you have a sprite that draws 1 frame per
+    <i>
+     second
+    </i>
+    and set the image speed to 0.5 it will draw at 0.5 frames per second. If your game frame rate is 60 frames per second then the sprite will draw 1 frame for every 120
+      game frames.
+   </li>
+   <li>
+    If you have a sprite that draws 1 frame per
+    <i>
+     game frame
+    </i>
+    and set the image speed to 0.5 it will draw 0.5 frames per game frame. If your game frame rate is 60 frames per second then the sprite will draw 30 frames for
+      every 60 game frames.
+   </li>
+  </ul>
+  You can find out what the type of animation speed was used when defining the sprite using the function
+  <a href="sprite_get_speed_type.htm">
+   <span>
+    sprite_get_speed_type()
+   </span>
+  </a>
+  , and you can set the animation speed
+  <i>
+   and
+  </i>
+  type
+    using the function
+  <a href="../Sprite_Manipulation/sprite_set_speed.htm">
+   <span>
+    sprite_set_speed()
+   </span>
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">sprite_get_speed(index)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../The_Asset_Editors/Sprites.htm">
+        Sprite Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the sprite to get the speed of
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">s_speed = sprite_get_speed(sprite_index); s_type = sprite_get_speed_type(sprite_index);
+</code></pre>
+  The above code gets the sprite speed and the sprite animation type and stores them in instance variables for future use.
+ </body>
+</html>

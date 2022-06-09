@@ -1,0 +1,126 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   layer_sprite_create
+  </h1>
+  With this function you can assign a sprite resource to a layer to be used in your project. You supply the layer ID (which you get when you create the layer using
+  <a href="../General_Layer_Functions/layer_create.htm">
+   <span>
+    layer_create()
+   </span>
+  </a>
+  or when you use the layer name along with
+  <a href="../General_Layer_Functions/layer_get_id.htm">
+   <span>
+    layer_get_id()
+   </span>
+  </a>
+  ), a position within the room, and a sprite index (which would be the name of the sprite as shown in the Asset Browser), and it will be added to the layer. The function returns the unique ID value for the element, which can then be used in further layer functions for sprites.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">layer_sprite_create(layer_id, x, y, sprite)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      layer_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+      or
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/General_Layer_Functions/layer_get_id.htm">
+        Layer ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The unique ID value of the layer to target
+     </td>
+    </tr>
+    <tr>
+     <td>
+      x
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x position to use
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y position to use
+     </td>
+    </tr>
+    <tr>
+     <td>
+      sprite
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../The_Asset_Editors/Sprites.htm">
+        Sprite Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The sprite index to be used
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Sprite_Layers/layer_sprite_get_id.htm">
+ Sprite Element ID
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">global.asset_layer = layer_create(10000);
+for (var i = 0; i&amp;amp;lt; 10; i++;)
+{
+    var _x = random(room_width);
+    var _y = room_height - 100;
+    global.asset_spr_trees[i] = layer_sprite_create(global.asset_layer, _x, _y, spr_Trees);
+}
+</code></pre>
+  The above code creates a new layer and then adds 10 new sprite elements to it, storing the ID of each element to an array.
+ </body>
+</html>

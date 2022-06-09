@@ -1,0 +1,69 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   dtan
+  </h1>
+  In a right angled triangle
+  <i>
+   dtan(val) = Opposite / Adjacent
+  </i>
+  where "val" is one of the three angles.
+  <b>
+   NOTE
+  </b>
+  : A vast number of values (90, or -90 for example) will error with this function due to their returning infinity, a graph representation of this would produce asymptotes at these values.
+  <strong>
+   NOTE
+  </strong>
+  : This function takes a value in degrees not radians
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">dtan(val);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      val
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The angle (in degrees) to return the tangent of.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">val = dtan(45);
+</code></pre>
+  This will set "val" to 1.
+ </body>
+</html>

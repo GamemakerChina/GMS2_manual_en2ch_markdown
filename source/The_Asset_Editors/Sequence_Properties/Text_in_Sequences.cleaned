@@ -1,0 +1,239 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Text in Sequences
+  </h1>
+  Text tracks can be added to a Sequence through the editor. This is done by selecting the
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_TextButton.png"/><br/>
+  <strong>
+   Add a Text Track
+  </strong>
+  button from the Canvas Toolbox, and then clicking (and optionally dragging) in the Canvas to create a text track.
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Sequences_Text/SeqTextOverview.png"/><br/>
+  This page covers the following topics:
+  <ol>
+   <li>
+    <a href="#s1">
+     Creating Text
+    </a>
+   </li>
+   <li>
+    <a href="#s2">
+     Modifying Text
+    </a>
+   </li>
+   <li>
+    <a href="#s3">
+     Font Assets
+    </a>
+   </li>
+   <li>
+    <a href="#s4">
+     Parameters
+    </a>
+   </li>
+   <li>
+    <a href="#s5">
+     Inspector
+    </a>
+   </li>
+  </ol>
+  <h2>
+   Creating Text
+  </h2>
+  There are two ways of creating a text track. After selecting the
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_TextButton.png"/><br/>
+  <strong>
+   Text
+  </strong>
+  tool from the Toolbox, you can:
+  <ul>
+   <li>
+    <strong>
+     Click once in the canvas
+    </strong>
+    : This creates an "unwrapped" text track. This means the text can be as long as you want and it will stay on one line. Wrapping can easily be enabled later through the
+    <a href="../../IDE_Tools/The_Inspector.htm">
+     Inspector
+    </a>
+    .
+    <video src="../../assets/Videos/AssetEditors/SeqTextUnwrapped.mp4">
+    </video>
+   </li>
+   <li>
+    <strong>
+     Click and drag in the canvas
+    </strong>
+    : This creates a "wrapped" text track, meaning the text only displays inside a frame. The size of this frame is set by dragging while creating the text track. Its size can also be changed later via parameter tracks or the Inspector.
+    <video src="../../assets/Videos/AssetEditors/SeqTextWrapped.mp4">
+    </video>
+    It is recommended to use wrapped text tracks as it makes it much easier to align your text and get consistent results while animating.
+   </li>
+  </ul>
+  <h2>
+   Modifying Text
+  </h2>
+  When you create a new text track, GameMaker opens the
+  <a href="../../IDE_Tools/The_Inspector.htm">
+   Inspector
+  </a>
+  and automatically selects the
+  <strong>
+   Text
+  </strong>
+  field, allowing you to start writing your text.
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Sequences_Text/SeqTextEditFromInspector.png"/><br/>
+  To edit the text for a track at any time, simply select that track, go into the Inspector and modify the
+  <strong>
+   Text
+  </strong>
+  field again.
+   
+   
+    Resize Behaviour
+   
+   
+    Resizing your text track in the Canvas will work differently depending on whether your text track is
+  <strong>
+   wrapped
+  </strong>
+  or
+  <strong>
+   unwrapped
+  </strong>
+  .
+    
+    If unwrapped, your text track will be scaled, similar to how you scale sprites and objects. However, resizing a
+  <strong>
+   wrapped
+  </strong>
+  text track modifies its
+  <strong>
+   frame size
+  </strong>
+  instead of modifying its scale values.
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Sequences_Text/SeqTextResizeBehaviour.png"/><br/>
+  To scale a wrapped text track, use
+  <a href="The_Sequence_Canvas.htm#gizmos">
+   Gizmos
+  </a>
+  instead, or edit the values in the Scale parameter track manually.
+  <h2>
+   Font Assets
+  </h2>
+  Text tracks are tied to
+  <a href="../Fonts.htm">
+   Font assets
+  </a>
+  . When you create a new text track, it will look for a font asset within your project, and use the one that was last added. If your project has no fonts, it will automatically create a new font asset.
+   
+   
+    When you delete a font, all text tracks that use that font are deleted as well, so ensure you don't accidentally delete font assets that are used in Sequences.
+  <h2>
+   Parameters
+  </h2>
+  You can modify and animate all the usual parameters that are provided for a sprite track, like Position, Rotation, Scale, Origin and Colour Multiply. Using these parameters you can move and rotate your text, make it bigger or smaller, and change its colour and alpha.
+   
+   
+    There are some text-specific parameters provided as well, which can also be animated:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Sequences_Text/SeqTextParameters.png"/><br/>
+  <ul>
+   <li>
+    <strong>
+     Character Spacing
+    </strong>
+    : This is the space between each character (in pixels).
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Sequences_Text/SeqTextCharacterSpacing.png"/><br/>
+   </li>
+   <li>
+    <strong>
+     Line Spacing
+    </strong>
+    : This is the space between each line of text (in pixels).
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Sequences_Text/SeqTextLineSpacing.png"/><br/>
+   </li>
+   <li>
+    <strong>
+     Paragraph Scaling
+    </strong>
+    : This is the space between each paragraph of text (in pixels). A new paragraph starts when you add a line break manually by pressing
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Enter.png"/><br/>
+    .
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Sequences_Text/SeqTextParagraphSpacing.png"/><br/>
+   </li>
+   <li>
+    <strong>
+     Frame Size
+    </strong>
+    : This is the size of the text's frame, and is only used when
+    <strong>
+     Wrap
+    </strong>
+    is enabled in the Inspector (see its section below for more information).
+   </li>
+  </ul>
+  <h2>
+   Inspector
+  </h2>
+  There are some properties that can only be changed through the Inspector. Such properties cannot be animated as they are not parameter tracks, but simple options that apply to the whole track.
+   
+   
+    The Inspector shows you the following properties when a text track is selected:
+  <span>
+   NOTE
+  </span>
+  The Inspector should open automatically when you create or select a text track, but if your Inspector is closed, you can open it manually from the
+  <a href="../../IDE_Navigation/Menus/The_Windows_Menu.htm">
+   Windows
+  </a>
+  menu at the top.
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Sequences_Text/SeqTextInspector.png"/><br/>
+  Some of the parameter tracks (such as
+  <strong>
+   Colour
+  </strong>
+  ,
+  <strong>
+   Character Spacing
+  </strong>
+  ,
+  <strong>
+   Line Spacing
+  </strong>
+  , etc.) are included here, and changing them will create a keyframe at the playhead if
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Seq_Record.png"/><br/>
+  <strong>
+   Automatically record changes
+  </strong>
+  is enabled, or modify the selected keyframe. The rest of the options are "static" (as they cannot be animated) and are as follows:
+  <ul>
+   <li>
+    At the top it shows you the font asset that is selected. You can use this option to select an existing font asset, or create a new one and assign it to the selected text track.
+   </li>
+   <li>
+    <strong>
+     Text
+    </strong>
+    : This is the text that is displayed on your text track. You can enter multiple lines here, however empty lines will not be displayed.
+   </li>
+   <li>
+    <strong>
+     Alignment
+    </strong>
+    : Here you can change how your text is aligned within the frame horizontally (left, centre, right, justified) and vertically (bottom, top, middle). This only applies when the
+    <strong>
+     Wrap
+    </strong>
+    option is enabled.
+   </li>
+   <li>
+    <strong>
+     Wrap
+    </strong>
+    : This controls whether the text should automatically wrap within the defined frame. When this is enabled, your text will automatically move to the next line when it hits the end of the frame, and will always be cut off if the text happens to be longer than the height of the frame. When this is disabled, all of your text will be displayed on a single line, and the frame will not be displayed in the canvas anymore.
+   </li>
+  </ul>
+ </body>
+</html>

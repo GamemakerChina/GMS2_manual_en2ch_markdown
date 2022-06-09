@@ -1,0 +1,62 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   vertex_format_delete
+  </h1>
+  This function must be called whenever you are finished using any created vector formats. You provide the format ID value (as returned by the function
+  <a href="vertex_format_end.htm">
+   <span>
+    vector_format_end()
+   </span>
+  </a>
+  ), and this function will free the memory associated with it. Note that if you try to use this format again after calling this function, you will get an error.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">vertex_format_delete(formatID);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      formatID
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Drawing/Primitives/vertex_format_end.htm">
+        Vertex Format ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The vertex format to delete
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">vertex_format_delete(myFormat);
+</code></pre>
+  The above code will remove the vertex format created in the variable "myFormat" from memory.
+ </body>
+</html>

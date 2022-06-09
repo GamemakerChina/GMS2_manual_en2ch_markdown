@@ -1,0 +1,65 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   real
+  </h1>
+  This function can be used to turn a given string into a real number. When using this function, numbers, minus signs, decimal points and exponential parts in the string are taken into account, while other characters (such as letters) will cause an error
+    to be thrown. If you know, or suspect, that a string may have other characters then you can use
+  <a href="string_digits.htm">
+   <span>
+    string_digits()
+   </span>
+  </a>
+  to remove all non-numeric characters, before using this function to turn the resulting string
+    into a real number.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">real(string);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      string
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The string to be converted to a real value.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var t_str = string_digits(input_str); age = real(t_str);
+</code></pre>
+  The above code will take the input string, strip it of all characters other than numbers and then set the variable "age" to hold the real number value of the return string.
+ </body>
+</html>

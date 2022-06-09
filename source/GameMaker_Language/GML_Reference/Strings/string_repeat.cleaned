@@ -1,0 +1,76 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   string_repeat
+  </h1>
+  This function simply returns the same string repeated a given number of times over itself.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">string_repeat(str, count);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      str
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The string to repeat.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      count
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The number of times to repeat the string.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">str1 = "Hello World"; str2 = string_repeat(str1, 3);
+</code></pre>
+  The above code will set
+  <span>
+   str2
+  </span>
+  to "Hello WorldHello WorldHello World".
+ </body>
+</html>

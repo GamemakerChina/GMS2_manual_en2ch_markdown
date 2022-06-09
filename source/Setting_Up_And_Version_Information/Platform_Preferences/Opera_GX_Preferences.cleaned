@@ -1,0 +1,41 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Opera GX Preferences
+  </h1>
+  The Opera GX preferences have the following options:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Setup_And_Version/Platform_Preferences/Opera_GX_Prefs.png"/><br/>
+  <ul>
+   <li>
+    <strong>
+     Emscripten SDK location
+    </strong>
+    : This is the location of the Emscripten SDK, required for YYC builds made for Opera GX. Read
+    <a href="https://help.yoyogames.com/hc/en-us/articles/4625548722193">
+     Setting Up For Opera GX
+    </a>
+    for information on setting up the SDK.
+   </li>
+   <li>
+    <strong>
+     Default Web Server Port
+    </strong>
+    : This lets you change the default port for the Opera GX web server. Default value is 51264.
+   </li>
+   <li>
+    <strong>
+     Default Web Server Address
+    </strong>
+    : Here you can change the default web server address for the Opera GX web server. Default value is 127.0.0.1.
+   </li>
+   <li>
+    <strong>
+     Default Web Server Allowed IPs
+    </strong>
+    : Here you can add in any allowed IPs for the web server and they will be set as default for all devices added through the Target Manager.
+   </li>
+  </ul>
+ </body>
+</html>

@@ -1,0 +1,70 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Menus
+  </h1>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/IDE_Input/Menus_TopBar.png"/><br/>
+  The top of the
+  <span>
+   GameMaker
+  </span>
+  IDE is occupied by the
+  <strong>
+   Menu Bar
+  </strong>
+  . Here you can find a number of drop-down menus that can be used to navigate
+    the IDE, perform tasks or open additional windows with tools to help you craft your games. Note that we list here the
+  <em>
+   default
+  </em>
+  menus that are available, but some of the asset editors will add additional menus depending on context. These additional
+    menus are explained on the pages relevant to the editor that created them.
+  
+  
+   The default menus available are:
+  <ul>
+   <li>
+    <a href="Menus/The_File_Menu.htm">
+     The File Menu
+    </a>
+   </li>
+   <li>
+    <a href="Menus/The_Edit_Menu.htm">
+     The Edit Menu
+    </a>
+   </li>
+   <li>
+    <a href="Menus/The_Build_Menu.htm">
+     The Build Menu
+    </a>
+   </li>
+   <li>
+    <a href="Menus/The_Windows_Menu.htm">
+     The Windows Menu
+    </a>
+   </li>
+   <li>
+    <a href="Menus/The_Tools_Menu.htm">
+     The Tools Menu
+    </a>
+   </li>
+   <li>
+    <a href="Menus/The_Marketplace_Menu.htm">
+     The Marketplace Menu
+    </a>
+   </li>
+   <li>
+    <a href="Menus/The_Layouts_Menu.htm">
+     The Layouts Menu
+    </a>
+   </li>
+   <li>
+    <a href="Menus/The_Help_Menu.htm">
+     The Help Menu
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

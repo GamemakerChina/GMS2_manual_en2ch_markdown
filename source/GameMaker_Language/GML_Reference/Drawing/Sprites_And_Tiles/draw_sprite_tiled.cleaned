@@ -1,0 +1,106 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   draw_sprite_tiled
+  </h1>
+  This function will take a sprite and then repeatedly tile it across the whole view (or room if no view is defined), starting from the coordinates that you give in the function. Tiling is based on the width and height of the sprite as defined by the
+  <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/Sprite_Instance_Variables.htm">
+   sprite variables
+  </a>
+  of the instance running the code. This function is for 2D (orthographic) projections only, and will not work correctly when a 3D
+    camera projection is used.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">draw_sprite_tiled(sprite, subimg, x, y);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      sprite
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Sprites.htm">
+        Sprite Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the sprite to draw.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      subimg
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The subimg (frame) of the sprite to draw (image_index or -1 correlate to the current frame of animation in the object).
+     </td>
+    </tr>
+    <tr>
+     <td>
+      x
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x coordinate of where to draw the sprite.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y coordinate of where to draw the sprite.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">draw_sprite_tiled(sprite_index, image_index, x, y);
+</code></pre>
+  This will draw the instances assigned sprite (sprite_index) and its current frame of animation (image_index) at the instances own x and y position, and tiled horizontally and vertically across the view.
+ </body>
+</html>

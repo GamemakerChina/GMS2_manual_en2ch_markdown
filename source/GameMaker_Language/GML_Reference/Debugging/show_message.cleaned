@@ -1,0 +1,75 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   show_message
+  </h1>
+  This function creates a pop-up message box which displays the given string and a button marked "Ok" to close it.
+  <b>
+   <span>
+    NOTE
+   </span>
+  </b>
+  This function is for
+  <b>
+   debug use only
+  </b>
+  on Desktop targets and UWP, but is
+  <b>
+   deprecated
+  </b>
+  on all other targets.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">show_message(str);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      str
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The string to show in the pop-up message.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var tot = 0;
+for (var i = 0; i &amp;amp;lt; 10; i += 1)
+{
+    tot += inv[i];
+}
+show_message("Total = " + string(tot));
+</code></pre>
+  The above code will loop through the values stored in the array "inv" and add them to the variable "tot" before showing a message with the total.
+ </body>
+</html>

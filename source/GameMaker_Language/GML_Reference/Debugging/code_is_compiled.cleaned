@@ -1,0 +1,36 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   code_is_compiled
+  </h1>
+  This function will return
+  <span>
+   true
+  </span>
+  if the platform compiles outside of the virtual machine, such as for the YYC and JS platforms.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">code_is_compiled();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   <b>
+    Example:
+   </b>
+  </h4>
+  <pre><code class="language-gml">if code_is_compiled()
+{
+    show_debug_message("Compiler okay!");
+}
+</code></pre>
+  The above code checks to see if the game was compiled using the YoYo Compiler and shows a debug message if it was.
+ </body>
+</html>

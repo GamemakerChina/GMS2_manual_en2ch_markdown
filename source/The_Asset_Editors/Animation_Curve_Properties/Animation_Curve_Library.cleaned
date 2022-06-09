@@ -1,0 +1,213 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   The Animation Curve Library
+  </h1>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Animation_Curves_Library.png"/><br/>
+  The
+  <strong>
+   Animation Curve Library
+  </strong>
+  window allows you to change the Curve Type for the Animation Curve, and apply
+    a preset to the selected channel. It can be opened by
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  left-clicking on the
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Animation_Curve_Library_Button.png"/><br/>
+  button in the
+  <a href="../Animation_Curves.htm">
+   Animation Curve Editor
+  </a>
+  or
+  <a href="../Sequence_Properties/Using_Animation_Curves.htm">
+   Sequence Dope Sheet
+  </a>
+  , or by
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_RMB.png"/><br/>
+  right-clicking
+    anywhere in the Channel Editor.
+  <a href="#">
+   <span>
+    Curve Type
+   </span>
+   <span>
+    Curve Type
+   </span>
+  </a>
+  The
+  <strong>
+   Curve Type
+  </strong>
+  controls how a channel flows from point to point, which can be set to one of the following options:
+  <ul>
+   <li>
+    <strong>
+     Linear
+    </strong>
+    : This wll create a linear progression between points on the channel
+   </li>
+   <li>
+    <strong>
+     Smooth
+    </strong>
+    : This will use
+    <a>
+     catmull-rom interpolation
+    </a>
+    to create a smooth progression between points on the channel
+   </li>
+   <li>
+    <strong>
+     Bezier
+    </strong>
+    : This will use Bezier curve mathematics to create a smooth progression between points on the channel, where you can control how the curve looks by manipulating "handles" on the points
+   </li>
+  </ul>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Animation_Curves_Types.png"/><br/>
+  Note that changing the Curve Type will apply that type to
+  <em>
+   all
+  </em>
+  channels in the Animation Curve.
+  <a href="#">
+   <span>
+    Curve Presets
+   </span>
+   <span>
+    Curve Presets
+   </span>
+  </a>
+  A
+  <strong>
+   C
+  </strong>
+  <strong>
+   urve Preset
+  </strong>
+  changes the shape of your curve.
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  Left-clicking on a preset in the Presets menu will apply that preset to your
+      selected channel, and clicking on
+  <strong>
+   Reset
+  </strong>
+  will revert the channel to how it was before the Animation Curve Library window was opened.
+  <span>
+   <strong>
+    NOTE
+   </strong>
+   : Presets can only be applied if the Curve Type is set to
+   <strong>
+    Bezier
+   </strong>
+   .
+  </span>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Animation_Curves_Library_Preset0.gif"/><br/>
+  By default, a preset is applied to the whole channel. You can select a section of your channel by dragging with the
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  left mouse button in the
+  <strong>
+   Channel Editor
+  </strong>
+  , and then open the Animation Curve Library window through the
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Animation_Curve_Library_Button.png"/><br/>
+  button or by
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_RMB.png"/><br/>
+  right-clicking, which will apply any presets to the selected section only.
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Animation_Curves_Library_Preset1_Selection.gif"/><br/>
+  Note that your curve channel (or selection within that channel) needs to have a slope for a preset to have any effect, as any applied
+      interpolation is based on the vertical difference between the starting and ending points. A flat curve has no such difference between the two points, so you will not see any results after applying a preset to such a curve.
+   
+   
+    There are two
+  <strong>
+   Apply Modes
+  </strong>
+  that you can choose from, which affects how a preset is applied to your channel (or to your selection within that channel):
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Animation_Curves_Library_Apply_Modes.png"/><br/>
+  <ul>
+   <li>
+    <strong>
+     Overwrite:
+    </strong>
+    This is the default when the window is opened through the
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Animation_Curve_Library_Button.png"/><br/>
+    button in the Animation Curve Editor or the Sequence Dope Sheet. It overwrites
+        any points between the beginning and ending points of your channel or selection.
+   </li>
+   <li>
+    <strong>
+     Between:
+    </strong>
+    This is the default when the window is opened by
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_RMB.png"/><br/>
+    right-clicking anywhere in the Channel Editor. It applies the preset between each pair of selected points,
+        and adds any new points that are needed without removing any existing points.
+   </li>
+  </ul>
+  The following visual shows the
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Curve_Expo.png"/><br/>
+  <strong>
+   Expo
+  </strong>
+  curve preset applied to a channel using the
+  <strong>
+   Between
+  </strong>
+  and
+  <strong>
+   Overwrite
+  </strong>
+  apply modes:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Animation_Curves_Library_Apply_Modes_Difference.png"/><br/>
+  As you can see in the above visual,
+  <strong>
+   Between
+  </strong>
+  applies the curve preset to each pair of points, and inserts any new points that are needed.
+  <strong>
+   Overwrite
+  </strong>
+  removes any points between the starting and ending points and then
+      applies the preset.
+   
+   
+    There are also three
+  <strong>
+   Easing Modes
+  </strong>
+  that you can choose from, which controls how a curve accelerates or decelerates. The default easing mode is
+  <strong>
+   Ease Out
+  </strong>
+  .
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Animation_Curves_Library_Easings.png"/><br/>
+  <ul>
+   <li>
+    <strong>
+     Ease In:
+    </strong>
+    The curve starts with faster acceleration, and then decelerates
+   </li>
+   <li>
+    <strong>
+     Ease Out
+    </strong>
+    : The curve starts with slower acceleration, and then accelerates over time
+   </li>
+   <li>
+    <strong>
+     Ease In-Out:
+    </strong>
+    The curve starts with slower acceleration, accelerates over time and then decelerates
+   </li>
+  </ul>
+  The following visual shows the
+  <b>
+   Quart
+  </b>
+  curve preset in all three easing modes:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Animation_Curves_Library_Easings_Quart.png"/><br/>
+ </body>
+</html>

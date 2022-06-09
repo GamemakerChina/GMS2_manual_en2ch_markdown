@@ -1,0 +1,42 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   game_save_id
+  </h1>
+  This
+  <b>
+   read-only
+  </b>
+  variable will return the full path ID of the directory that is used by your game to save files to. This directory may or may not be visible to other applications, depending on the platform.
+  
+  
+   On the HTML5 target it will return an empty string.
+  <span>
+   NOTE
+  </span>
+  This variable exists purely for information and should
+  <b>
+   not
+  </b>
+  be used to get a file path or anything similar, as it will not work correctly across all platforms.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">game_save_id
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">save_dir = game_save_id;
+</code></pre>
+  This will store the directory for saving files to a variable for future use.
+ </body>
+</html>

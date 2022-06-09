@@ -1,0 +1,82 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   keyboard_clear
+  </h1>
+  With this function you can clear the current keyboard state, which essentially means that if the key is being held down, it will no longer be recognised until it is released again (which won't trigger the Keyboard Key Released event either on this
+    occasion) and pressed again. The function will take a keycode value as returned by the function
+  <a href="../../Strings/ord.htm">
+   <span>
+    ord()
+   </span>
+  </a>
+  (only
+  <i>
+   capital
+  </i>
+  letters from A-Z or numbers from 0-9), or any of the
+  <span>
+   vk_*
+  </span>
+  constants listed
+    on the main
+  <a href="Keyboard_Input.htm">
+   Keyboard Input
+  </a>
+  page.
+  <h4>
+   <b>
+    Syntax:
+   </b>
+  </h4>
+  <pre><code class="language-gml">keyboard_clear(key);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      key
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Game_Input/Keyboard_Input/Keyboard_Input.htm">
+        Virtual Key Constant (vk_*)
+       </a>
+      </span>
+     </td>
+     <td>
+      The key to clear.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   <b>
+    Returns:
+   </b>
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   <b>
+    Example:
+   </b>
+  </h4>
+  <pre><code class="language-gml">keyboard_clear(vk_space);
+</code></pre>
+  The above code clears the state of the spacebar.
+ </body>
+</html>

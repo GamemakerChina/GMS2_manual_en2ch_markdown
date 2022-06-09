@@ -1,0 +1,47 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   video_get_duration
+  </h1>
+  This function returns the duration of the currently loaded video, in milliseconds.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">video_get_duration();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if (keyboard_check_pressed(vk_right))
+{
+    var _video_position = video_get_position();
+    _video_position += 2000;
+
+    if (_video_position &amp;amp;lt; video_get_duration()) 
+    {
+        video_seek_to(_video_position);
+    }
+    else
+    {
+        video_close();
+    }
+}
+</code></pre>
+  The above code moves the playing video 2 seconds ahead, when the right arrow key is pressed, and the new position is smaller than the video's duration. However if it's not within the duration, the video is closed.
+   
+   
+    In this example,
+  <span>
+   video_get_duration()
+  </span>
+  is used in a condition to check if the new position is smaller than the returned duration.
+ </body>
+</html>

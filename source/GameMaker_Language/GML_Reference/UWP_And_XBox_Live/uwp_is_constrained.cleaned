@@ -1,0 +1,51 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   uwp_is_constrained
+  </h1>
+  This function will return
+  <span>
+   true
+  </span>
+  if the game is running in a resource constrained mode or
+  <span>
+   false
+  </span>
+  if running normally. Resource constrained mode can be activated when the game doesn't have focus, and in this mode the game has reduced GPU resources. The response to this should normally be to pause the game (as the user no longer has control). Also, disabling any particularly taxing effects may be a good idea if slowdown is observed in this mode. Note that unlike the
+  <a href="uwp_is_suspending.htm">
+   <span>
+    uwp_is_suspending()
+   </span>
+  </a>
+  function, this function will return
+  <span>
+   true
+  </span>
+  continuously as long as the game is in constrained mode (and not just once when it first happens).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">uwp_is_constrained();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if xboxliveis_constrained()
+{
+    if !instance_exists(obj_PauseMenu)
+    {
+        instance_create(0,0,obj_PauseMenu);
+    }
+}
+</code></pre>
+  The above code checks to see if the app is constrained and if it is it creates an instance of an object (used for pausing the game).
+ </body>
+</html>

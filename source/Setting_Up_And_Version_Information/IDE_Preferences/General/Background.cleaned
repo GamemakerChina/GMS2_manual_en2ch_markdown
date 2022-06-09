@@ -1,0 +1,117 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Background Preferences
+  </h1>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Setup_And_Version/Preferences/General_Background_Prefs.png"/><br/>
+  The
+  <strong>
+   Background
+  </strong>
+  preferences deal with the Workspace background and what it will display as well as how it will be displayed. The options are:
+  <ul>
+   <li>
+    <strong>
+     Background Image
+    </strong>
+    : This is the image file that will be used as the background for the different Workspaces. There is a default image supplied and it is enabled by default, but you can select your own image here. The types of image
+      that you can select from are
+    <span>
+     *.png
+    </span>
+    ,
+    <span>
+     *.gif
+    </span>
+    ,
+    <span>
+     *.jpg
+    </span>
+    ,
+    <span>
+     *.jpeg
+    </span>
+    ,
+    <span>
+     *.tif
+    </span>
+    ,
+    <span>
+     *.tiff
+    </span>
+    ,
+    <span>
+     *.ico
+    </span>
+    ,
+    <span>
+     *.bmp
+    </span>
+    ,
+    <span>
+     *.2bp
+    </span>
+    or
+    <span>
+     *.mdi
+    </span>
+    , but note that regardless of initial image format, all files will be saved out for use as
+    <span>
+     *.png
+    </span>
+    files,
+        so animated
+    <span>
+     *.gif
+    </span>
+    files for example will only be rendered as a single initial frame.
+   </li>
+   <li>
+    <strong>
+     Image Scaling
+    </strong>
+    : This controls how the background image will be scaled within the different workspaces. The choices are:
+    <ul>
+     <li>
+      <strong>
+       Stretch
+      </strong>
+      - The image will be stretched to fit the workspace, changing scale depending on the visible docks
+     </li>
+     <li>
+      <strong>
+       Tile
+      </strong>
+      - The image will be tiled to cover the workspace
+     </li>
+     <li>
+      <strong>
+       Best Fit
+      </strong>
+      - The image will be scaled to fit the workspace proportionally, with bars being added around the edge if it is not a 1:1 fit
+     </li>
+     <li>
+      <strong>
+       Desktop Stretch
+      </strong>
+      - The background will cover the whole workspace, and will move rather than change scale when docks are opened/closed
+     </li>
+     <li>
+      <strong>
+       Screen Stretch
+      </strong>
+      - The background will cover an area the size of the window and will be cropped/extended to show more or less of the image as docks are opened/closed.
+     </li>
+    </ul>
+   </li>
+   <li>
+    <strong>
+     Show background images on workspaces
+    </strong>
+    : This option controls whether the selected background image should be shown or not. By default this is checked as on.
+   </li>
+  </ul>
+ </body>
+</html>

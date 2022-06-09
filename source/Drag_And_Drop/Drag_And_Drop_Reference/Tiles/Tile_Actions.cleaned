@@ -1,0 +1,154 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Tiles Action Library
+  </h1>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/Lib_Tiles.png"/><br/>
+  <span>
+   The
+  </span>
+  <b>
+   Tile
+  </b>
+  <span>
+   action library is where you can find the actions required to get or set tile indices within a room, as well as change how they are shown, among other things (for more information on tiles,
+    please see the section on
+   <a>
+    tile map
+   </a>
+   <span>
+    s
+   </span>
+   <a href="../../../The_Asset_Editors/Room_Properties/Layer_Properties.htm">
+    here
+   </a>
+   ):
+  </span>
+  <table>
+   <tbody>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/i_Tiles_Set_Tile_At_Pixel.png"/><br/>
+     </td>
+     <td>
+      <a href="Set_Tile_Index_At_Pixel.htm">
+       Set Tile Index At Pixel
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/i_Tiles_Get_Tile_At_Pixel.png"/><br/>
+     </td>
+     <td>
+      <a href="Get_Tile_Index_At_Pixel.htm">
+       Get Tile Index At Pixel
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/i_Tiles_Set_Tile_In_Cell.png"/><br/>
+     </td>
+     <td>
+      <a href="Set_Tile_Index_In_Cell.htm">
+       Set Tile Index In Cell
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/i_Tiles_Get_Tile_In_Cell.png"/><br/>
+     </td>
+     <td>
+      <a href="Get_Tile_Index_In_Cell.htm">
+       Get Tile Index In Cell
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/i_Tiles_Set_Tile_Set.png"/><br/>
+     </td>
+     <td>
+      <a href="Set_Tile_Set.htm">
+       Set Tile Set
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/i_Tiles_Get_Tilemap_Variable.png"/><br/>
+     </td>
+     <td>
+      <a href="Get_Tilemap_Variable.htm">
+       Get Tilemap Variable
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/i_Tiles_Set_Tile_Data_At_Pixel.png"/><br/>
+     </td>
+     <td>
+      <a href="Set_Tile_Data_At_Pixel.htm">
+       Set Tile Data At Pixel
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/i_Tiles_Get_Tile_Data_At_Pixel.png"/><br/>
+     </td>
+     <td>
+      <a href="Get_Tile_Data_At_Pixel.htm">
+       Get Tile Data At Pixel
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/i_Tiles_Set_Tile_Data_In_Cell.png"/><br/>
+     </td>
+     <td>
+      <a href="Set_Tile_Data_In_Cell.htm">
+       Set Tile Data In Cell
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/i_Tiles_Get_Tile_Data_In_Cell.png"/><br/>
+     </td>
+     <td>
+      <a href="Get_Tile_Data_In_Cell.htm">
+       Get Tile Data In Cell
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/i_Tiles_Set_Tile_Data_Transform.png"/><br/>
+     </td>
+     <td>
+      <a href="Set_Tile_Data_Transform.htm">
+       Set Tile Data Transform
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/i_Tiles_Get_Tile_Data_Transform.png"/><br/>
+     </td>
+     <td>
+      <a href="Get_Tile_Data_Transform.htm">
+       Get Tile Data Transform
+      </a>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </body>
+</html>

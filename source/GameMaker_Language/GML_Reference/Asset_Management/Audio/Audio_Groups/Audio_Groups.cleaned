@@ -1,0 +1,68 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Audio Groups
+  </h1>
+  Your audio assets can be grouped together from the IDE so they can be loaded and unloaded into memory as required by your game. You can create these
+  <strong>
+   audio groups
+  </strong>
+  from the
+  <a href="../../../../../Settings/Audio_Groups.htm">
+   Audio Groups
+  </a>
+  window - which can be opened from the
+  <a href="../../../../../IDE_Navigation/Menus/The_Tools_Menu.htm">
+   <b>
+    Tools
+   </b>
+  </a>
+  menu at the top of the IDE - and you can assign your audio assets to a specific group from the
+  <a href="../../../../../The_Asset_Editors/Sounds.htm">
+   Sound Properties Window
+  </a>
+  .
+  
+  
+   The following functions exist to deal with using audio groups:
+  <ul>
+   <li>
+    <a href="audio_group_load.htm">
+     audio_group_load
+    </a>
+   </li>
+   <li>
+    <a href="audio_group_unload.htm">
+     audio_group_unload
+    </a>
+   </li>
+   <li>
+    <a href="audio_group_is_loaded.htm">
+     audio_group_is_loaded
+    </a>
+   </li>
+   <li>
+    <a href="audio_group_load_progress.htm">
+     audio_group_load_progress
+    </a>
+   </li>
+   <li>
+    <a href="audio_group_name.htm">
+     audio_group_name
+    </a>
+   </li>
+   <li>
+    <a href="audio_group_stop_all.htm">
+     audio_group_stop_all
+    </a>
+   </li>
+   <li>
+    <a href="audio_group_set_gain.htm">
+     audio_group_set_gain
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

@@ -1,0 +1,98 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   ptr
+  </h1>
+  This function will attempt to convert a given value into a pointer data type, where the value
+  <i>
+   must
+  </i>
+  be either a
+  <span>
+   real
+  </span>
+  , a
+  <span>
+   string
+  </span>
+  , an
+  <span>
+   int64
+  </span>
+  , an
+  <span>
+   int32
+  </span>
+  , or a
+  <span>
+   ptr
+  </span>
+  . Anything else will cause the game to crash with an error message.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">ptr(n);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      n
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+      ,
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+      , or
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Pointer
+       </a>
+      </span>
+     </td>
+     <td>
+      The value to convert.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Pointer
+</a></code></pre>
+  <h4>
+   <b>
+    Example:
+   </b>
+  </h4>
+  <pre><code class="language-gml">if !is_ptr(val)
+{
+    val = ptr(application_surface);
+}
+</code></pre>
+  The above code checks the variable "val" to see if it contains a pointer and if it does not then one is assigned to it.
+ </body>
+</html>

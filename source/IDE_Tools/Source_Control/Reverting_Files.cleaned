@@ -1,0 +1,203 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Reverting Files
+  </h1>
+  In the previous sections you've seen how to
+  <a href="Repository_Options.htm">
+   create a repository
+  </a>
+  and
+  <a href="Standard_Workflow.htm">
+   commit things to it
+  </a>
+  , but what happens if you make a mistake and want to "roll back" to a previous commit? Let's make a deliberate error and see how we can deal with it then...
+  
+  
+   First of all create a new resource - in this example we'll make a Script resource - and initially you'll see no status icon since as far as source control is concerned it doesn't exist exist yet. In the script resource add a simple line of code, like:
+  <pre><code class="language-gml">show_debug_message("Hello World");
+</code></pre>
+  If you now close the code editor, the script will save and the modified file icon
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/SCM_Modified.png"/><br/>
+  will appear beside it in the
+  <a href="../../Introduction/The_Asset_Browser.htm">
+   Asset Browser
+  </a>
+  . Now, open up the
+  <strong>
+   Commit
+  </strong>
+  window and you'll see there are four staged changes, as new resources automatically get added:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/IDE%20Tools/SCM_StagedChanges.png"/><br/>
+  The changes staged will be:
+  <ul>
+   <li>
+    the
+    <span>
+     .yyp
+    </span>
+    project file
+   </li>
+   <li>
+    a view file
+   </li>
+   <li>
+    the GML script itself
+   </li>
+   <li>
+    the
+    <span>
+     .yy
+    </span>
+    file referencing it
+   </li>
+  </ul>
+  You should type in a commit message and then click the
+  <strong>
+   Commit
+  </strong>
+  button, just as we explained previously. Now, we go back to our script and change the line of code to (for example):
+  <pre><code class="language-gml">show_debug_message("Hello World, how are you?");
+</code></pre>
+  When we close the code editor, again a red icon
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/SCM_Modified.png"/><br/>
+  will be shown beside the script, but we've realised that we made a mistake with our code and we want to roll back to a previous version to fix it (obviously, you could just open the script and fix it easily, since the example is so simple, but in large projects that's not normally a feasible approach). What we need to do is
+  <strong>
+   revert
+  </strong>
+  our changes.
+  
+  
+   To revert a change we first need to open up the commit window again, so we go to
+  <strong>
+   Source Control
+  </strong>
+  >
+  <strong>
+   Commit Changes
+  </strong>
+  once more. Our changed file will again be staged ready for committing, but this isn't what we want so we click the button
+  <strong>
+   Unstage All
+  </strong>
+  to take it out of the staging area.
+  
+  
+   If we now right click
+  <strong>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_RMB.png"/><br/>
+  </strong>
+  on the file we changed we'll get a context menu with an option to
+  <strong>
+   Revert Path
+  </strong>
+  :
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/IDE%20Tools/SCM_RevertPath.png"/><br/>
+  When you select this option, you will revert the files back to the previous state that they were in.
+  <strong>
+   IMPORTANT!
+  </strong>
+  When you revert you will get a message asking you to reload or save the current project due to the file checker detecting changes on disk:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/IDE%20Tools/SCM_Warning.png"/><br/>
+  You must hit Reload and not save, as saving will save what is memory rather than reloading the reverted files.
+  
+  
+   That's all great for when you edit something and want to change back without having already performed a commit, but what about when you have committed one or more changes and want to roll back to a
+  <em>
+   previous
+  </em>
+  commit? Well, let's edit our script again to say:
+  <pre><code class="language-gml">show_debug_message("This is a bad idea");
+</code></pre>
+  Now we commit it as before to get it under source control. So, this was a bad idea and we want to roll back, which means to start with we need to open the
+  <strong>
+   Source Control
+  </strong>
+  >
+  <strong>
+   View History
+  </strong>
+  window. Here we will see a list of all previous commits now in this window, starting with the initial commit, the commit for the script, and then the commit for the script that we have edited as a "bad idea":
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/IDE%20Tools/SCM_BadIdea.png"/><br/>
+  We now have two choices. We can revert an entire revision - which will revert all files that were changed to those of the chosen commit - or we can choose to revert a path - which will simply revert a single file. Let's do the first option to start with:
+  <ul>
+   <li>
+    Right click
+    <strong>
+     <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_RMB.png"/><br/>
+    </strong>
+    our second commit in the
+    <strong>
+     Commit History
+    </strong>
+    pane (the "Hello World" commit).
+   </li>
+   <li>
+    Select
+    <strong>
+     Revert To This Revision
+    </strong>
+    and then choose
+    <strong>
+     ReLoad
+    </strong>
+    on the warning message.
+   </li>
+  </ul>
+  You should see that the script now has a red status icon
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/SCM_Modified.png"/><br/>
+  , and if we open it up, we'll have the following:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/IDE%20Tools/SCM_RevertToRevision.png"/><br/>
+  We can then do a commit on the project and we'll be back to where we were once again. However we can also undo that action for the file and get our "bad idea" commit back by doing the following:
+  <ul>
+   <li>
+    Open the
+    <strong>
+     Commit Changes
+    </strong>
+    window.
+   </li>
+   <li>
+    Unstage the script with the "Hello World" code in it.
+   </li>
+   <li>
+    Right click
+    <strong>
+     <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_RMB.png"/><br/>
+    </strong>
+    and
+    <strong>
+     Revert Path
+    </strong>
+    .
+   </li>
+  </ul>
+  Now we are back to having the erroneous file in the project again! Well, we can take this opportunity to revert only that file path instead of reverting everything to a previous revision. For that we need to do the following:
+  <ul>
+   <li>
+    Open the
+    <strong>
+     View History
+    </strong>
+    window.
+   </li>
+   <li>
+    Click on the second commit (the "Hello World" commit).
+   </li>
+   <li>
+    Right click
+    <strong>
+     <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_RMB.png"/><br/>
+    </strong>
+    on our script GML in the Files pane and select
+    <strong>
+     Revert Path
+    </strong>
+    .
+   </li>
+  </ul>
+  We should be back to having our "Hello World" code and we can then do a fresh commit to update the source control again with the corrected file.
+ </body>
+</html>

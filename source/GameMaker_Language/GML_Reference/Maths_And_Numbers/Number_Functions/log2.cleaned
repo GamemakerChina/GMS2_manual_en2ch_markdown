@@ -1,0 +1,70 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   log2
+  </h1>
+  This function basically asks "how many 2's do you need to multiply to get n?". A common example of use in programming would be to calculate the number of bits that are needed to represent a number. To do this we calculate the
+  <span>
+   log2(x)
+  </span>
+  of the number, round it down and add 1 - for example
+  <span>
+   log2(100)
+  </span>
+  returns 6.643856, which rounded down is 6, to which we add one and it gives us 7. So we need 7 bits to represent 100. It can also be used for describing exponential growth or
+    decay, and is often called a
+  <i>
+   binary logarithm
+  </i>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">log2(n);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      n
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The input value.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">colourbits = floor(log2(colour)) - 1;
+</code></pre>
+  The above code stores the number of bits needed to represent the value stored in the variable "colour".
+ </body>
+</html>

@@ -1,0 +1,63 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   physics_particle_set_damping
+  </h1>
+  With this function you can set the linear damping of particles in the simulation. Damping is used to reduce the physics simulation velocity of instances over time, much like air resistance in the real world. This function is
+  <i>
+   global
+  </i>
+  in scope,
+    in that it will change the damping not just for new particles created after the change, but also for those already present in the simulation.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">physics_particle_set_damping(damping)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      damping
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The linear damping to be applied to the particle fixture.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">physics_particle_set_radius(15); physics_particle_set_density(0.5);
+ physics_particle_set_damping(1);
+ physics_particle_set_gravity_scale(1);
+</code></pre>
+  The above code will set the base properties for all particles in the simulation.
+ </body>
+</html>

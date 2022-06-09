@@ -1,0 +1,57 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   filename_path
+  </h1>
+  Using this function returns the path part of the indicated file path, including the final backslash.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">filename_path(fname);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      fname
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The file name and path to use.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">path = filename_path(working_directory + "Test.ini");
+</code></pre>
+  The above code gets the path (as a string) of the specified file.
+ </body>
+</html>

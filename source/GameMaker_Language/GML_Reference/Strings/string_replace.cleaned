@@ -1,0 +1,99 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   string_replace
+  </h1>
+  You can use this function to parse a string looking for a specific part, which can then be replaced by the new string that you have specified.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">string_replace(str, substr, newstr);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      str
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The string to be copied.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      substr
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The substring within the string to be replaced.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      newstr
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The new substring to replace the previous one.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">str1 = "Hello Earth"; str2 = string_replace(str1, "Earth", "World");
+</code></pre>
+  This will set
+  <span>
+   str2
+  </span>
+  to
+  <span>
+   str1
+  </span>
+  , but with its instance of "Earth" replaced with "World", resulting in
+  <span>
+   str2
+  </span>
+  being "Hello World".
+ </body>
+</html>

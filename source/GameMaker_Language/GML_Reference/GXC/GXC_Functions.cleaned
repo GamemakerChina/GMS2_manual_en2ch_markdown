@@ -1,0 +1,43 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Opera GX and GXC
+  </h1>
+  This section outlines the functions provided for the Opera GX target platform. The functions listed on this page allow you to record your screen and upload it to GXC along with your challenge score, however do note that you require use of the
+  <a href="https://marketplace.yoyogames.com/assets/10321/gxc-api-library">
+   GXC API Library
+  </a>
+  to achieve this. Please refer to the
+  <a href="https://help.yoyogames.com/hc/en-us/sections/4407225400849-Opera-GX">
+   Opera GX section
+  </a>
+  on the YoYo Games Helpdesk for instructions on implementing the GXC API Library and working with challenges.
+  
+  
+   The following functions are provided for uploading video recordings with challenges:
+  <ul>
+   <li>
+    <a href="Challenges/gxc_start_movie_recording.htm">
+     gxc_start_movie_recording
+    </a>
+   </li>
+   <li>
+    <a href="Challenges/gxc_stop_movie_recording.htm">
+     gxc_stop_movie_recording
+    </a>
+   </li>
+   <li>
+    <a href="Challenges/gxc_pause_movie_recording.htm">
+     gxc_pause_movie_recording
+    </a>
+   </li>
+   <li>
+    <a href="Challenges/gxc_resume_movie_recording.htm">
+     gxc_resume_movie_recording
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

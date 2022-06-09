@@ -1,0 +1,79 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   gxc_stop_movie_recording
+  </h1>
+  This function is used to stop a GXC recording that was previously started with
+  <span>
+   <a href="gxc_start_movie_recording.htm">
+    gxc_start_movie_recording()
+   </a>
+  </span>
+  . It also submits the recording to the URL specified in the arguments, however the behaviour is different depending on the kind of string specified:
+  <ul>
+   <li>
+    If you specify a file name, the recording will be saved with that name in your Downloads folder
+   </li>
+   <li>
+    If you specify a URL, the recording will be uploaded to that URL
+   </li>
+  </ul>
+  The URL method should be used when the recording needs to be uploaded to GXC, and the file should be saved locally only for checking whether the recording was successful.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">gxc_stop_movie_recording(filename);
+</code></pre>
+  <table>
+   <colgroup>
+    <col/>
+    <col/>
+    <col/>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      filename
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The file name or URL where the recording is to be saved or uploaded
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">gxc_submit_challenge_score(_score, function(_status, _result) {
+    var _uploadUrl = _result.data.gameplayVideoUploadUrl;
+    gxc_stop_movie_recording(_uploadUrl);
+});
+</code></pre>
+  The above code uses the GXC API Library to upload a score to the currently active challenge, and when a response is received in its callback method, it retrieves the upload URL for the video and uploads the recording to it.
+ </body>
+</html>

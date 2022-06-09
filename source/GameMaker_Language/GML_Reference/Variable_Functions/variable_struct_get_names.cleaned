@@ -1,0 +1,70 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   variable_struct_get_names
+  </h1>
+  With this function you can retrieve an array populated with the variable names from a struct. You pass in the struct reference to check, and each entry in the array will be a
+  <b>
+   string
+  </b>
+  of the variable names that the struct contains.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">variable_struct_get_names(struct);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      struct
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Structs.htm">
+        Struct
+       </a>
+      </span>
+     </td>
+     <td>
+      The struct reference to check.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Arrays.htm">
+ Array
+</a>
+(each entry is a string)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var str = "";
+var array = variable_struct_get_names(mystruct);
+show_debug_message("Variables for struct: " + string(array));
+for (var i = 0; i &amp;amp;lt; array_length(array); i++;)
+{
+    str = array[i] + ":" + string(variable_struct_get(mystruct, array[i]));
+    show_debug_message(str);
+}
+</code></pre>
+  The above code will retrieve an array of the variable names for the given struct and then display these along with their values in the debug output.
+ </body>
+</html>

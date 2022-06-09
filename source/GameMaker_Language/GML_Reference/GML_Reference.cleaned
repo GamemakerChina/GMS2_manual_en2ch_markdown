@@ -1,0 +1,152 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <span>
+    GML Code
+   </span>
+   Reference
+  </h1>
+  <span>
+   This section of the manual is a reference guide for the
+  </span>
+  <span>
+   GameMaker
+  </span>
+  <span>
+   Language (GML). You can find all the available functions documented here along with the required arguments and examples of code to show how they can be used. For information on how to use GML please see the
+  </span>
+  <a href="../GML_Overview/GML_Overview.htm">
+   GML Overview
+  </a>
+  <span>
+   section of the manual.
+  </span>
+  <span>
+   NOTE
+  </span>
+  Anywhere the manual has "N/A" as a return value for a function, it means that the function is not meant to return any value as part of its operation. If you try to check for a return value from these functions then you will get the value
+  <span>
+   undefined
+  </span>
+  .
+  <ul>
+   <li>
+    <a href="Variable_Functions/Variable_Functions.htm">
+     Variable Functions
+    </a>
+   </li>
+   <li>
+    <a href="Asset_Management/Asset_Management.htm">
+     Asset Management
+    </a>
+   </li>
+   <li>
+    <a href="General_Game_Control/General_Game_Control.htm">
+     General Game Control
+    </a>
+   </li>
+   <li>
+    <a href="Movement_And_Collisions/Movement_And_Collisions.htm">
+     Movement And Collisions
+    </a>
+   </li>
+   <li>
+    <a href="Drawing/Drawing.htm">
+     Drawing
+    </a>
+   </li>
+   <li>
+    <a href="Cameras_And_Display/Cameras_And_Display.htm">
+     Cameras And Display
+    </a>
+   </li>
+   <li>
+    <a href="Game_Input/Game_Input.htm">
+     Game Input
+    </a>
+   </li>
+   <li>
+    <a href="Data_Structures/Data_Structures.htm">
+     Data Structures
+    </a>
+   </li>
+   <li>
+    <a href="Strings/Strings.htm">
+     Strings
+    </a>
+   </li>
+   <li>
+    <a href="Maths_And_Numbers/Maths_And_Numbers.htm">
+     Maths And Numbers
+    </a>
+   </li>
+   <li>
+    <a href="Time_Sources/Time_Sources.htm">
+     Time Sources
+    </a>
+   </li>
+   <li>
+    <a href="Physics/Physics.htm">
+     Physics
+    </a>
+   </li>
+   <li>
+    <a href="In_App_Purchases/In_App_Purchases.htm">
+     In App Purchases
+    </a>
+   </li>
+   <li>
+    <a href="Asynchronous_Functions/Asynchronous_Functions.htm">
+     Asynchronous Functions
+    </a>
+   </li>
+   <li>
+    <a href="Networking/Networking.htm">
+     Networking
+    </a>
+   </li>
+   <li>
+    <a href="Web_And_HTML5/Web_And_HTML5.htm">
+     Web And HTML5
+    </a>
+   </li>
+   <li>
+    <a href="File_Handling/File_Handling.htm">
+     File Handling
+    </a>
+   </li>
+   <li>
+    <a href="Buffers/Buffers.htm">
+     Buffers
+    </a>
+   </li>
+   <li>
+    <a href="UWP_And_XBox_Live/UWP_And_XBox_Live.htm">
+     UWP And Xbox Live
+    </a>
+   </li>
+   <li>
+    <a href="OS_And_Compiler/OS_And_Compiler.htm">
+     OS And Compiler
+    </a>
+   </li>
+   <li>
+    <a href="Debugging/Debugging.htm">
+     Debugging
+    </a>
+   </li>
+   <li>
+    <a href="Garbage_Collection/Garbage_Collection.htm">
+     Garbage Collection
+    </a>
+   </li>
+   <li>
+    <a href="Time_Sources/Time_Sources.htm">
+     Time Sources
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

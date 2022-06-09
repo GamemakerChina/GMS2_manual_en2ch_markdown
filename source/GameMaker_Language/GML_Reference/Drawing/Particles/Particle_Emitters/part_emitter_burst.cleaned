@@ -1,0 +1,113 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   part_emitter_burst
+  </h1>
+  This function allows you to set an emitter to burst a specific type of particle and is typically used in alarms and destroy events as it is a one off code that creates the number of particles specified all at once following the distribution, shape and position set by the function
+  <a href="part_emitter_region.htm">
+   <span>
+    part_emitter_region()
+   </span>
+  </a>
+  . Should you need the particles to appear every step, you should be using the function
+  <a href="part_emitter_stream.htm">
+   <span>
+    part_emitter_stream()
+   </span>
+  </a>
+  rather than calling this function every step.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">part_emitter_burst(ps, ind, parttype, number);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      ps
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Systems/part_system_create.htm">
+        Particle System ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The particle system that the emitter is in.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      ind
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Emitters/part_emitter_create.htm">
+        Particle Emitter ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the emitter to burst from.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      parttype
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Types/part_type_create.htm">
+        Particle Type ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index (type) of the particles to be created.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      number
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The number of particles to create.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">part_emitter_burst(global. Sname, p_emit1, p1, 30 + irandom(30));
+</code></pre>
+  The above code will burst a random number of particles between 30 and 60 from the chosen emitter.
+ </body>
+</html>

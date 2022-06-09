@@ -1,0 +1,124 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   gif_open
+  </h1>
+  With this function you can create an empty GIF format image, ready to have data added to it. When you call the function, you need to specify the width and height of the GIF (in pixels, and there is no upper limit on size except for available memory), and the function will return the unique ID value used to identify the gift in subsequent functions, or it will return -1 if the gif could not be initialized (for example, if the width/height are too big for the memory available). You may also specify an optional argument to set the "clear colour" for the GIF. This is an RGB value (no alpha component), and will clear the gif to this colour before anything is added to it. If you do not supply a clear colour argument, the default colour of black will be used.
+  
+  
+   Note that when using this function you must call
+  <a href="gif_save.htm">
+   <span>
+    gif_save()
+   </span>
+  </a>
+  to end the creation of the GIF before open another file for recording (so for every
+  <span>
+   gif_open()
+  </span>
+  there must be an accompanying
+  <span>
+   gif_save()
+  </span>
+  ).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">gif_open(width, height, [clear_colour]);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      width
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The width of the gif to create
+     </td>
+    </tr>
+    <tr>
+     <td>
+      height
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The height of the gif to create
+     </td>
+    </tr>
+    <tr>
+     <td>
+      [clear_colour]
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Drawing/Colour_And_Alpha/Colour_And_Alpha.htm">
+        Colour
+       </a>
+      </span>
+     </td>
+     <td>
+      <span>
+       OPTIONAL
+      </span>
+      The colour (RGB) to clear the gif to
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Reference/Cameras_And_Display/gif_open.htm">
+ GIF ID
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if save_gif == true
+{
+    if count == 0
+    {
+        gif_image = gif_open(room_width, room_height);
+    }
+    else if count &amp;amp;lt; 30
+    {
+        gif_add_surface(gif_image, application_surface, 6/100);
+    }
+    else
+    {
+        gif_save(gif_image, "GameCapture.gif");
+        count = 0;
+        save_gif = false;
+    }
+    count++;
+}
+</code></pre>
+  The above code will create a GIF image file with 30 frames taken from the application surface and then save it.
+ </body>
+</html>

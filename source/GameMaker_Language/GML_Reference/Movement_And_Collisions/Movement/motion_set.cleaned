@@ -1,0 +1,84 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   motion_set
+  </h1>
+  This function sets a new direction of movement and a new speed to the instance running the code. Note that this
+  <i>
+   does not
+  </i>
+  add to the instances current speed and direction (for that you would use
+  <a href="motion_add.htm">
+   <span>
+    motion_add()
+   </span>
+  </a>
+  ) but rather forces it to the new settings.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">motion_set(dir, speed);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      dir
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The new direction.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      speed
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The new speed.`
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if irandom(9) = 1
+{
+    motion_set(random(360), 1 + random(3));
+}
+</code></pre>
+  This above code will make the instance change speed and direction at random intervals.
+ </body>
+</html>

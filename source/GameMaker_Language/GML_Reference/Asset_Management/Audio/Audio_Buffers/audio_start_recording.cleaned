@@ -1,0 +1,123 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   audio_start_recording
+  </h1>
+  This function will start recording audio from the recorder source indexed. You can get the number of recorder sources using the function
+  <a href="audio_get_recorder_count.htm">
+   <span>
+    audio_get_recorder_count()
+   </span>
+  </a>
+  , and once you start recording the audio will be stored in a temporary buffer and start triggering an
+  <a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Audio_Recording.htm">
+   Audio Recording Asynchronous Event
+  </a>
+  . This event is triggered every step that recording takes place and will create the special
+  <a href="../../../Data_Structures/DS_Maps/DS_Maps.htm">
+   DS map
+  </a>
+  in the variable
+  <a href="../../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">
+   <span>
+    async_load
+   </span>
+  </a>
+  with the following key/value pairs:
+  <ul>
+   <li>
+    "
+    <strong>
+     buffer_id
+    </strong>
+    " - the ID of the temporary buffer you can use to retrieve the audio data
+   </li>
+   <li>
+    "
+    <strong>
+     channel_index
+    </strong>
+    " - the recording channel index (as returned by the function) this data came from
+   </li>
+   <li>
+    "
+    <strong>
+     data_len
+    </strong>
+    " - the length of data (in bytes) you've received
+   </li>
+  </ul>
+  Note that after the asynchronous event has been triggered, the audio in the temporary buffer will be wiped, so you should be copying it's data into a custom buffer that you have previously created.
+  <b>
+   <span>
+    NOTE
+   </span>
+  </b>
+  Most platforms
+  <b>
+   except HTML5
+  </b>
+  support recording audio in some form, but that does not mean that all devices will permit it, even if the platform does, so you should always check that the
+  <span>
+   <a href="audio_get_recorder_count.htm">
+    <span>
+     audio_get_recorder_count()
+    </span>
+   </a>
+  </span>
+  function returns a value greater than 0 to verify that recording devices are available before using the rest of the recording functions.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">audio_start_recording(recorder_index);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      recorder_index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the recorder source to use.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Reference/Buffers/buffer_create.htm">
+ Buffer ID
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">audio_record = audio_start_recording(0);
+</code></pre>
+  The above code starts recording from the recorder source 0, storing the channel index of the recording in the variable "audio_record" for use in the asynchronous
+  <a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Audio_Recording.htm">
+   Audio Recording
+  </a>
+  event.
+ </body>
+</html>

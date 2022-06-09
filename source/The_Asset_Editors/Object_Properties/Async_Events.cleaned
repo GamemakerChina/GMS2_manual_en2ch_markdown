@@ -1,0 +1,351 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   The Async Events
+  </h1>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Objects_Async.png"/><br/>
+  An Asynchronous Event is one that is fired off when
+  <span>
+   GameMaker
+  </span>
+  receives a
+  <a>
+   callback
+  </a>
+  from some external source, which can be from the web or from the device running your game. Basically,
+    you tell
+  <span>
+   GameMaker
+  </span>
+  to do something - like load an image - and it'll start to do this but continue doing whatever it else it has to do meanwhile its working. Then, when the request has been completed, a callback will be sent to GameMaker
+    Studio 2 and any Asynchronous Events defined for that type of callback will be fired.
+  
+  
+   Please note that the Asynchronous Events are fired for
+  <em>
+   all
+  </em>
+  instances that have them, much like the keyboard events, so you can - for example - do an
+  <span>
+   http_get()
+  </span>
+  call in one instance, yet have the
+  <strong>
+   Asynchronous HTTP Event
+  </strong>
+  in another to deal with the callback.
+  <strong>
+   NOTE
+  </strong>
+  : You should be aware that due to XSS protection in browsers, requests and attempts to load resources from across domains are blocked and may appear to return blank results when using any of the following events.
+  
+  
+   There are various types of events associated with the Asynchronous event category, and they are all explained in the sections below:
+  <strong>
+   NOTE
+  </strong>
+  : The variable
+  <a href="../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">
+   <span>
+    <span>
+     async_load
+    </span>
+   </span>
+  </a>
+  which is mentioned
+    in the following sections is
+  <strong>
+   only valid in these events
+  </strong>
+  , as the DS map that it points to is created at the start of the event, then deleted again at the end, with this variable being reset to a value of -1 at all other times.
+  <ul>
+   <li>
+    <a href="Async_Events/Audio_Playback.htm">
+     Audio Playback
+    </a>
+   </li>
+   <li>
+    <a href="Async_Events/Audio_Recording.htm">
+     Audio Recording
+    </a>
+   </li>
+   <li>
+    <a href="Async_Events/Cloud.htm">
+     Cloud
+    </a>
+   </li>
+   <li>
+    <a href="Async_Events/Dialog.htm">
+     Dialog
+    </a>
+   </li>
+   <li>
+    <a href="Async_Events/HTTP.htm">
+     HTTP
+    </a>
+   </li>
+   <li>
+    <a href="Async_Events/IAP.htm">
+     In App Purchase
+    </a>
+   </li>
+   <li>
+    <a href="Async_Events/Image_Loaded.htm">
+     Image Loaded
+    </a>
+   </li>
+   <li>
+    <a href="Async_Events/Networking.htm">
+     Networking
+    </a>
+   </li>
+   <li>
+    <a href="Async_Events/Push_Notifications.htm">
+     Push Notifications
+    </a>
+   </li>
+   <li>
+    <a href="Async_Events/Save_Load.htm">
+     Save / Load
+    </a>
+   </li>
+   <li>
+    <a href="Async_Events/Social.htm">
+     Social
+    </a>
+   </li>
+   <li>
+    <a href="Async_Events/Steam.htm">
+     Steam
+    </a>
+   </li>
+   <li>
+    <a href="Async_Events/System.htm">
+     System
+    </a>
+   </li>
+  </ul>
+  It may be that if you are making extensions for different platforms you would like to target one or more of these asynchronous events for callbacks from your extension functions. To that end, you can find a table below that outlines each of the internal
+    event name constants and their corresponding ID value. Note that these event constants are
+  <b>
+   only
+  </b>
+  for use with extensions!
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Constant
+     </th>
+     <th>
+      Value
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <b>
+       EVENT_OTHER_WEB_IMAGE_LOAD
+      </b>
+     </td>
+     <td>
+      <span>
+       60
+      </span>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       <b>
+        EVENT_OTHER_WEB_SOUND_LOAD
+       </b>
+      </span>
+     </td>
+     <td>
+      <span>
+       61
+      </span>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       <b>
+        EVENT_OTHER_WEB_ASYNC
+       </b>
+      </span>
+     </td>
+     <td>
+      <span>
+       62
+      </span>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       <b>
+        EVENT_OTHER_DIALOG_ASYNC
+       </b>
+      </span>
+     </td>
+     <td>
+      <span>
+       63
+      </span>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       <b>
+        EVENT_OTHER_WEB_IAP
+       </b>
+      </span>
+     </td>
+     <td>
+      <span>
+       66
+      </span>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       <b>
+        EVENT_OTHER_WEB_CLOUD
+       </b>
+      </span>
+     </td>
+     <td>
+      <span>
+       67
+      </span>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       <b>
+        EVENT_OTHER_WEB_NETWORKING
+       </b>
+      </span>
+     </td>
+     <td>
+      <span>
+       68
+      </span>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       <b>
+        EVENT_OTHER_WEB_STEAM
+       </b>
+      </span>
+     </td>
+     <td>
+      69
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       <b>
+        EVENT_OTHER_SOCIAL
+       </b>
+      </span>
+     </td>
+     <td>
+      <span>
+       70
+      </span>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       <b>
+        EVENT_OTHER_PUSH_NOTIFICATION
+       </b>
+      </span>
+     </td>
+     <td>
+      <span>
+       71
+      </span>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       <b>
+        EVENT_OTHER_ASYNC_SAVE_LOAD
+       </b>
+      </span>
+     </td>
+     <td>
+      <span>
+       72
+      </span>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       <b>
+        EVENT_OTHER_AUDIO_RECORDING
+       </b>
+      </span>
+     </td>
+     <td>
+      <span>
+       73
+      </span>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       <b>
+        EVENT_OTHER_AUDIO_PLAYBACK
+       </b>
+      </span>
+     </td>
+     <td>
+      <span>
+       74
+      </span>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       <b>
+        EVENT_OTHER_SYSTEM_EVENT
+       </b>
+      </span>
+     </td>
+     <td>
+      <span>
+       75
+      </span>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <strong>
+       EVENT_OTHER_MESSAGE_EVENT
+      </strong>
+     </td>
+     <td>
+      76
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </body>
+</html>

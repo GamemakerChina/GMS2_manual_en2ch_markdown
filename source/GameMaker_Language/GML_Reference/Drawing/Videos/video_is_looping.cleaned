@@ -1,0 +1,47 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   video_is_looping
+  </h1>
+  This function returns whether the currently loaded video is set to loop (
+  <span>
+   true
+  </span>
+  ) or not (
+  <span>
+   false
+  </span>
+  ). You can set a video to loop by calling
+  <span>
+   <a href="video_enable_loop.htm">
+    video_enable_loop()
+   </a>
+  </span>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">video_is_looping();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if (video_is_looping()) {
+    obj_player.control_enabled = false;
+}
+</code></pre>
+  The above code checks if the currently loaded video is looping, and in that case, disables the player's controls, by setting a custom instance variable to
+  <span>
+   false
+  </span>
+  .
+ </body>
+</html>

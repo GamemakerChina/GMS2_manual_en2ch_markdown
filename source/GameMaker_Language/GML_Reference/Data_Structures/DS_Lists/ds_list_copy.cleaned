@@ -1,0 +1,88 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   ds_list_copy
+  </h1>
+  With this function you can copy the contents of one list into another. Both lists must have been created previously and if the list being copied
+  <i>
+   to
+  </i>
+  already has information within it, this list will be cleared first. The end result is two independent lists which contain the same information.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">ds_list_copy( id, source );
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Lists/ds_list_create.htm">
+        DS List ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The id of the list being copied
+      <i>
+       to
+      </i>
+      .
+     </td>
+    </tr>
+    <tr>
+     <td>
+      source
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Lists/ds_list_create.htm">
+        DS List ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The id of the list to be copied
+      <i>
+       from
+      </i>
+      .
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if !ds_list_empty(main_list)
+{
+    old_list = ds_list_create();
+    ds_list_copy(old_list, main_list);
+    ds_list_clear(main_list);
+}
+</code></pre>
+  The above code will check a DS list to see if it is empty. If it is not empty it is copied into another DS list (which has been created previously) and then the original list is cleared.
+ </body>
+</html>

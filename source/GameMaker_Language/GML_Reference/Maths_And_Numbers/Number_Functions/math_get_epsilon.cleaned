@@ -1,0 +1,37 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   math_get_epsilon
+  </h1>
+  This function will return the current epsilon value for the target platform. For more information on epsilon, please see the function
+  <a href="math_set_epsilon.htm">
+   <span>
+    math_set_epsilon()
+   </span>
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">math_get_epsilon();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var e = math_get_epsilon();
+if e != 0.000001
+{
+    math_set_epsilon(0.000001);
+}
+</code></pre>
+  This will retrieve the current epsilon value and store it in a local variable, which is then checked and a new epsilon set if required.
+ </body>
+</html>

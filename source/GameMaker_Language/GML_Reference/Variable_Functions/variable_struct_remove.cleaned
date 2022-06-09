@@ -1,0 +1,76 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   variable_struct_remove
+  </h1>
+  <span>
+   With this function you can remove a variable from a struct. You supply the struct ID to remove the variable from and the string name of the variable to be removed.
+  </span>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">variable_struct_remove(struct, name);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      struct
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Structs.htm">
+        Struct
+       </a>
+      </span>
+     </td>
+     <td>
+      The struct reference to remove the variable from
+     </td>
+    </tr>
+    <tr>
+     <td>
+      name
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The name of the variable to remove (as a string)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if variable_struct_exists(mystruct, "shields")
+{
+    variable_struct_remove(mystruct, "shields");
+}
+</code></pre>
+  The above code will check to see if the given variable exists in the given struct and if it does then it is removed.
+ </body>
+</html>

@@ -1,0 +1,92 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/i_Drawing_Draw_Sprite.png"/><br/>
+   Draw Sprite
+  </h1>
+  This action will draw a sprite somewhere in the room. You specify the sprite, the position (either an absolute position within the room, or a relative position to the instance doing the drawing) and the animation frame of the sprite, if it has multiple
+    frames (note that image frames are numbered from 0 upwards). If you have an animated sprite and you want it to draw the frames as if it was assigned to the object, then use -1 for the frame index or the built in instance variable
+  <span>
+   image_index
+  </span>
+  ,
+    but note that if the instance has no sprite assigned then it will not animate, and if the sprite assigned has a different number of frames to the one being drawn then the sprite will be drawn with extra frames or missed frames.
+  <b>
+   IMPORTANT:
+  </b>
+  This action will not draw the sprite transformed, even if you have changed the image blend or scale. For that see the action
+  <a href="Draw_Sprite_Transformed.htm">
+   Draw Sprite Transformed
+  </a>
+  .
+  <b>
+  </b>
+  <b>
+   NOTE
+  </b>
+  : This action is only for use in the various
+  <a href="../../../The_Asset_Editors/Object_Properties/Draw_Events.htm">
+   Draw Events
+  </a>
+  , and will not draw anything if used elsewhere.
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/a_Drawing_Draw_Sprite.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Sprite
+     </td>
+     <td>
+      The sprite to draw
+     </td>
+    </tr>
+    <tr>
+     <td>
+      x
+     </td>
+     <td>
+      The x position to draw at
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y
+     </td>
+     <td>
+      The y position to draw at
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Frame Index
+     </td>
+     <td>
+      The frame index to draw
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/e_Drawing_Draw_Self.png"/><br/>
+  The above action block code draws a "shadow" sprite at the same relative position as the
+    instance, then draws the instance sprite over the top.
+ </body>
+</html>

@@ -1,0 +1,62 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   part_type_destroy
+  </h1>
+  With this function you can remove the specified particle type from the game. When you use this function, all particles of the given type will disappear from the room and the particle itself is removed form memory, so this function should be used only when you no longer need the particle.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">part_type_destroy(ind);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      ind
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Types/part_type_create.htm">
+        Particle Type ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the particle type to destroy.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if part_particles_count(smoke_sys) = 0
+{
+    part_type_destroy(smoke_part);
+    part_system_destroy(smoke_sys);
+    instance_destroy();
+}
+else alarm[0] = 1;
+</code></pre>
+  The above code checks a particle system to see if any particles are currently visible in the room and if not, the particles, the system and the instance are destroyed.
+ </body>
+</html>

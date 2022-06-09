@@ -1,0 +1,125 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   working_directory
+  </h1>
+  <span>
+   Working_directory
+  </span>
+  can actually return two different values depending on what you are using it for.
+  
+  
+   If you are writing a file to disk,
+  <span>
+   working_directory
+  </span>
+  points to the area of local storage that is reserved for your game on the target device (in Windows this is "
+  <span>
+   %LOCALAPPDATA%/gamedir/
+  </span>
+  " where the "gamedir" is the directory with the name of your game).
+  
+  
+   However, when reading from disk,
+  <span>
+   working_directory
+  </span>
+  can be
+  <i>
+   either
+  </i>
+  the local storage (
+  <span>
+   <a href="../../General_Game_Control/game_save_id.htm">
+    game_save_id
+   </a>
+  </span>
+  )
+  <i>
+   or
+  </i>
+  the area where the
+  <a href="../../../../Settings/Included_Files.htm#h">
+   Included Files
+  </a>
+  are stored.
+  <span>
+   NOTE
+  </span>
+  The
+  <span>
+   working_directory
+  </span>
+  variable will return the path
+  <b>
+   including
+  </b>
+  the final backslash.
+  
+  
+   For example, if you have a default
+  <span>
+   *.txt
+  </span>
+  file included with your game and read it into memory using
+  <span>
+   working_directory
+  </span>
+  , then that file will be taken from the area where the Included Files are stored. If you then choose to write that information to a text file using
+  <span>
+   working_directory
+  </span>
+  , this will write the file to the target platform's local storage, where it will be read from the next time unless you instruct
+  <span>
+   GameMaker
+  </span>
+  to delete the file, in which case
+  <span>
+   working_directory
+  </span>
+  will once more point to the area where the Included Files are stored.
+  
+  
+   It is worth noting that
+  <em>
+   in general
+  </em>
+  you do not need to use this and simply specify the file name itself (plus any additional path information), which is sufficient. For example, this:
+  <pre><code class="language-gml">file_text_open_read(working_directory + "my_file.txt");
+</code></pre>
+  would be better done as this:
+  <pre><code class="language-gml">file_text_open_read("my_file.txt");
+</code></pre>
+  <span>
+   WARNING
+  </span>
+  This function may not work as you expect due to
+  <span>
+   GameMaker
+  </span>
+  being sandboxed! Please see the section on the
+  <a href="../../../../Additional_Information/The_File_System.htm">
+   File System
+  </a>
+  for more information.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">working_directory
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">ini_open(working_directory + "temp_ini.ini");
+</code></pre>
+  This will open an ini file from the working directory of the game (creating it if it does not already exist). This could be the local storage, or the area where the included files are depending on whether the file being looked for exists in either place.
+ </body>
+</html>

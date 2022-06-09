@@ -1,0 +1,206 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Mouse And Keyboard Action Library
+  </h1>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/Lib_KeyboardMouse.png"/><br/>
+  <span>
+   The
+  </span>
+  <b>
+   Mouse and Keyboard
+  </b>
+  <span>
+   action library is where you can find the actions required to poll and process input from the keyboard or mouse devices. The available actions are all listed below:
+  </span>
+  <table>
+   <tbody>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/i_KeyboardMouse_Pressed.png"/><br/>
+     </td>
+     <td>
+      <a href="If_Mouse_Pressed.htm">
+       If Mouse Pressed
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/i_KeyboardMouse_Down.png"/><br/>
+     </td>
+     <td>
+      <a href="If_Mouse_Down.htm">
+       If Mouse Down
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/i_KeyboardMouse_Released.png"/><br/>
+     </td>
+     <td>
+      <a href="If_Mouse_Released.htm">
+       If Mouse Released
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/i_KeyboardMouse_KeyPressed.png"/><br/>
+     </td>
+     <td>
+      <a href="If_Key_Pressed.htm">
+       If Key Pressed
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/i_KeyboardMouse_KeyDown.png"/><br/>
+     </td>
+     <td>
+      <a href="If_Key_Down.htm">
+       If Key Down
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/i_KeyboardMouse_KeyReleased.png"/><br/>
+     </td>
+     <td>
+      <a href="If_Key_Released.htm">
+       If Key Released
+      </a>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  The rest of the actions here refer to the
+  <b>
+   virtual keyboard
+  </b>
+  . If you require text or numeric input in your game on a touchscreen device, then you can use the virtual keyboard actions provided to use the device OS keyboard. These actions will call up or hide the OS keyboard and accept input from it just the same as a physical keyboard, so the regular
+  <span>
+   GameMaker
+  </span>
+  keyboard actions should all work with virtual keyboards (for example, the "If Key Released" action), and any input from the virtual keyboard will be stored in the different keyboard variables, like
+  <a href="../../../GameMaker_Language/GML_Reference/Game_Input/Keyboard_Input/keyboard_string.htm">
+   <span>
+    keyboard_string
+   </span>
+  </a>
+  or
+  <a href="../../../GameMaker_Language/GML_Reference/Game_Input/Keyboard_Input/keyboard_lastchar.htm">
+   <span>
+    keyboard_last_char
+   </span>
+  </a>
+  , etc...).
+  
+  
+   Opening or closing the virtual keyboard will generate
+  <a href="../../../The_Asset_Editors/Object_Properties/Async_Events.htm">
+   System Asynchronous Events
+  </a>
+  , in which the
+  <span>
+   <a href="../../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">
+    async_load
+   </a>
+  </span>
+  <a href="../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">
+   DS map
+  </a>
+  will be populated with the following key/value pairs:
+  <ul>
+   <li>
+    "
+    <b>
+     event_type
+    </b>
+    " - the type of system event received, which will be "
+    <b>
+     virtual keyboard status
+    </b>
+    " for virtual keyboards.
+   </li>
+   <li>
+    "
+    <b>
+     screen_height
+    </b>
+    " - the height of the virtual keyboard (in pixels). This will be 0 if the keyboard is invisible.
+   </li>
+   <li>
+    "
+    <b>
+     keyboard_status
+    </b>
+    " - the current status of the keyboard, returned as one of the following strings:
+    <ul>
+     <li>
+      "hiding"
+     </li>
+     <li>
+      "hidden"
+     </li>
+     <li>
+      "showing"
+     </li>
+     <li>
+      "visible"
+     </li>
+    </ul>
+   </li>
+  </ul>
+  The available virtual keyboard actions are:
+  <table>
+   <tbody>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/i_VirtualKeyboard_Show.png"/><br/>
+     </td>
+     <td>
+      <a href="Show_Virtual_Keyboard.htm">
+       Show Virtual Keyboard
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/i_VirtualKeyboard_Hide.png"/><br/>
+     </td>
+     <td>
+      <a href="Hide_Virtual_Keyboard.htm">
+       Hide Virtual Keyboard
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/i_VirtualKeyboard_GetHeight.png"/><br/>
+     </td>
+     <td>
+      <a href="Get_Virtual_Keyboard_Height.htm">
+       Get Virtual Keyboard Height
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/i_VirtualKeyboard_IfShowing.png"/><br/>
+     </td>
+     <td>
+      <a href="If_Virtual_Keyboard_Is_Showing.htm">
+       If Virtual Keyboard Is Showing
+      </a>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </body>
+</html>

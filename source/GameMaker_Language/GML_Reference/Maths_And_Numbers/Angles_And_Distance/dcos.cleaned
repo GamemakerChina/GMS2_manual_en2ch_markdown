@@ -1,0 +1,65 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   dcos
+  </h1>
+  In a right angled triangle
+  <i>
+   cos(val) = Adjacent / Hypotenuse
+  </i>
+  where val is one of the three angles. This function will always return a number between 1 and -1.
+  <strong>
+   NOTE
+  </strong>
+  : This function takes a value in degrees, not radians.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">dcos(val);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      val
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The angle (in degrees) to return the cosine of.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">val = dcos(45);
+</code></pre>
+  This will set "val" to 0.71.
+ </body>
+</html>

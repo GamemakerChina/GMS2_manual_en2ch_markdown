@@ -1,0 +1,95 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   surface_getpixel_ext
+  </h1>
+  With this function you can get the full
+  <b>
+   abgr 32bit
+  </b>
+  value of any pixel of a (previously created) surface.
+  <b>
+   NOTE
+  </b>
+  : This function will have a huge performance hit and so should only be used when absolutely necessary.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">surface_getpixel_ext(surface_id, x, y);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      surface_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Drawing/Surfaces/surface_create.htm">
+        Surface ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The ID of the surface to use.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      x
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x coordinate of the pixel to check
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y coordinate of the pixel to check
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">col = surface_getpixel_ext(mouse_x, mouse_y); alpha = (col &amp;amp;gt;&amp;amp;gt; 24) &amp;amp;amp; 255; blue = (col &amp;amp;gt;&amp;amp;gt; 16) &amp;amp;amp; 255; green = (col &amp;amp;gt;&amp;amp;gt; 8) &amp;amp;amp; 255; red = col &amp;amp;amp; 255;
+</code></pre>
+  The above code will get the 32bit colour value at the position of the mouse and then split it into its component values, storing them in variables.
+ </body>
+</html>

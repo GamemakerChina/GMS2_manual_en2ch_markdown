@@ -1,0 +1,40 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   mouse_lastbutton
+  </h1>
+  This variable returns the last mouse button that was pressed and can return any of the special
+  <a href="Mouse_Input.htm">
+   mouse constants
+  </a>
+  except
+  <span>
+   mb_any
+  </span>
+  (you may also set this variable to one of the constants).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">mouse_lastbutton;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Reference/Game_Input/Mouse_Input/mouse_check_button.htm">
+ Mouse Button Constant
+</a>
+(except mb_any)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if mouse_lastbutton = mb_left
+{
+    x -= 1;
+}
+</code></pre>
+  This moves the current instance left if the last button pressed was the left mouse button.
+ </body>
+</html>

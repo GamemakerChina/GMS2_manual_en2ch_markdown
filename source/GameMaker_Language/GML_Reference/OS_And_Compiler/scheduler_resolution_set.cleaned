@@ -1,0 +1,79 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   scheduler_resolution_set
+  </h1>
+  This function is used to change the resolution of the Windows thread scheduler. The resolution value supplied in the argument needs to be in
+  <strong>
+   milliseconds
+  </strong>
+  .
+  
+  
+   By default,
+  <span>
+   GameMaker
+  </span>
+  uses a resolution of 1 millisecond, which is the smallest resolution allowed and gives the best performance. Changing the resolution to a higher value may affect performance negatively,
+    but it may also reduce power consumption.
+  
+  
+   You can supply -1 as the argument to revert the resolution to its default value (as set by Windows). Note that changing the scheduler's resolution will impact all processes running at the same time as your game.
+  <strong>
+   NOTE
+  </strong>
+  : This function is for
+  <strong>
+   Windows
+  </strong>
+  only.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">scheduler_resolution_set(milliseconds);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      milliseconds
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The new resolution value (in milliseconds) or -1 for default
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">scheduler_resolution_set(2);
+</code></pre>
+  This example sets the resolution of the Windows thread scheduler to 2 milliseconds.
+ </body>
+</html>

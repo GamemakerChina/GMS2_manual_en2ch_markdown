@@ -1,0 +1,81 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Audio Synchronisation
+  </h1>
+  The audio sync group functions let you play multiple sounds that start at exactly the same time and stay in sync (on a per sample level). This enables you to (for example) add various tracks for a single song and then fade in and out sections without having to worry about whether there will be any delay between them. Note that these functions currently only work with
+  <i>
+   compressed
+  </i>
+  audio, ie.
+  <span>
+   *.ogg
+  </span>
+  and
+  <span>
+   *.mp3
+  </span>
+  format files.
+  <b>
+   NOTE
+  </b>
+  : This functionality is not available for the HTML5 target platform.
+  
+  
+   The following functions exist to deal with synchronising audio tracks:
+  <ul>
+   <li>
+    <a href="audio_create_sync_group.htm">
+     audio_create_sync_group
+    </a>
+   </li>
+   <li>
+    <a href="audio_play_in_sync_group.htm">
+     audio_play_in_sync_group
+    </a>
+   </li>
+   <li>
+    <a href="audio_start_sync_group.htm">
+     audio_start_sync_group
+    </a>
+   </li>
+   <li>
+    <a href="audio_stop_sync_group.htm">
+     audio_stop_sync_group
+    </a>
+   </li>
+   <li>
+    <a href="audio_pause_sync_group.htm">
+     audio_pause_sync_group
+    </a>
+   </li>
+   <li>
+    <a href="audio_resume_sync_group.htm">
+     audio_resume_sync_group
+    </a>
+   </li>
+   <li>
+    <a href="audio_sync_group_get_track_pos.htm">
+     audio_sync_group_get_track_pos
+    </a>
+   </li>
+   <li>
+    <a href="audio_destroy_sync_group.htm">
+     audio_destroy_sync_group
+    </a>
+   </li>
+   <li>
+    <a href="audio_sync_group_debug.htm">
+     audio_sync_group_debug
+    </a>
+   </li>
+   <li>
+    <a href="audio_sync_group_is_playing.htm">
+     audio_sync_group_is_playing
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

@@ -1,0 +1,156 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   continue
+  </h1>
+  The
+  <span>
+   continue
+  </span>
+  statement has the following basic syntax:
+  <pre><code class="language-gml">continue;
+</code></pre>
+  If used inside of a statement that forms a loop (
+  <a href="for.htm">
+   <span>
+    for
+   </span>
+  </a>
+  ,
+  <a href="repeat.htm">
+   <span>
+    repeat
+   </span>
+  </a>
+  ,
+  <a href="while.htm">
+   <span>
+    while
+   </span>
+  </a>
+  or
+  <a href="do___until.htm">
+   <span>
+    do / until
+   </span>
+  </a>
+  ), it will immediately end the current
+  <a>
+   iteration
+  </a>
+  and jump back to the beginning of the loop starting a new iteration and omitting any code that comes after the
+  <span>
+   continue
+  </span>
+  within the loop. It can also be used within the
+  <a href="with.htm">
+   <span>
+    with
+   </span>
+  </a>
+  statement, where it will cause the code to skip to the next instance and run again. Note that if
+  <span>
+   continue
+  </span>
+  is used outside of any of these contexts it will give an error.
+  
+  
+   Below is an example of use in a
+  <span>
+   for
+  </span>
+  loop:
+  <pre><code class="language-gml">var _val = 0;
+
+for (var i = 0; i &amp;amp;lt; 10; i += 1)
+{
+    if (val_array[i] &amp;amp;lt;= 0)
+    {
+        continue;
+    }
+    _val += val_array[i];
+}
+
+draw_text(32, 32, "Positive Values Total = " + string(_val));
+</code></pre>
+  Below is an example of use in a
+  <span>
+   while
+  </span>
+  loop:
+  <pre><code class="language-gml">var file = file_text_open_read("Game_Data.txt");
+var _num = 0;
+
+while (!file_text_eof(file))
+{
+    var _s = file_text_readln(file);
+    if (_s == "")
+    {
+        continue;
+    }
+    str[num++] = _s;
+}
+
+file_text_close(file);
+</code></pre>
+  Below is an example of use in a
+  <span>
+   do / until
+  </span>
+  loop:
+  <pre><code class="language-gml">do
+{
+    var _x = random(room_width);
+    var _y = random(room_height);
+
+    if (instance_position(_x, y, obj_Enemy)
+    {
+        continue;
+    }
+
+    instance_create_layer(_x, _y, "Instances", obj_Enemy);
+}
+until (instance_count(obj_Enemy) &amp;amp;gt;= 10);
+</code></pre>
+  Below you can find an example of use in a
+  <span>
+   repeat
+  </span>
+  loop:
+  <pre><code class="language-gml">repeat(10)
+{   
+    var _x = random(room_width);
+    var _y = random(room_height);
+
+    if (instance_position(_x, y, obj_Enemy)
+    {
+        continue;
+    }
+
+    instance_create_layer(_x, _y, "Instances", obj_Enemy);
+}
+</code></pre>
+  Finally, an example of use in a
+  <span>
+   with
+  </span>
+  statement:
+  <pre><code class="language-gml">with (obj_Enemy_Parent)
+{
+    if (object_index == obj_Enemy_InDestructible)
+    {
+        continue;
+    }
+
+    hp -= 100;
+
+    if (hp &amp;amp;lt;= 0)
+    {
+        instance_destroy();
+    }
+}
+</code></pre>
+ </body>
+</html>

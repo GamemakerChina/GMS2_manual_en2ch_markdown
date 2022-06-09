@@ -1,0 +1,33 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   view_enabled
+  </h1>
+  This variable controls whether any view ports that are visible within the room are enabled or not. If you have view ports set to visible and then disable this option, the whole room will be drawn to the screen scaled to the window size instead of the different cameras being drawn through the view ports.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">view_enabled;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a>
+(true: enabled, false: disabled)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if !view_enabled
+{
+    view_visible[0] = true;
+    view_enabled = true;
+}
+</code></pre>
+  The above code checks to see if views are enabled for the room, and if they are not, it makes sure that view port[0] is visible and then enables views for the room.
+ </body>
+</html>

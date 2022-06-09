@@ -1,0 +1,66 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   sqrt
+  </h1>
+  If you multiply a number with itself, you get the square of that number, but sometimes you want to do the reverse and get the square root of a number. So to find what number has been multiplied with itself to get any given
+  <i>
+   positive
+  </i>
+  value we use
+    this function. For example:
+  <span>
+   sqrt(9)
+  </span>
+  will return 3 since 3*3=9.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">sqrt(val);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      val
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The number to get the square root of.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">num = sqrt(exp);
+</code></pre>
+  The above code will set the variable "num" to hold the square root of the value contained in "exp".
+ </body>
+</html>

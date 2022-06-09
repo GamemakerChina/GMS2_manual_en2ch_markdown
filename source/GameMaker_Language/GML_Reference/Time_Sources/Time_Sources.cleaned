@@ -1,0 +1,279 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Time Sources
+  </h1>
+  A "
+  <span>
+   Time Source
+  </span>
+  " is a custom timer you create. It runs for a given period of time, and at the end, it expires.
+   
+   
+    A
+  <span>
+   Time Source
+  </span>
+  (TS) has the ability to call a custom method ("callback") on expiring.
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/GML/Reference/Time_Sources/time_sources_flow.png"/><br/>
+  It's also able to repeat a certain of amount of times, or forever. Each repetition of a
+  <span>
+   Time Source
+  </span>
+  is known as a "rep".
+  <h2>
+   How to Use Time Sources?
+  </h2>
+  Create and start a
+  <span>
+   Time Source
+  </span>
+  that calls a custom method:
+  <ul>
+   <li>
+    Call
+    <a href="time_source_create.htm">
+     <span>
+      time_source_create()
+     </span>
+    </a>
+    /
+    <a href="../../../Drag_And_Drop/Drag_And_Drop_Reference/Time_Sources/Create_Time_Source.htm">
+     Create Time Source
+    </a>
+    to create a
+    <span>
+     Time Source
+    </span>
+    <ul>
+     <li>
+      Specify whether this inherits from the Global
+      <span>
+       Time Source
+      </span>
+      , the Game
+      <span>
+       Time Source
+      </span>
+      or a custom
+      <span>
+       Time Source
+      </span>
+     </li>
+     <li>
+      Specify the period of time it runs for, and the units used (seconds or frames)
+     </li>
+     <li>
+      Specify a custom method, with an argument array to pass into that method
+     </li>
+     <li>
+      Optionally, specify the number of times it should repeat
+      <ul>
+       <li>
+        By default it runs only once
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li>
+    Call
+    <a href="time_source_start.htm">
+     <span>
+      time_source_start()
+     </span>
+    </a>
+    /
+    <a href="../../../Drag_And_Drop/Drag_And_Drop_Reference/Time_Sources/Start_Time_Source.htm">
+     Start Time Source
+    </a>
+    to start that
+    <span>
+     Time Source
+    </span>
+    immediately, or call it later when you need it to start
+   </li>
+  </ul>
+  Doing this will cause the
+  <span>
+   Time Source
+  </span>
+  to run, and after the specified period, it will expire and call your specified method.
+  <h2>
+   Built-In Time Sources
+  </h2>
+  A
+  <span>
+   Time Source
+  </span>
+  can inherit from either of the two built-in
+  <span>
+   Time Source
+  </span>
+  s, or from a custom
+  <span>
+   Time Source
+  </span>
+  .
+   
+   
+    See:
+  <a href="Built_In_Time_Sources.htm">
+   Built-In Time Sources
+  </a>
+  <h2>
+   Function List
+  </h2>
+  The following functions are used to create and modify
+  <span>
+   Time Source
+  </span>
+  s:
+  <ul>
+   <li>
+    <a href="time_source_create.htm">
+     time_source_create
+    </a>
+   </li>
+   <li>
+    <a href="time_source_destroy.htm">
+     time_source_destroy
+    </a>
+   </li>
+   <li>
+    <a href="time_source_start.htm">
+     time_source_start
+    </a>
+   </li>
+   <li>
+    <a href="time_source_stop.htm">
+     time_source_stop
+    </a>
+   </li>
+   <li>
+    <a href="time_source_pause.htm">
+     time_source_pause
+    </a>
+   </li>
+   <li>
+    <a href="time_source_reconfigure.htm">
+     time_source_reconfigure
+    </a>
+   </li>
+   <li>
+    <a href="time_source_reset.htm">
+     time_source_reset
+    </a>
+   </li>
+   <li>
+    <a href="time_source_get_children.htm">
+     time_source_get_children
+    </a>
+   </li>
+   <li>
+    <a href="time_source_get_parent.htm">
+     time_source_get_parent
+    </a>
+   </li>
+   <li>
+    <a href="time_source_get_period.htm">
+     time_source_get_period
+    </a>
+   </li>
+   <li>
+    <a href="time_source_get_reps_completed.htm">
+     time_source_get_reps_completed
+    </a>
+   </li>
+   <li>
+    <a href="time_source_get_reps_remaining.htm">
+     time_source_get_reps_remaining
+    </a>
+   </li>
+   <li>
+    <a href="time_source_get_state.htm">
+     time_source_get_state
+    </a>
+   </li>
+   <li>
+    <a href="time_source_get_time_remaining.htm">
+     time_source_get_time_remaining
+    </a>
+   </li>
+   <li>
+    <a href="time_source_get_units.htm">
+     time_source_get_units
+    </a>
+   </li>
+   <li>
+    <a href="time_source_exists.htm">
+     time_source_exists
+    </a>
+   </li>
+  </ul>
+  Each
+  <span>
+   get_*
+  </span>
+  function will return
+  <span>
+   undefined
+  </span>
+  if the specified
+  <span>
+   Time Source
+  </span>
+  doesn't exist.
+   
+   
+    The following helper functions are provided for converting time periods:
+  <ul>
+   <li>
+    <a href="time_seconds_to_bpm.htm">
+     time_seconds_to_bpm
+    </a>
+   </li>
+   <li>
+    <a href="time_bpm_to_seconds.htm">
+     time_bpm_to_seconds
+    </a>
+   </li>
+  </ul>
+  Also see:
+  <a href="../../../Drag_And_Drop/Drag_And_Drop_Reference/Time_Sources/Time_Sources_(GML_Visual).htm">
+   GML Visual - Time Sources
+  </a>
+  <h2>
+   Constants
+  </h2>
+  The following constants are used with
+  <span>
+   Time Source
+  </span>
+  functions:
+  <ul>
+   <li>
+    <a href="Built_In_Time_Sources.htm">
+     Built-In Time Sources
+    </a>
+   </li>
+   <li>
+    <a href="Time_Source_Units.htm">
+     Time Source Units
+    </a>
+   </li>
+   <li>
+    <a href="Time_Source_Expiry_Types.htm">
+     Time Source Expiry Types
+    </a>
+   </li>
+   <li>
+    <a href="Time_Source_States.htm">
+     Time Source States
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

@@ -1,0 +1,80 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   video_enable_loop
+  </h1>
+  This function enables or disables looping for the currently loaded video. Set the
+  <span>
+   enable
+  </span>
+  argument to
+  <span>
+   true
+  </span>
+  to enable looping, and
+  <span>
+   false
+  </span>
+  to disable it.
+   
+   
+    By default, looping is disabled.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">video_enable_loop(enable);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      enable
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Whether to enable (
+      <span>
+       true
+      </span>
+      ) or disable (
+      <span>
+       false
+      </span>
+      ) looping
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">video_open("Loading.mp4");
+video_enable_loop(true);
+</code></pre>
+  The above code loads a video and enables looping on it.
+ </body>
+</html>

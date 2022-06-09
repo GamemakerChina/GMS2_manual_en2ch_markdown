@@ -1,0 +1,65 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   sprite_get_yoffset
+  </h1>
+  When you define a sprite in the sprite editor, you need to set the
+  <i>
+   origin
+  </i>
+  for that sprite. This is the point at which the sprite will be "attached" or "drawn" when used with an instance. This function returns the relative offset for the y-axis of the origin based on the upper left corner being the 0,0 position, with a +y being down and a -y being up from this. The following image illustrates this:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/GML/Reference/Sprites/spr_xyoffset.png"/><br/>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">sprite_get_yoffset(index);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../The_Asset_Editors/Sprites.htm">
+        Sprite Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the sprite to find the yoffset of.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if y - sprite_get_yoffset(sprite_index) &amp;amp;lt; 0
+{
+    y = sprite_get_yoffset(sprite_index);
+}
+</code></pre>
+  The above code will ensure that an instance is maintained within the room based on the sprite (so the sprite is always visible).
+ </body>
+</html>

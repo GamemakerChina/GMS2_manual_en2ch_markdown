@@ -1,0 +1,104 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   layer_sprite_get_id
+  </h1>
+  This function can be used to retrieve the unique ID value of a sprite element on a layer. You supply the layer ID (which you get when you create the layer using
+  <a href="../General_Layer_Functions/layer_create.htm">
+   <span>
+    layer_create()
+   </span>
+  </a>
+  or when you use the layer name along with
+  <a href="../General_Layer_Functions/layer_get_id.htm">
+   <span>
+    layer_get_id()
+   </span>
+  </a>
+  ) and the name of the sprite element as defined in the Room Editor. The function will return the ID value associated with that sprite element on the layer.
+  
+  
+   Note that this function is specifically designed for use with sprites that have been added in the IDE on an asset layer, and if you added a sprite to a layer through code using the function
+  <a href="layer_sprite_create.htm">
+   <span>
+    layer_sprite_create()
+   </span>
+  </a>
+  , then the ID returned by that function should be used for all future reference (as that sprite element will have no name to be passed into this function).
+  
+  
+   If the specified layer does not exist, or the given sprite element cannot be found, the function will return -1.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">layer_sprite_get_id(layer_id, sprite_element_name)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      layer_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+      or
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/General_Layer_Functions/layer_get_id.htm">
+        Layer ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The unique ID value of the layer to target
+     </td>
+    </tr>
+    <tr>
+     <td>
+      sprite_element_name
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The unique name of the sprite element on the layer as defined in the Room Editor
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Sprite_Layers/layer_sprite_get_id.htm">
+ Sprite Element ID
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var lay_id = layer_get_id("Assets_trees");
+var back_id = layer_sprite_get_id(lay_id, "graphic_254367CB");
+layer_sprite_change(back_id, spr_Trees_Winter);
+</code></pre>
+  The above code will get the layer ID for the layer named "Assets_trees" and then use that to retrieve the ID of the sprite element "graphic_254367CB" on that layer. The retrieved sprite element ID is then used to change the element's sprite.
+ </body>
+</html>

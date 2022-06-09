@@ -1,0 +1,44 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Scripts
+  </h1>
+  The following functions used for checking and running scripts that have been written in the
+  <a href="../../../../The_Asset_Editors/Scripts.htm">
+   Script Editor
+  </a>
+  :
+  <ul>
+   <li>
+    <a href="script_exists.htm">
+     script_exists
+    </a>
+   </li>
+   <li>
+    <a href="script_get_name.htm">
+     script_get_name
+    </a>
+   </li>
+   <li>
+    <a href="script_execute.htm">
+     script_execute
+    </a>
+   </li>
+   <li>
+    <a href="script_execute_ext.htm">
+     script_execute_ext
+    </a>
+   </li>
+  </ul>
+  <span>
+   NOTE
+  </span>
+  Keep in mind that if your script is
+  <strong>
+   completely empty
+  </strong>
+  , it will not be loaded into the compiled game and will become non-existent; meaning that trying to reference such a script asset will crash your game. Note that this only applies to scripts that are completely empty, so even if your script only contains comments, it will still be included in the compiled game.
+ </body>
+</html>

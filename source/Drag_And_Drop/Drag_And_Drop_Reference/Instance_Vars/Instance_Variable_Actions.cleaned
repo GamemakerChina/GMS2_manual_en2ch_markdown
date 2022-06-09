@@ -1,0 +1,140 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Instance Variable Action Library
+  </h1>
+  <span>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance_Vars/Lib_Instance_Variables.png"/><br/>
+  </span>
+  The
+  <b>
+   Instance Variables
+  </b>
+  actions are designed to get you started when creating a game and are used to create and maintain specific instance scope variables for
+  <span>
+   score
+  </span>
+  ,
+  <span>
+   lives
+  </span>
+  and
+  <span>
+   health
+  </span>
+  (you can find out more about variable
+    scope
+  <a href="../../../GameMaker_Language/GML_Overview/Variables_And_Variable_Scope.htm">
+   here
+  </a>
+  ). These actions will create these variables for you at any time they are used and are meant more for convenience or for beginners, and if you need more
+    complex control over game values you should be making your own variables using the appropriate actions (see
+  <a href="../Common/Common_Actions_Library.htm">
+   here
+  </a>
+  )
+  
+  
+   The following actions exist for using these
+  <b>
+   Instance Variables
+  </b>
+  :
+  <table>
+   <tbody>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance_Vars/i_IV_Set_Score.png"/><br/>
+     </td>
+     <td>
+      <a href="Set_Score.htm">
+       Set Score
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance_Vars/i_IV_Get_Score.png"/><br/>
+     </td>
+     <td>
+      <a href="Get_Score.htm">
+       Get Score
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance_Vars/i_IV_Set_Lives.png"/><br/>
+     </td>
+     <td>
+      <a href="Set_Lives.htm">
+       Set Lives
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance_Vars/i_IV_Get_Lives.png"/><br/>
+     </td>
+     <td>
+      <a href="Get_Lives.htm">
+       Get Lives
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance_Vars/i_IV_Set_Health.png"/><br/>
+     </td>
+     <td>
+      <a href="Set_Health.htm">
+       Set Health
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance_Vars/i_IV_Get_Health.png"/><br/>
+     </td>
+     <td>
+      <a href="Get_Health.htm">
+       Get Health
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance_Vars/i_IV_If_Score.png"/><br/>
+     </td>
+     <td>
+      <a href="If_Score.htm">
+       If Score
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance_Vars/i_IV_If_Lives.png"/><br/>
+     </td>
+     <td>
+      <a href="If_Lives.htm">
+       If Lives
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance_Vars/i_IV_If_Health.png"/><br/>
+     </td>
+     <td>
+      <a href="If_Health.htm">
+       If Health
+      </a>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </body>
+</html>

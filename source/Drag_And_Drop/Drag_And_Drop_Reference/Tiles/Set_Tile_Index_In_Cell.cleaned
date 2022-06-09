@@ -1,0 +1,70 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/i_Tiles_Set_Tile_In_Cell.png"/><br/>
+   Set Tile Index In Cell
+  </h1>
+  With this action you can set a tile on a given layer to a new index. The layer is specified from the layer name given (a string, as used to name the layer in the Room Editor), and then you give the row and column of the cell within the layer to get
+    the tile to set. Finally you supply the tile index to set the tile to (tiles are indexed from left to right from top to bottom, with 0 at the top left). Note you can always set the tile index to 0 to clear the tile.
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/a_Tiles_Set_Tile_In_Cell.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Layer
+     </td>
+     <td>
+      The layer to set the tile on
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Column
+     </td>
+     <td>
+      The column (from left to right) of the cell
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Row
+     </td>
+     <td>
+      The row (from top to bottom) of the cell
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Tile
+     </td>
+     <td>
+      The tile index to set the cell to
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/e_Tiles_Set_Tile_In_Cell.png"/><br/>
+  The above action block code creates a loop to go through the top row
+    of the given room layer, and as it does it checks to see if the tile indexed at the cell for the column is set to 0. If it is not the tile index for that cell is set to 0 and the temporary (local) variable is incremented before the loop does another
+    set of checks.
+ </body>
+</html>

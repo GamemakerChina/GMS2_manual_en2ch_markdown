@@ -1,0 +1,168 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Web And HTML5
+  </h1>
+  <span>
+   GameMaker
+  </span>
+  provides various functions for interacting with the internet or with a server, and they can be used on all the available target platforms. These functions are:
+  <ul>
+   <li>
+    <a href="url_open.htm">
+     url_open
+    </a>
+   </li>
+   <li>
+    <a href="url_open_ext.htm">
+     url_open_ext
+    </a>
+   </li>
+   <li>
+    <a href="url_open_full.htm">
+     url_open_full
+    </a>
+   </li>
+   <li>
+    <a href="url_get_domain.htm">
+     url_get_domain
+    </a>
+   </li>
+   <li>
+    <a href="../Asynchronous_Functions/HTTP/http_request.htm">
+     http_request
+    </a>
+   </li>
+   <li>
+    <a href="../Asynchronous_Functions/HTTP/http_get.htm">
+     http_get
+    </a>
+   </li>
+   <li>
+    <a href="../Asynchronous_Functions/HTTP/http_get_file.htm">
+     http_get_file
+    </a>
+   </li>
+   <li>
+    <a href="../Asynchronous_Functions/HTTP/http_post_string.htm">
+     http_post_string
+    </a>
+   </li>
+  </ul>
+  Apart from the general functions listed above, the
+  <b>
+   HTML5 target
+  </b>
+  has some additional web functions that are specifically designed to be used by the games that target it:
+  <ul>
+   <li>
+    <a href="browser_height.htm">
+     browser_height
+    </a>
+   </li>
+   <li>
+    <a href="browser_width.htm">
+     browser_width
+    </a>
+   </li>
+   <li>
+    <a href="browser_input_capture.htm">
+     browser_input_capture
+    </a>
+   </li>
+   <li>
+    <a href="webgl_enabled.htm">
+     webgl_enabled
+    </a>
+   </li>
+   <li>
+    <a href="clickable_exists.htm">
+     clickable_exists
+    </a>
+   </li>
+   <li>
+    <a href="clickable_add.htm">
+     clickable_add
+    </a>
+   </li>
+   <li>
+    <a href="clickable_add_ext.htm">
+     clickable_add_ext
+    </a>
+   </li>
+   <li>
+    <a href="clickable_change.htm">
+     clickable_change
+    </a>
+   </li>
+   <li>
+    <a href="clickable_change_ext.htm">
+     clickable_change_ext
+    </a>
+   </li>
+   <li>
+    <a href="clickable_set_style.htm">
+     clickable_set_style
+    </a>
+   </li>
+   <li>
+    <a href="clickable_delete.htm">
+     clickable_delete
+    </a>
+   </li>
+   <li>
+    <a href="analytics_event.htm">
+     analytics_event
+    </a>
+   </li>
+   <li>
+    <a href="analytics_event_ext.htm">
+     analytics_event_ext
+    </a>
+   </li>
+   <li>
+    <a href="../OS_And_Compiler/os_browser.htm">
+     os_browser
+    </a>
+   </li>
+   <li>
+    <a href="../Asynchronous_Functions/HTTP/http_get_request_crossorigin.htm">
+     http_get_request_crossorigin
+    </a>
+   </li>
+   <li>
+    <a href="../Asynchronous_Functions/HTTP/http_set_request_crossorigin.htm">
+     http_set_request_crossorigin
+    </a>
+   </li>
+  </ul>
+  Apart from these functions for the HTML5 target module, there is also a special
+  <strong>
+   JavaScript variable
+  </strong>
+  that can be used on those rare occasions when the contents of the html5game folder are stored in a completely different place (URL). Normally this path is hard-coded in the JavaScript file and is relative to the location from where the JavaScript is called, but you can set the variable
+  <span>
+   <b>
+    g_GameMakerHTML5Dir
+   </b>
+  </span>
+  before the call to the game script and the game will be run from the newly defined location. For example:
+  <pre><code class="language-gml">&amp;amp;lt;script&amp;amp;gt;var g_GameMakerHTML5Dir = "http://mygamealternatedirectory.com/";&amp;amp;lt;/script&amp;amp;gt;
+</code></pre>
+  It's also worth noting that you can flag script functions using the prefix
+  <span>
+   gmcallback_
+  </span>
+  which means they won't be obfuscated when you compile the project for HTML5. This is very uiseful when using the above listed
+  <span>
+   clickable_*
+  </span>
+  functions (for more information, please see
+  <a href="../../GML_Overview/Script_Functions.htm">
+   here
+  </a>
+  ).
+ </body>
+</html>

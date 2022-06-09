@@ -1,0 +1,73 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   font_delete
+  </h1>
+  With this function you can delete a font asset from the game. This is a
+  <b>
+   permanent
+  </b>
+  removal, and changing rooms, or restarting the game will not bring the removed font back. For that the player would need to exit the game
+    and restart that way, so take care when using this function. In general it is only needed for freeing up memory that has been used by a font added to the game through the functions
+  <a href="font_add.htm">
+   <span>
+    font_add()
+   </span>
+  </a>
+  or
+  <a href="font_add_sprite.htm">
+   <span>
+    font_add_sprite()
+   </span>
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">font_delete(ind);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      ind
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Fonts.htm">
+        Font Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the font to delete.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">font_delete(global.Font);
+</code></pre>
+  The above code will delete the font indexed in the global variable "Font".
+ </body>
+</html>

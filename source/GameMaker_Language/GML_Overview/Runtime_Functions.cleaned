@@ -1,0 +1,166 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Runtime Functions
+  </h1>
+  The general definition of a function is something like this:
+  <i>
+   A function has an input and an output, and the output is related to the input.
+  </i>
+  In
+  <span>
+   GameMaker
+  </span>
+  this translates into two different things, but they both work the same way:
+  <ul>
+   <li>
+    <b>
+     Runtime Functions
+    </b>
+    - A
+    <i>
+     runtime
+    </i>
+    function is one that is supplied as part of the
+    <b>
+     GameMaker Language
+    </b>
+    (GML). These are built in to the language and can be used to make things happen in your games and there are a great number of GML runtime functions available to you, all of which are explained in the
+    <a href="../GML_Reference/GML_Reference.htm">
+     Language Reference
+    </a>
+    section of the manual.
+   </li>
+   <li>
+    <b>
+     Script Functions And Methods
+    </b>
+    -
+    <a href="Script_Functions.htm">
+     <em>
+      Script
+     </em>
+     <em>
+      functions
+     </em>
+    </a>
+    and
+    <a href="Method_Variables.htm">
+     <em>
+      M
+     </em>
+     <i>
+      ethod Variables
+     </i>
+    </a>
+    are functions that you have created yourself using the basic building blocks of the
+    <b>
+     GameMaker Language
+    </b>
+    (GML), and these can include runtime functions as part of their code.
+   </li>
+  </ul>
+  In both of the above cases a function has the form of a function
+  <i>
+   name
+  </i>
+  , followed by the
+  <i>
+   input
+   <a>
+    argument
+   </a>
+   <span>
+    s
+   </span>
+  </i>
+  between brackets
+  <span>
+   ()
+  </span>
+  and separated by commas (if the function has no input arguments then just brackets are used). This page concentrates on the
+  <strong>
+   runtime functions
+  </strong>
+  (ie: the ones that are built-in to GameMaker to form the GameMaker Language), but the general rules shown below follow for all function types.
+  
+  
+   Here is an outline of the structure of a function:
+  <pre><code class="language-gml">&amp;amp;lt;function&amp;amp;gt;(&amp;amp;lt;arg0&amp;amp;gt;, &amp;amp;lt;arg1&amp;amp;gt; ,... &amp;amp;lt;argN&amp;amp;gt;);
+</code></pre>
+  Some functions can return values and can be used in
+  <a>
+   expression
+  </a>
+  <span>
+   s
+  </span>
+  , while others simply execute commands, as illustrated in the following two runtime function examples:
+  <pre><code class="language-gml">// Destroy the calling instance
+// This requires no arguments and returns nothing
+instance_destroy();
+
+// Get the distance from the current instance position to the mouse position
+// This takes four arguments and returns a real value
+dist = point_distance(x, y, mouse_x, mouse_y);
+</code></pre>
+  <span>
+   NOTE
+  </span>
+  Anywhere the manual has "N/A" as a return value for a function, it means that the function is not meant to return any value as part of its operation. If you try to check for a return value from these functions then you will get the value
+  <span>
+   undefined
+  </span>
+  .
+  
+  
+   Sometimes the return value of a function may be a value that you want to use in an
+  <a>
+   assignment
+  </a>
+  , but you should note that it is impossible to use any function
+  <em>
+   directly
+  </em>
+  as the left-hand side of an assignment. For example, the following code to set the speed on an instance would give you an error:
+  <pre><code class="language-gml">instance_nearest(x, y, obj).speed = 0;
+</code></pre>
+  The return value for the expression in that code example is an integer number (the unique ID value for the nearest instance) and so it must be enclosed in brackets to be used in this way and properly address the instance required (see
+  <a href="Addressing_Variables_In_Other_Instances.htm">
+   Addressing Variables In Other Instances
+  </a>
+  for more information). The above code would be correctly written as:
+  <pre><code class="language-gml">(instance_nearest(x, y, obj)).speed = 0;
+
+//or more correctly still
+
+var inst = instance_nearest(x, y, obj);
+inst.speed = 0;
+
+function test ()
+{
+    test();
+
+    if (test)
+    {
+        test();
+    }
+}
+</code></pre>
+  The
+  <a href="../GML_Reference/GML_Reference.htm">
+   Language Reference
+  </a>
+  section of the manual lists all of the runtime functions available to you and gives examples of how they can be used as well as other important information about what they may return or any events that they may trigger, etc... For more information on user defined script functions and methods, see the section on
+  <a href="Script_Functions.htm">
+   Script Functions
+  </a>
+  and the section on
+  <a href="Method_Variables.htm">
+   Method Variables
+  </a>
+  .
+ </body>
+</html>

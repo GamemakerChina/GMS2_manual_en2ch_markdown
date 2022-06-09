@@ -1,0 +1,311 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Shader Constants
+  </h1>
+  Apart from the shader functions and constants defined in the OpenGL ES Shading Language (GLSL ES)
+  <a href="http://www.khronos.org/registry/gles/specs/2.0/GLSL_ES_Specification_1.0.17.pdf">
+   Reference Pages
+  </a>
+  , there are also a number of shader constants available to you that are unique to
+  <span>
+   GameMaker
+  </span>
+  .
+  
+  
+   The following display matrix constants can be used as array indices when using the shader array constant
+  <span>
+   gm_Matrices
+  </span>
+  :
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Constant
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       MATRIX_VIEW
+      </span>
+     </td>
+     <td>
+      This array index constant holds the index to the current view matrix. The index returned would be used as an array value when calling the
+      <span>
+       gm_Matrices
+      </span>
+      constant within the shader code.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       MATRIX_PROJECTION
+      </span>
+     </td>
+     <td>
+      This array index constant holds the index to the current projection matrix. The index returned would be used as an array value when calling the
+      <span>
+       gm_Matrices
+      </span>
+      constant within the shader code.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       MATRIX_WORLD
+      </span>
+     </td>
+     <td>
+      This array index constant holds the index to the current world matrix. This can be used for things like lighting if you have light information in world-space. The index returned would be used as an array value when calling the
+      <span>
+       gm_Matrices
+      </span>
+      constant within the shader code.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       MATRIX_WORLD_VIEW
+      </span>
+     </td>
+     <td>
+      This array index constant holds the index to the result of the world and view matrices multiplied together. This is often used for things like fog. The index returned would be used as an array value when calling the
+      <span>
+       gm_Matrices
+      </span>
+      constant within the shader code.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       MATRIX_WORLD_VIEW_PROJECTION
+      </span>
+     </td>
+     <td>
+      This array index constant holds the index to the result of the world, view and projection matrices multiplied together. This is the normal transformation matrix used for vertex positions. The index returned would be used as an array value when calling the
+      <span>
+       gm_Matrices
+      </span>
+      constant within the shader code.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       MATRIX_MAX
+      </span>
+     </td>
+     <td>
+      This is not an array index, but rather returns the size of the matrix array in the vertex shader.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       MAX_VS_LIGHTS
+      </span>
+     </td>
+     <td>
+      This is not an array index, but rather returns the number of the lights in the vertex shader.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  The following constant is also available for lighting:
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Constant
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       MAX_VS_LIGHTS
+      </span>
+     </td>
+     <td>
+      The maximum number of point and directional lights available in the shader
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  The following pre-defined matrix uniforms and constants can be used in your shader to access
+  <span>
+   GameMaker
+  </span>
+  specific values:
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Constant
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       gm_Matrices[matrix]
+      </span>
+     </td>
+     <td>
+      This array constant returns a transform matrix and is one of the available pre-defined uniforms that
+      <span>
+       GameMaker
+      </span>
+      creates for you to use within the shader code editor. The array index is chosen from one of the above listed constants.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       gm_BaseTexture
+      </span>
+     </td>
+     <td>
+      This is a 2D sampler constant that returns the texture of the current object, as set by
+      <span>
+       GameMaker
+      </span>
+      . So it would be the current sprite, surface or texture that would normally be used when drawing without the shader being called.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       gm_LightingEnabled
+      </span>
+     </td>
+     <td>
+      This can be used to get or set the
+      <span>
+       GameMaker
+      </span>
+      lighting when using 3D.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       gm_FogStart
+      </span>
+     </td>
+     <td>
+      This can be used to get the distance where polygons start to be blended with the fog colour.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       gm_RcpFogRange
+      </span>
+     </td>
+     <td>
+      This can be used to get the distance at which fog is maximal and nothing can be seen anymore.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       gm_PS_FogEnabled
+      </span>
+     </td>
+     <td>
+      This will return
+      <span>
+       true
+      </span>
+      or
+      <span>
+       false
+      </span>
+      if the GPU has pixel fog enabled or not.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       gm_FogColour
+      </span>
+     </td>
+     <td>
+      This can be used to get the fog colour used by
+      <span>
+       GameMaker
+      </span>
+      .
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       gm_VS_FogEnabled
+      </span>
+     </td>
+     <td>
+      This will return
+      <span>
+       true
+      </span>
+      or
+      <span>
+       false
+      </span>
+      if the GPU has vertex fog enabled or not.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       gm_AlphaTestEnabled
+      </span>
+     </td>
+     <td>
+      This can be used to get alpha testing in the shader. See
+      <a href="../../Drawing/GPU_Control/gpu_set_alphatestenable.htm">
+       <span>
+        gpu_set_alphatestenable()
+       </span>
+      </a>
+      for more information on alpha testing.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       gm_AlphaRefValue
+      </span>
+     </td>
+     <td>
+      This can be used to get the current alpha testing reference value. See
+      <a href="../../Drawing/GPU_Control/gpu_set_alphatestref.htm">
+       <span>
+        gpu_set_alphatestref()
+       </span>
+      </a>
+      for more information on the alpha test reference.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </body>
+</html>

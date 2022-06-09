@@ -1,0 +1,84 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   object_get_name
+  </h1>
+  This function will return the name
+  <i>
+   as a string
+  </i>
+  of the specified object. This name is the one that has been specified for the object in the Asset Browser of the main
+  <span>
+   GameMaker
+  </span>
+  window. Please note that this is
+  <i>
+   only
+  </i>
+  a string
+    and cannot be used to reference the object directly - for that you would need the
+  <i>
+   object index
+  </i>
+  . You can, however, use this string to get the
+  <i>
+   object index
+  </i>
+  using the returned string along with the function
+  <a href="../Assets_And_Tags/asset_get_index.htm">
+   <span>
+    asset_get_index()
+   </span>
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">object_get_name(obj);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      obj
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Objects.htm">
+        Object Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the object to check.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">str = object_get_name(object_index);
+</code></pre>
+  The above code will get the name of the object index for the instance running the code and store the return value in the variable "str".
+ </body>
+</html>

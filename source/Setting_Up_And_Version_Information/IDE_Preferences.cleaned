@@ -1,0 +1,176 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   IDE Preferences
+  </h1>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Setup_And_Version/Getting_Started_Prefs.png"/><br/>
+  The
+  <strong>
+   Preferences Window
+  </strong>
+  is an essential part of
+  <span>
+   GameMaker
+  </span>
+  , as it is where you can set up and customise your experience using the IDE as well as set up any specific platform SDK's etc... In this section we cover the IDE specific areas of the preferences window - for the individual target platforms please see the section on
+  <a href="Platform_Preferences.htm">
+   Target Platform Preferences
+  </a>
+  . Note that after changing any preferences from this window you need to click the
+  <strong>
+   Apply
+  </strong>
+  button for them to take effect.
+  
+  
+   If, after changing the options here to customise
+  <span>
+   GameMaker
+  </span>
+  to your own tastes, you wish to back up the preferences that you have set you need to go to this folder on Windows:
+  <pre><code class="language-gml">%AppData%/GameMaker/&amp;amp;lt;your_account_name&amp;amp;gt;/
+</code></pre>
+  Or this folder on Mac:
+  <pre><code class="language-gml">~/.config/GameMaker
+</code></pre>
+  And then copy the following two files to a safe place:
+  <ul>
+   <li>
+    <span>
+     local_settings.json
+    </span>
+   </li>
+   <li>
+    <span>
+     cloud_settings.json
+    </span>
+   </li>
+  </ul>
+  However if you wish to reset the preferences you have changed, then you need to click the
+  <strong>
+   Restore Defaults
+  </strong>
+  button at the top of the window. Note that this will only restore the defaults for the section currently being edited.
+  
+  
+   You can open the
+  <span>
+   GameMaker
+  </span>
+  Preferences from the
+  <strong>
+   File
+  </strong>
+  menu at the top left of the IDE:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Setup_And_Version/Getting_Started_OpenPrefs.png"/><br/>
+  Once the Preferences window is open you will have the following different options (this list omits all platform specific preferences, for those, please see
+  <a href="Platform_Preferences.htm">
+   here
+  </a>
+  ):
+  <ul>
+   <li>
+    <a href="IDE_Preferences/General_Preferences.htm">
+     General
+    </a>
+   </li>
+   <li>
+    <a href="IDE_Preferences/Start_Screen_Preferences.htm">
+     Start Screen
+    </a>
+   </li>
+   <li>
+    <a href="IDE_Preferences/Image_Editor_Preferences.htm">
+     Image Editor
+    </a>
+   </li>
+   <li>
+    <a href="IDE_Preferences/Sprite_Editor_Preferences.htm">
+     Sprite Editor
+    </a>
+   </li>
+   <li>
+    <a href="IDE_Preferences/Object_Editor_Preferences.htm">
+     Object Editor
+    </a>
+   </li>
+   <li>
+    <a href="IDE_Preferences/Font_Editor_Preferences.htm">
+     Font Editor
+    </a>
+   </li>
+   <li>
+    <a href="IDE_Preferences/Room_Editor_Preferences.htm">
+     Room Editor
+    </a>
+   </li>
+   <li>
+    <a href="IDE_Preferences/Spline_Editor.htm">
+     Spline Editor
+    </a>
+   </li>
+   <li>
+    <a href="IDE_Preferences/Tile_Set_Editor_Preferences.htm">
+     Tile Set Editor
+    </a>
+   </li>
+   <li>
+    <a href="IDE_Preferences/Timeline_Preferences.htm">
+     Timelines
+    </a>
+   </li>
+   <li>
+    <a href="IDE_Preferences/Extension_Editor_Preferences.htm">
+     Extension Editor
+    </a>
+   </li>
+   <li>
+    <a href="IDE_Preferences/Text_Editor_Preferences.htm">
+     Text Editors
+    </a>
+   </li>
+   <li>
+    <a href="IDE_Preferences/Language_Preferences.htm">
+     Language Preferences
+    </a>
+   </li>
+   <li>
+    <a href="IDE_Preferences/Marketplace_Preferences.htm">
+     Marketplace
+    </a>
+   </li>
+   <li>
+    <a href="IDE_Preferences/Plugin_Preferences.htm">
+     Plugins
+    </a>
+   </li>
+   <li>
+    <a href="IDE_Preferences/Runtime_Feed_Preferences.htm">
+     Runtime Feeds
+    </a>
+   </li>
+   <li>
+    <a href="IDE_Preferences/Redefine_Keys_Preferences.htm">
+     Redefine Keys
+    </a>
+   </li>
+   <li>
+    <a href="IDE_Preferences/Anim_Curve_Editor_Preferences.htm">
+     Animation Curve Editor
+    </a>
+   </li>
+   <li>
+    <a href="IDE_Preferences/Asset_Browser_Preferences.htm">
+     Asset Browser
+    </a>
+   </li>
+   <li>
+    <a href="IDE_Preferences/Sequences_Preferences.htm">
+     Sequences Editor
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

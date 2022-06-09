@@ -1,0 +1,76 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   audio_sound_is_playable
+  </h1>
+  This function can be used to check if the given sound index can be played currently. This is needed due to the different ways streamed and unstreamed sound playback is handled on the
+  <b>
+   HTML5
+  </b>
+  target platform, and will return
+  <span>
+   true
+  </span>
+  if the sound can be played and
+  <span>
+   false
+  </span>
+  if it can't. Note that on all other platforms other than HTML5, the function will always return
+  <span>
+   true
+  </span>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">audio_sound_is_playable(index);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Sounds.htm">
+        Sound Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the sound to check.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if audio_sound_get_pitch(snd_Explode) != 1
+{
+    audio_sound_pitch(snd_Explode, 1);
+}
+</code></pre>
+  The above code will change the pitch of the audio played from the sound indexed as "snd_Explode" if its pitch is not equal to 1.
+ </body>
+</html>

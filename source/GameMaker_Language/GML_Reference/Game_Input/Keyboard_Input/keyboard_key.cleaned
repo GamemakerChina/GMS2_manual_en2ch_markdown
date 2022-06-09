@@ -1,0 +1,42 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   keyboard_key
+  </h1>
+  With this variable you can get the keycode of the key that is currently being pressed and it will return 0 if no key is being pressed when the check is done.
+  <h4>
+   <b>
+    Syntax:
+   </b>
+  </h4>
+  <pre><code class="language-gml">keyboard_key;
+</code></pre>
+  <h4>
+   <b>
+    Returns:
+   </b>
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Reference/Game_Input/Keyboard_Input/Keyboard_Input.htm">
+ Virtual Key Constant (vk_*)
+</a></code></pre>
+  <h4>
+   <b>
+    Example:
+   </b>
+  </h4>
+  <pre><code class="language-gml">switch (keyboard_key)
+{
+    case vk_numpad1: gun = weapon[0][0]; break;
+    case vk_numpad2: gun = weapon[1][0]; break;
+    case vk_numpad3: gun = weapon[2][0]; break;
+}
+</code></pre>
+  The above code uses the value of the
+  <span>
+   keyboard_key
+  </span>
+  variable to set a variable to the same value as an array.
+ </body>
+</html>

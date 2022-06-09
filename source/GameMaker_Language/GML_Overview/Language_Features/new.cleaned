@@ -1,0 +1,76 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   new
+  </h1>
+  The
+  <span>
+   new
+  </span>
+  operator can be used to create a struct with a function which is called with the given arguments. The function can then populate the struct with variables from the arguments - much like the create event of an instance will set the initial variables for the instance - and then the
+  <span>
+   new
+  </span>
+  operator will return the struct. Before using this operator it is important to note that the function given
+  <i>
+   must be flagged as a
+   <span>
+    constructor
+   </span>
+   function
+  </i>
+  otherwise the
+  <span>
+   new
+  </span>
+  operator will not create the struct (the code example below shows this, and for more information, please see the page on
+  <a href="../Structs.htm">
+   Structs
+  </a>
+  ).
+  <span>
+   NOTE
+  </span>
+  You can check a struct to find out which function was used to create it using the runtime function
+  <a href="../../GML_Reference/Variable_Functions/instanceof.htm">
+   <span>
+    instanceof()
+   </span>
+  </a>
+  .
+  
+  
+   This operator has the following syntax:
+  <pre><code class="language-gml">&amp;amp;lt;variable&amp;amp;gt; = new &amp;amp;lt;function&amp;amp;gt; (&amp;amp;lt;argument&amp;amp;gt;, &amp;amp;lt;argument&amp;amp;gt;, ...);
+</code></pre>
+  When you use the new operator along with a function, it will return a struct reference which is stored in the given variable, permitting you to access the struct and any variables that were created within it by the function.
+  
+  
+   The following example shows a function that has been defined to use as a constructor:
+  <pre><code class="language-gml">function init_struct(_a, _b, _c) constructor
+{
+    a = _a;
+    b = _b;
+    c = _c;
+}
+</code></pre>
+  This function can then be used along with the
+  <span>
+   new
+  </span>
+  operator to create a struct and populate it with the variables set to the values of the arguments used in the function, like this:
+  <pre><code class="language-gml">mystruct = new init_struct(10, 100, "Hello World");
+</code></pre>
+  It is important to note that calling new on any function that has
+  <em>
+   not
+  </em>
+  been flagged as a constructor will cause a
+  <a href="../../../Additional_Information/Errors/Runner_Errors.htm">
+   runtime exception
+  </a>
+  .
+ </body>
+</html>

@@ -1,0 +1,71 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   sequence_instance
+  </h1>
+  This is a
+  <strong>
+   built-in variable
+  </strong>
+  that is part of the
+  <a href="../Instances/Instance_Variables/Instance_Variables.htm">
+   instance variables
+  </a>
+  created for every object instance in your game. If the instance is being controlled by a sequence, this variable will hold the
+  <a href="Sequence_Structs/The_Sequence_Instance_Struct.htm">
+   sequence instance struct
+  </a>
+  for the Sequence controlling the instance, otherwise it will be
+  <span>
+   undefined
+  </span>
+  . This is a
+  <strong>
+   read-only
+  </strong>
+  variable and cannot be changed.
+  
+  
+   Note that this variable will become
+  <span>
+   undefined
+  </span>
+  after the controlling Sequence has ended, even if its Sequence Element still exists, and will get the struct again if that Sequence element is
+  <a href="../Rooms/Sequence_Layers/layer_sequence_play.htm">
+   replayed
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">sequence_instance
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Sequences/Sequence_Structs/The_Sequence_Instance_Struct.htm">
+ Sequence Instance Struct
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if (in_sequence)
+{
+    sequence_instance.speedScale = 2;
+}
+</code></pre>
+  The above code checks the
+  <a href="in_sequence.htm">
+   <span>
+    in_sequence
+   </span>
+  </a>
+  variable, and if it is
+  <span>
+   true
+  </span>
+  (meaning the instance is being controlled by a sequence) then it will change the speed scale of that Sequence to 2.
+ </body>
+</html>

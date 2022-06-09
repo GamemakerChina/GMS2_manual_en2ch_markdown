@@ -1,0 +1,57 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Audio/i_Audio_Resume_Audio.png"/><br/>
+   Resume Audio
+  </h1>
+  This action can be used to resume a previously paused sound. This can be used on any sound that has been paused using
+  <a href="Pause_Audio.htm">
+   Pause Audio
+  </a>
+  or
+  <a href="Pause_All_Audio.htm">
+   Pause All Audio
+  </a>
+  , and will have no effect on those sounds
+    that have not been paused previously.
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Audio/a_Audio_Resume_Audio.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Sound
+     </td>
+     <td>
+      The sound resource to resume playing
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Audio/e_Audio_Pause_Audio.png"/><br/>
+  The above action block code will check a global variable and if it evaluates to
+  <span>
+   true
+  </span>
+  then
+    the given sound is paused, otherwise it is resumed.
+ </body>
+</html>

@@ -1,0 +1,78 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   is_bool
+  </h1>
+  This function returns whether a given variable is a boolean (
+  <span>
+   true
+  </span>
+  ior
+  <span>
+   false
+  </span>
+  ) or not. In some cases you want to check and see if a variable in
+  <span>
+   GameMaker
+  </span>
+  holds a boolean value, and that's when you would use this function.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">is_bool(n);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      n
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm#variable">
+        Variable
+       </a>
+      </span>
+     </td>
+     <td>
+      The argument to check.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   <b>
+    Example:
+   </b>
+  </h4>
+  <pre><code class="language-gml">if is_bool(val)
+{
+    global.Sound = val;
+}
+else
+{
+    global.Sound = true;
+}
+</code></pre>
+  The above code checks the variable "val" to see if it is a real number and if it is it then uses it to set a global variable.
+ </body>
+</html>

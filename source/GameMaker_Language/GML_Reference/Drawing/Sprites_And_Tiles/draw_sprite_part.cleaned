@@ -1,0 +1,205 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   draw_sprite_part
+  </h1>
+  With this function you can draw part of any sprite at a given position within the room. As with
+  <a href="draw_sprite.htm">
+   <span>
+    draw_sprite()
+   </span>
+  </a>
+  you can specify a sprite and a sub-image for drawing, then you must give the
+  <i>
+   relative coordinates
+  </i>
+  within the sprite of the area to select for drawing. This means that a left position of 0 and a top position of 0 would be the top left corner of the sprite and all further coordinates should be taken from that position. The image below shows an example
+    of how this works:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/GML/Reference/Drawing/spr_part.png"/><br/>
+  You should note that if the texture page permits automatic cropping then this function may not work as expected,
+    since the extra "empty" space around the sprite will have been removed for creating the texture page. To resolve this issue, you will need to set the texture page settings (in the
+  <a href="../../../../Settings/Texture_Groups.htm">
+   Texture Group Editor
+  </a>
+  )
+    to disable the option
+  <b>
+   Automatic Crop
+  </b>
+  .
+  <b>
+   NOTE
+  </b>
+  : When drawing with this function, the sprite
+  <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_xoffset.htm">
+   x offset
+  </a>
+  and
+  <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_yoffset.htm">
+   y offset
+  </a>
+  are ignored and the sprite part will be drawn with the top left corner at the specified x / y position in the room.
+  <b>
+   NOTE
+  </b>
+  : This function is only useful for
+  <b>
+   bitmap
+  </b>
+  sprites and will not work with SWF or JSON (Spine) sprites.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">draw_sprite_part(sprite, subimg, left, top, width, height, x, y);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      sprite
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Sprites.htm">
+        Sprite Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the sprite to draw.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      subimg
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The subimg (frame) of the sprite to draw (image_index or -1 correlate to the current frame of animation in the object).
+     </td>
+    </tr>
+    <tr>
+     <td>
+      left
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x position on the sprite of the top left corner of the area to draw.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      top
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y position on the sprite of the top left corner of the area to draw.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      width
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The width of the area to draw.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      height
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The height of the area to draw.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      x
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x coordinate of where to draw the sprite.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y coordinate of where to draw the sprite.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">draw_sprite_part(sprite_index, image_index, 4, 0, sprite_width-16, sprite_height-16, x, y );
+</code></pre>
+  This will draw the instances assigned sprite (sprite_index) and its current frame of animation (image_index), however it will shave a 4px margin off the width on both sides, and an 8 pixel margin off the height from the bottom of the original 24x24
+    pixel sprite.
+ </body>
+</html>

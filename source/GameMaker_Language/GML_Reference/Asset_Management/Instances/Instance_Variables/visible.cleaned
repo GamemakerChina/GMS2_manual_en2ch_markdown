@@ -1,0 +1,63 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   visible
+  </h1>
+  An instance can be flagged as
+  <span>
+   visible
+  </span>
+  or not by setting this variable to
+  <span>
+   true
+  </span>
+  (visible) or
+  <span>
+   false
+  </span>
+  (invisible). This works by telling
+  <span>
+   GameMaker
+  </span>
+  to skip the draw event for this instance, so care must be taken when using this as it means that no code placed in the draw event will be run while the instance is not visible. Also note that if the
+  <a href="layer.htm">
+   layer
+  </a>
+  that the instance is assigned to is flagged as invisible, setting this variable to
+  <span>
+   true
+  </span>
+  will have no effect until the layer itself is flagged as visible too.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">visible;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if other.visible = true
+{
+    x = xprevious;
+    y = yprevious;
+}
+</code></pre>
+  The above code will check the visible flag of the "other" instance in a
+  <i>
+   collision event
+  </i>
+  and if it is set to
+  <span>
+   true
+  </span>
+  move that instance back to its previous position.
+ </body>
+</html>

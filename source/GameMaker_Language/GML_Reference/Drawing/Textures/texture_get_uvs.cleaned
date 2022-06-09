@@ -1,0 +1,111 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   texture_get_uvs
+  </h1>
+  This function returns a 1D
+  <a href="../../../GML_Overview/Arrays.htm">
+   array
+  </a>
+  with 4 elements representing the UV coordinates for the given texture pointer, filling in the array with the following values:
+  <ul>
+   <li>
+    [0] = left
+   </li>
+   <li>
+    [1] = top
+   </li>
+   <li>
+    [2] = right
+   </li>
+   <li>
+    [3] = bottom
+   </li>
+   <li>
+    [4] = amount of pixels the asset compiler has trimmed from the sprites left side (sprite assets only)
+   </li>
+   <li>
+    [5] = amount of pixels the asset compiler has trimmed from the sprites top side (sprite assets only)
+   </li>
+   <li>
+    [6] = normalised percentage of pixel data from the original sprites width that has been saved to the texture page (sprite assets only)
+   </li>
+   <li>
+    [7] = normalised percentage of pixel data from the original sprites height that has been saved to the texture page (sprite assets only)
+   </li>
+  </ul>
+  This value can then be used in other draw functions, particularly in general 3D and some of the 2D primitive functions, as well as the Shader functions. If you need the UVS for a sprite then you can use the
+  <span>
+   <a href="../../Asset_Management/Sprites/Sprite_Information/sprite_get_uvs.htm">
+    sprite_get_uvs()
+   </a>
+  </span>
+  and for a font,
+  <a href="../../Asset_Management/Fonts/font_get_uvs.htm">
+   <span>
+    font_get_uvs()
+   </span>
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">texture_get_uvs(texid)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      texid
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Information/sprite_get_texture.htm">
+        Texture
+       </a>
+      </span>
+     </td>
+     <td>
+      The texture pointer to get the UVS for
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Arrays.htm">
+ Array
+</a>
+(4 - 8 elements)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var _tex = surface_get_texture(surf_back);
+var _uvs = texture_get_uvs(tex);
+var _uvs_left = _uvs[0];
+var _uvs_top = _uvs[1];
+var _uvs_right = _uvs[2];
+var _uvs_bottom = _uvs[3];
+</code></pre>
+  The above code first retrieves the texture for the surface stored in
+  <span>
+   surf_back
+  </span>
+  , and then gets the UV coordinates for that texture. It then retrieves the left, top, right and bottom UV coordinates from the returned array and stores them in local variables.
+ </body>
+</html>

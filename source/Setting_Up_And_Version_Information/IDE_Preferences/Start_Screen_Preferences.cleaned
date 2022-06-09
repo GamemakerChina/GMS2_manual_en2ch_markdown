@@ -1,0 +1,31 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Start Screen Preferences
+  </h1>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Setup_And_Version/Preferences/Start_Screen_Preferences.png"/><br/>
+  The Start Screen Preferences allow you to change how the Start Page behaves. The main options are:
+  <ul>
+   <li>
+    <strong>
+     Show Tour
+    </strong>
+    : This allows you to select whether the introductory tour is shown when the IDE is started. This is automatically disabled the first time you skip the tour.
+   </li>
+   <li>
+    <strong>
+     Show Setup Wizard
+    </strong>
+    : This allows you to select whether the Setup Wizard is shown when the IDE is started. The Setup Wizard essentially takes you through the steps necessary to create a new project.
+   </li>
+   <li>
+    <strong>
+     Recent Projects List Style
+    </strong>
+    : This allows you to change the display of the Recent Projects list on the Start Page between "List" and "Grid".
+   </li>
+  </ul>
+ </body>
+</html>

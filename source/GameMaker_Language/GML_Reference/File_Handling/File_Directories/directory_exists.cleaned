@@ -1,0 +1,76 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   directory_exists
+  </h1>
+  This function will return
+  <span>
+   true
+  </span>
+  if the indicated directory exists or
+  <span>
+   false
+  </span>
+  if it does not. The specified name must include the full path, not a relative path and by default you cannot access any directories from out-with the game bundle as all games are sandboxed (see the section on the
+  <a href="../../../../Additional_Information/The_File_System.htm">
+   File System
+  </a>
+  for more information).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">directory_exists(dname)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      dname
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The name of the directory to look for.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if directory_exists(working_directory + "Saves/")
+{
+    file = file_find_first(working_directory + "Saves/*.doc", fa_readonly);
+}
+</code></pre>
+  This will check to see if the specified directory exists then, if it does, go there and return the first "read only"
+  <span>
+   doc
+  </span>
+  file found.
+ </body>
+</html>

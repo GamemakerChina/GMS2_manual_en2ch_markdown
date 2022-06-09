@@ -1,0 +1,64 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   File Directories
+  </h1>
+  When working with files, there will be moments when you need to reference the directory in which the files are stored and
+  <span>
+   GameMaker
+  </span>
+  has some special functions and variables relating to the different possible directories that you may need:
+  <ul>
+   <li>
+    <a href="directory_exists.htm">
+     directory_exists
+    </a>
+   </li>
+   <li>
+    <a href="directory_create.htm">
+     directory_create
+    </a>
+   </li>
+   <li>
+    <a href="directory_destroy.htm">
+     directory_destroy
+    </a>
+   </li>
+   <li>
+    <a href="temp_directory.htm">
+     temp_directory
+    </a>
+   </li>
+   <li>
+    <a href="working_directory.htm">
+     working_directory
+    </a>
+   </li>
+   <li>
+    <a href="program_directory.htm">
+     program_directory
+    </a>
+   </li>
+   <li>
+    <a href="../../General_Game_Control/game_save_id.htm">
+     game_save_id
+    </a>
+    (from
+    <a href="../../General_Game_Control/General_Game_Control.htm">
+     General Game Control
+    </a>
+    )
+   </li>
+  </ul>
+  <span>
+   NOTE
+  </span>
+  You cannot create or destroy directories on
+  <strong>
+   HTML5
+  </strong>
+  .
+ </body>
+</html>

@@ -1,0 +1,45 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Setting Up The Git Plugin
+  </h1>
+  Before we can use the Git plugin, we need to set up the Git executable to use by going into the
+  <a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Plugin_Preferences.htm">
+   Plugins - Source Control (Git)
+  </a>
+  section of the
+  <a href="../../Setting_Up_And_Version_Information/IDE_Preferences.htm">
+   Preferences
+  </a>
+  :
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Setup_And_Version/Preferences/Plugins_Git_Prefs.png"/><br/>
+  The Git executable path should be auto-filled if it's found by GameMaker, however if the field is empty, you can click on the
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Browse.png"/><br/>
+  button and manually select the
+  <span>
+   git.exe
+  </span>
+  file included in
+  <span>
+   cmd
+  </span>
+  folder of your Git installation, which is usually inside
+  <span>
+   C:\Program Files\Git\
+  </span>
+  .
+  
+  
+   For the rest of the Git options, see the
+  <a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Plugin_Preferences.htm">
+   Plugin Preferences
+  </a>
+  page.
+  
+  
+   Before you can use Source Control for your project, you need to go into the Game Options and enable Source Control:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/IDE%20Tools/SCM_EnableSourceControl.png"/><br/>
+ </body>
+</html>

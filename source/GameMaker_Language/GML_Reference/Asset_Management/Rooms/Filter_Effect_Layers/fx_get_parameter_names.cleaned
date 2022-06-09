@@ -1,0 +1,80 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   fx_get_parameter_names
+  </h1>
+  This function is used to retrieve the names of all parameters present in a filter/effect. You specify the FX struct to read (as returned from
+  <span>
+   <a href="fx_create.htm">
+    fx_create()
+   </a>
+  </span>
+  or
+  <span>
+   <a href="layer_get_fx.htm">
+    layer_get_fx()
+   </a>
+  </span>
+  ) and the function returns an array containing the names of the filter's parameters as strings.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">fx_get_parameter_names(filter_or_effect);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      filter_or_effect
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Filter_Effect_Layers/fx_create.htm">
+        FX Struct
+       </a>
+      </span>
+     </td>
+     <td>
+      The FX struct to get the parameter names of
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Overview/Arrays.htm">
+ Array
+</a>
+(of Strings)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var _fx_struct = layer_get_fx("EffectLayer");
+var _param_names = fx_get_parameter_names(_fx_struct);
+
+for (var i = 0; i &amp;amp;lt; array_length(_param_names); i ++) {
+    show_debug_message("Parameter " + string(i) + ": " + _param_names[i]);
+}
+</code></pre>
+  The above code retrieves the FX struct for a layer and gets its parameter names in an array. It then runs a
+  <a href="../../../../GML_Overview/Language_Features/for.htm">
+   for
+  </a>
+  loop on that array and prints each parameter to the output log.
+ </body>
+</html>

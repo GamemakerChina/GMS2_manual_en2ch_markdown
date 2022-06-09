@@ -1,0 +1,29 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   begin / end
+  </h1>
+  The GameMaker Language permits you to use the keywords
+  <span>
+   begin
+  </span>
+  and
+  <span>
+   end
+  </span>
+  instead of the more usual curly brackets
+  <span>
+   {}
+  </span>
+  when creating code blocks. The code example below shows how this works:
+  <pre><code class="language-gml">if (!visible)     begin
+     exit;
+     end
+ while (place_meeting(x, y))     begin
+     x -= lengthdir_x(1, direction - 180);     y -= lengthdir_y(1, direction - 180);     end
+</code></pre>
+  Note that using these keywords is not typical and is provided as part of the language more for legacy support than for anything else, and at any time in the future they may be deprecated.
+ </body>
+</html>

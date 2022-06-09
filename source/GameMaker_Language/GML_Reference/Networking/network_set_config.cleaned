@@ -1,0 +1,305 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   network_set_config
+  </h1>
+  With this function you can set different network configurations.
+  <b>
+   NOTE
+  </b>
+  : This function will not work when used in a project running on the HTML5 target.
+  
+  
+   These configurations are given as
+  <b>
+   constants
+  </b>
+  and the setting will depend on the constant that you have chosen. The table below lists the available constants and their settings:
+  <table>
+   <colgroup>
+    <col/>
+    <col/>
+    <col/>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Networking/network_set_config.htm">
+        Network Config Constant
+       </a>
+      </span>
+     </th>
+    </tr>
+    <tr>
+     <th>
+      Constant
+     </th>
+     <th>
+      Description
+     </th>
+     <th>
+      Setting
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       network_config_connect_timeout
+      </span>
+     </td>
+     <td>
+      Set a connection timeout value
+     </td>
+     <td>
+      A value in milliseconds
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       network_config_use_non_blocking_socket
+      </span>
+     </td>
+     <td>
+      Tell
+      <span>
+       GameMaker
+      </span>
+      not to block on connect.
+     </td>
+     <td>
+      0 = block, 1 = don't block
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       network_config_enable_reliable_udp
+      </span>
+     </td>
+     <td>
+      Enables the "reliable UDP" protocol for an existing UDP socket
+     </td>
+     <td>
+      The socket ID to target
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       network_config_disable_reliable_udp
+      </span>
+     </td>
+     <td>
+      Disables the "reliable UDP" protocol for an existing UDP socked.
+     </td>
+     <td>
+      The socket ID to target
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       network_config_avoid_time_wait
+      </span>
+     </td>
+     <td>
+      Sets the
+      <span>
+       SO_LINGER
+      </span>
+      timeout value to 0 for an exisiting TCP socket
+     </td>
+     <td>
+      The socket ID to target
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  The first option (
+  <span>
+   network_config_connect_timeout
+  </span>
+  ) simply sets the timeout for connecting to a server but doesn't change connection behaviour apart from the time you have to wait. It is recommended that you don't set this too low and keep it at about 1000 for a LAN only game or 4000 or so for internet, or the game may fail to connect randomly. If you wish to set a timeout value for sending/receiving packets then use the function
+  <a href="network_set_timeout.htm">
+   <span>
+    network_set_timeout()
+   </span>
+  </a>
+  .
+  
+  
+   The second option (
+  <span>
+   network_config_use_non_blocking_socket
+  </span>
+  ) means that the
+  <span>
+   network_connect_*
+  </span>
+  functions (non-async) will all return a
+  <span>
+   socket_id
+  </span>
+  instantly,
+  <i>
+   but you can't send or receive on that socket until you've received an async network event
+  </i>
+  . The event triggered will have the "type" key set to
+  <span>
+   network_type_non_blocking_connect
+  </span>
+  (you can find further details from the page on the
+  <a href="../../../The_Asset_Editors/Object_Properties/Async_Events/Networking.htm">
+   Networking Asynchronous Event
+  </a>
+  ). This is a
+  <b>
+   global
+  </b>
+  setting as
+  <span>
+   GameMaker
+  </span>
+  does not support a mixture of blocking and non-blocking in one application.
+  
+  
+   The third and fourth options (
+  <span>
+   network_config_enable_reliable_udp
+  </span>
+  ,
+  <span>
+   network_config_disable_reliable_udp
+  </span>
+  ) are for enabling or disabling the
+  <span>
+   GameMaker
+  </span>
+  reliable UDP protocol and as such, should
+  <b>
+   only be used with UDP connections
+  </b>
+  . What "reliable" in this case this means is that, when enabled on
+  <i>
+   both
+  </i>
+  ends of a connection,
+  <span>
+   GameMaker
+  </span>
+  will attempt to check your packets have arrived correctly and re-send any that don't arrive (note, we do not guarantee in your packets will arrive in order of transmission). When using a reliable socket type, there will be a 12-byte header added to all udp packets which contains information needed by
+  <span>
+   GameMaker
+  </span>
+  to check the packet for errors and re-send missing packets. The following points are worth noting when using this option:
+  <ul>
+   <li>
+    The protocol should be enabled/disabled on both sides before sending your data, and any data sent or received before the option has been enabled/disabled will not be affected.
+   </li>
+   <li>
+    You can enable or disable the protocol for any given socket ID multiple times, as long as this is properly managed on both the server side and client side
+   </li>
+   <li>
+    It is possible to have two separate UDP sockets, one with reliable UDP enabled for one with reliable UDP disabled for the other.
+   </li>
+  </ul>
+  The final option,
+  <span>
+   network_config_avoid_time_wait
+  </span>
+  is for
+  <strong>
+   TCP connections only
+  </strong>
+  and can be used to set the
+  <span>
+   SO_LINGER
+  </span>
+  value to
+  <span>
+   0
+  </span>
+  t
+  <span>
+   o avoid large numbers of connections sitting in the
+   <span>
+    TIME_WAIT
+   </span>
+  </span>
+  <span>
+   state, tying up all the available resources on a server.
+  </span>
+  This change is permanent while the socket is alive and cannot be undone.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">network_set_config(config_value, setting);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      config_value
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Networking/network_set_config.htm">
+        Network Config Constant
+       </a>
+      </span>
+     </td>
+     <td>
+      The config constant to set (refer to the table at the top of this page).
+     </td>
+    </tr>
+    <tr>
+     <td>
+      setting
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm#variable">
+        Variable
+       </a>
+      </span>
+     </td>
+     <td>
+      The setting value of the config.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">network_set_config(network_config_connect_timeout, 1000);
+network_set_config(network_config_use_non_blocking_socket, 1);
+</code></pre>
+  The above code will set the timeout for the network connection to 1000ms and tell
+  <span>
+   GameMaker
+  </span>
+  not to block on connect.
+ </body>
+</html>

@@ -1,0 +1,60 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   view_get_xport
+  </h1>
+  This function can be used to retrieve the x position of the given view port.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">view_get_xport(view_port)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      view_port
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The view port to target (0 - 7)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if view_get_xport(0) != (display_get_width() / 2) - (view_wport[0] / 2)
+{
+    view_set_xport(0, (display_get_width() / 2) - (view_wport[0] / 2));
+}
+</code></pre>
+  The above code will check the x position of the view port[0] and if it is not where it is required to be it is set to that position.
+ </body>
+</html>

@@ -1,0 +1,90 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   string_last_pos_ext
+  </h1>
+  This function will return the character position of an instance of a sub-string within a string, searching backwards through the string from the position given as the starting position. The function will return 0 if the search string is not found, or the position of the first character of the search string if it is. Keep in mind that for legacy support strings are indexed from 1, so 1 is the first position in the string, not 0 as you may expect.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">string_last_pos_ext(substr, str, start_pos);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      substr
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The substring to look for in the string.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      str
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The string.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      start_pos
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The starting position to search from.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if (string_last_pos_ext(",", text, 20) != 0)
+{
+    string_insert(name, text, string_last_pos_ext(",", text, 20));
+}
+</code></pre>
+  The above code searches the string stored in the variable "text" for a comma before the 20th character, and if it finds one it inserts the substring "name" at that position.
+ </body>
+</html>

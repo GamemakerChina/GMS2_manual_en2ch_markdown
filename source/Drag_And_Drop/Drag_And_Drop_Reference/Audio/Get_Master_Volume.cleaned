@@ -1,0 +1,58 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Audio/i_Audio_Get_Master_Volume.png"/><br/>
+   Get Master Volume
+  </h1>
+  This action returns the master volume for the sound system. You give a target variable to return the volume value to (you can flag this as being a temporary local variable). The returned value will be between 0 and 1, where 0 is silent and 1 is full
+    volume.
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Audio/a_Audio_Get_Master_Volume.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Target
+     </td>
+     <td>
+      The target variable to store the returned volume
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Audio/e_Audio_Set_Master_Volume.png"/><br/>
+  The above action block code checks a global variable to see if it is
+  <span>
+   true
+  </span>
+  or
+    false. If it is
+  <span>
+   true
+  </span>
+  then the master volume for the sound system is retrieved and stored in a temporary local variable. The value is then checked to see if it is not equal to 0.5, and if it is not, then the master volume of the sound system
+    is set to 0.5. If the global variable evaluates to
+  <span>
+   false
+  </span>
+  , then the master volume is set to 1.
+ </body>
+</html>

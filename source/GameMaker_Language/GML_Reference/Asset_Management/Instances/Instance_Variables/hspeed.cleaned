@@ -1,0 +1,91 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   hspeed
+  </h1>
+  <span>
+   hspeed
+  </span>
+  is one of the "built in" properties that all instances have and defines the horizontal movement speed (along the x-axis) of the instance in pixels per step. So, an
+  <span>
+   hspeed
+  </span>
+  of 3 means 3 pixels of movement to the right
+    (+x) every step, and an
+  <span>
+   hspeed
+  </span>
+  of -3 would mean 3 pixels of movement to the left (-x) every step.
+  
+  
+   Note that if you set the
+  <span>
+   <a href="speed.htm">
+    speed
+   </a>
+  </span>
+  and/or
+  <span>
+   <a href="direction.htm">
+    direction
+   </a>
+  </span>
+  variables then the
+  <span>
+   hspeed
+  </span>
+  value will be updated automatically to
+    reflect these changes, and likewise, changing the
+  <span>
+   hspeed
+  </span>
+  value will also affect the
+  <span>
+   speed
+  </span>
+  and
+  <span>
+   direction
+  </span>
+  values. Also note that
+  <a href="gravity.htm">
+   <span>
+    gravity
+   </span>
+  </a>
+  ,
+  <a href="gravity_direction.htm">
+   <span>
+    gravity_direction
+   </span>
+  </a>
+  and
+  <a href="friction.htm">
+   <span>
+    friction
+   </span>
+  </a>
+  can all modify the value of this variable when they are used in your games.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">hspeed;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a>
+(single precision floating point value)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if keyboard_check(vk_left) hspeed = -5; if keyboard_check(vk_right) hspeed = 5;
+</code></pre>
+  The above code will change the horizontal speed depending on which keys are pressed.
+ </body>
+</html>

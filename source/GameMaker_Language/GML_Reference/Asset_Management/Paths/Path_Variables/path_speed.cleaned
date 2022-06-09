@@ -1,0 +1,34 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   path_speed
+  </h1>
+  You can use this function to get or to set the speed of a path after it has been started using the function
+  <span>
+   <a href="../path_start.htm">
+    path_start()
+   </a>
+  </span>
+  . You can use negative values to signify that the instance should follow
+    the path in reverse.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">path_speed;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">path_speed = -1 + random(2);
+</code></pre>
+  The above code will set the instance to travel the path at a random speed between -1 and 1.
+ </body>
+</html>

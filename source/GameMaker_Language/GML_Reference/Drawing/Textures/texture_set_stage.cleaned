@@ -1,0 +1,91 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   texture_set_stage
+  </h1>
+  This function will set the given stage "slot" a texture to be used. The number of stage "slots" available will depend on the platform you are compiling to, with a maximum of 8 being available for Windows, Mac and Linux, but on lower end Android devices (for example) this number can be as low as 2. It is also worth noting that the first stage slot (1) is always used automatically by
+  <span>
+   GameMaker
+  </span>
+  .
+  <b>
+   NOTE
+  </b>
+  : This function will do nothing outside of the context of a running shader! See
+  <a href="../../Asset_Management/Shaders/Shaders.htm">
+   Shaders
+  </a>
+  for more information.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">texture_set_stage(stage, tex);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      stage
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The texture "slot" to use.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      tex
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Information/sprite_get_texture.htm">
+        Texture
+       </a>
+      </span>
+     </td>
+     <td>
+      The texture to use.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">glassshader_bgsampler = shader_get_sampler_index(GlassShader, "s_BackgroundSampler")
+spr = sprite_get_texture(sprite_index, 0);
+shader_set(GlassShader);
+texture_set_stage(glassshader_bgsampler, spr);
+shader_reset();
+</code></pre>
+  The above code will get the
+  <i>
+   handle
+  </i>
+  for the sampler within the shader indexed as "GlassShader" and then set that shader constant to the given sprite texture.
+ </body>
+</html>

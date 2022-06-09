@@ -1,0 +1,93 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   gamepad_remove_mapping
+  </h1>
+  This function can be used to remove the current device mapping from the given gamepad slot index. Once called, the slot index will need to be remapped using the
+  <a href="gamepad_test_mapping.htm">
+   <span>
+    gamepad_test_mapping()
+   </span>
+  </a>
+  function if you want to be able to be able to use the gamepad constants to detect input correctly (direct input can always be retrieved using the
+  <span>
+   <a href="gamepad_axis_count.htm">
+    gamepad_axis
+   </a>
+   /
+   <a href="gamepad_button_count.htm">
+    button
+   </a>
+   /
+   <a href="gamepad_hat_count.htm">
+    hat_count()
+   </a>
+  </span>
+  and
+  <span>
+   <a href="gamepad_axis_value.htm">
+    gamepad_axis
+   </a>
+   /
+   <a href="gamepad_button_value.htm">
+    button
+   </a>
+   /
+   <a href="gamepad_hat_value.htm">
+    hat_value()
+   </a>
+  </span>
+  functions together).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">gamepad_remove_mapping(index);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      Which gamepad index "slot" to remove the mapping from.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if remap == true
+{
+    gamepad_remove_mapping(global.PadIndex);
+}
+</code></pre>
+  The above code will remove the mapping from the given gamepad index slot based on the value of a variable.
+ </body>
+</html>

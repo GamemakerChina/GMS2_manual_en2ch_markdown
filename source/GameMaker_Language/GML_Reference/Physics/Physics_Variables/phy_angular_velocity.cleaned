@@ -1,0 +1,36 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   phy_angular_velocity
+  </h1>
+  This variable can be used to set the angular velocity of the instance, or it can be used to get the current angular velocity, in degrees per second and the value used can be either positive (for clockwise rotation) or negative (for anticlockwise rotation). If you set this on an instance that was previously static (ie: it has a density of 0) it will become a kinematic object and begin rotating
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">phy_angular_velocity;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a>
+(single precision floating point value, or undefined if the instance is not physics enabled)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if abs(phy_angular_velocity) &amp;amp;gt; 0
+{
+    phy_angular_velocity -= sign(phy_angular_velocity) * 0.01;
+}
+else
+{
+    phy_angular_velocity = 0;
+}
+</code></pre>
+  The above code will check the angular velocity of the instance and if it is not 0 it will then add (or subtract) a small amount every step until the value is 0.
+ </body>
+</html>

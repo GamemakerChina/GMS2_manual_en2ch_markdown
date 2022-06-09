@@ -1,0 +1,73 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Pause_Particle_System.png"/><br/>
+   Pause Particle System
+  </h1>
+  This action will pause the given particle system. You supply the unique ID value for the system to pause, as returned when you created the system with the action
+  <a href="Create_Particle_System.htm">
+   Create Particle System
+  </a>
+  . A paused particle system
+    will still draw the particles that have been spawned but they will no longer update their colour, position or alpha, nor will they complete their lifespan and disappear until you resume the system. You can choose to pause or resume the system using the
+    "State" option.
+  
+  
+   Note that this does
+  <i>
+   not
+  </i>
+  pause emitters that are streaming particles, nor will it stop an emitter bursting particles - emitters will still create particles when called, but when the system is paused the particles will do nothing and be drawn exactly
+    where they are created until you reset the paused state or call
+  <a href="Update_Particle_System.htm">
+   Update Particle System
+  </a>
+  .
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Pause_Particle_System.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      System
+     </td>
+     <td>
+      The unique ID value for the system to be paused
+     </td>
+    </tr>
+    <tr>
+     <td>
+      State
+     </td>
+     <td>
+      Whether to pause or resume the particle system
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Pause_Particle_System.png"/><br/>
+  The above action block code will check a global variable and if it returns
+  <span>
+   true
+  </span>
+  then the given particle system will be paused otherwise it will be resumed.
+ </body>
+</html>

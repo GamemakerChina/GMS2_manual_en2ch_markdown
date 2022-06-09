@@ -1,0 +1,152 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   gpu_set_fog
+  </h1>
+  This function can be used to enable or disable fog drawing. Fog can be used in 3D games to make instances in the distance look faded or even invisible, which helps in creating atmosphere as well as masking the fact that you are not drawing instances that are far away.
+  
+  
+   You set whether it is enabled (
+  <span>
+   true
+  </span>
+  ) or disabled (
+  <span>
+   false
+  </span>
+  ), the colour that the fog should use for blending, as well as the start and end draw distances. The distance values are essentially depth values in pixels, and are relative to the camera's position.
+  
+  
+   For example, a position of 0 is nearest to the camera, and with each increase it gets farther away. By default, a view's camera is placed at -16000 depth, so if you wanted the fog to start at depth 0 and end at depth 1000, you would set the start distance to 16000 and the end distance to 17000.
+  
+  
+   The function can take four individual arguments (given above), or a single array with the following structure (the example code below shows this method):
+  <ul>
+   <li>
+    [0] = enabled toggle (a boolean, either
+    <span>
+     true
+    </span>
+    or
+    <span>
+     false
+    </span>
+    ), default
+    <span>
+     false
+    </span>
+   </li>
+   <li>
+    [1] = colour (real), default
+    <span>
+     c_black
+    </span>
+   </li>
+   <li>
+    [2] = start distance (real), default 0
+   </li>
+   <li>
+    [3] = end distance (real), default 1
+   </li>
+  </ul>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">gpu_set_fog(enable, colour, start, end);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      enable
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Enable or disable fog
+     </td>
+    </tr>
+    <tr>
+     <td>
+      colour
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Drawing/Colour_And_Alpha/Colour_And_Alpha.htm">
+        Colour
+       </a>
+      </span>
+     </td>
+     <td>
+      The fog colour
+     </td>
+    </tr>
+    <tr>
+     <td>
+      start
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The distance to start applying fog from (relative to the camera)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      end
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The distance to end the fog (relative to the camera)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var fog_a = gpu_get_fog();
+fog_a[1] = c_red;
+gpu_set_fog(fog_a);
+</code></pre>
+  The above code gets the current fog settings and then sets the colour element of the array to
+  <span>
+   c_red
+  </span>
+  before setting the fog again using the changed array.
+ </body>
+</html>

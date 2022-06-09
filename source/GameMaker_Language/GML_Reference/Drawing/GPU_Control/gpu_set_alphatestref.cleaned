@@ -1,0 +1,83 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   gpu_set_alphatestref
+  </h1>
+  This function will set the reference value for the alpha testing (when it has been enabled using the
+  <a href="gpu_set_alphatestenable.htm">
+   <span>
+    gpu_set_alphatestenable()
+   </span>
+  </a>
+  ). This is the "cut-off" threshold at which pixels with alpha will not be drawn.
+  
+  
+   Basically, if you have this value set to 0 and you have linear interpolation turned on (either in the Game Options or using
+  <a href="gpu_set_texfilter.htm">
+   <span>
+    gpu_set_texfilter()
+   </span>
+  </a>
+  ), you can still get visual errors at the edges of overlapping objects. This is because you can have
+  <i>
+   almost
+  </i>
+  completely transparent areas that block things drawn behind them, but if you set this reference value to, for example, 254 (i.e. one below maximum), this guarantees that only 100% opaque pixels are going to be drawn. You can also turn texture interpolation off, which would normally allow you to use the default values with no problems and no need to use this function at all, however a lot depends on the source artwork.
+  <b>
+   NOTE
+  </b>
+  : This is an advanced drawing feature, so if you are not sure whether you need it or not, or don't know exactly what it does, you are probably better off not using it as it can seriously corrupt how your game is drawn.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">gpu_set_alphatestref(val);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      val
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      Sets the reference value for alpha testing from 0 to 255 (default value is 0)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if !gpu_get_alphatestenable()
+{
+    gpu_set_alphatestenable(true);
+    gpu_set_alphatestref(128);
+}
+</code></pre>
+  The above code will check to see if alpha testing is enabled and if not it will switch on alpha testing and set the test threshold to 128 (only pixels with an alpha over 0.5 will be drawn).
+ </body>
+</html>

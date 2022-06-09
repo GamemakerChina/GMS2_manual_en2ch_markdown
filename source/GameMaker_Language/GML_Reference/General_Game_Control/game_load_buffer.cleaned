@@ -1,0 +1,73 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   game_load_buffer
+  </h1>
+  With this function you can load a game state that has been saved previously. The game is loaded from a previously created "grow" buffer (see
+  <a href="../Buffers/Buffers.htm">
+   Buffers
+  </a>
+  ) and the buffer must have had a game state saved to it using
+  <a href="game_save_buffer.htm">
+   <span>
+    game_save_buffer()
+   </span>
+  </a>
+  function.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">game_load_buffer(buffer);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      buffer
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Buffers/buffer_create.htm">
+        Buffer ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The buffer id to load from.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if keyboard_check_pressed(ord("L"))
+{
+    if global.Checkpoint game_load_buffer(save_buff);
+}
+</code></pre>
+  The above code will load a previously saved game state from the buffer indexed in the variable "save_buff", only if the global variable is
+  <span>
+   true
+  </span>
+  , when the player presses the "L" key.
+ </body>
+</html>

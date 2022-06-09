@@ -1,0 +1,109 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   audio_listener_position
+  </h1>
+  With this function you can change the position of the
+  <i>
+   listener
+  </i>
+  within the 3D audio space. The example image below shows the default position for the listener in the audio space:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/GML/Reference/Audio/Audio_Listener.png"/><br/>
+  <b>
+   <span>
+    NOTE
+   </span>
+   I
+  </b>
+  f you have multiple listeners, use the function
+  <span>
+   <a href="audio_listener_set_position.htm">
+    audio_listener_set_position()
+   </a>
+   .
+  </span>
+  As you can see, the default position is (0, 0, 0) but you would normally use this function to move the listener around with the player object within your game and so change the way audio created by emitters is heard by the player, for example, in the image below of a top down game, the player instance sets the listener which will cause the audio from the various emitters to "change" as the player moves around the level:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/GML/Reference/Audio/Audio_Game.png"/><br/>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">audio_listener_position(x, y, z);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      x
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x position of the listener (default 0).
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y position of the listener (default 0).
+     </td>
+    </tr>
+    <tr>
+     <td>
+      z
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The z position of the listener (default 0).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if speed &amp;amp;gt; 0
+{
+    audio_listener_position(x, y, 0);
+}
+</code></pre>
+  The above code checks to see if the player instance speed is over 0 and if it is it updates the audio listener to the current x/y position.
+ </body>
+</html>

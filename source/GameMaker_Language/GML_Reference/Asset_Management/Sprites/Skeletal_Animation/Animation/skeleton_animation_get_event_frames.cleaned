@@ -1,0 +1,110 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   skeleton_animation_get_event_frames
+  </h1>
+  This function can be used to retrieve all the frames for the given event, in the given animation. You supply the skeleton animation name (as a string, as defined in the program used to make the animation, or as returned by using the function
+  <span>
+   <a href="skeleton_animation_get.htm">
+    skeleton_animation_get()
+   </a>
+  </span>
+  ) and an event name. The function returns an array with the frames for that event.
+  
+  
+   If the specified event name does not exist, the function will return an array with
+  <strong>
+   -1
+  </strong>
+  as its first (and only) element.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">skeleton_animation_get_event_frames(anim_name, event_name);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      anim_name
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The animation name to get the frames of.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      event_name
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The event name to get the frames for.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../../GameMaker_Language/GML_Overview/Arrays.htm">
+ Array
+</a>
+of
+<a href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a>
+s
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var _frames = skeleton_animation_get_event_frames(skeleton_animation_get(), "Footstep");
+
+if (_frames[0] != -1)
+{
+    var _count = array_length(_frames);
+    var _current_frame = skeleton_animation_get_frame(0);
+
+    for (var i = 0; i &amp;amp;lt; _count; i ++)
+    {
+        if (_frames[i] == _current_frame)
+        {
+            audio_play_sound(snd_footstep, 1, false);
+            break;
+        }
+    }
+}
+</code></pre>
+  The above code gets the frames for the
+  <span>
+   "Footstep"
+  </span>
+  event. If it returned an array with the valid frames, it loops through it, and checks if the current frame is equal to any of the frames in the array. In that case it plays the footstep sound effect and breaks (stops) the loop.
+ </body>
+</html>

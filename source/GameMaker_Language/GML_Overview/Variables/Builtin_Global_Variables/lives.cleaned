@@ -1,0 +1,50 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   lives
+  </h1>
+  This variable is
+  <b>
+   global
+  </b>
+  in scope and is used to hold a numeric value which is usually used for the player lives. This variable is only designed to support legacy projects from previous versions of
+  <i>
+   GameMaker
+  </i>
+  and should
+  <b>
+   <i>
+    not be used in new projects
+   </i>
+  </b>
+  as it may be deprecated in the future.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">lives;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a>
+(single precision floating point value)
+</code></pre>
+  <h4>
+   Example
+  </h4>
+  <pre><code class="language-gml">if (lives &amp;amp;lt; 5)
+{
+    lives += 1;
+}
+</code></pre>
+  The above code checks the
+  <span>
+   lives
+  </span>
+  variable and if it is less than 5, 1 is added to it.
+ </body>
+</html>

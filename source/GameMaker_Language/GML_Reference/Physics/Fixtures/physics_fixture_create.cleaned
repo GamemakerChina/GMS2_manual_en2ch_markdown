@@ -1,0 +1,27 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   physics_fixture_create
+  </h1>
+  The first step in setting up a fixture is creating it with this function. The returning index should be stored in a variable to be used in all further functions that are used to define and use this fixture.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">physics_fixture_create()
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Reference/Physics/Fixtures/physics_fixture_create.htm">
+ Physics Fixture ID
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">fix_Ball = physics_fixture_create();
+</code></pre>
+  The code above will create a fixture and store its index in the variable "fix_Ball".
+ </body>
+</html>

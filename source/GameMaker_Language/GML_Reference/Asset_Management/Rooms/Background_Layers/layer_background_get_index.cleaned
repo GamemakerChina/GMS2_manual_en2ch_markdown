@@ -1,0 +1,76 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   layer_background_get_index
+  </h1>
+  This function can be used to get the current image index value of the background element. You give the background element ID (which you get when you create a background element using
+  <a href="layer_background_create.htm">
+   <span>
+    layer_background_create()
+   </span>
+  </a>
+  or when you use the function
+  <a href="layer_background_get_id.htm">
+   <span>
+    layer_background_get_id()
+   </span>
+  </a>
+  ), and the function will return real value that represents the image index being shown for the sprite. The function will return -1 if either the background element doesn't exist or the element doesn't have a valid sprite assigned to it.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">layer_background_get_index(background_element_id);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      background_element_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Background_Layers/layer_background_get_id.htm">
+        Background Element ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The unique ID value of the background element to get the information from
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a>
+(the current sprite image index or -1)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var lay_id = layer_get_id("Background_sky");
+var back_id = layer_background_get_id(lay_id);
+if layer_background_get_index(back_id) &amp;amp;lt; 4
+{
+    layer_background_index(back_id, 4);
+}
+</code></pre>
+  The above code will get the layer ID for the layer named "Background_sky" and then use that to get the ID of the background element on that layer. This ID is then used to check if the image index for the element is less than 4, and if so it is set to 4.
+ </body>
+</html>

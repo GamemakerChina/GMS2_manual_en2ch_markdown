@@ -1,0 +1,119 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Debugging
+  </h1>
+  While making a game, it is often very important that you know certain details of the game mechanics at specific points in time, or to be able to input certain key values for some functions to test out different methods and ideas for your game. To that end
+  <span>
+   GameMaker
+  </span>
+  provides you with a number of debug functions that will show messages and ask for input while in debug mode (or on a Windows target) but that will be ignored when compiled for other target modules due to the fact that these functions put the game in a closed loop until the input is resolved.
+  <b>
+   <span>
+    NOTE
+   </span>
+  </b>
+  Although they may work on certain platforms they are not to be used for anything other than debugging.
+  <ul>
+   <li>
+    <a href="debug_mode.htm">
+     debug_mode
+    </a>
+   </li>
+   <li>
+    <a href="debug_event.htm">
+     debug_event
+    </a>
+   </li>
+   <li>
+    <a href="debug_get_callstack.htm">
+     debug_get_callstack
+    </a>
+   </li>
+   <li>
+    <a href="exception_unhandled_handler.htm">
+     exception_unhandled_handler
+    </a>
+   </li>
+   <li>
+    <a href="get_integer.htm">
+     get_integer
+    </a>
+   </li>
+   <li>
+    <a href="get_string.htm">
+     get_string
+    </a>
+   </li>
+   <li>
+    <a href="show_error.htm">
+     show_error
+    </a>
+   </li>
+   <li>
+    <a href="show_message.htm">
+     show_message
+    </a>
+   </li>
+   <li>
+    <a href="show_question.htm">
+     show_question
+    </a>
+   </li>
+   <li>
+    <a href="show_debug_message.htm">
+     show_debug_message
+    </a>
+   </li>
+   <li>
+    <a href="show_debug_overlay.htm">
+     show_debug_overlay
+    </a>
+   </li>
+   <li>
+    <a href="code_is_compiled.htm">
+     code_is_compiled
+    </a>
+   </li>
+   <li>
+    <a href="fps.htm">
+     fps
+    </a>
+   </li>
+   <li>
+    <a href="fps_real.htm">
+     fps_real
+    </a>
+   </li>
+  </ul>
+  Apart from those specialist functions, to help you out when creating your game,
+  <span>
+   GameMaker
+  </span>
+  also has a long list of error messages that can be shown either when writing your game code, compiling your game, or when the game itself is running. These messages point to the specific error in question and can be used to pinpoint a problem within a specific object or script function, helping greatly with the process of debugging your game. However, it may not always be obvious exactly what the error message means and so the following sections list all of the possible messages and explain what they mean to make life easier for you:
+  <ul>
+   <li>
+    <a href="../../../Additional_Information/Errors/Syntax_Errors.htm">
+     Syntax Errors
+    </a>
+   </li>
+   <li>
+    <a href="../../../Additional_Information/Errors/Compiler_Errors.htm">
+     Compiler Errors
+    </a>
+   </li>
+   <li>
+    <a href="../../../Additional_Information/Errors/Runner_Errors.htm">
+     Runner Errors
+    </a>
+   </li>
+  </ul>
+  You can also find further information on how to debug your game in the section on
+  <a href="../../../IDE_Tools/The_Debugger.htm">
+   The Debugger
+  </a>
+  .
+ </body>
+</html>

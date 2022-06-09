@@ -1,0 +1,74 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   gpu_set_blendenable
+  </h1>
+  This function can be used to toggle alpha-blending on and off. Basically, if you have this set to
+  <span>
+   false
+  </span>
+  , all images being drawn will be drawn 100% opaque, meaning that any transparent, or semi transparent, areas of a sprite or background will
+    be visible as a solid colour. It is a good idea to have alpha blending
+  <i>
+   off
+  </i>
+  whenever possible (especially when developing for mobile devices) as this greatly increases the draw speed.
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/GML/Reference/Drawing/Alphablend_Image.png"/><br/>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">gpu_set_blendenable(enable);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      enable
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Enable or disable alpha blending value (
+      <span>
+       true
+      </span>
+      or
+      <span>
+       false
+      </span>
+      ).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">gpu_set_blendenable(false); draw_sprite(spr_Background, 0, 0, 0); gpu_set_blendenable(true);
+</code></pre>
+  The above code switches off alpha blending to draw a background sprite and then switches it back on again to continue drawing.
+ </body>
+</html>

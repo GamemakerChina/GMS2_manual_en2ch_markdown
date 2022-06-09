@@ -1,0 +1,48 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   bbox_bottom
+  </h1>
+  This
+  <b>
+   read only
+  </b>
+  variable returns the y position (within the room) of the bottom of the bounding box for the instance, where the bounding box is defined by the maximum width and height of the mask for the instance (as set by the
+  <span>
+   <a href="sprite_index.htm">
+    sprite_index
+   </a>
+  </span>
+  or by the
+  <span>
+   <a href="mask_index.htm">
+    mask_index
+   </a>
+  </span>
+  ). Even when a sprite has a precise collision mask, the bounding box exists and is used for certain things, and so you can use this variable to find it. Please note that when the instance has no sprite assigned the value returned will be the same as the instance Y position.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">bbox_bottom;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a>
+(integer)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if bbox_bottom &amp;amp;gt; room_height
+{
+    y = room_height - sprite_yoffset;
+}
+</code></pre>
+  The above code checks to see if the bounding box of the instance is outside the room and if it is it sets the instance to a new position.
+ </body>
+</html>

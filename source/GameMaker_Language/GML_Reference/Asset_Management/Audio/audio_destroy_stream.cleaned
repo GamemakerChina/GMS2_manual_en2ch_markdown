@@ -1,0 +1,70 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   audio_destroy_stream
+  </h1>
+  If you have previously created an audio stream from a file using the function
+  <a href="audio_create_stream.htm">
+   <span>
+    audio_create_stream()
+   </span>
+  </a>
+  and no longer need that sound, you can call this function to delete it from memory. Any further calls to the sound index after it has been destroyed will give an error. It should be noted that this will free up the stream but on the target platform this may not show up in a memory manager. This is because
+  <span>
+   GameMaker
+  </span>
+  pools memory resources to prevent memory allocation overhead, and so the memory will remain allocated until required for something else or re-used for a new stream.
+  <b>
+   NOTE
+  </b>
+  : This functionality is not available for the HTML5 target platform.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">audio_destroy_stream(filename);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      filename
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      Path to the audio file that was streamed.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">audio_destroy_stream(snd);
+</code></pre>
+  The above code removes the sound indexed in the variable "snd" from memory.
+ </body>
+</html>

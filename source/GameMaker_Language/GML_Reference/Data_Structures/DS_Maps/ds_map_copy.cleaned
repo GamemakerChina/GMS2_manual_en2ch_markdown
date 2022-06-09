@@ -1,0 +1,88 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   ds_map_copy
+  </h1>
+  You can use this function to copy the contents of one map into another one that you have previously created using
+  <span>
+   <a href="ds_map_create.htm">
+    ds_map_create()
+   </a>
+  </span>
+  . If the DS map that is being copied
+  <i>
+   to
+  </i>
+  is not empty,
+    then this function will clear it first before copying. The original DS map remains unchanged by this process.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">ds_map_copy(id, source);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/ds_map_create.htm">
+        DS Map ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The id of the map you are copying
+      <b>
+       to
+      </b>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      source
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/ds_map_create.htm">
+        DS Map ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The id of the map you are copying
+      <b>
+       from
+      </b>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">inventory_2 = ds_map_create(); ds_map_copy(inventory_2, inventory_1);
+</code></pre>
+  The above code will create a new map and assign it to the variable "inventory_2". It will then copy the contents of the DS map indexed in the variable "inventory_1" to this new map.
+ </body>
+</html>

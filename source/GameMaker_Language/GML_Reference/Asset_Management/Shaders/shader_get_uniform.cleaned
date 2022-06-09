@@ -1,0 +1,80 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   shader_get_uniform
+  </h1>
+  Since you cannot change the value of a shader constant within the shader itself, you have to set it before calling the shader using one of the available
+  <strong>
+   uniform set
+  </strong>
+  functions. However, to be able to do that you must first call this function to get the "handle" of the shader constant that you will want to change.
+  <b>
+   NOTE
+  </b>
+  : Although a shader is made up of two discreet programs (vertex and fragment) this function will not differentiate between the two and will return the handle of the shader constant from either of them.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">shader_get_uniform(shader, uniform);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      shader
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Shaders.htm">
+        Shader Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the shader to use.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      uniform
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The shader constant to get the handle of (a string).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Shaders/shader_get_uniform.htm">
+ Shader Uniform Handle
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">shader_params = shader_get_uniform(shd_glass, "u_vRefractColour");
+</code></pre>
+  The above code will get the handle of the shader constant "u_vRefractColour".
+ </body>
+</html>

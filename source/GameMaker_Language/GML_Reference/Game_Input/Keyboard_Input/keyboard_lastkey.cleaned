@@ -1,0 +1,51 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   keyboard_lastkey
+  </h1>
+  This variable refers to the value that
+  <a href="keyboard_key.htm">
+   <span>
+    keyboard_key
+   </span>
+  </a>
+  was in the previous frame, returning the keycode of that key (all standard keycode constants are returned). This variable is
+  <i>
+   not
+  </i>
+  read only and you can change it, for example to set it to -1 if you handled it already.
+  <h4>
+   <b>
+    Syntax:
+   </b>
+  </h4>
+  <pre><code class="language-gml">keyboard_lastkey;
+</code></pre>
+  <h4>
+   <b>
+    Returns:
+   </b>
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Reference/Game_Input/Keyboard_Input/Keyboard_Input.htm">
+ Virtual Key Constant (vk_*)
+</a></code></pre>
+  <h4>
+   <b>
+    Example:
+   </b>
+  </h4>
+  <pre><code class="language-gml">if (keyboard_lastkey != -1)
+{
+    str += keyboard_lastchar;
+    keyboard_lastkey = -1;
+}
+</code></pre>
+  The above code checks to see if the lastkey variable is not equal to -1, and if it is it adds whatever the last key was as a string to the variable "str", then it resets the
+  <span>
+   keyboard_lastkey
+  </span>
+  variable to accept further input.
+ </body>
+</html>

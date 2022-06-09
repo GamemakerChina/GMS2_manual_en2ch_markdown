@@ -1,0 +1,48 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   image_speed
+  </h1>
+  This variable determines the speed in which
+  <span>
+   GameMaker
+  </span>
+  will cycle through the sub-images for the current instance sprite. The speed value given is a
+  <i>
+   multiplier
+  </i>
+  , with 1 being the default value, and setting it to 0.5 will half the animation speed - as set in the
+  <a href="../../../../../The_Asset_Editors/Sprites.htm">
+   Sprite Editor
+  </a>
+  or
+  <a href="../../../../../The_Asset_Editors/Image_Editor.htm">
+   Image Editor
+  </a>
+  - while setting it to 2 will double it. If the sprite used has no sub-images, this variable will have no effect.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">image_speed;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a>
+(single precision floating point value)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">with (instance_create_layer(x, y, "Effects", obj_Explosion))
+{
+    image_speed = 0.5;
+}
+</code></pre>
+  The above code creates an instance of the object "obj_Explosion" and sets its image_speed to 0.5 (effectively halving the running speed).
+ </body>
+</html>

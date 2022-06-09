@@ -1,0 +1,106 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Time_Sources/Action_Icons/If_State.png"/><br/>
+   If [Time Source] State
+  </h1>
+  This action allows you to control other actions based on the state of the given
+  <span>
+   Time Source
+  </span>
+  .
+   
+   
+    It checks if the
+  <span>
+   <a href="../../../../GameMaker_Language/GML_Reference/Time_Sources/Time_Source_States.htm">
+    Time Source State Constant
+   </a>
+  </span>
+  given in "State" is (or isn't) the state of the
+  <span>
+   Time Source
+  </span>
+  given in "Time Source".
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Time_Sources/Action_Syntax/If_TS_State.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Time Source
+     </td>
+     <td>
+      The
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Time_Sources/time_source_create.htm">
+        Time Source ID
+       </a>
+      </span>
+      to check the state of
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Not
+     </td>
+     <td>
+      Enable this to invert the condition
+     </td>
+    </tr>
+    <tr>
+     <td>
+      State
+     </td>
+     <td>
+      The
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Time_Sources/Time_Source_States.htm">
+        Time Source State Constant
+       </a>
+      </span>
+      to check against
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Time_Sources/Examples/Eg_Pause_TS.png"/><br/>
+  This code block would ideally run in a Key Press event.
+   
+   
+    It checks if the state of a
+  <span>
+   Time Source
+  </span>
+  is "active", and in that case, it pauses that
+  <span>
+   Time Source
+  </span>
+  .
+   
+   
+    However, if the state is "paused", it starts the
+  <span>
+   Time Source
+  </span>
+  again.
+ </body>
+</html>

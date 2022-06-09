@@ -1,0 +1,134 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   draw_text_ext
+  </h1>
+  This function will draw text in a similar way to
+  <a href="draw_text.htm">
+   <span>
+    draw_text
+   </span>
+   <span>
+    ()
+   </span>
+   <span>
+   </span>
+  </a>
+  only now you can set the space between each line of text - should the text occupy more than one line - and limit the width (in pixels)
+    of the string per line so that should any line exceed this value,
+  <span>
+   GameMaker
+  </span>
+  will automatically split the text to the next line at the nearest available white-space (if the text has no white-spaces then it will overrun this maximum
+    width value). Note that any white space placed at the start of the string will be stripped out before being parsed for drawing because of this. Also note that a value of -1 for the line separation argument will default to a separation based on the
+    height of the "M" character in the chosen font.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">draw_text_ext(x, y, string, sep, w);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      x
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x coordinate of the drawn string.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y coordinate of the drawn string.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      string
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The string to draw.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      sep
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The distance in pixels between lines of text.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      w
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The maximum width in pixels of the string before a line break.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">draw_text_ext(100, 50, keyboard_string, 3, 300);
+</code></pre>
+  The above code will draw whatever text the user types into the keyboard, splitting it onto new lines every time the string length for that line exceeds 300 pixels. the code will also maintain a separation of 3 pixels between lines should this occur.
+ </body>
+</html>

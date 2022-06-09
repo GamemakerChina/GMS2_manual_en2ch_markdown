@@ -1,0 +1,65 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   path_get_closed
+  </h1>
+  This function can be used to return whether the path is flagged as closed (true) or open (false), ie whether the path loops or if it has a definitive beginning and end.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">path_get_closed(index);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Paths.htm">
+        Path Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the path to check.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">state = path_get_closed(pth_Patrol);
+</code></pre>
+  This will set "state" to either
+  <span>
+   true
+  </span>
+  or
+  <span>
+   false
+  </span>
+  depending on the closed state of the path indexed in "pth_Patrol".
+ </body>
+</html>

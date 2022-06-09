@@ -1,0 +1,194 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Script Functions vs. Methods
+  </h1>
+  This page covers essential information about using script functions vs. methods.
+  <h2>
+   Basic Difference
+  </h2>
+  A
+  <a href="Script_Functions.htm">
+   script function
+  </a>
+  is created with this syntax:
+  <pre><code class="language-gml">function name()
+{
+    code;
+}
+</code></pre>
+  A
+  <a href="Method_Variables.htm">
+   method variable
+  </a>
+  is created with this syntax:
+  <pre><code class="language-gml">name = function()
+{
+    code;
+}
+</code></pre>
+  You should use the first syntax in scripts, to create global functions that can be called from any scope in your game.
+   
+   
+    You should use the second syntax when creating functions in
+  <a href="Structs.htm">
+   structs/constructors
+  </a>
+  and objects. This syntax creates a variable containing a method.
+  <h2>
+   Direct Calls
+  </h2>
+  You can call both script functions and methods directly by using parentheses
+  <span>
+   ()
+  </span>
+  ,  just like a
+  <a href="Runtime_Functions.htm">
+   runtime function
+  </a>
+  :
+  <pre><code class="language-gml">// Create the function
+function reset_x()
+{
+    x = xstart;
+}
+
+// Call the function
+reset_x();
+</code></pre>
+  You can also use the function
+  <a href="../GML_Reference/Asset_Management/Scripts/script_execute.htm">
+   <span>
+    script_execute()
+   </span>
+  </a>
+  to run a script function, although it's now a legacy function and not recommended for use.
+  <h2>
+   Indirect Calls: Methods
+  </h2>
+  You can store a reference to a method, in another variable, to call it later through that different variable:
+  <pre><code class="language-gml">// Create method
+reset_alpha = function()
+{
+    image_alpha = 1;
+}
+
+// Pass reference and call
+temp_1 = reset_alpha;
+temp_1();
+</code></pre>
+  <span>
+   NOTE
+  </span>
+  See how the code doesn't put
+  <span>
+   ()
+  </span>
+  after
+  <span>
+   reset_alpha
+  </span>
+  . That's because we're reading the method reference and not calling it.
+   
+   
+    In this example, calling
+  <span>
+   temp_1
+  </span>
+  will call
+  <span>
+   reset_alpha
+  </span>
+  , as it stores a reference to that
+  <strong>
+   method
+  </strong>
+  .
+   
+   
+    You are completely fine to pass around a method reference in this way. When using script functions though, there is a caveat.
+  <h2>
+   Indirect Calls: Script Functions
+  </h2>
+  You can also store a reference to a script function, in another variable:
+  <pre><code class="language-gml">// Create function
+function reset_x()
+{
+    x = xstart;
+}
+
+// Store reference
+temp_1 = reset_x;
+</code></pre>
+  Now, you can call
+  <span>
+   temp_1
+  </span>
+  by doing this:
+  <pre><code class="language-gml">temp_1();
+</code></pre>
+  However, since this variable refers to a
+  <strong>
+   script function
+  </strong>
+  , it first has to convert it into a
+  <strong>
+   method
+  </strong>
+  , and then call it.
+   
+   
+    This can easily result in increased memory usage, especially if you're calling it every frame, because the engine now has to create a new method every frame for this call.
+   
+   
+    So, what is the solution?
+  <ul>
+   <li>
+    Use
+    <a href="../GML_Reference/Asset_Management/Scripts/script_execute.htm">
+     <span>
+      script_execute()
+     </span>
+    </a>
+    to call the script function via its reference, which will not create a method.
+   </li>
+   <li>
+    Or, the better solution: convert your script function
+    <a href="../GML_Reference/Variable_Functions/method.htm">
+     into a method
+    </a>
+    when passing its reference.
+   </li>
+  </ul>
+  To implement the second solution, your code would look like this:
+  <pre><code class="language-gml">temp_1 = method(undefined, reset_x);
+</code></pre>
+  This is creating a new method from the
+  <span>
+   reset_x
+  </span>
+  script function, using
+  <a href="../GML_Reference/Variable_Functions/method.htm">
+   <span>
+    method()
+   </span>
+  </a>
+  .
+   
+   
+    Calling
+  <span>
+   temp_1()
+  </span>
+  now using parentheses will not increase memory usage, as the method is already created for you.
+   
+   
+    Again, this only applies if you're calling a script function
+  <strong>
+   indirectly
+  </strong>
+  , via a reference stored in a variable. Calling it directly doesn't cause such problems.
+ </body>
+</html>

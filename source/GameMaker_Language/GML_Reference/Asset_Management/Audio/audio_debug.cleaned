@@ -1,0 +1,137 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   audio_debug
+  </h1>
+  This function can be used to display debug information about the audio system, with
+  <span>
+   true
+  </span>
+  switching it on and
+  <span>
+   false
+  </span>
+  to switch it off. When you are debugging audio in this way, the overlay will show the following information:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/GML/Reference/Audio/Audio_Debug.png"/><br/>
+  <ul>
+   <li>
+    <strong>
+     Handle
+    </strong>
+    - The OpenAL source handle (unique for every sound played)
+   </li>
+   <li>
+    <strong>
+     Data Handle
+    </strong>
+    - The OpenAL buffer handle (shows the same value for multiple sounds with the same source handle)
+   </li>
+   <li>
+    <strong>
+     Processed Buffers
+    </strong>
+    - how many buffers have been played
+   </li>
+   <li>
+    <strong>
+     Queued Buffers
+    </strong>
+    - how many buffers have been queued (and are still waiting to play)
+   </li>
+   <li>
+    <strong>
+     Gain
+    </strong>
+    - The gain value for the audio (0 - 65536)
+   </li>
+   <li>
+    <strong>
+     Play Offset
+    </strong>
+    - the sample position (current play position) into the current buffer
+   </li>
+   <li>
+    <strong>
+     Queued Buffers Bars
+    </strong>
+    - a small box diagram of the processed/queued buffers with the play offset (current position) drawn as a blue line
+   </li>
+  </ul>
+  For synchronised groups of audio, you also have the function
+  <a href="Audio_Synchronisation/audio_sync_group_debug.htm">
+   <span>
+    audio_sync_group_debug()
+   </span>
+  </a>
+  .
+  <b>
+   <span>
+    NOTE
+   </span>
+  </b>
+  This function does not work on the HTML5 target platform.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">audio_debug(enable);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      enable
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Enable (set to
+      <span>
+       true
+      </span>
+      ) or disable (
+      <span>
+       false
+      </span>
+      ) audio debugging.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if (debug_mode)
+{
+    audio_debug(true);
+}
+else
+{
+    audio_debug(false);
+}
+</code></pre>
+  The above code will switch on or off the audio debug overlay depending on whether the game is running in debug mode or not.
+ </body>
+</html>

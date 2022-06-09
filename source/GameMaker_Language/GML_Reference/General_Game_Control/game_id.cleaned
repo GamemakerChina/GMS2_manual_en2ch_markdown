@@ -1,0 +1,40 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   game_id
+   <span>
+    DEPRECATED
+   </span>
+  </h1>
+  This
+  <b>
+   read only
+  </b>
+  variable returns the unique identifier for the game you have created. You can use this if you need a unique file name, or anything else that needs something to identify your game only. This can be set in the
+  <a href="../../../Settings/Game_Options.htm">
+   Game Options
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">game_id
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">ini_open("Score.ini");
+ini_write_real("Scores", "0", score + game_id);
+ini_close();
+</code></pre>
+  The above code performs a very basic encryption on the score by adding the game_id to it before saving. On reading it back into the game you would deduct the game_id to get the correct value again.
+ </body>
+</html>

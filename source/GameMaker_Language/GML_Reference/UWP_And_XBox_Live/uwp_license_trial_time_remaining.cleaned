@@ -1,0 +1,37 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   uwp_license_trial_time_remaining
+  </h1>
+  This function will return the approximate number of seconds until a time-based trial expires. The value returned by this function is meaningless if the trial is not time-based or if the game is not running in trial mode.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">uwp_license_trial_time_remaining();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if uwp_license_trial_version()
+{
+    var secs = uwp_license_trial_time_remaining() mod 60;
+    var mins = uwp_license_trial_time_remaining() div 60;
+    var hours = mins div 60;
+    if secs &amp;amp;lt; 10 secs = "0" + string(secs) else secs = string(secs);
+    if mins &amp;amp;gt; 60 mins -= (hours * 60);
+    if mins &amp;amp;lt; 10 mins = "0" + string(mins) else mins = string(mins);
+    if hours &amp;amp;gt; 9 hours = "9" else hours = string(hours);
+    time_string = hours + ":" + mins + ":" + secs;
+}
+</code></pre>
+  The above code checks to see if the game is being run with a trial licence and if it is it creates a string with the time until the licence expires.
+ </body>
+</html>

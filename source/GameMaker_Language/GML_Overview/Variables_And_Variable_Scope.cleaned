@@ -1,0 +1,291 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Variables And Variable Scope
+  </h1>
+  Like any programming language
+  <b>
+   GML
+  </b>
+  uses
+  <i>
+   variables
+  </i>
+  as the basic unit for most programming operations. Variables are used to store information in the devices memory for later (or instant) use, and they are given a name so that you can refer to them in runtime and script functions. A variable in
+  <b>
+   GML
+  </b>
+  can store many different
+  <a href="Data_Types.htm">
+   <strong>
+    data types
+   </strong>
+  </a>
+  , like a real number (eg: 100, 2.456575, -56 etc...), a string (eg: "Hello world!"), an integer (eg: 1, 556, -7), or a boolean (
+  <span>
+   true
+  </span>
+  or
+  <span>
+   false
+  </span>
+  ), as well as other things:
+  <pre><code class="language-gml">var _num = 126.4545;
+var _str = "Hello World";
+new_num = _num * 100;
+global.my_string = _str + " I said";
+</code></pre>
+  You can also use variables to hold the values returned from functions, for example:
+  <pre><code class="language-gml">var _id = instance_nearest(x, y, obj_Tree);
+root = sqrt(1000);
+global.str = string_upper("Hello World");
+</code></pre>
+  So, a variable is something that we can name and use to store a value for later use in one or more operations. A great "real world" example of a variable is
+  <b>
+   pi 𝜋
+  </b>
+  ... it is a variable that everyone knows and it holds the value 3.14159265(etc...). Why do we have it in our language? Well, it's much easier to say to someone "pi" than "three point one four one five nine two six five"! Naming things like this makes life a lot simpler and it also means that should the value of that variable ever change, we don't have to change the number everywhere as the variable
+  <i>
+   name
+  </i>
+  is still the same.
+  
+  
+   When forming variables in
+  <b>
+   GML
+  </b>
+  it must have a name that starts with a letter or the underscore symbol "_" and can contain only letters, numbers, and the underscore symbol '_' with a maximum length of 64 symbols. So, valid variables are things like
+  <span>
+   fish
+  </span>
+  ,
+  <span>
+   foo_bar
+  </span>
+  ,
+  <span>
+   num1
+  </span>
+  , or
+  <span>
+   _str
+  </span>
+  , while invalid variables would be
+  <span>
+   6fish
+  </span>
+  ,
+  <span>
+   foo bar
+  </span>
+  , or
+  <span>
+   *num
+  </span>
+  .
+  
+  
+   Now, In many programming languages you need to create a variable "assignment" before you can use it. This basically means that you tell the computer the name you wish to use for the variable and assign it an initial value. The variable is then given a place in memory to store the value or perform operations on it. Assigning a variable takes the form of:
+  <pre><code class="language-gml">&amp;amp;lt;variable&amp;amp;gt; = &amp;amp;lt;expression&amp;amp;gt;;
+</code></pre>
+  An expression can be a simple value but can also be more complicated, so, rather than assigning a value to a variable, one can also add a value to the current value of the variable using
+  <span>
+   <b>
+    +=
+   </b>
+  </span>
+  , for example:
+  <pre><code class="language-gml">a = 100;   // Assigning a simple value
+b = 200;
+c = 300;
+a += b;    // Assigning with operation
+a = b + c; // Assigning with expression
+</code></pre>
+  <span>
+   NOTE
+  </span>
+  The GameMaker Language will also accept "
+  <span>
+   :=
+  </span>
+  " for assignments, although this is not typically the most common way to do it:
+  <pre><code class="language-gml">&amp;amp;lt;variable&amp;amp;gt; := &amp;amp;lt;expression&amp;amp;gt;;
+</code></pre>
+  Similarly, you can subtract using
+  <span>
+   <b>
+    -=
+   </b>
+  </span>
+  , multiply using
+  <span>
+   <b>
+    *=
+   </b>
+  </span>
+  , divide using
+  <span>
+   <b>
+    /=
+   </b>
+  </span>
+  , or use bitwise operators using
+  <span>
+   <b>
+    |=
+   </b>
+  </span>
+  ,
+  <span>
+   <b>
+    &amp;=
+   </b>
+  </span>
+  , or
+  <span>
+   <b>
+    ^=
+   </b>
+  </span>
+  . You can also add or subtract
+  <i>
+   one
+  </i>
+  from a value using
+  <span>
+   <b>
+    ++
+   </b>
+  </span>
+  ,
+  <span>
+   <b>
+    --
+   </b>
+  </span>
+  . For further information see the section on
+  <a href="Expressions_And_Operators.htm">
+   Expressions And Operators
+  </a>
+  .
+  
+  
+   Note that you
+  <i>
+   cannot
+  </i>
+  do the following (or any variation):
+  <pre><code class="language-gml">a = b = c = 4;
+</code></pre>
+  And instead it should be done as:
+  <pre><code class="language-gml">a = 4;
+b = 4;
+c = 4;
+</code></pre>
+  The variable assignments shown above are all
+  <strong>
+   instance
+  </strong>
+  variables, however there are actually three other main variable categories when you program with
+  <span>
+   GameMaker
+  </span>
+  and each has its own
+  <strong>
+   scope
+  </strong>
+  (which can be considered as its area of operation, or reach). The different kinds of variables and their scope are all outlined in the following pages:
+  <ul>
+   <li>
+    <a href="Variables/Local_Variables.htm">
+     Local Variables
+    </a>
+   </li>
+   <li>
+    <a href="Variables/Instance_Variables.htm">
+     Instance Variables
+    </a>
+   </li>
+   <li>
+    <a href="Variables/Global_Variables.htm">
+     Global Variables
+    </a>
+   </li>
+   <li>
+    <a href="Variables/Constants.htm">
+     Constants
+    </a>
+   </li>
+  </ul>
+  The GameMaker Language also has multiple different built-in variables that can have any of the above mentioned scopes (except
+  <i>
+   local
+  </i>
+  ). These variables are special as they are included by default as part of the objects and the rooms in the game world. Some built in global variables are listed in the section mentioned above, and the different parts of the manual for sprites, rooms, objects, etc... also outline the built-in variables available in each case. Examples of such built-in instance variables would be:
+  <ul>
+   <li>
+    <span>
+     <a href="../GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/sprite_index.htm">
+      sprite_index
+     </a>
+    </span>
+   </li>
+   <li>
+    <a href="../GML_Reference/Asset_Management/Paths/Path_Variables/path_index.htm">
+     <span>
+      path_scale
+     </span>
+    </a>
+   </li>
+   <li>
+    <a href="../GML_Reference/Asset_Management/Instances/Instance_Variables/speed.htm">
+     <span>
+      speed
+     </span>
+    </a>
+   </li>
+  </ul>
+  And examples of built-in global variables would be:
+  <ul>
+   <li>
+    <a href="../GML_Reference/Cameras_And_Display/Cameras_And_Viewports/view_xport.htm">
+     <span>
+      view_xport
+     </span>
+    </a>
+   </li>
+   <li>
+    <a href="../GML_Reference/OS_And_Compiler/GM_version.htm">
+     <span>
+      GM_version
+     </span>
+    </a>
+   </li>
+   <li>
+    <a href="../GML_Reference/Asset_Management/Rooms/room.htm">
+     <span>
+      room
+     </span>
+    </a>
+   </li>
+  </ul>
+  Most built-in variables can be changed and set like other variables, and some can even be
+  <a href="Arrays.htm">
+   arrays
+  </a>
+  , only you don't have to set them to create them like you would a regular variable as they will already be initialised to a default value.
+  
+  
+   Finally, there are a number of functions that are dedicated to setting, getting or checking variables in some way, available from the following page:
+  <ul>
+   <li>
+    <a href="../GML_Reference/Variable_Functions/Variable_Functions.htm">
+     Variable Functions
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

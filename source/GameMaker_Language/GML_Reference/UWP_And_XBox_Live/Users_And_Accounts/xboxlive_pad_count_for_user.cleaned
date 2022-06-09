@@ -1,0 +1,63 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   xboxlive_pad_count_for_user
+  </h1>
+  With this function you can find out how many pad "slots" are active for the current user (see
+  <a href="xboxlive_pad_for_user.htm">
+   <span>
+    xboxlive_pad_for_user()
+   </span>
+  </a>
+  for further details).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">xboxlive_pad_count_for_user(user_id, slot);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      user_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/UWP_And_XBox_Live/Users_And_Accounts/xboxlive_get_user.htm">
+        Xbox User ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The user ID (a pointer) to check
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">global.slots[0] = xboxlive_pad_count_for_user(user_id[0])
+</code></pre>
+  The above code stores the number of pads associated with the given user ID pointer.
+ </body>
+</html>

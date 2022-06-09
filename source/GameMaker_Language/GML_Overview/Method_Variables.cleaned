@@ -1,0 +1,222 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Method Variables
+  </h1>
+  A method variable is essentially a variable that has had a function assigned to it, "binding" the function to an instance and enabling you to use the variable to refer to the function - much like you use a
+  <a href="Runtime_Functions.htm">
+   runtime function name
+  </a>
+  to refer to a built-in GML function. The variable used can be
+  <em>
+   local
+  </em>
+  ,
+  <em>
+   instance
+  </em>
+  or
+  <em>
+   global
+  </em>
+  in scope (see
+  <a href="Variables_And_Variable_Scope.htm">
+   here
+  </a>
+  for more information on variable scope).
+  
+  
+   Also see:
+  <a href="Script_Functions_vs_Methods.htm">
+   Script Functions vs. Methods
+  </a>
+  <h2>
+   Creating Methods
+  </h2>
+  The syntax for creating a method variable is as follows:
+  <pre><code class="language-gml">name = function( parameter1, parameter2, ... )
+{
+    statement1;
+    statement2;
+    ...
+}
+</code></pre>
+  or
+  <pre><code class="language-gml">function name( parameter1, parameter2, ... )
+  {
+    statement1;
+    statement2;
+    ...
+}
+</code></pre>
+  To create a function in GML Visual, use
+  <a href="../../Drag_And_Drop/Drag_And_Drop_Reference/Common/Declare_A_New_Function.htm">
+   Declare A New Function
+  </a>
+  . Enable its "Temp" option to create a method variable (first syntax shown above).
+  
+  
+   In general, however, you would use the
+  <em>
+   first
+  </em>
+  form for methods, and the second form for defining
+  <a href="Script_Functions.htm">
+   script functions
+  </a>
+  , since the second form will also assign a script index to the function name while the first form will be a "true" method (and require the use of the
+  <a href="Variables/Global_Variables.htm">
+   global
+  </a>
+  prefix if used to define a scripted function).
+  <span>
+   NOTE
+  </span>
+  You can check this by using both forms in project and then calling the runtime function
+  <a href="../GML_Reference/Variable_Functions/typeof.htm">
+   typeof()
+  </a>
+  on each of them. One will be classed as a "number" - since it returns a script index ID - and the other will be classed as a "method".
+  
+  
+   So, keep in mind that - in general - we will always be referring to functions that have
+  <em>
+   not
+  </em>
+  been defined with a script index when we are talking about methods and method variables.
+  
+  
+   Below you can see three simple examples of creating a method variable using different scopes:
+  <pre><code class="language-gml">// Local
+var _debug = function(message)
+{
+    show_debug_message(message);
+}
+
+// Instance
+do_maths = function(val1, val2, val3)
+{
+    return (val1 * val2) - val3;
+}
+
+// Global
+global.pd = function(_x1, _y1, _x2, _y2);
+{
+    return point_distance(_x1, _y1, _x2, _y2);
+}
+</code></pre>
+  Notice that in the above code, the various parameters that are given as inputs for the function are all named and these names are what should be used within the function to refer to the different inputs. Also note that you can use the
+  <span>
+   <a href="Language_Features/return.htm">
+    return
+   </a>
+  </span>
+  statement to return a value from a function for use elsewhere in your code, and that a function with
+  <em>
+   no
+  </em>
+  return value defined, will return
+  <span>
+   undefined
+  </span>
+  .by default.
+  <span>
+   NOTE
+  </span>
+  While the variable will be in the chosen scope, the actual function will be bound to the scope that it was initially defined in. For example,
+  <a href="Script_Functions.htm">
+   script functions
+  </a>
+  are all global scope and "unbound" (ie: they are not associated with any instances), but if you have a script function that creates another function as a method variable within it and then you call this script function from an instance, the function used within the script will
+  <strong>
+   be bound to the instance variable as a method
+  </strong>
+  . In general this is not something you ever need to think about but for more complex operations with method variables it's worth taking into consideration. This also applies when using other constructs like
+  <a href="Language_Features/with.htm">
+   <span>
+    with
+   </span>
+  </a>
+  - when you create a method variable inside a with, the function will be bound to the instance that is currently in scope.
+  
+  
+   Once created, the method variable can be used just as you would a runtime function or a script function, for example:
+  <pre><code class="language-gml">create_vec = function(_x1, _y1, _x2, _y2);
+{
+    var _array;
+    _array[0] = point_distance(_x1, _y1, _x2, _y2);
+    _array[1] = point_direction(_x1, _y1, _x2, _y2);
+    return _array;
+}
+
+vec = create_vec(x, y, mouse_x, mouse_y);
+</code></pre>
+  Variables created within a function will follow the same rules as normal and will be scoped according to the keyword used or the scope of the function call. In the above example, we use
+  <span>
+   var
+  </span>
+  so the array variable is in the
+  <em>
+   local
+  </em>
+  scope of the function. If we didn't use the keyword, then the variable would have been created on the scope of the instance that called the function.
+  
+  
+   Methods, just like script functions, can also take optional arguments that have default values for when they're not passed in:
+  <pre><code class="language-gml">create_attachment = function(_attachment, _x = x, _y = y)
+{
+    return instance_create_layer(_x, _y, layer, _attachment);
+}
+</code></pre>
+  The above function takes three arguments, where the last two are optional. If they are not passed in when the function is called, then they'll use the instance's
+  <span>
+   x
+  </span>
+  and
+  <span>
+   y
+  </span>
+  coordinates by default.
+  
+  
+   Note that if an argument is not passed in, and it does not have a default value, then it will be equal to
+  <span>
+   undefined
+  </span>
+  .
+  
+  
+   Methods can also make use of static variables, which maintain their values throughout every function call. Please
+  <a href="Functions/Static_Variables.htm">
+   read this page
+  </a>
+  for more information.
+  
+  
+   Below we list a few helper functions associated with method variables:
+  <ul>
+   <li>
+    <a href="../GML_Reference/Variable_Functions/is_method.htm">
+     is_method
+    </a>
+   </li>
+   <li>
+    <a href="../GML_Reference/Variable_Functions/method.htm">
+     method
+    </a>
+   </li>
+   <li>
+    <a href="../GML_Reference/Variable_Functions/method_get_self.htm">
+     method_get_self
+    </a>
+   </li>
+   <li>
+    <a href="../GML_Reference/Variable_Functions/method_get_index.htm">
+     method_get_index
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

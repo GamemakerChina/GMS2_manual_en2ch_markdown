@@ -1,0 +1,191 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   physics_particle_get_data_particle
+  </h1>
+  This function returns various pieces of information about a single particle in the physics simulation using the given flags checked. The particle index (its ID) is that which was returned by the function
+  <a href="physics_particle_create.htm">
+   <span>
+    physics_particle_create()
+   </span>
+  </a>
+  , and the buffer used must have been created previously using the function
+  <a href="../../Buffers/buffer_create.htm">
+   <span>
+    buffer_create()
+   </span>
+  </a>
+  . It should be of the "grow" type, with the size being approximately that of the expected return data. The flags themselves are set using the constants given below, and you would use the bitwise
+  <i>
+   or
+  </i>
+  "|" to create a single flag value to get the desired information.
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Constant
+     </th>
+     <th>
+      Description
+     </th>
+     <th>
+      Data Type
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       phy_particle_data_flag_typeflags
+      </span>
+     </td>
+     <td>
+      The flags value for the particle.
+     </td>
+     <td>
+      buffer_u32
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       phy_particle_data_flag_position
+      </span>
+     </td>
+     <td>
+      The x and y position of the particle.
+     </td>
+     <td>
+      2 x buffer_f32
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       phy_particle_data_flag_velocity
+      </span>
+     </td>
+     <td>
+      The horizontal and vertical speed.
+     </td>
+     <td>
+      2 x buffer_f32
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       phy_particle_data_flag_colour
+      </span>
+     </td>
+     <td>
+      The colour and alpha value (hexadecimal).
+     </td>
+     <td>
+      buffer_f32
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       phy_particle_data_flag_category
+      </span>
+     </td>
+     <td>
+      The particle category (as defined when you created the particle).
+     </td>
+     <td>
+      buffer_u32
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">physics_particle_get_data_particle(ind, buffer, flags)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      ind
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Physics/Soft_Body_Particles/physics_particle_create.htm">
+        Physics Particle ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index (ID) of the particle to get the data from.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      buffer
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Buffers/buffer_create.htm">
+        Buffer ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The (previously created) buffer to use to store the data.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      flags
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Physics/Soft_Body_Particles/physics_particle_get_data.htm">
+        Physics Particle Data Flag Constant
+       </a>
+      </span>
+      (s)
+     </td>
+     <td>
+      The flags to use to extract data about specific particle types.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var part = physics_particle_create(flags, x, y, x_vel, y_vel, c_white, 1, 1)
+var flags = phy_particle_data_flag_position | phy_particle_data_flag_velocity;
+var buffer = buffer_create(16, buffer_grow, 4);
+physics_particle_get_data_particle(part, buffer, flags);
+px = buffer_read(buffer, buffer_f32);
+py = buffer_read(buffer, buffer_f32);
+pvelx = buffer_read(buffer, buffer_f32);
+pvely = buffer_read(buffer, buffer_f32);
+buffer_delete(buffer);
+</code></pre>
+  The above code gets the position and velocity of the particle indexed by the variable "part" and stores the data in a number of variables.
+ </body>
+</html>

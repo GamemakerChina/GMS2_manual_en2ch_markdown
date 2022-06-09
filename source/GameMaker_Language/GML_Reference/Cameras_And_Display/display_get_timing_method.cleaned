@@ -1,0 +1,92 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   display_get_timing_method
+  </h1>
+  This function can be used to retrieve the timing method to be used for rendering your game. The method can be one of the constants listed below.
+  
+  
+   For more information on the different timing methods, please see
+  <a href="display_set_timing_method.htm">
+   <span>
+    display_set_timing_method()
+   </span>
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">display_get_timing_method();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Reference/Cameras_And_Display/display_get_timing_method.htm">
+ Display Timing Method Constant
+</a></code></pre>
+  <table>
+   <colgroup>
+    <col/>
+    <col/>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Cameras_And_Display/display_get_timing_method.htm">
+        Display Timing Method Constant
+       </a>
+      </span>
+     </th>
+    </tr>
+    <tr>
+     <th>
+      Constant
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       tm_sleep
+      </span>
+     </td>
+     <td>
+      The sleep margin value is the main timing method
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       tm_countvsyncs
+      </span>
+     </td>
+     <td>
+      Vsync timing is the main timing method (default for all supported platforms)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if display_get_timing_method() != tm_sleep
+{
+    display_set_timing_method(tm_sleep);
+    if display_get_sleep_margin() != 20
+    {
+        display_set_sleep_margin(20);
+    }
+}
+</code></pre>
+  The above code will check the timing method and then if it's not set to
+  <span>
+   tm_sleep
+  </span>
+  it will be set to that and the sleep margin set to 20.
+ </body>
+</html>

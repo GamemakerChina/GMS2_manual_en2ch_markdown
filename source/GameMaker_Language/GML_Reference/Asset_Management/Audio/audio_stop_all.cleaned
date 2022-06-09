@@ -1,0 +1,37 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   audio_stop_all
+  </h1>
+  This function will stop
+  <i>
+   all
+  </i>
+  sounds that are currently playing.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">audio_stop_all();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if !global.SFX
+{
+    audio_stop_all();
+}
+</code></pre>
+  The above code checks the global variable "SFX" and if it returns
+  <span>
+   false
+  </span>
+  , it will stop all sounds that are currently playing.
+ </body>
+</html>

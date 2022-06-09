@@ -1,0 +1,30 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   xboxlive_get_user_count
+  </h1>
+  With this function you can find the total number of users currently signed in to the XBox system. The return value will be an integer value, from 0 - N, where N is the number of signed in users -1.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">xboxlive_get_user_count();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">for(var i = 0; i &amp;amp;lt; xboxlive_get_user_count(); ++i;)
+{
+    user_id[i] = xboxlive_get_user(i);
+}
+</code></pre>
+  The above loops through all the signed in users and stores their unique ID pointer in an array.
+ </body>
+</html>

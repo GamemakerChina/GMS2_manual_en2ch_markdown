@@ -1,0 +1,66 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   ds_list_empty
+  </h1>
+  With this function you can check the given DS list to see if it is empty (returns
+  <span>
+   true
+  </span>
+  ) or not (returns
+  <span>
+   false
+  </span>
+  ).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">ds_list_empty(id);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      id
+     </td>
+     <td>
+      DS List id
+     </td>
+     <td>
+      The id of the data structure to check.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if (count == 15( &amp;amp;amp;&amp;amp;amp; (!ds_list_empty(command_list))
+{
+    ds_list_clear(command_list);
+    alarm[0] = room_speed;
+    count = 0;
+}
+</code></pre>
+  The above code checks a variable to see if it has reached a specific value and if it has it clears the DS list indexed in the variable "command_list", sets an alarm, and resets the variable to 0.
+ </body>
+</html>

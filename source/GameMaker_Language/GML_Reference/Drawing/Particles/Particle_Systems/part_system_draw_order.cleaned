@@ -1,0 +1,100 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   part_system_draw_order
+  </h1>
+  With this function you can set the way in which particles are drawn when created on the screen. The default system uses an old > new look (the function is set to
+  <span>
+   true
+  </span>
+  ), where old particles are drawn at a higher depth than newer ones and so appear "beneath" them new particles, but by setting this function to
+  <span>
+   false
+  </span>
+  you can reverse this order and have the new particles drawn higher and so appear "beneath" the older ones. The images below illustrate this, with the image on the left being the default value of
+  <span>
+   true
+  </span>
+  and the image on the right being
+  <span>
+   false
+  </span>
+  :
+  <center>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/GML/Reference/Drawing/frontback.gif"/><br/>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/GML/Reference/Drawing/backfront.gif"/><br/>
+  </center>
+  <b>
+   NOTE
+  </b>
+  : When the particles are being drawn with an additive blend mode, the effect of this function may not always be obvious.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">part_system_draw_order(ind, oldtonew);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      ind
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Systems/part_system_create.htm">
+        Particle System ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the particle system to change.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      oldtonew
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Whether old particles should be drawn behind newer ones (true) or vice versa (false).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">mysystem = part_system_create();
+part_system_draw_order(mysystem, true);
+</code></pre>
+  This will create a new particle system with the index "
+  <span>
+   mysystem
+  </span>
+  ", and then it sets particles to draw newer particles atop older ones.
+ </body>
+</html>

@@ -1,0 +1,102 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   buffer_compress
+  </h1>
+  With this function you can compress part (or all) of a buffer using
+  <a href="https://en.wikipedia.org/wiki/Zlib">
+   zlib compression
+  </a>
+  . You supply the ID of the buffer to compress (as returned by
+  <a href="buffer_create.htm">
+   <span>
+    buffer_create()
+   </span>
+  </a>
+  ), the offset within the buffer to use in bytes, and the size of the buffer data to compress (also in bytes). The function will return a new buffer ID value for the compressed buffer, or a value less than 0 if it has failed for any reason. This function will not alter the original buffer.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">buffer_compress(buffer, offset, size);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      buffer
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Buffers/buffer_create.htm">
+        Buffer ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the buffer to compress.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      offset
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The offset within the buffer to compress (in bytes).
+     </td>
+    </tr>
+    <tr>
+     <td>
+      size
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The size of the buffer area to compress (in bytes).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Reference/Buffers/buffer_create.htm">
+ Buffer ID
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var srcBuff = buffer_create(1024, buffer_grow, 1);
+buffer_write(srcBuff, global.DataString);
+var cmpBuff = buffer_compress(srcBuff, 0, buffer_tell(srcBuff));
+buffer_save(cmpBuff, "Player_Save.sav");
+buffer_delete(srcBuff);
+buffer_delete(cmpBuff);
+</code></pre>
+  The above code will create a buffer then populate it with the data from a string. This buffer is then compressed and saved, and both the source and compressed buffers are deleted
+ </body>
+</html>

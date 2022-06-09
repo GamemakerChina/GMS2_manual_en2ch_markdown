@@ -1,0 +1,27 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   draw_light_get_ambient
+  </h1>
+  This function will return the current colour used for ambient lighting.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">draw_light_get_ambient()
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Reference/Drawing/Colour_And_Alpha/Colour_And_Alpha.htm">
+ Colour
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">light_col = draw_light_get_ambient();
+</code></pre>
+  The above code will get the current ambient light colour and store it in a variable.
+ </body>
+</html>

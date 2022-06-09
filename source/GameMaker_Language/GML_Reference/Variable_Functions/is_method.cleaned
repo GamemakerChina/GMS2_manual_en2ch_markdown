@@ -1,0 +1,72 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   is_method
+  </h1>
+  This function can be used to check and see if a variable is a method variable (it will return
+  <span>
+   true
+  </span>
+  ) or not (in which case it will return
+  <span>
+   false
+  </span>
+  ).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">is_method(n);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      n
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm#variable">
+        Variable
+       </a>
+      </span>
+     </td>
+     <td>
+      The variable to check.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if is_method(get_vec)
+{
+    show_debug_message("Method variable!");
+}
+</code></pre>
+  The above code checks a variable to see if it is a method, and if the function returns
+  <span>
+   true
+  </span>
+  , then a debug message is output to the console.
+ </body>
+</html>

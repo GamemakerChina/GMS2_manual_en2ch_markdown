@@ -1,0 +1,68 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   audio_set_listener_mask
+  </h1>
+  When using multiple listeners on a system, you can set the bit-mask for a sound and have it heard from the flagged listener only. However, you can also set the
+  <i>
+   global
+  </i>
+  mask using this function and all sounds played normally will be heard from the listeners flagged by this mask, without the need to set the mask for each sound individually.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">audio_set_listener_mask(mask);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      mask
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The bit-mask data to set for the listeners
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var num = audio_get_listener_count();
+var mask = 0; for(var i = 0; i &amp;amp;lt; num; ++i;)
+{
+    var info = audio_get_listener_info(i);
+    var m = audio_listener_get_data(info[? "mask"]);
+    mask = mask | m;
+    ds_map_destroy(info);
+}
+audio_set_listener_mask(mask);
+</code></pre>
+  The above code checks the number of listeners available then loops through them gets their mask bits, which are then combined to create a single bit mask which is applied to the global listener.
+ </body>
+</html>

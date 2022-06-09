@@ -1,0 +1,87 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   physics_particle_delete_region_circle
+  </h1>
+  With this function you can delete (remove) all the particles that fall within the bounds of the defined circular area from the physics simulation in the current room. The function takes the x and y position for the center of the area to delete as well
+    as the radius (in pixels) which defines the circular area.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">physics_particle_delete_region_circle(x, y, radius)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      x
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x position of the center of the area to delete.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y position of the center of the area to delete.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      radius
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The radius (in pixels) of the circular area to delete.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">physics_particle_delete_region_circle(mouse_x, mouse_y, 32);
+</code></pre>
+  The above code will delete all particles found in a circular area around the mouse position.
+ </body>
+</html>

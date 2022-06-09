@@ -1,0 +1,621 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/css/CSS_Images/Zeus_Banner.png"/><br/>
+  Welcome to the
+  <span>
+   GameMaker
+  </span>
+  user manual! This document is divided into three parts with the aim of getting you introduced to the interface and basic workings of
+  <span>
+   GameMaker
+  </span>
+  and general programming, before going on to more advanced usage and the functions available through our
+  <span>
+   proprietary
+  </span>
+  programming language GML (GameMaker Language).
+  
+  
+   To ease you into things we have created a handy Quick Start Guide, and even if you are familiar with other game creation tools we recommend that you start there to get an overview of the way that
+  <span>
+   GameMaker
+  </span>
+  works. You'll find
+  <span>
+   GameMaker
+  </span>
+  to be easy and intuitive to use and that, whatever your skill level, you will soon be making those games you've always dreamed of.
+  <span>
+   <b>
+    NOTE
+   </b>
+  </span>
+  Due to the modular nature of
+  <span>
+   GameMaker
+  </span>
+  there are certain things that are not included in this user manual, in particular those aspects of setting up and connecting the different devices that can be supported. For up-to-date information and troubleshooting hints and tips related to the different target platforms, please see the
+  <a href="https://help.yoyogames.com/hc/en-us">
+   YoYo Games Help Center
+  </a>
+  .
+  <h1>
+   Getting Started
+  </h1>
+  This section is the obligatory first stop for using
+  <span>
+   GameMaker
+  </span>
+  and getting to grips with the contents of the IDE and how it works. You'll find that
+  <span>
+   GameMaker
+  </span>
+  is intuitive and simple to use, and even if you've never used any tools like this before you shouldn't have any problems getting started and making games after reading through the
+  <strong>
+   Introduction
+  </strong>
+  and completing the
+  <strong>
+   Quick Start Guide
+  </strong>
+  (below). Once you have got to grips with the basics you can then move on to the more in-depth look at the components of
+  <span>
+   GameMaker
+  </span>
+  in the
+  <strong>
+   IDE
+  </strong>
+  sections below.
+  <a href="../Content.htm#">
+   <span>
+    Introduction to
+    <span>
+     GameMaker
+    </span>
+   </span>
+   <span>
+    Introduction to
+    <span>
+     GameMaker
+    </span>
+   </span>
+  </a>
+  <ul>
+   <li>
+    <a href="Introduction/Introduction_To_GameMaker_Studio_2.htm">
+     Introduction
+    </a>
+   </li>
+   <li>
+    <a href="Introduction/The_Start_Page.htm">
+     The Start Page
+    </a>
+   </li>
+   <li>
+    <a href="Introduction/Workspaces.htm">
+     Workspaces
+    </a>
+   </li>
+   <li>
+    <a href="Introduction/The_Asset_Browser.htm">
+     The Asset Browser
+    </a>
+   </li>
+   <li>
+    <a href="Introduction/Compiling.htm">
+     Compiling
+    </a>
+   </li>
+   <li>
+    <a href="Introduction/Debugging.htm">
+     Debugging
+    </a>
+   </li>
+   <li>
+    <a href="Introduction/The_Output_Window.htm">
+     The Output Window
+    </a>
+   </li>
+   <li>
+    <a href="Introduction/The_Marketplace.htm">
+     The Marketplace
+    </a>
+   </li>
+   <li>
+    <a href="Introduction/Our_Knowledge_Base.htm">
+     Our Knowledge Base
+    </a>
+   </li>
+   <li>
+    <a href="Introduction/Our_Social_Links.htm">
+     Our Social Links
+    </a>
+   </li>
+  </ul>
+  <ul>
+  </ul>
+  <a href="../Content.htm#">
+   <span>
+    Quick Start Guide
+   </span>
+   <span>
+    Quick Start Guide
+   </span>
+  </a>
+  <ul>
+   <li>
+    <a href="Quick_Start_Guide/Quick_Start_Guide.htm">
+     Making A Game Using
+     <span>
+      GameMaker
+     </span>
+    </a>
+   </li>
+   <li>
+    <a href="Quick_Start_Guide/What_Is_Programming_.htm">
+     What Is Programming?
+    </a>
+   </li>
+   <li>
+    <a href="Quick_Start_Guide/Creating_Sprites.htm">
+     Sprites
+    </a>
+   </li>
+   <li>
+    <a href="Quick_Start_Guide/Creating_Tile_Sets.htm">
+     Tilesets
+    </a>
+   </li>
+   <li>
+    <a href="Quick_Start_Guide/Creating_Sound_Effects.htm">
+     Sound Effects
+    </a>
+   </li>
+   <li>
+    <a href="Quick_Start_Guide/Objects_And_Instances.htm">
+     Objects And Instances
+    </a>
+   </li>
+   <li>
+    <a href="Quick_Start_Guide/Sequences.htm">
+     Sequences
+    </a>
+   </li>
+   <li>
+    <a href="Quick_Start_Guide/Rooms.htm">
+     Rooms
+    </a>
+   </li>
+   <li>
+    <a href="Quick_Start_Guide/Drawing.htm">
+     Drawing
+    </a>
+   </li>
+   <li>
+    <a href="Quick_Start_Guide/Movement_And_Controls.htm">
+     Movement And Controls
+    </a>
+   </li>
+   <li>
+    <a href="Quick_Start_Guide/Summary.htm">
+     Summary
+    </a>
+   </li>
+  </ul>
+  <ul>
+  </ul>
+  <a href="../Content.htm#">
+   <span>
+    Setting Up And Version Information
+   </span>
+   <span>
+    Setting Up And Version Information
+   </span>
+  </a>
+  <ul>
+   <li>
+    <a href="Setting_Up_And_Version_Information/GMS2_Version_Information.htm">
+     <span>
+      GameMaker
+     </span>
+     Version Information
+    </a>
+   </li>
+   <li>
+    <a href="Setting_Up_And_Version_Information/Installation_Guide.htm">
+     Installation Guide
+    </a>
+   </li>
+   <li>
+    <a href="Setting_Up_And_Version_Information/Licencing_Information.htm">
+     Licencing Information
+    </a>
+   </li>
+   <li>
+    <a href="Setting_Up_And_Version_Information/Updating_Guide.htm">
+     Updating Guide
+    </a>
+   </li>
+   <li>
+    <a href="Setting_Up_And_Version_Information/Release_Notes.htm">
+     Release Notes
+    </a>
+   </li>
+   <li>
+    <a href="Setting_Up_And_Version_Information/Required_SDKs.htm">
+     Required SDKs
+    </a>
+   </li>
+  </ul>
+  <h1>
+   IDE Reference
+  </h1>
+  In this section we cover each part of the
+  <span>
+   GameMaker
+  </span>
+  <a>
+   IDE
+  </a>
+  , explaining in detail what each and every window, button and menu does and how it should be used. Note that not everything covered in this section will be available to you right from the start as it will depend on the type of licence that you have for the product.
+  <a href="#">
+   <span>
+    IDE Preferences &amp; Features
+   </span>
+   <span>
+    IDE Preferences &amp; Features
+   </span>
+  </a>
+  <ul>
+   <li>
+    <a href="Setting_Up_And_Version_Information/IDE_Preferences.htm">
+     IDE Preferences
+    </a>
+   </li>
+   <li>
+    <a href="Setting_Up_And_Version_Information/Platform_Preferences.htm">
+     Platform Preferences
+    </a>
+   </li>
+   <li>
+    <a href="Setting_Up_And_Version_Information/The_Device_Manager.htm">
+     The Device Manager
+    </a>
+   </li>
+   <li>
+    <a href="Setting_Up_And_Version_Information/Error_Reporting.htm">
+     IDE Error Reporting
+    </a>
+   </li>
+  </ul>
+  <a href="../Content.htm#">
+   <span>
+    IDE Navigation
+   </span>
+   <span>
+    IDE Navigation
+   </span>
+  </a>
+  <ul>
+   <li>
+    <a href="IDE_Navigation/IDE_Input.htm">
+     IDE Input And Navigation
+    </a>
+   </li>
+   <li>
+    <a href="IDE_Navigation/Bookmarks.htm">
+     Bookmarks
+    </a>
+   </li>
+   <li>
+    <a href="IDE_Navigation/Recent_Windows.htm">
+     Recent Windows
+    </a>
+   </li>
+   <li>
+    <a href="IDE_Tools/The_Inspector.htm">
+     The Inspector
+    </a>
+   </li>
+   <li>
+    <a href="IDE_Navigation/Menus.htm">
+     Menus
+    </a>
+   </li>
+   <li>
+    <a href="IDE_Navigation/Keyboard_Shortcuts.htm">
+     Keyboard Shortcuts
+    </a>
+   </li>
+  </ul>
+  <ul>
+  </ul>
+  <a href="../Content.htm#">
+   <span>
+    Asset Editors
+   </span>
+   <span>
+    Asset Editors
+   </span>
+  </a>
+  <ul>
+   <li>
+    <a href="The_Asset_Editors/Sprites.htm">
+     Sprites
+    </a>
+   </li>
+   <li>
+    <a href="The_Asset_Editors/Image_Editor.htm">
+     Images
+    </a>
+   </li>
+   <li>
+    <a href="The_Asset_Editors/Tile_Sets.htm">
+     Tile Sets
+    </a>
+   </li>
+   <li>
+    <a href="The_Asset_Editors/Animation_Curves.htm">
+     Animation Curves
+    </a>
+   </li>
+   <li>
+    <a href="The_Asset_Editors/Sounds.htm">
+     Sounds
+    </a>
+   </li>
+   <li>
+    <a href="The_Asset_Editors/Paths.htm">
+     Paths
+    </a>
+   </li>
+   <li>
+    <a href="The_Asset_Editors/Scripts.htm">
+     Scripts
+    </a>
+   </li>
+   <li>
+    <a href="The_Asset_Editors/Shaders.htm">
+     Shaders
+    </a>
+   </li>
+   <li>
+    <a href="The_Asset_Editors/Fonts.htm">
+     Fonts
+    </a>
+   </li>
+   <li>
+    <a href="The_Asset_Editors/Timelines.htm">
+     Timelines
+    </a>
+   </li>
+   <li>
+    <a href="The_Asset_Editors/Objects.htm">
+     Objects
+    </a>
+   </li>
+   <li>
+    <a href="The_Asset_Editors/Sequences.htm">
+     Sequences
+    </a>
+   </li>
+   <li>
+    <a href="The_Asset_Editors/Rooms.htm">
+     Rooms
+    </a>
+   </li>
+   <li>
+    <a href="The_Asset_Editors/Extensions.htm">
+     Extensions
+    </a>
+   </li>
+   <li>
+    <a href="The_Asset_Editors/Notes.htm">
+     Notes
+    </a>
+   </li>
+  </ul>
+  <ul>
+  </ul>
+  <a href="../Content.htm#">
+   <span>
+    Game Settings
+   </span>
+   <span>
+    Game Settings
+   </span>
+  </a>
+  <ul>
+   <li>
+    <a href="Settings/Game_Options.htm">
+     Game Options
+    </a>
+   </li>
+   <li>
+    <a href="Settings/The_Room_Manager.htm">
+     The Room Manager
+    </a>
+   </li>
+   <li>
+    <a href="Settings/Included_Files.htm">
+     Included Files
+    </a>
+   </li>
+   <li>
+    <a href="Settings/Audio_Groups.htm">
+     Audio Groups
+    </a>
+   </li>
+   <li>
+    <a href="Settings/Texture_Groups.htm">
+     Texture Groups
+    </a>
+   </li>
+   <li>
+    <a href="Settings/Configurations.htm">
+     Configurations
+    </a>
+   </li>
+   <li>
+    <a href="Settings/Runner_Details/Runner_Details.htm">
+     Runner &amp; Compiler
+    </a>
+   </li>
+  </ul>
+  <ul>
+  </ul>
+  <a href="../Content.htm#">
+   <span>
+    Additional IDE Tools
+   </span>
+   <span>
+    Additional IDE Tools
+   </span>
+  </a>
+  <ul>
+   <li>
+    <a href="IDE_Tools/The_Debugger.htm">
+     The Debugger
+    </a>
+   </li>
+   <li>
+    <a href="IDE_Tools/The_Micro_Web_Server.htm">
+     The Micro Web Server
+    </a>
+   </li>
+   <li>
+    <a href="IDE_Tools/Local_Asset_Packages.htm">
+     Local Asset Packages
+    </a>
+   </li>
+   <li>
+    <a href="IDE_Tools/Project_Image_Generator.htm">
+     Project Image Generator
+    </a>
+   </li>
+   <li>
+    <a href="IDE_Tools/Sound_Mixer.htm">
+     Sound Mixer
+    </a>
+   </li>
+   <li>
+    <a href="IDE_Tools/Source_Control.htm">
+     Source Control
+    </a>
+   </li>
+  </ul>
+  <h1>
+   Scripting Reference
+  </h1>
+  <a href="#">
+   <span>
+    GameMaker Language
+   </span>
+   <span>
+    GameMaker Language
+   </span>
+  </a>
+  This section covers an overview to GameMaker Language, and its two programming methods: Visual and Code.
+  <ul>
+   <li>
+    <a href="GameMaker_Language.htm">
+     GameMaker Language
+    </a>
+    <ul>
+     <li>
+      <a href="Drag_And_Drop/Drag_And_Drop_Index.htm">
+       GML Visual
+      </a>
+     </li>
+     <li>
+      <a href="GameMaker_Language/GameMaker_Language_Index.htm">
+       GML Code
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+  <a href="../Content.htm#">
+   <span>
+    Additional Information
+   </span>
+   <span>
+    Additional Information
+   </span>
+  </a>
+  We also have a few extra pages with information on certain aspects of programing and using the GameMaker Language:
+  <ul>
+   <li>
+    <a href="Additional_Information/Best_Practices_When_Programming.htm">
+     Best Practices When Programming
+    </a>
+   </li>
+   <li>
+    <a href="Additional_Information/The_File_System.htm">
+     The File System
+    </a>
+   </li>
+   <li>
+    <a href="Additional_Information/Bitwise_Operators.htm">
+     Bitwise Operators
+    </a>
+   </li>
+   <li>
+    <a href="Additional_Information/Type_Tables.htm">
+     Type Tables
+    </a>
+   </li>
+   <li>
+    <a href="Additional_Information/Vectors.htm">
+     Vectors
+    </a>
+   </li>
+   <li>
+    <a href="Additional_Information/Guide_To_Using_Buffers.htm">
+     Guide To Using Buffers
+    </a>
+   </li>
+   <li>
+    <a href="Additional_Information/Guide_To_Using_Particles.htm">
+     Guide To Using Particles
+    </a>
+   </li>
+   <li>
+    <a href="Additional_Information/Guide_To_Using_Shaders.htm">
+     Guide To Using Shaders
+    </a>
+   </li>
+   <li>
+    <a href="Additional_Information/Guide_To_Primitives_And_Vertex_Building.htm">
+     Guide To Primitives And Vertex Building
+    </a>
+   </li>
+   <li>
+    <a href="Additional_Information/Error_Reporting.htm">
+     E
+    </a>
+    <a href="Additional_Information/Error_Reporting.htm">
+     rror Reporting
+    </a>
+   </li>
+   <li>
+    <a href="Additional_Information/Compatibility_Functions.htm">
+     Compatibility Functions
+    </a>
+   </li>
+   <li>
+    <a href="Additional_Information/Compatibility_Scripts.htm">
+     Compatibility Scripts
+    </a>
+   </li>
+   <li>
+    <a href="Additional_Information/Obsolete_Functions.htm">
+     Obsolete Functions
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

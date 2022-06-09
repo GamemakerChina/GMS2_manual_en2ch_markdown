@@ -1,0 +1,34 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   current_time
+  </h1>
+  This
+  <b>
+   read only
+  </b>
+  variable will return the number of milliseconds that have passed since the game was started.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">current_time;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if (current_time &amp;amp;gt; 600000)
+{
+    msg = show_question_async("Would you like to rate?");
+}
+</code></pre>
+  The above code checks to see if more than 10 minutes have passed before asking the user a question.
+ </body>
+</html>

@@ -1,0 +1,95 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   string_width_ext
+  </h1>
+  This function will return the maximum width (in pixels) of the input string, taking into account the line separation and line-break width (which is defined as the number of pixels that the string can occupy before a line break is inserted). It is very
+    handy for calculating distances between text elements based on the maximum width of a string that is split over several lines as it would be drawn with
+  <a href="../Drawing/Text/draw_text_ext.htm">
+   <span>
+    draw_text_ext()
+   </span>
+  </a>
+  using the currently defined
+    font. Separation and width can be set to -1 to get the default spacing.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">string_width_ext(string, sep, w);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      string
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The string to measure the width of.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      sep
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The distance in pixels between lines of text as if the string was being drawn.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      w
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The maximum width (in pixels) of the string before a line break as if the string was bring drawn.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var ww = string_width_ext(str_Story_Text[1], -1, 100); draw_text_ext(32, 32, str_Story_Text[1], -1, 100); draw_text_ext(32 + ww, 32, str_Story_Text[2], -1, 100);
+</code></pre>
+  The above code will get the width of the given string, taking into account the line separation and line-break width, and then draw two lines of text, using the returned total string width as a separator.
+ </body>
+</html>

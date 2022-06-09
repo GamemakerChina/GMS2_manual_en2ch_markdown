@@ -1,0 +1,60 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   view_get_camera
+  </h1>
+  This function can be used to retrieve the unique camera ID value for the camera assigned to the given view port (from 0 - 7). If no camera is assigned, the function will return -1.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">view_get_camera(view_port)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      view_port
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The view port to target (0 - 7)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Reference/Cameras_And_Display/Cameras_And_Viewports/camera_create.htm">
+ Camera ID
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var cam = view_get_camera(0);
+var cw = camera_get_view_width(cam);
+var ch = camera_get_view_height(cam);
+camera_set_view_pos(cam, mouse_x - (cw / 2), mouse_y - (ch / 2));
+</code></pre>
+  The above code will retrieve the camera ID for the camera assigned to view port[0] and then change its position.
+ </body>
+</html>

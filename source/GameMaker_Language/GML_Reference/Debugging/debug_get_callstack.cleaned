@@ -1,0 +1,81 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   debug_get_callstack
+  </h1>
+  This function generates an array of strings as the "callstack" where the current script is listed first, and then all the other scripts that were run in order for the current script to be executed. The exact string format will vary depending on the target platform chosen, but it will mostly have the script/event name, then a colon : and the line number, similar to this:
+  <pre><code class="language-gml">"gml_Script_script2:1"
+  "gml_Script_script1:32"
+  "gml_Script_script0:64"
+  "gml_Object_object0_Create_0:1"
+</code></pre>
+  The function allows for an optional argument to be passed in, which is the maximum depth of the returned callstack. This value is the number of scripts that are included in the returned array starting from the current script. If this argument is not specified, then the full callstack will be returned.
+  
+  
+   Note that the returned array will always contain 0 in its last position, after listing the callstack scripts.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">debug_get_callstack([maxdepth])
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      [maxdepth]
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      <span>
+       OPTIONAL
+      </span>
+      The maximum depth of the callstack that is returned
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Arrays.htm">
+ Array
+</a></code></pre>
+  <h4>
+   <b>
+    Example:
+   </b>
+  </h4>
+  <pre><code class="language-gml">if debug_mode
+{
+    if keyboard_check(vk_escape)
+    {
+        var _a = debug_get_callstack(4);
+        for (var i = 0; i &amp;amp;lt; array_length_id(_a); ++i;)
+        {
+            show_debug_message(_a[i]);
+        }
+    }
+}
+</code></pre>
+  The above code checks to see if debug mode is enabled and if it is, checks to see if a key is being held down. In that case, it outputs the current call stack to the console, with a maximum depth of 4.
+ </body>
+</html>

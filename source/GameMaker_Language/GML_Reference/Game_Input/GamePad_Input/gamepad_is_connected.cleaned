@@ -1,0 +1,91 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   gamepad_is_connected
+  </h1>
+  This function will return whether a gamepad is connected to the given "slot" (returns
+  <span>
+   true
+  </span>
+  ) or not (returns
+  <span>
+   false
+  </span>
+  ). You would normally use this function in conjunction with the
+  <a href="gamepad_get_device_count.htm">
+   <span>
+    gamepad_get_device_count()
+   </span>
+  </a>
+  function to get the correct number of available game pads and/or gamepad "slots". Note that there may be a slight delay between the user connecting the gamepad and
+  <span>
+   GameMaker
+  </span>
+  detecting it as being connected (this is especially the case when dealing with bluetooth connected controllers).
+  <strong>
+   NOTE
+  </strong>
+  : On some platfroms - especially consoles - this function may return false immediately after a gamepad has been connected/selected and may need to be checked in an alarm a few frames (steps) later for it to correctly detect the gamepad.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">gamepad_is_connected(numb);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      device
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      Which gamepad "slot" to check.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var gp_num = gamepad_get_device_count();
+for (var i = 0; i &amp;amp;lt; gp_num; i++;)
+{
+    if gamepad_is_connected(i) global.gp[i] = true else global.gp[i] = false;
+}
+</code></pre>
+  The above code loops through the available game pads (or gamepad slots) and then checks each one for a connected gamepad. the returned value is then used to set a global array to
+  <span>
+   true
+  </span>
+  or
+  <span>
+   false
+  </span>
+  for use in future checks.
+ </body>
+</html>

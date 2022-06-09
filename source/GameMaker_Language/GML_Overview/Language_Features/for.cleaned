@@ -1,0 +1,245 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   for
+  </h1>
+  One of the most used ways to iterate over a
+  <a>
+   statement
+  </a>
+  (or statements) multiple times is to use a
+  <span>
+   for
+  </span>
+  loop, which has this form:
+  <pre><code class="language-gml">for (&amp;amp;lt;assignment&amp;amp;gt;; &amp;amp;lt;expression&amp;amp;gt;; &amp;amp;lt;operation&amp;amp;gt;;)
+{
+    &amp;amp;lt;statement&amp;amp;gt;;
+    &amp;amp;lt;statement&amp;amp;gt;;
+    ...
+}
+</code></pre>
+  This works as follows - First the assignment is executed which assigns a value to a variable, then the
+  <a>
+   expression
+  </a>
+  is evaluated and, if it is
+  <span>
+   true
+  </span>
+  , the statements in the curly brackets{} are executed executed. Next the operation is performed on the assigned variable and then the expression is evaluated again. This loop will continue until the expression is found to be
+  <span>
+   false
+  </span>
+  .
+  
+  
+   Now, this may sound complicated when written like that, but you should interpret it as:
+  <ol>
+   <li>
+    The first assignment initializes the for-loop
+   </li>
+   <li>
+    The expression tests whether the loop should be ended
+   </li>
+   <li>
+    The statement is performed
+   </li>
+   <li>
+    The operation is performed
+   </li>
+   <li>
+    Go back to step 2 and perform the expression again and continue or exit the loop
+   </li>
+  </ol>
+  This is extremely useful for doing repetitive tasks that would involve multiple lines of code in any other way, and is commonly used as a counter for evaluating arrays, drawing things, setting incremental values, etc... The following code example illustrates a typical use for this type of statement:
+  <pre><code class="language-gml">for (var i = 0; i &amp;amp;lt; 10; i += 1)
+{
+    draw_text(32, 32 + (i * 32), string(i) + ". "+ string(scr[i]));
+}
+</code></pre>
+  The above code initialises a
+  <span>
+   for
+  </span>
+  loop, starting at 0 and counting up to (and including) 9, and then uses the loop value of
+  <span>
+   i
+  </span>
+  to draw the values stored in an array down the screen. Note how the
+  <span>
+   for
+  </span>
+  loop variable
+  <span>
+   i
+  </span>
+  is used to not only loop through the array, but to draw a number as well as tell
+  <span>
+   GameMaker
+  </span>
+  where to draw the values to in the room. This flexibility is one of the main reasons why
+  <span>
+   for
+  </span>
+  loops are so important in programming.
+  <strong>
+   When should you use a
+   <span>
+    for
+   </span>
+   loop?
+  </strong>
+  Anytime you need to perform a fixed number of iterations over one or more statements while keeping track of the
+  <a>
+   iteration
+  </a>
+  that is currently being run and using that iteration value.
+  <b>
+   NOTE
+  </b>
+  : You will see multiple examples when working with other people of the variables "
+  <span>
+   i
+  </span>
+  " and "
+  <span>
+   j
+  </span>
+  " being used for the loop counter variable. These are
+  <b>
+   not
+  </b>
+  obligatory variable names and you can use anything like "
+  <span>
+   a
+  </span>
+  " or "
+  <span>
+   foo
+  </span>
+  " or whatever. The use of "
+  <span>
+   i
+  </span>
+  " and "
+  <span>
+   j
+  </span>
+  " is simply a standard convention in programming.
+  
+  
+   It is worth noting that you can use the special
+  <span>
+   <a href="break.htm">
+    break
+   </a>
+  </span>
+  and
+  <span>
+   <a href="continue.htm">
+    continue
+   </a>
+  </span>
+  statements within a
+  <span>
+   for
+  </span>
+  loop too. Using
+  <span>
+   break
+  </span>
+  will immediately exit the loop and move on to any code that is in the event or function after the loop should have finished, e.g.:
+  <pre><code class="language-gml">var _inst = noone;
+for (var i = 0; i &amp;amp;lt; 10; i += 1)
+{
+    _inst = instance_find(obj_Enemy_Parent, i);
+    if instance_exists(_inst)
+    {
+        if _inst.object_index == obj_Enemy_Melee
+        {
+            break;
+        }
+    }
+}
+target = _inst;
+</code></pre>
+  The above code loops through the 10 nearest instances of the given "parent" object, and if an instance is found it checks the instance object ID, and if it is an instance of
+  <span>
+   obj_Enemy_Melee
+  </span>
+  then the loop is ended using
+  <span>
+   break
+  </span>
+  and the ID value assigned to a variable (if no instance is found, then the keyword
+  <span>
+   <a href="../Instance_Keywords.htm">
+    noone
+   </a>
+  </span>
+  will be added to the variable).
+  
+  
+   An example of using
+  <span>
+   continue
+  </span>
+  in a
+  <span>
+   for
+  </span>
+  loop would be:
+  <pre><code class="language-gml">var _val = 0;
+for (var i = 0; i &amp;amp;lt; 10; i += 1)
+{
+    if (val_array[i] &amp;amp;lt;= 0)
+    {
+        continue;
+    }
+    _val += val_array[i];
+}
+draw_text(32, 32, "Positive Values Total = " + string(_val));
+</code></pre>
+  This code will check the value stored in each array position of a 10 length 1D
+  <a href="../Arrays.htm">
+   array
+  </a>
+  , and if any are less than or equal to 0 it will
+  <span>
+   continue
+  </span>
+  the loop, meaning that the current iteration will end,
+  <span>
+   i
+  </span>
+  will be incremented, and the next loop iteration will be started. If the value is greater than 0, then it is added to the local variable
+  <span>
+   _val
+  </span>
+  , and after the loop is finished the total value is drawn to the screen.
+  
+  
+   For more examples of loop keywords please see the sections on
+  <a href="repeat.htm">
+   <span>
+    repeat
+   </span>
+  </a>
+  ,
+  <a href="while.htm">
+   <span>
+    while
+   </span>
+  </a>
+  , and
+  <a href="do___until.htm">
+   <span>
+    do / until
+   </span>
+  </a>
+  .
+ </body>
+</html>

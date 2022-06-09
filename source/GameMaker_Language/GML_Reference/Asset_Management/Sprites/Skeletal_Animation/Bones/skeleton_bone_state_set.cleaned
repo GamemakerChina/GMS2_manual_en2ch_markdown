@@ -1,0 +1,156 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   skeleton_bone_state_set
+  </h1>
+  Your skeletal animation is made up of a number of "bones", which you will have defined and given names to in your animation program, and this function can be used to set certain data for the named bone at any time. Note that this data will set the
+  <b>
+   current
+  </b>
+  pose for the skeleton, depending on the animation set used, and the function requires a previously created
+  <a href="../../../../Data_Structures/DS_Maps/DS_Maps.htm">
+   DS map
+  </a>
+  , which should have the following keys and their required values:
+  <b>
+  </b>
+  <ul>
+   <li>
+    <b>
+     "x":
+    </b>
+    The local x position of the bone relative to the parent bone.
+    <b>
+    </b>
+   </li>
+   <li>
+    <b>
+     "y":
+    </b>
+    The local y position of the bone relative to the parent bone.
+    <b>
+    </b>
+   </li>
+   <li>
+    <b>
+     "angle":
+    </b>
+    The local rotation of the bone relative to the parent bone.
+    <b>
+    </b>
+   </li>
+   <li>
+    <b>
+     "xscale":
+    </b>
+    The local horizontal scale of the bone.
+    <b>
+    </b>
+   </li>
+   <li>
+    <b>
+     "yscale":
+    </b>
+    The local vertical scale of the bone.
+    <b>
+    </b>
+   </li>
+   <li>
+    <b>
+     "parent":
+    </b>
+    The name (a string) of the parent bone.
+   </li>
+  </ul>
+  This function is provided so that you can "intercept" animation data and modify it before it is drawn on the screen, and as such you would want to use it in the
+  <a href="../../../../../../The_Asset_Editors/Object_Properties/Other_Events.htm">
+   Other - Animation Update
+  </a>
+  event, since this event is triggered just before the Draw Events.
+  
+  
+   Note that you can use the same map you filled out using the
+  <a href="skeleton_bone_state_get.htm">
+   <span>
+    skeleton_bone_state_get()
+   </span>
+  </a>
+  function, even though it contains the additional "World" keys and values. Since these refer to
+  <i>
+   read-only
+  </i>
+  values, setting them with this function will have no affect.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">skeleton_bone_state_set(bone, map);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      bone
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The name (as a string) of the bone.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      map
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/ds_map_create.htm">
+        DS Map ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The (previously created) DS map that stores the bone data.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var map = ds_map_create();
+skeleton_bone_state_get("head", map);
+var xx = ds_map_find_value(map, "worldX");
+var yy = ds_map_find_value(map, "worldY");
+var deltax = mouse_x - (x + xx);
+var deltay = mouse_y - (y + yy);
+var angle = -radtodeg(arctan2(deltay, deltax));
+ds_map_replace(map, "angle", angle);
+skeleton_bone_state_set("head", map);
+ds_map_destroy(map);
+</code></pre>
+  The above code creates a DS map and then populates it with the data from the bone named "head". It then extracts the world position for the bone, and uses that data to set the "angle" of the bone to track the mouse position in the game.
+ </body>
+</html>

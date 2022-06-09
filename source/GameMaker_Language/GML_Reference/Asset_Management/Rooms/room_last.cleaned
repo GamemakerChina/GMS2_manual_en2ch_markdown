@@ -1,0 +1,54 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   room_last
+  </h1>
+  This
+  <b>
+   read only
+  </b>
+  variable returns the index of the very last room in the game (this is defined by the order in which the rooms appear in the
+  <a href="../../../../Settings/The_Room_Manager.htm">
+   Room Manager
+  </a>
+  and
+  <i>
+   not
+  </i>
+  by the order in which they were created). Note that this variable will not recognise or take into consideration rooms that have been added dynamically using
+  <span>
+   <a href="room_add.htm">
+    room_add()
+   </a>
+  </span>
+  or
+  <span>
+   <a href="room_duplicate.htm">
+    room_duplicate()
+   </a>
+  </span>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">room_last;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../The_Asset_Editors/Rooms.htm">
+ Room Asset
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if keyboard_check_pressed(ord("Q"))
+{
+    room_goto(room_last);
+}
+</code></pre>
+  The above code checks to see if a key has been pressed and if so it goes to the last room in the game.
+ </body>
+</html>

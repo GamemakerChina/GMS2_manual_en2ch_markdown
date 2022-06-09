@@ -1,0 +1,79 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   random_set_seed
+  </h1>
+  To generate a random number
+  <span>
+   GameMaker
+  </span>
+  starts with a random seed number. With this function you can set that seed to a known value and so "force" the outcome of all random events afterwards to be the same every time the program is run. For example, this function can be used in conjunction with
+  <a href="random_get_seed.htm">
+   <span>
+    random_get_seed()
+   </span>
+  </a>
+  to create procedurally generated content and save the results without having huge savegames (you save the seed only, no need for anything else). Should you need truly random results for everything, you should be using the
+  <a href="randomise.htm">
+   <span>
+    randomise()
+   </span>
+  </a>
+  function.
+  <span>
+   NOTE
+  </span>
+  While this seed will give consistent results on each target platform, results may vary between platforms due to the different way each target works.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">random_set_seed(val);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      val
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The seed to set.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if debug
+{
+    random_set_seed(1);
+}
+</code></pre>
+  The above code sets the random seed to 1 only if the variable "debug" is true.
+ </body>
+</html>

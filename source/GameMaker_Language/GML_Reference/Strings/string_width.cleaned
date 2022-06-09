@@ -1,0 +1,64 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   string_width
+  </h1>
+  This function will return the width (in pixels) of the input string, taking into account any line-breaks the text may have. It is very handy for calculating distances between text elements based on the total width of the letters that make up the string
+    as it would be drawn with
+  <a href="../Drawing/Text/draw_text.htm">
+   <span>
+    draw_text()
+   </span>
+  </a>
+  using the currently defined font.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">string_width(string);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      string
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The string to measure the width of.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var ww = string_width(str_Name + " "); draw_text(32, 32, str_Name)); draw_text(32 + ww, 32, "has won the game!");
+</code></pre>
+  The above code will get the width of the given string and then draw two lines of text, using the returned string width as a separator.
+ </body>
+</html>

@@ -1,0 +1,72 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   variable_global_exists
+  </h1>
+  With this function you can check whether a global scope variable exists or not. You supply the global variable name to check for
+  <i>
+   as a string
+  </i>
+  (see example code below) and the function will return
+  <span>
+   true
+  </span>
+  if a global variable with the given name exists or
+  <span>
+   false
+  </span>
+  otherwise.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">variable_global_exists(name);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      name
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The name of the global variable to check for (as a string)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if !variable_global_exists("enemy_num")
+{
+    global.enemy_num = instance_number(obj_Enemey_Parent);
+}
+</code></pre>
+  The above code will check to see if the global variable called "enemy_num" exists and if it does not it is created and set a value.
+ </body>
+</html>

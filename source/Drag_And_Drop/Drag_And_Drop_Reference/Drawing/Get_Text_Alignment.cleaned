@@ -1,0 +1,89 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/i_Drawing_Get_Text_Alignment.png"/><br/>
+   Get Text Alignment
+  </h1>
+  This action will get the font alignment for all current draw text actions. You can choose whether to retrieve the horizontal or vertical alignment to check, and the action will return one of the following
+  <i>
+   constant
+  </i>
+  values, that represent a different
+    type of horizontal or vertical alignment:
+  <table>
+   <tbody>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/fa_left.png"/><br/>
+     </td>
+     <td>
+      Text is horizontally aligned to the left
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/fa_center.png"/><br/>
+     </td>
+     <td>
+      Text is horizontally aligned to the center
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/fa_right.png"/><br/>
+     </td>
+     <td>
+      Text is horizontally aligned to the right
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/fa_top.png"/><br/>
+     </td>
+     <td>
+      Text is vertically aligned to the top
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/fa_middle.png"/><br/>
+     </td>
+     <td>
+      Text is vertically aligned to the middle
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/fa_bottom.png"/><br/>
+     </td>
+     <td>
+      Text is vertically aligned to the bottom
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  The return constant will be stored in the
+  <b>
+   target variable
+  </b>
+  that you specify, which can have been created previously or can be a new temporary one (if you check the "Temp" check-box).
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/a_Drawing_Get_Text_Alignment.png"/><br/>
+  <h4>
+   Example:
+  </h4>
+  <span>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/e_Drawing_Get_Font_Alignment.png"/><br/>
+  </span>
+  The above action block code checks the horizontal text alignment and
+    if it's not set to
+  <span>
+   fa_left
+  </span>
+  , then it is set to that value.
+ </body>
+</html>

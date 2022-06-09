@@ -1,0 +1,30 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   physics_particle_count
+  </h1>
+  This function will return the number of particles that are active in a physics enabled room.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">physics_particle_count()
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if (physics_particle_count() &amp;amp;lt; physics_particle_get_max_count())
+{
+    physics_particle_create(0, x, y, 0, 0, c_white, 1, 1)
+}
+</code></pre>
+  The above code will check to see if there are less than the maximum number of permitted particles in the room, and if so create one more.
+ </body>
+</html>

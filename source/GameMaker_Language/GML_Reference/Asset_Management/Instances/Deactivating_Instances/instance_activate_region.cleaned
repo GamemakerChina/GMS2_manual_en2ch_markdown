@@ -1,0 +1,127 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   instance_activate_region
+  </h1>
+  With this function you can define a region within the room to activate instances that have previously been deactivated. This region can either be flagged as "inside" or "outside" as demonstrated in the following image:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/GML/Reference/Instances/instance_activate_region.png"/><br/>
+  You can see in the image above that the "apple" instance is always active because, even if the sprite itself doesn't overlap the region, the bounding box does. So, instances are considered to be within the region specified when their
+  <i>
+   bounding box
+  </i>
+  overlaps with it, and the state of the collision mask (precise or not) is not taken into consideration. Note that activation is not instantaneous, and an instance that has been activated in this way will not be considered to be active until the end of the event in which the function was called.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">instance_activate_region(left, top, width, height, inside);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      left
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x coordinate of the left of the rectangular region to activate.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      top
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y coordinate of the top of the rectangular region to activate.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      width
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The width of the region to activate.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      height
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The height of the region to activate.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      inside
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Whether to activate instances on the inside of the region (true) or the outside (false).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">instance_deactivate_all(true);
+var _vx = camera_get_view_x(view_camera[0]);
+var _vy = camera_get_view_y(view_camera[0]);
+var _vw = camera_get_view_width(view_camera[0]);
+var _vh = camera_get_view_height(view_camera[0]);
+instance_activate_region(_vx - 64, _vy - 64, _vw + 128, _vh + 128, false);
+</code></pre>
+  The above code deactivates all instances except the one that is running the code and then activates a region within the room.
+ </body>
+</html>

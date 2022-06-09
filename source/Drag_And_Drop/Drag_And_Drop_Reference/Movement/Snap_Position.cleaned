@@ -1,0 +1,56 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/i_Movement_Snap_To_Grid.png"/><br/>
+   Snap Position
+  </h1>
+  This action is used to "snap" an instance to a specific grid coordinate position. You supply the size of the grid "cell" and the instance will be snapped to that grid, for example, if you set the grid snap values for horizontal and
+    vertical to 8, and the instance is at (4, 6), then it will be snapped to the position (0, 8) - essentially the current position is rounded to the nearest value divisible by the horizontal and vertical snap settings where the grid cells start at the
+    top left corner of the room (0, 0). The default values are set to a snap of (32, 32) but you can change them to whatever positive integer value you require.
+  <h4>
+   Action Syntax:
+  </h4>
+  <span>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/a_Movement_Snap_To_Grid.png"/><br/>
+  </span>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      horizontal
+     </td>
+     <td>
+      The horizontal cell value to snap to
+     </td>
+    </tr>
+    <tr>
+     <td>
+      vertical
+     </td>
+     <td>
+      The vertical cell value to snap to
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/e_Movement_Snap_To_Grid.png"/><br/>
+  The above action block code checks for the mouse left button being
+    held down on the instance, and if it is then the instance follows the mouse and when the button is released, the instance is snapped to a 32 by 32 grid.
+ </body>
+</html>

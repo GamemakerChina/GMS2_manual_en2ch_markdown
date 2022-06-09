@@ -1,0 +1,30 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Runner &amp; Compiler
+  </h1>
+  This section contains details on the runner and compiler, and how you can interact with them in various ways; such as building and testing your game via the command line, adding command line parameters before running your game and executing batch files at various stages of compilation.
+   
+   
+    The following pages expand on the topics mentioned above:
+  <ul>
+   <li>
+    <a href="../Building_via_Command_Line.htm">
+     Building via Command Line
+    </a>
+   </li>
+   <li>
+    <a href="Compiler_Batch_Files.htm">
+     Compiler Batch Files / Scripts
+    </a>
+   </li>
+   <li>
+    <a href="../Command_Line_Parameters.htm">
+     Command Line Parameters
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

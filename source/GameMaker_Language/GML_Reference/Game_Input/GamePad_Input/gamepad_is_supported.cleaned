@@ -1,0 +1,35 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   gamepad_is_supported
+  </h1>
+  With this function you can find out whether the target platform supports game pads (returns
+  <span>
+   true
+  </span>
+  ) or not (returns
+  <span>
+   false
+  </span>
+  ).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">gamepad_is_supported();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">global.GP = gamepad_is_supported();
+</code></pre>
+  The above code checks to see if a gamepad is supported and stores the return value in a global variable for future checks.
+ </body>
+</html>

@@ -1,0 +1,75 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   game_load
+  </h1>
+  With this function you can load a game that has been previously saved using
+  <a href="game_save.htm">
+   <span>
+    game_save()
+   </span>
+  </a>
+  . Note that it will restore the version of the game that was used to create the save, so any updates made after it will not be visible. For more info, read the page on
+  <a href="game_save.htm">
+   <span>
+    game_save()
+   </span>
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">game_load(filename);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      filename
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The name of the file to load from.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if keyboard_check_pressed(ord("L"))
+{
+    if (global.Save) game_load("Save.dat");
+}
+</code></pre>
+  The above code will load a previously saved game if a global variable is
+  <span>
+   true
+  </span>
+  when the player presses the "L" key.
+ </body>
+</html>

@@ -1,0 +1,60 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   path_exists
+  </h1>
+  This function returns whether a path with the given index exists or not. Note that if you check for the existence of a path through a variable that has yet to have been declared, this will throw an error.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">path_exists(index);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../The_Asset_Editors/Paths.htm">
+        Path Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the path to check for.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if (path_exists(my_path))
+{
+    path_delete(my_path);
+}
+</code></pre>
+  This code checks to see if the given variable stores a path index and if it does, then the path is deleted from memory.
+ </body>
+</html>

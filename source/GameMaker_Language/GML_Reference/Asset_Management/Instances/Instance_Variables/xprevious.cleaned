@@ -1,0 +1,48 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   xprevious
+  </h1>
+  This built-in variable returns the
+  <i>
+   previous
+  </i>
+  x position for the instance. This variable will be set just before the start of the
+  <b>
+   begin step event
+  </b>
+  but it can also be set through code at any time, meaning you can give it your own custom value should that be necessary.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">xprevious;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a>
+(single precision floating point value)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if x != xprevious || y != yprevious
+{
+    moved = true;
+}
+</code></pre>
+  The above code checks to see if there is any difference between the
+  <span>
+   xprevious
+  </span>
+  and
+  <span>
+   yprevious
+  </span>
+  values and the current x and y values. If there is it sets a variable to true.
+ </body>
+</html>

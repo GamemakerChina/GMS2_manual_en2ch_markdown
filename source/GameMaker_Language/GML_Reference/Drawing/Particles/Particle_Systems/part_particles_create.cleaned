@@ -1,0 +1,127 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   part_particles_create
+  </h1>
+  This function is ideal for those effects that do not require any of the functionality offered by
+  <a href="../Particle_Emitters/Particle_Emitters.htm">
+   particle emitters
+  </a>
+  (for example, to create smoke from a missile, or a simple explosion effect) as it permits you to quickly and easily create particles at any position in the game room. Note that you must have created the particle system and the particle type previously for this function to be used.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">part_particles_create(ind, x, y, parttype, number);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      ind
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Systems/part_system_create.htm">
+        Particle System ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the particle system.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      x
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x coordinate of where to create the particles.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y coordinate of where to create the particles.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      parttype
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Types/part_type_create.htm">
+        Particle Type ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index (type) of the particles to be created.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      number
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The number of particles to create.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if mouse_check_button(mb_left)
+{
+    part_particles_create(sname, mouse_x, mouse_y, p_CursorEffect, 5);
+}
+</code></pre>
+  The above code checks for the mouse button being pressed and if it returns
+  <span>
+   true
+  </span>
+  it generates 5 particles at the mouse position.
+ </body>
+</html>

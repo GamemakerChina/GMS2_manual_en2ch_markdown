@@ -1,0 +1,88 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   method_get_self
+  </h1>
+  With this function you can retrieve the instance ID or struct reference which is the
+  <a href="../../GML_Overview/Instance_Keywords.htm">
+   <span>
+    self
+   </span>
+  </a>
+  context used when the method is called. If the variable is
+  <i>
+   not
+  </i>
+  a method then the function will return
+  <span>
+   undefined
+  </span>
+  . Please note that the function may also return the constant
+  <span>
+   pointer_null
+  </span>
+  , in which case the current self is being used at the time of the call.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">method_get_self(method);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      method
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Method_Variables.htm">
+        Method
+       </a>
+      </span>
+     </td>
+     <td>
+      The method variable to check.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/id.htm">
+ Instance ID
+</a>
+,
+<a href="../../../../GameMaker_Language/GML_Overview/Structs.htm">
+ Struct
+</a>
+,
+<a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ undefined
+</a>
+, or
+<a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ pointer_null
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var _self = method_get_self(light_properties);
+show_debug_message(string(_self));
+</code></pre>
+  The above code gets the self context for the given method variable and outputs it to the console.
+ </body>
+</html>

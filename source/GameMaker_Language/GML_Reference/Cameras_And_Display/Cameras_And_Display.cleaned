@@ -1,0 +1,185 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Cameras And Display
+  </h1>
+  The
+  <strong>
+   window
+  </strong>
+  is where
+  <span>
+   GameMaker
+  </span>
+  displays your game, and, depending on the target device, there are different things that can be done with it, like set it to fullscreen or not, for example.
+  <strong>
+   Cameras
+  </strong>
+  (and
+  <strong>
+   view ports
+  </strong>
+  ), however, govern
+  <i>
+   what
+  </i>
+  you see within that window, and so have another series of functions dedicated to them. The following two sections deal with these two aspects of displaying your game:
+  <ul>
+   <li>
+    <a href="The_Game_Window/The_Game_Window.htm">
+     The Game Window
+    </a>
+   </li>
+   <li>
+    <a href="Cameras_And_Viewports/Cameras_And_View_Ports.htm">
+     Cameras And View Ports
+    </a>
+   </li>
+  </ul>
+  However, sometimes it's not enough to get information about the game window and views only, and you really need to know things about the
+  <strong>
+   display
+  </strong>
+  itself (essentially the screen that the game window is being displayed on). The following function all give you details about the size and orientation of the display, details about the GUI layer, and information on the mouse:
+  <ul>
+   <li>
+    <a href="display_reset.htm">
+     display_reset
+    </a>
+   </li>
+   <li>
+    <a href="display_get_width.htm">
+     display_get_width
+    </a>
+   </li>
+   <li>
+    <a href="display_get_height.htm">
+     display_get_height
+    </a>
+   </li>
+   <li>
+    <a href="display_get_orientation.htm">
+     display_get_orientation
+    </a>
+   </li>
+   <li>
+    <a href="display_get_dpi_x.htm">
+     display_get_dpi_x
+    </a>
+   </li>
+   <li>
+    <a href="display_get_dpi_y.htm">
+     display_get_dpi_y
+    </a>
+   </li>
+   <li>
+    <a href="display_get_gui_width.htm">
+     display_get_gui_width
+    </a>
+   </li>
+   <li>
+    <a href="display_get_gui_height.htm">
+     display_get_gui_height
+    </a>
+   </li>
+   <li>
+    <a href="display_get_timing_method.htm">
+     display_get_timing_method
+    </a>
+   </li>
+   <li>
+    <a href="display_get_sleep_margin.htm">
+     display_get_sleep_margin
+    </a>
+   </li>
+   <li>
+    <a href="display_get_frequency.htm">
+     display_get_frequency
+    </a>
+   </li>
+   <li>
+    <a href="display_mouse_get_x.htm">
+     display_mouse_get_x
+    </a>
+   </li>
+   <li>
+    <a href="display_mouse_get_y.htm">
+     display_mouse_get_y
+    </a>
+   </li>
+   <li>
+    <a href="display_mouse_set.htm">
+     display_mouse_set
+    </a>
+   </li>
+   <li>
+    <a href="display_set_gui_size.htm">
+     display_set_gui_size
+    </a>
+   </li>
+   <li>
+    <a href="display_set_gui_maximise.htm">
+     display_set_gui_maximise
+    </a>
+   </li>
+   <li>
+    <a href="display_set_ui_visibility.htm">
+     display_set_ui_visibility
+    </a>
+   </li>
+   <li>
+    <a href="display_set_timing_method.htm">
+     display_set_timing_method
+    </a>
+   </li>
+   <li>
+    <a href="display_set_sleep_margin.htm">
+     display_set_sleep_margin
+    </a>
+   </li>
+  </ul>
+  There are also a few special functions that can be used to save the display, or part of it, to an image file, either as
+  <span>
+   *.png
+  </span>
+  or
+  <span>
+   *.gif
+  </span>
+  :
+  <ul>
+   <li>
+    <a href="screen_save.htm">
+     screen_save
+    </a>
+   </li>
+   <li>
+    <a href="screen_save_part.htm">
+     screen_save_part
+    </a>
+   </li>
+   <li>
+    <a href="gif_open.htm">
+     gif_open
+    </a>
+   </li>
+   <li>
+    <a href="gif_add_surface.htm">
+     gif_add_surface
+    </a>
+   </li>
+   <li>
+    <a href="gif_save.htm">
+     gif_save
+    </a>
+   </li>
+   <li>
+    <a href="gif_save_buffer.htm">
+     gif_save_buffer
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

@@ -1,0 +1,47 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Rooms/i_Rooms_Get_Current_Room.png"/><br/>
+   Get Current Room
+  </h1>
+  This action will return the unique room index value for the current room. You need to supply a target variable to hold the returned value, and this variable can be flagged as a temporary local variable.
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Rooms/a_Rooms_Get_Current_Room.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Target
+     </td>
+     <td>
+      The target variable to store the returned room index
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Rooms/e_Rooms_Get_Current_Room.png"/><br/>
+  The above action block code gets the current room index value and then uses a
+  <a href="../Switch/Switch.htm">
+   Switch
+  </a>
+  action to check the room and set a global variable depending on the result.
+ </body>
+</html>

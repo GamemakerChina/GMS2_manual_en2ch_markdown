@@ -1,0 +1,64 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   direction
+  </h1>
+  All instances in
+  <span>
+   GameMaker
+  </span>
+  have certain "built in" properties that you can use and set to govern how they look and behave.
+  <span>
+   Direction
+  </span>
+  is one of those properties and can be used to set the direction of movement of the
+    instance when the instance has a
+  <a href="speed.htm">
+   <span>
+    speed
+   </span>
+  </a>
+  other than 0. Note that directions in
+  <span>
+   GameMaker
+  </span>
+  are usually calculated as 0° being right, 90° being up, 180° being left and 270° being down, and that the
+  <a href="gravity.htm">
+   <span>
+    gravity
+   </span>
+  </a>
+  and
+  <a href="gravity_direction.htm">
+   <span>
+    gravity_direction
+   </span>
+  </a>
+  variables can modify the
+  <span>
+   direction
+  </span>
+  value when they are used in your games.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">direction;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a>
+(single precision floating point value)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if keyboard_check(vk_left) direction += 5; if keyboard_check(vk_right) direction -= 5;
+</code></pre>
+  The above code will change the direction of movement of the instance based on which key (left or right) is pressed.
+ </body>
+</html>

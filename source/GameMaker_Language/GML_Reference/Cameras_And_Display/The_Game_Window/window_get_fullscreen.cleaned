@@ -1,0 +1,42 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   window_get_fullscreen
+  </h1>
+  This function returns whether the game window is in fullscreen mode (
+  <span>
+   true
+  </span>
+  ) or not (
+  <span>
+   false
+  </span>
+  ).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">window_get_fullscreen();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if window_get_fullscreen()
+{
+    draw_text(32, 32, "Fullscreen is ON");
+}
+else
+{
+    draw_text(32, 32, "Fullscreen is OFF");
+}
+</code></pre>
+  The above code will check to see if the window is in full screen mode or not and draw a text message depending on the returned value.
+ </body>
+</html>

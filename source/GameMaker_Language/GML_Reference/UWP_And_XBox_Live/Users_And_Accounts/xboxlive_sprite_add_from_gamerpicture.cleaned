@@ -1,0 +1,164 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   xboxlive_sprite_add_from_gamerpicture
+  </h1>
+  With this function you can get the gamer picture for a given user ID pointer. The function works asynchronously, and will trigger an
+  <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Image_Loaded.htm">
+   Image Loaded
+  </a>
+  asynchronous event to inform you that the function is finished (like with HTML5/URL calls to
+  <a href="../../Asset_Management/Sprites/Sprite_Manipulation/sprite_add.htm">
+   <span>
+    sprite_add()
+   </span>
+  </a>
+  ). The Asynchronous Image Loaded event will have a DS map stored in the built in variable
+  <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">
+   <span>
+    async_load
+   </span>
+  </a>
+  . The map contains the following information:
+  <ul>
+   <li>
+    "
+    <b>
+     filename
+    </b>
+    ": The complete path to the file you requested.
+   </li>
+   <li>
+    "
+    <b>
+     id
+    </b>
+    ": The ID of the resource that you have loaded. This will be the same as the variable that you have assigned the resource to.
+   </li>
+   <li>
+    "
+    <b>
+     status
+    </b>
+    ": Returns a value of less than 0 for an error.
+   </li>
+  </ul>
+  <b>
+   NOTE
+  </b>
+  : When you dynamically load a sprite into your game at runtime, you must remember to remove it again using
+  <a href="../../Asset_Management/Sprites/Sprite_Manipulation/sprite_delete.htm">
+   <span>
+    sprite_delete()
+   </span>
+  </a>
+  when no longer needed, otherwise there is risk of a memory leak which will slow down and eventually crash your game.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">xboxlive_sprite_add_from_gamerpicture(user_id, imagesize, xorig, yorig);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      user_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/UWP_And_XBox_Live/Users_And_Accounts/xboxlive_get_user.htm">
+        Xbox User ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The user ID (a pointer) to get the gamer picture for
+     </td>
+    </tr>
+    <tr>
+     <td>
+      imagesize
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      Size in pixels of the sprite to be returned
+     </td>
+    </tr>
+    <tr>
+     <td>
+      xorig
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      Indicate the x position of the origin in the sprite
+     </td>
+    </tr>
+    <tr>
+     <td>
+      yorig
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      Indicate the y position of the origin in the sprite
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Reference/Asynchronous_Functions/Asynchronous_Functions.htm">
+ Async Request ID
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var _a = 0;
+var _num = xboxlive_get_user_count();
+for (var i = 0; i &amp;amp;lt; _num; ++i;)
+{
+    var _uid = xboxlive_get_user(i);
+    if _uid != pointer_null
+    {
+        global.UserName[_a] = xboxlive_gamedisplayname_for_user(_uid);
+        global.UserScore[_a] = xboxlive_gamerscore_for_user(_uid);
+        global.UserRep[_a] = xboxlive_reputation_for_user(_uid);
+        global.UserAvatar[_a] = xboxlive_sprite_add_from_gamerpicture(_uid, 256, 0, 0);
+        ++a;
+    }
+}
+</code></pre>
+  The above code loops through the logged in users and stores their gamer data in various global arrays.
+ </body>
+</html>

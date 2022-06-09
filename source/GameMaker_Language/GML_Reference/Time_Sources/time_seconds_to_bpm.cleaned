@@ -1,0 +1,78 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   time_seconds_to_bpm
+  </h1>
+  This function takes the length of a beat in seconds, and returns a beats-per-minute value.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">time_seconds_to_bpm(seconds);
+</code></pre>
+  <table>
+   <colgroup>
+    <col/>
+    <col/>
+    <col/>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      seconds
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The seconds-per-beat value to convert into beats-per-minute
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var _period = time_source_get_period(time_source);
+var _bpm = time_seconds_to_bpm(_period);
+
+show_debug_message(_bpm);
+</code></pre>
+  This function gets the period of a
+  <span>
+   Time Source
+  </span>
+  , converts it to BPM and prints that value to the output log.
+   
+   
+    This code follows the example for
+  <a href="time_bpm_to_seconds.htm">
+   <span>
+    time_bpm_to_seconds()
+   </span>
+  </a>
+  .
+ </body>
+</html>

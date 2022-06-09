@@ -1,0 +1,85 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   ini_key_exists
+  </h1>
+  This function checks to see if a key exists in the currently open ini and will return
+  <span>
+   true
+  </span>
+  if it does or
+  <span>
+   false
+  </span>
+  otherwise. This is not a necessary check to prevent errors as, when a key does not exist, reading from a non-existent key will just return a default value. It can be useful to see if an ini file has saved specific data and a few other things, however.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">ini_key_exists(section, key);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      section
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The section in the open .ini file to check a key in.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      key
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The key to check for.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">ini_open("savedata.ini");
+if !ini_key_exists("save1", "name")
+{
+    global.name = "Player1";
+}
+ini_close();
+</code></pre>
+  This will set variable global.name to "Player1" if no such key as "name" exists.
+ </body>
+</html>

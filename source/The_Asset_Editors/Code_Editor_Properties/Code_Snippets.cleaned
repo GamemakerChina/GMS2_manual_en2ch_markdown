@@ -1,0 +1,137 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Code Snippets
+  </h1>
+  A very handy tool you have at your disposal when editing your code is the use of
+  <strong>
+   Code Snippets
+  </strong>
+  . When using the script editor, you can press
+  <span>
+   F4
+  </span>
+  to open the code snippet pop-up, which permits you to select one of the commonly used code methods from a list:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/CodeSnippets_IDE.png"/><br/>
+  From this window you can select with the mouse the snippet to use, or you can press the associated hotkey listed on the right. This will add the snippet to your code for editing.
+  
+  
+   You can also define your own code snippets if you want to. Before doing this, you'll need to create a file called "
+  <span>
+   snippets.txt
+  </span>
+  " in one of the following directories:
+  <ul>
+   <li>
+    Windows:
+    <span>
+     %ProgramData%\GameMaker\User\
+    </span>
+   </li>
+   <li>
+    macOS:
+    <span>
+     /Users/Shared/GameMaker/User/
+    </span>
+   </li>
+  </ul>
+  This folder is
+  <em>
+   not
+  </em>
+  modified during any update to
+  <span>
+   GameMaker
+  </span>
+  , so your edited file will remain intact (but any edits to the base snippets file in the install directory will be reverted).
+  
+  
+   Once the file is created in the User directory, you can edit it with any text editor following these rules:
+  <ul>
+   <li>
+    Each snippet has to be on a separate line (there should be no blank lines)
+   </li>
+   <li>
+    Each snippet must start with the hotkey to be used followed by "
+    <span>
+     -
+    </span>
+    " and then the name of the snippet (which is what is shown in the menu) followed by a colon "
+    <span>
+     :
+    </span>
+    ", eg:
+   </li>
+  </ul>
+  <pre><code class="language-gml">I - Instance Create:
+</code></pre>
+  After the colon you add the snippet of code
+  <pre><code class="language-gml">I - Instance Create:instance_create_layer(x, y, |layer|, object);
+</code></pre>
+  The code that you add must also follow a specific format where:
+  <ul>
+   <li>
+    All code is on a single line
+   </li>
+   <li>
+    You use "
+    <span>
+     $
+    </span>
+    " for a newline
+    <ul>
+     <li>
+      <span>
+       NOTE
+      </span>
+      When creating multiple newlines, there needs to be a space between each "
+      <span>
+       $
+      </span>
+      " sign. For example, you would write
+      <span>
+       $ $ $
+      </span>
+      to add three newlines.
+     </li>
+    </ul>
+   </li>
+   <li>
+    You put the text that needs to be highlighted between "
+    <span>
+     |
+    </span>
+    " symbols. The Code Editor will automatically select this text for editing when the snippet is added.
+   </li>
+  </ul>
+  See the examples that are already in the base snippets file to see how it is set up following the rules above. You can find the base file in the
+  <span>
+   GameMaker
+  </span>
+  install directory:
+  <ul>
+   <li>
+    Windows:
+    <span>
+     <span>
+      GameMaker
+     </span>
+     \TextEditor\snippets.txt
+    </span>
+   </li>
+   <li>
+    macOS:
+    <span>
+     /Applications/
+     <span>
+      GameMaker
+     </span>
+     .app/Contents/MonoBundle/TextEditor/snippets.txt
+    </span>
+   </li>
+  </ul>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/CodeSnippets_Example.png"/><br/>
+ </body>
+</html>

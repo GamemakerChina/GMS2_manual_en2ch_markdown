@@ -1,0 +1,155 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   sprite_set_bbox_mode
+  </h1>
+  This function can be used to set the bounding box mode for a sprite. You supply the sprite index and the mode to use, which should be one of the following constants:
+  <table>
+   <colgroup>
+    <col/>
+    <col/>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Manipulation/sprite_set_bbox_mode.htm">
+        Bounding Box Mode Constant
+       </a>
+      </span>
+     </th>
+    </tr>
+    <tr>
+     <th>
+      Constant
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       bboxmode_automatic
+      </span>
+     </td>
+     <td>
+      <strong>
+       Automatic
+      </strong>
+      - The bounding box will be calculated automatically, based on the tolerance setting for the sprite
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       bboxmode_fullimage
+      </span>
+     </td>
+     <td>
+      <strong>
+       Full Image
+      </strong>
+      - The bounding box will be set to use the full width and height of the sprite, regardless of the tolerance and "empty" pixels
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       bboxmode_manual
+      </span>
+     </td>
+     <td>
+      <strong>
+       Manual
+      </strong>
+      - The bounding box is being set manually to user defined values, which requires the use of the function
+      <a href="sprite_set_bbox.htm">
+       <span>
+        sprite_set_bbox()
+       </span>
+      </a>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <span>
+   NOTE
+  </span>
+  This function affects the sprite
+  <b>
+   asset
+  </b>
+  so that all further instances with this sprite will have the same bounding box mode.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">sprite_set_bbox_mode(ind, mode);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      ind
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../The_Asset_Editors/Sprites.htm">
+        Sprite Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the sprite to change the mode of.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      mode
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Manipulation/sprite_set_bbox_mode.htm">
+        Bounding Box Mode Constant
+       </a>
+      </span>
+     </td>
+     <td>
+      The mode to set (a constant).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if sprite_get_bbox_mode(sprite_index) != bboxmode_automatic
+{
+    sprite_set_bbox_mode(sprite_index, bboxmode_automatic);
+}
+</code></pre>
+  The above code checks the bbox mode for the current sprite and if it's not
+  <span>
+   automatic
+  </span>
+  , then it is set to that value.
+ </body>
+</html>

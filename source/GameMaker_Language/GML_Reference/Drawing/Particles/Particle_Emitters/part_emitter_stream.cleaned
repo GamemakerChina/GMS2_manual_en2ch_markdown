@@ -1,0 +1,113 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   part_emitter_stream
+  </h1>
+  This function allows you to set an emitter to stream a specific type of particle and is typically used the create event as it is a one off code that sets the emitter to generate the number of particles specified every step of the game there-after. The particles are emitted following the distribution, shape and position set by the function
+  <a href="part_emitter_region.htm">
+   <span>
+    part_emitter_region()
+   </span>
+  </a>
+  . You can set the number of particles being streamed to zero and call this function again to "switch off" the particle streaming, and the function will also accept negative numbers for the amount, in which case the emitter will produce particles based on random chance. For example, if you have the particle number set to -5, there is a 1:5 chance that a particle will be produced every step. Should you need the particles to appear all at once rather than every step, you should be using the function
+  <a href="part_emitter_burst.htm">
+   <span>
+    part_emitter_burst()
+   </span>
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">part_emitter_stream(ps, ind, parttype, number);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      ps
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Systems/part_system_create.htm">
+        Particle System ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The particle system that the emitter is in.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      ind
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Emitters/part_emitter_create.htm">
+        Particle Emitter ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the emitter to burst from.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      parttype
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Types/part_type_create.htm">
+        Particle Type ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index (type) of the particles to be created.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      number
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The number of particles to create per step.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">part_emitter_stream(global. Sname, p_emit1, p1, 1);
+</code></pre>
+  The above code will stream 1 particle every step of the game until the emitter is destroyed or the stream set to 0.
+ </body>
+</html>

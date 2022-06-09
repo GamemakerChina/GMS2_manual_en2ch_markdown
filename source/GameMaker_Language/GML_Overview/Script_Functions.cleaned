@@ -1,0 +1,528 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Script Functions And Variables
+  </h1>
+  Script assets are essentially a collection of one or more user defined functions or variables that you write yourself as snippets of code in the
+  <a href="../../The_Asset_Editors/Scripts.htm">
+   Script Editor
+  </a>
+  . The functions you define in a script can resolve expressions, return values or do anything else that the GameMaker Language permits, just like the built in
+  <a href="Runtime_Functions.htm">
+   runtime functions
+  </a>
+  .
+  
+  
+   Script functions should generally be used if you have a block of code that you use in more than one place or object, or when you want a block of code to be used across multiple objects in a modular fashion. Using scripts to define functions means that you can change the function just once when required and the change will be "picked up" by every object that has a call to the function.
+  
+  
+   Scripts can also be very handy from an organisational point of view, as they permit you to create groups of functions that belong to a certain category - for example, you might have several functions all related to collisions between instances in your game, so you would create a "
+  <span>
+   Collision_Functions
+  </span>
+  " script and store all these functions together in it.
+  
+  
+   Also see:
+  <a href="Script_Functions_vs_Methods.htm">
+   Script Functions vs. Methods
+  </a>
+  <h2>
+   Creating Functions
+  </h2>
+  When creating a script with functions in it, the functions must be created using the following formats:
+  <pre><code class="language-gml">function name( parameter1, parameter2, ... )
+  {
+    statement1;
+    statement2;
+    ...
+}
+</code></pre>
+  or:
+  <pre><code class="language-gml">name = function( parameter1, parameter2, ... )
+{
+    statement1;
+    statement2;
+    ...
+}
+</code></pre>
+  To create a function in GML Visual, use
+  <a href="../../Drag_And_Drop/Drag_And_Drop_Reference/Common/Declare_A_New_Function.htm">
+   Declare A New Function
+  </a>
+  . Enable its "Temp" option to create a method variable (second syntax shown above).
+  
+  
+   In general, however, you would use the
+  <em>
+   first
+  </em>
+  form for script functions as it will define the function as specifically being a script function, meaning that it will be
+  <strong>
+   global
+  </strong>
+  in
+  <a href="Variables_And_Variable_Scope.htm">
+   scope
+  </a>
+  , be assigned a
+  <strong>
+   script index
+  </strong>
+  , and not require the
+  <span>
+   global
+  </span>
+  prefix to identify it since the compiler will recognise it as a script function.
+  
+  
+   Using the second form will instead be generating a global scope
+  <a href="Method_Variables.htm">
+   method variable
+  </a>
+  , and as such it will
+  <em>
+   not
+  </em>
+  be recognised as a script function by the IDE and will require the use of the
+  <span>
+   global
+  </span>
+  prefix when being referenced in your code.
+  <span>
+   NOTE
+  </span>
+  You can check this by using both forms in a script and then calling the runtime function
+  <a href="../GML_Reference/Variable_Functions/typeof.htm">
+   typeof()
+  </a>
+  on each of them. One will be classed as a "number" - since it returns a script index ID - and the other will be classed as a "method".
+  <h2>
+   Parameters/Arguments
+  </h2>
+  You can define your own parameters/arguments for a function, which will be available to the function as local variables and can be used for any purpose within that function:
+  <pre><code class="language-gml">function move(spd, dir)
+{
+    speed = spd;
+    direction = dir;
+}
+</code></pre>
+  This function takes two arguments and applies their values to the instance's
+  <span>
+   speed
+  </span>
+  and
+  <span>
+   direction
+  </span>
+  variables. It can now be called like any runtime function and arguments can be passed into it:
+  <pre><code class="language-gml">var _mouse_dir = point_direction(x, y, mouse_x, mouse_y);
+
+move(4, _mouse_dir);
+</code></pre>
+  <h2>
+   Optional Arguments
+  </h2>
+  If an argument is not given to a function, its value will be
+  <span>
+   undefined
+  </span>
+  . You can use this to define
+  <em>
+   optional
+  </em>
+  arguments, and check whether an argument is passed in or not by checking if it is equal to
+  <span>
+   undefined
+  </span>
+  . However, you can also explicitly define a default value for an argument which will be used instead of
+  <span>
+   undefined
+  </span>
+  when it is not passed in.
+  
+  
+   You can assign such a default value to a parameter using the equal (
+  <span>
+   =
+  </span>
+  ) sign, making it an optional variable:
+  <pre><code class="language-gml">function move(spd, dir = 90)
+{
+    speed = spd;
+    direction = dir;
+}
+</code></pre>
+  If the
+  <span>
+   dir
+  </span>
+  argument is not passed in when calling the above function, then its value will default to
+  <span>
+   90
+  </span>
+  , moving the instance in an upward direction.
+  <span>
+   TIP
+  </span>
+  You can omit arguments from function calls and they will default to
+  <span>
+   undefined
+  </span>
+  (or the default value for that argument as defined by the function).
+    
+    For example, writing
+  <span>
+   my_func(0,,,1)
+  </span>
+  is the same as writing
+  <span>
+   my_func(0, undefined, undefined, 1)
+  </span>
+  .
+  <hr/>
+  The default value of an optional variable can be an expression, so for example, you can use variables and call functions while defining an optional variable. Note that such an expression will only be executed if its optional argument is not provided in the function call. See the following example of a logging function:
+  <pre><code class="language-gml">function log(text = "Log", object = object_index, time = date_datetime_string(date_current_datetime()))
+{
+    var _string = "[" + string(time) + "] ";
+    _string += object_get_name(object) + ": ";
+    _string += text;
+    
+    show_debug_message(_string);
+}
+</code></pre>
+  This function takes three arguments, where the first argument defaults to a string constant, the second argument defaults to an instance variable (in the scope of the calling instance) and the third argument defaults to an expression calling a function to retrieve the current date and time. This function can now be called with up to three arguments, as seen in the following example:
+  <pre><code class="language-gml">log();
+// Prints: [09-Jun-21 12:34:37 PM] Object1: Log
+
+log("Player Shot", obj_player, 10);
+// Prints: [10] obj_player: Player Shot
+</code></pre>
+  <h2>
+   JSDoc
+  </h2>
+  We also recommend that you add comments to define the properties of the function (see the section on
+  <a href="../../The_Asset_Editors/Code_Editor_Properties/JSDoc_Script_Comments.htm">
+   JSDoc Comments
+  </a>
+  for more details), such that a simple script would look like this:
+  <pre><code class="language-gml">/// @function                 log(message);
+/// @param {string}  message  The message to show
+/// @description              Show a message whenever the function is called.
+
+function log(message)
+{
+    show_debug_message(message);
+}
+</code></pre>
+  Additional functions for the script can be added using the same format as shown above, one after the other within the script asset.
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/GML/Overview/Multiple_Functions_Scripts.png"/><br/>
+  <h2>
+   Return Value
+  </h2>
+  Functions in scripts can also return a value, just as runtime functions can, and as such they can be used in expressions. For this you would use the
+  <a href="Language_Features/return.htm">
+   <span>
+    return
+   </span>
+  </a>
+  statement:
+  <pre><code class="language-gml">return &amp;amp;lt;expression&amp;amp;gt;
+</code></pre>
+  It should be noted that the
+  <strong>
+   <i>
+    execution of the function ends at the return statement
+   </i>
+  </strong>
+  , meaning that any code which comes after
+  <strong>
+   return
+  </strong>
+  has been called
+  <i>
+   will not be run
+  </i>
+  . Here is a short example function from a function called "
+  <span>
+   sqr_calc
+  </span>
+  " which calculates the square of whatever value is passed to it, and in case the given value is not a real number, it uses
+  <strong>
+   return
+  </strong>
+  to end the function early so the actual calculation never runs:
+  <pre><code class="language-gml">/// @function           sqr_calc(val);
+/// @param {real}  val  The value to calculate the square of
+/// @description        Calculate the square of the given value
+
+function sqr_calc(val)
+{
+    if !is_real(val)
+    {
+        return 0;
+    }
+
+    return (val * val);
+}
+</code></pre>
+  Note that if you create a script function with
+  <em>
+   no
+  </em>
+  return value then in your code check for one, you will get the value
+  <span>
+   undefined
+  </span>
+  by default.
+  
+  
+   To call a script function from within a piece of code, just use it the same way as when calling any runtime function - that is, write the function name with the parameter values in parentheses. So, the above script would be called like this:
+  <pre><code class="language-gml">if keyboard_check_pressed(vk_enter)
+{
+    val = scr_sqr(amount);
+}
+</code></pre>
+  <strong>
+   NOTE
+  </strong>
+  : When using your own functions from scripts in the code editor, you can press
+  <span>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_f1.png"/><br/>
+  </span>
+  or click the middle mouse button
+  <span>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_MMB.png"/><br/>
+  </span>
+  on the function name to open the script that contains it for editing directly.
+  <h2>
+   Script Names vs. Function Names
+  </h2>
+  It is important to understand that script
+  <i>
+   names
+  </i>
+  are
+  <b>
+   independent of the functions that they contain
+  </b>
+  , so you can name your scripts in a more "common sense" way, ie: all your AI functions could go in a script "
+  <span>
+   Enemy_AI
+  </span>
+  " (following the standard asset naming conventions of alpha-numeric characters and the under-bar "_" only). However, you can still call scripts in your game - and you can name scripts the same as a function that you define in them - which can give rise to a issues due to the way that
+  <span>
+   GameMaker
+  </span>
+  stores asset references. To give an example consider this code, called from an instance:
+  <pre><code class="language-gml">function indirectCall(func, arg)
+{
+    func(arg);
+}
+
+indirectCall(myscript, arg);
+</code></pre>
+  The above code is attempting to call a script called "myscript" within a method, which in this case will fail. This is because the in-line function is actually using the
+  <em>
+   index
+  </em>
+  for the script asset and
+  <strong>
+   not
+  </strong>
+  actually calling the script function - eg: if the script index resolves to "4", essentially the function is calling
+  <span>
+   4(arg);
+  </span>
+  , which makes no sense. The code should instead be structured in one of the following two ways:
+  <pre><code class="language-gml">function indirectCall(func, arg)
+{
+    func(arg);
+}
+
+indirectCall(method(undefined, myscript), arg);
+
+// OR
+
+function indirectCall(func, arg)
+{
+    script_execute(func, arg);
+}
+
+indirectCall(myscript, arg);
+</code></pre>
+  This is important to note, especially when working with legacy projects where scripts contain one single function, and the function is named the same as the script. However, you really should
+  <em>
+   never
+  </em>
+  do this, and your scripts should be named independently of the functions they contain.
+  <span>
+   NOTE
+  </span>
+  Keep in mind that if your script is
+  <strong>
+   completely empty
+  </strong>
+  , it will not be loaded into the compiled game and will become non-existent; meaning that trying to reference such a script asset will crash your game. Note that this only applies to scripts that are completely empty, so even if your script only contains comments, it will still be included in the compiled game.
+  <h2>
+   Script Scope
+  </h2>
+  This leads us to the final and most important thing to know about scripts and the functions they contain: scripts are parsed on a
+  <b>
+   global
+  </b>
+  level and will be
+  <strong>
+   compiled at the very start of the game
+  </strong>
+  . This means that
+  <em>
+   technically
+  </em>
+  all functions in a script are "unbound"
+  <a href="Method_Variables.htm">
+   method variables
+  </a>
+  , and any variables declared outside of a function in the script will be considered
+  <a href="Variables/Global_Variables.htm">
+   global variables
+  </a>
+  . For example, consider this script:
+  <pre><code class="language-gml">function Foo()
+{
+    // Do something
+}
+blah = 10;
+function Bar()
+{
+    // Do something else
+}
+</code></pre>
+  In the above case, not only have we defined the functions
+  <span>
+   Foo
+  </span>
+  and
+  <span>
+   Bar
+  </span>
+  but also the variable
+  <span>
+   blah
+  </span>
+  and all of them are considered to have been created in the
+  <b>
+   global
+  </b>
+  scope. The functions don't need the
+  <span>
+   global
+  </span>
+  keyword to be recognized as the compiler understands that these functions are part of the script, but if you wanted to access
+  <span>
+   blah
+  </span>
+  then you would need to do:
+  <pre><code class="language-gml">val = global.blah;
+</code></pre>
+  That said, we recommend that you
+  <b>
+   always explicitly type global variables
+  </b>
+  when creating them in scripts to prevent any issues later. Scripts are also an ideal place to define any
+  <strong>
+   Macros
+  </strong>
+  or
+  <strong>
+   Enums
+  </strong>
+  (
+  <a href="Variables/Constants.htm">
+   constants
+  </a>
+  ), as adding them to a script outside of a function also means that they will be created for use before the game code actually starts running. Below is an example of a script that is creating different global scope values for a game:
+  <pre><code class="language-gml">/// Initialise All Global Scope Values And Constants
+global.player_score = 0;
+global.player_hp = 100;
+global.pause = false;
+global.music = true;
+global.sound = true;
+
+enum rainbowcolors
+{
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+}
+
+#macro weapon_num 3
+#macro weapon_gun 0
+#macro weapon_bomb 1
+#macro weapon_knife 2
+</code></pre>
+  Note how all these constants are set up outside of any function call, meaning they will be initialised before everything else and at a
+  <em>
+   global
+  </em>
+  scope. This means that if you want to use a script to initialise variables on an
+  <em>
+   instance
+  </em>
+  scope then you must wrap them in a function, for example:
+  <pre><code class="language-gml">/// @function                init_enemy();
+/// @description             Initialise enemy instance vars
+
+function init_enemy()
+{
+    hp = 100;
+    dmg = 5;
+    mana = 50;
+}
+</code></pre>
+  So, scripts can be used to generate macros, enums and global variables before the game starts so they are ready for use at any time, and they can also be used to create "unbound" methods (user-defined functions) that can be used in your game like GML runtime functions.
+  
+  
+   One final thing to note about script functions is that if you are developing for
+  <strong>
+   Web
+  </strong>
+  (ie: targeting
+  <strong>
+   HTML5
+  </strong>
+  ), then there is an additional function protocol that you can use when adding functions to scripts, which is to prefix a function name with
+  <span>
+   gmcallback_
+  </span>
+  , for example:
+  <pre><code class="language-gml">gmcallback_create_button
+</code></pre>
+  Using the above function name would mean that the function
+  <span>
+   gmcallback_create_button()
+  </span>
+  will not be obfuscated and so can be used in JavaScript extensions and other areas of your game, for example, when using the
+  <a href="../GML_Reference/Web_And_HTML5/Web_And_HTML5.htm">
+   <span>
+    clickable_*
+   </span>
+  </a>
+  functions.
+  <h2>
+   Static Variables
+  </h2>
+  Functions can also make use of static variables, which maintain their values throughout every function call. Please
+  <a href="Functions/Static_Variables.htm">
+   read this page
+  </a>
+  for more information.
+ </body>
+</html>

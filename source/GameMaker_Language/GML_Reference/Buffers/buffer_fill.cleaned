@@ -1,0 +1,134 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   buffer_fill
+  </h1>
+  This function can be used to fill a previously created buffer with a given data type and value. The data you fill the buffer with must be in agreement with the "type" argument of this function, meaning that you can't try to fill with a
+    string and use the unsigned 16bit integer type, for example. The type constants are the same as those used by the
+  <a href="buffer_read.htm">
+   <span>
+    buffer_read()
+   </span>
+  </a>
+  and
+  <a href="buffer_write.htm">
+   <span>
+    buffer_write()
+   </span>
+  </a>
+  functions. The "size"
+    is the size of the buffer (in bytes) that you wish to fill, while the offset is the offset value (also in bytes) from the start of the buffer to start the fill from.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">buffer_fill(buffer, offset, type, value, size);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      buffer
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Buffers/buffer_create.htm">
+        Buffer ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the buffer to fill.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      offset
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The data offset value (in bytes).
+     </td>
+    </tr>
+    <tr>
+     <td>
+      type
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The type of data that is to be written to the buffer (see the list of constants
+      <a href="buffer_write.htm">
+       here
+      </a>
+      ).
+     </td>
+    </tr>
+    <tr>
+     <td>
+      value
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The data to write.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      size
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The size of the buffer (in bytes) that you wish to fill.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">map_buffer = buffer_create(16384, buffer_fixed, 0); buffer_fill(map_buffer, 0, buffer_u16, 0, 16384);
+</code></pre>
+  The above code finds the start of the buffer with the id stored in the variable "buff" them writes a series of signed 16bit integer values to it.
+ </body>
+</html>

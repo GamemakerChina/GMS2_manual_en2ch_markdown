@@ -1,0 +1,81 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   string_last_pos
+  </h1>
+  This function will return the character position of an instance of a sub-string within a string, searching from the end of the string to the beginning (so the reverse of
+  <a href="string_pos.htm">
+   <span>
+    string_pos()
+   </span>
+  </a>
+  . The function will return 0 if the search string is not found, or the position of the first character of the search string if it is. Keep in mind that for legacy support strings are indexed from 1, so 1 is the first position in the string, not 0 as you may expect.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">string_last_pos(substr, str);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      substr
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The substring to look for in the string.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      str
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The string.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if (string_last_pos(",", text) != 0)
+{
+    string_insert(name, text, string_last_pos(",", text));
+}
+</code></pre>
+  The above code searches the string stored in the variable "text" for a comma starting the search from the end of the string. If it finds one it inserts the substring "name" at that position.
+ </body>
+</html>

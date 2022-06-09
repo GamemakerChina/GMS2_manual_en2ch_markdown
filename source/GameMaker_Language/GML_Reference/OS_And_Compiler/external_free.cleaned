@@ -1,0 +1,72 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   external_free
+  </h1>
+  This function frees the memory associated with the
+  <span>
+   dll
+  </span>
+  or
+  <span>
+   dylib
+  </span>
+  with the given name. This should be done whenever the file in question is no longer needed in the game, normally (for example) in a Game End event.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">external_free(id);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/OS_And_Compiler/external_define.htm">
+        External Function
+       </a>
+      </span>
+     </td>
+     <td>
+      The name of the
+      <span>
+       dll
+      </span>
+      or
+      <span>
+       dylib
+      </span>
+      that you want to free
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">external_free("MyDLL.dll");
+</code></pre>
+  The above example code will free the memory associated with the given dll.
+ </body>
+</html>

@@ -1,0 +1,46 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   gpu_get_ztestenable
+  </h1>
+  This function can be used to retrieve whether z-testing is enabled (the function returns
+  <span>
+   true
+  </span>
+  ) or not (the function returns
+  <span>
+   false
+  </span>
+  ). The default value is that z-testing is
+  <i>
+   disabled
+  </i>
+  , so the function will return
+  <span>
+   false
+  </span>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">gpu_get_ztestenable();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if gpu_get_ztestenable() == false
+{
+    gpu_set_ztestenable(true);
+}
+</code></pre>
+  The above code checks to see if z-testing is enabled or not and if it is disabled it is then enabled again.
+ </body>
+</html>

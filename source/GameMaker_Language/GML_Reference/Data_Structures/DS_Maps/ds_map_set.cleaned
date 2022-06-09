@@ -1,0 +1,105 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   ds_map_set
+  </h1>
+  With this function you can set the value of a key within a given DS map. You supply the DS map ID value (as returned by the function
+  <a href="ds_map_create.htm">
+   <span>
+    ds_map_create()
+   </span>
+  </a>
+  ), then give the key you want to set and the value to set it to. Keys can be integers or strings, and if the given key does not exist then it will be created for you and set to the value. This function is the same as using the
+  <a href="../../../GML_Overview/Accessors.htm">
+   DS map accessor
+  </a>
+  to set/create a map key/value pair. The function does not return anything, so if you need to check if the key value has been replaced or a new key has been created, then you should use the function
+  <span>
+   <a href="ds_map_replace.htm">
+    ds_map_replace()
+   </a>
+  </span>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">ds_map_set(id, key, value)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/ds_map_create.htm">
+        DS Map ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The id of the map to use.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      key
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The key to set.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      value
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm#variable">
+        Variable
+       </a>
+      </span>
+     </td>
+     <td>
+      The value to set the key to.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if is_undefined(ds_map_find_value(map, "score"))
+{
+    ds_map_set(map, "score", 0);
+}
+</code></pre>
+  The above code will check to see if the given key exists and if it doesn't then it is created and set.
+ </body>
+</html>

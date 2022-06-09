@@ -1,0 +1,194 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   physics_particle_get_data
+  </h1>
+  This function returns various pieces of information about each particle in the physics simulation using the given flags checked. The buffer used must have been created previously using the function
+  <a href="../../Buffers/buffer_create.htm">
+   <span>
+    buffer_create()
+   </span>
+  </a>
+  , and should be of the "grow" type, with the size being approximately that of the expected return data. The flags are set using any of the constants given below, and you would use the
+  <a href="../../../../Additional_Information/Bitwise_Operators.htm">
+   bitwise
+   <i>
+    or
+   </i>
+  </a>
+  "|" to create a single flag value to get the desired information.
+  <table>
+   <colgroup>
+    <col/>
+    <col/>
+    <col/>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Physics/Soft_Body_Particles/physics_particle_get_data.htm">
+        Physics Particle Data Flag Constant
+       </a>
+      </span>
+     </th>
+    </tr>
+    <tr>
+     <th>
+      Constant
+     </th>
+     <th>
+      Description
+     </th>
+     <th>
+      Data Type
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       phy_particle_data_flag_typeflags
+      </span>
+     </td>
+     <td>
+      The flags value for the particle.
+     </td>
+     <td>
+      buffer_u32
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       phy_particle_data_flag_position
+      </span>
+     </td>
+     <td>
+      The x and y position of the particle.
+     </td>
+     <td>
+      2 x buffer_f32
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       phy_particle_data_flag_velocity
+      </span>
+     </td>
+     <td>
+      The horizontal and vertical speed.
+     </td>
+     <td>
+      2 x buffer_f32
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       phy_particle_data_flag_colour
+      </span>
+     </td>
+     <td>
+      The colour and alpha value (hexadecimal).
+     </td>
+     <td>
+      buffer_f32
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       phy_particle_data_flag_category
+      </span>
+     </td>
+     <td>
+      The particle category (as defined when you created the particle or group to which it belongs).
+     </td>
+     <td>
+      buffer_u32
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">physics_particle_get_data(buffer, flags)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      buffer
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Buffers/buffer_create.htm">
+        Buffer ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The (previously created) buffer to use to store the data.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      flags
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Physics/Soft_Body_Particles/physics_particle_get_data.htm">
+        Physics Particle Data Flag Constant
+       </a>
+      </span>
+      (s)
+     </td>
+     <td>
+      The flags to use to extract data about specific particle types.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var count = physics_particle_count();
+var flags = phy_particle_data_flag_position | phy_particle_data_flag_colour;
+if (count &amp;amp;gt; 0)
+{
+    var buffer = buffer_create(count * 12, buffer_grow, 4);
+    physics_particle_get_data(buffer, flags);
+    for (var n = 0; n &amp;amp;lt; count; n++;)
+    {
+        var xx = buffer_read(buffer, buffer_f32);
+        var yy = buffer_read(buffer, buffer_f32);
+        var argb = buffer_read(buffer, buffer_u32);
+        var alpha = (argb &amp;amp;gt;&amp;amp;gt; 24) &amp;amp;amp; 255;
+        draw_sprite_ext(sprBlob, 0, xx, yy, 1, 1, 0, c_green, alpha);
+    }
+    buffer_delete(buffer);
+}
+</code></pre>
+  The above code gets the number of particles and creates a variable with the data flags to check, then checks to see if there are any particles in the room. If there are, a buffer is created and then filled with the particle data, which is checked and used to draw a sprite at the particle position.
+ </body>
+</html>

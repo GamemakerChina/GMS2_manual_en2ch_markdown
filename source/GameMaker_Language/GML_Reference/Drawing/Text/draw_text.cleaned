@@ -1,0 +1,159 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   draw_text
+  </h1>
+  With this function you can draw any string at any position within the room (for drawing real numbers you should use the
+  <a href="../../Strings/string.htm">
+   <span>
+    string
+   </span>
+   <span>
+    ()
+   </span>
+  </a>
+  function to convert them into text). To combine strings you can use
+  <b>
+   +
+  </b>
+  (see example below) and you can also use
+  <b>
+   \n
+  </b>
+  within a string to add a line break so it is drawn over multiple lines (for information on how to properly format a string and what escape characters you can use, please see
+  <a href="../../Strings/Strings.htm">
+   here
+  </a>
+  ). The colour of the text and the alpha are governed by the current base alpha and colour values as set by
+  <a href="../Colour_And_Alpha/draw_set_alpha.htm">
+   <span>
+    draw_set_alpha
+   </span>
+   <span>
+    ()
+   </span>
+   <span>
+   </span>
+  </a>
+  and
+  <a href="../Colour_And_Alpha/draw_set_colour.htm">
+   <span>
+    draw_set_colour
+   </span>
+   <span>
+    ()
+   </span>
+   <span>
+   </span>
+  </a>
+  .
+  <b>
+   NOTE
+  </b>
+  : The actual position of the text will be influenced by the alignment values set by
+  <a href="draw_set_halign.htm">
+   <span>
+    <span>
+     draw_set_halign
+    </span>
+   </span>
+   <span>
+    ()
+   </span>
+   <span>
+   </span>
+  </a>
+  and
+  <a href="draw_set_valign.htm">
+   <span>
+    <span>
+     draw_set_valign
+    </span>
+   </span>
+   <span>
+    ()
+   </span>
+   <span>
+   </span>
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">draw_text(x, y, string);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      x
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x coordinate of the drawn string.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y coordinate of the drawn string.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      string
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The string to draw.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">draw_text(x, y, "Hello, " + global.Name + "!\nI hope you are well!");
+</code></pre>
+  The above code will draw a string at the instance x/y position, which will use the string stored in the global variable "Name" and split it over two lines.
+ </body>
+</html>

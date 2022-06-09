@@ -1,0 +1,95 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   show_error
+  </h1>
+  This function will show a custom string as an error message.
+  <span>
+   IMPORTANT
+  </span>
+  The second argument only exists for backwards compatibility with older projects and will have no effect on the error dialog shown.
+  <span>
+   <b>
+    NOTE
+   </b>
+  </span>
+  This function is for debug use
+  <strong>
+   only
+  </strong>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">show_error(str, abort);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      str
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The string to show in the pop-up message.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      abort
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      <span>
+       UNUSED
+      </span>
+      Whether the error should abort the game (true) or allow the player to ignore it (false).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if (room != rm_Dungeon)
+{
+    show_error("Error: Went to wrong area. Aborting game.", true);
+}
+</code></pre>
+  The above code will check if the current room is
+  <span>
+   rm_Dungeon
+  </span>
+  , and if it's not, it will show an error message.
+ </body>
+</html>

@@ -1,0 +1,83 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   video_open
+  </h1>
+  This function opens a video file using the path specified. The path can refer to a file in the
+  <a href="../../../../Settings/Included_Files.htm">
+   Included Files
+  </a>
+  of your project, a file locally present on the user's device, or a URL for loading a file from the internet (which may not work on all platforms).
+   
+   
+    As you can only load one video at a time, this function loads the specified video into the only available "video slot", which is then manipulated via the other
+  <a href="Videos.htm">
+   Video functions
+  </a>
+  .
+   
+   
+    There are asynchronous callbacks associated with video playback. See
+  <a href="Videos.htm#h">
+   Async Callbacks
+  </a>
+  for more information.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">video_open(path);
+</code></pre>
+  <table>
+   <colgroup>
+    <col/>
+    <col/>
+    <col/>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      path
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      Path to the video file
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">my_video = video_open("splash.mp4");
+</code></pre>
+  The code above loads
+  <span>
+   splash.mp4
+  </span>
+  from the Included Files of the game.
+ </body>
+</html>

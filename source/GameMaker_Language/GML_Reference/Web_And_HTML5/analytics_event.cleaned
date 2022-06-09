@@ -1,0 +1,67 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   analytics_event
+  </h1>
+  This function will send the specified text to the analytics provider that you have set up through the
+  <a href="../../../Settings/Game_Options/HTML5.htm">
+   HTML5 Game Options
+  </a>
+  . This function can be used to create a custom analytic to track something outside of the scope of the provider being used.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">analytics_event(string);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      string
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      A string to send to the provider
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if hs_new
+{
+    analytics_event("New hiscore of " + string (score));
+}
+</code></pre>
+  The above code will check a variable to see if it is
+  <span>
+   true
+  </span>
+  and if it is then a special analytics event will be triggered with the specified string.
+ </body>
+</html>

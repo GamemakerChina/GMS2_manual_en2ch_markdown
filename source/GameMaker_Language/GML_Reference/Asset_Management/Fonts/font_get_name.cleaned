@@ -1,0 +1,81 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   font_get_name
+  </h1>
+  This function can be used to get the name (as a string) that was given to the font when it was added as an asset to the
+  <span>
+   GameMaker
+  </span>
+  Asset Browser. Please note that this is
+  <i>
+   only
+  </i>
+  a
+    string and cannot be used to reference the font directly - for that you would need the
+  <i>
+   font index
+  </i>
+  . You can, however, use this string to get the
+  <i>
+   font index
+  </i>
+  using the returned string along with the
+    function
+  <a href="../Assets_And_Tags/asset_get_index.htm">
+   <span>
+    asset_get_index()
+   </span>
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">font_get_name(ind);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      ind
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Fonts.htm">
+        Font Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      Index of the font to check.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">fnt_Name = font_get_name(font0);
+</code></pre>
+  The above code will get the name of a font resource as it appears in the Asset Browser and store it as a string in the variable "fnt_Name".
+ </body>
+</html>

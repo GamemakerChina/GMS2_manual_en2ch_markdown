@@ -1,0 +1,84 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   draw_set_font
+  </h1>
+  This function will set the font to be used for all further text drawing. This font must have been added into the
+  <a href="../../../../The_Asset_Editors/Fonts.htm">
+   font assets
+  </a>
+  of the game or have been created using either the
+  <a href="../../Asset_Management/Fonts/font_add.htm">
+   <span>
+    font_add
+   </span>
+   <span>
+    ()
+   </span>
+   <span>
+   </span>
+  </a>
+  or
+  <a href="../../Asset_Management/Fonts/font_add_sprite.htm">
+   <span>
+    font_add_sprite
+   </span>
+   <span>
+    ()
+   </span>
+   <span>
+   </span>
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">draw_set_font(font);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      font
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Fonts.htm">
+        Font Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The name of the font to use.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">draw_set_colour(c_blue);
+draw_set_font(fnt_Game);
+draw_text(200, 200, "Hello World");
+</code></pre>
+  The above code will draw the given text using the font indexed in the variable "fnt_Game" and coloured blue.
+ </body>
+</html>

@@ -1,0 +1,88 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   string_insert
+  </h1>
+  With this function you can create a new string made up of two strings, where one has been inserted into the other at a given position. It can be useful, for example, to add a user name into a predefined text and so make the player of your game feel
+    more involved in the action. Keep in mind when calculating the position to insert into that strings are indexed from 1, so the first character in a string is 1 and not 0 as you may expect.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">string_insert(substr, str, index);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      substr
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The substring to be inserted.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      str
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The string to be copied.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The position in characters of the string to insert the substring.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">str2 = string_insert(username, "Hello, , how are you?", 8);
+</code></pre>
+  This will insert the string in the "username" variable into the given phrase with the resulting string looking like this: "Hello, NAME, how are you?".
+ </body>
+</html>

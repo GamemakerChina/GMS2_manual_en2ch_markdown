@@ -1,0 +1,75 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/i_VirtualKeyboard_Hide.png"/><br/>
+   Hide Virtual Keyboard
+  </h1>
+  This action can be used to hide the virtual keyboard on the device running the game. Calling this action will generate a
+  <a href="../../../The_Asset_Editors/Object_Properties/Async_Events/System.htm">
+   System Asynchronous Event
+  </a>
+  , in which the
+  <span>
+   <a href="../../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">
+    async_load
+   </a>
+  </span>
+  <a href="../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">
+   DS map
+  </a>
+  will be populated with the following key/value pairs:
+  <ul>
+   <li>
+    "
+    <b>
+     event_type
+    </b>
+    " - this will be "
+    <b>
+     virtual keyboard status
+    </b>
+    " when triggered by virtual keyboard actions.
+   </li>
+   <li>
+    "
+    <b>
+     screen_height
+    </b>
+    " - the height of the virtual keyboard (in pixels). This will be 0 if the keyboard is invisible.
+   </li>
+   <li>
+    "
+    <b>
+     keyboard_status
+    </b>
+    " - the current status of the keyboard, returned as one of the following strings:
+    <ul>
+     <li>
+      "hiding"
+     </li>
+     <li>
+      "hidden"
+     </li>
+     <li>
+      "showing"
+     </li>
+     <li>
+      "visible"
+     </li>
+    </ul>
+   </li>
+  </ul>
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/a_VirtualKeyboard_Hide.png"/><br/>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/e_VirtualKeyboard_Show.png"/><br/>
+  The above action block code checks for a mouse down action, and if one is
+    detected, then a check is performed to see if the OS virtual keyboard is showing. If it isn't then it is set to show - using a numeric keypad type - and if is already showing then it is hidden.
+ </body>
+</html>

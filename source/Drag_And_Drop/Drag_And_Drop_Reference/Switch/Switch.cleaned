@@ -1,0 +1,52 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Switch/i_Switches_Switch.png"/><br/>
+   Switch
+  </h1>
+  This action will create a new Switch statement to which you can then add further cases for evaluation. You give the value that is to be used for comparing to the cases in the Switch and then add the different
+  <a href="Case.htm">
+   Case
+  </a>
+  actions, much
+    as you would add an action to an "if", ie: dropping it to the side of the action rather than under it:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Switch/Switch_Drop.png"/><br/>
+  Note that you cannot add any other type of action into a switch without first having added at least one
+    Case to contain it.
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Switch/a_Switches_Switch.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Value
+     </td>
+     <td>
+      The value to be used by the switch for evaluation
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Switch/e_switches.png"/><br/>
+  The above action block code gets the value stored in a variable and then compares it to the different possible
+    cases. If any one of the cases is the same as the value, then the action under that case will be performed, otherwise the next case will be evaluated. After the switch has run, an alarm is set to 30.
+ </body>
+</html>

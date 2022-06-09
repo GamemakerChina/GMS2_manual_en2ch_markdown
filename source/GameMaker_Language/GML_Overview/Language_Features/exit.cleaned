@@ -1,0 +1,100 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   exit
+  </h1>
+  The
+  <span>
+   exit
+  </span>
+  statement has the following syntax:
+  <pre><code class="language-gml">exit;
+</code></pre>
+  <span>
+   exit
+  </span>
+  simply ends the execution of the current
+  <a href="../Script_Functions.htm">
+   script function
+  </a>
+  ,
+  <a href="../Method_Variables.htm">
+   method
+  </a>
+  , or
+  <a href="../../../The_Asset_Editors/Object_Properties/Object_Events.htm">
+   event
+  </a>
+  . Note there is a slight difference in use here depending on the scope:
+  <ul>
+   <li>
+    If you use
+    <span>
+     exit
+    </span>
+    in a script function or method it will simply exit the function and return to the code that called the function.
+   </li>
+   <li>
+    If you use
+    <span>
+     exit
+    </span>
+    in a code block within an object's event, it will exit
+    <i>
+     the entire event
+    </i>
+    even if there are various separate code blocks after
+    <span>
+     exit
+    </span>
+    has been called.
+   </li>
+   <li>
+    If you use
+    <span>
+     exit
+    </span>
+    in a parent event and call that event using
+    <a href="../../GML_Reference/Asset_Management/Objects/Object_Events/event_inherited.htm">
+     <span>
+      event_inherited()
+     </span>
+    </a>
+    in a child object, only the parent event will exit and the child's event (which called
+    <span>
+     event_inherited()
+    </span>
+    ) will continue.
+   </li>
+  </ul>
+  When used in an event,
+  <span>
+   exit
+  </span>
+  is typically used to avoid an instance running any further code when a specific condition has been met (or not). The code below outlines an example of how it could be used, in this case within a Collision Event, although it can be used in any event.
+  <pre><code class="language-gml">if (!visible)
+{
+    exit;
+}
+
+other.hp -= attack;
+other.coins -= 4;
+coins += 4;
+</code></pre>
+  The above code checks if the current instance is not visible, in that case it exits the code block, otherwise it goes ahead and runs the rest of the code.
+  <b>
+   NOTE
+  </b>
+  : It does not end the execution of the game. For that you need to use the function
+  <span>
+   <a href="../../GML_Reference/General_Game_Control/game_end.htm">
+    <span>
+     game_end()
+    </span>
+   </a>
+  </span>
+  .
+ </body>
+</html>

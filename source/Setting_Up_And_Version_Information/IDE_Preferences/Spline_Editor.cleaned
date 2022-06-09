@@ -1,0 +1,112 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Spline Editor Preferences
+  </h1>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Setup_And_Version/Preferences/Spline_Editor_Prefs.png"/><br/>
+  The
+  <strong>
+   <a>
+    spline
+   </a>
+   Editor Preferences
+  </strong>
+  are used
+    primarily to define how the smooth paths in the
+  <a href="../../The_Asset_Editors/Paths.htm">
+   Path Editor
+  </a>
+  look, although they will affect certain other aspects of the
+  <a>
+   IDE
+  </a>
+  (like the Physics Shape
+    Editor). The following options exist:
+  <ul>
+   <li>
+    <strong>
+     Insert path point precision (px)
+    </strong>
+    : This sets the precision value (in pixels) for inserting points on a path, ie: the mouse must be within this range to insert the point rather than add a new one. Default is 20px.
+   </li>
+   <li>
+    <strong>
+     Anchor point width
+    </strong>
+    : Set the width of the anchor points, in pixels. Default is 8px;
+   </li>
+   <li>
+    <strong>
+     Anchor point height
+    </strong>
+    : Set the height of the anchor points, in pixels. Default is 8px;
+   </li>
+   <li>
+    <strong>
+     Path colour
+    </strong>
+    : The colour to be used to show the path as you edit it. Default is (
+    <a>
+     ARGB
+    </a>
+    ) #FFFFFFFF.
+   </li>
+   <li>
+    <strong>
+     Highlighted path segment colour
+    </strong>
+    : The colour to be used to highlight any selected path segments. Default is (ARGB) #FFFFFFFF.
+   </li>
+   <li>
+    <strong>
+     Invalid path colour
+    </strong>
+    : The colour to be used to highlight a path that is not valid. Default is (ARGB) #FF0000FF.
+   </li>
+   <li>
+    <strong>
+     Anchor points colour
+    </strong>
+    : The colour to be used to draw the path anchor points. Default is (ARGB) #FFC0C0C0.
+   </li>
+   <li>
+    <strong>
+     Invalid anchor points colour
+    </strong>
+    : The colour to be used to draw the path anchor points. Default is (ARGB) #FF800000.
+   </li>
+   <li>
+    <strong>
+     Selected anchor point colour
+    </strong>
+    : The colour to be used to draw the path anchor points that have been highlighted (selected). Default is (ARGB) #FF00A4FF.
+   </li>
+   <li>
+    <strong>
+     Selected invalid anchor point colour
+    </strong>
+    : The colour to be used to draw the anchor points that are highlighted but invalid. Default is (ARGB) #FFA400FF.
+   </li>
+   <li>
+    <strong>
+     Mouse-over anchor point colour
+    </strong>
+    : The colour to be used to draw the anchor points that are active. Default is (ARGB) #FFFFFFFF.
+   </li>
+   <li>
+    <strong>
+     Mouse-over invalid anchor point colour
+    </strong>
+    : The colour to be used to draw the anchor points that are active but invalid. Default is (ARGB) #FF0000FF.
+   </li>
+   <li>
+    <strong>
+     Mask overlay colour
+    </strong>
+    : Set the overlay colour for masks if they are enabled (see above). Default is (ARGB) #FF404040.
+   </li>
+  </ul>
+ </body>
+</html>

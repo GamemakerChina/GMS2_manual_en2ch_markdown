@@ -1,0 +1,318 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   url_open_full
+  </h1>
+  This will open the specified URL on the browser of the chosen target device, or, if you are using the HTML5 module, in the currently open browser. The "target" parameter that you specify is the same as the standard JavaScript "name" value when you use the
+  <span>
+   open()
+  </span>
+  method (be aware that all but "
+  <strong>
+   _self
+  </strong>
+  " may result in the browser blocking, or asking the user if they wish to allow it) and the "options" is the same as the JavaScript "specs" parameter for controlling what properties the new window/tab should display (not all browsers may support all features).
+  
+  
+   Valid targets are:
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Target
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      _blank
+     </td>
+     <td>
+      Opens the linked document in a new window or tab (this will not work if pop-ups are being blocked by the user, in which case you can use the
+      <a href="Web_And_HTML5.htm">
+       <span>
+        clickable_*
+       </span>
+      </a>
+      functions instead).
+     </td>
+    </tr>
+    <tr>
+     <td>
+      _self
+     </td>
+     <td>
+      Opens the linked document in the same frame as it was clicked (this is default).
+     </td>
+    </tr>
+    <tr>
+     <td>
+      _parent
+     </td>
+     <td>
+      Opens the linked document in the parent frame.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      _top
+     </td>
+     <td>
+      Opens the linked document in the full body of the window.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  Valid options are:
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Parameters
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <b>
+       'height=[
+      </b>
+      px
+      <b>
+       ]'
+      </b>
+     </td>
+     <td>
+      The height of the window, with the minimum value being 100.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <b>
+       'width=[
+      </b>
+      px
+      <b>
+       ]'
+      </b>
+     </td>
+     <td>
+      The width of the window, with the minimum value being 100.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <b>
+       'left=[
+      </b>
+      px
+      <b>
+       ]'
+      </b>
+     </td>
+     <td>
+      The left position of the window.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <b>
+       'top=[
+      </b>
+      px
+      <b>
+       ]'
+      </b>
+     </td>
+     <td>
+      The top position of the window (IE only).
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <b>
+       'location=[
+      </b>
+      boolean
+      <b>
+       ]'
+      </b>
+     </td>
+     <td>
+      Whether or not to display the address field (default is 1).
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <b>
+       'menubar=[
+      </b>
+      boolean
+      <b>
+       ]'
+      </b>
+     </td>
+     <td>
+      Whether or not to display the menu bar (default is 1).
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <b>
+       'resizable=[
+      </b>
+      boolean
+      <b>
+       ]'
+      </b>
+     </td>
+     <td>
+      Whether or not the window is resizable (default is 1).
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <b>
+       'scrollbars=[
+      </b>
+      boolean
+      <b>
+       ]'
+      </b>
+     </td>
+     <td>
+      Whether or not to display scroll bars (default is 1).
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <b>
+       'status=[
+      </b>
+      boolean
+      <b>
+       ]'
+      </b>
+     </td>
+     <td>
+      Whether or not to add a status bar (default is 1).
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <b>
+       'titlebar=[
+      </b>
+      boolean
+      <b>
+       ]'
+      </b>
+     </td>
+     <td>
+      Whether or not to display the title bar. This is ignored unless the calling application is an HTML Application or a trusted dialog box (default is 1);
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <b>
+       'toolbar=[
+      </b>
+      boolean
+      <b>
+       ]'
+      </b>
+     </td>
+     <td>
+      Whether or not to display the browser toolbar (default is yes).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <span>
+   NOTE
+  </span>
+  Antivirus software installed on the player's device may cause the URL to not open, so keep this in mind when using this function.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">url_open_full(url, target, options);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      url
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The URL (website address) to link to.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      target
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      This is the target area to open the URL in (see description).
+     </td>
+    </tr>
+    <tr>
+     <td>
+      options
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      Standard browser options (see description).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">url_open_full("http://yoyogames.com", "_blank", "resizable=0, height=200, scrollbars=0");
+</code></pre>
+  This would open the YoYo Games homepage in a new window that can't be resized, has a height of 200 pixels and no scrollbars.
+ </body>
+</html>

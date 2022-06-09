@@ -1,0 +1,44 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/i_Drawing_Set_Draw_Alpha.png"/><br/>
+   Set Draw Alpha
+  </h1>
+  With this action you can set the alpha to use for any shapes (rectangle/ellipse/line) or for any text that is drawn subsequently. Note that this does not have to be called before every draw action, and can be set once only at the start of the game.
+    Alpha is the setting that controls how "transparent" things will be drawn and is based on a scale of 0 to 1, where 0 is fully transparent and 1 is fully opaque.
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/a_Drawing_Set_Draw_Alpha.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Alpha
+     </td>
+     <td>
+      The alpha value to use (from 0 to 1, default is 1)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/e_Drawing_Set_Draw_Alpha.png"/><br/>
+  The above action block code sets the draw alpha to a random value between 0 and 1.
+ </body>
+</html>

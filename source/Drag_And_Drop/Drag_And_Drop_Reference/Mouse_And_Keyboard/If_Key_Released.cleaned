@@ -1,0 +1,96 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/i_KeyboardMouse_KeyReleased.png"/><br/>
+   If Key Released
+  </h1>
+  This action checks for when a keyboard key has been released. It will return
+  <span>
+   true
+  </span>
+  on the single game step (frame) that the key is released on and
+  <span>
+   false
+  </span>
+  at all other times. If you enable the
+  <span>
+   not
+  </span>
+  modifier, this action will be
+    reversed, and check if the key has
+  <i>
+   not
+  </i>
+  been released, returning
+  <span>
+   false
+  </span>
+  on the game step (frame) that it has been released on and
+  <span>
+   true
+  </span>
+  at all other times.
+  
+  
+   Note that to add actions into the "if" block, they should be dropped to the side of the action, as shown in the image below:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/a_If_Key_ReleasedDrop.png"/><br/>
+  These actions will now be run if the "if" evaluates to
+  <span>
+   true
+  </span>
+  ,
+    while any actions dropped elsewhere will be performed after the "if" block.
+  <h4>
+   Action Syntax:
+  </h4>
+  <span>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/a_KeyboardMouse_KeyReleased.png"/><br/>
+  </span>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Key
+     </td>
+     <td>
+      The name of the key to check.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Not
+     </td>
+     <td>
+      Negate the check (true becomes false and vice versa)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <span>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/e_KeyboardMouse_KeyDown.png"/><br/>
+  </span>
+  The above action block code polls the keyboard state every step and
+    if a key is being held down it checks for the initial key down press. If the check is
+  <span>
+   true
+  </span>
+  on the initial down press, a sound is played, then, while the key is held down, the sprite blending is changed to red. If the key is not being held
+    down, a check is done on the key release to reset the blending colour to white.
+ </body>
+</html>

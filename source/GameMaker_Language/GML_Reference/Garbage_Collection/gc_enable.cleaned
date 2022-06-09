@@ -1,0 +1,79 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   gc_enable
+  </h1>
+  With this function you can enable or disable the garbage collector. Calling the function with
+  <span>
+   true
+  </span>
+  as the argument enables it and using
+  <span>
+   false
+  </span>
+  disables it (not recommended). It is enabled by default.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">gc_enable(enable);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      enable
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      enable (
+      <span>
+       true
+      </span>
+      ) or disable (
+      <span>
+       false
+      </span>
+      ) the garbage collector.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if (global.debug == true)
+{
+    gc_enable(false);
+}
+</code></pre>
+  The above code disables garbage collection if the given global variable is
+  <span>
+   true
+  </span>
+  .
+ </body>
+</html>

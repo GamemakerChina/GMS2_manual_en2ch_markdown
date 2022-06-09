@@ -1,0 +1,71 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Cloning A Repository
+  </h1>
+  When your project is stored in an external repository, you need to remember to both push your changes and pull any new ones. The reason for this is that when you commit, you store your changes locally, which allows you to work away from an internet connection and sync up when you're ready, and to sync up you push your changes to the remote repository. Pulling changes means that you want to pull any changes that others have made from the remote repository into your local repository. However, this means that there may be times when people can be editing the same files, which in turn creates a
+  <strong>
+   merge conflict
+  </strong>
+  . You need to know how to handle these conflicts so we're going to deliberately create one now and then show you how to deal with it.
+  <strong>
+   NOTE
+  </strong>
+  : Sharing a local project repository (even through a file synchronization service like Dropbox) isn't recommended, as commits are generally written directly to it, and thus you have very little conflict protection.
+  
+  
+   To generate our conflict we first need to have two local repositories, one for the Master repository and one for our copy. To create this we need to Clone the repository, which is done with the following steps:
+  <ul>
+   <li>
+    Go to
+    <strong>
+     Source Control
+    </strong>
+    >
+    <strong>
+     Clone Repository
+    </strong>
+    .
+   </li>
+   <li>
+    In the URL field, type the path to the project that we setup in the Reverting Files guide above (by default this will be
+    <span>
+     :\Users\\Documents\GameMaker\)
+    </span>
+    .
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/IDE%20Tools/SCM_RepositoryToClone.png"/><br/>
+   </li>
+   <li>
+    We then need to set a path to clone to:
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/IDE%20Tools/SCM_CloneTo.png"/><br/>
+    When we click the "Ok" button we'll get the following warning about trying to clone a "non-bare" repository:
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/IDE%20Tools/SCM_CloneWarning.png"/><br/>
+    We can click "Ok" here again.
+   </li>
+   <li>
+    We'll now be presented with a directory explorer to create a "bare" proxy repository (this is a repository which you can safely store on Dropbox, for example). Browse to where we want to create this proxy repository and select (or create) the folder to use.
+   </li>
+  </ul>
+  Once we've done that,
+  <span>
+   GameMaker
+  </span>
+  will push the original project to the proxy, and pull a new one to the path we've set in the
+  <strong>
+   Clone Repository
+  </strong>
+  window and then automatically open a file browser so we can open the stored project. If we now go to
+  <strong>
+   Source Control
+  </strong>
+  >
+  <strong>
+   View History
+  </strong>
+  we'll see our original commits plus a new "Push For Clone" commit.
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/IDE%20Tools/SCM_PushForClone.png"/><br/>
+  You have now cloned your repository and can continue working on the local version of the project.
+ </body>
+</html>

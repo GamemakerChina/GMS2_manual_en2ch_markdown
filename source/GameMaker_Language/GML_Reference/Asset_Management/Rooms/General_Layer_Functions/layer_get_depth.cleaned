@@ -1,0 +1,82 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   layer_get_depth
+  </h1>
+  You can use this function to get the
+  <i>
+   depth
+  </i>
+  value associated with a given layer. You supply the layer ID (which you get when you create the layer using
+  <a href="layer_create.htm">
+   <span>
+    layer_create()
+   </span>
+  </a>
+  ) or the layer name (as a string - this will have a performance impact) and the function will return that layers depth as a real number. Note that depth is defined as being higher the "further away" from the camera and lower the "closer" to the camera, so if you have three layers with depths -100, 0, 100, the layers will draw in the order 100, 0, -100, so that the "top" layer (ie, the closest to the camera view and so drawn over everything else) will be the layer with the -100 depth.
+  
+  
+   The following image shows a schematic of how depth works for layers:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/GML/Reference/Rooms/Layer_Depths.png"/><br/>
+  Note that if you supply an invalid layer ID value you will get an error.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">layer_get_depth(layer_id)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      layer_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+      or
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/General_Layer_Functions/layer_get_id.htm">
+        Layer ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The unique ID value of the layer to get the depth of (or the layer name as a string)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if layer_get_depth(global.temp_layer) != -100
+{
+    layer_destroy(global.temp_layer);
+    global.temp_layer = layer_create(-100);
+}
+</code></pre>
+  The above code checks the depth of a layer ID stored in a global variable and if it is not -100 it destroys the layer and re-creates it at the depth of -100.
+ </body>
+</html>

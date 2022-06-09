@@ -1,0 +1,137 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   sprite_set_alpha_from_sprite
+  </h1>
+  This function uses the value/saturation of one sprite and multiplies it with the alpha of the target sprite. Ideally the sprite being used to generate the new alpha map should be grey-scale, with the white areas having an equivalent alpha value of 1 (opaque), the black areas being equivalent to alpha 0 (transparent), and the grey areas being an alpha in between 0 and 1. The sprite that you are setting the alpha of
+  <i>
+   cannot be a permanent resource
+  </i>
+  , nor can the sprite you use to set the alpha, as this will give an error. This means that you must create two completely new sprites "on the fly" in some way for the function to work correctly. This can be achieved by using surfaces, or by creating a sprite from the screen (the code example below shows how the effect can be achieved with surfaces).
+  <b>
+   NOTE
+  </b>
+  : This function is only useful for
+  <b>
+   bitmap
+  </b>
+  sprites and will not work with SWF or JSON (Spine) sprites.
+  
+  
+   Below is an image that illustrates how this function works:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/GML/Reference/Sprites/spr_alpha.png"/><br/>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">sprite_set_alpha_from_sprite(ind, spr);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      ind
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../The_Asset_Editors/Sprites.htm">
+        Sprite Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the sprite to change the transparency map of.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      spr
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../The_Asset_Editors/Sprites.htm">
+        Sprite Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the sprite to take the transparency map data from.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Extended Example:
+  </h4>
+  In this extended example we show how you can create a special effect sprite from two sprite resources. To start with we need to have a controller variable in the
+  <b>
+   Create Event
+  </b>
+  of the instance. This variable is to ensure that the sprite is only created once:
+  <pre><code class="language-gml">spr_create = true;
+</code></pre>
+  Once that is done we need to then go to the
+  <b>
+   Draw Event
+  </b>
+  and add in this code:
+  <pre><code class="language-gml">if spr_create
+{
+    spr_create = false;
+    var _sw = sprite_get_width(spr_Explosion_Alpha);
+    var _sh = sprite_get_height(spr_Explosion_Alpha);
+    var _xo = sprite_get_xoffset(spr_Gradient);
+    var _yo = sprite_get_yoffset(spr_Gradient);
+    var _surf = surface_create(_sw, _sh);
+    surface_set_target(_surf);
+    draw_clear_alpha(c_black, 0);
+    draw_sprite(spr_Gradient, 0, 0, 0);
+    sprite_index = sprite_create_from_surface(_surf, 0, 0, _sw, _sh, false, false, _xo, _yo);
+    draw_clear_alpha(c_black, 0);
+    draw_sprite(spr_Explosion_Alpha, 0, _xo, _yo);
+    var _spr = sprite_create_from_surface(_surf, 0, 0, _sw, _sh, false, false, _xo, _yo);
+    surface_reset_target();
+    surface_free(_surf);
+    sprite_set_alpha_from_sprite(sprite_index, _spr);
+    sprite_delete(_spr);
+}
+
+draw_sprite(sprite_index, 0, x, y);
+</code></pre>
+  The above code first checks to see if the control variable is true or not, and if it is, it then runs the code to set the sprite alpha, setting the variable to false to prevent the code from running more than once. In this case, it creates a surface the size of the alpha mask that we wish to use, then draws the sprite that is to have its alpha changed onto the surface and creates a new sprite from it, assigning it as the
+  <span>
+   sprite_index
+  </span>
+  of the object. The code then clears the surface and draws the alpha map sprite to it and creates another new sprite, storing its index in a local variable. Finally, the new sprite assigned to the object gets its alpha set from this temporary sprite, the surface is freed and the temporary sprite is removed.
+  
+  
+   There is one final thing to do here, and that is remove the sprite that has been created for the object from memory when not in use. This would either be done in the
+  <b>
+   Destroy Event
+  </b>
+  or the
+  <b>
+   Room End Event
+  </b>
+  like this:
+  <pre><code class="language-gml">sprite_delete(sprite_index);
+</code></pre>
+ </body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   effect_clear
+  </h1>
+  This will clear all particles that are currently visible in the room which have been made using either
+  <a href="effect_create_above.htm">
+   <span>
+    effect_create_above()
+   </span>
+  </a>
+  or
+  <a href="effect_create_below.htm">
+   <span>
+    effect_create_below()
+   </span>
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">effect_clear();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">effect_clear();
+</code></pre>
+  Calling this will clear the room of any particles made with the
+  <span>
+   effect_create_*
+  </span>
+  functions.
+ </body>
+</html>

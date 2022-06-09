@@ -1,0 +1,77 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   ds_priority_destroy
+  </h1>
+  This function will remove the given priority queue data-structure from memory, freeing up the resources it was using and removing all values that it contained. This function should always be used when you are finished using the DS priority queue to prevent memory leaks that can slow down and crash your game.
+  <b>
+   IMPORTANT!
+  </b>
+  When you create a data structure, the index value to identify it is an integer value starting at 0. This means that data structures of different types can have the
+  <b>
+   same
+  </b>
+  index value, so if in doubt you should be using the
+  <a href="../ds_exists.htm">
+   <span>
+    <span>
+     ds_exists()
+    </span>
+   </span>
+  </a>
+  function before accessing them. Also note that indices are re-used, so a destroyed data structure index value may be used by a newly created one afterwards so we recommend always setting the variable that held the DS index to -1 after destroying.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">ds_priority_destroy(id);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Priority_Queues/ds_priority_create.htm">
+        DS Priority ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The id of the data structure to remove.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if (lives == 0)
+{
+    ds_priority_destroy(AI_queue);
+    AI_queue = -1;
+    room_goto(rm_Menu);
+}
+</code></pre>
+  The above code will check the value of the built in global variable "lives" and if it is 0, it destroys the DS priority queue indexed in the variable "AI_queue" and then changes rooms.
+ </body>
+</html>

@@ -1,0 +1,123 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Font Editor Preferences
+  </h1>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Setup_And_Version/Preferences/FontEditor_Prefs.png"/><br/>
+  The
+  <strong>
+   Font Editor Preferences
+  </strong>
+  are used to define how the
+  <a href="../../The_Asset_Editors/Fonts.htm">
+   Font Editor
+  </a>
+  behaves.
+    The different options available are listed below along with a description of what each one does.
+  <ul>
+   <li>
+    <strong>
+     Update Fonts imported from
+     <span>
+      GameMaker
+     </span>
+     1 projects
+    </strong>
+    : When this is checked,
+    <span>
+     GameMaker
+    </span>
+    will attempt to update fonts and regenerate their texture. This will happen only if:
+    <ul>
+     <li>
+      This preference is enabled
+     </li>
+     <li>
+      The font is available on the machine
+     </li>
+     <li>
+      <span>
+       GameMaker
+      </span>
+      can locate a matching face in the font family (this is the most likely cause of inconsistency on import)
+     </li>
+    </ul>
+    Note that it will also happen if the
+    <span>
+     GameMaker
+    </span>
+    1 font does not have a
+    <a>
+     Cache
+    </a>
+    font texture. If a legacy font cannot be updated, then
+    <span>
+     GameMaker
+    </span>
+    will default to using the cached
+      font texture, and the Font Editor will no longer permit you to edit the font, showing an option to backup and update to another:
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Setup_And_Version/Preferences/FontEditor_Backup.png"/><br/>
+    Clicking this will enable you to edit the font, either adding the missing font or setting another one, and the
+      backed up font is stored in the font asset folder, as
+    <span>
+     <font>
+      .yy.gms1
+     </font>
+    </span>
+    and
+    <span>
+     <font>
+      .png.gms1
+     </font>
+    </span>
+    . To restore these files, manually delete the
+    <span>
+     <font>
+      .yy
+     </font>
+    </span>
+    files and replace them with these by removing the
+    <span>
+     .gms1
+    </span>
+    extension from the filenames.
+    <em>
+     <strong>
+      Important!
+     </strong>
+    </em>
+    All assets store their names in the
+    <span>
+     .yy
+    </span>
+    file, so you must edit these
+      and put the right name of the resource in the
+    <span>
+    </span>
+    field as well (if different).
+   </li>
+   <li>
+    <strong>
+     Automatic choice for failed content regeneration dialog
+    </strong>
+    : When you go to regenerate a font asset texture, you are shown a warning. Setting this option to "OK" will mean that the font is regenerated without the warning being
+      shown.
+   </li>
+   <li>
+    <strong>
+     Automatic choice for failed font regeneration dialog
+    </strong>
+    : When regeneration of a font asset texture fails, you are shown a warning. Setting this option to "OK" will skip showing the message.
+   </li>
+   <li>
+    <strong>
+     Automatic choice for upgrading imported legacy fonts
+    </strong>
+    : When you import a legacy project, you may get a warning about legacy fonts and the offer to upgrade. Setting this option to "OK" will okay the update automatically without
+      showing this message.
+   </li>
+  </ul>
+ </body>
+</html>

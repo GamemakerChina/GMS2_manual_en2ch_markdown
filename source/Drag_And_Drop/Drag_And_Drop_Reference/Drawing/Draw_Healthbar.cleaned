@@ -1,0 +1,132 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/i_Drawing_Draw_Healthbar.png"/><br/>
+   Draw Healthbar
+  </h1>
+  With this action you can draw a coloured bar to show a graphic representation of a value. The amount to be displayed is a percentage value and must fall within the range of 0 - 100, however you can still uses larger values with the formula
+  <span>
+   (CURRENT_Value / MAXIMUM_value) * 100
+  </span>
+  ,
+    so, for example, you can use this to display power, health, mana, time or anything else that would benefit from a bar display. Apart from the value to draw you can set the direction anchor for drawing the healthbar too (from left-to-right or right-to-left
+    and top-to-bottom or bottom-to-top) as well as the position, either within the room or relative to the instance calling the action. Apart from the position you can also set the colour to be blended from each of the four corners of the healthbar, creating
+    gradients from red to green (for example, but you can use any colours). Below you can see an image of how a simple healthbar looks with the different options:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/Healthbars_Example.png"/><br/>
+  <b>
+   NOTE
+  </b>
+  : This action is only for use in the various
+  <a href="../../../The_Asset_Editors/Object_Properties/Draw_Events.htm">
+   Draw Events
+  </a>
+  , and will not draw anything if used elsewhere.
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/a_Drawing_Draw_Healthbar.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Direction
+     </td>
+     <td>
+      The direction to draw the healthbar contents
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Value
+     </td>
+     <td>
+      The value (between 0 and 100) to use for the healthbar
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Left
+     </td>
+     <td>
+      The position of the left side of the healthbar
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Top
+     </td>
+     <td>
+      The position of the top of the healthbar
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Right
+     </td>
+     <td>
+      The position of the right side of the healthbar
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Bottom
+     </td>
+     <td>
+      The position of the bottom of the healthbar
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Background
+     </td>
+     <td>
+      The colour to draw as the background on the healthbar
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Outline
+     </td>
+     <td>
+      The colour to use to outline the healthbar
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Min Colour
+     </td>
+     <td>
+      The colour to blend from the minimum value
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Max Colour
+     </td>
+     <td>
+      The colour to blend from the maximum value
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/e_Drawing_Draw_Healthbar.png"/><br/>
+  The above action block code draws a blue and yellow "mana" bar relative to the
+    instance.
+ </body>
+</html>

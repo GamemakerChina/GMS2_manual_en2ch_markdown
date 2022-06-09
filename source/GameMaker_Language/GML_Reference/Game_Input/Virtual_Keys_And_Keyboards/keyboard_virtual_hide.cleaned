@@ -1,0 +1,85 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   keyboard_virtual_hide
+  </h1>
+  This function can be used to hide the virtual keyboard on the device running the game. Calling this function will generate a
+  <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/System.htm">
+   System Asynchronous Event
+  </a>
+  , in which the
+  <span>
+   async_load
+  </span>
+  DS map will be populated with the following key/value pairs:
+  <ul>
+   <li>
+    "
+    <b>
+     event_type
+    </b>
+    " - this will be "
+    <b>
+     virtual keyboard status
+    </b>
+    " when triggered by virtual keyboard functions.
+   </li>
+   <li>
+    "
+    <b>
+     screen_height
+    </b>
+    " - the height of the virtual keyboard (in pixels). This will be 0 if the keyboard is invisible.
+   </li>
+   <li>
+    "
+    <b>
+     keyboard_status
+    </b>
+    " - the current status of the keyboard, returned as one of the following strings:
+    <ul>
+     <li>
+      "hiding"
+     </li>
+     <li>
+      "hidden"
+     </li>
+     <li>
+      "showing"
+     </li>
+     <li>
+      "visible"
+     </li>
+    </ul>
+   </li>
+  </ul>
+  <h4>
+   Syntax
+  </h4>
+  <pre><code class="language-gml">keyboard_virtual_hide();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if input == true
+{
+    input = false;
+    keyboard_virtual_hide();
+}
+</code></pre>
+  The above code will hide the OS virtual keyboard if the given variable is not set to
+  <span>
+   false
+  </span>
+  .
+  <b>
+  </b>
+ </body>
+</html>

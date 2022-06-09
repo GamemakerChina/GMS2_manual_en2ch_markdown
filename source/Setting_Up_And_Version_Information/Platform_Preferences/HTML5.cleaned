@@ -1,0 +1,61 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   HTML5 Preferences
+  </h1>
+  The HTML5 preferences have the following options:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Setup_And_Version/Platform_Preferences/HTML5_Prefs.png"/><br/>
+  <ul>
+   <li>
+    <strong>
+     Default packaging type
+    </strong>
+    : When building a final HTML5 executable package, you can choose between
+    <strong>
+     Package as loose files
+    </strong>
+    - which will simply generate all the required files in a folder - or
+    <strong>
+     Package as Zip
+    </strong>
+    - which will create a compressed
+    <span>
+     ZIP
+    </span>
+    file that will have the game and any additional files within. By default you will be given a choice of which of these two options you wish to choose on compile, but you can set this preference to always use one or the other. Note that when this option is set to
+    <em>
+     Show Dialogue
+    </em>
+    , in the actual dialogue window that pops up on compile, choosing "Remember Packaging Option" will set this preference to the option you select.
+   </li>
+   <li>
+    <strong>
+     Default Web Server Port
+    </strong>
+    : This lets you change the default port for the HTML5 web server. Default value is 51264.
+   </li>
+   <li>
+    <strong>
+     Default Web Server Address
+    </strong>
+    : Here you can change the default web server address for the HTML5 web server. Default value is 127.0.0.1.
+   </li>
+   <li>
+    <strong>
+     Default Web Server Allowed IPs
+    </strong>
+    : Here you can add in any allowed IPs for the web server and they will be set as default for all devices added through the Target Manager.
+   </li>
+  </ul>
+  <span>
+   IMPORTANT
+  </span>
+  When using a particular target device (i.e. browser), the IP and port values set for that particular device are used instead of these preferences. Check
+  <a href="../The_Device_Manager.htm#h">
+   The Device Manager
+  </a>
+  to see a list of your devices with their details.
+ </body>
+</html>

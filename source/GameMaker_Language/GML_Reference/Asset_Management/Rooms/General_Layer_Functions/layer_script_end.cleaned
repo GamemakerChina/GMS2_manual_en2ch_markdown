@@ -1,0 +1,146 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   layer_script_end
+  </h1>
+  With this function you can assign a
+  <a href="../../../../GML_Overview/Script_Functions.htm">
+   script function
+  </a>
+  to a layer and it will be called after the layer is rendered. When adding a function to a layer in this way, it will be run at the end of
+  <i>
+   each of the different draw events
+  </i>
+  so you may want to check in the function assigned which event is currently finished rendering and adapt the code to suit. This can be done by checking the
+  <a href="../../Objects/Object_Events/event_type.htm">
+   <span>
+    event_type
+   </span>
+  </a>
+  and/or the
+  <a href="../../Objects/Object_Events/event_number.htm">
+   <span>
+    event_number
+   </span>
+  </a>
+  (see the extended example below). Note that the function is
+  <i>
+   not
+  </i>
+  meant to be called in any draw events or step events, but rather only needs to be called at the start of the room in the
+  <strong>
+   Room Creation Code
+  </strong>
+  or in the
+  <strong>
+   Create Event
+  </strong>
+  /
+  <strong>
+   Room Start Event
+  </strong>
+  of an instance.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">layer_script_end(layer_id, script)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      layer_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+      or
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/General_Layer_Functions/layer_get_id.htm">
+        Layer ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The unique ID value of the layer to target (or the layer name as a string)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      script
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Script_Functions.htm">
+        Script Function
+       </a>
+      </span>
+     </td>
+     <td>
+      The script function index to assign to the layer
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Extended Example:
+  </h4>
+  In this extended example, we will first show you how a simple script function is structured to set some shader uniform data so that when the given layer is drawn, this function will be run and the shader will work correctly. In the example, it is worth noting how we check which event is being called so that the rest of the function is only run on the specific event that we require it to work on - in this case, only on the main draw event:
+  <pre><code class="language-gml">/// @function layer_shader_start();
+function layer_shader_start()
+{
+    if event_type == ev_draw
+    {
+        if event_number == 0
+        {
+            colour_to_find = shader_get_uniform(sShaderDemo5, "f_Colour1");
+            colour_to_set = shader_get_uniform(sShaderDemo5, "f_Colour2");
+            shader_set(s_ColourChanger);
+            shader_set_uniform_f(colour_to_find, 1,1,1 );
+            shader_set_uniform_f(colour_to_set, 1,0,0 );
+        }
+    }
+}
+</code></pre>
+  We would then have a companion function to reset the shader after all the drawing is done:
+  <pre><code class="language-gml">/// @function layer_shader_end();
+function layer_shader_end()
+{
+    if event_type == ev_draw
+    {
+        if event_number == 0
+        {
+            shader_reset();
+        }
+    }
+}
+</code></pre>
+  Now that we have defined our script functions for setting the shader, we then have to assign them to a specific layer so that the layer knows to call them. This would be done in the room creation code, or in the create event or room start event of some controller object (they do not need to be set every step, but rather once at the start of the room, or when the layer is initially created):
+  <pre><code class="language-gml">var lay_id = layer_get_id("Instances");
+layer_script_begin(lay_id, layer_shader_start);
+layer_script_end(lay_id, layer_shader_end);
+</code></pre>
+  This final code block assigns the scripts to the layer.
+ </body>
+</html>

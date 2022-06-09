@@ -1,0 +1,373 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   iOS / tvOS Extensions
+  </h1>
+  To create an extension for iOS or tvOS you have to do it in two parts. The first part would be to add the extension itself, along with the required files, and the second is to create the functions and macros/constants that the extension requires.
+  
+  
+   The functions and constants are added using
+  <strong>
+   placeholder
+  </strong>
+  files to group them together, so you'd add a placeholder and then define the functions and macros as explained in the section
+  <a href="Creating_An_Extension.htm">
+   here
+  </a>
+  . To add the rest of the files though you need to first tick the
+  <em>
+   iOS
+  </em>
+  and/or the
+  <em>
+   tvOS
+  </em>
+  check-box in the
+  <strong>
+   Additional Features
+  </strong>
+  section of the editor to open up the relevant
+  <strong>
+   Extension Properties
+  </strong>
+  window (the image below shows the iOS properties window, but the tvOS window is exactly the same):
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Extensions_iOS.png"/><br/>
+  Here you can give the following details:
+  <ul>
+   <li>
+    <strong>
+     Compiler Flags / Linker Flags
+    </strong>
+    : Some frameworks and third party SDKs require the addition of extra linker flags and compiler flags to work, which can be specified here (see the documentation that accompanies the SDK or framework in question for details).
+   </li>
+   <li>
+    <strong>
+     Class Name
+    </strong>
+    : Your extension can have multiple classes, with each class having its own functions and constants, so you should give it a name that reflects its purpose.
+   </li>
+   <li>
+    <strong>
+     App Delegate Class Name
+    </strong>
+    : The name of your custom app delegate class. Setting this allows the extension to override/extend core app functionality. To use this feature you need to do the following:
+    <ol>
+     <li>
+      Ensure that the delegate source files have the same name as the delegate class (e.g.
+      <span>
+       @interface MyCustomAppDelegate
+      </span>
+      should be defined in "
+      <span>
+       MyCustomAppDelegate.h
+      </span>
+      ")
+     </li>
+     <li>
+      Add the
+      <span>
+       ${YYExtAppDelegateIncludes}
+      </span>
+      environment variable at the top of your app delegate header file. This will be replaced at compile-time with the relevant include files for the parent delegate class.
+     </li>
+     <li>
+      Use the
+      <span>
+       ${YYExtAppDelegateBaseClass}
+      </span>
+      environment variable as the base class for your custom app delegate. This will be replaced at compile-time with the correct base delegate class.
+          
+          To ensure your extension works with any other extensions that use custom app delegates, you should call any base class methods from overridden methods in your child class. Before calling the superclass method, you need to make sure it is implemented in the class hierarchy to avoid errors, for e.g.:
+     </li>
+    </ol>
+    <pre><code class="language-gml">- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    // Check if any superclasses implement this method and call it
+    if([[self superclass] instancesRespondToSelector:@selector(application:willFinishLaunchingWithOptions:)])
+      return [super application:application willFinishLaunchingWithOptions:launchOptions];
+    else
+        return TRUE;
+}
+</code></pre>
+   </li>
+   <li>
+    <strong>
+     System Frameworks
+    </strong>
+    : Here you can add in any iOS system
+    <a>
+     framework
+    </a>
+    <span>
+     s
+    </span>
+    to your extension. These are added by clicking the
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_AddArgument.png"/><br/>
+    button which will add a placeholder framework, which you can then edit by double clicking
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+    on it. You can find out more about available system frameworks
+    <a href="https://developer.apple.com/documentation/">
+     here
+    </a>
+    . To remove a system framework, simply select it and then click the
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_RemoveArgument.png"/><br/>
+    button.
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Extensions_iOS_Weak_Reference.png"/><br/>
+    You can enable the checkbox for a framework to mark it as a "
+    <strong>
+     Weak Reference
+    </strong>
+    ". This adds it to "
+    <strong>
+     Build Phases -> Link Binary with Libraries
+    </strong>
+    " section of Xcode as an "
+    <strong>
+     Optional
+    </strong>
+    " framework, as opposed to a "
+    <strong>
+     Required
+    </strong>
+    " framework (which is the default behaviour).
+   </li>
+   <li>
+    <strong>
+     3rd Party Frameworks + Bundles
+    </strong>
+    : This section is for adding third party and SDK bundles. As with system frameworks you click the
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_AddArgument.png"/><br/>
+    button to add them and then double click
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+    to edit, and selecting them then clicking
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_RemoveArgument.png"/><br/>
+    will remove them (see the documentation that came with your chosen SDK for info on the framework name).
+      
+      Here you can choose to
+    <strong>
+     Not Embed
+    </strong>
+    the framework,
+    <strong>
+     Embed &amp; Sign
+    </strong>
+    it, or
+    <strong>
+     Embed it without Signing
+    </strong>
+    :
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Extensions_iOS_Embed_Framework.png"/><br/>
+    This reflects the same option for a framework added under "
+    <strong>
+     Frameworks, Libraries and Embedded Content
+    </strong>
+    " in Xcode.
+   </li>
+   <li>
+    <strong>
+     Enter framework path on Mac
+    </strong>
+    : If you want to add a framework to the extension whose files are present on the Mac that is used to build your project, you can enter the path to that framework (on the build machine) into this field and then click the
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_AddArgument.png"/><br/>
+    button to add it.
+      
+      The path needs to point to a
+    <span>
+     .framework
+    </span>
+    file which will be compressed as a
+    <span>
+     .zip
+    </span>
+    and placed into the
+    <span>
+     iOSSourceFromMac
+    </span>
+    folder under your extension directory; you can easily open that at any time by right clicking
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_RMB.png"/><br/>
+    on the extension and selecting
+    <em>
+     Open in Explorer
+    </em>
+    .
+   </li>
+   <li>
+    <strong>
+     Add Source
+    </strong>
+    : You can use this to add the source files required for your extension to work. Added files will be stored in the
+    <span>
+     iOSSource
+    </span>
+    folder inside your extension directory.
+   </li>
+   <li>
+    <b>
+     Code Injection
+    </b>
+    : Here you can add any code to be injected (added) into your iOS application when your game is built for testing or final release. Make sure to revise this (and your permissions) carefully before submitting any games to the store, as incorrect settings will cause your game to be failed for submission.
+   </li>
+  </ul>
+  <h2>
+   Code Injection
+  </h2>
+  Code Injection can be used for iOS/tvOS extensions in the same way as described on the Android Extensions page: see
+  <a href="Android_Extensions.htm#h">
+   Code Injection
+  </a>
+  .
+  
+  
+   The following tags are available for the iOS and tvOS platforms:
+  <pre><code class="language-gml">YYIosPlist
+YYIosEntitlements
+YYIosCocoaPods
+YYIosCocoaPodsDependencies
+YYIosBuildRules
+YYIosBuildSettingsInjection
+YYIosScriptPhase
+YYIosCFBundleURLSchemesArray
+YYIosLSApplicationQueriesSchemesArray
+
+YYTvosPlist
+YYTvosEntitlements
+YYTvosCocoaPods
+YYTvosCocoaPodsDependencies
+YYTvosBuildRules
+YYTvosBuildSettingsInjection
+YYTvosScriptPhase
+YYTvosCFBundleURLSchemesArray
+YYTvosLSApplicationQueriesSchemesArray
+</code></pre>
+  The runtime location where the code is injected will depend on the type of the tag:
+  <table>
+   <colgroup>
+    <col/>
+    <col/>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      Tag Type
+     </th>
+     <th>
+      Injection Path
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <b>
+       Entitlements
+      </b>
+     </td>
+     <td>
+      {RUNTIME}\ios\TemplateProject\${YYXCodeProjName}\
+      <span>
+       ${YYXCodeProjName}.entitlements
+      </span>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <b>
+       info.plist
+      </b>
+     </td>
+     <td>
+      {RUNTIME}\ios\TemplateProject\${YYXCodeProjName}\
+          Supporting Files\
+      <span>
+       ${YYXCodeProjName}-Info.plist
+      </span>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <strong>
+       infoPlist.strings
+      </strong>
+     </td>
+     <td>
+      {RUNTIME}\ios\TemplateProject\${YYXCodeProjName}\
+          en.lproj\InfoPlist.strings
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <strong>
+       project.pbxproj
+      </strong>
+     </td>
+     <td>
+      {RUNTIME}\ios\TemplateProject\${YYXCodeProjName}.xcodeproj\
+          project.pbxproj
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <strong>
+       xcscheme
+      </strong>
+     </td>
+     <td>
+      {RUNTIME}\ios\TemplateProject\${YYXCodeProjName}.xcodeproj\
+          xcshareddata\xcschemes\${YYXCodeProjName}.xcscheme
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <strong>
+  </strong>
+  <span>
+   NOTE
+  </span>
+  These paths are only for VM. For YYC, injected code will go into the
+  <span>
+   {RUNTIME}\yyc\
+  </span>
+  directory, where the paths may or may not be equivalent to those for VM.
+  
+  
+   Note that there is a Game Option
+  <a href="../../Settings/Game_Options/iOS.htm">
+   for iOS
+  </a>
+  and
+  <a href="../../Settings/Game_Options/tvOS.htm">
+   for tvOS
+  </a>
+  to add a
+  <span>
+   Podfile.lock
+  </span>
+  file to
+  <span>
+   GameMaker
+  </span>
+  , which is required if you are adding CocoaPods Dependencies in this section.
+  <h2>
+   Additional Information
+  </h2>
+  If your extension has had any System Frameworks or 3rd Party Frameworks added, these will now be listed in the
+  <strong>
+   Extension Properties
+  </strong>
+  window, with each one having a check-box beside it. If you mark the check-box, you are enabling weak linking, which is useful should you need to "override" any symbol from the included library with your own value, but it should be noted that doing so will slow linking down.
+  
+  
+   For information on your creating native extensions for iOS, see
+  <a href="Extended_Examples.htm">
+   Source Examples
+  </a>
+  ; and for information on using CocoaPods in extensions, see the following guide:
+  <ul>
+   <li>
+    <a href="https://help.yoyogames.com/hc/en-us/articles/360008958858">
+     iOS and tvOS: Using Cocoa Pods
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

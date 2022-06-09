@@ -1,0 +1,89 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   skeleton_animation_set
+  </h1>
+  Once you have assigned a skeletal animation sprite to your instance, you can then define which
+  <i>
+   animation set
+  </i>
+  it should use at any given time with this function. When you created your sprite (in Spine) you will have defined multiple animations sets for different states and named each of them appropriately. These names are what you will use to tell
+  <span>
+   GameMaker
+  </span>
+  which animation set to use at any time in your game. For example, if your sprite is for a platform game, then you may have a "jump" set, a "run" set and an "idle" set all contained within the one sprite and you can switch between them in your game using this function.
+  
+  
+   Note that setting a new animation in this way will reset the
+  <a href="../../Sprite_Instance_Variables/image_index.htm">
+   <span>
+    image_index
+   </span>
+  </a>
+  to 0, starting the new animation set from the beginning of its animation loop. If this is
+  <i>
+   not
+  </i>
+  the desired behaviour, then you can set a "mix" value using
+  <a href="skeleton_animation_mix.htm">
+   <span>
+    skeleton_animation_mix()
+   </span>
+  </a>
+  and when you set a new animation it will be smoothly interpolated with the previous set. You should also make sure to have a keyframe at the beginning of every animation to prevent data from being held-over from previous animations, unless you plan on using separate animation tracks.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">skeleton_animation_set(animname);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      animname
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The name (a string) of the animation set to use.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if keyboard_check_pressed(vk_space)
+{
+    if skeleton_animation_get() != "jump"
+    {
+        skeleton_animation_set("jump");
+    }
+}
+</code></pre>
+  The above code will change the animation set being used to the "jump" set when the space key is pressed, but only if the current set being used is not already "jump".
+ </body>
+</html>

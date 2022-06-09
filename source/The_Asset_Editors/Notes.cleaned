@@ -1,0 +1,34 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   The Note Editor
+  </h1>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Notes.png"/><br/>
+  The
+  <strong>
+   Note Editor
+  </strong>
+  will open a code/script window where you can keep notes and code snippets or any other information that you consider relevant
+    to the project. You can create multiple notes and name them from the right mouse button
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_RMB.png"/><br/>
+  menu in the
+  <a href="../Introduction/The_Asset_Browser.htm">
+   Asset Browser
+  </a>
+  .
+    Notes can also be grouped and re-ordered like any other asset.
+  
+  
+   If you have imported a project created using a previous version of
+  <span>
+   GameMaker
+  </span>
+  , then you will also find a
+  <a href="../Additional_Information/Compatibility_Scripts.htm">
+   Compatibility Report
+  </a>
+  included as a note in this section.
+ </body>
+</html>

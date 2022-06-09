@@ -1,0 +1,28 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Animation Curve Editor Preferences
+  </h1>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Setup_And_Version/Preferences/AnimCurve_Prefs.png"/><br/>
+  The
+  <strong>
+   Animation Curves Preferences
+  </strong>
+  are used to define certain properties for when you are working with the
+  <a href="../../The_Asset_Editors/Animation_Curves.htm">
+   Animation Curve Editor
+  </a>
+  . The options available are:
+  <ul>
+   <li>
+    <strong>
+     Automatic response to curve deletion
+    </strong>
+    : This option can be used to control the pop up message that is shown when you delete a curve from the Animation Curve editor. The default action here is to show a warning message, but you can set
+      this to "Okay" and the dialog will not be shown.
+   </li>
+  </ul>
+ </body>
+</html>

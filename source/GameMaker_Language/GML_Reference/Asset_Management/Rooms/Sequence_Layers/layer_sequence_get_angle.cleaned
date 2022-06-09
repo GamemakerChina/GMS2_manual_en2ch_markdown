@@ -1,0 +1,72 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   layer_sequence_get_angle
+  </h1>
+  With this function you supply the sequence element ID - as returned by
+  <a href="layer_sequence_create.htm">
+   <span>
+    layer_sequence_create()
+   </span>
+  </a>
+  or by one of the
+  <a href="../General_Layer_Functions/General_Layer_Functions.htm">
+   layer element functions
+  </a>
+  - and it will return the current angle of the sequence element in the game room. Note that angles are returned in degrees, and 0º is to the right, 90º is up, 180º is to the left and 270º is down.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">layer_sequence_get_angle(sequence_element_id)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      sequence_element_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Sequence_Layers/layer_sequence_create.htm">
+        Sequence Element ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The unique ID value of the sequence element to target
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var _ang = layer_sequence_get_angle(title_sequence)
+if _ang &amp;amp;gt; 0
+{
+    _ang -= 1;
+    layer_sequence_angle(title_sequence, _ang);
+}
+</code></pre>
+  The above code retrieves the current angle of the the sequence element with the ID stored in the variable "title_sequence", and if it's not 0, then 1 is subtracted form the current angle.
+ </body>
+</html>

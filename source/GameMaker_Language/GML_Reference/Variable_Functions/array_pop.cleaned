@@ -1,0 +1,66 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   array_pop
+  </h1>
+  This function will remove the last element in the given array, and return its value. If the array is empty,
+  <span>
+   undefined
+  </span>
+  is returned.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">array_pop(array);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      array
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Arrays.htm">
+        Array
+       </a>
+      </span>
+     </td>
+     <td>
+      The array to remove the last value from.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm#variable">
+ Variable
+</a>
+or
+<a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ undefined
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var _lastscore = array_pop(score_array);
+draw_text(32, 32, "Last Score = " + string(_lastscore));
+</code></pre>
+  The above code will pop the last value from the given array, and then draw it along with some text to the screen. The retrieved entry is also removed from the score array.
+ </body>
+</html>

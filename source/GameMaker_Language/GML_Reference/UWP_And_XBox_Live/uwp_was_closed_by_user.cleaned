@@ -1,0 +1,38 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   uwp_was_closed_by_user
+  </h1>
+  With this function you can find out if the game was previously shut down by the user while playing (i.e. it, was terminated correctly and not by the system). If it has been then the function will return
+  <span>
+   true
+  </span>
+  , otherwise it will return
+  <span>
+   false
+  </span>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">uwp_was_closed_by_user();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if uwp_was_closed_by_user()
+{
+    global.GameLoaded = false;
+}
+</code></pre>
+  The above code checks to see if the app has previously been terminated by the user, and if so, it sets a global variable.
+ </body>
+</html>

@@ -1,0 +1,81 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   ds_set_precision
+  </h1>
+  When comparing values, for example when searching in a map or sorting a list,
+  <span>
+   GameMaker
+  </span>
+  must decide when two values are equal. For strings and integer values this is clear but for real numbers, due to floating point round-off errors, seemingly equal numbers can easily become unequal. For example, it's possible that
+  <b>
+   (5 / 3) * 3
+  </b>
+  will
+  <i>
+   not
+  </i>
+  be equal to 5! To help avoid this, a precision value is used on all real number functions, and when the
+  <i>
+   difference between two numbers is smaller
+  </i>
+  than this precision they are considered equal. The default a precision of 0.0000001 is used for all data structure functions unless changed by this function.
+  <b>
+   NOTE
+  </b>
+  : This precision is used in all data structures but not in other comparisons in GML!
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">ds_set_precision(prec);
+</code></pre>
+  <table>
+   <colgroup>
+    <col/>
+    <col/>
+    <col/>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      prec
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The precision value (default 0.0000001)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">ds_set_precision(0.0001);
+</code></pre>
+  The above code will change the default precision setting for all data structure functions.
+ </body>
+</html>

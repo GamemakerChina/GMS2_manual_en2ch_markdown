@@ -1,0 +1,79 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   floor
+  </h1>
+  Returns the floor of n, that is, n rounded down to an integer. This is similar to the
+  <a href="round.htm">
+   <span>
+    round()
+   </span>
+  </a>
+  function, but it only rounds
+  <i>
+   down
+  </i>
+  , no matter what the decimal value, so
+  <span>
+   floor(5.99999)
+  </span>
+  will return 5, as will
+  <span>
+   floor(5.2)
+  </span>
+  ,
+  <span>
+   floor(5.6457)
+  </span>
+  etc...
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">floor(n);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      n
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The number to floor.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">val = floor( 3.9 );
+</code></pre>
+  This will set val to 3.
+ </body>
+</html>

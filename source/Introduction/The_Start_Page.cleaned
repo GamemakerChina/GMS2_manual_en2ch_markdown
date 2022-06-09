@@ -1,0 +1,236 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   The Start Page
+  </h1>
+  When you first open
+  <span>
+   GameMaker
+  </span>
+  , you will be asked to log in to your YoYo or Opera Account (or register for one if you haven't already - see
+  <a href="https://accounts.yoyogames.com/register">
+   here
+  </a>
+  ). Once registered and logged in, the main
+  <span>
+   GameMaker
+  </span>
+  <a>
+   IDE
+  </a>
+  will open on the Start Page:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Introduction/QS_Start.png"/><br/>
+  When you start
+  <span>
+   GameMaker
+  </span>
+  for the first time, you will be able to see a description for each start screen element by hovering over it.
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Introduction/QS_Start_Helper.png"/><br/>
+  Here, you can click on the
+  <strong>
+   "SKIP to Setup Wizard"
+  </strong>
+  button to start creating your first project with the help of the Setup Wizard, which will take you through the steps necessary for creating your first game in
+  <span>
+   GameMaker
+  </span>
+  .
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Introduction/QS_Start_Wizard.png"/><br/>
+  You can also click on "Close" to close the wizard and continue using
+  <span>
+   GameMaker
+  </span>
+  manually, and optionally enable the "Don't show me again" checkbox if you do not wish to see the wizard when you start
+  <span>
+   GameMaker
+  </span>
+  again.
+  <h2>
+   Start Page Elements
+  </h2>
+  The Start Page contains the following elements:
+  <ul>
+   <li>
+    <strong>
+     IDE Menu Bar
+    </strong>
+    : This shows you the menus that you can use throughout the IDE; more information is given in a section below.
+   </li>
+   <li>
+    <strong>
+     Project Options
+    </strong>
+    : The Projects section is where you can create, open or import projects. This is explained in more detail further down this page.
+   </li>
+   <li>
+    <strong>
+     Recent Projects
+    </strong>
+    : Here you can see a list of previous projects that you can open. You can also see the full project name and path, and clicking the left mouse button
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+    will open the project. You can also switch the view of this section between tile mode and list mode by pressing the buttons in the top-right corner.
+   </li>
+   <li>
+    <strong>
+     Version Details
+    </strong>
+    : This section provides details on the current IDE version being used, as well as the current
+    <a>
+     Runtime
+    </a>
+    version. You will also get notified of any changes available to either the IDE or the Runtime in this section.
+   </li>
+   <li>
+    <strong>
+     User Details
+    </strong>
+    : This shows you the username for your YoYo Account and the last time you logged in.
+   </li>
+   <li>
+    <strong>
+     Useful Resources
+    </strong>
+    : This shows you various tiles that you can click on to access official tutorial resources for
+    <span>
+     GameMaker
+    </span>
+    .
+   </li>
+  </ul>
+  <h2>
+   IDE Menus
+  </h2>
+  At the top you can find the general IDE menus which are explained in the following sections of the manual:
+  <ul>
+   <li>
+    <a href="../IDE_Navigation/Menus/The_File_Menu.htm">
+     The File Menu
+    </a>
+   </li>
+   <li>
+    <a href="../IDE_Navigation/Menus/The_Edit_Menu.htm">
+     The Edit Menu
+    </a>
+   </li>
+   <li>
+    <a href="../IDE_Navigation/Menus/The_Build_Menu.htm">
+     The Build Menu
+    </a>
+   </li>
+   <li>
+    <a href="../IDE_Navigation/Menus/The_Windows_Menu.htm">
+     The Windows Menu
+    </a>
+   </li>
+   <li>
+    <a href="../IDE_Navigation/Menus/The_Tools_Menu.htm">
+     The Tools Menu
+    </a>
+   </li>
+   <li>
+    <a href="../IDE_Navigation/Menus/The_Marketplace_Menu.htm">
+     The Marketplace Menu
+    </a>
+   </li>
+   <li>
+    <a href="../IDE_Navigation/Menus/The_Layouts_Menu.htm">
+     The Layouts Menu
+    </a>
+   </li>
+   <li>
+    <a href="../IDE_Navigation/Menus/The_Help_Menu.htm">
+     The Help Menu
+    </a>
+   </li>
+  </ul>
+  Note that there will also appear
+  <strong>
+   context specific
+  </strong>
+  menu options in the top menu bar, depending on the window that you have focused on currently. For example, if you have the Image Editor window in focus then you will have extra menu items here for "
+  <strong>
+   Images
+  </strong>
+  ", "
+  <strong>
+   View
+  </strong>
+  " and "
+  <strong>
+   Effects
+  </strong>
+  ". These extra menu items are explained in the relevant sections of the manual for the workspace or window that generated them.
+  <h1>
+   Starting A New Project
+  </h1>
+  You can click the
+  <strong>
+   New
+  </strong>
+  button to create a new project, the
+  <strong>
+   Open
+  </strong>
+  button to open an existing project or the
+  <strong>
+   Import
+  </strong>
+  button to open a compressed
+  <span>
+   <span>
+    YYZ
+   </span>
+  </span>
+  <span>
+   GameMaker
+  </span>
+  project file or a legacy
+  <a>
+   GameMaker: Studio 1.4
+  </a>
+  <span>
+   <span>
+    GMX
+   </span>
+  </span>
+  project file. Both Open and Import will open the file explorer for you to browse to the project file you require.
+  <b>
+   NOTE
+  </b>
+  :
+  <span>
+   GameMaker
+  </span>
+  is not completely backwards compatible with GameMaker: Studio 1.4 projects but imported 1.4 projects should still run, as obsolete functionality has been recreated for you automatically using
+  <strong>
+   compatibility scripts
+  </strong>
+  . For full details of the possible issues and the changes made to GML, please see the Help Center article
+  <a href="https://help.yoyogames.com/hc/en-us/articles/231719468-Porting-A-GMS-1-4-Game-To-GameMaker-Studio-2">
+   Porting A GMS 1.4 Project To
+   <span>
+    GameMaker
+   </span>
+  </a>
+  , as well as the section of the manual on
+  <a href="../Additional_Information/Obsolete_Functions.htm">
+   Obsolete Functions
+  </a>
+  .
+  
+  
+   To create a new project simply click the button labelled
+  <strong>
+   New
+  </strong>
+  , which will open the Template menu:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Introduction/QS_NewProject.png"/><br/>
+  Select a template (or starting with a blank project), choose a name and save location for your project, and then click on
+  <strong>
+   "Let's Go!"
+  </strong>
+  .
+ </body>
+</html>

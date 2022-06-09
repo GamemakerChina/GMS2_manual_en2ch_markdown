@@ -1,0 +1,74 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Output Window Preferences
+  </h1>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Setup_And_Version/Preferences/General_OutputWindow_Prefs.png"/><br/>
+  The
+  <a href="../../../Introduction/The_Output_Window.htm">
+   <strong>
+    Output Window
+   </strong>
+  </a>
+  preferences control the different colour and formatting options for the various different output windows in the IDE. Each of the different windows has the same
+    set of options, which are listed below:
+  <ul>
+   <li>
+    <strong>
+     Colour
+    </strong>
+    : The default colour for the text being written to the window.
+   </li>
+   <li>
+    <strong>
+     Font Name
+    </strong>
+    : The name of the font to use (available fonts will depend on those installed on your system).
+   </li>
+   <li>
+    <strong>
+     Style
+    </strong>
+    : The font style to use, like
+    <strong>
+     bold
+    </strong>
+    or
+    <em>
+     italics
+    </em>
+    (note that not all windows will permit the same styles and it will also depend on the font used).
+   </li>
+   <li>
+    <strong>
+     Size
+    </strong>
+    : The size to set the font to for the given output window.
+   </li>
+   <li>
+    <strong>
+     Anti-Aliasing
+    </strong>
+    : Here you can set the
+    <a>
+     anti-aliasing
+    </a>
+    mode for the output windows font rendering. You can choose to let the IDE decide by selecting
+    <em>
+     Use Default
+    </em>
+    , or you can force it
+    <em>
+     On
+    </em>
+    or
+    <em>
+     Off
+    </em>
+    by selecting either of those options.
+   </li>
+  </ul>
+ </body>
+</html>

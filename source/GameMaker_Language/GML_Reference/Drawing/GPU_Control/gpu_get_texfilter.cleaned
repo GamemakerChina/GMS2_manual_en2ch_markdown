@@ -1,0 +1,52 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   gpu_get_texfilter
+  </h1>
+  With this function you can check to see whether texture filtering (linear interpolation) is enabled (returns
+  <span>
+   true
+  </span>
+  ) or not (returns
+  <span>
+   false
+  </span>
+  ). For more information on texture filtering, see the function
+  <a href="gpu_set_texfilter.htm">
+   <span>
+    gpu_set_texfilter()
+   </span>
+  </a>
+  .
+  <b>
+   NOTE
+  </b>
+  : On the HTML5 target, this function will only work with WebGL enabled.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">gpu_get_texfilter();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if gpu_get_texfilter()
+{
+    gpu_set_texfilter(false);
+}
+else
+{
+    gpu_set_texfilter(true);
+}
+</code></pre>
+  The above code checks to see if texture filtering is on or off and switches it accordingly.
+ </body>
+</html>

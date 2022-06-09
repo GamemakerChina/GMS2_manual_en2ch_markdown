@@ -1,0 +1,31 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   event_object
+  </h1>
+  This
+  <b>
+   read-only
+  </b>
+  variable returns object index of the instance which is running the event being checked.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">event_object;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../The_Asset_Editors/Objects.htm">
+ Object Asset
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">global.obj = event_object;
+</code></pre>
+  The above code stores the object index of the instance performing the event in a global variable.
+ </body>
+</html>

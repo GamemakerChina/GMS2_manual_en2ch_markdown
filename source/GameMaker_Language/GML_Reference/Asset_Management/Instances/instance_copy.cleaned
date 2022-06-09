@@ -1,0 +1,71 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   instance_copy
+  </h1>
+  With this function you can "clone" an instance as this will create a new version of the instance running the code at its same position. The "perf" argument is used to instruct this new instance to perform the create event or not. This function returns the
+  <a href="Instance_Variables/id.htm">
+   <span>
+    id
+   </span>
+  </a>
+  of the new instance which can then be stored in a variable or used to access that instance.
+  <b>
+   NOTE
+  </b>
+  : If you choose not to perform the create event, you may encounter errors if the instance depends on any variables initialised in this event.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">instance_copy(perf);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      perf
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Whether to perform the new instance's Create event (true) or not (false).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/id.htm">
+ Instance ID
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var inst = instance_number(object_index);
+if inst &amp;amp;lt; 10
+{
+    instance_copy(true);
+}
+</code></pre>
+  The above code creates a local variable and uses it to store the number of instances of the object running the code in the room. If the number is less than 10, the instance then makes a copy of itself.
+ </body>
+</html>

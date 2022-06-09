@@ -1,0 +1,74 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   layer_instance_get_instance
+  </h1>
+  This function can be used to get the unique instance ID of the given instance element. You give the instance
+  <i>
+   element
+  </i>
+  ID (see the code example below for how to get this), and the function will return a real value that represents the unique
+  <a href="../../Instances/Instance_Variables/id.htm">
+   instance id
+  </a>
+  for the element. If the element is not an instance, the function will return -1.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">layer_instance_get_instance(element_id)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      element_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/General_Layer_Functions/layer_get_all_elements.htm">
+        Instance Element ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The unique ID value of the instance element to get the ID of
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/id.htm">
+ Instance ID
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">elements = layer_get_all_elements("Instances");
+for (var i = 0; i &amp;amp;lt; array_length(elements); i++)
+{
+     if (layer_get_element_type(elements[i]) == layerelementtype_instance)
+     {
+         var layerelement = elements[i];
+         var inst = layer_instance_get_instance(layerelement);
+         inst.x = inst.x + 10;
+     }
+}
+</code></pre>
+  The above code will check get all the instance elements on a layer, then get their unique ID value and use that to move them 10px to the right.
+ </body>
+</html>

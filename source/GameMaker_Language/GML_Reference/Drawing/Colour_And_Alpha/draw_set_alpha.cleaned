@@ -1,0 +1,111 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   draw_set_alpha
+  </h1>
+  With this function you can set the base draw alpha for the game. This value can be set from 0 to 1 with 0 being fully transparent and 1 being fully opaque (the default value), and will affect all further drawing, including backgrounds, sprites, fonts,
+    primitives and 3D.
+  
+  
+   Note that if you are drawing any of the assets and supplying an alpha argument as part of the function (for example, when using
+  <a href="../Sprites_And_Tiles/draw_sprite_ext.htm">
+   <span>
+    draw_sprite_ext()
+   </span>
+  </a>
+  ), then the alpha value set here will be
+    overridden, so drawing a sprite using
+  <span>
+   draw_sprite_ext()
+  </span>
+  with an alpha argument of 1 will draw the sprite fully opaque regardless of the alpha set with
+  <span>
+   draw_set_alpha()
+  </span>
+  (this will work the same when using
+  <a href="../Sprites_And_Tiles/draw_self.htm">
+   <span>
+    draw_self()
+   </span>
+  </a>
+  and setting the
+  <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/image_alpha.htm">
+   <span>
+    image_alpha
+   </span>
+  </a>
+  of the instance). Also note that when an instance is
+  <i>
+   default
+  </i>
+  drawing (ie: it has a sprite but no Draw Event), then the
+  <span>
+   image_alpha
+  </span>
+  variable will be clamped to the alpha set with
+  <span>
+   draw_set_alpha()
+  </span>
+  , such that an
+  <span>
+   image_alpha
+  </span>
+  of 1 and a draw alpha of 0.5 will draw the sprite at alpha 0.5, while an
+  <span>
+   image_alpha
+  </span>
+  of 0.25 and a draw alpha
+    of 0.5 will draw the sprite at 0.25 alpha.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">draw_set_alpha(alpha);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      alpha
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The alpha to set (between 0 and 1)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">draw_set_alpha(0.5); draw_set_colour(c_black);
+ draw_text(x+5, y+5, "LEVEL 1"); draw_set_alpha(1);
+ draw_set_colour(c_white);
+ draw_text(x, y, "LEVEL 1");
+</code></pre>
+  The above code will draw some text at the specified position with a shadow effect created by modified draw alpha and colour.
+ </body>
+</html>

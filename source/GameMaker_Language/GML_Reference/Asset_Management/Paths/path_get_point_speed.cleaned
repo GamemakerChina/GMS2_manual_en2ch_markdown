@@ -1,0 +1,87 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   path_get_point_speed
+  </h1>
+  With this function you can get the speed of the point (as defined in the
+  <a href="../../../../The_Asset_Editors/Paths.htm">
+   Path Editor
+  </a>
+  or when you dynamically add a path point using
+  <a href="Path_Manipulation/path_add_point.htm">
+   <span>
+    path_add_point()
+   </span>
+  </a>
+  ) expressed as a percentage. So, if you have a path point set to 50 in the path editor, this function would return 50 when used.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">path_get_point_speed(index, n);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Paths.htm">
+        Path Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the path to check.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      n
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The point number to check.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if (path_get_point_speed(pth_Patrol, 0) != 100)
+{
+    var _px = path_get_point_x(pth_Patrol, 0);
+    var _py = path_get_point_x(pth_Patrol, 0);
+    path_change_point(pth_Patrol, 0, _px, _py, 100);
+}
+</code></pre>
+  The above code checks the path point "0" of the path indexed by "pth_Patrol" to see if the speed is not equal to 100. If it is not then it sets the speed of that point to 100.
+ </body>
+</html>

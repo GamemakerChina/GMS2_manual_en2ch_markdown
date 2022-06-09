@@ -1,0 +1,82 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   position_destroy
+  </h1>
+  This function simply destroys all instances that are found to be in collision with the specified position. Collisions are based on the mask of the instances, and if any part of the mask over-laps with the target point it then the function will destroy that instance. Instances destroyed in this way will trigger their
+  <strong>
+   Destroy
+  </strong>
+  and
+  <strong>
+   Clean Up
+  </strong>
+  events.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">position_destroy(x, y);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      x
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x coordinate of where to destroy colliding instances.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y coordinate of where to destroy colliding instances.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if mouse_check_button_pressed(mb_left)
+{
+    position_destroy(mouse_x, mouse_y);
+}
+</code></pre>
+  This will destroy all instances that collide with the position of the mouse cursor when the left mouse button is pressed.
+ </body>
+</html>

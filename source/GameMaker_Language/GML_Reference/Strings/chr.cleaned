@@ -1,0 +1,62 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   chr
+  </h1>
+  This function returns a string containing the character which relates to the input Unicode code for displaying. This character depends on the current drawing fonts character set code page and if no font is set, it will use the default code page for
+    the machine.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">chr(val);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      val
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The Unicode code value to get the string from
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">mystring = chr(53) + chr(48);
+</code></pre>
+  This would set
+  <span>
+   mystring
+  </span>
+  to "50" (a string, not an integer) as chr(53) is "5" and chr(48) is "0".
+ </body>
+</html>

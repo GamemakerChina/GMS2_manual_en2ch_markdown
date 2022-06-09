@@ -1,0 +1,114 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   room_set_persistent
+  </h1>
+  With this function you can change (or set) the persistence of any room in your game
+  <i>
+   except the current one
+  </i>
+  . A room with persistence flagged as
+  <span>
+   true
+  </span>
+  it will maintain the state of all instances within that room if the player leaves and then returns, whereas if persistence is flagged as
+  <span>
+   false
+  </span>
+  it will be reset to the initial state every time. You should note that a persistent room uses considerably more memory than a normal room and it is not recommended to have too many of them in your game.
+  <b>
+   NOTE
+  </b>
+  : This function will
+  <b>
+   NOT
+  </b>
+  work to switch off persistence if the room has already been visited! A persistent room, once visited, is held in memory and to switch off persistence you should go to that room and set the
+  <span>
+   <a href="room_persistent.htm">
+    <span>
+     room_persistent
+    </span>
+   </a>
+  </span>
+  variable to
+  <span>
+   false
+  </span>
+  and then exit the room again.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">room_set_persistent(index, val);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Rooms.htm">
+        Room Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the room to set the persistence of.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      val
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Whether the room should be persistent (
+      <span>
+       true
+      </span>
+      ) or not (
+      <span>
+       false
+      </span>
+      ).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">global.myroom = room_add();
+room_set_width(global.myroom, 640);
+room_set_height(global.myroom, 480);
+room_set_persistent(global.myroom, true);
+</code></pre>
+  This will create a new room and store its index in the variable "global.myroom". It will then set its width to 640 pixels, its height to 480 pixels, its caption to 'Game Room' and its persistence to 'true'.
+ </body>
+</html>

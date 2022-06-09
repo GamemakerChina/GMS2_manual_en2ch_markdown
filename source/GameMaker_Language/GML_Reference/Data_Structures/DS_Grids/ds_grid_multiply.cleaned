@@ -1,0 +1,107 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   ds_grid_multiply
+  </h1>
+  This function will multiply the value of the given grid cell by the specified amount.
+  <b>
+   <span>
+    NOTE
+   </span>
+  </b>
+  This function will only work with real numbers, not strings.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">ds_grid_multiply(index, x, y, val);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Grids/ds_grid_create.htm">
+        DS Grid ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the grid.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      x
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x position of the cell in the grid.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y position of the cell in the grid.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      val
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The value to multiply with the cell.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">ds_grid_multiply(mygrid, 5, 5, 2)
+</code></pre>
+  The above code will multiply the value stored in the given DS grid cell by 2.
+ </body>
+</html>

@@ -1,0 +1,127 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   draw_ellipse
+  </h1>
+  With this function you can draw either an outline of an ellipse or a filled ellipse by defining a rectangular area that will then have the ellipse created to fit. You can define how precise the drawing is with the function
+  <a href="draw_set_circle_precision.htm">
+   <span>
+    draw_set_circle_precision()
+   </span>
+  </a>
+  .
+  <b>
+   NOTE
+  </b>
+  : If you are wanting to draw a shape using a shader, you should be aware that most shaders expect the following inputs: vertex, texture, Colour. However, when using this function, only vertex and colour data are being passed in, and so the shader may not draw anything (or draw something but not correctly). If you need to draw shapes in this way then the shader should be customised with this in mind.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">draw_ellipse(x1, y1, x2, y2, outline);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      x1
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x coordinate of the left of the ellipse.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y1
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y coordinate of the top of the ellipse.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      x2
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x coordinate of the right of the ellipse.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y2
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y coordinate of the bottom of the ellipse.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      outline
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Whether the ellipse is drawn filled (false) or as a one pixel wide outline (true).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">draw_set_colour(c_white);
+draw_ellipse(100, 100, 300, 200, false);
+</code></pre>
+  This will draw a filled ellipse within the defined rectangular area.
+ </body>
+</html>

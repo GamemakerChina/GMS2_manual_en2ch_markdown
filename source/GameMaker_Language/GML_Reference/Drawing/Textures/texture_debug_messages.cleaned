@@ -1,0 +1,71 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   texture_debug_messages
+  </h1>
+  This function can be used to enable or disable texture debug messages. When enabled (set to
+  <span>
+   true
+  </span>
+  ), additional information about texture page use will be sent to the output window. Set to
+  <span>
+   false
+  </span>
+  to disable this output again.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">texture_debug_messages(enable);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      enable
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Enable or disable the texture debug messages
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if global.debug
+{
+    texture_debug_messages(true);
+}
+</code></pre>
+  The above code will check the value of a global variable and if it is set to
+  <span>
+   true
+  </span>
+  then texture debug messages are enabled.
+ </body>
+</html>

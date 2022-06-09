@@ -1,0 +1,105 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Create_Particle_System.png"/><br/>
+   Create Particle System
+  </h1>
+  This action will initialise the particle system ready for you to create and use particle types and emitters with it. You give the layer name as a string - for example "Particle Layer" (which must exist in the room editor) - and then flag the
+    system as being
+  <b>
+   Persistent
+  </b>
+  or not. If the system is flagged as Persistent then it will stay active across all rooms after it has been created, and it will be assigned a managed layer if the initial layer does not exist in subsequent rooms.
+    If persistence is
+  <i>
+   not
+  </i>
+  flagged, then the system will be automatically destroyed at the end of the room it was created in as will any emitters associated with the system. If you wish to manually remove the system from memory, you need to use
+    the action
+  <a href="Destroy_Particle_System.htm">
+   Destroy Particle System
+  </a>
+  .
+  
+  
+   You also need to supply a target variable that will hold the unique particle system ID value. This ID value is what will be used in other functions to set properties of the system or to tell
+  <span>
+   GameMaker
+  </span>
+  what system to use when creating particles.
+    You can choose to flag this variable as being a temporary local variable, but that will mean that it is discarded at the end of the action script or event, meaning that the system will still exist but leave you without any means to access it, so care
+    must be taken when using this (in general systems will never need to be stored in a temporary local variable, but for certain things, like drawing particles to a surface, it may be required).
+  <b>
+   NOTE
+  </b>
+  : A persistent particle system, once created, remains resident in the system memory for the duration of the game, and so if you need to recreate it at any point (for example, if you call the
+  <a href="../Game/Restart_Game.htm">
+   Restart Game
+  </a>
+  action), then you
+  <b>
+   must destroy the current system first
+  </b>
+  otherwise you get a memory leak. A memory leak happens when a resource is added to memory and then "de-referenced", meaning that
+  <span>
+   GameMaker
+  </span>
+  has no way to interact with
+    that resource any more. This leads to the memory being clogged by inaccessible resources which in turn can cause issues with your game. To destroy a persistent particle system when no longer required use the action
+  <a href="Destroy_Particle_System.htm">
+   Destroy Particle System
+  </a>
+  .
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Create_Particle_System.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Layer
+     </td>
+     <td>
+      The layer where the particles in this system will be drawn
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Persistent
+     </td>
+     <td>
+      Whether the particle system should stay active after the current room has ended
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Target
+     </td>
+     <td>
+      The target variable to hold the unique ID value of the created system
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Create_Particle_System.png"/><br/>
+  The above action block creates a global variable,
+    then creates a new particle system and assigns its unique ID value to the global variable. The created particle system is marked as persistent, so it will stay active even after the current room has ended.
+ </body>
+</html>

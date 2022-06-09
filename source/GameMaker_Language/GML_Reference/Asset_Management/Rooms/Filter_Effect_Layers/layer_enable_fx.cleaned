@@ -1,0 +1,118 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   layer_enable_fx
+  </h1>
+  This function enables/disables the filter/effect assigned to a Room Layer. You specify either the ID or the name of the layer you want to modify, and then a boolean value telling whether the FX should be enabled (
+  <span>
+   true
+  </span>
+  ) or disabled (
+  <span>
+   false
+  </span>
+  ).
+  
+  
+   Passing in
+  <span>
+   false
+  </span>
+  will not remove the FX from the layer, but simply make it invisible. Use
+  <span>
+   <a href="layer_clear_fx.htm">
+    layer_clear_fx()
+   </a>
+  </span>
+  to remove an FX from a layer.
+  
+  
+   Similarly, passing in
+  <span>
+   true
+  </span>
+  will not do anything if there is no FX applied to the layer. Use
+  <span>
+   <a href="layer_set_fx.htm">
+    layer_set_fx()
+   </a>
+  </span>
+  to apply an FX to a layer.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">layer_enable_fx(layer_name_or_id, enable);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      layer_name_or_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+      or
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/General_Layer_Functions/layer_get_id.htm">
+        Layer ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The name or ID of the layer to modify
+     </td>
+    </tr>
+    <tr>
+     <td>
+      enable
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Whether to enable or disable the FX
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if (hp &amp;amp;lt;= 3)
+{
+    layer_enable_fx("DesaturateLayer", true);
+}
+else
+{
+    layer_enable_fx("DesaturateLayer", false);
+}
+</code></pre>
+  The above code enables a Desaturate FX layer if the instance's HP value is less than or equal to 3, otherwise it disables it. This indicates to the player that their HP is low, by desaturating the screen.
+ </body>
+</html>

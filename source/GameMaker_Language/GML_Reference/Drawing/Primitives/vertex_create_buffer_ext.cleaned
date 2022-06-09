@@ -1,0 +1,71 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   vertex_create_buffer_ext
+  </h1>
+  As with the function
+  <a href="vertex_create_buffer.htm">
+   <span>
+    vertex_create_buffer()
+   </span>
+  </a>
+  , this function will create a new vertex buffer. This is a special
+  <i>
+   grow
+  </i>
+  buffer created by
+  <span>
+   GameMaker
+  </span>
+  which is pre-formatted for use when building primitives for use with shaders. You can specify an initial starting size for the buffer (in bytes) and it will return an index for the buffer which should then be used in all further calls to the buffer.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">vertex_create_buffer_ext(size);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      size
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The initial size of the buffer (in bytes).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Reference/Drawing/Primitives/vertex_create_buffer.htm">
+ Vertex Buffer ID
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">v_buff = vertex_create_buffer_ext(1024 * 1024);
+</code></pre>
+  The above code will create a new vertex buffer, initially 1MB in size, and store its handle in the variable "v_buff".
+ </body>
+</html>

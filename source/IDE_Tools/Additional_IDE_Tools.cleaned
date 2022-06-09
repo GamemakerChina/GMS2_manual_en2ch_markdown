@@ -1,0 +1,42 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Additional IDE Tools
+  </h1>
+  This section of the manual outlines additional IDE tools that are available to help you make your games and which aren't covered in other parts of the manual, as well as those tools that are helpful accessories to the other sections of the IDE.
+  <ul>
+   <li>
+    <a href="The_Debugger.htm">
+     The Debugger
+    </a>
+   </li>
+   <li>
+    <a href="The_Micro_Web_Server.htm">
+     The Micro Web Server
+    </a>
+   </li>
+   <li>
+    <a href="Local_Asset_Packages.htm">
+     Local Asset Packages
+    </a>
+   </li>
+   <li>
+    <a href="Project_Image_Generator.htm">
+     Project Image Generator
+    </a>
+   </li>
+   <li>
+    <a href="Sound_Mixer.htm">
+     Sound Mixer
+    </a>
+   </li>
+   <li>
+    <a href="Source_Control.htm">
+     Source Control
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

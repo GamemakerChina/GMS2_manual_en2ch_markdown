@@ -1,0 +1,134 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   script_execute_ext
+  </h1>
+  This function works similarly to the function
+  <a href="script_execute.htm">
+   script_execute()
+  </a>
+  only you can supply an
+  <a href="../../../GML_Overview/Arrays.htm">
+   array
+  </a>
+  that contains the arguments required for the function/script being called. You may also supply two optional arguments to the function to specify an offset into the array to get the arguments from, as well as the number of arguments to use from the array (this must be a maximum of array_length - offset).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">script_execute_ext(scr, array_args, [offset], [num_args]);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      scr
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Scripts.htm">
+        Script Asset
+       </a>
+      </span>
+      or
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Script_Functions.htm">
+        Script Function
+       </a>
+      </span>
+     </td>
+     <td>
+      The function/script that you want to call
+     </td>
+    </tr>
+    <tr>
+     <td>
+      array_args
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Arrays.htm">
+        Array
+       </a>
+      </span>
+     </td>
+     <td>
+      The array containing the arguments for the function/script
+     </td>
+    </tr>
+    <tr>
+     <td>
+      [offset]
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      <span>
+       OPTIONAL
+      </span>
+      <em>
+      </em>
+      The offset into the argument array
+     </td>
+    </tr>
+    <tr>
+     <td>
+      [num_args]
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      <span>
+       OPTIONAL
+      </span>
+      The number of arguments to use (from the offset onwards)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm#variable">
+ Variable
+</a>
+(Will depend on the return value from the function/script being called)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">script_execute_ext(move_inst, move_array, floor(random(4)), 1);
+</code></pre>
+  The above example code will use
+  <span>
+   script_execute_ext
+  </span>
+  to call the given function, supplying an array of four arguments, but only using one of them at random.
+  <span>
+   NOTE
+  </span>
+  This function cannot be used with built-in functions.
+ </body>
+</html>

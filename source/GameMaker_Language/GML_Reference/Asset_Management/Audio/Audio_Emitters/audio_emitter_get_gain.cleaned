@@ -1,0 +1,60 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   audio_emitter_get_gain
+  </h1>
+  This function returns the current gain (volume) set for the given audio emitter, normally between 0 and 1, where 0 is silent and 1 is full volume. Note that on some platforms you can have a gain of greater than 1, although a value of 1 is considered "full volume" and anything greater may introduce audio clipping.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">audio_emitter_get_gain(emitter);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      emitter
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Emitters/audio_emitter_create.htm">
+        Audio Emitter ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the emitter to use.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if audio_emitter_get_gain(emitter_player) &amp;amp;lt; 1
+{
+    audio_emitter_gain(emitter_player, 1);
+}
+</code></pre>
+  The above code checks the current gain of a given emitter and if it is less than 1 it is set to 1.
+ </body>
+</html>

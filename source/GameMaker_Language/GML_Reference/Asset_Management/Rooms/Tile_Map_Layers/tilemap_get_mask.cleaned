@@ -1,0 +1,84 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   tilemap_get_mask
+  </h1>
+  This function can be used to retrieve the bit mask value for the given tile map. You give the tile map element ID (which you get when you create a tile map element using
+  <a href="layer_tilemap_create.htm">
+   <span>
+    layer_tilemap_create()
+   </span>
+  </a>
+  or when you use the function
+  <a href="layer_tilemap_get_id.htm">
+   <span>
+    layer_tilemap_get_id()
+   </span>
+  </a>
+  ), and the function will return the current mask value or -1 if there is an error or 0 if no mask is specified. For further information on tile map bit masks, see the function
+  <a href="tilemap_set_mask.htm">
+   <span>
+    tilemap_set_mask()
+   </span>
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">tilemap_get_mask(tilemap_element_id);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      tilemap_element_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/layer_tilemap_get_id.htm">
+        Tile Map Element ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The unique ID value of the tile map element to get the mask of
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a>
+(0 for no mask, -1 for an error)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var lay_id = layer_get_id("Tiles_sky");
+var map_id = layer_tilemap_get_id(lay_id);
+var mask = tilemap_get_mask(map_id);
+var new_mask = tile_mirror | tile_flip | tile_rotate | 255;
+if mask != new_mask
+{
+    tilemap_set_mask(map_id, new_mask);
+}
+</code></pre>
+  The above code gets the tile map ID from the given layer and then checks the mask value associated with it. If it is not the same as the value defined in the variable "new_mask", then it is set to that value.
+ </body>
+</html>

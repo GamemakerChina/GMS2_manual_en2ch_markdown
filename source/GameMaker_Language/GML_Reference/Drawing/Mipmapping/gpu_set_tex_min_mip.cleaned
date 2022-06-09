@@ -1,0 +1,59 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   gpu_set_tex_min_mip
+  </h1>
+  With this function you can set the minimum mipmap level which is currently used, where a value of 0 is the highest resolution, 1 is to use the first mipmap, 2 is the second etc...
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">gpu_set_tex_min_mip(minmip);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      minmip
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The minimum mipmap level to use
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if gpu_get_tex_min_mip() != 0
+{
+    gpu_set_tex_min_mip(0);
+}
+</code></pre>
+  The above code will check the current minimum mipmap level and if it is not 0 it is set to 0.
+ </body>
+</html>

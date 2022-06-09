@@ -1,0 +1,87 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   clamp
+  </h1>
+  With this function you can maintain an input value between a specified range.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">clamp(val, min, max)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      val
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The value to clamp.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      min
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The minimum value to clamp between.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      max
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The maximum value to clamp between.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">speed = clamp(speed, 1, 10);
+</code></pre>
+  The above code will clamp the speed so that it never falls below 1 or goes over 10.
+ </body>
+</html>

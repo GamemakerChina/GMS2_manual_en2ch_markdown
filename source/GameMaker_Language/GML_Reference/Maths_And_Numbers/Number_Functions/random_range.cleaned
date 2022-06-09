@@ -1,0 +1,93 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   random_range
+  </h1>
+  This function returns a random number between the specified range, and this return value does not need to be an integer. For example,
+  <span>
+   random_range(20,50)
+  </span>
+  will return a random number from 20 to 50, but the value may be a real number like 38.65265.
+    Real numbers can also be used as input arguments.
+  <b>
+   NOTE
+  </b>
+  : This function will return the same value every time the game is run afresh due to the fact that
+  <span>
+   GameMaker
+  </span>
+  generates the same initial random seed every time to make debugging code a far easier task. To avoid this behaviour use
+  <span>
+   <a href="randomise.htm">
+    <span>
+     randomise()
+    </span>
+   </a>
+  </span>
+  at the start of your game.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">random_range(n1, n2);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      n1
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The low end of the range from which the random number will be selected.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      n2
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The high end of the range from which the random number will be selected.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">score += random_range(500, 600);
+</code></pre>
+  This will add anywhere between 500 and 600, to the total score.
+ </body>
+</html>

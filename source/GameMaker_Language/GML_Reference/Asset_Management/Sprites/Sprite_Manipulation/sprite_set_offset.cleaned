@@ -1,0 +1,97 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   sprite_set_offset
+  </h1>
+  This function can be used to set the x and y origin of a sprite, and takes relative values based on the (0,0) position being the upper left corner of the sprite. The following image illustrates this:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/GML/Reference/Sprites/spr_xyoffset.png"/><br/>
+  <b>
+   <span>
+    NOTE
+   </span>
+  </b>
+  This function affects the sprite
+  <b>
+   asset
+  </b>
+  so that all further instances with this sprite will have the same offset.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">sprite_set_offset(ind, xoff, yoff);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      ind
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../The_Asset_Editors/Sprites.htm">
+        Sprite Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the sprite to change the offset of.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      xoff
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x position of the origin.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      yoff
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y position of the origin.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">sprite_assign(spr_Custom, spr_Base); sprite_set_offset(spr_Custom, sprite_get_xoffset(spr_Base), sprite_get_yoffset(spr_Base));
+</code></pre>
+  The above code assigns the sprite indexed in "spr_Base" to the sprite indexed in "spr_Custom" and then uses the x and y offset values of "spr_Base" to set the new sprite's origin.
+ </body>
+</html>

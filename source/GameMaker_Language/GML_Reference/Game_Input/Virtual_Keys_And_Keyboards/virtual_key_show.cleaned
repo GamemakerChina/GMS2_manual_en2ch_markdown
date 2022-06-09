@@ -1,0 +1,81 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   virtual_key_show
+  </h1>
+  Once you have created your virtual key for your devices, you may need to debug and test that it is correctly positioned and working properly. For that you would call this function, using the index of the virtual key that you want to see (previously created and stored using
+  <a href="virtual_key_add.htm">
+   <span>
+    virtual_key_add()
+   </span>
+  </a>
+  ) which will draw a coloured rectangle to represent the key on the screen. Once you are happy with things it is recommended that you create and place your own graphic in its area.
+  <b>
+   <span>
+    NOTE
+   </span>
+  </b>
+  The rectangle being drawn will be affected by the blending, colour and alpha options set by the corresponding
+  <a href="../../Drawing/Colour_And_Alpha/Colour_And_Alpha.htm">
+   draw functions
+  </a>
+  .
+  <h4>
+   Syntax
+  </h4>
+  <pre><code class="language-gml">virtual_key_show(index);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Game_Input/Virtual_Keys_And_Keyboards/virtual_key_add.htm">
+        Virtual Key ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the virtual key to show.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if global.Debug
+{
+    virtual_key_show(global.Left);
+}
+else
+{
+    virtual_key_hide(global.Left);
+}
+</code></pre>
+  The above code checks the global variable "global.Debug" and if it tests true then the virtual key indexed in the variable "global.Left" will be drawn on the screen, and if it is false then the key will be hidden.
+  <b>
+  </b>
+ </body>
+</html>

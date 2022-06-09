@@ -1,0 +1,64 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   shader_set
+  </h1>
+  With this function you can set the drawing target to the given shader and all further drawing will be done using that. You can end shader use with the function
+  <a href="shader_reset.htm">
+   <span>
+    shader_reset()
+   </span>
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">shader_set(shader);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      shader
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Shaders.htm">
+        Shader Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the shader to use.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">shader_set(shader_Glass);
+draw_self();
+shader_reset();
+</code></pre>
+  The above code will set a shader to be used for drawing, then draw the current sprite used for the instance using it.
+ </body>
+</html>

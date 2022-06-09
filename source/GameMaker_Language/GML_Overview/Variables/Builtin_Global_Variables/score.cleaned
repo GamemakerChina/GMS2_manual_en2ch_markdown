@@ -1,0 +1,65 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   score
+  </h1>
+  This variable is
+  <b>
+   global
+  </b>
+  in scope and is used to hold a numeric value which is usually used for the player score. This variable is only designed to support legacy projects from previous versions of
+  <i>
+   GameMaker
+  </i>
+  and should
+  <b>
+   <i>
+    not be used in new projects
+   </i>
+  </b>
+  as it may be deprecated in the future.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">score;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a>
+(single precision floating point value)
+</code></pre>
+  <h4>
+   Example
+  </h4>
+  <pre><code class="language-gml">switch (object_index)
+{
+    case obj_Enemy_Fighter:
+        score += 10;
+    break;
+
+    case obj_Enemy_Mage:
+        score += 25;
+    break;
+
+    case obj_Enemy_Boss:
+        score += 100;
+    break;
+}
+instance_destroy();
+</code></pre>
+  The above code checks the object index of the instance running the code using a
+  <a href="../../Language_Features/switch.htm">
+   switch
+  </a>
+  , and then adds different amounts to the
+  <span>
+   score
+  </span>
+  variable depending on what object it is.
+ </body>
+</html>

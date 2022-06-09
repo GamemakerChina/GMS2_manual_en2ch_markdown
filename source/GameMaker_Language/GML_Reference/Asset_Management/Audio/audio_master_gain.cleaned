@@ -1,0 +1,65 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   audio_master_gain
+  </h1>
+  With this function you can set the absolute value for the global volume of all sounds and music. It is based on a linear scale from 0 (silent) to any value greater than 0, although normally you'd consider the maximum volume as 1. Anything over 1 can be used but, depending on the sound used and the platform being compiled to, you may get distortion or clipping when the sound is played back. This function will affect the relative volume of all sounds and music played from within your game.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">audio_master_gain(gain);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      gain
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      Value for the global volume (0 to 1).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if keyboard_check(vk_up)
+{
+    if vol &amp;amp;lt; 1 vol += 0.05;
+    audio_master_gain(vol);
+}
+if keyboard_check(vk_down)
+{
+    if vol &amp;amp;gt; 0 vol -= 0.05;
+    audio_master_gain(vol);
+}
+</code></pre>
+  The above code checks for key-presses of the up and down arrow keys, which then increase or decrease the variable "vol". This variable is then used to set the global gain of all sound and music in the game.
+ </body>
+</html>

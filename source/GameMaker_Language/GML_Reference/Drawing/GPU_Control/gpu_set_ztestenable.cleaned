@@ -1,0 +1,86 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   gpu_set_ztestenable
+  </h1>
+  This function can be used to toggle z-buffer testing on or off, affecting how things will be drawn (in general only of use when working with 3D projects). Essentially, by default when z-testing is off and you have two objects drawing to the same space,
+  <i>
+   both
+  </i>
+  objects will be rendered regardless of whether one will over-draw the other, resulting in unnecessary draw calls. If you switch this on then the z-buffer is tested to see whether an object will be "visible" and not drawn if it's
+    not. Note that this is the
+  <i>
+   default
+  </i>
+  behaviour, but you can change this by changing the type of comparison used for z-buffer testing (see the function
+  <a href="gpu_get_zfunc.htm">
+   <span>
+    gpu_set_zfunc()
+   </span>
+  </a>
+  .
+  
+  
+   By default z-buffer testing is off (
+  <span>
+   false
+  </span>
+  ).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">gpu_set_ztestenable(enable);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      enable
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Enable or disable z-buffer testing (
+      <span>
+       true
+      </span>
+      or
+      <span>
+       false
+      </span>
+      ).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">gpu_set_ztestenable(true); draw_sprite(spr_Background, 0, 0, 0); gpu_set_ztestenable(false);
+</code></pre>
+  The above code switches on z-buffer testing to draw a background sprite and then switches it back off again to continue drawing.
+ </body>
+</html>

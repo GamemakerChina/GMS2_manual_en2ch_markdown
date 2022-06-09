@@ -1,0 +1,42 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   parameter_string
+  </h1>
+  Command-line parameters are those extra commands that you can add to an exe to change how the program is run and with this function you can get the chosen command-line parameter as a string. You can find the number of parameters for the current game using the function
+  <a href="parameter_count.htm">
+   <span>
+    parameter_count()
+   </span>
+  </a>
+  , where the first parameter has index 1 and the last one has the index returned by the function (a value of 0 is special on that it is the filename of the game executable, including the path). It should be noted that this function will work for on the HTML5 platform, retrieving the url parameters.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">parameter_string(n);
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var p_num;
+p_num = parameter_count();
+if p_num &amp;amp;gt; 0
+{
+    var i;
+    for (i = 0; i &amp;amp;lt; p_num; i += 1)
+    {
+        p_string[i] = parameter_string(i + 1);
+    }
+}
+</code></pre>
+  The above code will get the number of command-line parameters, and if there is 1 or more it will loop through them and store them as strings in an array.
+ </body>
+</html>

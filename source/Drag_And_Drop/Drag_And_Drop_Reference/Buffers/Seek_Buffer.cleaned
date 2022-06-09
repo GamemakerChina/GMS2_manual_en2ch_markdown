@@ -1,0 +1,62 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Seek_Buffer.png"/><br/>
+   Seek Buffer
+  </h1>
+  This action can be used to move (seek) to a position within a buffer. You supply the unique buffer ID value as returned by the action
+  <a href="Create_Buffer.htm">
+   Create Buffer
+  </a>
+  and then the offset value in bytes to move to. The offset value will
+    be applied from the
+  <i>
+   start
+  </i>
+  of the buffer, so calling this function will move the read/write position to the start of the the buffer then move the number of bytes given along and position the new read/write position there. However, if you flag
+    the offset as relative, it will move the read/write position forward (or backwards if the offset is a negative value) from the current position.
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/a_Buffers_Seek_Buffer.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Buffer
+     </td>
+     <td>
+      The buffer index (stored in a variable)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      offset
+     </td>
+     <td>
+      The offset (in bytes) relative to the current seek position
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/e_Buffers_Seek_Buffer.png"/><br/>
+  The above action block code gets the size of the buffer and then uses that value to set the read/write
+    position to the end of the currently stored data.
+ </body>
+</html>

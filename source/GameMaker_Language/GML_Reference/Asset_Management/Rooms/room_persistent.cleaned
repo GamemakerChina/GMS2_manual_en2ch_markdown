@@ -1,0 +1,43 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   room_persistent
+  </h1>
+  This variable can be used to get and to set the persistent flag for the current room. If set to
+  <span>
+   true
+  </span>
+  the room is considered persistent, in which case each time you leave the room and come back again the state of the instances within that room will have been maintained. However if it is flagged as
+  <span>
+   false
+  </span>
+  , each time you return to the room it will be reset to its initial state. You should note that a persistent room uses considerably more memory than a normal room and it is not recommended to have too many of them in your game.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">room_persistent;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if lives &amp;amp;lt; 1
+{
+    room_persistent = false;
+    room_goto(rm_start);
+}
+</code></pre>
+  The above code checks the variable "lives" and if it is less than 1, it will set the room persistence to
+  <span>
+   false
+  </span>
+  and then change rooms.
+ </body>
+</html>

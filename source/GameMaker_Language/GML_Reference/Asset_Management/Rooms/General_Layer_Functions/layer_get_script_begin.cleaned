@@ -1,0 +1,90 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   layer_get_script_begin
+  </h1>
+  You supply the layer ID (which you get when you create the layer using
+  <a href="layer_create.htm">
+   <span>
+    layer_create()
+   </span>
+  </a>
+  ) or the layer name (as a string - this will have a performance impact) and this function will return the
+  <a href="../../../../GML_Overview/Script_Functions.htm">
+   script function
+  </a>
+  index of the function assigned to run at the beginning of rendering for that layer, or it will return -1 if no function is assigned. You can assign script functions to a layer with
+  <span>
+   <a href="layer_script_begin.htm">
+    layer_script_begin()
+   </a>
+  </span>
+  and
+  <span>
+   <a href="layer_script_end.htm">
+    layer_script_end()
+   </a>
+  </span>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">layer_get_script_begin(layer_id);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      layer_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+      or
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/General_Layer_Functions/layer_get_id.htm">
+        Layer ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The unique ID value of the layer to target (or the layer name as a string)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Overview/Script_Functions.htm">
+ Script Function
+</a>
+or -1 (if no function is assigned)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if layer_get_script_begin(layer) == -1
+{
+    layer_script_begin(layer, scr_SetShaderValues);
+}
+</code></pre>
+  The above code will check to see if the layer that the instance running the code has a script function assigned to it and if it doesn't one is assigned.
+ </body>
+</html>

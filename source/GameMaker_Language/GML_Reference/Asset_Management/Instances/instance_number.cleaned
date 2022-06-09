@@ -1,0 +1,76 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   instance_number
+  </h1>
+  With this function you can find out how many active instances of the specified object exists in the room. When checking using this function, if the object is a
+  <b>
+   parent
+  </b>
+  , then
+  <i>
+   all child objects will also be included in the return value
+  </i>
+  , and also note that those instances which have been deactivated with the
+  <a href="Deactivating_Instances/Deactivating_Instances.htm">
+   instance deactivate
+  </a>
+  functions will
+  <i>
+   not
+  </i>
+  be included in this check.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">instance_number(obj);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      obj
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Objects.htm">
+        Object Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The object to total the number of instances of.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if instance_number(object_index) &amp;amp;lt; 50
+{
+    instance_create_layer(random(room_width), random(room_height), "Instances", object_index);
+}
+</code></pre>
+  The above code will check the number of instances that are created form the same object as the current instance and then if there are less than 50, create another one at a random position within the room.
+ </body>
+</html>

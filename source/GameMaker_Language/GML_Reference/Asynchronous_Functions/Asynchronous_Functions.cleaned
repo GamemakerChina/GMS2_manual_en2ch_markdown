@@ -1,0 +1,131 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Asynchronous Functions
+  </h1>
+  In the context of
+  <span>
+   GameMaker
+  </span>
+  , an asynchronous function is one that sends out to a web server, or asks for user input, or even streams data, while letting
+  <span>
+   GameMaker
+  </span>
+  continue to run without blocking the game being run. When the information
+  <a>
+   callback
+  </a>
+  is received a special
+  <b>
+   Async Event
+  </b>
+  is fired which, in turn, allows any instance with an Async Event assigned to it to execute further functions (although this does not have to be the case). So, basically, it's a way to communicate with some external resource (server, user or device) without the game or project stopping while waiting for a reply.
+  
+  
+   Why is this important? Well, since it allows
+  <span>
+   GameMaker
+  </span>
+  to continue functioning while sending or receiving data, and this means that you can do many things all without blocking the game loop like:
+  <ul>
+   <li>
+    stream data from the device into your game without the player waiting for things to load
+   </li>
+   <li>
+    have callback events to do things only when the correct information is received
+   </li>
+   <li>
+    communicate and interchange data with a web server
+   </li>
+  </ul>
+  This makes everything function in a much more fluid and unobtrusive way. It should be noted that the Async Events will be triggered for
+  <em>
+   all
+  </em>
+  instances that have them, so you can use an async function in one instance, and have the Asynchronous Event that deals with the reply in another one, or even various other ones. You can go here for more information on how the Asynchronous event works -
+  <a href="../../../The_Asset_Editors/Object_Properties/Async_Events.htm">
+   Asynchronous Events
+  </a>
+  .
+  
+  
+   The different type of asynchronous functions are listed in the sections below:
+  <ul>
+   <li>
+    <a>
+    </a>
+    <a href="HTTP/HTTP.htm">
+     <label>
+      HTTP
+     </label>
+    </a>
+   </li>
+   <li>
+    <a href="Dialog/Dialog.htm">
+     <label>
+      Dialog
+     </label>
+    </a>
+   </li>
+   <li>
+    <a href="Cloud_Saving/Cloud_Saving.htm">
+     <label>
+      Cloud Saving
+     </label>
+    </a>
+   </li>
+   <li>
+    <a href="Push_Notifications/Push_Notifications.htm">
+     <label>
+      Push Notifications
+     </label>
+    </a>
+   </li>
+   <li>
+    <a href="Facebook/Facebook.htm">
+     <label>
+      Facebook
+     </label>
+    </a>
+   </li>
+  </ul>
+  There are also a number of
+  <a href="../Buffers/Buffers.htm">
+   Buffer
+  </a>
+  functions that can be used for loading and saving buffers in an asynchronous manner, which are required when working on the different consoles that
+  <span>
+   GameMaker
+  </span>
+  supports, although they can also be used on the other target platforms:
+  <ul>
+   <li>
+    <a href="../Buffers/buffer_save_async.htm">
+     buffer_save_async
+    </a>
+   </li>
+   <li>
+    <a href="../Buffers/buffer_load_async.htm">
+     buffer_load_async
+    </a>
+   </li>
+   <li>
+    <a href="../Buffers/buffer_async_group_begin.htm">
+     buffer_async_group_begin
+    </a>
+   </li>
+   <li>
+    <a href="../Buffers/buffer_async_group_option.htm">
+     buffer_async_group_option
+    </a>
+   </li>
+   <li>
+    <a href="../Buffers/buffer_async_group_end.htm">
+     buffer_async_group_end
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

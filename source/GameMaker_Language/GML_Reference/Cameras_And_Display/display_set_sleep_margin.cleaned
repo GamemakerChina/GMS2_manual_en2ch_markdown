@@ -1,0 +1,174 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   display_set_sleep_margin
+  </h1>
+  This function can be used to set the sleep margin value used for the render timing of your game, and requires a millisecond value. The default values are as follows:
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Platform
+     </th>
+     <th>
+      Milliseconds
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Windows
+     </td>
+     <td>
+      10
+     </td>
+    </tr>
+    <tr>
+     <td>
+      macOS
+     </td>
+     <td>
+      10
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Ubuntu
+     </td>
+     <td>
+      10
+     </td>
+    </tr>
+    <tr>
+     <td>
+      HTML5
+     </td>
+     <td>
+      10
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Android
+     </td>
+     <td>
+      4
+     </td>
+    </tr>
+    <tr>
+     <td>
+      iOS
+     </td>
+     <td>
+      4
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Windows UWP
+     </td>
+     <td>
+      10
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Xbox
+     </td>
+     <td>
+      10
+     </td>
+    </tr>
+    <tr>
+     <td>
+      PS4
+     </td>
+     <td>
+      10
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Nintendo Switch
+     </td>
+     <td>
+      10
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  Note that even if the timing method is set to use vsync timing, the sleep margin will have some effect over the rendering of the game, and so you should take care when setting this value. For more information on display timing, please see
+  <a href="display_set_timing_method.htm">
+   <span>
+    display_set_timing_method()
+   </span>
+  </a>
+  .
+  <strong>
+   NOTE
+  </strong>
+  : In addition to the Sleep Margin, you can further control your performance and power consumption on Windows by adjusting the
+  <a href="../OS_And_Compiler/scheduler_resolution_set.htm">
+   thread scheduler's resolution
+  </a>
+  at runtime.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">display_set_sleep_margin(milliseconds);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      milliseconds
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The number of milliseconds for the sleep margin
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if display_get_timing_method() != tm_sleep
+{
+    display_set_timing_method(tm_sleep);
+    if display_get_sleep_margin() != 20
+    {
+        display_set_sleep_margin(20);
+    }
+}
+</code></pre>
+  The above code will check the timing method and then if it's not set to
+  <span>
+   tm_sleep
+  </span>
+  it will be set to that and the sleep margin set to 20.
+ </body>
+</html>

@@ -1,0 +1,46 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   current_weekday
+  </h1>
+  This
+  <b>
+   read only
+  </b>
+  variable will return the weekday as a value, where Sunday is 0 and Saturday is 6.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">current_weekday;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var day;
+switch(current_weekday)
+{
+    case 0: day = "Sunday"; break;
+    case 1: day = "Monday"; break;
+    case 2: day = "Tuesday"; break;
+    case 3: day = "Wednesday"; break;
+    case 4: day = "Thursday"; break;
+    case 5: day = "Friday"; break;
+    case 6: day = "Saturday"; break;
+}
+draw_text(32, 32, "Today is " + day +".");
+</code></pre>
+  The above code uses the
+  <span>
+   current_weekday
+  </span>
+  value to set a variable with the correct day in text, then draws that for the user to see.
+ </body>
+</html>

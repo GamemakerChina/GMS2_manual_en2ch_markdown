@@ -1,0 +1,119 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   part_system_automatic_update
+  </h1>
+  This function controls whether
+  <span>
+   GameMaker
+  </span>
+  should update the particle system automatically or not, and normally you would not need to use this function as the default value of
+  <span>
+   true
+  </span>
+  (automatic update is on) is what you wish to happen. However, for special effects or for pausing the game, you can set this to
+  <span>
+   false
+  </span>
+  and it will prevent any updates being carried out on the given particle system unless
+  <i>
+   explicitly
+  </i>
+  commanded by the use of the function
+  <a href="part_system_update.htm">
+   <span>
+    part_system_update()
+   </span>
+  </a>
+  or you use this function again to turn automatic updates on. No updating means that particles created in this system will no longer change position, colour or any other parameter and that emitters will cease to work too, "freezing" the system at the exact point in which the automatic update was set to
+  <span>
+   false
+  </span>
+  .
+  
+  
+   One thing to note is that if you are using the simple effects created by the functions
+  <a href="../effect_create_above.htm">
+   <span>
+    effect_create_above()
+   </span>
+  </a>
+  or
+  <a href="../effect_create_below.htm">
+   <span>
+    effect_create_below()
+   </span>
+  </a>
+  then you can use the values of 0 (for below effects) or 1 (for above effects) as the particle system index and so toggle the automatic update for these too (this will also work to toggle updating for the GML Visual particle effects).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">part_system_automatic_update(ind, automatic);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      ind
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Systems/part_system_create.htm">
+        Particle System ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the particle system to change.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      automatic
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Whether automatic updating is on (
+      <span>
+       true
+      </span>
+      ) or not (false).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if global.Pause
+{
+    part_system_automatic_update(global.Sname, false);
+}
+</code></pre>
+  The above code will switch off the particle updates if the global variable "Paused" is true.
+ </body>
+</html>

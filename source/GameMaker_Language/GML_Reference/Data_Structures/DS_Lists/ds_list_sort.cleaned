@@ -1,0 +1,86 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   ds_list_sort
+  </h1>
+  With this function you can sort all the values within a list, either in ascending or descending order. If the list contains strings, these will be sorted alphabetically, based on the English 26 letter alphabet.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">ds_list_sort(id, ascend);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Lists/ds_list_create.htm">
+        DS List ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The id of the list to sort.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      ascend
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Whether the values should be ascending (
+      <span>
+       true
+      </span>
+      ) or descending (
+      <span>
+       false
+      </span>
+      ) order.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if newgame
+{
+    ds_list_sort(name_list, true);
+}
+</code></pre>
+  The above code will sort the list indexed in the variable "name_list" if the variable "newgame" is flagged as
+  <span>
+   true
+  </span>
+  .
+ </body>
+</html>

@@ -1,0 +1,99 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   mp_grid_clear_cell
+  </h1>
+  This function can be used to clear a specific "cell" of an MP grid. Cells are
+  <i>
+   not
+  </i>
+  calculated as room coordinates, but rather as grid coordinates, where (0,0) is the top let corner of the grid. this means that to clear a cell at a specific position in the room, we must change the x and y coordinates into cell coordinate dividing them by the resolution of the MP grid. The code example below shows how this works.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">mp_grid_clear_cell(id, h, v);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Movement_And_Collisions/Motion_Planning/mp_grid_create.htm">
+        MP Grid ID
+       </a>
+      </span>
+     </td>
+     <td>
+      Index of the mp_grid that is to be used
+     </td>
+    </tr>
+    <tr>
+     <td>
+      h
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      Horizontal position of the cell to clear
+     </td>
+    </tr>
+    <tr>
+     <td>
+      v
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      vertical position of the cell to clear
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">with (obj_Box)
+{
+    mp_grid_clear_cell(grid, floor(x / 32), floor(y /32));
+    instance_destroy();
+}
+</code></pre>
+  The above code will make all "obj_Box" destroy themselves and have them mark the cells they occupied in the mp_grid indexed in the variable "grid" as free. In this example, we find the appropriate cell by taking the x/y coordinate of the object and dividing them by the resolution of the grid (using
+  <span>
+   floor
+  </span>
+  to keep the values as integers).
+ </body>
+</html>

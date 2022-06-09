@@ -1,0 +1,234 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   try / catch / finally
+  </h1>
+  The
+  <span>
+   try
+  </span>
+  ,
+  <span>
+   catch
+  </span>
+  and
+  <span>
+   finally
+  </span>
+  statements can be used in your game for error checking and permit you to test out blocks of code and control what happens if any
+  <a href="../../../Additional_Information/Errors/Runner_Errors.htm">
+   runtime exceptions
+  </a>
+  occur. Using these will prevent the exception ending the game and showing the standard error message to the user, but this means that you will have to handle what happens next in that case, like saving out log files - for example - and ending the game gracefully (note that if you choose to do nothing, your game may become unstable and not perform correctly).
+  
+  
+   At it's most basic the
+  <span>
+   try
+  </span>
+  syntax is as follows:
+  <pre><code class="language-gml">try
+{
+    &amp;amp;lt;statement1&amp;amp;gt;;
+    &amp;amp;lt;statement2&amp;amp;gt;;
+    ...
+}
+</code></pre>
+  However, having a
+  <span>
+   try
+  </span>
+  without anything to actually handle any exceptions the code may produce will not be very helpful, so we usually pair it with a
+  <span>
+   catch
+  </span>
+  , with the following syntax:
+  <pre><code class="language-gml">try
+{
+    &amp;amp;lt;statement1&amp;amp;gt;;
+    &amp;amp;lt;statement2&amp;amp;gt;;
+    ...
+}
+catch(&amp;amp;lt;variable&amp;amp;gt;)
+{
+    &amp;amp;lt;statement1&amp;amp;gt;;
+    &amp;amp;lt;statement2&amp;amp;gt;;
+    ...
+}
+</code></pre>
+  What
+  <span>
+   catch
+  </span>
+  does is permit you to run extra code supplied in the following block when an exception from the previous
+  <span>
+   try
+  </span>
+  has been caught. If this is a runtime exception, then the supplied variable can be used to access a
+  <a href="../Structs.htm">
+   struct
+  </a>
+  which will contain the following information:
+  <pre><code class="language-gml">{
+message : "",               // a string that is a short message for this exception
+longMessage : "",           // a string that is a longer message for this exception
+script : "",                // a string that describes where the exception came from
+stacktrace : [ "", "" ],    // an array of strings that is the stack frame the exception was generated
+}
+</code></pre>
+  A simple example of use is shown below:
+  <pre><code class="language-gml">var a = 0, b = 0, c = 0;
+try
+{
+    c = a div b;
+}
+catch( _exception)
+{
+    show_debug_message(_exception.message);
+    show_debug_message(_exception.longMessage);
+    show_debug_message(_exception.script);
+    show_debug_message(_exception.stacktrace);
+}
+</code></pre>
+  It may be that you want to run some code regardless of whether an exception was thrown or not, and so for that you can add in a
+  <span>
+   finally
+  </span>
+  block. The
+  <span>
+   finally
+  </span>
+  syntax is:
+  <pre><code class="language-gml">finally
+{
+    &amp;amp;lt;statement1&amp;amp;gt;;
+    &amp;amp;lt;statement2&amp;amp;gt;;
+    etc...
+}
+</code></pre>
+  It is worth noting that you can have any combination of these together, ie:
+  <ul>
+   <li>
+    <span>
+     try
+    </span>
+    /
+    <span>
+     finally
+    </span>
+   </li>
+   <li>
+    <span>
+     try
+    </span>
+    /
+    <span>
+     catch
+    </span>
+   </li>
+   <li>
+    <span>
+     try
+    </span>
+    /
+    <span>
+     catch
+    </span>
+    /
+    <span>
+     finally
+    </span>
+   </li>
+  </ul>
+  Note that within the
+  <span>
+   finally
+  </span>
+  block you
+  <em>
+   cannot
+  </em>
+  use
+  <a href="break.htm">
+   <span>
+    break
+   </span>
+  </a>
+  ,
+  <a href="continue.htm">
+   <span>
+    continue
+   </span>
+  </a>
+  ,
+  <a href="exit.htm">
+   <span>
+    exit
+   </span>
+  </a>
+  or
+  <a href="return.htm">
+   <span>
+    return
+   </span>
+  </a>
+  statements as they have no meaning in this context and the compiler will generate an error if they are used.
+  
+  
+   Finally, you can also nest various
+  <span>
+   try
+  </span>
+  /
+  <span>
+   catch
+  </span>
+  /
+  <span>
+   finally
+  </span>
+  within each other, for example:
+  <pre><code class="language-gml">var a = 0, b = 0, c = 0;
+try
+{
+    try
+    {
+        c = a div b;
+    }
+    finally
+    {
+        ++a;
+    }
+}
+catch(_exception)
+{
+    ++a;
+    show_debug_message(_exception.message);
+    show_debug_message(_exception.longMessage);
+    show_debug_message(_exception.script);
+    show_debug_message(_exception.stacktrace);
+}
+finally
+{
+    show_debug_message("a = " + string(a));
+}
+</code></pre>
+  It is worth noting that you can take over the default GML error message and use your own handler code by calling the function
+  <a href="../../GML_Reference/Debugging/exception_unhandled_handler.htm">
+   <span>
+    exception_unhandled_handler()
+   </span>
+  </a>
+  . This
+  <a href="../Runtime_Functions.htm">
+   runtime function
+  </a>
+  permits you to supply a custom
+  <a href="../Method_Variables.htm">
+   method
+  </a>
+  to use that will be called whenever any unhandled exceptions occur in your game.
+ </body>
+</html>

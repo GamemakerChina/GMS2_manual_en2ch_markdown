@@ -1,0 +1,122 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Time Source Units
+  </h1>
+  <table>
+   <colgroup>
+    <col/>
+    <col/>
+    <col/>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Time_Sources/Time_Source_Units.htm">
+        Time Source Unit Constant
+       </a>
+      </span>
+     </th>
+    </tr>
+    <tr>
+     <th>
+      Constant
+     </th>
+     <th>
+      Description
+     </th>
+     <th>
+      Value
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       time_source_units_seconds
+      </span>
+     </td>
+     <td>
+      Use seconds for the
+      <span>
+       Time Source
+      </span>
+      period (frame-independent)
+     </td>
+     <td>
+      0
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       time_source_units_frames
+      </span>
+     </td>
+     <td>
+      Use frames for the
+      <span>
+       Time Source
+      </span>
+      period (frame-dependent)
+     </td>
+     <td>
+      1
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  These constants are used in
+  <a href="time_source_create.htm">
+   <span>
+    time_source_create()
+   </span>
+  </a>
+  and
+  <a href="time_source_reconfigure.htm">
+   <span>
+    time_source_reconfigure()
+   </span>
+  </a>
+  to set the units used for the
+  <span>
+   Time Source
+  </span>
+  's period, and are returned by
+  <a href="time_source_get_units.htm">
+   <span>
+    time_source_get_units()
+   </span>
+  </a>
+  .
+   
+   
+    If you use seconds, your
+  <span>
+   Time Source
+  </span>
+  will run independently from the game's framerate.
+   
+   
+    If you use frames, your
+  <span>
+   Time Source
+  </span>
+  will be dependent on the game's framerate.
+   
+   
+    You can also use BPM (beats-per-minute) as a unit by calling
+  <a href="time_bpm_to_seconds.htm">
+   <span>
+    time_bpm_to_seconds()
+   </span>
+  </a>
+  to convert your BPM value to a period in seconds, and then using
+  <span>
+   time_source_units_seconds
+  </span>
+  as the unit.
+ </body>
+</html>

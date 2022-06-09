@@ -1,0 +1,288 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   font_add
+  </h1>
+  This function can be used to add a font to your game from a font file present in the
+  <a href="../../../../Settings/Included_Files.htm#h">
+   Included Files
+  </a>
+  . You can define the size of the font (in points), as well as whether the font should be
+  <b>
+   bold
+  </b>
+  or
+  <i>
+   italic
+  </i>
+  , and you can also define the range of characters to include. The function returns an
+  <i>
+   index
+  </i>
+  value that should be stored in a variable as this will be needed in all further code that refer to this font, or it will return
+  <span>
+   -1
+  </span>
+  if the function fails for any reason.
+  
+  
+   Note that the font file must be either a
+  <span>
+   *.ttf
+  </span>
+  or
+  <span>
+   *.otf
+  </span>
+  file, which can also be useful for adding non-standard fonts like Asian or Arabic fonts.
+  <b>
+   WARNING!:
+  </b>
+  If you include such a font in the Included Files, it
+  <b>
+   must be licensed
+  </b>
+  for distribution with the game.
+  
+  
+   For the HTML5 target module, this function can only be used to add
+  <b>
+   Web Fonts
+  </b>
+  , and will only work if WebGL is
+  <b>
+   not
+  </b>
+  enabled - if WebGL is enabled then you must use a general font resource (i.e.: using
+  <a href="../../Drawing/Text/draw_set_font.htm">
+   <span>
+    draw_set_font()
+   </span>
+  </a>
+  along with a font from the Asset Browser) or bitmap fonts (see
+  <a href="font_add_sprite.htm">
+   <span>
+    font_add_sprite()
+   </span>
+  </a>
+  ).
+  <b>
+   IMPORTANT!
+  </b>
+  When targeting HTML5, italics and bold text is only supported if the font asset or web font itself has these characters included. They will not be synthesised from the base font.
+  
+  
+   When loading a font from a file the
+  <i>
+   size
+  </i>
+  of the font is in
+  <b>
+   pixels
+  </b>
+  and the
+  <i>
+   first
+  </i>
+  and
+  <i>
+   last
+  </i>
+  values are ignored, meaning all glyphs in the font will be added. Fonts added in this way are assigned to their own texture page, so care should be taken when using this function as it will increment the number of texture swaps when drawing. It is also worth noting that fonts may appear slightly larger when drawn, since glyphs may have parts that are drawn outside of the bounding box defined for the font. You should be aware too that there is a limitation of around 200 glyphs that can be rendered in a single frame for a particular font.
+  
+  
+   By default, added fonts will have anti-aliasing enabled. However you can check the state of AA at any time using the function
+  <a href="font_add_get_enable_aa.htm">
+   <span>
+    font_add_get_enable_aa()
+   </span>
+  </a>
+  and you can enable/disable AA using the function
+  <a href="font_add_enable_aa.htm">
+   <span>
+    font_add_enable_aa()
+   </span>
+  </a>
+  .
+  <b>
+   <span>
+    NOTE
+   </span>
+  </b>
+  When you load a font into
+  <span>
+   GameMaker
+  </span>
+  you must remember to remove it again (with
+  <span>
+   <a href="font_delete.htm">
+    <span>
+     font_delete()
+    </span>
+   </a>
+  </span>
+  ) when no longer needed, otherwise there is risk of a memory leak which will slow down and eventually crash your game.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">font_add(name, size, bold, italic, first, last);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      name
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The path of the font file in the Included Files (*.
+      <span>
+       ttf
+      </span>
+      or
+      <span>
+       *.otf
+      </span>
+      ).
+     </td>
+    </tr>
+    <tr>
+     <td>
+      size
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The size of the font - points for Web Fonts, pixels for file fonts.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      bold
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Whether the font is bold (
+      <span>
+       true
+      </span>
+      ) or not (
+      <span>
+       false
+      </span>
+      ).
+     </td>
+    </tr>
+    <tr>
+     <td>
+      italic
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Whether the font is italic (
+      <span>
+       true
+      </span>
+      ) or not (
+      <span>
+       false
+      </span>
+      ).
+     </td>
+    </tr>
+    <tr>
+     <td>
+      first
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The first character to include (if you're unsure, go for 32).
+     </td>
+    </tr>
+    <tr>
+     <td>
+      last
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The last character to include (if you're unsure, go for 128).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../The_Asset_Editors/Fonts.htm">
+ Font Asset
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">new_font = font_add("gamefont.ttf", 24, true, true, 32, 128);
+</code></pre>
+  This will load the
+  <span>
+   "
+  </span>
+  <span>
+   gamefont.ttf
+  </span>
+  <span>
+   "
+  </span>
+  file present in the game's Included Files with a 24pt size. The font will be bold and italic, and the font range will include capital and lower case letters, numbers and all common punctuation. After the font is loaded, its ID will be stored in the
+  <span>
+   new_font
+  </span>
+  variable.
+ </body>
+</html>

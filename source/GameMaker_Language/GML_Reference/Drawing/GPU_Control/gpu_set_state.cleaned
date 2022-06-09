@@ -1,0 +1,70 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   gpu_set_state
+  </h1>
+  This function will set the current GPU state using the passed-in
+  <a href="../../Data_Structures/DS_Maps/DS_Maps.htm">
+   DS Map
+  </a>
+  . The supplied map can be created using the function
+  <span>
+   <a href="gpu_get_state.htm">
+    gpu_get_state()
+   </a>
+   .
+  </span>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">gpu_set_state(ds_map);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      ds_map
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/ds_map_create.htm">
+        DS Map ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The GPU state to set as a
+      <span>
+       DS Map
+      </span>
+      .
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">gpu_set_state(gpu_map);
+</code></pre>
+  The above code sets the GPU state using the map supplied in the variable "gpu_map".
+ </body>
+</html>

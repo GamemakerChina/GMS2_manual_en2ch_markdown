@@ -1,0 +1,229 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   while
+  </h1>
+  The GameMaker Language has a number of ways that you can perform
+  <i>
+   loops
+  </i>
+  , one of the most important is the
+  <span>
+   while
+  </span>
+  loop. This loop function has the form:
+  <pre><code class="language-gml">while (&amp;amp;lt;expression&amp;amp;gt;)
+{
+    &amp;amp;lt;statement&amp;amp;gt;;
+    &amp;amp;lt;statement&amp;amp;gt;;
+    ...
+}
+</code></pre>
+  Here you have a
+  <a>
+   statement
+  </a>
+  that is iterated over again and again based on the results of the evaluation of an
+  <a>
+   expression
+  </a>
+  , ie: with a
+  <span>
+   while
+  </span>
+  loop, as long as the expression evaluates to
+  <span>
+   true
+  </span>
+  , the statement (which can also be a code block of multiple statements with curly brackets
+  <span>
+   {}
+  </span>
+  ) is executed. Below you can find an example of a typical way to use "while":
+  <pre><code class="language-gml">while (place_meeting(x, y, obj_Wall))
+{
+    x -= 1;
+}
+</code></pre>
+  The above code is checking for a collision between the calling instance and a "wall" instance, and it will perform multiple
+  <a>
+   iteration
+  </a>
+  <span>
+   s
+  </span>
+  while one is occurring - moving the instance left by one pixel - until the instance is no longer in collision.
+  <strong>
+   When should you use a
+   <span>
+    while
+   </span>
+   loop?
+  </strong>
+  It should be used any time you want to repeat one or more statements, but don't actually know - or care - how many times it has to repeat, keeping in mind that if the initial evaluation is
+  <span>
+   false
+  </span>
+  , the statements may not even be run.
+  
+  
+   Please not that you should
+  <strong>
+   be very careful with your
+   <span>
+    while
+   </span>
+   loops
+  </strong>
+  ! You can easily make
+  <i>
+   infinite
+  </i>
+  loops, in which case your game will hang and not react to any user input anymore and need to be force closed. For example:
+  <pre><code class="language-gml">while (!place_free(x, y))
+{
+    x = random(room_width);
+    y = random(room_height);
+}
+</code></pre>
+  Now, the above code may work fine, but it may also cause an infinite loop if the instance is unable to find an empty position to move to, and this will cause the game to hang. If you find yourself in a position where this kind of thing is a possibility, then you should either use a different non-blocking loop kind, or use an additional variable check in the expression (you can use multiple expressions along with the
+  <a href="../Expressions_And_Operators.htm">
+   <span>
+    and
+   </span>
+   (&amp;
+   <span>
+    &amp;
+   </span>
+   )
+  </a>
+  ,
+  <a href="../Expressions_And_Operators.htm">
+   <span>
+    or
+   </span>
+   (
+   <span>
+    ||
+   </span>
+   )
+  </a>
+  and
+  <a href="../Expressions_And_Operators.htm">
+   <span>
+    xor
+   </span>
+   (
+   <span>
+    ^^
+   </span>
+   )
+  </a>
+  <a>
+   operator
+  </a>
+  <span>
+   s
+  </span>
+  for the check):
+  <pre><code class="language-gml">var _check = 0;
+while ((!place_free(x, y)) &amp;amp;amp;&amp;amp;amp; (_check &amp;amp;lt; 100))
+{
+    x = random(room_width);
+    y = random(room_height);
+    _check += 1;
+}
+if _check &amp;amp;gt;= 100
+{
+    // code failed, so deal with it
+}
+</code></pre>
+  Alternatively you can use the
+  <span>
+   <a href="break.htm">
+    break
+   </a>
+  </span>
+  statement to break out of the loop, for example, the following code will generate 100 random numbers then continue, even though the
+  <span>
+   while
+  </span>
+  evaluation is
+  <em>
+   always
+  </em>
+  going to be
+  <span>
+   true
+  </span>
+  :
+  <pre><code class="language-gml">var i = 0;
+while (true)
+{
+    x[i] = random(room_width);
+    y[i] = random(room_height);
+    if ((i++) &amp;amp;gt;= 100)
+    {
+        break;
+    }
+}
+</code></pre>
+  You may also use the
+  <a href="continue.htm">
+   continue
+  </a>
+  statement in a
+  <span>
+   while
+  </span>
+  loop. Using this will end the current loop iteration and restart the loop again on a new iteration, for example:
+  <pre><code class="language-gml">var file = file_text_open_read("Game_Data.txt");
+var _num = 0;
+while (!file_text_eof(file))
+{
+    var _s = file_text_readln(file);
+
+    if (_s == "")
+    {
+        continue;
+    }
+
+    str[num++] = _s;
+}
+
+file_text_close(file);
+</code></pre>
+  This code above will open a file and read a line from it each loop iteration until the end of the file contents are reached. If the line being read is an empty string, the current loop iteration is ended using the
+  <span>
+   continue
+  </span>
+  statement and a new iteration will be started, otherwise the string is added into an
+  <a href="../Arrays.htm">
+   array
+  </a>
+  and the array position incremented.
+  
+  
+   For more examples of loop functions please see the sections on
+  <a href="repeat.htm">
+   <span>
+    repeat
+   </span>
+  </a>
+  ,
+  <a href="do___until.htm">
+   <span>
+    do... until
+   </span>
+  </a>
+  , and
+  <a href="for.htm">
+   <span>
+    for
+   </span>
+  </a>
+  .
+ </body>
+</html>

@@ -1,0 +1,74 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   timeline_exists
+  </h1>
+  With this function you can check and see whether a time line exists (returns
+  <span>
+   true
+  </span>
+  ) or not (returns
+  <span>
+   false
+  </span>
+  ). This is particularly useful when creating Timelines dynamically using the
+  <a href="timeline_add.htm">
+   <span>
+    timeline_add()
+   </span>
+  </a>
+  function, but you should note that if you search for an uninitialised variable (that would otherwise be assigned to a time line's index) an error will be thrown.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">timeline_exists(ind);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      ind
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Timelines.htm">
+        Timeline Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the time line to check for.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if timeline_exists(global.tl)
+{
+    timeline_delete(global.tl);
+}
+</code></pre>
+  The above code checks to see if a time line exists and is indexed in the global variable "tl" and if so it then deletes that time line.
+ </body>
+</html>

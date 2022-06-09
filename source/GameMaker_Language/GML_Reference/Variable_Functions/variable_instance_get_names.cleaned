@@ -1,0 +1,98 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   variable_instance_get_names
+  </h1>
+  With this function you can retrieve an array populated with the
+  <b>
+   instance
+  </b>
+  variable names for an instance, or the
+  <b>
+   global
+  </b>
+  variables for a game. When you pass in an instance ID value, each entry in the array will be a string of the variable name that corresponds to an
+  <a href="../../GML_Overview/Variables_And_Variable_Scope.htm">
+   instance scope
+  </a>
+  variable that has been created in the instance. However if you pass in the keyword
+  <span>
+   global
+  </span>
+  , each entry in the array will be a string of the variable name that corresponds to an
+  <a href="../../GML_Overview/Variables_And_Variable_Scope.htm">
+   global scope
+  </a>
+  variable.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">variable_instance_get_names(instance_id/global);
+</code></pre>
+  <table>
+   <colgroup>
+    <col/>
+    <col/>
+    <col/>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      instance_id/global
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/id.htm">
+        Instance ID
+       </a>
+      </span>
+      or
+      <span>
+       global
+      </span>
+     </td>
+     <td>
+      The unique ID value of the instance to check or the keyword
+      <span>
+       global
+      </span>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Arrays.htm">
+ Array
+</a>
+(each entry is a string)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var str = "";
+var array = variable_instance_get_names(id);
+show_debug_message("Variables for " + object_get_name(object_index) + string(id));
+for (var i = 0; i &amp;amp;lt; array_length(array); i++;)
+{
+    str = array[i] + ":" + string(variable_instance_get(id, array[i]));
+    show_debug_message(str);
+}
+</code></pre>
+  The above code will retrieve an array of all instance scope variables for the instance running the code block and then display these along with their values in the debug output.
+ </body>
+</html>

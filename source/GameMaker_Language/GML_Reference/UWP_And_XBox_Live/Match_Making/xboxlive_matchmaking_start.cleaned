@@ -1,0 +1,62 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   xboxlive_matchmaking_start
+  </h1>
+  This function must be called before you can start any multi-player session for the user. It takes the User ID pointer, which you can retrieve for a particular game pad by calling the
+  <a href="../Users_And_Accounts/xboxlive_user_for_pad.htm">
+   <span>
+    xboxlive_user_for_pad()
+   </span>
+  </a>
+  function, and will initialise the multi-player API.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">xboxlive_matchmaking_start(user_id);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      user_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/UWP_And_XBox_Live/Users_And_Accounts/xboxlive_get_user.htm">
+        Xbox User ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The user ID pointer to use
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">global.UserID = xboxlive_user_for_pad(global.PadIndex); xboxlive_matchmaking_start(global.UserID);
+</code></pre>
+  The above code gets the user ID for the given pad index and then initialises multiplayer capabilities.
+ </body>
+</html>

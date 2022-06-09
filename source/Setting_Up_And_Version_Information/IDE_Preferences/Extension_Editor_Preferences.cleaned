@@ -1,0 +1,31 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Extension Editor Preferences
+  </h1>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Setup_And_Version/Preferences/ExtensionEditor_Prefs.png"/><br/>
+  The
+  <strong>
+   Extension Editor preferences
+  </strong>
+  cover a few options related to the messages that you are
+    shown when using it, with the exact details outlined below:
+  <ul>
+   <li>
+    <strong>
+     Automatic response to file deletion
+    </strong>
+    : The default setting here is to show a message asking if you are sure you want to delete, but you can set this to "OK" so that all deletions are completed without this message as if you'd
+      clicked okay already.
+   </li>
+   <li>
+    <strong>
+     Automatic response to proxy file deletion
+    </strong>
+    : As above, this controls the message you are shown on deletion of any proxy files.
+   </li>
+  </ul>
+ </body>
+</html>

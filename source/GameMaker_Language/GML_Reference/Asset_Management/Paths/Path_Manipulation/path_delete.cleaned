@@ -1,0 +1,81 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   path_delete
+  </h1>
+  You can use this code to remove a path from memory. If this path has been created dynamically using
+  <a href="path_add.htm">
+   <span>
+    path_add()
+   </span>
+  </a>
+  , the variable that holds the path index will no longer be valid for accessing the path as it no longer exists, and if the path was created using the
+  <a href="../../../../../The_Asset_Editors/Paths.htm">
+   Path Editor
+  </a>
+  that path can no longer be accessed in the
+  <i>
+   whole game
+  </i>
+  as you are permanently deleting it.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">path_delete(index);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../The_Asset_Editors/Paths.htm">
+        Path Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the path to delete.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var t_path = path_add();
+if mp_grid_path(grid, t_path, x, y, obj_Player.x, obj_Player.y, 1)
+{
+    path_assign(mypath, t_path);
+}
+path_delete(t_path);
+</code></pre>
+  The above code will create a path and store its index in a local variable. This path is then used to store an
+  <a href="../../../Movement_And_Collisions/Motion_Planning/mp_grid_path.htm">
+   <span>
+    mp_grid_path()
+   </span>
+  </a>
+  generated path which, if it succeeds in finding its way to the target, is then assigned to the path indexed in "mypath". Finally the "t_path" is deleted.
+ </body>
+</html>

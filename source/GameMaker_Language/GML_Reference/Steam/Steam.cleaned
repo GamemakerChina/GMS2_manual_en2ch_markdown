@@ -1,0 +1,25 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Steam
+  </h1>
+  All Steam functions in
+  <span>
+   GameMaker
+  </span>
+  have been moved out of the base runner and are now part of an extension,
+  <a href="https://marketplace.yoyogames.com/assets/10709/steamworks-ext">
+   which can be downloaded here
+  </a>
+  .
+  
+  
+   For information on the Steam extension functions, please refer to the manual provided with the extension package, or the
+  <a href="https://extension-manuals.yoyogames.com/#t=GameMaker_Extension_Manual.htm">
+   extension manual on this website
+  </a>
+  .
+ </body>
+</html>

@@ -1,0 +1,250 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   draw_surface_part_ext
+  </h1>
+  This function will draw a part of the chosen surface at the given position following the same rules as per
+  <a href="draw_surface_part.htm">
+   <span>
+    draw_surface_part()
+   </span>
+  </a>
+  , only now you can scale the part, blend a colour with it, or change its alpha when drawing it to the screen (the same as when drawing a surface with
+  <a href="draw_surface_ext.htm">
+   <span>
+    draw_surface_ext()
+   </span>
+  </a>
+  ).
+  <b>
+  </b>
+  <span>
+   NOTE
+  </span>
+  When working with surfaces there is the possibility that they can cease to exist at any time due to them being stored in texture memory. You should
+  <b>
+   ALWAYS
+  </b>
+  check that a surface exists using
+  <span>
+   <a href="surface_exists.htm">
+    <span>
+     surface_exists()
+    </span>
+   </a>
+  </span>
+  before referencing them directly.
+  <span>
+   TIP
+  </span>
+  How a surface appears depends on its contents, especially the alpha values inside the surface. A surface
+  <a href="../Colour_And_Alpha/draw_clear_alpha.htm">
+   cleared
+  </a>
+  with an alpha of 0 may appear different from a surface cleared with an alpha of 1, due to the way they blend with the background. Take care of this whenever you notice a difference in the way something renders on a custom surface as opposed to the
+  <span>
+   <a href="application_surface.htm">
+    application_surface
+   </a>
+  </span>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">draw_surface_part_ext(id, left, top, w, h, x, y, xscale, yscale, colour, alpha);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Drawing/Surfaces/surface_create.htm">
+        Surface ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The unique ID value of the surface to draw.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      left
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The left position in the surface of the part to be drawn.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      top
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The top position in the surface of the part to be drawn.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      w
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The width of the part to be draw, from left.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      h
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The height of the part to be drawn, from top.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      x
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x position of where to draw the surface.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y position of where to draw the surface.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      xscale
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The horizontal scaling the part should be drawn with.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      yscale
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The vertical scaling the part should be drawn with.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      colour
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Drawing/Colour_And_Alpha/Colour_And_Alpha.htm">
+        Colour
+       </a>
+      </span>
+     </td>
+     <td>
+      The colour blending the part should be drawn with.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      alpha
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The alpha transparency the part should be drawn with.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">draw_surface_part_ext(surf, 8, 8, 32, 32, x, y, 2, 0.5, c_black, 1);
+</code></pre>
+  This will draw a 32x32 pixel area from 8x8 pixels into the surface indexed in the variable "surf". It will be stretched to double its usual width but half its usual height. It will be opaque and it will be blended with black (turning it into a silhouette).
+ </body>
+</html>

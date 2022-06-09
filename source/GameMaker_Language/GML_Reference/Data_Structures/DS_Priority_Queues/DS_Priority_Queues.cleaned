@@ -1,0 +1,121 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   DS Priority Queues
+  </h1>
+  A DS priority queue is a special data structure similar to a
+  <a href="../DS_Queues/DS_Queues.htm">
+   <span>
+    DS queue
+   </span>
+  </a>
+  , only here the queue of values is ordered by the priorities (always real numbers) that the values have been assigned. This structure can be very useful for constructing leaderboards or information lists where the importance of each entry can be weighted.
+  <b>
+   NOTE
+  </b>
+  : As with all dynamic resources, data structures take up memory and so should
+  <b>
+   always
+  </b>
+  be destroyed when no longer needed to prevent memory leaks which will slow down and eventually crash your game.
+  <b>
+   NOTE
+  </b>
+  : If you need to check if a data structure exists, you can use the
+  <span>
+   <a href="../ds_exists.htm">
+    <span>
+     ds_exists()
+    </span>
+   </a>
+  </span>
+  function.
+  
+  
+   The following functions exist that deal with DS priority queues:
+  <ul>
+   <li>
+    <a href="ds_priority_create.htm">
+     ds_priority_create
+    </a>
+   </li>
+   <li>
+    <a href="ds_priority_destroy.htm">
+     ds_priority_destroy
+    </a>
+   </li>
+   <li>
+    <a href="ds_priority_clear.htm">
+     ds_priority_clear
+    </a>
+   </li>
+   <li>
+    <a href="ds_priority_empty.htm">
+     ds_priority_empty
+    </a>
+   </li>
+   <li>
+    <a href="ds_priority_size.htm">
+     ds_priority_size
+    </a>
+   </li>
+   <li>
+    <a href="ds_priority_add.htm">
+     ds_priority_add
+    </a>
+   </li>
+   <li>
+    <a href="ds_priority_change_priority.htm">
+     ds_priority_change_priority
+    </a>
+   </li>
+   <li>
+    <a href="ds_priority_delete_max.htm">
+     ds_priority_delete_max
+    </a>
+   </li>
+   <li>
+    <a href="ds_priority_delete_min.htm">
+     ds_priority_delete_min
+    </a>
+   </li>
+   <li>
+    <a href="ds_priority_delete_value.htm">
+     ds_priority_delete_value
+    </a>
+   </li>
+   <li>
+    <a href="ds_priority_find_max.htm">
+     ds_priority_find_max
+    </a>
+   </li>
+   <li>
+    <a href="ds_priority_find_min.htm">
+     ds_priority_find_min
+    </a>
+   </li>
+   <li>
+    <a href="ds_priority_find_priority.htm">
+     ds_priority_find_priority
+    </a>
+   </li>
+   <li>
+    <a href="ds_priority_copy.htm">
+     ds_priority_copy
+    </a>
+   </li>
+   <li>
+    <a href="ds_priority_read.htm">
+     ds_priority_read
+    </a>
+   </li>
+   <li>
+    <a href="ds_priority_write.htm">
+     ds_priority_write
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

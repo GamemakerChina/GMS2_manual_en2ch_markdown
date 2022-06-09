@@ -1,0 +1,90 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   keyboard_check_pressed
+  </h1>
+  With this function you can check to see if a key has been pressed or not. Unlike the
+  <a href="keyboard_check.htm">
+   <span>
+    keyboard_check()
+   </span>
+  </a>
+  function, this function will only run once for every time the key is pressed down, so for it to trigger again, the key must be first released and then pressed again. The function will take a keycode value as returned by the function
+  <a href="../../Strings/ord.htm">
+   <span>
+    ord()
+   </span>
+  </a>
+  (only
+  <i>
+   capital
+  </i>
+  letters from A-Z or numbers from 0-9), or any of the
+  <span>
+   vk_*
+  </span>
+  constants listed on the main
+  <a href="Keyboard_Input.htm">
+   Keyboard Input
+  </a>
+  page.
+  <h4>
+   <b>
+    Syntax:
+   </b>
+  </h4>
+  <pre><code class="language-gml">keyboard_check_pressed(key);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      key
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Game_Input/Keyboard_Input/Keyboard_Input.htm">
+        Virtual Key Constant (vk_*)
+       </a>
+      </span>
+     </td>
+     <td>
+      The key to check the pressed state of.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   <b>
+    Returns:
+   </b>
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   <b>
+    Example:
+   </b>
+  </h4>
+  <pre><code class="language-gml">if keyboard_check_pressed(vk_anykey)
+{
+    room_goto_next();
+}
+</code></pre>
+  The above code will advance to the next room if the player presses any of the keyboard's keys (working like a "Press Any Key to Continue" prompt).
+ </body>
+</html>

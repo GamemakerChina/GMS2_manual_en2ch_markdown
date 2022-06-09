@@ -1,0 +1,58 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Get_Buffer_Position.png"/><br/>
+   Get Buffer Position
+  </h1>
+  This action can be used to retrieve the current position for reading/writing to the buffer. When you create a buffer, the read/write position is set at 0 bytes, and as you add data to the buffer this position will move along sequentially, meaning that
+    you can use this action to get the number of bytes into the buffer that it is set to at any time. You supply the unique buffer ID value as returned by the action
+  <a href="Create_Buffer.htm">
+   Create Buffer
+  </a>
+  and then give a target variable to return
+    the position value to. The target variable can be flagged as being a temporary local variable, in which case it will be created for you and removed from memory again at the end of the current action script or event.
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/a_Buffers_Get_Buffer_Position.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Buffer
+     </td>
+     <td>
+      The buffer index (stored in a variable)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Position
+     </td>
+     <td>
+      The read/write position (in bytes) within the buffer
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/e_Buffers_Get_Buffer_Position.png"/><br/>
+  The above action block code gets the read/write position for the given buffer
+    and if it is not 0 (ie: at the start of the buffer) it is set to the start of the buffer.
+ </body>
+</html>

@@ -1,0 +1,132 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   physics_fixture_set_density
+  </h1>
+  The density of something is defined as its mass per unit volume, which basically means
+  <i>
+   how much mass is crammed into the space it takes up in the world
+  </i>
+  . So, a balloon would have a low density as it has little mass that occupies a large space,
+    while a lead bar would have a high density as it has a great mass, yet occupies little space.
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/GML/Reference/Physics/physics_fixture_set_density_image.png"/><br/>
+  In the
+  <span>
+   GameMaker
+  </span>
+  2D physics world, mass is calculated automatically
+    for you from the values you input for the
+  <b>
+   density
+  </b>
+  and by the
+  <b>
+   surface area
+  </b>
+  of the shape you define for the fixture. This will have a direct impact on how much inertia a fixture has as well as how it reacts to collisions and forces, so
+    if you make a small shape with a high density it will have a very large mass (like a bar of lead), but if you define a large shape with a low density it will have a much smaller mass (like a balloon).
+  <b>
+   NOTE
+  </b>
+  : If you wish the instance that is going to receive the fixture to be
+  <strong>
+   static
+  </strong>
+  (ie: immobile in the game world) then the density should be set to 0, essentially giving it an infinite density.
+  <span>
+   NOTE
+  </span>
+  A static fixture can be made
+  <strong>
+   kinematic
+  </strong>
+  (ie: it can move but without the effects of force or gravity) by making it have a density of 0 and then setting the
+  <span>
+   <a href="../Physics_Variables/phy_speed_x.htm">
+    <span>
+     phy_speed_x
+    </span>
+   </a>
+  </span>
+  ,
+  <span>
+   <a href="../Physics_Variables/phy_speed_y.htm">
+    <span>
+     phy_speed_y
+    </span>
+   </a>
+  </span>
+  , or
+  <span>
+   <a href="../Physics_Variables/phy_angular_velocity.htm">
+    <span>
+     phy_angular_velocity
+    </span>
+   </a>
+  </span>
+  variables.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">physics_fixture_set_density(fixture, density)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      fixture
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Physics/Fixtures/physics_fixture_create.htm">
+        Physics Fixture ID
+       </a>
+      </span>
+     </td>
+     <td>
+      the index of the fixture
+     </td>
+    </tr>
+    <tr>
+     <td>
+      density
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      the density of the fixture calculated as kg/m²
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">physics_fixture_set_density(fix_Balloon, 0.1);
+</code></pre>
+  The code above will set the density of the fixture indexed in "fix_Ballon" to 0.1.
+ </body>
+</html>

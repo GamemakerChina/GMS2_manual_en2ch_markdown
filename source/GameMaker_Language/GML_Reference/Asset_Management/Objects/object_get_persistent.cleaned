@@ -1,0 +1,70 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   object_get_persistent
+  </h1>
+  This function will tell you whether the object you are checking has been flagged as "persistent" or not. A persistent object is one that will cause any instances of it to be carried through from room to room unless they are explicitly destroyed. Please note that this is not an instance function! So, you can have a persistent object and a non-persistent instance of the same object and vice-versa. You can set an individual instances persistent flag using the
+  <a href="../Instances/Instance_Variables/persistent.htm">
+   <span>
+    persistent
+   </span>
+  </a>
+  instance variable.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">object_get_persistent(obj);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      obj
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Objects.htm">
+        Object Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the object to check.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if (!persistent) &amp;amp;amp;&amp;amp;amp; (object_get_persistent(object_index))
+{
+    persistent = true;
+}
+</code></pre>
+  The above code will check the instance running it to see if it is persistent or not as well as check the object index of the instance to see if it is flagged as persistent or not. If the instance is
+  <i>
+   not
+  </i>
+  persistent yet the object index is flagged as persistent, it will set "persistent" to true for that instance.
+ </body>
+</html>

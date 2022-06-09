@@ -1,0 +1,100 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   os_is_network_connected
+  </h1>
+  With this function you can check and see if your device currently has an internet connection and it will return
+  <span>
+   true
+  </span>
+  if it does, or
+  <span>
+   false
+  </span>
+  if it does not, and depending on the OS, it may attempt to make a connection before returning a value.
+  
+  
+   The function has an optional argument to enable/disable it attempting to make a connection when called, and this option is curently
+  <strong>
+   only
+  </strong>
+  for the Nintendo Switch target. When set to
+  <span>
+   true
+  </span>
+  the funtion will attempt to make a connection, and when set to
+  <span>
+   false
+  </span>
+  it will simply be limited to checking the connection. Note that attempting to make a connection may cause the Switch OS to hang for a few seconds.
+  <b>
+   <span>
+    NOTE
+   </span>
+  </b>
+  This function checks the internal device API that controls connections and so may return true if there is a bluetooth connection, a Wi-Fi connection, or even just a normal network connection that permits internet access.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">os_is_network_connected([attempt_connection]);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      attempt_connection
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      <span>
+       OPTIONAL
+      </span>
+      For the Nintendo Switch target
+      <strong>
+       only
+      </strong>
+      . Set to
+      <span>
+       true
+      </span>
+      to attempt an OS level connection when called.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if os_is_network_connected()
+{
+    global.connected = true;
+}
+</code></pre>
+  The above code checks to see if the device has a connection to the internet and if so it sets a global variable.
+ </body>
+</html>

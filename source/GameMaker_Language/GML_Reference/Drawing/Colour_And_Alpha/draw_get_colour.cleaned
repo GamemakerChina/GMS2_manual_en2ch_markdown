@@ -1,0 +1,36 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   draw_get_colour
+  </h1>
+  This function returns the current draw colour which is used for drawing forms, text, primitives and un-textured 3D models. This can be set with the
+  <a href="draw_set_colour.htm">
+   <span>
+    draw_set_colour()
+   </span>
+  </a>
+  function.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">draw_get_colour()
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Reference/Drawing/Colour_And_Alpha/Colour_And_Alpha.htm">
+ Colour
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var _cur_color = draw_get_color();
+draw_set_color(text_color);
+draw_text(x, y, text);
+draw_set_color(_cur_color);
+</code></pre>
+  The above code stores the current draw colour into a local variable, and changes the draw colour based on an instance variable. After drawing some text, it resets the colour back to the value stored in the local variable.
+ </body>
+</html>

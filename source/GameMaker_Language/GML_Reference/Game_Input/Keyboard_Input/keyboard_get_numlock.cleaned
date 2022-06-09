@@ -1,0 +1,54 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   keyboard_get_numlock
+  </h1>
+  You can use this function to find the status of the keypad number lock with
+  <b>
+   true
+  </b>
+  being returned for on, and
+  <b>
+   false
+  </b>
+  returned for off.
+  <b>
+   <span>
+    NOTE
+   </span>
+  </b>
+  This functionality is only available in the Windows exe builds and will not function on any other device.
+  <h4>
+   <b>
+    Syntax:
+   </b>
+  </h4>
+  <pre><code class="language-gml">keyboard_get_numlock();
+</code></pre>
+  <h4>
+   <b>
+    Returns:
+   </b>
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   <b>
+    Example:
+   </b>
+  </h4>
+  <pre><code class="language-gml">if keyboard_get_numlock()
+{
+    keyboard_set_numlock(false);
+}
+else
+{
+    keyboard_set_numlock(true);
+}
+</code></pre>
+  The above example code will get the state of the numberlock key and if it is on (true) it will set it to off (false) and vice-versa.
+ </body>
+</html>

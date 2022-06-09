@@ -1,0 +1,56 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   skeleton_get_num_bounds
+  </h1>
+  This function will return the number of bounding boxes associated with the skeleton animation sprite assigned to the instance running the code. This can then be used along with the function
+  <a href="skeleton_get_bounds.htm">
+   <span>
+    skeleton_get_bounds()
+   </span>
+  </a>
+  to retrieve data about each of the bounding boxes.
+  <span>
+   NOTE
+  </span>
+  The bounding box of a Spine sprite is set up in Spine itself, not in
+  <span>
+   GameMaker
+  </span>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">skeleton_get_num_bounds();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var num = skeleton_get_num_bounds();
+var yy = 60;
+for(var i = 0; i &amp;amp;lt; num; i++)
+{
+    var b_info = skeleton_get_bounds(i);
+    if b_info[0] &amp;amp;gt; 0
+    {
+        var data = b_info[1] + ":";
+        for(var j = 0; j &amp;amp;lt; b_info[0]; j++)
+        {
+            data += " (" + string(b_info[(j * 2) + 2]) + ", " + string(b_info[(j * 2) + 2 + 1]) + ")";
+        }
+        draw_text(20, yy, data);
+        yy += 20;
+    }
+}
+</code></pre>
+  The above code will loop through each of the bounding boxes associated with the currently assigned sprite and then draw that data as a string to the screen.
+ </body>
+</html>

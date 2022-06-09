@@ -1,0 +1,59 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   skeleton_animation_clear
+  </h1>
+  This function will clear the specified animation track of all animations, ready to be re-assigned.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">skeleton_animation_clear(track);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      track
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The animation track to clear.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if mouse_check_button(mb_right)
+{
+    skeleton_animation_clear(1);
+}
+</code></pre>
+  The above code will clear the animation track 1 if the right mouse button is pressed.
+ </body>
+</html>

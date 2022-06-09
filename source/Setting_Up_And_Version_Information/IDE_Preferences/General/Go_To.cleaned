@@ -1,0 +1,81 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Go To Preferences
+  </h1>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Setup_And_Version/Preferences/General_GoTo_Prefs.png"/><br/>
+  The preferences here are for the
+  <strong>
+   Go To
+  </strong>
+  window, which you can open using the keyboard shortcut
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Ctrl.png"/><br/>
+  /
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Cmd.png"/><br/>
+  + T or by
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_RMB.png"/><br/>
+  right-clicking on the empty area in a workspace.
+  <ul>
+   <li>
+    <strong>
+     Maximum number of search results to display
+    </strong>
+    : This option controls the maximum number of returned results when you use the Go To search window.
+   </li>
+   <li>
+    <strong>
+     Enable styling on search results (turn off for better performance)
+    </strong>
+    : This option enables or disables the text styling for the assets found in the Go To window, and is enabled by default. Disabling this should give better performance if you find the Go To search window to be slow on your system.
+   </li>
+   <li>
+    <strong>
+     Search In Assets
+    </strong>
+    : This option allows the Go To window to search through the Asset Browser for any assets that match the search term, and is enabled by default.
+   </li>
+   <li>
+    <strong>
+     Search In Preferences
+    </strong>
+    : This option allows the Go To window to search through the Preferences for any options that match the search term, and is enabled by default.
+   </li>
+   <li>
+    <strong>
+     Search in Redefine Keys
+    </strong>
+    : This option allows the Go To window to search through the
+    <a href="../Redefine_Keys_Preferences.htm">
+     Redefine Keys
+    </a>
+    menu for any options that match the search term, and is enabled by default.
+   </li>
+   <li>
+    <strong>
+     Search In Game Options
+    </strong>
+    : This option allows the Go To window to search through the Game Options for any options that match the search term, and is enabled by default.
+   </li>
+   <li>
+    <strong>
+     Search in user-defined Functions
+    </strong>
+    : This option allows the Go To window to search through your scripts and objects for any functions that match the search term, and is enabled by default. Note that this only works with the
+    <a href="../../../GameMaker_Language/GML_Overview/Script_Functions.htm">
+     script function
+    </a>
+    syntax (
+    <span>
+     function name()
+    </span>
+    ) and not with the method variable syntax (
+    <span>
+     name = function()
+    </span>
+    ).
+   </li>
+  </ul>
+ </body>
+</html>

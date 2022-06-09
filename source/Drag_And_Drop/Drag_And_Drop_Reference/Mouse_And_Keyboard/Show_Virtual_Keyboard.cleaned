@@ -1,0 +1,575 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/i_VirtualKeyboard_Show.png"/><br/>
+   Show Virtual Keyboard
+  </h1>
+  This action can be used to show the virtual keyboard on the device running the game. When you call this action you will be asked to provide one of the following constants for each of the first three arguments:
+  <ul>
+   <li>
+    <b>
+     Keyboard type
+    </b>
+    : This constant is used to set which key-set will be available on the virtual keyboard. The available keyboard types are:
+    <table>
+     <tbody>
+      <tr>
+       <th>
+        Keyboard Type
+       </th>
+       <th>
+        Description
+       </th>
+      </tr>
+      <tr>
+       <td>
+        <span>
+         kbv_type_default
+        </span>
+       </td>
+       <td>
+        The default keyboard type for the current system.
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <span>
+         kbv_type_ascii
+        </span>
+       </td>
+       <td>
+        An ASCII-only keyboard.
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <span>
+         kbv_type_url
+        </span>
+       </td>
+       <td>
+        A normal keyboard optimized for URL entry. Usually features a ".com" or other domain keys, as well as "/" and "." keys.
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <span>
+         kbv_type_email
+        </span>
+       </td>
+       <td>
+        A normal keyboard optimized for e-mail entry. Usually features "@" and "." characters.
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <span>
+         kbv_type_numbers
+        </span>
+       </td>
+       <td>
+        A numbers-only keyboard, usually displayed as a number pad.
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <span>
+         kbv_type_phone
+        </span>
+       </td>
+       <td>
+        A phone pad keyboard. Usually numbers-only with the "*" and "#" keys.
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <span>
+         kbv_type_phone_name
+        </span>
+       </td>
+       <td>
+        A keyboard optimized for entering both a phone number and a name. Usually similar to an ASCII keyboard, but with a limited special characters selection.
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </li>
+   <li>
+    <b>
+     Return type
+    </b>
+    : This constant is used to set what is shown on the return/action key of the virtual keyboard. The available return types are:
+    <table>
+     <tbody>
+      <tr>
+       <th>
+        Return Type
+       </th>
+       <th>
+        Description
+       </th>
+      </tr>
+      <tr>
+       <td>
+        <span>
+         kbv_returnkey_default
+        </span>
+       </td>
+       <td>
+        The default return key title for the current system.
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <span>
+         kbv_returnkey_go
+        </span>
+       </td>
+       <td>
+        Sets the return key title to "Go".
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <span>
+         kbv_returnkey_google
+        </span>
+       </td>
+       <td>
+        Sets the return key title to "Google", or to a generic search icon in some cases.
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <span>
+         kbv_returnkey_join
+        </span>
+       </td>
+       <td>
+        Sets the return key title to "Go".
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <span>
+         kbv_returnkey_next
+        </span>
+       </td>
+       <td>
+        Sets the return key title to "Next".
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <span>
+         kbv_returnkey_route
+        </span>
+       </td>
+       <td>
+        Sets the return key title to "Route".
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <span>
+         kbv_returnkey_search
+        </span>
+       </td>
+       <td>
+        Sets the return key title to "Search", or to a generic search icon in some cases.
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <span>
+         kbv_returnkey_send
+        </span>
+       </td>
+       <td>
+        Sets the return key title to "Send".
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <span>
+         kbv_returnkey_yahoo
+        </span>
+       </td>
+       <td>
+        Sets the return key title to "Yahoo", or to a generic search icon in some cases.
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <span>
+         kbv_returnkey_done
+        </span>
+       </td>
+       <td>
+        Sets the return key title to "Done".
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <span>
+         kbv_returnkey_continue
+        </span>
+       </td>
+       <td>
+        Sets the return key title to "Continue".
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <span>
+         kbv_returnkey_emergency
+        </span>
+       </td>
+       <td>
+        Sets the return key title to "Emergency Call".
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </li>
+   <li>
+    <b>
+     Autocapitalization type
+    </b>
+    : This constant is used to determine how the words typed via the virtual keyboard should be autocapitalized. The available autocapitalization types are:
+    <table>
+     <tbody>
+      <tr>
+       <th>
+        Autocapitalization Type
+       </th>
+       <th>
+        Description
+       </th>
+      </tr>
+      <tr>
+       <td>
+        <span>
+         kbv_autocapitalize_none
+        </span>
+       </td>
+       <td>
+        Autocapitalization is disabled.
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <span>
+         kbv_autocapitalize_words
+        </span>
+       </td>
+       <td>
+        Words will be auto-capitalized.
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <span>
+         kbv_autocapitalize_sentences
+        </span>
+       </td>
+       <td>
+        Sentences will be auto-capitalized.
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <span>
+         kbv_autocapitalize_characters
+        </span>
+       </td>
+       <td>
+        All characters will be capitalized.
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </li>
+  </ul>
+  The last argument is to enable/disable predictive text, and this would be set to
+  <span>
+   true
+  </span>
+  to permit it, and
+  <span>
+   false
+  </span>
+  otherwise, but note that just because it is permitted doesn't mean that it will be used as that will depend on the preferences
+    of the user on the device. When in predictive text mode, the virtual keyboard will not generate normal
+  <span>
+   GameMaker
+  </span>
+  key-press events. Instead, it will only update the
+  <i>
+   last
+  </i>
+  character pressed and keyboard string variables. This is due to
+    the inability to detect whether a change in the internal text field used for detecting key presses came from an actual virtual keyboard key, or a text suggestion. In these cases you would want to read the
+  <span>
+   keyboard_string
+  </span>
+  input as opposed
+    to reading any kind of raw key input.
+  
+  
+   It is important to note too that the user will get different keyboards with different capabilities depending on the platform OS, with the following caveats for use per target:
+  <ul>
+   <li>
+    <b>
+     UWP
+    </b>
+    : The UWP implementation does not support
+    <span>
+     return_key_type
+    </span>
+    ,
+    <span>
+     autocapitalization_type
+    </span>
+    or
+    <span>
+     predictive_text_enabled
+    </span>
+    . Passing in these parameters into a function will not cause any errors, they just won't have any
+      effect on the keyboard.
+   </li>
+   <li>
+    <b>
+     Android / Amazon Fire
+    </b>
+    : On Android, the keyboard type
+    <span>
+     kbv_type_phone_name
+    </span>
+    is not supported and will display an ASCII keyboard instead, and the return key type can only be
+    <span>
+     kbv_returnkey_go
+    </span>
+    ,
+    <span>
+     kbv_returnkey_search
+    </span>
+    ,
+    <span>
+     kbv_returnkey_next
+    </span>
+    ,
+    <span>
+     kbv_returnkey_send
+    </span>
+    or
+    <span>
+     kbv_returnkey_done
+    </span>
+    . If other return key types are used on that platform, the system will default to the replacement return keys listed below:
+    <table>
+     <tbody>
+      <tr>
+       <th>
+        Unavailable return key
+       </th>
+       <th>
+        Replacement key
+       </th>
+      </tr>
+      <tr>
+       <td>
+        <span>
+         kbv_returnkey_google
+        </span>
+        <span>
+         kbv_returnkey_yahoo
+        </span>
+       </td>
+       <td>
+        <span>
+         kbv_returnkey_search
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <span>
+         kbv_returnkey_join
+        </span>
+        <span>
+         kbv_returnkey_route
+        </span>
+        <span>
+         kbv_returnkey_emergency
+        </span>
+       </td>
+       <td>
+        <span>
+         kbv_returnkey_go
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <span>
+         kbv_returnkey_continue
+        </span>
+       </td>
+       <td>
+        <span>
+         kbv_returnkey_next
+        </span>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </li>
+   <li>
+    <b>
+     AndroidTV / FireTV
+    </b>
+    : Custom return key types are
+    <i>
+     not
+    </i>
+    supported on ASCII keyboards - the default return key will always be displayed.
+   </li>
+   <li>
+    <b>
+     tvOS
+    </b>
+    : Predictive text and auto-capitalization are not supported on tvOS, and the height of the keyboard returned by system events and the function
+    <a href="../../../GameMaker_Language/GML_Reference/Game_Input/Virtual_Keys_And_Keyboards/keyboard_virtual_height.htm">
+     <span>
+      keyboard_virtual_height()
+     </span>
+    </a>
+    will default to the screen height due to it spanning the entire screen and due to keyboard rect dimension functions being disabled on tvOS. Also note that physical (Bluetooth) keyboard events will not be broadcast unless the virtual keyboard has
+      been opened.
+   </li>
+  </ul>
+  Calling this function will generate a
+  <a href="../../../The_Asset_Editors/Object_Properties/Async_Events.htm">
+   System Asynchronous Event
+  </a>
+  , in which the
+  <span>
+   <a href="../../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">
+    async_load
+   </a>
+  </span>
+  <a href="../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">
+   DS map
+  </a>
+  will be populated with the following key/value pairs:
+  <ul>
+   <li>
+    "
+    <b>
+     event_type
+    </b>
+    " - this will be "
+    <b>
+     virtual keyboard status
+    </b>
+    " when triggered by virtual keyboard actions.
+   </li>
+   <li>
+    "
+    <b>
+     screen_height
+    </b>
+    " - the height of the virtual keyboard (in pixels). This will be 0 if the keyboard is invisible.
+   </li>
+   <li>
+    "
+    <b>
+     keyboard_status
+    </b>
+    " - the current status of the keyboard, returned as one of the following strings:
+    <ul>
+     <li>
+      "hiding"
+     </li>
+     <li>
+      "hidden"
+     </li>
+     <li>
+      "showing"
+     </li>
+     <li>
+      "visible"
+     </li>
+    </ul>
+   </li>
+  </ul>
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/a_VirtualKeyboard_Show.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      keyboard_type
+     </td>
+     <td>
+      Determines the key-set available on the virtual keyboard.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      return_key_type
+     </td>
+     <td>
+      Determines what is shown on the return/action key of the virtual keyboard.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      autocapitalization_type
+     </td>
+     <td>
+      Determines how/if the words typed via the virtual keyboard will be autocapitalized.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      predictive_text_enabled
+     </td>
+     <td>
+      Set to
+      <span>
+       true
+      </span>
+      /
+      <span>
+       false
+      </span>
+      to enable/disable predictive text input.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/a_VirtualKeyboard_Show.png"/><br/>
+  The above action block code checks for a mouse down action, and if one is
+    detected, then a check is performed to see if the OS virtual keyboard is showing. If it isn't then it is set to show - using a numeric keypad type - and if is already showing then it is hidden.
+ </body>
+</html>

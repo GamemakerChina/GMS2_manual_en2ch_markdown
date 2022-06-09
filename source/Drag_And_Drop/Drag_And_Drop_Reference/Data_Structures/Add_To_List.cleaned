@@ -1,0 +1,59 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Add_To_List.png"/><br/>
+   Add To List
+  </h1>
+  This action can be used to add a new value (of any data type) to the list, and this value will be added on at the end. You supply the variable that stores the list index (as returned by the action
+  <a href="Create_List.htm">
+   Create List
+  </a>
+  ) and the value
+    to store.
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/a_DS_Add_To_List.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      List
+     </td>
+     <td>
+      The index (stored in a variable) of the list to add to
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Value
+     </td>
+     <td>
+      The value to add into the list
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <span>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/e_DS_Create_List.png"/><br/>
+  </span>
+  The above action block code creates a global scope variable and then creates a
+    new list data structure, assigning its index value to the global variable. The scope is then changed to so all the instances of the object "obj_Enemy_Parent" add their unique instance ID value into the list.
+ </body>
+</html>

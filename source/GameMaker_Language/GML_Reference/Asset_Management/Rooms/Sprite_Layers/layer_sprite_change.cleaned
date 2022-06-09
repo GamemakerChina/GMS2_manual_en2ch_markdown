@@ -1,0 +1,103 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   layer_sprite_change
+  </h1>
+  Using this function you can change the sprite resource assigned to a given sprite element on a layer. You give the sprite element ID (which you get when you create a sprite element using
+  <a href="layer_sprite_create.htm">
+   <span>
+    layer_sprite_create()
+   </span>
+  </a>
+  or when you use the function
+  <a href="layer_sprite_get_id.htm">
+   <span>
+    layer_sprite_get_id()
+   </span>
+  </a>
+  ), and then supply a sprite index element asset will be changed. Note that if the sprite has sub-images then it will animate too (this can be controlled using the
+  <a href="layer_sprite_index.htm">
+   <span>
+    layer_sprite_index()
+   </span>
+  </a>
+  and
+  <a href="layer_sprite_speed.htm">
+   <span>
+    layer_sprite_speed()
+   </span>
+  </a>
+  functions). Note that you can assign a value of -1 as the new sprite index and no sprite will be shown, although the element will still exist and can still be changed again later.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">layer_sprite_change(sprite_element_id, sprite_index)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      sprite_element_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Sprite_Layers/layer_sprite_get_id.htm">
+        Sprite Element ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The unique ID value of the sprite element to change
+     </td>
+    </tr>
+    <tr>
+     <td>
+      sprite_index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../The_Asset_Editors/Sprites.htm">
+        Sprite Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The new sprite index to use
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var s = layer_sprite_get_id(layer, global.Asset_sprite);
+if layer_sprite_get_sprite(s) != spr_Nighttime
+{
+    layer_sprite_change(s, spr_nighttime);
+}
+</code></pre>
+  The above code checks the sprite index of the element with the ID stored in the global variable
+  <span>
+   global.Asset_sprite
+  </span>
+  and if it is not "spr_Nighttime" then that sprite is assigned to the element.
+ </body>
+</html>

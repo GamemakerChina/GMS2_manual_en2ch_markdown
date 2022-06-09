@@ -1,0 +1,169 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/i_Common_If_Variable.png"/><br/>
+   If Variable
+  </h1>
+  This action is used to check the state of a given variable against a given value using a specific expression. An "if" statement will always return either
+  <span>
+   true
+  </span>
+  or
+  <span>
+   false
+  </span>
+  and the expressions for checking can be any one of the
+    following:
+  <ul>
+   <li>
+    <b>
+     Equals to
+    </b>
+    - The variable and the value are both exactly equal
+    <b>
+    </b>
+   </li>
+   <li>
+    <b>
+     Less than
+    </b>
+    - The variable is less than the value
+    <b>
+    </b>
+   </li>
+   <li>
+    <b>
+     Greater than
+    </b>
+    - The variable is greater than the value
+   </li>
+   <li>
+    <b>
+     Less than or Equal to
+    </b>
+    - The variable is less than
+    <i>
+     or
+    </i>
+    equal to the value
+    <b>
+    </b>
+   </li>
+   <li>
+    <b>
+     Greater than or Equal to
+    </b>
+    - The variable is greater than
+    <i>
+     or
+    </i>
+    equal to the value
+   </li>
+  </ul>
+  If you flag the "Not" argument, then the above will be negated expressions, for example "equals to" becomes "
+  <i>
+   not
+  </i>
+  equals to". Also note that neither the variable nor the value arguments are limited to numeric values
+    and can be a string, a pointer, a resource ID or anything else that a function can return or use (see the section on
+  <a href="../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+   data types
+  </a>
+  for more information), but you cannot compare two
+    different data types without getting an error - for example if the variable holds a string and you try to check if it is equal to a number then you will get a syntax error.
+  <b>
+   IMPORTANT NOTE
+  </b>
+  : Due to
+  <a href="http://floating-point-gui.de/formats/fp/">
+   floating point precision issues
+  </a>
+  , checking to see if two values are exactly equal may return
+  <span>
+   false
+  </span>
+  , since one may be exactly 1, while
+    the other may be 1.00000000000001. This can be avoided by using the
+  <a href="../Data_Types/Decimal_To_Integer.htm">
+   Decimal to Integer
+  </a>
+  action before checking or using the "greater than" or "less than" expressions.
+  
+  
+   Note that to add actions into the "if" block, they should be dropped to the side of the action, as shown in the image below:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/a_common_if_drop.png"/><br/>
+  These actions will now be run if the "if" evaluates to
+  <span>
+   true
+  </span>
+  , while any
+    actions dropped elsewhere will be performed after the "if" block.
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/a_common_if_variable.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Variable
+     </td>
+     <td>
+      The name of the variable to check.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Not
+     </td>
+     <td>
+      Set to check if the expression does
+      <i>
+       not
+      </i>
+      evaluate to true.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Expression
+     </td>
+     <td>
+      The type of expression to use for the check.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Value
+     </td>
+     <td>
+      The value to check the variable against.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_common_if_variable.png"/><br/>
+  The above action block code checks a variable "dir" to see if it is equal to 10, and if
+    it is it creates an instance of "
+  <span>
+   obj_Squirrel
+  </span>
+  " and if it isn't then it destroys the instance.
+ </body>
+</html>

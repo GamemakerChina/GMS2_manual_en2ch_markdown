@@ -1,0 +1,65 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   string_lower
+  </h1>
+  With this function you can force a string to contain only lower case characters.
+  <span>
+   NOTE
+  </span>
+  This function only detects the 26 letter English alphabet from A - Z.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">string_lower(string);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      string
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The string to convert to lowercase.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">str1 = "Hello World"; str2 = string_lower(str1);
+</code></pre>
+  The above code will set
+  <span>
+   str2
+  </span>
+  to "hello world".
+ </body>
+</html>

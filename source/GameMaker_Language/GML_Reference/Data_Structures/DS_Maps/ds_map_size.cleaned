@@ -1,0 +1,64 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   ds_map_size
+  </h1>
+  With this function you can find how many key/values pairs the (previously created) DS map contains.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">ds_map_size(id);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/ds_map_create.htm">
+        DS Map ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The id of the data structure to check.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if (ds_map_size(inventory) &amp;amp;gt; 49)
+{
+    full = true;
+}
+</code></pre>
+  The above code will check the size of the DS map (ie: number of key/value pairs) and if it is greater than 49 it sets the variable "full" to
+  <span>
+   true
+  </span>
+  .
+ </body>
+</html>

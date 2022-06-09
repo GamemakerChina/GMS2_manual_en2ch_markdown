@@ -1,0 +1,94 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   arctan2
+  </h1>
+  This function returns the inverse tangent of an angle y/x, where
+  <span>
+   y = Opposite side of triangle
+  </span>
+  and
+  <span>
+   x = Adjacent side of triangle
+  </span>
+  . Unlike
+  <span>
+   <a href="arctan.htm">
+    arctan()
+   </a>
+  </span>
+  the function
+  <span>
+   arctan2(y, x)
+  </span>
+  is valid for all angles and so may be used to convert a vector to an angle without risking division by zero, and it also returns a result in the correct quadrant.
+  <b>
+   NOTE
+  </b>
+  : The value returned is in radians, not degrees.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">arctan2(y, x);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      y
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y coordinate to calculate.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      x
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x coordinate to calculate.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">val = arctan2(1, 1);
+</code></pre>
+  This will set val to the correct angle, in this case 0.79.
+ </body>
+</html>

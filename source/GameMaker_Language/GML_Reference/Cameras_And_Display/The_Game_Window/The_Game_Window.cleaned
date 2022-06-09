@@ -1,0 +1,206 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   The Game Window
+  </h1>
+  The game you create happens in a window (even when fullscreen), and this window has a number of properties, like position, size, whether it is fullscreen, etc... These details are normally set automatically for you based on the room size and view ports enabled in combination with the settings from
+  <a href="../../../../Settings/Game_Options.htm">
+   Game Options
+  </a>
+  <span>
+   for the target platform,
+  </span>
+  but you can change them during the game using the functions listed on this page.
+  <span>
+   NOTE
+  </span>
+  These functions are for
+  <b>
+   Windows
+  </b>
+  ,
+  <b>
+   Ubuntu
+  </b>
+  (Linux),
+  <strong>
+   macOS
+  </strong>
+  and
+  <b>
+   HTML5
+  </b>
+  target modules only and may not work on any other device.
+  
+  
+   The following image illustrates how some general window functions relate and interact with each other:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/GML/Reference/Cameras_Display/window_position.png"/><br/>
+  Note that the image above shows the game window drawn in a browser, but the for the other targets, you can replace the browser with the display, so a function like
+  <span>
+   window_get_y()
+  </span>
+  will return the position of the top of the game window relative to the display.
+  
+  
+   The following functions exist to change and get game window properties:
+  <ul>
+   <li>
+    <a href="../The_Game_Window/window_center.htm">
+     window_center
+    </a>
+   </li>
+   <li>
+    <a href="../The_Game_Window/window_handle.htm">
+     window_handle
+    </a>
+   </li>
+   <li>
+    <a href="../The_Game_Window/window_get_caption.htm">
+     window_get_caption
+    </a>
+   </li>
+   <li>
+    <a href="../The_Game_Window/window_get_colour.htm">
+     window_get_colour
+    </a>
+   </li>
+   <li>
+    <a href="../The_Game_Window/window_get_fullscreen.htm">
+     window_get_fullscreen
+    </a>
+   </li>
+   <li>
+    <a href="../The_Game_Window/window_get_width.htm">
+     window_get_width
+    </a>
+   </li>
+   <li>
+    <a href="../The_Game_Window/window_get_height.htm">
+     window_get_height
+    </a>
+   </li>
+   <li>
+    <a href="../The_Game_Window/window_get_x.htm">
+     window_get_x
+    </a>
+   </li>
+   <li>
+    <a href="../The_Game_Window/window_get_y.htm">
+     window_get_y
+    </a>
+   </li>
+   <li>
+    <a href="../The_Game_Window/window_get_cursor.htm">
+     window_get_cursor
+    </a>
+   </li>
+   <li>
+    <a href="../The_Game_Window/window_get_visible_rects.htm">
+     window_get_visible_rects
+    </a>
+   </li>
+   <li>
+    <a href="../The_Game_Window/window_mouse_get_x.htm">
+     window_mouse_get_x
+    </a>
+   </li>
+   <li>
+    <a href="../The_Game_Window/window_mouse_get_y.htm">
+     window_mouse_get_y
+    </a>
+   </li>
+   <li>
+    <a href="../The_Game_Window/window_mouse_set.htm">
+     window_mouse_set
+    </a>
+   </li>
+   <li>
+    <a href="../The_Game_Window/window_set_caption.htm">
+     window_set_caption
+    </a>
+   </li>
+   <li>
+    <a href="../The_Game_Window/window_set_colour.htm">
+     window_set_colour
+    </a>
+   </li>
+   <li>
+    <a href="../The_Game_Window/window_set_fullscreen.htm">
+     window_set_fullscreen
+    </a>
+   </li>
+   <li>
+    <a href="../The_Game_Window/window_set_position.htm">
+     window_set_position
+    </a>
+   </li>
+   <li>
+    <a href="../The_Game_Window/window_set_size.htm">
+     window_set_size
+    </a>
+   </li>
+   <li>
+    <a href="../The_Game_Window/window_set_rectangle.htm">
+     window_set_rectangle
+    </a>
+   </li>
+   <li>
+    <a href="../The_Game_Window/window_set_cursor.htm">
+     window_set_cursor
+    </a>
+   </li>
+   <li>
+    <a href="../The_Game_Window/window_set_min_width.htm">
+     window_set_min_width
+    </a>
+   </li>
+   <li>
+    <a href="../The_Game_Window/window_set_max_width.htm">
+     window_set_max_width
+    </a>
+   </li>
+   <li>
+    <a href="../The_Game_Window/window_set_min_height.htm">
+     window_set_min_height
+    </a>
+   </li>
+   <li>
+    <a href="../The_Game_Window/window_set_max_height.htm">
+     window_set_max_height
+    </a>
+   </li>
+   <li>
+    <a href="../The_Game_Window/window_has_focus.htm">
+     window_has_focus
+    </a>
+   </li>
+   <li>
+    <a href="../The_Game_Window/window_device.htm">
+     window_device
+    </a>
+   </li>
+   <li>
+    <a href="../The_Game_Window/window_view_mouse_get_x.htm">
+     window_view_mouse_get_x
+    </a>
+   </li>
+   <li>
+    <a href="../The_Game_Window/window_view_mouse_get_y.htm">
+     window_view_mouse_get_y
+    </a>
+   </li>
+   <li>
+    <a href="../The_Game_Window/window_views_mouse_get_x.htm">
+     window_views_mouse_get_x
+    </a>
+   </li>
+   <li>
+    <a href="../The_Game_Window/window_views_mouse_get_y.htm">
+     window_views_mouse_get_y
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

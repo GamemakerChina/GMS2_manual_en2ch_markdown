@@ -1,0 +1,65 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   gesture_flick_speed
+  </h1>
+  This function is used to set the speed required for a
+  <a href="../../../../The_Asset_Editors/Object_Properties/Gesture_Events.htm">
+   Flick Gesture
+  </a>
+  event to be triggered when a touch or click is released. The speed is measured in inches per second and has a default value of 2.0.
+  <h4>
+   <b>
+    Syntax:
+   </b>
+  </h4>
+  <pre><code class="language-gml">gesture_flick_speed(speed);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      speed
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The speed (in inches per second) to set for flick gesture event detection.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if gesture_get_flick_speed() != 2
+{
+    gesture_flick_speed(2);
+}
+</code></pre>
+  The above code checks to see if the flick speed for gestures is set to 2 inches per second and if it is not it sets it to that value.
+ </body>
+</html>

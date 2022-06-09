@@ -1,0 +1,41 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   audio_resume_all
+  </h1>
+  With this function you can resume all sounds that have been paused previously.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">audio_resume_all();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if keyboard_check_pressed(ord("P"))
+{
+    global.Pause = !global.Pause;
+    if global.Pause
+    {
+        audio_pause_all();
+    }
+    else
+    {
+        audio_resume_all();
+    }
+}
+</code></pre>
+  The above code checks for a press of the keyboard key "P" and if it detects one it sets the global variable "Pause" to
+  <span>
+   true
+  </span>
+  or false and then either pauses all sounds or restarts all previously paused sounds.
+ </body>
+</html>

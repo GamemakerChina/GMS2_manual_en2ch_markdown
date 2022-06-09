@@ -1,0 +1,169 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Angles And Distance
+  </h1>
+  This page lists all the number functions related to angles and distance, many of which are used in vector calculations as well as collisions and path finding.
+  
+  
+   The following functions are all related to angles and basic trigonometry:
+  <ul>
+   <li>
+    <a href="arccos.htm">
+     arccos
+    </a>
+   </li>
+   <li>
+    <a href="arcsin.htm">
+     arcsin
+    </a>
+   </li>
+   <li>
+    <a href="arctan.htm">
+     arctan
+    </a>
+   </li>
+   <li>
+    <a href="arctan2.htm">
+     arctan2
+    </a>
+   </li>
+   <li>
+    <a href="cos.htm">
+     cos
+    </a>
+   </li>
+   <li>
+    <a href="sin.htm">
+     sin
+    </a>
+   </li>
+   <li>
+    <a href="tan.htm">
+     tan
+    </a>
+   </li>
+   <li>
+    <a href="dcos.htm">
+     dcos
+    </a>
+   </li>
+   <li>
+    <a href="dsin.htm">
+     dsin
+    </a>
+   </li>
+   <li>
+    <a href="dtan.htm">
+     dtan
+    </a>
+   </li>
+   <li>
+    <a href="darccos.htm">
+     darccos
+    </a>
+   </li>
+   <li>
+    <a href="darcsin.htm">
+     darcsin
+    </a>
+   </li>
+   <li>
+    <a href="darctan.htm">
+     darctan
+    </a>
+   </li>
+   <li>
+    <a href="darctan2.htm">
+     darctan2
+    </a>
+   </li>
+   <li>
+    <a href="degtorad.htm">
+     degtorad
+    </a>
+   </li>
+   <li>
+    <a href="radtodeg.htm">
+     radtodeg
+    </a>
+   </li>
+  </ul>
+  <span>
+   GameMaker
+  </span>
+  also has a number of vector-based functions, listed below:
+  <ul>
+   <li>
+    <a href="point_direction.htm">
+     point_direction
+    </a>
+   </li>
+   <li>
+    <a href="point_distance.htm">
+     point_distance
+    </a>
+   </li>
+   <li>
+    <a href="point_distance_3d.htm">
+     point_distance_3d
+    </a>
+   </li>
+   <li>
+    <a href="distance_to_object.htm">
+     distance_to_object
+    </a>
+   </li>
+   <li>
+    <a href="distance_to_point.htm">
+     distance_to_point
+    </a>
+   </li>
+   <li>
+    <a href="dot_product.htm">
+     dot_product
+    </a>
+   </li>
+   <li>
+    <a href="dot_product_3d.htm">
+     dot_product_3d
+    </a>
+   </li>
+   <li>
+    <a href="dot_product_normalised.htm">
+     dot_product_normalised
+    </a>
+   </li>
+   <li>
+    <a href="dot_product_3d_normalised.htm">
+     dot_product_3d_normalised
+    </a>
+   </li>
+   <li>
+    <a href="angle_difference.htm">
+     angle_difference
+    </a>
+   </li>
+   <li>
+    <a href="lengthdir_x.htm">
+     lengthdir_x
+    </a>
+   </li>
+   <li>
+    <a href="lengthdir_y.htm">
+     lengthdir_y
+    </a>
+   </li>
+  </ul>
+  For an explanation of vectors and normalised vectors you can read the following section which give a brief overview of what is a vector and how it can be used in making games:
+  <ul>
+   <li>
+    <a href="../../../../Additional_Information/Vectors.htm">
+     Vectors
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

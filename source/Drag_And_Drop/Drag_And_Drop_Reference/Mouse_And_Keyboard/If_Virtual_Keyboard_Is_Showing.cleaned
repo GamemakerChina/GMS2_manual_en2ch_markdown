@@ -1,0 +1,51 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/i_VirtualKeyboard_IfShowing.png"/><br/>
+   If Virtual Keyboard Is Showing
+  </h1>
+  This action can be used to check if the OS virtual keyboard is being shown or not. The action will evaluate to
+  <span>
+   true
+  </span>
+  when the keyboard is open or opening, or
+  <span>
+   false
+  </span>
+  if the virtual keyboard is closed or closing. If you enable the
+  <span>
+   not
+  </span>
+  modifier, this action will be reversed and you can store the return
+  <span>
+   true
+  </span>
+  /
+  <span>
+   false
+  </span>
+  value in a target variable, which can be flagged as temp (local).
+  
+  
+   Note that to add actions into the "if" block, they should be dropped to the side of the action, as shown in the image below:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/a_If_VirtualKeyboard_ShowDrop.png"/><br/>
+  These actions will now be run if the "if"
+    evaluates to
+  <span>
+   true
+  </span>
+  , while any actions dropped elsewhere will be performed after the "if" block.
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/a_VirtualKeyboard_IfShowing.png"/><br/>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/e_VirtualKeyboard_Show.png"/><br/>
+  The above action block code checks for a mouse down action, and
+    if one is detected, then a check is performed to see if the OS virtual keyboard is showing. If it isn't then it is set to show - using a numeric keypad type - and if is already showing then it is hidden.
+ </body>
+</html>

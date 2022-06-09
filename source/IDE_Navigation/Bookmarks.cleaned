@@ -1,0 +1,78 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Bookmarks
+  </h1>
+  Another method for navigating the workspace is to use
+  <strong>
+   Bookmarks
+  </strong>
+  . You can add up to 9 "bookmarks" to IDE windows or sections of code/GML Visual in scripts or object events, and then you can quickly skip between them using the correct key combination.
+  
+  
+   To add a bookmark, simply select the window or line of code that you wish to tag and then
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Ctrl.png"/><br/>
+  +
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Shift.png"/><br/>
+  +
+  <strong>
+  </strong>
+  <span>
+   <strong>
+    NumberKey
+   </strong>
+   [1 - 9]
+  </span>
+  on WIndows or
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Ctrl.png"/><br/>
+  +
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Cmd.png"/><br/>
+  +
+  <span>
+   <strong>
+    NumberKey
+   </strong>
+   [1 - 9]
+  </span>
+  on Mac and this will set the bookmark, labeling the item in the IDE as follows:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Introduction/QS_BookmarksIDE.png"/><br/>
+  In the image above we have assigned bookmarks numbered 1, 2, and 4 to different parts of the IDE, and we can now navigate away from these windows or even close them altogether, as the bookmark will permit us to go straight back to it again at any time later. This is done by pressing
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Ctrl.png"/><br/>
+  /
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Cmd.png"/><br/>
+  +
+  <strong>
+  </strong>
+  <span>
+   <strong>
+    NumberKey
+   </strong>
+   [1 - 9]
+  </span>
+  , and if the bookmarked item has been closed it will be opened, otherwise the workspace will pan to the selected bookmark.
+  <span>
+   IMPORTANT
+  </span>
+  Bookmarks are not saved with the project or when the IDE is closed. They are only valid for the session that they were created in.
+  
+  
+   If you want to remove a bookmark, you simply need to select the bookmarked window or code line and then repeat the
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Ctrl.png"/><br/>
+  +
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Cmd.png"/><br/>
+  /
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Shift.png"/><br/>
+  +
+  <strong>
+  </strong>
+  <span>
+   <strong>
+    NumberKey
+   </strong>
+   [1 - 9]
+  </span>
+  that you used to create it.
+ </body>
+</html>

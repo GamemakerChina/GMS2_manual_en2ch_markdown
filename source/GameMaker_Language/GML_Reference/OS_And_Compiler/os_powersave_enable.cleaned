@@ -1,0 +1,75 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   os_powersave_enable
+  </h1>
+  With this function you can turn on or off the power saving features of the device. This is important as certain games (for example those that use the tilt functions) may not generate events that the OS can interpret as being user input and so shut down the screen or exit the game. By setting this function to
+  <span>
+   false
+  </span>
+  you can disable the power saving features and ensure that the screen (and game) are always functioning.
+  <b>
+   NOTE
+  </b>
+  : This is limited to iOS and Android targets.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">os_powersave_enable(flag)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      flag
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Set to
+      <span>
+       true
+      </span>
+      or
+      <span>
+       false
+      </span>
+      to enable or disable powersave functions.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if (os_type == os_android) || (os_type == os_ios)
+{
+    os_powersave_enable(false);
+}
+</code></pre>
+  The above code checks the OS type and if it is either Android or an iOS then power saving features are deactivated.
+ </body>
+</html>

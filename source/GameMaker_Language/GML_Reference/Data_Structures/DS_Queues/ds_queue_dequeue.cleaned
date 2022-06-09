@@ -1,0 +1,74 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   ds_queue_dequeue
+  </h1>
+  This function will
+  <i>
+   dequeue
+  </i>
+  the head value off of the DS queue, removing it from the queue and returning the value to be stored in a variable. If the queue is empty then the function will return the constant
+  <span>
+   undefined
+  </span>
+  , otherwise it will return the value contained in the queue.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">ds_queue_dequeue(id);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Queues/ds_queue_create.htm">
+        DS Queue ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The id of the queue to dequeue from.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm#variable">
+ Variable
+</a>
+(Data type value stored in the queue) or
+<a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ undefined
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if !ds_queue_empty(move_queue)
+{
+    var xx = ds_queue_dequeue(move_queue);
+    var yy = ds_queue_dequeue(move_queue);
+    move_towards_point(xx, yy, 4);
+}
+</code></pre>
+  The above code checks the DS queue indexed in the variable "move_queue" to see if it is empty, and if it is not, it then dequeues the two values from the head of the queue and use them to set a direction for movement.
+ </body>
+</html>

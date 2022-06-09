@@ -1,0 +1,38 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   gesture_get_pinch_distance
+  </h1>
+  This function is used to get the distance within which you have to touch/click the screen and move with two fingers before you trigger a
+  <a href="../../../../The_Asset_Editors/Object_Properties/Gesture_Events.htm">
+   Pinch Gesture
+  </a>
+  . The distance is measured in inches and has a default value of 0.1.
+  <h4>
+   <b>
+    Syntax:
+   </b>
+  </h4>
+  <pre><code class="language-gml">gesture_get_pinch_distance();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a>
+(inches)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if gesture_get_pinch_distance() != 0.1
+{
+    gesture_pinch_distance(0.1);
+}
+</code></pre>
+  The above code checks to see if the pinch distance for gestures is set to 0.1 inches and if it is not it sets it to that value.
+ </body>
+</html>

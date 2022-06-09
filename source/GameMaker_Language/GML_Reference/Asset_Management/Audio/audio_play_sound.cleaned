@@ -1,0 +1,120 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   audio_play_sound
+  </h1>
+  With this function you can play any sound resource in your game. You provide the sound index and assign it a priority, which is then used to determine how sounds are dealt with when the number of sounds playing is over the limit set by the function
+  <a href="audio_channel_num.htm">
+   <span>
+    audio_channel_num()
+   </span>
+  </a>
+  . Lower priority sounds will be stopped in favour of higher priority sounds, and the priority value can be any real number (the actual value is arbitrary, and can be from 0 to 1 or 0 to 100, as
+  <span>
+   GameMaker
+  </span>
+  will prioritize them the same). Note that when dealing with priority, the
+  <i>
+   higher
+  </i>
+  the number the
+  <i>
+   higher
+  </i>
+  the priority, such that a sound with priority 100 will be favoured over a sound with priority 1. The final argument is for making the sound loop and setting it to
+  <span>
+   true
+  </span>
+  will make the sound loop until it is stopped and setting it to
+  <span>
+   false
+  </span>
+  will play the sound once only.
+  
+  
+   This function will also return a unique index number for the sound being played which can then be stored in a variable so that you can then pause it or stop it with the appropriate functions. This means that if you have multiple instances of the same sound playing at any one time you can target just one instance of that sound to deal with using the audio functions.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">audio_play_sound(index, priority, loop);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Sounds.htm">
+        Sound Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the sound to play.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      priority
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      Set the channel priority for the sound.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      loop
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Sets the sound to loop or not.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/audio_play_sound.htm">
+ Sound Instance ID
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if health &amp;amp;lt;= 0
+{
+    lives -= 1;
+    audio_play_sound(snd_PlayerDead, 10, false);
+}
+</code></pre>
+  The above code checks the "health" global variable and if it is less than or equal to 0, it will remove 1 from the "lives" global variable and play a sound.
+ </body>
+</html>

@@ -1,0 +1,589 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Expressions And Operators
+  </h1>
+  <h2>
+   Expressions
+  </h2>
+  An expression is a mathematical phrase that can contain ordinary numbers, variables, strings, or functions as well as one or more
+  <strong>
+   operators
+  </strong>
+  (like add, subtract, multiply, etc...). The values used in an expression can be real numbers (e.g.
+  <span>
+   3.4 * 6
+  </span>
+  ), hexadecimal numbers starting with a
+  <span>
+   $
+  </span>
+  sign (e.g.
+  <span>
+   $00FFAA | $88FFAA
+  </span>
+  ), strings between double quotes (e.g.
+  <span>
+   "hello"
+  </span>
+  +
+  <span>
+   "world"
+  </span>
+  ) or more complicated expressions using multiple operators and values.
+  <h2>
+   Operators
+  </h2>
+  The following operators are provided for use with expressions:
+  <a href="#">
+   <span>
+    Assigning (=)
+   </span>
+   <span>
+    Assigning (=)
+   </span>
+  </a>
+  <span>
+   <b>
+    =
+   </b>
+  </span>
+  is used to assign a value to a variable. Note that this can
+  <i>
+   also
+  </i>
+  be used for comparing variables in
+  <span>
+   GameMaker
+  </span>
+  and you may see this in examples and other peoples codes. However, this is a legacy from old
+  <i>
+   GameMaker
+  </i>
+  versions and you should use the
+  <b>
+   ==
+  </b>
+  operators for comparing and
+  <b>
+   =
+  </b>
+  for assigning, as shown in these examples:
+  <pre><code class="language-gml">a = 12;
+  speed = 5;
+  val = (old_val + 5);
+</code></pre>
+  <a href="#">
+   <span>
+    Combining (&amp;&amp;, ||, ^^)
+   </span>
+   <span>
+    Combining (&amp;&amp;, ||, ^^)
+   </span>
+  </a>
+  <b>
+   <span>
+    &amp;&amp;
+   </span>
+   ,
+   <span>
+    ||
+   </span>
+   ,
+   <span>
+    ^^
+   </span>
+   (
+   <span>
+    and
+   </span>
+   ,
+   <span>
+    or
+   </span>
+   and
+   <span>
+    xor
+   </span>
+   )
+  </b>
+  are used to combine boolean values to give either true or false. If any of the following examples resolves to
+  <span>
+   true
+  </span>
+  then the code would be run:
+  <pre><code class="language-gml">if (a == b &amp;amp;amp;&amp;amp;amp; c == d) { do something... }  // and
+  if (a == b || c == d) { do something... }   // or
+  if (a == b ^^ c == d) { do something... }  // xor
+</code></pre>
+  <a href="#">
+   <span>
+    Nullish (??, ??=)
+   </span>
+   <span>
+    Nullish (??, ??=)
+   </span>
+  </a>
+  <span>
+   NOTE
+  </span>
+  "Nullish" simply refers to a value being equal to
+  <span>
+   undefined
+  </span>
+  or
+  <span>
+   pointer_null
+  </span>
+  .
+  <span>
+   ??
+  </span>
+  is a nullish coalescing operator that returns a specified expression if the given value is
+  <span>
+   undefined
+  </span>
+  or
+  <span>
+   pointer_null
+  </span>
+  . This operator expects the following syntax:
+   
+   
+    (input ?? null_output)
+   
+   
+    If
+  <span>
+   input
+  </span>
+  is
+  <span>
+   undefined
+  </span>
+  or
+  <span>
+   pointer_null
+  </span>
+  , the expression will return the
+  <span>
+   null_output
+  </span>
+  value; however in all other cases it will simply return the
+  <span>
+   input
+  </span>
+  value. This can be used to define a "default" value for a variable in case the variable itself does not hold a valid value.
+   
+   
+    Consider the following example:
+   
+   
+    username = data.username ?? "INVALID USERNAME";
+   
+   
+    Here, the
+  <span>
+   username
+  </span>
+  variable will get the value stored in
+  <span>
+   data.username
+  </span>
+  , however if
+  <span>
+   data.username
+  </span>
+  happens to be
+  <span>
+   undefined
+  </span>
+  or
+  <span>
+   pointer_null
+  </span>
+  , the variable will get the string
+  <span>
+   "INVALID USERNAME"
+  </span>
+  instead. This example ensures that any function calls using the
+  <span>
+   username
+  </span>
+  variable do not cause an error because of being given a nullish value, and that the user knows when their username was not returned.
+  <span>
+   NOTE
+  </span>
+  The expression on the right hand side of the nullish coalescing operator is only executed when the input value is nullish, meaning that any function calls included in the RHS expression will only be executed if the input value is nullish.
+  <hr/>
+  <span>
+   ??=
+  </span>
+  is similar to the nullish coalescing operator described above but is used specifically for variable assignments. This operator expects the following syntax:
+  <pre><code class="language-gml">variable ??= null_value
+</code></pre>
+  If
+  <span>
+   variable
+  </span>
+  is
+  <span>
+   undefined
+  </span>
+  or
+  <span>
+   pointer_null
+  </span>
+  , the
+  <span>
+   null_value
+  </span>
+  value will be assigned to it; otherwise the variable will remain unchanged. This can be used to assign a custom "default" value to a variable when it holds a nullish value.
+  <a href="#">
+   <span>
+    Comparing (, >=)
+   </span>
+   <span>
+    Comparing (, >=)
+   </span>
+  </a>
+  <b>
+   <span>
+    <
+   </span>
+   ,
+   <span>
+    <=
+   </span>
+   ,
+   <span>
+    ==
+   </span>
+   ,
+   <span>
+    !=
+   </span>
+   ,
+   <span>
+    >
+   </span>
+   ,
+   <span>
+    >=
+   </span>
+  </b>
+  are comparisons and can only give a
+  <span>
+   true
+  </span>
+  or
+  <span>
+   false
+  </span>
+  result (where true can also be interpreted as 1, and false as 0). Examples of use:
+  <pre><code class="language-gml">if (a &amp;amp;lt; b) {do something...}
+  if (a != b) {do something...}
+</code></pre>
+  <a href="#">
+   <span>
+    Bitwise (|, &amp;, ^, <>)
+   </span>
+   <span>
+    Bitwise (|, &amp;, ^, <>)
+   </span>
+  </a>
+  <b>
+   <span>
+    |
+   </span>
+   ,
+   <span>
+    &amp;
+   </span>
+   ,
+   <span>
+    ^
+   </span>
+   ,
+   <span>
+    <<
+   </span>
+   ,
+   <span>
+    >>
+   </span>
+  </b>
+  are used to perform bitwise operations, where | = bitwise or, &amp; = bitwise and, ^ = bitwise xor, << = shift left, >> = shift right. Examples of use:
+  <pre><code class="language-gml">x = (x &amp;amp;amp; $ffffffe0) + 32;
+  if (y ^ $1f) &amp;amp;gt; 0 {do something...};
+</code></pre>
+  You can find additional information on how to use the bitwise operators and what they do from the section:
+  <a href="../../Additional_Information/Bitwise_Operators.htm">
+   Bitwise Operators
+  </a>
+  .
+  <a href="#">
+   <span>
+    Arithmetical (+, -, *, /)
+   </span>
+   <span>
+    Arithmetical (+, -, *, /)
+   </span>
+  </a>
+  <b>
+   <span>
+    +
+   </span>
+   ,
+   <span>
+    -
+   </span>
+   ,
+   <span>
+    *
+   </span>
+   ,
+   <span>
+    /
+   </span>
+  </b>
+  are add, subtract, multiply and divide, respectively. Examples of use:
+  <pre><code class="language-gml">c = a * b;
+  str = a + "world";
+</code></pre>
+  <span>
+   <b>
+    NOTE
+   </b>
+  </span>
+  Floating point numbers do not stop on Divide by Zero as they will get an infinity as the answer. If A and B are integers (either int32 or int64) then the division will be done as integers (and divide by 0 will be checked and error'd. Otherwise it will be done as a floating point division (with no divide by 0 check).
+  <a href="#">
+   <span>
+    Increment/Decrement (++, --)
+   </span>
+   <span>
+    Increment/Decrement (++, --)
+   </span>
+  </a>
+  <span>
+   <strong>
+    ++
+   </strong>
+  </span>
+  ,
+  <span>
+   <strong>
+    --
+   </strong>
+  </span>
+  are used to add or subtract one (
+  <span>
+   1
+  </span>
+  ) from a value. It is worth noting that placing this before or after the value to be added to or subtracted from will have slightly different results. For example:
+  <ul>
+   <li>
+    <span>
+     ++a
+    </span>
+    will increment the variable and return the incremented value.
+   </li>
+   <li>
+    <span>
+     a++
+    </span>
+    will increment the variable but return the value before it was incremented.
+   </li>
+  </ul>
+  Therefore, if you have something like this:
+  <pre><code class="language-gml">var a = 1;
+  show_debug_message(string(a++));
+  show_debug_message(string(++a));
+</code></pre>
+  The debug output would be 1 and 3. Here are some examples of use:
+  <pre><code class="language-gml">for (var i = 0; i &amp;amp;lt; 10; i++;)
+  {
+      do something...
+  }
+</code></pre>
+  <pre><code class="language-gml">if (hit == true)
+  {
+      --score;
+  }
+</code></pre>
+  <strong>
+   NOTE
+  </strong>
+  : On the YoYo Compiler target platforms (those marked (YYC)), these expressions are evaluated from left to right, while on all other target platforms they are evaluated from right to left, meaning that this:
+  <pre><code class="language-gml">val = max(num, ++num, num++);
+</code></pre>
+  will give different results depending on the platform.
+  <a href="#">
+   <span>
+    Division and Modulo (div, %, mod)
+   </span>
+   <span>
+    Division and Modulo (div, %, mod)
+   </span>
+  </a>
+  <strong>
+   <span>
+    div
+   </span>
+   ,
+   <span>
+    mod
+   </span>
+   (
+   <span>
+    %
+   </span>
+   )
+  </strong>
+  are division and modulo, where div gives you the amount a value can be divided into producing only an integer quotient, while mod gives you only the remainder of a division. Note that you can only div or mod using integer values. Examples of use:
+  <pre><code class="language-gml">secs = time mod 60;
+  time_str = string(time div 60);
+</code></pre>
+  <a href="#">
+   <span>
+    Unary (!, -, ~)
+   </span>
+   <span>
+    Unary (!, -, ~)
+   </span>
+  </a>
+  The following
+  <strong>
+   unary
+  </strong>
+  operators are provided:
+  <ul>
+   <li>
+    <span>
+     <strong>
+      !
+     </strong>
+    </span>
+    : boolean "not", so
+    <span>
+     !true == false
+    </span>
+   </li>
+   <li>
+    <span>
+     <strong>
+      -
+     </strong>
+    </span>
+    : negates the next real or integer value (not valid for strings or booleans)
+   </li>
+   <li>
+    <span>
+     <strong>
+      ~
+     </strong>
+    </span>
+    : negates the next value bitwise
+   </li>
+  </ul>
+  <h2>
+   Expression Grouping
+  </h2>
+  <i>
+  </i>
+  As values in all expressions you can use numbers, variables, or functions that return a value, and sub-expressions can be placed between brackets too. All operators work for real number values, but
+  <em>
+   comparisons
+  </em>
+  also work for strings and the "
+  <strong>
+   +
+  </strong>
+  " operator can be used to concatenate strings.
+  
+  
+   When doing multiple operations in a single expression, it is
+  <b>
+   very important
+  </b>
+  that you use brackets
+  <span>
+   ()
+  </span>
+  to separate out the order of operation, as different platforms may perform them differently if not explicitly stated in this way. For example, consider the following code:
+  <pre><code class="language-gml">a = b == c || d;
+</code></pre>
+  The different target compilers will perform the operations in different orders since they are not explicitly shown, giving rise to "odd" results that you may not expect when you play your game. to avoid this, use the
+  <span>
+   ()
+  </span>
+  to separate out the parts, like this:
+  <pre><code class="language-gml">a = (b == c || d);   //better
+a = ((b == c) || d); //best
+</code></pre>
+  <h2>
+   Statement Grouping
+  </h2>
+  When using various operations and expressions in a single code block, these too should be separated. For example, the following
+  <em>
+   looks
+  </em>
+  like valid code:
+  <pre><code class="language-gml">if my_var == your_var ++their_var;
+</code></pre>
+  However, the compiler could interpret this in one of two ways:
+  <pre><code class="language-gml">if my_var == your_var++ then their_var;
+
+// or
+
+if my_var == your_var then ++their_var;
+</code></pre>
+  Now, you can tell looking at the code that one of those is a bit stupid, but that's because we know what we are wanting to achieve and what we want to happen, but the compiler doesn't. All it sees is two variables with the ++ operator between them so it has to choose which one to apply it to. Therefore, you should
+  <strong>
+   always explicitly bracket expressions, operations and statements
+  </strong>
+  . The correct version of the above code should be:
+  <pre><code class="language-gml">if (my_var == your_var)
+{
+    ++their_var;
+}
+</code></pre>
+  This may appear more verbose, but there is no ambiguity about the operations being performed and it will compile and behave consistently across all platforms. Also note that while you can chain expressions and statements without the use of brackets at the moment, this is a legacy feature and going forward may be deprecated and removed from GML, so using brackets appropriately now will "future-proof" your code (and is generally good practice anyway).
+  
+  
+   Here are some final examples of the various different expressions:
+  <pre><code class="language-gml">{
+    x = 23 div 2;
+    colour = $FFAA00 + $00BB12;
+    str = "hello" + "world";
+    y += 5;
+    x *= y;
+    x = y &amp;amp;lt;&amp;amp;lt; 2;
+    x = 23 * ((2 + 4) / sin(y));
+    b = (x &amp;amp;lt; 5) &amp;amp;amp;&amp;amp;amp; !((x == 2) || (x == 4));
+}
+</code></pre>
+  One final thing to note is that there are also some expression "short-cuts" called
+  <b>
+   accessors
+  </b>
+  for use with certain
+  <a href="../GML_Reference/Data_Structures/Data_Structures.htm">
+   Data Structures
+  </a>
+  and
+  <a href="Arrays.htm">
+   Arrays
+  </a>
+  . These enable you to add, or replace data within these formats quickly and easily and without the use of any function calls. For full details, please see the following page
+  <ul>
+   <li>
+    <a href="Accessors.htm">
+     Accessors
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

@@ -1,0 +1,62 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   event_data
+  </h1>
+  This variable is
+  <b>
+   global
+  </b>
+  in scope and is used to hold a
+  <a href="../../Data_Structures/DS_Maps/DS_Maps.htm">
+   DS Map
+  </a>
+  when used in the appropriate event (e.g.
+  <a href="../../../../The_Asset_Editors/Object_Properties/Gesture_Events.htm">
+   Gesture Events
+  </a>
+  and
+  <a href="../../../../The_Asset_Editors/Sequence_Properties/Broadcast_Messages.htm">
+   Broadcast Messages
+  </a>
+  ), and -1 at all other times. The actual contents of the DS map will depend on the type of event that triggered it, so refer to the individual sections for those events.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">event_data;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/ds_map_create.htm">
+ DS Map ID
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">isFlick = event_data[?"isflick"];
+
+if (isFlick)
+{
+    flickVelX = event_data[?"diffX"];
+    flickVelY = event_data[?"diffY"];
+}
+else
+{
+    flickVelX = 0;
+    flickVelY = 0;
+}
+</code></pre>
+  The above code is taken from the
+  <b>
+   Drag End
+  </b>
+  gesture event and checks to see if the vent is a "flick" event, and if it is it extracts the required data from the
+  <span>
+   event_data
+  </span>
+  DS map and uses it to set some variables. If a "flick" event is not detected, then the same variables are set to 0.
+ </body>
+</html>

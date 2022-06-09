@@ -1,0 +1,85 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   layer
+  </h1>
+  This
+  <b>
+   built-in variable
+  </b>
+  is created for every instance in a room and contains the layer ID value of the layer that the instance is assigned to. This value can then be used in other functions like
+  <a href="../../Rooms/General_Layer_Functions/layer_get_depth.htm">
+   <span>
+    layer_get_depth()
+   </span>
+  </a>
+  or it can be changed to move the instance to another layer, but note that if the layer being assigned does not exist in the current room, then you will get an error that will force your game to close. When assigning a layer, you must supply the unique
+  <b>
+   layer ID
+  </b>
+  as returned by the function
+  <a href="../../Rooms/General_Layer_Functions/layer_get_id.htm">
+   <span>
+    layer_get_id()
+   </span>
+  </a>
+  (when using named room layers), or as returned by the function
+  <a href="../../Rooms/General_Layer_Functions/layer_create.htm">
+   <span>
+    layer_create()
+   </span>
+  </a>
+  (when you create your own layers at run time).
+  <span>
+   IMPORTANT
+  </span>
+  If you have created the instance using the
+  <span>
+   <a href="../instance_create_depth.htm">
+    <span>
+     instance_create_depth()
+    </span>
+   </a>
+  </span>
+  function, or have manually changed the
+  <span>
+   <a href="depth.htm">
+    <span>
+     depth
+    </span>
+   </a>
+  </span>
+  variable, the layer assigned to the instance becomes a "managed" layer, which is one that
+  <span>
+   GameMaker
+  </span>
+  controls and manages automatically. In these cases the
+  <span>
+   layer
+  </span>
+  variable will return -1.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">layer;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/General_Layer_Functions/layer_get_id.htm">
+ Layer ID
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">layer = layer_create(-1000);
+</code></pre>
+  The above code will create a new layer with a depth of -1000 and then set the instance
+  <span>
+   layer
+  </span>
+  variable to the returned layer ID, moving the instance from the layer it is currently on to the new layer being created.
+ </body>
+</html>

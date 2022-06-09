@@ -1,0 +1,49 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   phy_dynamic
+  </h1>
+  A dynamic instance is one that is fully simulated within the physics world and this
+  <b>
+   read-only
+  </b>
+  variable will return
+  <span>
+   true
+  </span>
+  if the instance being checked is fully simulated or
+  <span>
+   false
+  </span>
+  if it is not
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">phy_dynamic;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a>
+(or undefined if the instance is not physics enabled)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if other.phy_dynamic
+{
+    with (other)
+    {
+        var dir;
+        dir = point_direction(x, y, other.x, other.y);
+        physics_apply_impulse(x, y, x + lengthdir_x(100, dir), y + lengthdir_y(100, dir));
+    }
+}
+</code></pre>
+  The above code creates a new instance and then defines it as being a "bullet" in the physics world before giving it a massive impulse along the y axis.
+ </body>
+</html>

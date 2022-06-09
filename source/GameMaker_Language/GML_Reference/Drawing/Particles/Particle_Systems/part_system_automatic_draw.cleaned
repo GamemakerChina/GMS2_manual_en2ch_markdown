@@ -1,0 +1,108 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   part_system_automatic_draw
+  </h1>
+  This function can be used to switch off the drawing of a particle system so that any updates done to the system (automatic or otherwise) will not be seen. This is a purely visual option and when set to
+  <span>
+   false
+  </span>
+  you will not be able to see the particles as they are not drawn, but they still exists and are changing position, colour etc... as they would normally. When automatic drawing is off, you can
+  <i>
+   explicitly
+  </i>
+  order
+  <span>
+   GameMaker
+  </span>
+  to draw the current state of the particle system using the function
+  <a href="part_system_drawit.htm">
+   <span>
+    part_system_drawit()
+   </span>
+  </a>
+  , and if you set this function to
+  <span>
+   true
+  </span>
+  again you can switch automatic drawing back on.
+  
+  
+   One thing to note is that if you are using the simple effects created by the functions
+  <a href="../effect_create_above.htm">
+   <span>
+    effect_create_above()
+   </span>
+  </a>
+  or
+  <a href="../effect_create_below.htm">
+   <span>
+    effect_create_below()
+   </span>
+  </a>
+  then you can use the values of 0 (for below effects) or 1 (for above effects) as the particle system index and so toggle the automatic draw for these too (this will also work to toggle drawing for the GML Visual particle effects).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">part_system_automatic_draw(ind, automatic);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      ind
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Systems/part_system_create.htm">
+        Particle System ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the particle system to change.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      automatic
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Whether automatic drawing is on (true) or not (false).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">part_system_automatic_draw(global.Sname, false);
+</code></pre>
+  The above code switches off automatic drawing for the particle system indexed in the global variable "Sname".
+ </body>
+</html>

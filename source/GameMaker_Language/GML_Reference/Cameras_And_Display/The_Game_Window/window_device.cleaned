@@ -1,0 +1,50 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   window_device
+   <span>
+    DEPRECATED
+   </span>
+  </h1>
+  This function will return the current d3d device
+  <i>
+   pointer
+  </i>
+  , which you can then (for example) pass through to a DLL or Dylib on Windows and macOS.
+  <span>
+   NOTE
+  </span>
+  This function has been deprecated in
+  <span>
+   GameMaker
+  </span>
+  in favour of
+  <a href="../../OS_And_Compiler/os_get_info.htm">
+   <span>
+    <span>
+     os_get_info()
+    </span>
+   </span>
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">window_device();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Pointer
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">gfx_pointer = window_device();
+</code></pre>
+  The above code will store the d3d device pointer in a variable.
+ </body>
+</html>

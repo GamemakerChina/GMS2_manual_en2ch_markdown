@@ -1,0 +1,99 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/i_Instance_Set_Colour.png"/><br/>
+   Set Instance Colour
+  </h1>
+  This action block sets the
+  <span>
+   image_blend
+  </span>
+  colour for "blending" with the instance sprite. The default value is the hex code $FFFFFFFF (which represents the colour white using
+  <a>
+   ARGB
+  </a>
+  format) and this will draw the sprite using no blending and full alpha. Any other value (including internal colour constants like
+  <span>
+   c_red
+  </span>
+  , or
+  <span>
+   c_aqua
+  </span>
+  ) will
+  <i>
+   blend
+  </i>
+  the specified colour with the original sprite as well as set the
+  <span>
+   image_alpha
+  </span>
+  component for the instance, but only when the
+  <strong>
+   Use Alpha
+  </strong>
+  checkbox is ticked. This will overwrite any alpha value set previously using the action
+  <a href="Set_Instance_Alpha.htm">
+   Set Instance Alpha
+  </a>
+  .
+  
+  
+   Please note that for changes in this action to be visible, the instance should have either
+  <i>
+   no
+  </i>
+  draw event (and so
+  <span>
+   GameMaker
+  </span>
+  will default draw the sprite) or be drawn using
+  <a href="../Drawing/Draw_Self.htm">
+   Draw Self
+  </a>
+  action. It is
+    important to note too that you should try to limit blending on the
+  <b>
+   HTML5
+  </b>
+  platform (unless using WebGL), as each blended sprite has to be cached separately and so having many blended sprites may adversely affect performance.
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/sprite_colour.png"/><br/>
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/a_Instance_Set_Colour.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Colour
+     </td>
+     <td>
+      The new blending colour to use (clicking the colour swatch will open the colour picker window).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <span>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/e_Instance_Set_Sprite.png"/><br/>
+  </span>
+  The above action block code sets a new sprite as well as a number of other
+    properties for how that sprite is to be displayed, including setting the blend colour to pink.
+ </body>
+</html>

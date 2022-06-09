@@ -1,0 +1,38 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   gesture_get_pinch_angle_away
+  </h1>
+  This function is used to get the angle within which a touch must be moving away from another touch before a
+  <a href="../../../../The_Asset_Editors/Object_Properties/Gesture_Events.htm">
+   Pinch Out Gesture
+  </a>
+  may potentially be started. The angle is measured in degrees and has a default value of 45°.
+  <h4>
+   <b>
+    Syntax:
+   </b>
+  </h4>
+  <pre><code class="language-gml">gesture_get_pinch_angle_away();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a>
+(inches)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if gesture_get_pinch_angle_away() != 45
+{
+    gesture_pinch_angle_away(45);
+}
+</code></pre>
+  The above code checks to see if the pinch out angle for gestures is set to 45° and if it is not it sets it to that value
+ </body>
+</html>

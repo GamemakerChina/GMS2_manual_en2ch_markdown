@@ -1,0 +1,72 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   audio_sound_get_track_position
+  </h1>
+  This function will get the position (in seconds) within the sound file for the sound to play from. The sound can only be a single instance of a sound (the index for individual sounds being played can be stored in a variable when using the
+  <a href="audio_play_sound.htm">
+   <span>
+    audio_play_sound()
+   </span>
+  </a>
+  or
+  <a href="audio_play_sound_at.htm">
+   <span>
+    audio_play_sound_at()
+   </span>
+  </a>
+  functions).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">audio_sound_get_track_position(index);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/audio_play_sound.htm">
+        Sound Instance ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the sound to get the play position of.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if audio_sound_get_track_position(global.Music) != 0
+{
+    audio_sound_set_track_position(global.Music, 0);
+}
+</code></pre>
+  The above code checks a track to get it's start position and if it's not 0 seconds it sets it to 0 seconds.
+ </body>
+</html>

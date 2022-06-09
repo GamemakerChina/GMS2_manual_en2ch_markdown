@@ -1,0 +1,112 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/i_Common_Temp_Var.png"/><br/>
+   Declare Temporary Variable
+  </h1>
+  This action is used to declare and give an initial value to a
+  <b>
+   temporary variable
+  </b>
+  (also called a
+  <b>
+   local variable
+  </b>
+  ), which is a variable that
+  <i>
+   only exists for the duration of the event or script that it was declared in
+  </i>
+  . Temporary variables
+    are very useful for storing values that are only needed for a single operation and prevent your objects becoming "cluttered" with variables that may only be used once. They are also very useful for breaking down complex operations, or for
+    setting values in other instances when you change the action scope. This is because variables declared as temporary are
+  <i>
+   not
+  </i>
+  scoped to any particular instance, but instead scoped to the event or script itself, so if you create a temporary variable
+    and then change the action scope using the
+  <a href="Apply_To...htm">
+   Apply To...
+  </a>
+  action, you can still check the temporary variable without issues and without changing its action scope.
+  
+  
+   It is worth noting that when we talk about "values", we don't just mean numeric values, as a variable can be a string, a pointer, a resource ID or anything else that a function can return or use, even an
+  <a>
+   expression
+  </a>
+  . See the section on
+  <a href="../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+   data types
+  </a>
+  for more information.
+  
+  
+   Note that many action have a "Temp" check-box which enables you to create a new temporary local variable to hold the return value of the action, and this variable can be accessed in the action script or event as you would any other variable
+    thereafter. Also note that temporary local variables are scoped to the script or event in which they are created, and so they can be used by other instances in the same block when using
+  <a href="Apply_To...htm">
+   Apply To
+  </a>
+  .
+  
+  
+   You can also add additional variables in the same action by clicking the plus icon
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Icon_Expand_Arguments.png"/><br/>
+  beside the action, and giving another temporary local variable
+    name and value. For more advanced information on variables please see the section on
+  <a href="../../../GameMaker_Language/GML_Overview/Variables_And_Variable_Scope.htm">
+   Variables And Variable Scope
+  </a>
+  .
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/a_Common_Declare_Temp_Var.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Name
+     </td>
+     <td>
+      The name of the new variable to assign, or the name of an existing variable to change.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Value
+     </td>
+     <td>
+      The value that the variable should hold.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Declare_Temp.png"/><br/>
+  The above action block code creates two temporary variables, "
+  <span>
+   _dir
+  </span>
+  "
+    and "
+  <span>
+   _spd
+  </span>
+  " and sets them to random values. It then uses these values to set the instance moving in a random direction at a random speed.
+ </body>
+</html>

@@ -1,0 +1,166 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Built-In Time Sources
+  </h1>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Time_Sources/Built_In_Time_Sources.htm">
+        Time Source Constant
+       </a>
+      </span>
+     </th>
+    </tr>
+    <tr>
+     <th>
+      Constant
+     </th>
+     <th>
+      Description
+     </th>
+     <th>
+      Value
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       time_source_global
+      </span>
+      <span>
+      </span>
+     </td>
+     <td>
+      The Global
+      <span>
+       Time Source
+      </span>
+     </td>
+     <td>
+      0
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       time_source_game
+      </span>
+     </td>
+     <td>
+      The Game
+      <span>
+       Time Source
+      </span>
+     </td>
+     <td>
+      1
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  You can use the
+  <strong>
+   Global
+   <span>
+    Time Source
+   </span>
+  </strong>
+  or the
+  <strong>
+   Game
+   <span>
+    Time Source
+   </span>
+  </strong>
+  as a parent for your custom
+  <span>
+   Time Source
+  </span>
+  . Both
+  <span>
+   Time Source
+  </span>
+  s are globally available.
+   
+   
+    The Global
+  <span>
+   Time Source
+  </span>
+  runs outside the main game loop, while the Game
+  <span>
+   Time Source
+  </span>
+  runs as part of the game loop.
+   
+   
+    The choice between Global/Game doesn't affect whether
+  <span>
+   Time Source
+  </span>
+  s are affected by your game's framerate; that will depend on the
+  <a href="Time_Source_Units.htm">
+   unit
+  </a>
+  you use.
+  <h2>
+   Order
+  </h2>
+  <span>
+   Time Source
+  </span>
+  s inheriting from the Global
+  <span>
+   Time Source
+  </span>
+  are processed
+  <strong>
+   before
+  </strong>
+  the Game
+  <span>
+   Time Source
+  </span>
+  .
+  <h2>
+   States
+  </h2>
+  The Game
+  <span>
+   Time Source
+  </span>
+  has
+  <a href="Time_Source_States.htm">
+   states
+  </a>
+  , meaning it can be
+  <a href="time_source_pause.htm">
+   paused
+  </a>
+  . The Global
+  <span>
+   Time Source
+  </span>
+  doesn't have states and can't be paused.
+   
+   
+    You can use the Global
+  <span>
+   Time Source
+  </span>
+  for timers that should run regardless of the game state, and the Game
+  <span>
+   Time Source
+  </span>
+  for timers that are tied to your main game loop. You can then pause all of your game-related timers by pausing the Game
+  <span>
+   Time Source
+  </span>
+  .
+ </body>
+</html>

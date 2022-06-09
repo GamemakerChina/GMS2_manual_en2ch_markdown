@@ -1,0 +1,203 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   draw_surface_ext
+  </h1>
+  This function will draw the given surface as in the function
+  <a href="draw_surface.htm">
+   <span>
+    draw_surface()
+   </span>
+  </a>
+  but with additional options to change the scale, blending, rotation and alpha of the surface being drawn. Changing these values does
+  <i>
+   not
+  </i>
+  modify the resource in any way (only how it is drawn).
+  <b>
+  </b>
+  <span>
+   NOTE
+  </span>
+  When working with surfaces there is the possibility that they can cease to exist at any time due to them being stored in texture memory. You should
+  <b>
+   ALWAYS
+  </b>
+  check that a surface exists using
+  <span>
+   <a href="surface_exists.htm">
+    <span>
+     surface_exists()
+    </span>
+   </a>
+  </span>
+  before referencing them directly.
+  <span>
+   TIP
+  </span>
+  How a surface appears depends on its contents, especially the alpha values inside the surface. A surface
+  <a href="../Colour_And_Alpha/draw_clear_alpha.htm">
+   cleared
+  </a>
+  with an alpha of 0 may appear different from a surface cleared with an alpha of 1, due to the way they blend with the background. Take care of this whenever you notice a difference in the way something renders on a custom surface as opposed to the
+  <span>
+   <a href="application_surface.htm">
+    application_surface
+   </a>
+  </span>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">draw_surface_ext(id, x, y, xscale, yscale, rot, col, alpha);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Drawing/Surfaces/surface_create.htm">
+        Surface ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The unique ID value of the surface to draw.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      x
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x position of where to draw the surface.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y position of where to draw the surface.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      xscale
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The horizontal scale.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      yscale
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The vertical scale.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      rot
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The rotation or angle to draw the surface.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      col
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Drawing/Colour_And_Alpha/Colour_And_Alpha.htm">
+        Colour
+       </a>
+      </span>
+     </td>
+     <td>
+      The colour with which to blend the surface.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      alpha
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The alpha transparency for drawing the surface.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">draw_surface_ext(surf, 0, 0, 2, 2, 0, c_red, 0.5);
+</code></pre>
+  The above code will draw a the surface indexed in the variable "surf" at the (0,0) position in the room, with twice the original scale, blended red and semi transparent.
+ </body>
+</html>

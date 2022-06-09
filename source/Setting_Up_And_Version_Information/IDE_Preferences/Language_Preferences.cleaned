@@ -1,0 +1,48 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Language Preferences
+  </h1>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Setup_And_Version/Preferences/Language_GML_Prefs.png"/><br/>
+  The
+  <strong>
+   Language Preferences
+  </strong>
+  contain options for GameMaker Language:
+  <ul>
+   <li>
+    <strong>
+     Default scripting language
+    </strong>
+    : Choose between
+    <a href="../../GameMaker_Language/GameMaker_Language_Index.htm">
+     GML Code
+    </a>
+    and
+    <a href="../../Drag_And_Drop/Drag_And_Drop_Index.htm">
+     GML Visual
+    </a>
+    for all scripts that are created throughout all projects. See
+    <a href="../../GameMaker_Language.htm">
+     GameMaker Language
+    </a>
+    for more information.
+   </li>
+  </ul>
+  This section contains the following additional preference menus:
+  <ul>
+   <li>
+    <a href="GML_Code_Preferences.htm">
+     GML Code Preferences
+    </a>
+   </li>
+   <li>
+    <a href="GML_Visual_Preferences.htm">
+     GML Visual Preferences
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

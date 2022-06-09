@@ -1,0 +1,44 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   game_project_name
+  </h1>
+  This
+  <b>
+   read only
+  </b>
+  variable returns the display name of your game for the target platform in a "save-friendly" format for the target platform. If the display name contains any characters that are not permitted for a file name, they will
+    be replaced automatically with "_". The display name can be set in the
+  <a href="../../../Settings/Game_Options.htm">
+   Game Options
+  </a>
+  . Note that since there are no restrictions on file names for HTML5, this string will probably be the same
+    as that returned by
+  <a href="game_display_name.htm">
+   <span>
+    game_display_name
+   </span>
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">game_project_name
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var file = game_project_name + ".ini"; ini_open(file);
+ ini_write_real("Scores", "Highscore", score); ini_close();
+</code></pre>
+  The above code gets the project name and uses this to open (or create) an ini file which is then written to.
+ </body>
+</html>

@@ -1,0 +1,101 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   gpu_set_texrepeat
+  </h1>
+  This function can be used to indicate to
+  <span>
+   GameMaker
+  </span>
+  whether textures should repeat (
+  <span>
+   true
+  </span>
+  ) or not (
+  <span>
+   false
+  </span>
+  ) when used for models and primitives. Normally texture widths and heights lie in the range 0 - 1, but if you specify a value larger than 1 by default the rest is not drawn (the entire texture will be drawn with an "empty" section corresponding to the percentage over 1 that is used. So a value of 2 for a texture width or height would draw the texture in half the space and leave the other half empty). However, by using this function to set repeat to true the texture is repeated automatically over all models and primitives. The likely use case for these functions is for repeating a texture in 3D but in order for it to work and not pull images from the rest of the texture page, the sprite used will need to be marked as being on a "Separate Texture Page" in the Sprite Editor.
+  <b>
+   NOTE
+  </b>
+  : Sprites and backgrounds are always drawn without repeating, so once you draw a sprite or background this value is reset to
+  <span>
+   false
+  </span>
+  . This default behaviour will not affect texture stage settings (ie: calling the function will, but the internal setting to false will not).
+  <b>
+   NOTE
+  </b>
+  : This setting will over-ride any texture stage repeats set for shaders when using the function
+  <a href="gpu_set_texrepeat_ext.htm">
+   <span>
+    gpu_set_texrepeat_ext()
+   </span>
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">gpu_set_texrepeat(enable);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      enable
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Enable or disable texture filtering (
+      <span>
+       true
+      </span>
+      /
+      <span>
+       false
+      </span>
+      )
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if gpu_get_texrepeat()
+{
+    gpu_set_texrepeat(false);
+}
+else
+{
+    gpu_set_texrepeat(true);
+}
+</code></pre>
+  The above code checks to see if texture repeating is on or off and switches it accordingly.
+ </body>
+</html>

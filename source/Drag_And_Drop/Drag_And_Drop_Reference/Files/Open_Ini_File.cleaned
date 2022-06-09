@@ -1,0 +1,74 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/i_Files_Open_Ini_File.png"/><br/>
+   Open Ini File
+  </h1>
+  With this action you can open an Ini file for reading and/or writing. If the Ini file does not exist at the location you are checking,
+  <span>
+   GameMaker
+  </span>
+  may create one, but
+  <i>
+   only
+  </i>
+  if you write data to it. If you have only read information from
+    the Ini file, then the default values for the read function will be returned, but the Ini file will not actually be created.
+  
+  
+   Please note that you can only have
+  <i>
+   one Ini file open at any one time
+  </i>
+  and remember to use
+  <a href="Close_Ini_File.htm">
+   Close Ini File
+  </a>
+  once you're finished reading/writing from the Ini file as the information is not actually stored to disk
+    until then (it is stored in memory until the file is closed).
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/a_Files_Open_Ini_File.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Filename
+     </td>
+     <td>
+      The name - as a string and with the
+      <span>
+       .ini
+      </span>
+      extension - of the file to open
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/e_Files_Open_Ini_File.png"/><br/>
+  The above action block code will open an ini file for use, then get the value associated with
+    the "name" key under the "player" header. If the name returned matches the default name value (ie: the file, section or key does
+  <i>
+   not
+  </i>
+  exist) then the file has a global variable written to it before being closed (and writing
+    the new data to disk).
+ </body>
+</html>

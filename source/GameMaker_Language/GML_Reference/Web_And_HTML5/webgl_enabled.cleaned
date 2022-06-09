@@ -1,0 +1,43 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   webgl_enabled
+  </h1>
+  This
+  <b>
+   read-only
+  </b>
+  variable will return whether WebGL is enabled (
+  <span>
+   true
+  </span>
+  ) or not (
+  <span>
+   false
+  </span>
+  ) for your game. It will only work for those games running through a browser (ie: HTML5), and for all other platforms it will return true.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">webgl_enabled
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if webgl_enabled
+{
+    global.quality = 1;
+}
+else global.quality = 0;
+</code></pre>
+  The above code checks the WebGL flag and then sets the global variable "quality" accordingly.
+ </body>
+</html>

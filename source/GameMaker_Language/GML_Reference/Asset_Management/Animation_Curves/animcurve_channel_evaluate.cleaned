@@ -1,0 +1,90 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   animcurve_channel_evaluate
+  </h1>
+  This function can be used to get the value at a specific point in time from a channel
+  <a href="../../../GML_Overview/Structs.htm">
+   struct
+  </a>
+  . You supply the struct pointer for the channel (as returned by the function
+  <a href="animcurve_get_channel.htm">
+   <span>
+    animcurve_get_channel()
+   </span>
+  </a>
+  , or as returned in the animation curve struct from the function
+  <a href="animcurve_get.htm">
+   <span>
+    animcurve_get()
+   </span>
+  </a>
+  ) and the "x" (time) position along the curve channel to evaluate. This position should be between 0 and 1, and the function will return the curve value at that position, or it will return 0 if the channel struct supplied is invalid.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">animcurve_channel_evaluate(channel_struct, posx);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      channel_struct
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Animation_Curves/animcurve_get_channel.htm">
+        Animation Curve Channel Struct
+       </a>
+      </span>
+     </td>
+     <td>
+      The struct pointer for the channel to evaluate.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      posx
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The position in time to check (from 0 to 1).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var _channel = animcurve_get_channel(ac_AlphaCurve, 0);
+var _val = animcurve_channel_evaluate(_channel, sin(current_time/1000));
+image_alpha = _val;
+</code></pre>
+  The above code gets the channel struct for the animation curve asset "ac_AlphaCurve". It then uses the returned evaluation value to set the image alpha for the instance.
+ </body>
+</html>

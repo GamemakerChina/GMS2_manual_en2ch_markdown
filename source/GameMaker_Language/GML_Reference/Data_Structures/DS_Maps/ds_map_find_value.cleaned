@@ -1,0 +1,99 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   ds_map_find_value
+  </h1>
+  With this function you can get the value from a specified key. The input values of the function are the (previously created) DS map to use and the key to check for.
+  <b>
+   NOTE
+  </b>
+  : If no such key exists then the function will return
+  <span>
+   undefined
+  </span>
+  . You should always check this using the
+  <span>
+   <a href="../../Variable_Functions/is_undefined.htm">
+    <span>
+     is_undefined()
+    </span>
+   </a>
+  </span>
+  function
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">ds_map_find_value(id, key)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/ds_map_create.htm">
+        DS Map ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The id of the map to use.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      key
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The key to find.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm#variable">
+ Variable
+</a>
+or
+<a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ undefined
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">amount = ds_map_find_value(inventory, "food");
+</code></pre>
+  Or, using the map
+  <a href="../../../GML_Overview/Accessors.htm">
+   accessor
+  </a>
+  "?":
+  <pre><code class="language-gml">amount = inventory[? "food"];
+</code></pre>
+  The above code will get the value of the key "food" and store it in the variable "amount".
+ </body>
+</html>

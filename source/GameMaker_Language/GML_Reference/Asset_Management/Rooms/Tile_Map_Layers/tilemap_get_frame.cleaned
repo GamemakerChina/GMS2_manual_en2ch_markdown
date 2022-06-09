@@ -1,0 +1,80 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   tilemap_get_frame
+  </h1>
+  Since tiles can be animated, it can sometimes be useful to know which frame is currently being drawn and react accordingly, so with this function you can retrieve the current frame index for a given tile map. You give the tile map element ID (which you get when you create a tile map element using
+  <a href="layer_tilemap_create.htm">
+   <span>
+    layer_tilemap_create()
+   </span>
+  </a>
+  or when you use the function
+  <a href="layer_tilemap_get_id.htm">
+   <span>
+    layer_tilemap_get_id()
+   </span>
+  </a>
+  ), and the function will return the frame index.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">tilemap_get_frame(tilemap_element_id)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      tilemap_element_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/layer_tilemap_get_id.htm">
+        Tile Map Element ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The unique ID value of the tile map element to get the frame index of
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a>
+(between 0 (inclusive) and the maximum number of frames of animation (exclusive))
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var lay_id = layer_get_id("Tiles_Traps");
+var map_id = layer_tilemap_get_id(lay_id);
+if tilemap_get_frame(map_id) &amp;amp;gt;= 2 &amp;amp;amp;&amp;amp;amp; tilemap_get_frame(map_id) &amp;amp;lt; 4
+{
+    global.activate = true;
+}
+else
+{
+    global.activate = false;
+}
+</code></pre>
+  The above code checks the current animation frame for the given tile map on the given layer, and sets a global variable based on the return value.
+ </body>
+</html>

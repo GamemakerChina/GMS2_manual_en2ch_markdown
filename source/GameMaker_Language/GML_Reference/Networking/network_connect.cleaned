@@ -1,0 +1,136 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   network_connect
+  </h1>
+  With this function you can send a request to connect to a server. The function takes the
+  <i>
+   socket id
+  </i>
+  to connect through (see
+  <a href="network_create_socket.htm">
+   <span>
+    network_create_socket()
+   </span>
+  </a>
+  ) and requires you to give the IP address to connect to (a string) as well as the port to connect through, and if the connection fails a value of less than 0 will be returned. The connection uses a special protocol that ensures only
+  <span>
+   GameMaker
+  </span>
+  games connect to each other, however if you need to connect to a server that is not a
+  <span>
+   GameMaker
+  </span>
+  game, you can use
+  <a href="network_connect_raw.htm">
+   <span>
+    network_connect_raw()
+   </span>
+  </a>
+  . Note that by default the function is synchronous, meaning that your game may appear to "hang" as the connection is made. You can set a timeout value for connection, or alternatively make the creation asynchronous, using the function
+  <span>
+   <a href="network_set_config.htm">
+    network_set_config()
+   </a>
+  </span>
+  , or alternatively use the function
+  <span>
+   <a href="network_connect_async.htm">
+    network_connect_async()
+   </a>
+  </span>
+  instead.
+  <span>
+   NOTE
+  </span>
+  You cannot use this function on HTML5. For WebSockets, use the
+  <a href="network_connect_async.htm">
+   Async function
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">network_connect(socket, url, port);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      socket
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Networking/network_create_socket.htm">
+        Network Socket ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The id of the socket to use.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      url
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The URL or IP to connect to (a string).
+     </td>
+    </tr>
+    <tr>
+     <td>
+      port
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The port to connect to.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a>
+or
+<a href="../../../../GameMaker_Language/GML_Reference/Networking/network_create_socket.htm">
+ Network Socket ID
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">client = network_create_socket(network_socket_tcp);
+network_connect(client, "192.134.0.1", 6510);
+</code></pre>
+  The above code will create a new TCP socket then attempt to connect through that to the given IP address on port 6510.
+ </body>
+</html>

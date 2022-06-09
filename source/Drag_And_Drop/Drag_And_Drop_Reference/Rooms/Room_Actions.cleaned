@@ -1,0 +1,109 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Room Action Library
+  </h1>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Rooms/Lib_Rooms.png"/><br/>
+  <span>
+   The
+  </span>
+  <b>
+   Room
+  </b>
+  <span>
+   library permits you to change and check game rooms, based on the order defined in the
+   <a href="../../../Settings/The_Room_Manager.htm">
+    Room Manager
+   </a>
+   . Note that
+   <span>
+    all actions which change the room will also trigger the
+   </span>
+   <a href="../../../The_Asset_Editors/Object_Properties/Other_Events.htm">
+    Other - Room Events
+   </a>
+  </span>
+  <span>
+   .
+  </span>
+  <span>
+   The following actions are available:
+  </span>
+  <table>
+   <tbody>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Rooms/i_Rooms_Go_To_Room.png"/><br/>
+     </td>
+     <td>
+      <a href="Go_To_Room.htm">
+       Go To Room
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Rooms/i_Rooms_Go_To_Next_Room.png"/><br/>
+     </td>
+     <td>
+      <a href="Go_To_Next_Room.htm">
+       Go To Next Room
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Rooms/i_Rooms_Go_To_Previous_Room.png"/><br/>
+     </td>
+     <td>
+      <a href="Go_To_Previous_Room.htm">
+       Go To Previous Room
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Rooms/i_Rooms_Restart_Room.png"/><br/>
+     </td>
+     <td>
+      <a href="Restart_Room.htm">
+       Restart Room
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Rooms/i_Rooms_If_Room_Is_First.png"/><br/>
+     </td>
+     <td>
+      <a href="If_Room_Is_First.htm">
+       If Room Is First
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Rooms/i_Rooms_If_Room_Is_Last.png"/><br/>
+     </td>
+     <td>
+      <a href="If_Room_Is_Last.htm">
+       If Room Is Last
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Rooms/i_Rooms_Get_Current_Room.png"/><br/>
+     </td>
+     <td>
+      <a href="Get_Current_Room.htm">
+       Get Current Room
+      </a>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </body>
+</html>

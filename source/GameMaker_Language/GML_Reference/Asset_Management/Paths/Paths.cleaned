@@ -1,0 +1,116 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Paths
+  </h1>
+  <span>
+   GameMaker
+  </span>
+  has an extensive collection of functions and built-in variables for using paths within your game. This section deals with the basic ones that are used when dealing with paths that have previously been created in the
+  <a href="../../../../The_Asset_Editors/Paths.htm">
+   Path Editor
+  </a>
+  , but further functions exist that permit you to create your own paths using code, and to manipulate them in various ways.
+  
+  
+   The following basic functions exist that deal with paths:
+  <ul>
+   <li>
+    <a href="path_start.htm">
+     path_start
+    </a>
+   </li>
+   <li>
+    <a href="path_end.htm">
+     path_end
+    </a>
+   </li>
+   <li>
+    <a href="path_get_closed.htm">
+     path_get_closed
+    </a>
+   </li>
+   <li>
+    <a href="path_get_kind.htm">
+     path_get_kind
+    </a>
+   </li>
+   <li>
+    <a href="path_get_length.htm">
+     path_get_length
+    </a>
+   </li>
+   <li>
+    <a href="path_get_name.htm">
+     path_get_name
+    </a>
+   </li>
+   <li>
+    <a href="path_get_number.htm">
+     path_get_number
+    </a>
+   </li>
+   <li>
+    <a href="path_get_point_speed.htm">
+     path_get_point_speed
+    </a>
+   </li>
+   <li>
+    <a href="path_get_point_x.htm">
+     path_get_point_x
+    </a>
+   </li>
+   <li>
+    <a href="path_get_point_y.htm">
+     path_get_point_y
+    </a>
+   </li>
+   <li>
+    <a href="path_get_precision.htm">
+     path_get_precision
+    </a>
+   </li>
+   <li>
+    <a href="path_get_speed.htm">
+     path_get_speed
+    </a>
+   </li>
+   <li>
+    <a href="path_get_x.htm">
+     path_get_x
+    </a>
+   </li>
+   <li>
+    <a href="path_get_y.htm">
+     path_get_y
+    </a>
+   </li>
+  </ul>
+  To aid with debugging paths, you have a function to draw it to the screen too:
+  <ul>
+   <li>
+    <a href="../../Drawing/Basic_Forms/draw_path.htm">
+     draw_path
+    </a>
+   </li>
+  </ul>
+  Each instance of an object also has a series of built-in variables designed to make using paths easier, and these variables are listed in the following section:
+  <ul>
+   <li>
+    <a href="Path_Variables/Path_Variables.htm">
+     Path Variables
+    </a>
+   </li>
+  </ul>
+  Finally, it is possible to manipulate the contents of a path as well as create new paths when the game is running. The functions that enable these things and more are available from the following section:
+  <ul>
+   <li>
+    <a href="Path_Manipulation/Path_Manipulation.htm">
+     Path Manipulation
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

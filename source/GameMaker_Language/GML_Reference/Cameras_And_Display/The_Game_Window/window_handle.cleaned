@@ -1,0 +1,79 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   window_handle
+  </h1>
+  With this function you can get the internal Windows id value (the HWND, a
+  <i>
+   pointer
+  </i>
+  ). This function is really only useful for extension writers who need the
+  <span>
+   window handle
+  </span>
+  to call Windows API's in DLL code (the returned pointer should be cast into a string and then in the C++ just cast it to an HWND). The table below shows the platforms supported along with what they return:
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Platform
+     </th>
+     <th>
+      Returns
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Windows
+     </td>
+     <td>
+      Window HWND
+     </td>
+    </tr>
+    <tr>
+     <td>
+      macOS
+     </td>
+     <td>
+      NSWindow class
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Ubuntu (Linux)
+     </td>
+     <td>
+      XWindow handle
+     </td>
+    </tr>
+    <tr>
+     <td>
+      HTML5
+     </td>
+     <td>
+      Canvas ID
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">window_handle();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Pointer
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">win_id = windows_handle();
+</code></pre>
+  The above code will store the game window id in a variable.
+ </body>
+</html>

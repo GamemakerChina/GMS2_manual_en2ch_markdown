@@ -1,0 +1,64 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   degtorad
+  </h1>
+  In GM all the trigonometric functions work in radians, but most people work in degrees and this means that to convert your degrees into radians you need to use this function. For example,
+  <span>
+   degtorad(180)
+  </span>
+  returns 3.14159265 radians. This function
+    translates degrees into radians using the formula:
+  <pre><code class="language-gml">angle_radians = angle_degrees * pi / 180
+</code></pre>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">degtorad(deg);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      deg
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The degrees to convert.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">val = degtorad(90);
+</code></pre>
+  This will set val to pi/2.
+ </body>
+</html>

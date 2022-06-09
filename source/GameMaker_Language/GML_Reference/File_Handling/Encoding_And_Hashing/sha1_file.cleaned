@@ -1,0 +1,73 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   sha1_file
+  </h1>
+  In cryptography, SHA-1 is a cryptographic hash function designed by the United States
+  <i>
+   National Security Agency
+  </i>
+  and is employed in several widely used applications popular
+  <b>
+   Git
+  </b>
+  where it is used to check for file changes, and the protocols TLS and SSL, PGP, SSH, S/MIME, and IPsec. This function will take an input file and return a 160 bit message digest in ASCII format unique to that file to be used for integrity verification at any later date.
+  <strong>
+   NOTE
+  </strong>
+  : SHA-1 is not completely secure and can be broken. See
+  <a href="https://en.wikipedia.org/wiki/SHA-1">
+   this page
+  </a>
+  for more info.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">sha1_file(filename)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      filename
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The file to generate the sha1 hash for.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">hash = sha1_file(working_directory + "game_data.ini")
+</code></pre>
+  The above code will generate a sha1 hash for the specified file and store the returned value in the variable "hash".
+ </body>
+</html>

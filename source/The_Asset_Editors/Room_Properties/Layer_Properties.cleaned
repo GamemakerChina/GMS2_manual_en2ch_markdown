@@ -1,0 +1,844 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Layer Types And Properties
+  </h1>
+  Everything that goes into the room you create in the
+  <a href="../Rooms.htm">
+   Room Editor
+  </a>
+  is placed on a
+  <strong>
+   layer
+  </strong>
+  . Layers can be added, removed, and sorted from the Layer Editor, and come in a variety of different types, each with their own set of options and way of working. You aren't limited to the number of each type of layer, and can have multiple tile layers, or path layers, or instance layers, etc... Each type of layer has its own
+  <strong>
+   properties window
+  </strong>
+  where you can set different things depending on the layer type. You can also toggle the layer's visibility, with invisible layers
+  <em>
+   not
+  </em>
+  being processed at runtime (but you can make them visible again at any time using the appropriate
+  <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/General_Layer_Functions/layer_set_visible.htm">
+   layer function
+  </a>
+  ).
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Room_Layers.png"/><br/>
+  The image above shows the layer editor, with the current layers being listed at the top, and the different buttons for creating layers at the bottom. You can rename any layer from this editor by doing a slow double click on the name (note that you cannot use anything except letters numbers and the underbar "_" character for names) and you can also switch its visibility on or off by clicking the eye icon
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Eye.png"/><br/>
+  . If the room has inherited layers from a parent room, you can toggle the inheritance from the button at the bottom, but note that this will affect all layers (see
+  <a href="Room_Inheritance.htm">
+   here
+  </a>
+  for more information on inheritance). You can also use
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Shift.png"/><br/>
+  or
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Ctrl.png"/><br/>
+  /
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Cmd.png"/><br/>
+  and left click
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  on multiple layers to select them for duplication or deletion (these options are also available from the right mouse
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_RMB.png"/><br/>
+  menu).
+  
+  
+   To help with ordering your layers and keeping them tidy, you can create groups of layers in a layer folder by clicking the folder icon
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Folder.png"/><br/>
+  . You can also delete one or more selected layers by clicking the delete button
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_DeleteLayer.png"/><br/>
+  . All layers will have a
+  <strong>
+   depth
+  </strong>
+  value, which defines where in the draw order that layer will be placed when its contents are
+  <a>
+   rendered
+  </a>
+  in the room. Layers are drawn from the
+  <em>
+   highest
+  </em>
+  depth to the
+  <em>
+   lowest
+  </em>
+  , so a layer at a depth of -100 will be drawn
+  <em>
+   over
+  </em>
+  a layer with a depth of 200.
+  <span>
+   IMPORTANT
+  </span>
+  There is a minimum and maximum layer depth of -16000 to 16000. Anything placed on a layer outside that range will not be drawn although all events will still run as normal for anything on the layer.
+  
+  
+   If you right-click
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_RMB.png"/><br/>
+  on any layer you get the layer menu:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Room_LayerSubMenu.png"/><br/>
+  Here you can open the layer properties window for the selected layer, delete the layer, rename the layer, or add a
+  <strong>
+   sub layer
+  </strong>
+  . If you choose to add a sub layer, the new layer will be created under it, tabbed to the right. You can then choose to have the sub layer inherit its properties from the parent layer, and also set whether it should inherit the visibility from the parent layer.
+  
+  
+   Note that you can drag layers up or down in the window to re-order them, and you can select and move multiple layers too using either
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Shift.png"/><br/>
+  +
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  to select from one layer to another (including all those in between) or
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Ctrl.png"/><br/>
+  /
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Cmd.png"/><br/>
+  +
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  to select layers one at a time. If you place the layers on top of a layer folder, they will be moved and set as sub-layers of the folder you dropped them on to. You can also lock layers so that they cannot be edited by mistake using the lock button
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Padlock.png"/><br/>
+  .
+  <span>
+   NOTE
+  </span>
+  In the actual editor window where you place the different assets on their layers, you can hold down "
+  <span>
+   P
+  </span>
+  " + click anywhere to instantly select an asset and skip to the layer that it has been placed on.
+  
+  
+   Below you can find an overview of each of the available layer types as well as the editable properties for that layer:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Background.png"/><br/>
+  <a href="#">
+   <span>
+    Backgrounds
+   </span>
+   <span>
+    Backgrounds
+   </span>
+  </a>
+  You can add a new background layer by clicking on the
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Background.png"/><br/>
+  button. This will add the new layer, and then open up the background
+      properties window:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Room_BackgroundProperties.png"/><br/>
+  When you create a new background layer it is empty by default and so draws the defined background colour. If you do not assign a sprite for the background layer image, this is what will be drawn instead, and you can click the colour box to open the
+      colour picker and change the colour used. If you do choose a sprite, then you can tick the tiling options to tile it horizontally or vertically, or to make it stretch the image to fill the whole room.
+   
+   
+    If you want to have the background scroll in a direction, you can set the horizontal and/or vertical speed too (each game step it will move along the given access by the number of pixels that you set here), and you can also re-position the background
+      image by setting the x and y offset values. You can also set the animation speed for the background if the sprite resource that you have selected has multiple sub-images, although this is locked by default to the value that you set in the Sprite
+      Editor for the image used. Finally you can set the depth for the layer explicitly, although again by default this is locked and you can simply drag and reorder the layer order in the Layer Editor to change this value.
+   
+   
+    Note that you can toggle the inheritance for a background from this window too by clicking the button at the very top.
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Instance.png"/><br/>
+  <a href="#">
+   <span>
+    Instances
+   </span>
+   <span>
+    Instances
+   </span>
+  </a>
+  You can add a new instance layer by clicking on the
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Instance.png"/><br/>
+  button. This will add the new layer, and then open up the instance properties
+      window:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Room_Instances.png"/><br/>
+  This window simply shows a list of all the instances that are currently on the layer. You can add more instances to a layer
+      by opening up the
+  <a href="../../Introduction/The_Asset_Browser.htm">
+   Asset Browser
+  </a>
+  and then dragging objects from there into the room, or alternatively you can select an instance from the Asset Browser and then press and hold
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Alt.png"/><br/>
+  to preview the resource "in-situ", and if you additionally click the left mouse button
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  you can add the instance and even "paint" it into the room layer by maintaining the button pressed and moving the mouse.
+   
+   
+    The layer list can be ordered by clicking
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  and dragging an instance in the list to the position required, but it is worth noting that this is purely for organisational
+      purposes within the room editor and if you want to set a specific creation order, please use the
+  <strong>
+   Creation Order Window
+  </strong>
+  , which can be opened from the
+  <a href="Room_Properties.htm">
+   Room Properties
+  </a>
+  window, or from the
+  <a href="../Rooms.htm">
+   Room context menu
+  </a>
+  .
+   
+   
+    Double-clicking
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  on any instance - either in the room editor itself or in the properties list - will open a new window to let you modify aspects of that single unique
+      instance:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Room_InstanceProperties.png"/><br/>
+  By default the instance will have a name like "
+  <span>
+   inst_38B0BFF
+  </span>
+  ", but this can be changed
+      to anything you want as long as the name uses only alpha-numeric characters and the under-bar "_" (and no spaces). However it's worth noting that the name given here (whether it's one you give, or the default one that the IDE gives)
+      is considered a
+  <a>
+   constant
+  </a>
+  and so
+  <strong>
+   must be
+   <em>
+    unique
+   </em>
+   to the instance
+  </strong>
+  . This also means that it can be used in code n your game to identify the instance, but only if you
+      are in the same room as the instance.
+   
+   
+    Below the instance name you have buttons to set whether the instance is to inherit from the parent room, change the object that you want it to be an instance of or even open up the
+  <a href="../Objects.htm">
+   Object Editor
+  </a>
+  , should you wish to change
+      anything there. There is a button to check and edit variables through the
+  <a href="../Object_Properties/Object_Variables.htm">
+   Object Variable
+  </a>
+  window and you can change the initial characteristics of this instance too, setting a colour to blend
+      it with (white by default), or rotating and flipping it. You can also scale the instance along either or both the axis, and set its position within the room, as well as the image speed and initial frame for the sprite to use.
+   
+   
+    Finally you can give the instance some creation code which will run directly after the object creation event code, and is unique to this instance (so you can, say, set a variable in the object which all instance will have then modify it in the creation
+      code so that it's a unique value for one instance). Clicking this will chain a
+  <a href="../Scripts.htm">
+   script window
+  </a>
+  to the instance where you can add any functions or modify any variables and this code will be run directly after the instance
+      has been created and the instance
+  <a href="../Object_Properties/Event_Order.htm">
+   Create Event
+  </a>
+  has been run. Note that you can toggle inheritance of creation code on or off
+  <em>
+   independently
+  </em>
+  of the instance inheritance.
+   
+   
+    It is worth noting that each instance on a layer is automatically flagged for exporting when the game is made. However, especially when working with inheritance, it may be that you don't
+  <em>
+   want
+  </em>
+  specific instances to be added to the room
+      in the final game (or you may have a debug instance in every room and simply want to exclude it from the final game). If that is the case, then simply un-checking the "
+  <strong>
+   Export
+  </strong>
+  " checkbox to the left of the instance in the
+      list will prevent it from being exported as part of the executable. It is important to note, however, that if you have any code that references the instance,
+  <strong>
+   then the game will not run correctly
+  </strong>
+  , so use this feature with care.
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Tilemap.png"/><br/>
+  <a href="#">
+   <span>
+    Tile Maps
+   </span>
+   <span>
+    Tile Maps
+   </span>
+  </a>
+  You can add a new
+  <a>
+   tile map
+  </a>
+  layer by clicking on the
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Tilemap.png"/><br/>
+  button. This will add the new layer, and then open up the
+  <strong>
+   Tile Map Layer Properties
+  </strong>
+  window and the
+  <strong>
+   Tile Editing
+  </strong>
+  window:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Room_TileEditor.png"/><br/>
+  In the
+  <strong>
+   Tile Map Layer Properties
+  </strong>
+  you can toggle the inheritance for the layer, change the tile set that is being
+      used and set the x or y offset for the layer if you want the layer grid to not align exactly with the (0, 0) position of the room. You can also set the depth that the layer should be
+  <a>
+   rendered
+  </a>
+  at (which has it's own unique inheritance button) and you can "lock" this depth too, which will prevent any further editing after it has been created.
+   
+   
+    When the layer properties window opens it will also open the
+  <strong>
+   Tile Editing
+  </strong>
+  window, which shows the tile set being used (if you close this window by mistake, you can open it again from the
+  <strong>
+   Room
+  </strong>
+  >
+  <a href="../Rooms.htm">
+   Tile Editing
+  </a>
+  menu at the top of the IDE). You can click
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  on any tile to select it as the current
+  <strong>
+   brush
+  </strong>
+  and then draw them to the layer in the room editor by clicking
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  on the room canvas, or, if you want to draw multiple tiles together you can select them as a group by clicking the left mouse
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  and dragging to select them from the tileset before drawing. If the range of tiles that you want to draw together is not in a block, then you can hold down
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Ctrl.png"/><br/>
+  /
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Cmd.png"/><br/>
+  and then select individual tiles using the left mouse button
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  and create a custom brush that way (you can also remove tiles from a custom brush using
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Alt.png"/><br/>
+  +
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  ). Note that creating custom brushes this way is temporary and designed for one-off uses, however you can use the
+  <strong>
+   Editing Mode
+  </strong>
+  in the
+  <a href="../Tile_Set_Editors/Brush_Builder.htm">
+   Brushes
+  </a>
+  tab to create permanent brushes
+      that will be stored in the tile set asset:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Room_Brush_Editing.png"/><br/>
+  Note that the Tile Editing window permits you to zoom in and out on the tile with the mouse wheel or the buttons at the top, and you can pan using the
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_MMB.png"/><br/>
+  middle mouse button
+      or
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Space.png"/><br/>
+  +
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  . Note that there is a
+      grid option too which can be toggled on or off to delimit the tiles in the window, and you can set the colour of the grid as well, although tiles will
+  <em>
+   always
+  </em>
+  be snapped to the grid whether it is visible or not.
+   
+   
+    The Tile Editing window also permits you to select
+  <strong>
+   Brushes
+  </strong>
+  ,
+  <strong>
+   Animated Tiles
+  </strong>
+  and
+  <strong>
+   Auto Tiles
+  </strong>
+  from the Libraries tab, all of which are covered in the section on the
+  <a href="../Tile_Sets.htm">
+   Tile Set Editor
+  </a>
+  .
+   
+   
+    At the top of the room editor, when you have a tile layer selected, you will see a set of tools that are specific to tiles:
+  <table>
+   <tbody>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Tile_Draw.png"/><br/>
+     </td>
+     <td>
+      <strong>
+       Pencil
+      </strong>
+     </td>
+     <td>
+      This is the pencil tool. It uses the selected tile to paint in the Room Editor with the left mouse button
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+      and you can erase with the right mouse button
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_RMB.png"/><br/>
+      . Note that the index value for the tile is shown at the bottom in the Room Status Bar in the Room Editor, and if you have multiple tiles selected for painting
+            (ie: a
+      <a href="../Tile_Set_Editors/Brush_Builder.htm">
+       brush
+      </a>
+      ) then a list of all the tile indices used will be shown.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Tile_Erase.png"/><br/>
+     </td>
+     <td>
+      <strong>
+       Eraser
+      </strong>
+     </td>
+     <td>
+      With the eraser tool you can use the left mouse button
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+      to erase a given tile in the room editor. Essentially, all this does is set the tile index to 0, which is
+            the reserved "empty" tile.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Tile_Fill.png"/><br/>
+     </td>
+     <td>
+      <strong>
+       Fill
+      </strong>
+     </td>
+     <td>
+      The fill tool permits you to fill an entire tilemap layer or a selection of tiles with the current tile brush. The brush you use can be a single tile or a composite brush made up of multiple tiles, or even a tile from the animation library and
+            clicking
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+      on a layer will then fill in the tiles using the chosen brush. If you have not used the Selection Tool then the fill will work on all consecutive
+      <em>
+       empty
+      </em>
+      tiles,
+            or all consecutive tiles
+      <em>
+       of the same index
+      </em>
+      . If you have a selection within the layer, then fill will be constrained to within that selection.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Tile_Line.png"/><br/>
+     </td>
+     <td>
+      <strong>
+       Line
+      </strong>
+     </td>
+     <td>
+      When you select the Line Tool, clicking
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+      then dragging and releasing will create a line of tiles between where you clicked and where you released. If you have an
+            area of the tile map layer selected using the Selection Tool, then the line will only be added within the selection bounds. Lines can be drawn using a single tile brush, a composite brush of various tiles, or an animated tile from the library.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Tile_Rectangle.png"/><br/>
+     </td>
+     <td>
+      <strong>
+       Rectangle
+      </strong>
+     </td>
+     <td>
+      When you select the Rectangle Tool, clicking
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+      then dragging and releasing will create a filled rectangle of tiles with the top left corner being where you click
+            and the bottom right corner being where you release. If you have an area of the tilemap layer selected using the Section Tool, then the rectangle will only be added within the selection bounds. Rectangles can be drawn using a single tile brush,
+            a composite brush of various tiles, or an animated tile from the library.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_TileSelect.png"/><br/>
+     </td>
+     <td>
+      <strong>
+       Selection
+      </strong>
+     </td>
+     <td>
+      This is the selection tool, which can be used to define an area of the tile layer for working on. You can click the left mouse button
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+      and then drag the mouse to
+            create a rectangular area, or you can press
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Ctrl.png"/><br/>
+      /
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Cmd.png"/><br/>
+      +
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+      to add multiple selections and
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Alt.png"/><br/>
+      +
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+      to clear a part of the selection. To clear the whole selection you can press
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Escape.png"/><br/>
+      . When you have an area of a tile layer selected, the rest of the tools (Pencil, Flip, Rotate, etc...) will only work within the selected area. Note that you can also copy (
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Ctrl.png"/><br/>
+      /
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Cmd.png"/><br/>
+      + "
+      <span>
+       C
+      </span>
+      "), cut (
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Ctrl.png"/><br/>
+      /
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Cmd.png"/><br/>
+      + "
+      <span>
+       X
+      </span>
+      ") and paste (
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Ctrl.png"/><br/>
+      /
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Cmd.png"/><br/>
+      + "
+      <font>
+       <span>
+        <b>
+         V
+        </b>
+       </span>
+      </font>
+      ") selected tiles within the room editor which will then switch the tool to the Pencil and permit you to paint the room layer with the selected tiles.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Tile_Auto.png"/><br/>
+     </td>
+     <td>
+      <strong>
+       AutoTile
+      </strong>
+     </td>
+     <td>
+      Clicking this tool enables the Auto tiling paint style. When this is active you can select any tile from the Autotile Libraries tab, and then paint it into the room layer and
+      <span>
+       GameMaker
+      </span>
+      will automatically change it to match the surrounding
+            tiles, as long as you have correctly set up the
+      <a href="../Tile_Set_Editors/Auto_Tiles.htm">
+       Auto Tile Tab
+      </a>
+      . Note that selecting a tile from the tile set that is not part of the autotile libraries will reset the drawing tool to the standard
+            Pencil tool.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Tile_Inherit.png"/><br/>
+     </td>
+     <td>
+      <strong>
+       Inheritance
+      </strong>
+     </td>
+     <td>
+      With this tool you can enable/disable
+      <a href="Room_Inheritance.htm">
+       inheritance
+      </a>
+      for specific tiles on a given layer. For this to work, the room must first be a child room and the layer must have it's inheritance switched
+      <em>
+       on
+      </em>
+      in
+            the layer properties. When in this state, the room editor will colour all inherited tiles red by default, and clicking the right mouse button
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_RMB.png"/><br/>
+      will switch off inheritance for that tile, and clicking the left mouse button
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+      will switch it back on again. In this way you can re-use elements from "base"
+            rooms, only selectively changing the tiles that you require while inheriting all the rest.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Tile_Flip.png"/><br/>
+     </td>
+     <td>
+      <strong>
+       Flip
+      </strong>
+     </td>
+     <td>
+      Clicking the Flip tool with the left mouse button
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+      (or using the keyboard shortcut "
+      <span>
+       X
+      </span>
+      " ) will flip the tile currently selected
+            for drawing along the
+      <em>
+       horizontal
+      </em>
+      axis, without changing drawing tool (if you have a custom brush selected for drawing, the whole brush will flip). If you have no tile selected for drawing, but do have a group of tiles selected on
+            a layer, then the flip tool will Flip the selected tiles.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Tile_Mirror.png"/><br/>
+     </td>
+     <td>
+      <strong>
+       Mirror
+      </strong>
+     </td>
+     <td>
+      Clicking the Mirror tool with the left mouse button
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+      (or using the keyboard shortcut "
+      <span>
+       Y
+      </span>
+      " ) will mirror the tile currently
+            selected for drawing along the
+      <em>
+       vertical
+      </em>
+      axis, without changing drawing tool (if you have a custom brush selected for drawing, the whole brush will mirror). If you have no tile selected for drawing, but do have a group of tiles selected
+            on a layer, then the Mirror tool will mirror the selected tiles.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Tile_Rotate.png"/><br/>
+     </td>
+     <td>
+      <strong>
+       Rotate
+      </strong>
+     </td>
+     <td>
+      Clicking the Rotate tool with the left mouse button
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+      (or using the keyboard shortcut "
+      <span>
+       Z
+      </span>
+      " ) will rotate the tile currently
+            selected for drawing 90°
+      <em>
+       clockwise
+      </em>
+      , without changing drawing tool (if you have a custom brush selected for drawing, the whole brush will rotate). If you have no tile selected for drawing, but do have a group of tiles selected on a
+            layer, then the Rotate tool will rotate the selected tiles.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  Note that if you use the Selection Tool
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_TileSelect.png"/><br/>
+  to select a group of tiles in the room editor canvas and then either cut or copy them,
+      they will temporarily become the current brush for painting.
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Paths.png"/><br/>
+  <a href="#">
+   <span>
+    Paths
+   </span>
+   <span>
+    Paths
+   </span>
+  </a>
+  You can add a new path layer by clicking on the
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Paths.png"/><br/>
+  button. This will add the new layer, and then open up the path properties window:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Room_PathProperties.png"/><br/>
+  Here you can select the path from the Asset Browser to use for the layer and then change the defined connection type (either
+      using
+  <a>
+   smooth interpolation
+  </a>
+  or straight), as well as whether it is closed or not and the precision with which the path should be created. Note too that you can toggle the
+  <a href="Room_Inheritance.htm">
+   inheritance
+  </a>
+  here, and that you can set the path to be a specific colour (default is red) to make seeing them better in the editor. If you have no path resource defined, you can click the
+  <strong>
+   New
+  </strong>
+  button
+      to create one. Path layers also have a depth value associated with them (locked by default) even though nothing is actually
+  <a>
+   rendered
+  </a>
+  in your game when using them.
+   
+   
+    It is worth noting that you can also add points to the path by clicking the left mouse button
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  , as well as remove points using the right mouse button
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_RMB.png"/><br/>
+  , or select a point by clicking on it and dragging it around,
+  <em>
+   all within the actual room editor
+  </em>
+  , making creating and editing paths very easy (although you
+      can still edit the path in the
+  <a href="../Paths.htm">
+   Path Editor
+  </a>
+  as normal too). If you hold down
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Ctrl.png"/><br/>
+  /
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Cmd.png"/><br/>
+  +
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  on different path points, then they will all be selected and you can move them together or
+      delete them all from the menu option (explained below).
+   
+   
+    If you right click
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_RMB.png"/><br/>
+  in the room editor window while manipulating a path then you'll get the following options:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Room_PathRMBMenu.png"/><br/>
+  Here you can reverse the path direction (this will have little visible effect, but reverses the order in which the path points are
+      counted so the start point becomes the end point and vice-versa), as well as flip them horizontally or vertically. You can also delete the selected point from this menu. Note that you can hold down "
+  <span>
+   T
+  </span>
+  ", "
+  <span>
+   S
+  </span>
+  " or "
+  <span>
+   R
+  </span>
+  " then click
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  and drag to translate, scale or rotate the entire path.
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Assets.png"/><br/>
+  <a href="#">
+   <span>
+    Assets
+   </span>
+   <span>
+    Assets
+   </span>
+  </a>
+  You can add a new asset layer by clicking on the
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Assets.png"/><br/>
+  button. This will add the new layer, and then open up the asset layer properties window:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Room_LayerAssetProperties.png"/><br/>
+  An asset layer is simply a graphical asset (sprite or sequence) that has been placed into the room independently of
+      instances, and you can place them by either dragging them in from the
+  <a href="../../Introduction/The_Asset_Browser.htm">
+   Asset Browser
+  </a>
+  or by selecting the one you want in the Asset Browser and then using
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Alt.png"/><br/>
+  +
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  to "paint" them. Sprite assets are similar to tiles, only they can be fully animated - if the
+      sprite used has sub-images they will be shown - without the restrictions that are in place for tiles, ie: they aren't forced to a grid and animations can be any length and speed. Sequences are "collections" of sprites, sounds and instances
+      that will play when the room is entered.
+   
+   
+    While placing assets on the asset layer they will snap to the grid snap values set at the top of the room editor for the grid, but if you want to place them freehand, simply switch off the grid or use the keys
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Ctrl.png"/><br/>
+  /
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Cmd.png"/><br/>
+  and the left mouse button
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  . While those keys are held down, you will be free to place the asset anywhere, without it snapping to the grid resolution.
+   
+   
+    Once you place an asset in the room, you have a certain amount of control over how it looks by double clicking
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  on it to open the asset properties window:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Room_AssetProperties.png"/><br/>
+  From here you can give the asset a unique name, set whether it is to inherit from the parent room, or change the sprite or sequence
+      that you want it to display. For sequeunces, you can set the animation speed and the initial
+  <a>
+   playhead
+  </a>
+  frame, as well as the colour to blend with it (white by default) and the position in
+      the room. You can change the characteristics of sprite assets too, setting a colour to blend it with (white by default), or rotating and flipping it. You can also scale sprites along either or both the axis, and set their position within the room.
+      If the sprite has sub-images, you can choose the animation speed as well as set the initial frame to be shown.
+   
+   
+    It is worth noting that each asset on the layer is automatically flagged for exporting when the game is made. However, especially when working with
+  <a href="Room_Inheritance.htm">
+   inheritance
+  </a>
+  , it may be that you don't want specific sprites
+      to be added to the room in the final game. If that is the case, then simply un-checking the "
+  <strong>
+   Export
+  </strong>
+  " checkbox to the left of the sprite in the layer properties list will prevent it from being exported as part of the executable.
+      It is important to note, however, that if you have any code that references that asset, then the game will not run correctly, so use this feature with care.
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_FX_Layer.png"/><br/>
+  <a href="#">
+   <span>
+    Filter/Effect
+   </span>
+   <span>
+    Filter/Effect
+   </span>
+  </a>
+  You can add a new Filter/Effect layer by clicking on the
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_FX_Layer.png"/><br/>
+  button. This will add the new layer, and then open up the asset layer properties window:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Room_LayerFilterProperties.png"/><br/>
+  A Filter/Effect (or FX) layer is used to apply a visual filter or effect to some layers. Adding an FX layer and selecting an effect from the "Effect Type" drop-down menu will apply that effect to all layers that are
+  <em>
+   below
+  </em>
+  the selected FX layer, as demonstrated in this visual:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Room_LayerFilterEffectOrder.png"/><br/>
+  This means that all "affected" layers will have the selected filter applied to them (here, "Desaturate") as they are below an FX layer. Any layers above the FX layer will remain unaffected.
+   
+   
+    You can create Single-Layer FX using
+  <a href="../../IDE_Tools/The_Inspector.htm">
+   The Inspector
+  </a>
+  .
+   
+   
+    To learn more about Filter/Effect layers, read
+  <a href="Filters_and_Effects.htm">
+   Filter and Effects
+  </a>
+  .
+  <h2>
+   Inspector
+  </h2>
+  You can open the Inspector window and use it to inspect the properties of a room layer, which allows you to edit its properties and additionally apply a filter/effect to it:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/IDE%20Tools/Inspector_Room_Layers.png"/><br/>
+  <span>
+   NOTE
+  </span>
+  When you apply a filter/effect to a non-FX layer using the Inspector, it will always be applied as a "single layer" effect, i.e. its effect will only be applied on that particular layer and not on other layers below it.
+  
+  
+   For more information, read
+  <a href="../../IDE_Tools/The_Inspector.htm">
+   The Inspector
+  </a>
+  .
+ </body>
+</html>

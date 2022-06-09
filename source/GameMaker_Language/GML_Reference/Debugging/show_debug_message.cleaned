@@ -1,0 +1,96 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   show_debug_message
+  </h1>
+  This function will create a custom debug message that is shown in the compiler window at runtime. Note that the message can be
+  <i>
+   either
+  </i>
+  a string or a real number, but if you need both then the number will have to be converted to string first using the
+  <a href="../Strings/Strings.htm">
+   <span>
+    string()
+   </span>
+  </a>
+  function (see the example below) and that if the number has more than two decimal places then you should use
+  <a href="../Strings/string_format.htm">
+   <span>
+    string_format()
+   </span>
+  </a>
+  to show them as by default decimals are rounded to the nearest two decimal places (so "1.2468" would show as "1.25" in the output window).
+  
+  
+   Debug messages shown with this function will be shown in the
+  <a href="../../../Introduction/The_Output_Window.htm">
+   Compiler Output Window
+  </a>
+  at the bottom of the IDE as well as in the
+  <a href="../../../IDE_Tools/The_Debugger.htm">
+   Graph View
+  </a>
+  of the debugger when running the game in Debug Mode. If you only want to see messages in Debug Mode then you should probably be using
+  <a href="debug_event.htm">
+   <span>
+    debug_event()
+   </span>
+  </a>
+  instead.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">show_debug_message(string);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      string
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The custom debug message to show.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   <b>
+    Example:
+   </b>
+  </h4>
+  <pre><code class="language-gml">if !instance_exists(obj_Exit)
+{
+    show_debug_message("Exit not created!");
+    show_debug_message("Error Num: " + string(global.error));
+    game_end();
+}
+</code></pre>
+  The above code checks to see if an instance exists and if it does not, a debug message is shown in the compile window and the game is ended.
+ </body>
+</html>

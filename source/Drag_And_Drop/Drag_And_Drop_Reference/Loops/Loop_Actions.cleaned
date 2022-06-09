@@ -1,0 +1,77 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Loop Action Library
+  </h1>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Loops/Lib_Loops.png"/><br/>
+  The
+  <b>
+   Loop
+  </b>
+  action library contains those actions that are required for creating loops in your game action
+    code. A loop is simply a way of iterating over the same set of actions 1 or more times depending on certain conditions and are handy in any situation where you need to repeat the same actions over and over again.
+  
+  
+   The
+  <b>
+   Loop
+  </b>
+  library has the following actions:
+  <table>
+   <tbody>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Loops/i_Loops_Loop.png"/><br/>
+     </td>
+     <td>
+      <a href="Loop.htm">
+       Loop
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Loops/i_Loops_Repeat.png"/><br/>
+     </td>
+     <td>
+      <a href="Repeat.htm">
+       Repeat
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Loops/i_Loops_While.png"/><br/>
+     </td>
+     <td>
+      <a href="While.htm">
+       While
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Loops/i_Loops_For.png"/><br/>
+     </td>
+     <td>
+      <a href="For.htm">
+       For
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Loops/i_Loops_Break.png"/><br/>
+     </td>
+     <td>
+      <a href="Break.htm">
+       Break
+      </a>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </body>
+</html>

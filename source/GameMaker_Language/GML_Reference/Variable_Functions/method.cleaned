@@ -1,0 +1,131 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   method
+  </h1>
+  With this function you can bind an existing function (or method) to the given instance or struct, creating a new
+  <a href="../../GML_Overview/Method_Variables.htm">
+   method variable
+  </a>
+  that can be used later.
+  
+  
+   You supply the instance ID to use (an instance that is active in the room, and not an object index) or a struct reference, as well as the function ID (or method reference) that you want to bind. The function will return a new
+  <a>
+   method
+  </a>
+  which can be called from the variable it is assigned to (see the code example below).
+  
+  
+   The returned method will be "bound" to the given instance or struct, meaning it will always execute in the scope of that instance/struct.
+  
+  
+   You can bind built-in functions as well as user defined functions/methods, and you can also supply
+  <span>
+   undefined
+  </span>
+  as the instance/struct argument meaning that the current
+  <a href="../../GML_Overview/Instance_Keywords.htm">
+   <span>
+    self
+   </span>
+  </a>
+  scope will be used for the binding.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">method(struct_ref_or_instance_id, func);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      struct_ref_or_instance_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Structs.htm">
+        Struct
+       </a>
+      </span>
+      or
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/id.htm">
+        Instance ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The unique reference or ID value of the struct or instance to use (can be
+      <span>
+       self
+      </span>
+      or
+      <span>
+       undefined
+      </span>
+      )
+     </td>
+    </tr>
+    <tr>
+     <td>
+      func
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Script_Functions.htm">
+        Script Function
+       </a>
+      </span>
+      or
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Method_Variables.htm">
+        Method
+       </a>
+      </span>
+     </td>
+     <td>
+      The ID of the function (or method reference) to use
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Method_Variables.htm">
+ Method
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var _inst = instance_position(mouse_x, mouse_y, obj_Enemy);
+if instance_exists(_inst)
+{
+    enemy_func = method(_inst, enemy_ai);
+}
+</code></pre>
+  The above code will check if an enemy instance exists at the mouse's position. If it does then the
+  <span>
+   enemy_ai
+  </span>
+  method is bound to the enemy instance and returned as a new method variable
+  <span>
+   "enemy_func"
+  </span>
+  .
+ </body>
+</html>

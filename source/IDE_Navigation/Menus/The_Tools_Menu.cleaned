@@ -1,0 +1,78 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   The Tools Menu
+  </h1>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/IDE_Input/Tools_Menu.png"/><br/>
+  This menu permits you to open the various stand alone tools that are available to you within
+  <span>
+   GameMaker
+  </span>
+  , with the following options:
+  <ul>
+   <li>
+    <strong>
+     Texture Groups
+    </strong>
+    - View the
+    <a href="../../Settings/Texture_Groups.htm">
+     Texture Group
+    </a>
+    window.
+   </li>
+   <li>
+    <strong>
+     Audio Groups
+    </strong>
+    - View the
+    <a href="../../Settings/Audio_Groups.htm">
+     Audio Group
+    </a>
+    window.
+   </li>
+   <li>
+    <strong>
+     Sound Mixer
+    </strong>
+    - View the
+    <a href="../../IDE_Tools/Sound_Mixer.htm">
+     Sound Mixer
+    </a>
+    window.
+   </li>
+   <li>
+    <strong>
+     Generate Project Images
+    </strong>
+    - Opens the
+    <a href="../../IDE_Tools/Project_Image_Generator.htm">
+     Generate Project Images
+    </a>
+    window.
+   </li>
+   <li>
+    <strong>
+     Create Local Package
+    </strong>
+    - Opens the
+    <a href="../../IDE_Tools/Local_Asset_Packages.htm">
+     Asset Packager
+    </a>
+    window, so you can make and save local asset packages for future use.
+   </li>
+   <li>
+    <strong>
+     Import Local Package
+    </strong>
+    - Opens a file explorer window where you can then select a
+    <a href="../../IDE_Tools/Local_Asset_Packages.htm">
+     Local Asset Package
+    </a>
+    and import it, either adding it to the current project, or creating a new project
+      for it.
+   </li>
+  </ul>
+ </body>
+</html>

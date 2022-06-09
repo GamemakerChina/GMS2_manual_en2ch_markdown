@@ -1,0 +1,116 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Drawing
+  </h1>
+  This section contains all the functions related to drawing within the game room, as well as for controlling
+  <i>
+   how
+  </i>
+  things will be drawn (blending, alpha, culling, etc...). There are a great number of different functions for drawing, and they are split over the following categories to make it easier to find what you need:
+  <ul>
+   <li>
+    <a href="Colour_And_Alpha/Colour_And_Alpha.htm">
+     Colour And Alpha
+    </a>
+   </li>
+   <li>
+    <a href="GPU_Control/GPU_Control.htm">
+     <span>
+      GPU Control
+     </span>
+    </a>
+   </li>
+   <li>
+    <a href="Mipmapping/Mipmapping.htm">
+     Mipmapping
+    </a>
+   </li>
+   <li>
+    <a href="Basic_Forms/Basic_Forms.htm">
+     <span>
+      Basic Forms
+     </span>
+    </a>
+   </li>
+   <li>
+    <a href="Sprites_And_Tiles/Sprites_And_Tiles.htm">
+     <span>
+      Sprites And Tiles
+     </span>
+    </a>
+   </li>
+   <li>
+    <a href="Text/Text.htm">
+     <span>
+      Text
+     </span>
+    </a>
+   </li>
+   <li>
+    <a href="Primitives/Primitives_And_Vertex_Formats.htm">
+     <span>
+      Primitives And Vertex Formats
+     </span>
+    </a>
+   </li>
+   <li>
+    <a href="Surfaces/Surfaces.htm">
+     <span>
+      Surfaces
+     </span>
+    </a>
+   </li>
+   <li>
+    <a href="Lighting/Lighting.htm">
+     <span>
+      Lighting
+     </span>
+    </a>
+   </li>
+   <li>
+    <a href="Particles/Particles.htm">
+     <span>
+      Particles
+     </span>
+    </a>
+   </li>
+   <li>
+    <a href="Textures/Textures.htm">
+     <span>
+      Textures
+     </span>
+    </a>
+   </li>
+   <li>
+    <a href="../Asset_Management/Shaders/Shaders.htm">
+     Shaders
+    </a>
+   </li>
+   <li>
+    <a href="Videos/Videos.htm#h1">
+     Video Playback
+    </a>
+   </li>
+  </ul>
+  There are two special functions available too, one which is used for enabling or disabling the
+  <b>
+   Draw Event
+  </b>
+  for your project, and the other for flushing the entire draw pipeline:
+  <ul>
+   <li>
+    <a href="draw_enable_drawevent.htm">
+     draw_enable_drawevent
+    </a>
+   </li>
+   <li>
+    <a href="draw_flush.htm">
+     draw_flush
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

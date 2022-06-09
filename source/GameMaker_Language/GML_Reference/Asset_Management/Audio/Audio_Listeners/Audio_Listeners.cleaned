@@ -1,0 +1,115 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Audio Listeners
+  </h1>
+  When dealing with complex audio situations it can be useful to define where in the audio environment the listener should be situated. When working with the simple audio functions, it is not normally necessary for the listener to be changed in any way, however when using emitters to generate realistic audio within the 3D audio space, it is important that the listener be changed and moved correctly, or else the sound will be in the wrong
+  <i>
+   position
+  </i>
+  for the person playing your game.
+  
+  
+   By default, there is one listener automatically created in the game, which uses the ID
+  <span>
+   0
+  </span>
+  (for reference in listener functions).
+  <span>
+   GameMaker
+  </span>
+  provides the following listener functions:
+  <ul>
+   <li>
+    <a href="audio_listener_position.htm">
+     audio_listener_position
+    </a>
+   </li>
+   <li>
+    <a href="audio_listener_velocity.htm">
+     audio_listener_velocity
+    </a>
+   </li>
+   <li>
+    <a href="audio_listener_orientation.htm">
+     audio_listener_orientation
+    </a>
+   </li>
+   <li>
+    <a href="audio_listener_get_data.htm">
+     audio_listener_get_data
+    </a>
+   </li>
+   <li>
+    <a href="audio_listener_set_position.htm">
+     audio_listener_set_position
+    </a>
+   </li>
+   <li>
+    <a href="audio_listener_set_velocity.htm">
+     audio_listener_set_velocity
+    </a>
+   </li>
+   <li>
+    <a href="audio_listener_set_orientation.htm">
+     audio_listener_set_orientation
+    </a>
+   </li>
+  </ul>
+  Certain target platforms can permit more than one listener, with each one corresponding to a different output device, ie: your target platform could permit two listeners, one for the headphones and one for the monitor. Therefore
+  <span>
+   GameMaker
+  </span>
+  provides you with a number of extra functions with which you can find the available listeners as well as set them for sounds being played:
+  <ul>
+   <li>
+    <a href="audio_get_listener_count.htm">
+     audio_get_listener_count
+    </a>
+   </li>
+   <li>
+    <a href="audio_get_listener_info.htm">
+     audio_get_listener_info
+    </a>
+   </li>
+   <li>
+    <a href="audio_get_listener_mask.htm">
+     audio_get_listener_mask
+    </a>
+   </li>
+   <li>
+    <a href="audio_set_listener_mask.htm">
+     audio_set_listener_mask
+    </a>
+   </li>
+  </ul>
+  There are also functions for getting and setting mask data on individual sounds:
+  <ul>
+   <li>
+    <a href="../audio_sound_get_listener_mask.htm">
+     audio_sound_get_listener_mask
+    </a>
+   </li>
+   <li>
+    <a href="../audio_sound_set_listener_mask.htm">
+     audio_sound_set_listener_mask
+    </a>
+   </li>
+  </ul>
+  As well as for getting and setting mask data on emitters:
+  <ul>
+   <li>
+    <a href="../Audio_Emitters/audio_emitter_get_listener_mask.htm">
+     audio_emitter_get_listener_mask
+    </a>
+   </li>
+   <li>
+    <a href="../Audio_Emitters/audio_emitter_set_listener_mask.htm">
+     audio_emitter_set_listener_mask
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

@@ -1,0 +1,106 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Time_Sources/Action_Icons/Get_Children.png"/><br/>
+   Get Children
+  </h1>
+  This action returns an array containing all the child
+  <span>
+   Time Source
+  </span>
+  s for the given
+  <span>
+   Time Source
+  </span>
+  .
+   
+   
+    The resulting array is stored in the
+  <span>
+   Target
+  </span>
+  variable.
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Time_Sources/Action_Syntax/Get_Children.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Time Source
+     </td>
+     <td>
+      The
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Time_Sources/time_source_create.htm">
+        Time Source ID
+       </a>
+      </span>
+      to get the children of
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Target
+     </td>
+     <td>
+      The variable to store the array
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Temp
+     </td>
+     <td>
+      Whether the variable should be created as a temporary variable
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Time_Sources/Examples/Eg_Get_Children.png"/><br/>
+  This gets the children for a
+  <span>
+   Time Source
+  </span>
+  , and loops through the array to destroy each child
+  <span>
+   Time Source
+  </span>
+  .
+   
+   
+    At the end it destroys the parent
+  <span>
+   Time Source
+  </span>
+  .
+   
+   
+    This is necessary for destroying parent
+  <span>
+   Time Source
+  </span>
+  s, as you cannot destroy a
+  <span>
+   Time Source
+  </span>
+  that has existing children.
+ </body>
+</html>

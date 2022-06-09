@@ -1,0 +1,146 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   part_type_colour_hsv
+  </h1>
+  With this function you can set a hue, saturation and value range for all particles of the given type. You supply a minimum value and a maximum value for each of the three components and the particles created will have a random colour based on the given range of parameters. In this way you can create particles of the same hue but different saturations, or of different hues but the same value (luminosity) etc... All values must be between 0 and 255.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">part_type_colour_hsv(ind, hmin, hmax, smin, smax, vmin, vmax);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      ind
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Types/part_type_create.htm">
+        Particle Type ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the particle type to change.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      hmin
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The minimum the final colour's hue component can be.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      hmax
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The maximum the final colour's hue component can be.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      smin
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The minimum the final colour's saturation component can be.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      smax
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The maximum the final colour's saturation component can be.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      vmin
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The minimum the final colour's value component can be.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      vmax
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The maximum the final colour's value component can be.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">part_type_hsv(global.Stars, 0, 255, 0, 255, 255, 255 );
+</code></pre>
+  The above code sets each particle emitted of the particle type indexed in the global variable "Stars" to have different colours and saturations, but the same value (luminosity).
+ </body>
+</html>

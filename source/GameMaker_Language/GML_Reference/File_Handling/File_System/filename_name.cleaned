@@ -1,0 +1,65 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   filename_name
+  </h1>
+  Using this function returns the name part of the indicated file,
+  <i>
+   with
+  </i>
+  the extension but
+  <i>
+   without
+  </i>
+  the path.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">filename_name(fname);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      fname
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The file to use.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">name = filename_name(file_find_first("C:/Games/*.doc", 0));
+</code></pre>
+  The above code gets the name (as a string) of the first "doc" type file found in the specified directory.
+ </body>
+</html>

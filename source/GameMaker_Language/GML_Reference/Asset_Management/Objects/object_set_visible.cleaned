@@ -1,0 +1,99 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   object_set_visible
+  </h1>
+  With this function you can flag a specific object as being visible or not (for more information on the "visible" flag see the section on the
+  <a href="../../../../The_Asset_Editors/Objects.htm">
+   Object Editor
+  </a>
+  ). This means that all instances of this object that are created
+  <i>
+   after visible has been changed
+  </i>
+  will be created with this new state, while instances that are already in the room may not be affected.
+  
+  
+   Please note that this is not an instance function! You can set the visible flag of individual instances using the
+  <a href="../Instances/Instance_Variables/visible.htm">
+   <span>
+    visible
+   </span>
+  </a>
+  variable and so have ten instances all flagged as visible even though the object in question has the flag set to false in the IDE, and even if you change the visible flag of the object to true using this function, all instances that currently in the room will remain as they were, and only instances created after calling the function will start with visible flagged as true.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">object_set_visible( index, vis );
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Objects.htm">
+        Object Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the object to change.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      vis
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      The new visibility of the object (
+      <span>
+       true
+      </span>
+      =visible,
+      <span>
+       false
+      </span>
+      =invisible).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if !object_get_visible(obj_Block)
+{
+    object_set_visible(obj_Block, true);
+}
+</code></pre>
+  The above code checks the visible flag of the object "obj_Block" and if it is false then it is changed to be flagged as true.
+ </body>
+</html>

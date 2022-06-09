@@ -1,0 +1,213 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/i_Common_Declare_Function.png"/><br/>
+   Declare A New Function
+  </h1>
+  This action can be used to create a new user-defined function, which can later be called at any time in your code. A user-defined function is one that you define to do a task that isn't covered by the built-in GML Visual actions or GML runner functions, and can be global, instance or local in scope (see
+  <a href="../../../GameMaker_Language/GML_Overview/Variables_And_Variable_Scope.htm">
+   here
+  </a>
+  for more information on scope); they can also be used as
+  <b>
+   constructors
+  </b>
+  to create
+  <a href="../../../GameMaker_Language/GML_Overview/Structs.htm">
+   structs
+  </a>
+  . To find out more about using this action to create global functions, please see the section on
+  <a href="../../Drag_And_Drop_Overview/Action_Block_Functions.htm">
+   Creating Action Functions
+  </a>
+  .
+  
+  
+   To use this action, you can add it to an event or a script and give the new function a name. You then provide the required arguments/parameters that the function will take, and the default values for any optional arguments.
+  
+  
+   If the function is to be used as a constructor (which is used to create a struct), then you need to check the
+  <strong>
+   Constructor
+  </strong>
+  option and later use the
+  <a href="New.htm">
+   New
+  </a>
+  action to create a struct from the function. You may also flag the function as being
+  <b>
+   static
+  </b>
+  , which means that it will only be defined once no matter how many times this action is executed. Finally, if the function is only going to be used locally in the same event and nowhere else, then you can enable the
+  <strong>
+   Temp
+  </strong>
+  option.
+  
+  
+   Once you have defined the name and the parameters, you can attach the actions that you want the function to run when it is called in your code, by dropping them to the side of the action as shown in the image below:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/drop_declare_function.png"/><br/>
+  You can see examples of using this action as both a regular function and a constructor function in the "Extended Examples" section given below.
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/a_Common_Declare_Function.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Name
+     </td>
+     <td>
+      The name of the new function.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Argument [+]
+     </td>
+     <td>
+      The different arguments that can be passed into the function, and their default values if optional.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Constructor
+     </td>
+     <td>
+      Whether this function is a constructor.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Static
+     </td>
+     <td>
+      Whether this function is static.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Temp
+     </td>
+     <td>
+      Whether the function is temporary (meaning that it's only used within the current event).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h1>
+   Extended Examples
+  </h1>
+  <h4>
+   Extended Example 1
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Declare_Function_1.png"/><br/>
+  The above action block would go in the
+  <b>
+   Create Event
+  </b>
+  of an instance or a script, and declares a new function called
+  <span>
+   set_vec
+  </span>
+  with three arguments:
+  <span>
+   _x
+  </span>
+  ,
+  <span>
+   _y
+  </span>
+  and
+  <span>
+   spd
+  </span>
+  . These arguments are then used in the actions that the function contains to set the direction and speed of the instance, which happens when the function is called. You would later call the function using the
+  <a href="Function_Call.htm">
+   Function Call
+  </a>
+  action in any subsequent events, like this:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Declare_Function_2.png"/><br/>
+  In the above image, the
+  <span>
+   set_vec
+  </span>
+  function is called which changes the instance's direction to point towards the mouse's X/Y position and sets the speed to 5.
+  <h4>
+   Extended Example 2
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Declare_Function_3.png"/><br/>
+  The above action block would go in the
+  <b>
+   Create Event
+  </b>
+  of an instance or a script, and declares a new
+  <strong>
+   constructor
+  </strong>
+  function called
+  <span>
+   init_char_struct
+  </span>
+  with four arguments:
+  <span>
+   _name
+  </span>
+  ,
+  <span>
+   _location
+  </span>
+  ,
+  <span>
+   _hp
+  </span>
+  and
+  <span>
+   _mana
+  </span>
+  , with the last two being optional with a default value of 100 (this means that if those arguments are not specified when the function is called, their default values will be used instead). These arguments are then used to create some variables within the struct that the function is creating.
+  
+  
+   You would later call this function using the
+  <a href="New.htm">
+   New
+  </a>
+  action to create a struct, like this:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Declare_Function_4.png"/><br/>
+  The function is called and will return a new struct which is stored in the array
+  <span>
+   char
+  </span>
+  , and the struct will be populated with the variables
+  <span>
+   name
+  </span>
+  ,
+  <span>
+   location
+  </span>
+  ,
+  <span>
+   hp
+  </span>
+  and
+  <span>
+   mana
+  </span>
+  , set to the values that were passed into the corresponding arguments in the function call.
+ </body>
+</html>

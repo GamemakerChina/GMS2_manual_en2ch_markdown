@@ -1,0 +1,104 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   file_copy
+  </h1>
+  This function will copy the specified file, giving it the new name that you choose.
+  
+  
+   If you are copying a file on Android from within your
+  <b>
+   Included Files
+  </b>
+  area (which will be inside your APK) it will copy into memory first, so, be aware that copying very large files from the APK may cause devices to run out of memory. On the HTML5 target, we use the HTML5
+  <b>
+   Local Storage API
+  </b>
+  for client side saving, and the functions does not support binary file operations, so assumes you are copying a text file.
+  
+  
+   The function will fail if the
+  <span>
+   newname
+  </span>
+  file already exists.
+  <b>
+   WARNING!
+  </b>
+  This function may not work as you expect due to
+  <span>
+   GameMaker
+  </span>
+  being sandboxed! Please see the section on
+  <a href="../../../../Additional_Information/The_File_System.htm">
+   File System Limits
+  </a>
+  for more information.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">file_copy(fname, newname);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      fname
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The name of the file to copy.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      newname
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The name of the new, copied file.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if file_exists("level1.txt")
+{
+    file_copy("level1.txt", "level2.txt");
+}
+</code></pre>
+  This would check for a file and if it exists it is copied.
+ </body>
+</html>

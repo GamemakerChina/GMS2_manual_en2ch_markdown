@@ -1,0 +1,71 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   file_text_eof
+  </h1>
+  This function returns
+  <span>
+   true
+  </span>
+  when the end of a given opened text file has been reached or
+  <span>
+   false
+  </span>
+  if not.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">file_text_eof(fileid);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      fileid
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/File_Handling/Text_Files/file_text_open_read.htm">
+        Text File ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The id of the file to check.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var num = 0;
+var file = file_text_open_read(working_directory + "Game_Data.txt");
+while (!file_text_eof(file))
+{
+    str[num++] = file_text_readln(file);
+}
+file_text_close(file);
+</code></pre>
+  The above code opens a file for writing then loops through the lines of text already written to the file until it reaches the end, storing each line in the array "str".
+ </body>
+</html>

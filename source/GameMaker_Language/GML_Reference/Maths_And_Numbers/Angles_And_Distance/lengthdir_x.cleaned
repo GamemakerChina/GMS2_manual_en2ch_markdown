@@ -1,0 +1,93 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   lengthdir_x
+  </h1>
+  This function is used to get the
+  <b>
+   x
+  </b>
+  component of a position "len" pixels from the starting point and in direction "dir". If you imagine a circle around your instance, and then imagine a point anywhere on that circle, to move
+    to that point we need to move the object so many pixels in that direction... so this function (when used with
+  <a href="lengthdir_y.htm">
+   <span>
+    lengthdir_y()
+   </span>
+  </a>
+  ) gets the position of that point on the circle to be used in code by the instance. See
+    the image below for details:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/GML/Reference/Maths/Lengthdir_Image.png"/><br/>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">lengthdir_x(len, dir);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      len
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The length away of the point to return.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      dir
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The direction of the point to return.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var _xx = x + lengthdir_x(64, image_angle); var _yy = y + lengthdir_y(64, image_angle); instance_create_layer(_xx, _yy, "Bullets", obj_bullet);
+</code></pre>
+  This will create a bullet instance at (
+  <span>
+   _xx
+  </span>
+  ,
+  <span>
+   _yy
+  </span>
+  ), which will be 64 pixels from the parent instance in the direction of the image angle.
+ </body>
+</html>

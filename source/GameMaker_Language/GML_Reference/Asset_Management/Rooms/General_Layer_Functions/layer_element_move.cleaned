@@ -1,0 +1,101 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   layer_element_move
+  </h1>
+  You can use this function to move an element from one layer to another. You give the
+  <b>
+   element ID
+  </b>
+  , as returned by the function used to create the element or the room editor or the function
+  <a href="layer_get_all_elements.htm">
+   <span>
+    layer_get_all_elements()
+   </span>
+  </a>
+  , and then you give the layer ID (which you get when you create the layer using
+  <a href="layer_create.htm">
+   <span>
+    layer_create()
+   </span>
+  </a>
+  ) or the layer name (as a string - this will have a performance impact).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">layer_element_move(element_id, layer_id)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      element_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/General_Layer_Functions/layer_get_all_elements.htm">
+        Layer Element ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The unique ID value of the element to move
+     </td>
+    </tr>
+    <tr>
+     <td>
+      layer_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+      or
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/General_Layer_Functions/layer_get_id.htm">
+        Layer ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The unique ID value of the layer to move the element to (or the layer name as a string)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var a = layer_get_all_elements(layer);
+asset_layer = layer_create(-100);
+for (var i = 0; i Alt; array_length(a); i++;)
+{
+    if layer_get_element_type(a[i]) == layerelementtype_sprite
+    {
+        layer_element_move(a[i], asset_layer)
+    }
+}
+</code></pre>
+  The above code gets the elements on the layer that the instance running the code is assigned to, then checks them to see if they are sprite assets, and if they are then they are moved to the layer with the ID stored in the variable "asset_layer".
+ </body>
+</html>

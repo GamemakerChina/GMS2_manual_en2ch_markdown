@@ -1,0 +1,73 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   buffer_delete
+  </h1>
+  With this function you can delete a buffer previously have created using the function
+  <a href="buffer_create.htm">
+   <span>
+    buffer_create()
+   </span>
+  </a>
+  from memory, releasing the resources used to create it and removing any data that it may currently contain.
+  <b>
+   NOTE
+  </b>
+  : It's important to always remove any dynamically created resources from memory when you no longer need them to prevent memory leaks.
+  <em>
+   <strong>
+    IMPORTANT!
+   </strong>
+  </em>
+  When you create a buffer, the index value used to identify it is an integer value starting at 0. These indices are re-used by GameMaker, so a destroyed buffer index value may be used by a newly created one afterwards,
+    and we recommend that you set any variable that holds a buffer index to -1 after having destroyed the buffer.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">buffer_delete(buffer)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      buffer
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Buffers/buffer_create.htm">
+        Buffer ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the buffer to delete.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">buffer_delete(player_buffer); player_buffer = -1;
+</code></pre>
+  The above code will delete the previously created buffer with the id stored in the variable "player_buffer" and then sets the variable to -1.
+ </body>
+</html>

@@ -1,0 +1,33 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   timeline_speed
+  </h1>
+  Normally, in each step the position in the time line is increased by 1, however you can change this amount by setting this variable to a different value. You can use real numbers (like 0.5, or 2.4 for example) and if the value is larger than one, several moments can happen within the same time step (they will all be performed in the same order as defined for the time line, so no actions will be skipped).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">timeline_speed;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a>
+(single precision floating point value)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if !timeline_running
+{
+    timeline_running = true;
+    timeline_speed = 0.5;
+}
+</code></pre>
+  The above code will check and see if the instance is running its associated time line and if it is not, it will start the time line running at half speed.
+ </body>
+</html>

@@ -1,0 +1,121 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   audio_queue_sound
+  </h1>
+  This function will add the data from a buffer into the audio queue that you previously created using the function
+  <a href="audio_create_play_queue.htm">
+   <span>
+    audio_create_play_queue()
+   </span>
+  </a>
+  . You specify the queue index to add to, and the buffer ID to get the data from as well as the position (offset) within the buffer and the number of bytes to add. Once you have added audio from a buffer to a queue, the buffer cannot be deleted until you have first freed the queue using the function
+  <a href="audio_free_play_queue.htm">
+   <span>
+    audio_free_play_queue()
+   </span>
+  </a>
+  , and the buffer properties should match those of the the queue that you are adding the sound to.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">audio_queue_sound(queueIndex, bufferId, bufferOffset, bufferLength);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      queueIndex
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Buffers/audio_create_play_queue.htm">
+        Audio Queue ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the queue to add to.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      bufferId
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Buffers/buffer_create.htm">
+        Buffer ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The buffer to add to the queue.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      bufferOffset
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The offset within the source buffer to start from.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      bufferLength
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The length of the buffer (the number of the bytes in the buffer).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">len = async_load[? "data_len"];
+audio_buff = buffer_create(len, buffer_fast, 1);
+buffer_copy(async_load[? "buffer_id"], 0, len, buff, 0);
+audio_queue_sound(audio_queue, audio_buff, 0, len);
+audio_play_sound(audio_queue, 10, 0);
+</code></pre>
+  The above code would be called in the asynchronous
+  <a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Audio_Recording.htm">
+   Audio Recording
+  </a>
+  event and assigns some recorded data to a buffer, which is then added to an audio queue. This is then played.
+ </body>
+</html>

@@ -1,0 +1,121 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   sprite_get_uvs
+  </h1>
+  This function returns an
+  <a href="../../../../GML_Overview/Arrays.htm">
+   array
+  </a>
+  with the UV coordinates and other data for the texture of the sprite sub-image on the texture page. The function returns an array with the following 8 elements:
+  <ul>
+   <li>
+    [0] = left
+   </li>
+   <li>
+    [1] = top
+   </li>
+   <li>
+    [2] = right
+   </li>
+   <li>
+    [3] = bottom
+   </li>
+   <li>
+    [4] = amount of pixels the asset compiler has trimmed from the sprites left side
+   </li>
+   <li>
+    [5] = amount of pixels the asset compiler has trimmed from the sprites top side
+   </li>
+   <li>
+    [6] = normalised percentage of pixel data from the original sprites width that has been saved to the texture page
+   </li>
+   <li>
+    [7] = normalised percentage of pixel data from the original sprites height that has been saved to the texture page
+   </li>
+  </ul>
+  This array can then be used in other draw functions, particularly when working in 3D or using the
+  <a href="../../../Drawing/Primitives/Primitives_And_Vertex_Formats.htm">
+   2D primitive
+  </a>
+  functions, as well as when working with the
+  <a href="../../Shaders/Shaders.htm">
+   Shader
+  </a>
+  functions.
+  <b>
+   NOTE
+  </b>
+  : This function will
+  <b>
+   not
+  </b>
+  work with vector sprites or skeleton animation sprites.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">sprite_get_uvs(sprite, subimage);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      sprite
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../The_Asset_Editors/Sprites.htm">
+        Sprite Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the sprite to use.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      subimage
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The sub-image of the sprite to use.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Overview/Arrays.htm">
+ Array
+</a>
+(1D, 8 elements)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var tex = sprite_get_uvs(sprite, 0); tex_left = tex[0]; tex_top = tex[1]; tex_right = tex[2]; tex_bottom = tex[3];
+</code></pre>
+  The above code will store the UV coordinates for the given sprite in a local array and then assign the values to instance variables.
+ </body>
+</html>

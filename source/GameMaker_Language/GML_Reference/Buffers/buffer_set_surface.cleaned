@@ -1,0 +1,102 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   buffer_set_surface
+  </h1>
+  With this function you can write information from a buffer to a given surface. Both the buffer being read from and the surface being written to must have been created previously, and you can provide an offset into the buffer to start reading from. Note that reading will always start at the beginning of the buffer plus the offset value and
+  <em>
+   not
+  </em>
+  at the current seek position plus the offset value.
+  <strong>
+   NOTE
+  </strong>
+  : This function has changed from the
+  <span>
+   GameMaker
+  </span>
+  update 2.3.1 onward. Previous versions used the constant
+  <span>
+   buffer_surface_copy
+  </span>
+  , which is now deprecated.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">buffer_set_surface(buffer, surface, offset);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      buffer
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Buffers/buffer_create.htm">
+        Buffer ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the buffer to use.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      surface
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Drawing/Surfaces/surface_create.htm">
+        Surface ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the surface to use.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      offset
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The data offset value.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">buffer_set_surface(buff, application_surface, 0);
+</code></pre>
+  The above code will copy all the data stored in the buffer indexed in the variable "buff" to the application surface with no offset.
+ </body>
+</html>

@@ -1,0 +1,181 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   video_draw
+  </h1>
+  This function draws the current frame of the
+  <a href="video_open.htm">
+   opened video
+  </a>
+  to a surface (or two surfaces). It returns the surface(s) as part of its return array, which can be
+  <a href="../Surfaces/draw_surface.htm">
+   drawn manually
+  </a>
+  .
+   
+   
+    The function also returns data regarding the status of the video, which is expanded upon below.
+   
+   
+    Ensure that this is only called after a
+  <span>
+   <a href="video_open.htm">
+    video_open()
+   </a>
+  </span>
+  call but before a
+  <span>
+   <a href="video_close.htm">
+    video_close()
+   </a>
+  </span>
+  call, otherwise it will not do anything (as there will not be a video loaded).
+  <h2>
+   Return Data
+  </h2>
+  The function will return an array, the first element (
+  <span>
+   [0]
+  </span>
+  ) of which will be a real value. This value tells the status of the video, and will be:
+  <ul>
+   <li>
+    <strong>
+     0
+    </strong>
+    , if the video is playing without any issues
+   </li>
+   <li>
+    <strong>
+     -1
+    </strong>
+    , if there was an error
+   </li>
+   <li>
+    On some platforms,
+    <strong>
+     -2
+    </strong>
+    , if the video finished playing (at which point it can be removed from memory with a
+    <span>
+     <a href="video_close.htm">
+      video_close()
+     </a>
+    </span>
+    call)
+    <ul>
+     <li>
+      It's recommended to use the
+      <a href="Videos.htm#h">
+       Async Callbacks
+      </a>
+      instead to know when a video ends
+     </li>
+    </ul>
+   </li>
+  </ul>
+  When this status value is
+  <strong>
+   0
+  </strong>
+  , the array will contain more data, which will depend on the format of the video. You can know the video format by calling
+  <span>
+   <a href="video_get_format.htm">
+    video_get_format()
+   </a>
+  </span>
+  .
+  <h2>
+   RGBA Videos
+  </h2>
+  <span>
+   For RGBA videos, the position
+   <span>
+    [1]
+   </span>
+   will contain the surface where the video frame was drawn. You can get this surface and
+   <a href="../Surfaces/draw_surface.htm">
+    draw it
+   </a>
+   manually.
+  </span>
+  <h2>
+   YUV Videos
+  </h2>
+  <span>
+   Some platforms (especially consoles) use the YUV colour format for videos, which makes use of two surfaces. In that case the array will have positions
+   <span>
+    [1]
+   </span>
+   and
+   <span>
+    [2]
+   </span>
+   with two surfaces:
+  </span>
+  <ul>
+   <li>
+    <span>
+     <span>
+      [1]
+     </span>
+     is the main video surface in black and white
+    </span>
+   </li>
+   <li>
+    <span>
+     <span>
+      [2]
+     </span>
+     is the chroma surface that contains all the colour data
+    </span>
+   </li>
+  </ul>
+  Both these surfaces are then combined using a YUV shader before being used to texture a custom quad, which will draw the video to the screen.
+   
+   
+    Read
+  <a href="YUV_Videos.htm">
+   YUV Videos
+  </a>
+  for steps on drawing these two surfaces using a shader.
+   
+   
+    For the specific implementation details for a particular console, please refer to its documentation on the
+  <a href="https://help.yoyogames.com/hc/en-us/">
+   YoYo Games Helpdesk
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">video_draw();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Arrays.htm">
+ Array
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var _data = video_draw();
+var _status = _data[0];
+
+if (_status == 0)
+{
+    var _surface = _data[1];
+
+    draw_surface(_surface, x, y);
+}
+</code></pre>
+  The above code calls
+  <span>
+   video_draw()
+  </span>
+  , and checks if the returned status is 0, meaning the video is playing. In that case it gets the surface ID and draws it at the instance's position. This will only work for RGBA videos.
+ </body>
+</html>

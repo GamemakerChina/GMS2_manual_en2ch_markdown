@@ -1,0 +1,60 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   ds_priority_size
+  </h1>
+  This function will return the "size" of the priority queue, ie: the number of items that have been prioritized in it.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">ds_priority_size(id);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Priority_Queues/ds_priority_create.htm">
+        DS Priority ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The id of the data structure to check.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if !ds_priority_empty(control_priority)
+{
+    num = ds_priority_size(control_priority);
+}
+</code></pre>
+  The above code checks a DS priority queue to see if it is empty or not, and if it is not, it gets the number of items that it contains and stores the value in a variable.
+ </body>
+</html>

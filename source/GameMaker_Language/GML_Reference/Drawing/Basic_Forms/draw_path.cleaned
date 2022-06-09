@@ -1,0 +1,130 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   draw_path
+  </h1>
+  With this function you can get
+  <span>
+   GameMaker
+  </span>
+  to draw a path to the screen. The path will be drawn as a simple line, and can be either relative to the calling instance or at the absolute position it was created at in the path editor or through code. This function is extremely useful when debugging dynamic paths (for example, those created for instances with the
+  <a href="../../Movement_And_Collisions/Motion_Planning/mp_grid_path.htm">
+   <span>
+    mp_grid_path()
+   </span>
+  </a>
+  function).
+  <b>
+   NOTE
+  </b>
+  : If you are wanting to draw a shape using a shader, you should be aware that most shaders expect the following inputs: vertex, texture, Colour. However, when using this function, only vertex and colour data are being passed in, and so the shader may not draw anything (or draw something but not correctly). If you need to draw shapes in this way then the shader should be customised with this in mind.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">draw_path(path, x, y, absolute);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      path
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Paths.htm">
+        Path Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The path to draw
+     </td>
+    </tr>
+    <tr>
+     <td>
+      x
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x coordinate of where the path is drawn
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y coordinate of where the path is drawn
+     </td>
+    </tr>
+    <tr>
+     <td>
+      absolute
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Whether the path is drawn at the absolute position (
+      <span>
+       true
+      </span>
+      ) or the relative position (
+      <span>
+       false
+      </span>
+      )
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if mp_grid_path(grid, path, x, y, obj_Player.x, obj_Player.y, 1)
+{
+    draw_path(path, x, y, false);
+}
+</code></pre>
+  The above code will use the
+  <span>
+   mp_grid_path
+  </span>
+  function to generate a path and store it in the variable "path". If the path is successfully created, it is then drawn on the screen at a position relative to the instance running the code.
+ </body>
+</html>

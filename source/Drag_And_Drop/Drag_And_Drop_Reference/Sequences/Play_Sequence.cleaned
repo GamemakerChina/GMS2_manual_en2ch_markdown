@@ -1,0 +1,56 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Sequences/i_sequence_play.png"/><br/>
+   Play Sequence
+  </h1>
+  With this action you can start a (previously paused) sequence playing. You supply the sequence element ID (as returned by the action
+  <a href="Create_Sequence_Element.htm">
+   Create Sequence
+  </a>
+  ), and the action will start it playing.
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Sequences/a_sequence_play.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Variable
+     </td>
+     <td>
+      The ID of the sequence element to play.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Sequences/e_sequence_play.png"/><br/>
+  The above action block code checks to see if a global variable is
+  <span>
+   true
+  </span>
+  .
+    If it is then the sequence element referenced in the variable "
+  <span>
+   my_seq
+  </span>
+  " is paused, otherwise it is set to play.
+ </body>
+</html>

@@ -1,0 +1,152 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Instances
+  </h1>
+  <b>
+   Instances
+  </b>
+  are created from
+  <a href="../../../../The_Asset_Editors/Objects.htm">
+   Objects
+  </a>
+  and, once created, they can be changed and manipulated through GML code and GML Visual actions. The main instance functions related to instances that are available and most commonly used are:
+  <ul>
+   <li>
+    <a href="instance_create_layer.htm">
+     instance_create_layer
+    </a>
+   </li>
+   <li>
+    <a href="instance_create_depth.htm">
+     instance_create_depth
+    </a>
+   </li>
+   <li>
+    <a href="instance_destroy.htm">
+     instance_destroy
+    </a>
+   </li>
+   <li>
+    <a href="instance_exists.htm">
+     instance_exists
+    </a>
+   </li>
+   <li>
+    <a href="instance_change.htm">
+     instance_change
+    </a>
+   </li>
+   <li>
+    <a href="instance_copy.htm">
+     instance_copy
+    </a>
+   </li>
+   <li>
+    <a href="instance_find.htm">
+     instance_find
+    </a>
+   </li>
+   <li>
+    <a href="instance_furthest.htm">
+     instance_furthest
+    </a>
+   </li>
+   <li>
+    <a href="instance_nearest.htm">
+     instance_nearest
+    </a>
+   </li>
+   <li>
+    <a href="instance_number.htm">
+     instance_number
+    </a>
+   </li>
+   <li>
+    <a href="instance_place.htm">
+     instance_place
+    </a>
+   </li>
+   <li>
+    <a href="instance_place_list.htm">
+     instance_place_list
+    </a>
+   </li>
+   <li>
+    <a href="instance_position.htm">
+     instance_position
+    </a>
+   </li>
+   <li>
+    <a href="instance_position_list.htm">
+     instance_position_list
+    </a>
+   </li>
+  </ul>
+  Note that there are two additional built in variables (these are
+  <b>
+   global scope
+  </b>
+  variables) and one function related to using instances which can be useful for retrieving certain details:
+  <ul>
+   <li>
+    <a href="instance_id_get.htm">
+     instance_id_get
+    </a>
+   </li>
+   <li>
+    <a href="instance_id.htm">
+     instance_id
+    </a>
+   </li>
+   <li>
+    <a href="instance_count.htm">
+     instance_count
+    </a>
+   </li>
+  </ul>
+  There are a number of built in variables available within each instance of an object that can be used to control different aspects of how the instance is displayed, how it uses other assets, and how it reacts to collisions, etc... which are all listed here:
+  <ul>
+   <li>
+    <a href="Instance_Variables/Instance_Variables.htm">
+     <span>
+      Instance Variables
+     </span>
+    </a>
+   </li>
+  </ul>
+  Instances have an
+  <a href="Instance_Variables/alarm.htm">
+   array variable
+  </a>
+  that can be use to get or set Alarm Event values, but there are also two functions that can be used to do the same thing:
+  <ul>
+   <li>
+    <a href="alarm_get.htm">
+     alarm_get
+    </a>
+   </li>
+   <li>
+    <a href="alarm_set.htm">
+     alarm_set
+    </a>
+   </li>
+  </ul>
+  Finally, you also have the possibility of
+  <strong>
+   deactivating
+  </strong>
+  instances, which means they won't process any of their events, although they will still exist within the game. The functions relating to that are available from the following page:
+  <ul>
+   <li>
+    <a href="Deactivating_Instances/Deactivating_Instances.htm">
+     <span>
+      Deactivating Instances
+     </span>
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

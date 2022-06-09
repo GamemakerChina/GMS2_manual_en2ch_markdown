@@ -1,0 +1,67 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   image_blend
+  </h1>
+  This variable controls the "tinting" of the instance sprite and the default value is -1 (but can also be
+  <span>
+   c_white
+  </span>
+  ). Any other value (including internal colour constants like
+  <span>
+   c_red
+  </span>
+  , or
+  <span>
+   c_aqua
+  </span>
+  ) will blend the specified colour with the original sprite. Please note that for changes in this variable to be visible, the instance should have either
+  <i>
+   no
+  </i>
+  draw event (and so
+  <span>
+   GameMaker
+  </span>
+  will default draw the sprite) or be drawn using one of the extended drawing functions like
+  <a href="../../../Drawing/Sprites_And_Tiles/draw_self.htm">
+   <span>
+    draw_self()
+   </span>
+  </a>
+  or
+  <a href="../../../Drawing/Sprites_And_Tiles/draw_sprite_ext.htm">
+   <span>
+    draw_sprite_ext()
+   </span>
+  </a>
+  .
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/GML/Reference/Sprites/blend_image.png"/><br/>
+  Please note that you should try to limit blending on the HTML5 platform (unless using WebGL), as each blended sprite has to be cached separately and so having many blended sprites may adversely affect performance (you can also set the cache size using the function
+  <a href="../Sprite_Manipulation/sprite_set_cache_size.htm">
+   <span>
+    sprite_set_cache_size()
+   </span>
+  </a>
+  ).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">image_blend;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Colour_And_Alpha/Colour_And_Alpha.htm">
+ Colour
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">image_blend = make_colour_hsv(255, 255, random(255));
+</code></pre>
+  The above code will set the image_blend of the sprite defined for the instance to a random colour.
+ </body>
+</html>

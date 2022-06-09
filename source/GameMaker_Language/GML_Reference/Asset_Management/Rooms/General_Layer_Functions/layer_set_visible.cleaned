@@ -1,0 +1,122 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   layer_set_visible
+  </h1>
+  With this function you can toggle the visibility of a layer. You supply the layer ID (which you get when you create the layer using
+  <a href="layer_create.htm">
+   <span>
+    layer_create()
+   </span>
+  </a>
+  ) or the layer name (as a string - this will have a performance impact) as well as the toggle value for the layer where visible is
+  <span>
+   true
+  </span>
+  and invisible is
+  <span>
+   false
+  </span>
+  .
+  
+  
+   When a layer is invisible, nothing that is assigned to the layer will be drawn, and if any instances are assigned to the layer then they will not even run their draw event (much the same as if you set the instance variable
+  <span>
+   visible
+  </span>
+  to
+  <span>
+   false
+  </span>
+  ). Note that any instances that are already flagged as invisible will
+  <i>
+   not
+  </i>
+  be flagged as visible if the layer they are on is set to visible, as these are two independent settings, although their behaviour is the same.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">layer_set_visible(layer_id, visible)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      layer_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+      or
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/General_Layer_Functions/layer_get_id.htm">
+        Layer ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The unique ID value of the layer to target (or the layer name as a string)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      visible
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Whether the layer should be visible (
+      <span>
+       true
+      </span>
+      ) or not (
+      <span>
+       false
+      </span>
+      )
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var lay_id = layer_get_id("Instances");
+if layer_get_visible(lay_id)
+{
+    layer_set_visible(lay_id, false);
+}
+else
+{
+    layer_set_visible(lay_id, true);
+}
+</code></pre>
+  The above code gets the ID value for the layer named "Instances" in the room editor, then uses the ID to check if the layer is visible or not, toggling the layer visibility depending on the returned value.
+ </body>
+</html>

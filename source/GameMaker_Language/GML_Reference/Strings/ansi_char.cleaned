@@ -1,0 +1,63 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   ansi_char
+  </h1>
+  This function returns a string containing the character with raw BYTE value set. This will not,
+  <i>
+   and should not
+  </i>
+  , be displayed, but it will save correctly to disk for use in encoding.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">ansi_char(val);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      val
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The raw byte value.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a>
+(Single character)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var str1 = ansi_char($EF); var str2 = ansi_char($BB); var str3 = ansi_char($BF); file_text_write_string(global.saveFile, str1 + str2 + str3);
+</code></pre>
+  The above code creates a string from raw byte data and writes it to a (previously opened) file.
+ </body>
+</html>

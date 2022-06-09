@@ -1,0 +1,98 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Sequences/i_sequence_exists.png"/><br/>
+   If Sequence Exists
+  </h1>
+  This action can be used to check if the given sequence element exists in the game room. You give the element ID, as returned by the action
+  <a href="Create_Sequence_Element.htm">
+   Create Sequence
+  </a>
+  , and if the sequence element exists in the room then
+    the action will return
+  <span>
+   true
+  </span>
+  otherwise it will return
+  <span>
+   false
+  </span>
+  .
+  
+  
+   If you flag the "
+  <strong>
+   Not
+  </strong>
+  " argument, then the action will check to see if
+  <i>
+   no
+  </i>
+  such sequence element exists and if none are found it will return
+  <span>
+   true
+  </span>
+  .
+  
+  
+   Note that to add actions into the "
+  <span>
+   if
+  </span>
+  " block, they should be dropped to the side of the action, as shown in the image below:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Sequences/a_sequence_exists_drop.png"/><br/>
+  These actions will now be run if the "
+  <span>
+   if
+  </span>
+  "
+    evaluates to
+  <span>
+   true
+  </span>
+  , while any actions dropped elsewhere will be performed after the "
+  <span>
+   if
+  </span>
+  " block.
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Sequences/a_sequence_exists.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Sequence
+     </td>
+     <td>
+      The element ID of the sequence element to check.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Sequences/e_sequence_exists.png"/><br/>
+  The above action block code checks for to see if the sequence element stored in the variable
+    "
+  <span>
+   my_seq
+  </span>
+  " exists and if it does, it then destroys it.
+ </body>
+</html>

@@ -1,0 +1,86 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   ds_priority_add
+  </h1>
+  With this function you can add a value (either a real number or a string) to a priority queue, at the same time assigning it a priority value.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">ds_priority_add(id, val, priority);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Priority_Queues/ds_priority_create.htm">
+        DS Priority ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The id of the priority queue to add to.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      val
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm#variable">
+        Variable
+       </a>
+      </span>
+     </td>
+     <td>
+      The value to add to the priority queue.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      priority
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The priority of the value to add.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">ds_priority_add(ai_priority, AI_Search, 5);
+</code></pre>
+  The above code adds a script function to the priority queue indexed in the variable "ai_priority" and assigns it a priority of 5.
+ </body>
+</html>

@@ -1,0 +1,94 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Emit_Particles.png"/><br/>
+   Emit Particles
+  </h1>
+  This action is used to create particles from an emitter. You supply the particle system ID that the emitter belongs to (as returned by the action
+  <a href="Create_Particle_System.htm">
+   Create Particle System
+  </a>
+  ) and then the actual emitter ID (as returned
+    by the action
+  <a href="Create_Particle_Emitter.htm">
+   Create Particle Emitter
+  </a>
+  ), and finally the particle type to create (as returned by the action
+  <a href="Create_Particle_Type.htm">
+   Create Particle Type
+  </a>
+  ). You can then select to "Burst"
+    or "Stream" the particles from the emitter, as well as give the number of them you want to create.
+  
+  
+   When you choose to stream particles, you do not need to place this action in a game frame event like the Step Event or the Draw event, but instead simply call it once in the Create Event (for example) and the emitter will stream particles every game
+    frame until you call this action again to stop it (by setting the count value to 0). If you choose to burst the particles, then you can call this in any event you choose and the particles will be created once.
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Emit_Particles.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      System
+     </td>
+     <td>
+      The ID of the system that the emitter is in
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Emitter
+     </td>
+     <td>
+      The ID of the emitter to use
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Type
+     </td>
+     <td>
+      The ID of the particle type to create
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Event
+     </td>
+     <td>
+      The event type for the particles, either "Burst" or "Stream"
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Count
+     </td>
+     <td>
+      The the number of particles to burst or stream
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Create_Particle_Emitter.png"/><br/>
+  The above action block code will create a particle emitter, set it's region,
+    and then set it to emit a stream of particles.
+ </body>
+</html>

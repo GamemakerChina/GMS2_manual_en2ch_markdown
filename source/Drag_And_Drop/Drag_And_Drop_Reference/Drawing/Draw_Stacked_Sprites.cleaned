@@ -1,0 +1,108 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/i_Drawing_Draw_Stacked_Sprites.png"/><br/>
+   Draw Stacked Sprites
+  </h1>
+  This action will draw a sprite a given number of sprites one after another at a given position within the room. You give the sprite to draw and the stack order, which can be either
+  <b>
+   Row
+  </b>
+  (horizontally, left to right), or
+  <b>
+   column
+  </b>
+  (vertically,
+    top to bottom), as well as the number of sprites to draw and the position. The position can be an absolute position within the room, or one relative to the position of the instance doing the drawing, and the spacing between images will be based on
+    the width or height of the sprite. Note that this simply draws a static image - the initial single image (frame 0) of the given sprite - and any further frames will be ignored, as will any transforms that have been added through changing the
+  <a href="../Instance/Set_Instance_Variable.htm">
+   instance variables
+  </a>
+  (like
+  <span>
+   image_xscale
+  </span>
+  or
+  <span>
+   image_blend
+  </span>
+  ).
+  <b>
+  </b>
+  <b>
+   NOTE
+  </b>
+  : This action is only for use in the various
+  <a href="../../../The_Asset_Editors/Object_Properties/Draw_Events.htm">
+   Draw Events
+  </a>
+  , and will not draw anything if used elsewhere.
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/a_Drawing_Draw_Stacked_Sprites.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Sprite
+     </td>
+     <td>
+      The sprite to draw
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Stack Order
+     </td>
+     <td>
+      The order to draw in (either Row or Column)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Number
+     </td>
+     <td>
+      The number of sprites to draw
+     </td>
+    </tr>
+    <tr>
+     <td>
+      x
+     </td>
+     <td>
+      The x position to draw at
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y
+     </td>
+     <td>
+      The y position to draw at
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/e_Drawing_Draw_Stacked_Sprites.png"/><br/>
+  The above action block code gets the number of instances of the object "obj_Player"
+    and then uses this to draw a number of marker sprites to the screen.
+ </body>
+</html>

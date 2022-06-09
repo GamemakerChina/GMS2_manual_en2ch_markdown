@@ -1,0 +1,62 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   sprite_nineslice_create
+  </h1>
+  <em>
+   <span>
+    Nine Slicing
+   </span>
+   is a technique used to scale rectangular images for preserving details, making them retain their original form after scaling. See
+   <a href="../../../../../The_Asset_Editors/Sprite_Properties/Nine_Slices.htm">
+    this page
+   </a>
+   for information on Nine Slice.
+  </em>
+  This function is used to create a Nine Slice
+  <a href="../../../../GML_Overview/Structs.htm">
+   struct
+  </a>
+  which can be modified and then applied to a sprite. The contents of this struct are detailed on
+  <a href="../Nine_Slice_Struct.htm">
+   this page
+  </a>
+  .
+  
+  
+   You can store this struct in a variable, modify its properties, and apply it to any sprites using
+  <span>
+   <a href="sprite_set_nineslice.htm">
+    sprite_set_nineslice()
+   </a>
+  </span>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">sprite_nineslice_create();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Nine_Slice_Struct.htm">
+ Nine Slice Struct
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var _nineslice = sprite_nineslice_create();
+
+_nineslice.enabled = true;
+_nineslice.left = 10;
+_nineslice.right = 10;
+_nineslice.top = 10;
+_nineslice.bottom = 10;
+
+sprite_set_nineslice(spr_box_0, _nineslice);
+</code></pre>
+  The code above creates a new Nine Slice struct, enables it and sets the offsets for the guides. The struct is then applied to a sprite, changing its Nine Slice properties.
+ </body>
+</html>

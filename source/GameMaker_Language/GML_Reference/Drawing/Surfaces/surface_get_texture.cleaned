@@ -1,0 +1,94 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   surface_get_texture
+  </h1>
+  This function returns a special
+  <i>
+   pointer
+  </i>
+  for the surface's texture. This value can then be used in other draw functions, particularly in general 3D and some of the 2D primitive functions.
+  <b>
+  </b>
+  <span>
+   NOTE
+  </span>
+  When working with surfaces there is the possibility that they can cease to exist at any time due to them being stored in texture memory. You should
+  <b>
+   ALWAYS
+  </b>
+  check that a surface exists using
+  <span>
+   <a href="surface_exists.htm">
+    <span>
+     surface_exists()
+    </span>
+   </a>
+  </span>
+  before referencing them directly.
+  <span>
+   NOTE
+  </span>
+  On HTML5, this returns a struct instead of a texture pointer, as a pointer cannot be used on that platform. However this does not change the use of the returned value, as its usage in
+  <a href="../Textures/Textures.htm">
+   texture functions
+  </a>
+  still remains the same.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">surface_get_texture(surface_id);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      surface_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Drawing/Surfaces/surface_create.htm">
+        Surface ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The ID of the surface to get the width of.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Information/sprite_get_texture.htm">
+ Texture
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var tex;
+tex = surface_get_texture(surf);
+draw_primitive_begin_texture(pr_trianglestrip, tex);
+draw_vertex_texture(0, 480, 0, 0);
+draw_vertex_texture(640, 480, 1, 0);
+draw_vertex_texture(640, 480, 1, 1);
+draw_vertex_texture(0, 480, 0, 1);
+draw_primitive_end();
+</code></pre>
+  The above code will draw a 4 vertex triangle strip textured with the texture held in the "tex" variable, which is itself taken from a previously created surface.
+ </body>
+</html>

@@ -1,0 +1,79 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   display_mouse_set
+  </h1>
+  With this function you can change or set the position of the mouse within the game display which can be useful for FPS games, for example. The function will only work while the game is in focus and using
+  <span>
+   ALT + Tab
+  </span>
+  will unlock the mouse.
+  <span>
+   NOTE
+  </span>
+  This function is only usable on Desktop platforms (i.e. Windows, Mac and Ubuntu).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">display_mouse_set(x, y);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      x
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x coordinate in the display.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y coordinate in the display.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">display_mouse_set(display_get_width() / 2, display_get_height() / 2);
+</code></pre>
+  The above code would center the mouse in the game display.
+ </body>
+</html>

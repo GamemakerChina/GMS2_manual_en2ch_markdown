@@ -1,0 +1,29 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   matrix_stack_clear
+  </h1>
+  This function clears the matrix stack.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">matrix_stack_clear();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if !matrix_stack_is_empty()
+{
+    matrix_stack_clear();
+}
+</code></pre>
+  The above code checks the matrix stack to see if it is empty and if it is not it clears it.
+ </body>
+</html>

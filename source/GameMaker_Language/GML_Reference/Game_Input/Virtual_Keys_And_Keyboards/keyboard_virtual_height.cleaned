@@ -1,0 +1,36 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   keyboard_virtual_height
+  </h1>
+  This function will return the current height in pixels of the virtual keyboard, based on the size of the
+  <i>
+   display
+  </i>
+  . If the keyboard is not visible, 0 will be returned.
+  <h4>
+   Syntax
+  </h4>
+  <pre><code class="language-gml">keyboard_virtual_height();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if keyboard_virtual_status() == true
+{
+    key_h = keyboard_virtual_height();
+}
+</code></pre>
+  The above code will check the status of the OS virtual keyboard, and if it's visible set a variable to the height of the keyboard.
+  <b>
+  </b>
+ </body>
+</html>

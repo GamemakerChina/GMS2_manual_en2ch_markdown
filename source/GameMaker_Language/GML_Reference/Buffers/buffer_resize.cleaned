@@ -1,0 +1,74 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   buffer_resize
+  </h1>
+  With this function you can resize a given buffer to be the size (in bytes) that you specify.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">buffer_resize(buffer, newsize);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      buffer
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Buffers/buffer_create.htm">
+        Buffer ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the buffer to change the size of.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      newsize
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The new size of the buffer (in bytes).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if (buffer_get_size(buff) &amp;amp;lt; 16384)
+{
+    buffer_resize(buff, 16384);
+}
+</code></pre>
+  The above code will check the size of the buffer indexed in the variable "buff" and if it is less than the given value, the buffer is resized.
+ </body>
+</html>

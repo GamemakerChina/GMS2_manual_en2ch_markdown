@@ -1,0 +1,78 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Nine Slice Functions
+  </h1>
+  In addition to the Nine Slice section in the
+  <a href="../../../../The_Asset_Editors/Sprites.htm">
+   Sprite Editor
+  </a>
+  ,
+  <span>
+   GameMaker
+  </span>
+  provides functions for setting Nine Slice properties for sprites at runtime. Before reading about these functions, it is recommended to read
+  <a href="../../../../The_Asset_Editors/Sprite_Properties/Nine_Slices.htm">
+   this page
+  </a>
+  to get an understanding of the Nine Slice technique.
+  
+  
+   The following functions can be used to retrieve and change Nine Slice properties for a sprite asset at runtime:
+  <ul>
+   <li>
+    <a href="Sprite_Manipulation/sprite_nineslice_create.htm">
+     sprite_nineslice_create
+    </a>
+   </li>
+   <li>
+    <a href="Sprite_Information/sprite_get_nineslice.htm">
+     sprite_get_nineslice
+    </a>
+   </li>
+   <li>
+    <a href="Sprite_Manipulation/sprite_set_nineslice.htm">
+     sprite_set_nineslice
+    </a>
+   </li>
+  </ul>
+  These functions make use of a Nine Slice struct, and you can read about the contents of that struct on
+  <a href="Nine_Slice_Struct.htm">
+   this page
+  </a>
+  .
+  <h2>
+   Drawing Nine Slice Sprites
+  </h2>
+  There are no separate functions for drawing Nine Slice sprites as they work with the existing sprite drawing functions (except for functions that draw only a part of the sprite or distort it, such as
+  <span>
+   <a href="../../Drawing/Sprites_And_Tiles/draw_sprite_part.htm">
+    draw_sprite_part()
+   </a>
+  </span>
+  or
+  <span>
+   <a href="../../Drawing/Sprites_And_Tiles/draw_sprite_pos.htm">
+    draw_sprite_pos()
+   </a>
+  </span>
+  ).
+  
+  
+   It is recommended to use the
+  <a href="../../Drawing/Sprites_And_Tiles/draw_sprite_stretched.htm">
+   <span>
+    draw_sprite_stretched()
+   </span>
+  </a>
+  function to draw a Nine Slice sprite, as it allows you to specify the absolute dimensions of the sprite in pixels and will be easy to use along with Nine Slice. You can also use
+  <a href="../../Drawing/Sprites_And_Tiles/draw_sprite_ext.htm">
+   <span>
+    draw_sprite_ext()
+   </span>
+  </a>
+  which instead takes scale values.
+ </body>
+</html>

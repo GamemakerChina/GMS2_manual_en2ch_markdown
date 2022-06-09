@@ -1,0 +1,58 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   view_current
+  </h1>
+  This
+  <b>
+   read only
+  </b>
+  variable is only valid in the
+  <a href="../../../../The_Asset_Editors/Object_Properties/Draw_Events.htm">
+   <b>
+    Draw Event
+   </b>
+  </a>
+  and returns the current view port being rendered. The return value will change during the draw event when you have various views as the draw event is called
+  <i>
+   once for each view port in succession
+  </i>
+  . So when (for example) you are using view port[0] and view port[1] in your game room, the draw event for
+  <i>
+   ALL
+  </i>
+  instances will be run twice, once for each port, and with this variable you can check to see what view is currently being drawn. In general, this is used to only render specific details to a single port when multiple view ports are visible in the room at the same time. See the example code below.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">view_current;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a>
+(view port index from 0 to 7)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if view_current == 0
+{
+    var xx = camera_get_view_x(view_camera[0]);
+    var yy = camera_get_view_y(view_camera[0]);
+    draw_text(xx + 32, yy + 32, "Player 1");
+}
+else
+{
+    var xx = camera_get_view_x(view_camera[1]);
+    var yy = camera_get_view_y(view_camera[1]);
+    draw_text(xx + 32, yy + 32, "Player 2");
+}
+</code></pre>
+  The above code checks to see which view is currently being drawn and then draws a different text to each view based on the return value.
+ </body>
+</html>

@@ -1,0 +1,76 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Time_Sources/Action_Icons/Destroy_Time_Source.png"/><br/>
+   Destroy Time Source
+  </h1>
+  This action destroys the given
+  <span>
+   Time Source
+  </span>
+  .
+   
+   
+    You cannot destroy a
+  <span>
+   Time Source
+  </span>
+  if it has existing
+  <a href="Get_Children.htm">
+   children
+  </a>
+  . Destroy the child
+  <span>
+   Time Source
+  </span>
+  s first before destroying a parent (
+  <a href="Get_Children.htm">
+   example
+  </a>
+  ).
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Time_Sources/Action_Syntax/Destroy_Time_Source.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Time Source
+     </td>
+     <td>
+      The
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Time_Sources/time_source_create.htm">
+        Time Source ID
+       </a>
+      </span>
+      to destroy
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Time_Sources/Examples/Eg_Destroy_TS.png"/><br/>
+  This checks if a
+  <span>
+   Time Source
+  </span>
+  exists, and if it does, it destroys it.
+ </body>
+</html>

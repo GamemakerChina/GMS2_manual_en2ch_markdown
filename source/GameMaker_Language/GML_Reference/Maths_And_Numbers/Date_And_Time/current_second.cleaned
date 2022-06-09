@@ -1,0 +1,31 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   current_second
+  </h1>
+  This
+  <b>
+   read only
+  </b>
+  variable will return the seconds that correspond to the current moment.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">current_second;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">draw_text(32, 32, "The time is " + string(current_hour) + ":" + string(current_minute) + "." + string(current_second));
+</code></pre>
+  The above code would draw the current international time on the screen.
+ </body>
+</html>

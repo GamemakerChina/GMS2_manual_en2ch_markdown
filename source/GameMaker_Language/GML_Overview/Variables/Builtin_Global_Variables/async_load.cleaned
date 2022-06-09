@@ -1,0 +1,64 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   async_load
+  </h1>
+  This variable is
+  <b>
+   global
+  </b>
+  in scope and is used to hold a
+  <a href="../../../GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">
+   DS map
+  </a>
+  when used in the
+  <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events.htm">
+   Asynchronous Events
+  </a>
+  , and -1 at all other times. The actual contents of the DS map will depend on the type of asynchronous event
+  <a>
+   callback
+  </a>
+  , as well as the function that was used to trigger the event, so refer to the individual pages for those events for full details of all the possible DS map contents.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">async_load;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/ds_map_create.htm">
+ DS Map ID
+</a></code></pre>
+  <h4>
+   Extended Example:
+  </h4>
+  <pre><code class="language-gml">sprite =  sprite_add("site.com/path/image.png", 16, true, true, 0, 0);
+</code></pre>
+  The above code would be called in an event to load a sprite from an external URL. This would then trigger the
+  <strong>
+   Image Loaded
+  </strong>
+  Asynchronous Event, where you would parse the
+  <span>
+   async_load
+  </span>
+  map:
+  <pre><code class="language-gml">if ds_map_find_value(async_load, "id") == sprite
+{
+    if (ds_map_find_value(async_load, "status") &amp;amp;gt;= 0)
+    {
+        sprite_index = sprite;
+    }
+}
+</code></pre>
+  The above code will first check the ID of the
+  <span>
+   async_load
+  </span>
+  map, then check the status of the callback. If the value is greater than or equal to 0 (signalling success) the result from the callback will then be used to set the sprite index of the instance to the newly loaded image.
+ </body>
+</html>

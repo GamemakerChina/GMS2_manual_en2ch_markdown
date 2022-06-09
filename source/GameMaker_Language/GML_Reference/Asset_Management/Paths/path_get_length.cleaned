@@ -1,0 +1,62 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   path_get_length
+  </h1>
+  You can use this function to get the exact length of a path in pixels. this is
+  <i>
+   not
+  </i>
+  an approximate length from point to point, but rather an exact length along the shape of the path, even when the path is smooth with
+    a high curved precision.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">path_get_length(index);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Paths.htm">
+        Path Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the path to measure.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">path_len = path_get_length(pth_AI);
+</code></pre>
+  This will set "path_len" to the total length of the path indexed in "pth_AI" in pixels.
+ </body>
+</html>

@@ -1,0 +1,219 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   do / until
+  </h1>
+  A
+  <span>
+   do
+  </span>
+  function is another way of iterating over one or more
+  <a>
+   statement
+  </a>
+  <span>
+   s
+  </span>
+  multiple times, and is really a "
+  <span>
+   do... until
+  </span>
+  " statement as you cannot have one without the other since you are telling
+  <span>
+   GameMaker
+  </span>
+  to do something until a specific
+  <a>
+   expression
+  </a>
+  returns
+  <span>
+   true
+  </span>
+  . It has this form:
+  <pre><code class="language-gml">do
+{
+    &amp;amp;lt;statement&amp;amp;gt;;
+    &amp;amp;lt;statement&amp;amp;gt;;
+    ...
+}
+until (&amp;amp;lt;expression&amp;amp;gt;);
+</code></pre>
+  The statement (which can be a code block of multiple statements within curly brackets
+  <span>
+   {}
+  </span>
+  ) is executed until the expression is found to be
+  <span>
+   true
+  </span>
+  , and the initial statement is
+  <strong>
+   always executed at least once
+  </strong>
+  . Below you can find an example of a typical way to use
+  <span>
+   do... until
+  </span>
+  :
+  <pre><code class="language-gml">do
+{
+    x = random(room_width);
+    y = random(room_height);
+}
+until (place_free(x, y));
+</code></pre>
+  The above code tries to place the current object at a free position and will set the x/y variables at least once, and then perform as many
+  <a>
+   iteration
+  </a>
+  <span>
+   s
+  </span>
+  as required until the
+  <span>
+   place_free()
+  </span>
+  expression returns
+  <span>
+   true
+  </span>
+  .
+  <strong>
+   When should you use a
+   <span>
+    do
+   </span>
+   /
+   <span>
+    until
+   </span>
+   loop?
+  </strong>
+  It should be used any time you want to repeat one or more statements, but don't actually know how many times it has to repeat, and want to ensure that the statements are run
+  <em>
+   at least once
+  </em>
+  before the loop ends.
+  
+  
+   You can also use the
+  <a href="break.htm">
+   <span>
+    break
+   </span>
+  </a>
+  and
+  <a href="continue.htm">
+   <span>
+    continue
+   </span>
+  </a>
+  statements within your
+  <span>
+   do
+  </span>
+  loops. Using
+  <span>
+   break
+  </span>
+  will immediately exit the loop and move on to any code that is in the event or function after the loop should have finished, eg:
+  <pre><code class="language-gml">var _id = noone;
+do
+{
+    _id = list[| 0];
+    if instance_exists(_id)
+    {
+        _break;
+    }
+    ds_list_delete(list, 0);
+}
+until (ds_list_empty(list));
+
+target = _id;
+</code></pre>
+  In the above code, we create a local variable and set it to hold the keyword
+  <a href="../Instance_Keywords.htm">
+   noone
+  </a>
+  . We then perform a
+  <span>
+   do / until
+  </span>
+  loop checking the first position of a DS list to see if it holds a valid instance ID, and if it does then we
+  <span>
+   break
+  </span>
+  the loop, otherwise the value for the list position is deleted. After the loop is terminated (either by the
+  <span>
+   break
+  </span>
+  or because the list is empty) the local variable value is then assigned to the instance variable
+  <span>
+   target
+  </span>
+  .
+  
+  
+   An example of using continue in a
+  <span>
+   do / until
+  </span>
+  loop would be:
+  <pre><code class="language-gml">do
+{
+    var _x = random(room_width);
+    var _y = random(room_height);
+    if (instance_position(_x, y, obj_Enemy)
+    {
+        continue;
+    }
+    instance_create_layer(_x, _y, "Instances", obj_Enemy);
+}
+until (instance_count(obj_Enemy) &amp;amp;gt;= 10);
+</code></pre>
+  This code will generate a random room position then check if an instance of the object
+  <span>
+   obj_Enemy
+  </span>
+  exists at that position. If it does, the current loop iteration is terminated using
+  <span>
+   continue
+  </span>
+  and a new iteration is started, and if it doesn't then an instance of the object
+  <span>
+   obj_Enemy
+  </span>
+  is created at the random position. The loop will only terminate when there are 10 or more instances of the object in the room.
+  
+  
+   One final note: be careful with your
+  <span>
+   do
+  </span>
+  loops, as you can easily make them loop forever, in which case your game will hang and not react to any user input anymore and they will have to force close it.
+  
+  
+   For more examples of loop keywords please see the sections on
+  <a href="repeat.htm">
+   <span>
+    repeat
+   </span>
+  </a>
+  ,
+  <a href="while.htm">
+   <span>
+    while
+   </span>
+  </a>
+  , and
+  <a href="for.htm">
+   <span>
+    for
+   </span>
+  </a>
+  .
+ </body>
+</html>

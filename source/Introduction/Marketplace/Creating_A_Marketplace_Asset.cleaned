@@ -1,0 +1,181 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Creating A Marketplace Asset
+  </h1>
+  When you select the
+  <strong>
+   Create Package
+  </strong>
+  option from the IDE
+  <a href="../../IDE_Navigation/Menus/The_Marketplace_Menu.htm">
+   Marketplace Menu
+  </a>
+  you will be taken to the following workspace:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Introduction/Tools_Marketplace_CreatePackage.png"/><br/>
+  <span>
+  </span>
+  <span>
+   <span>
+    Here
+   </span>
+  </span>
+  you must first select the Publisher identity that you want to publish the asset package as (which you should have set up from your
+  <a href="Creating_A_Publisher_Account.htm">
+   Publisher Dashboard
+  </a>
+  ), then give a
+  <strong>
+   Display Name
+  </strong>
+  and a
+  <a>
+   Version Number
+  </a>
+  . A package ID will then be created for you based on the display name and publisher account used, but you can edit this to be something else if you wish as long as it maintains the reverse URL format. You then need to choose the type of asset package to make:
+  <ul>
+   <li>
+    <strong>
+     Asset
+    </strong>
+    : This is a collection of assets (sprites, scripts, objects, etc...) that you wish to sell on the Marketplace
+   </li>
+   <li>
+    <strong>
+     Demo
+    </strong>
+    : This is a demo to demonstrate some concept or game idea
+   </li>
+   <li>
+    <strong>
+     Tutorial
+    </strong>
+    : The asset being uploaded is a tutorial, designed to be run from within the
+    <span>
+     GameMaker
+    </span>
+    IDE (see
+    <a href="Creating_A_Tutorial.htm">
+     this page
+    </a>
+    for more details)
+   </li>
+  </ul>
+  Once you have done that you can then choose which assets from the project you want to add into the Asset Package using the section on the right. You can add all your assets, or only some of them as well as remove any that you may have added by mistake. It is assumed that you have created the asset to be uploaded previously in
+  <span>
+   GameMaker
+  </span>
+  and that the current project contains all that you require to upload.
+  <strong>
+   REMEMBER!
+  </strong>
+  To be able to create or use asset packages, you must have previously created a user profile certificate. You can do this from the Marketplace Preferences, which is explained
+  <a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Marketplace_Preferences.htm">
+   here
+  </a>
+  .
+  
+  
+   When you are happy with the selection of assets and want to upload your package to the Marketplace, simply click the
+  <em>
+   Okay
+  </em>
+  button at the bottom, and the asset package will be created and uploaded to the Marketplace. When the upload is complete, a new workspace will open with a browser view of the asset page for you to edit. For more information on how to set this up, please see the following page:
+  <ul>
+   <li>
+    <a href="Listing_An_Asset.htm">
+     Listing An Asset
+    </a>
+   </li>
+  </ul>
+  If you need to update a Marketplace Asset, you do more or less the same as you did when you created the original package, only now you need to specify the package to update from a drop down list of available packages:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Introduction/Tools_Marketplace_UpdateAsset.png"/><br/>
+  When updating, you won't be able to change the package ID, and you should be aware that the
+  <a>
+   Version Number
+  </a>
+  shown will be the
+  <em>
+   current
+  </em>
+  version number and you
+  <strong>
+   should increment this as appropriate
+  </strong>
+  otherwise the update will fail (since you cannot have two asset packages with the same version number). There is also a field where you can add some text for the change log for the asset, and this will be uploaded along with the asset and displayed on the Marketplace page.
+  <strong>
+   IMPORTANT!
+  </strong>
+  Assets made with
+  <span>
+   GameMaker
+  </span>
+  version 2.3+ will only be available to those users that are using version 2.3 and above. If you are updating an asset from a previous version, that asset will still be available to users who have not updated and will co-exist with the updated 2.3+ version.
+  <h2>
+   Uploading Though The Web Page
+  </h2>
+  You can upload assets through the actual Marketplace web page rather than the IDE, something which may be necessary if the upload through the IDE has failed for whatever reason. To start with, you would create the package and attempt to upload through the IDE as shown above, and if it has failed you wold then go to the
+  <a href="../The_Output_Window.htm">
+   Output Window
+  </a>
+  and check the log for a line that shows where the package you are creating was saved to before attempting the upload. For example:
+  
+  
+   On
+  <strong>
+   Windows
+  </strong>
+  :
+  <pre><code class="language-gml">Created package file:
+  
+  C:\Users\WINDOWSUSERNAME\AppData\Roaming\GameMaker\GM_USERNAME\Marketplace\Packages\com.publishername.assetname.yymp
+</code></pre>
+  On
+  <strong>
+   macOS
+  </strong>
+  :
+  <pre><code class="language-gml">Created package file:
+  
+  /Users/MACUSERNAME/.config/GameMaker/GM_USERNAME/Marketplace/Packages/com.publishername.assetname.yymp
+</code></pre>
+  You need to navigate to that file location and copy the
+  <span>
+   *.YYMP
+  </span>
+  file to a safe location, as this will be the file you will be uploading to the Marketplace.
+  
+  
+   At this point you need to open up the Marketplace in your web browser and navigate to the asset listing for the asset and then go to the
+  <strong>
+   Versions
+  </strong>
+  section, and then click the
+  <strong>
+   Upload Version
+  </strong>
+  button, as shown in the image below:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Introduction/MP_CreateVersion.png"/><br/>
+  This will take you to the upload page for the new version where you can add in information about the version being uploaded if required and also supply the file by clicking the
+  <strong>
+   Choose FIle
+  </strong>
+  button and selecting the previously created
+  <span>
+   *.YYMP
+  </span>
+  file:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Introduction/MP_NewVersion.png"/><br/>
+  Adding the file will upload the versions and show a "progress" bar, and when the upload is finished and are happy with the details, you can then click on the
+  <strong>
+   Save
+  </strong>
+  button to save the asset to the listing. Note that the asset will be in the
+  <strong>
+   Processing
+  </strong>
+  stage for a few minutes before it can be published.
+ </body>
+</html>

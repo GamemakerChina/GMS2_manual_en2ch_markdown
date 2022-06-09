@@ -1,0 +1,76 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   font_get_italic
+  </h1>
+  With this function you can check any font asset to see if it has the
+  <i>
+   italic
+  </i>
+  flag or not. If it does the function will return
+  <span>
+   true
+  </span>
+  , otherwise it will return
+  <span>
+   false
+  </span>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">font_get_italic(ind);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      ind
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Fonts.htm">
+        Font Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      Index of the font to check.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if font_get_italic(fnt_Main)
+{
+    draw_set_font(fnt_Main);
+}
+</code></pre>
+  This will set the active drawing font to
+  <span>
+   fnt_Main
+  </span>
+  if it is set as italic in its font properties.
+ </body>
+</html>

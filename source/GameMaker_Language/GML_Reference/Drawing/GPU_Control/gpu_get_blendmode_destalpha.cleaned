@@ -1,0 +1,158 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   gpu_get_blendmode_destalpha
+  </h1>
+  This function can be used to retrieve the current
+  <i>
+   destination
+  </i>
+  extended blend mode alpha factor. The value returned will be one of the following constants ("s" denotes a value taken from the source while a "d" denotes a value from the destination) with only the "A" component being used when drawing:
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Constant
+     </th>
+     <th>
+      Blend factor (Red, Green, Blue, Alpha)
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       bm_zero
+      </span>
+     </td>
+     <td>
+      (0, 0, 0, 0)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       bm_one
+      </span>
+     </td>
+     <td>
+      (1, 1, 1, 1)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       bm_src_colour
+      </span>
+     </td>
+     <td>
+      (Rs, Gs, Bs, As)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       bm_inv_src_colour
+      </span>
+     </td>
+     <td>
+      (1-Rs, 1-Gs, 1-Bs, 1-As)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       bm_src_alpha
+      </span>
+     </td>
+     <td>
+      (As, As, As, As)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       bm_inv_src_alpha
+      </span>
+     </td>
+     <td>
+      (1-As, 1-As, 1-As, 1-As)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       bm_dest_alpha
+      </span>
+     </td>
+     <td>
+      (Ad, Ad, Ad, Ad)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       bm_inv_dest_alpha
+      </span>
+     </td>
+     <td>
+      (1-Ad, 1-Ad, 1-Ad, 1-Ad)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       bm_dest_colour
+      </span>
+     </td>
+     <td>
+      (Rd, Gd, Bd, Ad)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       bm_inv_dest_colour
+      </span>
+     </td>
+     <td>
+      (1-Rd, 1-Gd, 1-Bd, 1-Ad)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       bm_src_alpha_sat
+      </span>
+     </td>
+     <td>
+      (f, f, f, 1) where f = min(As, 1-Ad)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">gpu_get_blendmode_destalpha();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_get_blendmode_ext.htm">
+ Blend Mode Factor Constant
+</a>
+(see above table)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var bm;
+bm[0] = gpu_get_blendmode_srcalpha();
+bm[1] = gpu_get_blendmode_destalpha();
+gpu_set_blendmode_ext_sepalpha(bm_inv_src_alpha, bm_inv_dest_colour, bm[0], bm[1]);
+</code></pre>
+  The above code creates a local array and gets the current source and destination blending factors for the alpha component. This array is then used to manipulate the RGB component of the blending factors.
+ </body>
+</html>

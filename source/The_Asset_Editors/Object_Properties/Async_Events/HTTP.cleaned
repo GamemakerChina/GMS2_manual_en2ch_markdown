@@ -1,0 +1,138 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   HTTP
+  </h1>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Async_HTTP.png"/><br/>
+  The HTTP Event is one that is triggered by the
+  <a>
+   callback
+  </a>
+  from one of the
+  <a href="../../../GameMaker_Language/GML_Reference/Asynchronous_Functions/HTTP/HTTP.htm">
+   <span>
+    http_*()
+   </span>
+   functions
+  </a>
+  , like
+  <a href="../../../GameMaker_Language/GML_Reference/Asynchronous_Functions/HTTP/http_post_string.htm">
+   <span>
+    http_post_string()
+   </span>
+  </a>
+  . It actually generates a
+  <a href="../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">
+   DS Map
+  </a>
+  that is exclusive to this event and is stored in the special variable
+  <span>
+   <a href="../../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">
+    async_load
+   </a>
+  </span>
+  (please see the individual functions for code examples that explain the use of this event in further detail). This DS map has the following general structure:
+  <ul>
+   <li>
+    "
+    <span>
+     id
+    </span>
+    ": The id which was returned from the command. If you fire off a series of
+    <span>
+     http_
+    </span>
+    requests then you need to know which one you are getting the reply to, and so you would use this value to compare to the value you stored when you originally sent the request to find the right one.
+   </li>
+   <li>
+    "
+    <span>
+     status
+    </span>
+    ": Returns a value of less than 0 for an error, 0 for success and 1 if content is being downloaded.
+   </li>
+   <li>
+    "
+    <span>
+     result
+    </span>
+    ": The data received (string only), or the path to the file downloaded if you have used
+    <a href="../../../GameMaker_Language/GML_Reference/Asynchronous_Functions/HTTP/http_get_file.htm">
+     <span>
+      http_get_file()
+     </span>
+    </a>
+    . You may only get this key if the status is 0, but that is platform-dependent.
+   </li>
+   <li>
+    "
+    <span>
+     url
+    </span>
+    ": The complete URL you requested.
+   </li>
+   <li>
+    "
+    <span>
+     http_status
+    </span>
+    ": The raw http status code (if available). This returns the standard web status code for most browsers, eg: 304 for "Not Modified" or 204 for "No Content", etc...
+   </li>
+  </ul>
+  The above shows what you get when you use the
+  <a href="../../../GameMaker_Language/GML_Reference/Asynchronous_Functions/HTTP/http_post_string.htm">
+   <span>
+    http_post_string()
+   </span>
+  </a>
+  function, but each of the
+  <span>
+   http_
+  </span>
+  functions may return a slightly different map, so please refer to the manual entry for each function to find out the precise data that is returned for it.
+  <strong>
+   NOTE
+  </strong>
+  : As
+  <span>
+   <span>
+    async_load
+   </span>
+  </span>
+  creates a DS map, these functions are particularly useful when coupled with the
+  <a href="../../../GameMaker_Language/GML_Reference/File_Handling/Encoding_And_Hashing/json_encode.htm">
+   <span>
+    json_encode()
+   </span>
+  </a>
+  and
+  <a href="../../../GameMaker_Language/GML_Reference/File_Handling/Encoding_And_Hashing/json_decode.htm">
+   <span>
+    json_decode()
+   </span>
+  </a>
+  functions.
+  
+  
+   There could also be additional data supplied by this map if you have requested files for downloading. In this case, the "status" will have a value of 1 and the DS map will hold these extra keys:
+  <ul>
+   <li>
+    "
+    <span>
+     contentLength
+    </span>
+    ": This is the size of file that the web server has said you should expect to receive (may be -1 if the server does not return this data).
+   </li>
+   <li>
+    "
+    <span>
+     sizeDownloaded
+    </span>
+    ": The size of the data that has already been downloaded.
+   </li>
+  </ul>
+  Note that the event will not be triggered for every single data packet that is received, but will rather update at any time during the download within the main game loop. Also note that currently this functionality is only available for regular Windows target platforms.
+ </body>
+</html>

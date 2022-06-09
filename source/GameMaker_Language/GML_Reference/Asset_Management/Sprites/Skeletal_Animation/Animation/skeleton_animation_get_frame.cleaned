@@ -1,0 +1,64 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   skeleton_animation_get_frame
+  </h1>
+  This function will return the frame number of the animation on the specified animation track. The function will return -1 if no animation is assigned to the specific track given.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">skeleton_animation_get_frame(track);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      track
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The animation track to get the frame of.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var frame = skeleton_animation_get_frame(0);
+if frame &amp;amp;gt; 0 &amp;amp;amp;&amp;amp;amp; frame &amp;amp;lt; 2
+{
+    var box = skeleton_get_minmax();
+    var ww = (box[2] - box[0]) / 2;
+    var hh = (box[3] - box[1]) / 2;
+    part_particles_create(global.p_sys, box[0] + ww, box[1] + hh, global.Stars, 10);
+}
+</code></pre>
+  The above code will check the current frame of the animation assigned to track 0 and then burst some particles from a point in the middle of the total bounding box for the sprite.
+ </body>
+</html>

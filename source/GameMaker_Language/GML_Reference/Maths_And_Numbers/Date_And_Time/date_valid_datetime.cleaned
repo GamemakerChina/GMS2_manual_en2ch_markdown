@@ -1,0 +1,153 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   date_valid_datetime
+  </h1>
+  With this function you can check a datetime value to see if it is valid (returns
+  <span>
+   true
+  </span>
+  ) or not (returns
+  <span>
+   false
+  </span>
+  ). Note that this function will only consider a valid datetime as being
+  <i>
+   after
+  </i>
+  1/1/1970 and anything before that will return
+  <span>
+   false
+  </span>
+  , so the earliest you can check would be:
+  <pre><code class="language-gml">date_valid_datetime(1970, 01, 01, 0, 0, 0);
+</code></pre>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">date_valid_datetime(year, month, day, hour, minute, second);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      year
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The year to check.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      month
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The month to check.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      day
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The day to check.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      hour
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The hour to check.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      minute
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The minute to check.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      second
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The second to check.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if date_valid_datetime(2011, 9, 15, 10, 3, 30)
+{
+    mydatetime = date_create_datetime(2011, 9, 15, 10, 3, 30);
+}
+</code></pre>
+  This will set "mydatetime" to 15th September 2011, 10:03.30, if it is a valid value (which it is).
+ </body>
+</html>

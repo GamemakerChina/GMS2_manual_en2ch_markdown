@@ -1,0 +1,31 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   current_year
+  </h1>
+  This
+  <b>
+   read only
+  </b>
+  variable will return the current year.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">current_year
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">draw_text((32, 32, "Today is " + string(current_day) + "/" + string (current_month) + "/" + string(current_year) +".");
+</code></pre>
+  The above code will draw the day, month and year.
+ </body>
+</html>

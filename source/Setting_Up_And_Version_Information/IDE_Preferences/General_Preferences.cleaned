@@ -1,0 +1,267 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   General Preferences
+  </h1>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Setup_And_Version/Preferences/General_Prefs.png"/><br/>
+  The
+  <strong>
+   General Preferences
+  </strong>
+  are used to define the general behaviour of the
+  <span>
+   GameMaker
+  </span>
+  <a>
+   IDE
+  </a>
+  . The most general ones are listed on the main page while many others are split into multiple sub-categories, explained further down this page.
+  <ul>
+   <li>
+    <strong>
+     IDE Language
+    </strong>
+    : This option permits you to select the language for the IDE from the list of options supplied. Default is English.
+   </li>
+   <li>
+    <strong>
+     IDE Skin
+    </strong>
+    : Here you can select from the different skins that the IDE can use. By default
+    <span>
+     GameMaker
+    </span>
+    comes with two skins, one light and one dark, and the initial setup uses the dark skin.
+   </li>
+   <li>
+    <strong>
+     Maximum Framerate of
+     <span>
+      GameMaker
+     </span>
+     Editor
+    </strong>
+    : This option permits you to set the maximum framerate that the
+    <span>
+     GameMaker
+    </span>
+    IDE will update at, permitting you to set the framerate to match the update speed of your monitor. Default value is 60.
+   </li>
+   <li>
+    <strong>
+     Default Audio Device
+    </strong>
+    : Here you can choose the default audio device for the
+    <span>
+     GameMaker
+    </span>
+    IDE to use. You can refresh the list by clicking the Refresh Button
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Refresh.png"/><br/>
+    .
+   </li>
+   <li>
+    <strong>
+     Automatic Response to Exit Confirmation
+    </strong>
+    : This option permits you to set whether a confirmation message should be shown when you exit
+    <span>
+     GameMaker
+    </span>
+    . By default this is set to "show message", but can be set to skip the message as if you'd clicked OK.
+   </li>
+   <li>
+    <strong>
+     Automatic Response to The System Font Changed Dialog
+    </strong>
+    : This option permits you to set whether a confirmation message should be shown when a system font has been added, removed or edited. By default this is set to "show message", but can be set to skip the message as if you'd clicked OK.
+   </li>
+   <li>
+    <strong>
+     Enable notifications
+    </strong>
+    : Checking this will enable the IDE to show notifications about new runtimes, etc... This is on by default.
+   </li>
+   <li>
+    <strong>
+     Notification timeout (ms)
+    </strong>
+    : This sets the length of time (in milliseconds) that a notification is shown for. Default is 6000.
+   </li>
+   <li>
+    <strong>
+     Logout on exit
+    </strong>
+    : If this option is checked then the IDE will automatically log out the user session when
+    <span>
+     GameMaker
+    </span>
+    is closed. This is primarily aimed at Education users, as - when checked - this means that whenever the program shuts down the user would be logged out and so free up the session seat for other users to use. This is off by default.
+   </li>
+   <li>
+    <strong>
+     Enable DPI Override
+    </strong>
+    : This option lets you override the default DPI setting with your own. You must first enable the option and then set either the
+    <strong>
+     Raw DPi Override
+    </strong>
+    value (the default value is 96) or set the
+    <strong>
+     Percentage of the native DPi
+    </strong>
+    (default value 100%), and once changed you will be prompted to restart the IDE, which may require you to save any work being done on the currently open project. Note that the DPi has a minimum percentage of 50% and a maximum of 500%, and if you you mouse over the information icon you can see the recommended maximum setting for the display being used:
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Setup_And_Version/Preferences/General_DPi_Override_Recomendation.png"/><br/>
+    Note that if you go above the recommended DPi setting for the monitor, you will be shown a notification that permits you to reset the DPi.
+   </li>
+   <li>
+    <strong>
+     Show welcome screen on startup
+    </strong>
+    : This is on by default and simply tells
+    <span>
+     GameMaker
+    </span>
+    to show a brief splash screen when you start the program. Un-checking this will prevent the splash screen from showing.
+   </li>
+   <li>
+    <strong>
+     Allow empty tabs to close via shortcut
+    </strong>
+    : You can close any open Tabs using the keyboard shortcut
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Ctrl.png"/><br/>
+    /
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Cmd.png"/><br/>
+    +
+    <strong>
+     W
+    </strong>
+    , but if you disable this option that shortcut will no longer work. This is enabled by default.
+   </li>
+   <li>
+    <strong>
+     Open new resources for edit on dragging files into IDE
+    </strong>
+    : Certain resources (like sprites or sounds) can be dragged onto the main Workspace in the
+    <span>
+     GameMaker
+    </span>
+    IDE and will be detected and added as a new resource in the Asset Browser. By default the corresponding resource editor will also be opened for editing when this happens, but un-checking this option will prevent the editors from being opened and you will be required to open them manually.
+   </li>
+   <li>
+    <strong>
+     Open new resources for edit on creation
+    </strong>
+    : If this is checked, every time you create a new resource in the Asset Browser, the corresponding resource editor will be opened automatically. This is checked by default and un-checking it will mean that you have to manually open all newly created resources.
+   </li>
+   <li>
+    <strong>
+     Automatically reload changed files
+    </strong>
+    : If this is checked then the IDE will automatically scan and check files to see if any of them have been changed outside of
+    <span>
+     GameMaker
+    </span>
+    and reload them if they have.
+   </li>
+   <li>
+    <strong>
+     Disable IDE transition animations
+    </strong>
+    : The
+    <span>
+     GameMaker
+    </span>
+    IDE has a number of animated transitions for things like opening windows etc... however they are not to everyone's taste and you may experience a performance boost if they are disabled on older or under-powered machines if they are disabled. You can disable them here, and they are on by default.
+   </li>
+   <li>
+    <strong>
+     Opt-in To Feedback Surveys
+    </strong>
+    : When this option is checked, you are telling
+    <span>
+     GameMaker
+    </span>
+    that you wish to participate in feedback surveys, meaning that occasionally while working a message will be shown about the area you are working on and request a rating and feedback. This option is on by default.
+   </li>
+  </ul>
+  The options above are the main options available from the
+  <strong>
+   General
+  </strong>
+  preferences, but there are a number of extra options available to you in the sub-categories listed below:
+  <ul>
+   <li>
+    <a href="General/Background.htm">
+     Background
+    </a>
+   </li>
+   <li>
+    <a href="General/Compiling.htm">
+     Compiling
+    </a>
+   </li>
+   <li>
+    <a href="General/Confirm_Dialogs.htm">
+     Confirm Dialogs
+    </a>
+   </li>
+   <li>
+    <a href="General/Debugging.htm">
+     Debugging
+    </a>
+   </li>
+   <li>
+    <a href="General/File_Watcher.htm">
+     File Watcher
+    </a>
+   </li>
+   <li>
+    <a href="General/Go_To.htm">
+     GoTo
+    </a>
+   </li>
+   <li>
+    <a href="General/Help.htm">
+     Help
+    </a>
+   </li>
+   <li>
+    <a href="General/Input.htm">
+     Input
+    </a>
+   </li>
+   <li>
+    <a href="General/Output_Windows.htm">
+     Output Windows
+    </a>
+   </li>
+   <li>
+    <a href="General/Paths.htm">
+     Paths
+    </a>
+   </li>
+   <li>
+    <a href="General/Power_Saving.htm">
+     Power Saving
+    </a>
+   </li>
+   <li>
+    <a href="General/Recent_Windows.htm">
+     Recent Windows
+    </a>
+   </li>
+   <li>
+    <a href="General/Resources.htm">
+     Resources
+    </a>
+   </li>
+   <li>
+    <a href="General/Workspace.htm">
+     Workspaces
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

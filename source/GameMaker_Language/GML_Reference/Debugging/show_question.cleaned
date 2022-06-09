@@ -1,0 +1,86 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   show_question
+  </h1>
+  This function creates a pop-up message box with two buttons for "Yes" and "No". It returns
+  <span>
+   true
+  </span>
+  or
+  <span>
+   false
+  </span>
+  depending on which one of the two buttons the user presses.
+  <b>
+   <span>
+    NOTE
+   </span>
+  </b>
+  This function is for
+  <b>
+   debug use only
+  </b>
+  on Desktop targets, but is
+  <b>
+   deprecated
+  </b>
+  on all other targets.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">show_question(str);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      str
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The string to show in the pop-up question.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if (score &amp;amp;gt; 500) &amp;amp;amp;&amp;amp;amp; debug_mode
+{
+    if show_question("Continue to next room?")
+    {
+        room_goto(rm_Level2);
+    }
+    else game_end();
+}
+</code></pre>
+  The above code will check the score and if it is over 500, it will ask the user if they wish to continue or not and if the "yes" button is clicked it will go to another room, but if the "no" button is selected it will end the game.
+ </body>
+</html>

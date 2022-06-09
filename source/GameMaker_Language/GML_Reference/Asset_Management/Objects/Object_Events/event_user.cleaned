@@ -1,0 +1,66 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   event_user
+  </h1>
+  With this function you tell the instance to run the actions or code that has been placed within one of the 16 user defined events. These events can
+  <i>
+   only
+  </i>
+  be called in this way, or using the
+  <a href="event_perform.htm">
+   <span>
+    event_perform
+   </span>
+  </a>
+  function.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">event_user(numb);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      numb
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The number of User Event to call, between 0 and 15.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">event_user(4);
+</code></pre>
+  This would call User Defined Event 4.
+ </body>
+</html>

@@ -1,0 +1,30 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   room_height
+  </h1>
+  This variable holds the height of the current room in pixels. You can change this variable to change the height of the room at any time, and changes will be applied to the bottom of the room, as the origin is considered to be the top left corner. So, for example, if the room is 480px in height and you set it to 640px, the room will be expanded downwards with an extra 180px added to the bottom.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">room_height;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if bbox_bottom &amp;amp;gt; room_height
+{
+    y += room_height - bbox_bottom;
+}
+</code></pre>
+  The above code checks to see if the current instance's sprite bounding box is greater than the height of the room, and if it is it moves the instance up.
+ </body>
+</html>

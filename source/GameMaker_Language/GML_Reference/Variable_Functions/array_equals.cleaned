@@ -1,0 +1,112 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   array_equals
+  </h1>
+  With this function you can check to see if two arrays are equal (equivalent or the same). You give the two arrays to check, and the function will return
+  <span>
+   true
+  </span>
+  if they are equal (either equivalent or the same) or
+  <span>
+   false
+  </span>
+  if they are not. Note that this is
+  <i>
+   not
+  </i>
+  the same as checking if two arrays are the same using ==, which will not check to see if the two arrays hold equivalent values, but only to see if the arrays are referencing the same initial array. For example:
+  <pre><code class="language-gml">var a = [1,2,3,4];
+var b = [1,2,3,4];
+
+if (a == b)
+{
+    show_debug_message( "This will never fire, as a and b do not reference the SAME array" );
+}
+
+if (array_equals(a, b))
+{
+    show_debug_message( "This will fire as both arrays contain similar values" );
+}
+</code></pre>
+  Note that there are some constants that may not be equal to themselves, which can make this function fail. Here is an example:
+  <pre><code class="language-gml">if (array_equals([NaN], [NaN]))
+{
+    show_debug_message( "This will never fire as NaN cannot be equal to itself" );
+}
+</code></pre>
+  See the
+  <a href="../../../Additional_Information/Type_Tables.htm#h">
+   Equality Table
+  </a>
+  for more information.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">array_equals(var1, var2);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      var1
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Arrays.htm">
+        Array
+       </a>
+      </span>
+     </td>
+     <td>
+      The first array.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      var2
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Arrays.htm">
+        Array
+       </a>
+      </span>
+     </td>
+     <td>
+      The second array.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if !array_equals(inventory_array, item_array)
+{
+    var len = array_length(inventory_array);
+    array_copy(item_array, 0, inventory_array, 0, len);
+}
+</code></pre>
+  The above code will check two arrays to see if they hold equivalent values, and if they do not then the code will copy the entire contents of the array "inventory_array" to the array "item_array".
+ </body>
+</html>

@@ -1,0 +1,79 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   string_hash_to_newline
+  </h1>
+  This function returns a string where the "#" symbol has been converted into a new line. So a string formatted as:
+  <pre><code class="language-gml">"Hello#World"
+</code></pre>
+  Would be printed to the screen as:
+  <pre><code class="language-gml">Hello World
+</code></pre>
+  <b>
+   IMPORTANT!
+  </b>
+  This function is provided for import compatibility between
+  <span>
+   GameMaker
+  </span>
+  and previous versions of the software and as such this function should not be used except when necessary to replicate obsolete functionality. Instead
+    you should be using the
+  <a href="Strings.htm">
+   escape characters
+  </a>
+  to mark a new line. For more information on import compatibility see
+  <a href="../../../Additional_Information/Obsolete_Functions.htm">
+   here
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">string_hash_to_newline(string);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      string
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The string to convert over multiple lines
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var str = string_hash_to_newline("Hello#World"); draw_text(32, 32, str);
+</code></pre>
+  The above code converts the string with the hash symbol into a string split over two lines then prints it to the screen.
+ </body>
+</html>

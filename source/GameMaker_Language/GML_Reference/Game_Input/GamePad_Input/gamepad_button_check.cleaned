@@ -1,0 +1,107 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   gamepad_button_check
+  </h1>
+  This function will return
+  <span>
+   true
+  </span>
+  or
+  <span>
+   false
+  </span>
+  depending on whether the given gamepad button is detected as being held down or not. If you are checking an analogue button, then the check will take into consideration the
+  <a href="gamepad_set_button_threshold.htm">
+   threshold setting
+  </a>
+  and only return
+  <span>
+   true
+  </span>
+  while the raw input value is over the given threshold (you can get this raw value using the function
+  <span>
+   <a href="gamepad_button_value.htm">
+    gamepad_button_value()
+   </a>
+  </span>
+  ).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">gamepad_button_check(device, button);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      device
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      Which gamepad device "slot" to check.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      button
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Game_Input/GamePad_Input/gamepad_axis_value.htm">
+        Gamepad Button Constant
+       </a>
+      </span>
+     </td>
+     <td>
+      Which gamepad button
+      <a href="Gamepad_Input.htm">
+       constant
+      </a>
+      to check for.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if gamepad_button_check(0, gp_face1)
+{
+    if canshoot = true
+    {
+        audio_play_sound(snd_Shoot, 0, false);
+        instance_create_layer(x, y, "Bullets", obj_Bullet)
+        canshoot = false;
+        alarm[0] = room_speed / 2;
+    }
+}
+</code></pre>
+  The above code will detect whether the bottom button of the top face (the "X" on a ps3 controller) is being held down and if so, it will shoot a "bullet" instance and set an alarm.
+ </body>
+</html>

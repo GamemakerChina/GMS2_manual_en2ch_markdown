@@ -1,0 +1,75 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   os_lock_orientation
+  </h1>
+  With this function you can "lock" your device to the current orientation until such time as you "free" it to allow all
+  <a href="../../../Settings/Game_Options.htm">
+   Game Options
+  </a>
+  enabled orientations again for that target platform. Note that you likely want to confirm the orientation is as desired before locking.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">os_lock_orientation(flag)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      flag
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Set to
+      <span>
+       true
+      </span>
+      or
+      <span>
+       false
+      </span>
+      to enable or disable orientation locking.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if (os_type == os_android) || (os_type == os_ios)
+{
+    os_lock_orientation(true);
+}
+</code></pre>
+  The above code checks the OS type and if it is either Android or an iOS then the orientation locking is flagged as
+  <span>
+   true
+  </span>
+  .
+ </body>
+</html>

@@ -1,0 +1,380 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   uwp_check_privilege
+  </h1>
+  With this function you can check that a given user has a chosen privilege. The function will return true or false in the System Asynchronous Event depending on whether the privilege is enabled or not, and if you set the attempt_resolution argument to true and the privilege isn't enabled, it will also open a system dialog (suspending the game) to prompt the user to upgrade the account or whatever is required to get the privilege. If the user then enables the required option, the function will return true.
+  
+  
+   The function requires that you use one of the following
+  <span>
+   <a href="../../../../GameMaker_Language/GML_Reference/UWP_And_XBox_Live/uwp_check_privilege.htm">
+    UWP Privilege Constant
+   </a>
+  </span>
+  s for the privilege request:
+  <table>
+   <colgroup>
+    <col/>
+    <col/>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/UWP_And_XBox_Live/uwp_check_privilege.htm">
+        UWP Privilege Constant
+       </a>
+      </span>
+     </th>
+    </tr>
+    <tr>
+     <th>
+      Constant
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       uwp_privilege_internet_browsing
+      </span>
+     </td>
+     <td>
+      Check to see if internet browsing is permitted
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       uwp_privilege_social_network_sharing
+      </span>
+     </td>
+     <td>
+      Check to see if sharing to social networks is permitted
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       uwp_privilege_share_kinect_content
+      </span>
+     </td>
+     <td>
+      Check whether sharing the Kinect controller is permitted
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       uwp_privilege_video_communications
+      </span>
+     </td>
+     <td>
+      Check to see if video communication is permitted
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       uwp_privilege_communications
+      </span>
+     </td>
+     <td>
+      Check to see if internet communication is permitted
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       uwp_privilege_user_created_content
+      </span>
+     </td>
+     <td>
+      Check if access to user created content is permitted
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       uwp_privilege_multiplayer_sessions
+      </span>
+     </td>
+     <td>
+      Check to see if online multiplayer sessions are permitted
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       uwp_privilege_sessions
+      </span>
+     </td>
+     <td>
+      Check to see if online sessions are permitted
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       uwp_privilege_fitness_upload
+      </span>
+     </td>
+     <td>
+      Check to see if fitness data uploading is permitted
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  Once the function has been called, on XBox One it will trigger an
+  <a href="../../../The_Asset_Editors/Object_Properties/Async_Events/System.htm">
+   Asynchronous System event
+  </a>
+  when the callback result has been received, which will have the special DS map
+  <a href="../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">
+   <span>
+    async_load
+   </span>
+  </a>
+  . This map should then be parsed for the following key:
+  <ul>
+   <li>
+    "
+    <b>
+     event_type
+    </b>
+    " - should hold the value
+    <span>
+     "check_privilege_result"
+    </span>
+    if the event was triggered by this function
+   </li>
+  </ul>
+  If the event type relates to this function, then there will also be the following additional keys when the function is called on XBox:
+  <ul>
+   <li>
+    "
+    <b>
+     result
+    </b>
+    " - Will be one or more of the following
+    <span>
+     <a href="../../../../GameMaker_Language/GML_Reference/UWP_And_XBox_Live/uwp_check_privilege.htm">
+      UWP Privilege Result Constant
+     </a>
+    </span>
+    s (combined values):
+    <table>
+     <colgroup>
+      <col/>
+      <col/>
+      <col/>
+     </colgroup>
+     <tbody>
+      <tr>
+       <th>
+        <span>
+         <a href="../../../../GameMaker_Language/GML_Reference/UWP_And_XBox_Live/uwp_check_privilege.htm">
+          UWP Privilege Result Constant
+         </a>
+        </span>
+       </th>
+      </tr>
+      <tr>
+       <th>
+        Constant
+       </th>
+       <th>
+        Description
+       </th>
+       <th>
+        Value
+       </th>
+      </tr>
+      <tr>
+       <td>
+        <span>
+         uwp_privilege_result_no_issue
+        </span>
+       </td>
+       <td>
+        There are no privilege issues with the user
+       </td>
+       <td>
+        0
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <span>
+         uwp_privilege_result_purchase_required
+        </span>
+       </td>
+       <td>
+        The user must purchase something additional, usually a subscription, for access
+       </td>
+       <td>
+        1
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <span>
+         uwp_privilege_result_aborted
+        </span>
+       </td>
+       <td>
+        The check was aborted
+       </td>
+       <td>
+        2
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <span>
+         uwp_privilege_result_banned
+        </span>
+       </td>
+       <td>
+        The user is banned
+       </td>
+       <td>
+        4
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <span>
+         uwp_privilege_result_restricted
+        </span>
+       </td>
+       <td>
+        The user is restricted from access, usually through parental controls
+       </td>
+       <td>
+        8
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </li>
+   <li>
+    "
+    <b>
+     privilege
+    </b>
+    " - will be one of the constants listed above for use in the function, so you can check which privilege you have requested in the case of multiple checks.
+   </li>
+  </ul>
+  If the project is run on a UWP platform that is not XBox One, then the Async Event will
+  <i>
+   not
+  </i>
+  be triggered, and instead the function will immediately return wither -1, 0, or 1 where:
+  <ul>
+   <li>
+    -1 means -1 the user doesn't have the privilege
+   </li>
+   <li>
+    0 means the function hasn't been able to query the user
+   </li>
+   <li>
+    1 means the user has the privilege.
+   </li>
+  </ul>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">uwp_check_privilege(user_id, privilege, attempt_resolution);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      user_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/UWP_And_XBox_Live/Users_And_Accounts/xboxlive_get_user.htm">
+        Xbox User ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The User ID pointer to check.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      privilege
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/UWP_And_XBox_Live/uwp_check_privilege.htm">
+        UWP Privilege Constant
+       </a>
+      </span>
+     </td>
+     <td>
+      The privilege constant to check (see description, above).
+     </td>
+    </tr>
+    <tr>
+     <td>
+      attempt_resolution
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Enable attempting a resolution if set to
+      <span>
+       true
+      </span>
+      , or ignore if set to
+      <span>
+       false
+      </span>
+      .
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var user_one = xboxlive_get_user(0);
+if (xboxlive_user_is_signed_in(user_one))
+{
+    uwp_check_privilege(user_one, xboxlive_privilege_multiplayer_sessions, true);
+}
+</code></pre>
+  The above checks to see if the user is signed in and if they are it checks the multiplayer sessions permission.
+ </body>
+</html>

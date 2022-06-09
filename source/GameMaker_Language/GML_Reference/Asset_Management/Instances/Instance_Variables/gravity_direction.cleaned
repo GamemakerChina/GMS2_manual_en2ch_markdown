@@ -1,0 +1,45 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   gravity_direction
+  </h1>
+  <span>
+   gravity_direction
+  </span>
+  is one of the "built in" properties all instances have and can be used to set the direction of movement when the instances
+  <a href="gravity.htm">
+   <span>
+    gravity
+   </span>
+  </a>
+  is greater than 0. Note that directions in
+  <span>
+   GameMaker
+  </span>
+  are usually calculated as 0° being right, 90° being up, 180° being left and 270° being down.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">gravity_direction;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a>
+(single precision floating point value)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if place_meeting(x, y, obj_switch)
+{
+    gravity_direction += 180;
+}
+</code></pre>
+  The above code will change the gravity_direction if the player object meets an instance of "obj_switch".
+ </body>
+</html>

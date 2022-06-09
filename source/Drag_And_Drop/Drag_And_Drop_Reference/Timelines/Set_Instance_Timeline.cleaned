@@ -1,0 +1,66 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Timelines/i_Timelines_Set_Instance_Timeline.png"/><br/>
+   Set Instance Timeline
+  </h1>
+  This action assigns a timeline from the Asset Browser to the instance. You give the timeline to assign , and then you can choose to have the timeline loop when it reaches the last moment (the next frame after the last moment is run will loop back to
+    the first moment of the timeline again) as well as whether to start the timeline immediately or not. If you do not start the timeline immediately you can use the action
+  <a href="Set_Timeline_State.htm">
+   Set Timeline State
+  </a>
+  to start it later in another
+    event or script.
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Timelines/a_Timelines_Set_Instance_Timeline.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Timeline
+     </td>
+     <td>
+      The timeline resource to assign to an instance
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Loop
+     </td>
+     <td>
+      Flag to have the timeline loop after the last moment (default is flagged)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Start Timeline
+     </td>
+     <td>
+      Flag to have the timeline start immediately or not (default is flagged)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Timelines/e_Timelines_Set_Instance_Timeline.png"/><br/>
+  The above action block code will assign a timeline to the instance calling
+    the actions as well as set the initial moment to 10 and then the timeline speed to 2.
+ </body>
+</html>

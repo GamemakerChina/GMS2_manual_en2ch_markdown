@@ -1,0 +1,75 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Clear_Particle_System.png"/><br/>
+   Clear Particle System
+  </h1>
+  With this action you can clear the given particle system to its
+  <b>
+   default
+  </b>
+  state, removing all emitters (there is also no need to call the
+  <a href="Destroy_Particle_Emitter.htm">
+   Destroy Particle Emitter
+  </a>
+  action as this is taken care of automatically)
+    and clearing all particles from the screen. You supply the unique ID value for the system to clear, as returned when you created the system with the action
+  <a href="Create_Particle_System.htm">
+   Create Particle System
+  </a>
+  . Care must be taken when using
+    this action since it destroys all the emitters associated with the particle system - this means that any instance in the room that uses an emitter may give an error as that emitter no longer exists, so make sure that the action is only called when
+    you are not going to be creating any new particles from that emitter (for more information on particle emitters see
+  <a href="Create_Particle_Emitter.htm">
+   Create Particle Emitter
+  </a>
+  ).
+  <b>
+   NOTE
+  </b>
+  : This action will only
+  <b>
+   clear
+  </b>
+  the visible particles in the room, but it does not clear the particle properties nor does it remove them from memory. For that you should use the action
+  <a href="Destroy_Particle_Type.htm">
+   Destroy Particle Type
+  </a>
+  .
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Clear_Particle_System.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      System
+     </td>
+     <td>
+      The unique ID value for the system to be destroyed
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Clear_Particle_System.png"/><br/>
+  The above action block code will clear all the particles from the screen
+    if the player has 0 or less lives and then restart the room.
+ </body>
+</html>

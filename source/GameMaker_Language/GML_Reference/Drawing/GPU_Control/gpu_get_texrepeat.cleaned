@@ -1,0 +1,48 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   gpu_get_texrepeat
+  </h1>
+  With this function you can check to see whether texture repeating is enabled (returns
+  <span>
+   true
+  </span>
+  ) or not (returns
+  <span>
+   false
+  </span>
+  ). For more information on texture repeating, see the function
+  <a href="gpu_set_texrepeat.htm">
+   <span>
+    gpu_set_texrepeat()
+   </span>
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">gpu_get_texrepeat();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if gpu_get_texrepeat()
+{
+    gpu_set_texrepeat(false);
+}
+else
+{
+    gpu_set_texrepeat(true);
+}
+</code></pre>
+  The above code checks to see if texture repeating is on or off and switches it accordingly.
+ </body>
+</html>

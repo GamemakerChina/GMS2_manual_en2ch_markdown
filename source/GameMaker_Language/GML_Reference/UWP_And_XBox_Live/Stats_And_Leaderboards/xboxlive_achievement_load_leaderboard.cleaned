@@ -1,0 +1,267 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   xboxlive_achievement_load_leaderboard
+  </h1>
+  This function will send a request to the server for information on the given leaderboard. The leaderboard must have been created previously on the developer dashboard for your game and the ID given is that which you must supply as the first argument of the function. It will trigger a callback
+  <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Social.htm">
+   Social Asynchronous Event
+  </a>
+  which contains the
+  <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">
+   <span>
+    async_load
+   </span>
+  </a>
+  map populated with the relevant key/value pairs. The
+  <i>
+   id
+  </i>
+  key of this
+  <span>
+   DS Map
+  </span>
+  is used to identify the correct callback (there can be more than one trigger function for any given asynchronous event), and will be paired with the
+  <b>
+   constant
+  </b>
+  <span>
+   xboxlive_achievement_leaderboard_info
+  </span>
+  as well as a number of other key/value pairs for each player. The exact contents of the map are shown below:
+  <ul>
+   <li>
+    "
+    <b>
+     id
+    </b>
+    " - For this function it should be
+    <span>
+     xboxlive_achievement_leaderboard_info
+    </span>
+   </li>
+   <li>
+    "
+    <b>
+     leaderboardid
+    </b>
+    " - The unique ID for the leaderboard as defined on the provider dashboard.
+   </li>
+   <li>
+    "
+    <b>
+     numentries
+    </b>
+    " - The number of entries in the leaderboard that you have received.
+   </li>
+   <li>
+    "
+    <b>
+     PlayerN
+    </b>
+    " - The name of the player, where "N" is an integer value corresponding to their position within the leaderboard entries list.
+   </li>
+   <li>
+    "
+    <b>
+     PlayeridN
+    </b>
+    " - The unique user id of the player, "N".
+   </li>
+   <li>
+    "
+    <b>
+     RankN
+    </b>
+    " - The rank of the player "N" within the leaderboard.
+   </li>
+   <li>
+    "
+    <b>
+     ScoreN
+    </b>
+    " - The score of the player "N".
+   </li>
+  </ul>
+  You can specify the exact portion of the leaderboard to show by giving a minimum and maximum index value, as well as request that the results be filtered to retrieve only those scores by your friends or those posted by all players using the following filter
+  <b>
+   constants
+  </b>
+  :
+  <table>
+   <colgroup>
+    <col/>
+    <col/>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/UWP_And_XBox_Live/Stats_And_Leaderboards/xboxlive_achievement_load_leaderboard.htm">
+        Xbox Live Achievement Filter Constant
+       </a>
+      </span>
+     </th>
+    </tr>
+    <tr>
+     <th>
+      Constant
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       xboxlive_achievement_filter_friends_only
+      </span>
+     </td>
+     <td>
+      Get only the scores of the players friends.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       xboxlive_achievement_filter_all_players
+      </span>
+     </td>
+     <td>
+      Get all scores for all players.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   <b>
+    Syntax:
+   </b>
+  </h4>
+  <pre><code class="language-gml">xboxlive_achievement_load_leaderboard(ident, minindex, maxindex, filter)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      ident
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The unique ID of the leaderboard as shown on the developer dashboard.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      minindex
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The starting index value to get the leaderboard data from.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      maxindex
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The maximum index value to get the leaderboard data from.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      filter
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/UWP_And_XBox_Live/Stats_And_Leaderboards/xboxlive_achievement_load_leaderboard.htm">
+        Xbox Live Achievement Filter Constant
+       </a>
+      </span>
+     </td>
+     <td>
+      Whether to filter the results to those that are on your friends list or to all players (see the
+      <b>
+       Description
+      </b>
+      above)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Extended Example:
+  </h4>
+  The following code would probably be called after the player has logged into their game account to get a list of all friends leaderboard positions for the game:
+  <pre><code class="language-gml">xboxlive_achievement_load_leaderboard("CgkIs9_51u0PEAIQBw", 1, 100, xboxlive_achievement_filter_friends_only);
+</code></pre>
+  This will send off a request for the information on the given leaderboard and generate an asynchronous callback with the special
+  <span>
+   async_load
+  </span>
+  DS map containing the following data:
+  <pre><code class="language-gml">var ident = ds_map_find_value(async_load, "id");
+if ident == xboxlive_achievement_leaderboard_info
+{
+    var lbid = ds_map_find_value(async_load,"leaderboardid");
+    if lbid == "CgkIs9_51u0PEAIQBw" || lbid == "leaderboard1id"
+    {
+        global.numentries = ds_map_find_value(async_load,"numentries");
+        for(var i = 0; i &amp;amp;lt; numentries; i++;)
+        {
+            global.playername[i] = ds_map_find_value(async_load, "Player" + string(i));
+            global.playerid[i] = ds_map_find_value(async_load, "Playerid" + string(i));
+            global.playerrank[i] = ds_map_find_value(async_load, "Rank" + string(i));
+            global.playerscore[i] = ds_map_find_value(async_load, "Score" + string(i));
+        }
+    }
+}
+</code></pre>
+  The above code checks the returned
+  <span>
+   DS Map
+  </span>
+  in the
+  <b>
+   Social Asynchronous Event
+  </b>
+  and if its "id" matches the constant being checked, it then checks to make sure that the leaderboard being sent matches the original function call before looping through the map and storing all the different values in a number of arrays.
+ </body>
+</html>

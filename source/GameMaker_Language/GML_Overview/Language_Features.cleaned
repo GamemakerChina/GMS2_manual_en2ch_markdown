@@ -1,0 +1,87 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Language Features
+  </h1>
+  The GameMaker Language (GML) has a number of features which are part of the essential structure of all programs written with the language. Each of these will be used in any code you write multiple times, so you should know what they are and how they work before getting started with programming a project.
+  <ul>
+   <li>
+    <a href="Language_Features/repeat.htm">
+     repeat
+    </a>
+   </li>
+   <li>
+    <a href="Language_Features/while.htm">
+     while
+    </a>
+   </li>
+   <li>
+    <a href="Language_Features/do___until.htm">
+     do / until
+    </a>
+   </li>
+   <li>
+    <a href="Language_Features/for.htm">
+     for
+    </a>
+   </li>
+   <li>
+    <a href="Language_Features/switch.htm">
+     switch
+    </a>
+   </li>
+   <li>
+    <a href="Language_Features/break.htm">
+     break
+    </a>
+   </li>
+   <li>
+    <a href="Language_Features/continue.htm">
+     continue
+    </a>
+   </li>
+   <li>
+    <a href="Language_Features/exit.htm">
+     exit
+    </a>
+   </li>
+   <li>
+    <a href="Language_Features/with.htm">
+     with
+    </a>
+   </li>
+   <li>
+    <a href="Language_Features/return.htm">
+     return
+    </a>
+   </li>
+   <li>
+    <a href="Language_Features/begin_end.htm">
+     begin / end
+    </a>
+   </li>
+   <li>
+    <a href="Language_Features/try_catch_finally.htm">
+     try / catch / finally
+    </a>
+   </li>
+   <li>
+    <a href="Language_Features/throw.htm">
+     throw
+    </a>
+   </li>
+   <li>
+    <a href="Language_Features/new.htm">
+     new
+    </a>
+   </li>
+   <li>
+    <a href="Language_Features/delete.htm">
+     delete
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

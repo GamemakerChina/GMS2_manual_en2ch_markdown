@@ -1,0 +1,75 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   camera_destroy
+  </h1>
+  With this function you can destroy any camera. When calling the function you supply the unique camera ID value, which you get from the
+  <span>
+   camera_create_*
+  </span>
+  functions or from the
+  <a href="view_camera.htm">
+   <span>
+    view_camera
+   </span>
+  </a>
+  array if using the Room Editor to set up the view port and view. You should
+  <i>
+   never
+  </i>
+  destroy a camera that is currently assigned to a visible view, unless you are assigning a new camera to that view in the same step, and you should
+  <i>
+   always
+  </i>
+  destroy any cameras that you have created through code when no longer required by your game to prevent memory leaks, and you can also destroy the default cameras if you have any assigned in the Room Editor, but you should assign a new camera to the view port (or disable it) otherwise you will get odd results.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">camera_destroy(camera_id)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      camera_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Cameras_And_Display/Cameras_And_Viewports/camera_create.htm">
+        Camera ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The unique camera ID value returned when you created the camera.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">camera_destroy(view_camera[0]);
+view_camera[0] = camera_create_view(0, 0, 640, 480, 0, obj_Player, 5, 5, -1, -1);
+</code></pre>
+  The above code destroys the camera currently assigned to view port [0] then creates a new camera and assigns its ID to that port.
+ </body>
+</html>

@@ -1,0 +1,67 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Binary Files
+  </h1>
+  In rare situations you might need to read data from binary files. These functions can be used for that purpose, although in general, we'd recommend that you use the dedicated
+  <a href="../../Buffers/Buffers.htm">
+   buffer functions
+  </a>
+  to create, save and load binary data rather than these functions.
+  <b>
+   NOTE
+  </b>
+  : These functions
+  <b>
+   do not
+  </b>
+  work when the target module is HTML5.
+  
+  
+   The following low-level routines exist for this:
+  <ul>
+   <li>
+    <a href="file_bin_open.htm">
+     file_bin_open
+    </a>
+   </li>
+   <li>
+    <a href="file_bin_rewrite.htm">
+     file_bin_rewrite
+    </a>
+   </li>
+   <li>
+    <a href="file_bin_close.htm">
+     file_bin_close
+    </a>
+   </li>
+   <li>
+    <a href="file_bin_size.htm">
+     file_bin_size
+    </a>
+   </li>
+   <li>
+    <a href="file_bin_position.htm">
+     file_bin_position
+    </a>
+   </li>
+   <li>
+    <a href="file_bin_seek.htm">
+     file_bin_seek
+    </a>
+   </li>
+   <li>
+    <a href="file_bin_write_byte.htm">
+     file_bin_write_byte
+    </a>
+   </li>
+   <li>
+    <a href="file_bin_read_byte.htm">
+     file_bin_read_byte
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

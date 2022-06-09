@@ -1,0 +1,73 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   sign
+  </h1>
+  This function returns whether a number is positive, negative or neither and returns 1, -1, 0 respectively. For example -
+  <span>
+   sign(458)
+  </span>
+  will return 1,
+  <span>
+   sign(-5)
+  </span>
+  will return -1 and
+  <span>
+   sign(0)
+  </span>
+  will return 0.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">sign(n);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      n
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The number to get the sign of.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">y += sign(y - mouse_y);
+</code></pre>
+  The above code will add 1, -1 or 0 onto y depending on the result of
+  <span>
+   y - mouse_y
+  </span>
+  .
+ </body>
+</html>

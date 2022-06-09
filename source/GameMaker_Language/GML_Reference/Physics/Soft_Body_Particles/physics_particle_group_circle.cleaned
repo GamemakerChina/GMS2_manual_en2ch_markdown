@@ -1,0 +1,77 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   physics_particle_group_circle
+  </h1>
+  This function will set the shape of the particle group that is being created. You must first have begun the group definition using the function
+  <a href="physics_particle_group_begin.htm">
+   <span>
+    physics_particle_group_begin()
+   </span>
+  </a>
+  , and then you would
+    use this function to set the approximate radius of the group in pixels - approximate because the exact radius will depend on the size of the base particles, as defined by the
+  <a href="physics_particle_set_radius.htm">
+   <span>
+    physics_particle_set_radius()
+   </span>
+  </a>
+  function, as the physics simulation tries to "fit" as many of the particles as possible into the defined shape. Finally you need to call
+  <a href="physics_particle_group_end.htm">
+   <span>
+    physics_particle_group_end()
+   </span>
+  </a>
+  to create the group
+    of particles in the room.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">physics_particle_group_circle(radius)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      radius
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The radius (in pixels) of the circle to create.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var flags = phy_particle_flag_water | phy_particle_flag_viscous | phy_particle_flag_tensile; var groupflags = phy_particle_group_flag_solid; physics_particle_group_begin(flags, groupflags, mouse_x, mouse_y, 0, 0, 0, 0, c_white, 1, 1, 2);physics_particle_group_circle(100);
+ mLastGroup = physics_particle_group_end();
+</code></pre>
+  The above code stores the flags for the particle type and the particle group properties in variables then uses these to create a circular particle group with a 100px radius at the mouse position.
+ </body>
+</html>

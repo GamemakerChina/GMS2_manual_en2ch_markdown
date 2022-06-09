@@ -1,0 +1,72 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   arctan
+  </h1>
+  Returns the inverse tangent of x. This will accept any number as, unlike
+  <span>
+   <a href="tan.htm">
+    tan()
+   </a>
+  </span>
+  ,
+  <span>
+   arctan()
+  </span>
+  asymptotes are on the y axis so it just means you'll never get returned a number
+    greater than pi/2 or less than -pi/2.
+  <strong>
+   NOTE
+  </strong>
+  : This function takes a value in radians, not degrees.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">arctan(x);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      x
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The angle (in radians) to return the inverse tangent of.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">val = arctan( 0 );
+</code></pre>
+  This will set val to 0.
+ </body>
+</html>

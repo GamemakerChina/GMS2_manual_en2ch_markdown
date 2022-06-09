@@ -1,0 +1,81 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/i_Drawing_Draw_Instance_Score.png"/><br/>
+   Draw Instance Score
+  </h1>
+  With this action you can draw the score value of the instance. When you use
+  <i>
+   any
+  </i>
+  score action in
+  <span>
+   GameMaker
+  </span>
+  the instance that calls it will have a new instance scope variable called
+  <span>
+   score
+  </span>
+  added. This variable can then be checked
+    and set as you would any other variable. In the case of this action, the variable will be drawn to the screen at the given position, along with any caption text that you wish to provide. Caption text will be drawn preceding the score value and if
+    it is text it should be wrapped with "", and both will be formatted using the current draw font , colour and alignment.
+  <b>
+   NOTE
+  </b>
+  : This action is only for use in the various
+  <a href="../../../The_Asset_Editors/Object_Properties/Draw_Events.htm">
+   Draw Events
+  </a>
+  , and will not draw anything if used elsewhere.
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/a_Drawing_Draw_Instance_Score.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Caption
+     </td>
+     <td>
+      The string to draw along with the score value (preceding and can be left blank)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      x
+     </td>
+     <td>
+      The x position to draw the score at
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y
+     </td>
+     <td>
+      The y position to draw the score at
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/e_Drawing_Draw_Instance_Score.png"/><br/>
+  The above action block code draws the score using the given draw formatting.
+ </body>
+</html>

@@ -1,0 +1,186 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   os_get_language
+  </h1>
+  This function returns a string with the two letter Language Code for the OS that is running the game, as set by the
+  <a href="http://en.wikipedia.org/wiki/ISO_639">
+   ISO639
+  </a>
+  standard. If the information is not available, it will hold simply an empty string "", or "en" for "English" language. Note that some languages also have a relevant Regional Code too, so to distinguish between different regions of the same country use the function
+  <a href="os_get_region.htm">
+   <span>
+    os_get_region()
+   </span>
+  </a>
+  .
+  
+  
+   The following table shows example of some of the main two letter language codes as defined by ISO 639:
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Language
+     </th>
+     <th>
+      Code
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Arabic
+     </td>
+     <td>
+      ar
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Chinese
+     </td>
+     <td>
+      zh
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Danish
+     </td>
+     <td>
+      da
+     </td>
+    </tr>
+    <tr>
+     <td>
+      English
+     </td>
+     <td>
+      en
+     </td>
+    </tr>
+    <tr>
+     <td>
+      French
+     </td>
+     <td>
+      fr
+     </td>
+    </tr>
+    <tr>
+     <td>
+      German
+     </td>
+     <td>
+      de
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Greek
+     </td>
+     <td>
+      el
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Italian
+     </td>
+     <td>
+      it
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Japanese
+     </td>
+     <td>
+      ja
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Norwegian
+     </td>
+     <td>
+      no
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Polish
+     </td>
+     <td>
+      pl
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Portuguese
+     </td>
+     <td>
+      pt
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Russian
+     </td>
+     <td>
+      ru
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Spanish
+     </td>
+     <td>
+      es
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Swedish
+     </td>
+     <td>
+      sv
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <b>
+   NOTE
+  </b>
+  : This is not the location country code that is returned, but the language code of the OS.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">os_get_language()
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">switch (os_get_language())
+{
+    case "es": ini_open("spanish.ini"); break;
+    case "fr": ini_open("french.ini"); break;
+    case "it": ini_open("italian.ini"); break;
+    default: ini_open("english.ini"); break;
+}
+</code></pre>
+  The above code checks the OS language and opens a different
+  <span>
+   *.ini
+  </span>
+  file depending on the returned value.
+ </body>
+</html>

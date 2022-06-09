@@ -1,0 +1,162 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   font_replace_sprite_ext
+  </h1>
+  This function will replace a sprite font that you created previously using the function
+  <a href="font_add_sprite_ext.htm">
+   <span>
+    font_add_sprite_ext()
+   </span>
+  </a>
+  . It uses a "sprite strip", where each sub-image is be an individual symbol or letter, and the images are mapped to letters based on the argument "string_map" of the function. This argument is a string that you can use to tell
+  <span>
+   GameMaker
+  </span>
+  what order the sub-images of the sprite font are and it will map these automatically when writing text. So, for example, if you have a string-map of "AaBbCcDdEeFfGgHh", your sprite font
+  <i>
+   must
+  </i>
+  have the sub-images ordered in this way.
+  
+  
+   You can also set the spacing for the font to be proportional (
+  <span>
+   true
+  </span>
+  ) or not (
+  <span>
+   false
+  </span>
+  ), where a proportional font is spaced based on the actual width of the letters (so the letter "i" takes less room than the letter "w", for example) while a non-proportional font will be spaced based on the sub-image width, like a monospaced font. Finally, you can define the space to leave between each letter when writing, and this can be any integer value, with 0 being no space (the letters will "touch" if proportional). The function returns an
+  <i>
+   index
+  </i>
+  value that should be stored in a variable as this will be needed in all further codes that refer to this font.
+  
+  
+   If the function fails, then it will fail silently without replacing the given sprite font.
+  <b>
+   <span>
+    NOTE
+   </span>
+  </b>
+  This function requires you to have previously added a sprite font using
+  <span>
+   <a href="font_add_sprite.htm">
+    <span>
+     font_add_sprite()
+    </span>
+   </a>
+  </span>
+  , as it will replace that and cannot be used on fonts that are included as part of the game resources.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">font_replace_sprite_ext(font, spr, string_map, prop, sep);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      font
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Fonts.htm">
+        Font Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The font to replace.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      spr
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Sprites.htm">
+        Sprite Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The sprite to add a font based on.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      string_map
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      String from which sprite sub-image order is taken.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      prop
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Set as proportional font or not.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      sep
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The space to leave between each letter.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">font_replace_sprite_ext(global.Font, spr_CalcFont, "0123456789+-*/=", true, 2);
+</code></pre>
+  The above code will replace a sprite font asset that is indexed in the variable "global.Font" with sprite images indexed in the variable "spr_CalcFont".
+ </body>
+</html>

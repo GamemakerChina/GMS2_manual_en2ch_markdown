@@ -1,0 +1,49 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   object_index
+  </h1>
+  This
+  <b>
+   read only
+  </b>
+  variable returns the index of the object that the instance has been created from. This is
+  <i>
+   not
+  </i>
+  the same as the object name, which is a string and can be found using
+  <a href="object_get_name.htm">
+   <span>
+    object_get_name()
+   </span>
+  </a>
+  , as this function returns the index number, which is a unique value that
+  <span>
+   GameMaker
+  </span>
+  assigns to every object at the time of creation.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">object_index;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../The_Asset_Editors/Objects.htm">
+ Object Asset
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">obj_name = object_get_name(object_index);
+</code></pre>
+  The above code will use the
+  <span>
+   object_index
+  </span>
+  to find the name of the object that the current instance has been created from.
+ </body>
+</html>

@@ -1,0 +1,34 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   draw_self
+  </h1>
+  This function draws the sprite assigned to the instance exactly as it would be drawn if the draw event held no code or actions, and will reflect and changes that have been made to the
+  <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/Sprite_Instance_Variables.htm">
+   sprite variables
+  </a>
+  in other events.
+  <b>
+   NOTE
+  </b>
+  : If the instance has no sprite assigned to it, this function will throw an error!
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">draw_self();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">draw_self();
+</code></pre>
+  This makes the instance draw itself with the properties defined by the in built sprite variables.
+ </body>
+</html>

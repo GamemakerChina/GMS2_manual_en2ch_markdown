@@ -1,0 +1,47 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   sprite_xoffset
+  </h1>
+  This
+  <b>
+   read only
+  </b>
+  variable returns the local xoffset (the x component of the origin as defined in the sprite editor) of the sprite that has been assigned to the instance. This xoffset is returned in pixels and will be dependent on the
+  <a href="image_xscale.htm">
+   <span>
+    image_xscale
+   </span>
+  </a>
+  , so that (for example) if a square 32x32 sprite is defined as having the x origin at 16, when that sprite is scaled by 2 this variable will return 32. If you need the un-scaled xoffset you should use
+  <a href="../Sprite_Information/sprite_get_xoffset.htm">
+   <span>
+    sprite_get_xoffset()
+   </span>
+  </a>
+  .
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/GML/Reference/Sprites/xoffset_image.png"/><br/>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">sprite_xoffset;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if x - sprite_xoffset &amp;amp;lt; 0
+{
+    x = sprite_xoffset;
+}
+</code></pre>
+  The above code checks to see if the left edge of the sprite of the instance is outside the room and if it is it moves the instance so that the whole sprite is visible.
+ </body>
+</html>

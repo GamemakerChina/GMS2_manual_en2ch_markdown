@@ -1,0 +1,1057 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Compile Errors
+  </h1>
+  The second type of error that can be reported for your game is the
+  <strong>
+   compiler error
+  </strong>
+  . A compiler error happens when your game encounters some type of error that the syntax checker may not have been able to detect - it's very easy to forget to declare a variable or mistakenly type a string as a real, for example - or when an error is related to how you have set up the compile tools from the
+  <a href="../../Setting_Up_And_Version_Information/Platform_Preferences.htm">
+   Platform Preferences
+  </a>
+  for the target platform. These errors will be caught by
+  <span>
+   GameMaker
+  </span>
+  as the game is being compiled and this information will also be shown in the
+  <a href="../../Introduction/The_Output_Window.htm">
+   Compiler Error Output
+  </a>
+  , as shown below:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/Errors_Compile_Output.png"/><br/>
+  <span>
+   NOTE
+  </span>
+  These errors don't usually pop up a window and will simply show "
+  <span>
+   Build Failed
+  </span>
+  " in the compiler output. If a window pops up it's usually a Runner Error, which is explained
+  <a href="Runner_Errors.htm">
+   here
+  </a>
+  .
+  
+  
+   The compiler error messages will all follow the same format:
+  <pre><code class="language-gml">[object] - [event] - [Line Number]: [error string]
+</code></pre>
+  If the error is found in a script then it will simply be:
+  <pre><code class="language-gml">[script] - [Line Number]: [error string]
+</code></pre>
+  You can then double-click
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  on any of the compiler error entries to open the given asset at the position flagged as giving the error, and then you can use the information contained within the message to pinpoint exactly where in the object or script the error has occurred. However, sometimes these errors can seem a bit cryptic, so below you can find a complete list of all errors and a brief explanation of what they mean:
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Error
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <strong>
+       Miscellaneous
+      </strong>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      No program to compile
+     </td>
+     <td>
+      A previous compile error has caused the compiler parse tree to not be created and thus the compiler has no program data to compile
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Fatal Error while compiling
+      <i>
+       [name]
+      </i>
+      - bailing details below
+     </td>
+     <td>
+      This message simply means that some error has been discovered but the compiler cannot place what or where (if this happens consistently you may wish to contact
+      <a href="https://accounts.yoyogames.com/contact-us">
+       YoYo Games Support
+      </a>
+      and supply the details that the compiler output window shows)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Recursive macro expansion is not supported
+     </td>
+     <td>
+      You have used recursive macros that refer to each other and constantly expand
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Unable to find TextureGroup
+      <span>
+       [group]
+      </span>
+     </td>
+     <td>
+      This error is usually only found from trying to run a malformed project file (if this happens consistently you may wish to contact
+      <a href="https://accounts.yoyogames.com/contact-us">
+       YoYo Games Support
+      </a>
+      and supply the details that the compiler output window shows)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Wrong to convert
+      <span>
+       [value]
+      </span>
+      to number
+     </td>
+     <td>
+      You have tried to convert the given value, for example a string, into a number
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Division by 0
+     </td>
+     <td>
+      You have tried to divide a value by 0
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Invalid object id
+      <span>
+       [object ID]
+      </span>
+      used
+     </td>
+     <td>
+      You have tried to access an object using an ID value that is incorrect
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Unclosed comment (
+      <span>
+       /*
+      </span>
+      ) at end of script
+     </td>
+     <td>
+      You have created a script comment using
+      <span>
+       /* [comment] */
+      </span>
+      but have not supplied the closing comment tag
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Invalid token
+     </td>
+     <td>
+      You have an invalid character in your game code, which can happen with foreign language characters or Unicode
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Number
+      <span>
+       [num]
+      </span>
+      in incorrect format
+     </td>
+     <td>
+      The given number - shown in the error - is not the correct format for the function or operation being performed, for example you supply an integer when a pointer is required
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Unexpected EOF encountered
+     </td>
+     <td>
+      You have reached the end of file unexpectedly while using the File Functions
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <strong>
+       Strings
+      </strong>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Unable to Not a string
+     </td>
+     <td>
+      You have tried to use "
+      <span>
+       !
+      </span>
+      " (not) on a string
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Unable to Negate a string
+     </td>
+     <td>
+      You have tried to negate a string, for example
+      <span>
+       string = -string
+      </span>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <strong>
+       Scripts,
+      </strong>
+      <strong>
+       Functions
+      </strong>
+      <strong>
+       and Arguments
+      </strong>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Wrong number of arguments for function
+      <span>
+       [function]
+      </span>
+     </td>
+     <td>
+      You have supplied too many or too few arguments for the given function
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Failed to parse action_execute_script() - incorrect number of arguments received
+     </td>
+     <td>
+      The GML Visual action Execute Script has too many or too few arguments for the given script being called
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Unknown function
+      <span>
+       [function]
+      </span>
+      check to see if script is empty
+     </td>
+     <td>
+      A script or function has been called that the compiler does not recognise (this error is usually thrown by empty script asset references since the compiler will strip out these assets on compile)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Function
+      <span>
+       [function]
+      </span>
+      expects
+      <span>
+       n
+      </span>
+      arguments,
+      <span>
+       a
+      </span>
+      provided
+     </td>
+     <td>
+      <span>
+       A function has been given the wrong number of arguments (
+       <span>
+        n
+       </span>
+       ) when a certain number were expected (
+       <span>
+        a
+       </span>
+       )
+      </span>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Assignment of an empty value (function does not return anything?)
+     </td>
+     <td>
+      You have tried to assign a return value from a function when that function returns nothing
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Unable to find function
+      <span>
+       [function]
+      </span>
+     </td>
+     <td>
+      You have called an unknown function
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Calling a function that needs an instance and no instance is available
+     </td>
+     <td>
+      <span>
+       The function or script being called is for acting on an instance, but at the time of running no instances exist
+      </span>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Calling a function that needs an other and no other is available
+     </td>
+     <td>
+      You have used the keyword
+      <span>
+       other
+      </span>
+      outside of the Collision Event or outside of a
+      <span>
+       with
+      </span>
+      statement
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Argument naming error,
+      <span>
+       n
+      </span>
+      arguments but no reference found to
+      <span>
+       a
+      </span>
+     </td>
+     <td>
+      You have given a number of arguments to a script, but fail to reference one of them in the script, for example, your script takes three arguments but you only use arguments
+      <span>
+       n
+      </span>
+      and
+      <span>
+       a
+      </span>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Cannot compare arguments
+     </td>
+     <td>
+      You have tried to compare two different argument types, like a string and a real number
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Unknown function or script
+      <span>
+       [functions/script]
+      </span>
+     </td>
+     <td>
+      The compiler does not recognise the function or script being called
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Cannot use resource name
+      <span>
+       [resource]
+      </span>
+      as it is not being exported
+     </td>
+     <td>
+      You have tried to access a resource that has not been flagged as part of the project for the platform being compiled to
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Cannot use function/script name for a variable, using
+      <span>
+       [functions/script]
+      </span>
+     </td>
+     <td>
+      You have tried to use either a function name or a script name as a variable, for example:
+      <span>
+       string = "Hello World"
+      </span>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Cannot use an argument outside a script
+     </td>
+     <td>
+      The built in argument variables can only be used inside a script but you have tried to use them elsewhere
+     </td>
+    </tr>
+    <tr>
+     <td>
+      No references to
+      <span>
+       argument[num]
+      </span>
+      but references
+      <span>
+       argument[num]
+      </span>
+     </td>
+     <td>
+      You are using a reference to an argument that does not exist but that could map to another argument
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Incorrect number of arguments for accessor
+     </td>
+     <td>
+      You have supplied the wrong number of arguments when using an accessor
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Wrong type of arguments for (one of the below):
+          /, div, mod, +, -, &amp;&amp;, ||, &amp;, |, ^, <>
+     </td>
+     <td>
+      You have supplied the wrong type of argument for the expression being evaluated
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <b>
+       Variables
+      </b>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Using uninitialized variable
+      <i>
+       [var]
+      </i>
+     </td>
+     <td>
+      You have tried to use the named variable before it has been initialised
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Variable
+      <i>
+       [var]
+      </i>
+      is read-only
+     </td>
+     <td>
+      You have tried to change the named variable when it cannot be changed
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Unable to find variable named
+      <i>
+       [var]
+      </i>
+     </td>
+     <td>
+      The named variable cannot be found in the current compile
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Malformed variable reference
+     </td>
+     <td>
+      You have tried to reference a variable in the wrong way
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Trying to set a read only variable
+      <i>
+       [var]
+      </i>
+     </td>
+     <td>
+      You have tried to set a variable that is read only
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Cannot re-declare a built in variable
+     </td>
+     <td>
+      You have tried to declare a local variable using the same name as one of the built in variables
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Cannot use resource name for a variable
+     </td>
+     <td>
+      You have use the same name as a resource from the resource tree as a local variable
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <i>
+       [Variable]
+      </i>
+      is read-only
+     </td>
+     <td>
+      You have tried to use a variable that has been flagged as read only
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <b>
+       Constants
+      </b>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Cannot set a constant [constant] to a value
+     </td>
+     <td>
+      You have tried to set a constant to a different value
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Constant is invalid here
+     </td>
+     <td>
+      You have tried to use a constant somewhere that is not valid for the code being run
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Cannot assign to [var] - it's a constant
+     </td>
+     <td>
+      You have tried to assign a new value to the named constant
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <b>
+       Arrays
+      </b>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Array index should not be negative
+     </td>
+     <td>
+      You have tried to access, create, or set an array value using a negative array index
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <b>
+       Malformed...
+      </b>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Malformed Conditional operator
+     </td>
+     <td>
+      You have used an erroneous conditional (ternary) operator or if statement, and not the format:
+      <span>
+       [condition] ? [expression1] : [expression2];
+      </span>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      If requires a then statement
+     </td>
+     <td>
+      You have written an if statement and expression to evaluate, but not given any then part to run
+     </td>
+    </tr>
+    <tr>
+     <td>
+      malformed assignment statement
+     </td>
+     <td>
+      In the code you are using an assignment operator wrong
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Malformed
+          if / repeat / while / do / for / with / switch / break / continue / exit
+          statement
+     </td>
+     <td>
+      The structure of the given statement is incorrect.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Malformed post inc or dec statement
+     </td>
+     <td>
+      You have tried to use
+      <span>
+       [var]++
+      </span>
+      or
+      <span>
+       [var]--
+      </span>
+      in an illegal way
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Malformed pre inc or dec statement
+     </td>
+     <td>
+      You have tried to use
+      <span>
+       ++[var]
+      </span>
+      or
+      <span>
+       --[var]
+      </span>
+      in an illegal way
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Malformed global gml_pragma
+     </td>
+     <td>
+      You have created a wrong global string when using
+      <span>
+       gml_pragma
+      </span>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Malformed PNGCrush gml_pragma
+     </td>
+     <td>
+      You have created a wrong string command for PNGCrush when using
+      <span>
+       gml_pragma
+      </span>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Malformed Texgroup.Scale gml_pragma
+     </td>
+     <td>
+      You have create a wrong global string when using
+      <span>
+       gml_pragma
+      </span>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <b>
+       Switch / Case
+      </b>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Default cannot be used multiple times in a switch
+     </td>
+     <td>
+      In your switch statement you have defined default: more than once
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Clause expression type mismatch (clause expressions should all be the same type)
+     </td>
+     <td>
+      In your switch you are checking for two different constant case types, for example a string in one case and an integer in another
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Case argument should be a constant
+     </td>
+     <td>
+      You have tried to use a value that does not evaluate to a constant within one of your switch cases
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Statement in a switch MUST appear after case or default
+     </td>
+     <td>
+      You have added a statement to a switch outside of either a
+      <span>
+       case:
+      </span>
+      or
+      <span>
+       default:
+      </span>
+      call
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Duplicate case statement found / original here
+     </td>
+     <td>
+      You have used the same case constant in two different places within a switch (note that the "original here" comment will be on another line and can be clicked to show the original case)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <b>
+       Expressions
+      </b>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      No return value from expression (does expression have a return value?)
+     </td>
+     <td>
+      You have tried to assign a return value from an expression to a variable when the expression returns nothing
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Expecting expression after the '.'
+     </td>
+     <td>
+      You have used the point "
+      <span>
+       .
+      </span>
+      " notation erroneously and not added an expression afterwords correctly
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Unexpected symbol [symbol] in expression
+     </td>
+     <td>
+      The expression uses a symbol that is not part of the accepted expression symbol set - the symbol in question will be shown
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <b>
+       Unknown Operators
+      </b>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Unknown Pre operator
+     </td>
+     <td>
+      You have tried to use a symbol as a pre-operator when that symbol is not permitted, for example
+      <span>
+       **[var]
+      </span>
+      or
+      <span>
+       >>[var]
+      </span>
+      - only
+      <span>
+       ++
+      </span>
+      and
+      <span>
+       --
+      </span>
+      are acceptable
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Unknown Post operator
+     </td>
+     <td>
+      You have tried to use a symbol as a post-operator when that symbol is not permitted, for example
+      <span>
+       [var]**
+      </span>
+      or
+      <span>
+       [var]>>
+      </span>
+      - only
+      <span>
+       ++
+      </span>
+      and
+      <span>
+       --
+      </span>
+      are acceptable
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Unknown pragma [gml_pragma string]
+     </td>
+     <td>
+      You have used a pragma string that is unknown to the compiler
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Unknown unary operator
+     </td>
+     <td>
+      You have tried to use an unknown symbol as a unary operator
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Unknown binary operator
+     </td>
+     <td>
+      You have tried to use an unknown symbol as a binary operator
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Unknown operator [operator]
+     </td>
+     <td>
+      You have tried to use an unknown symbol as an operator (the symbol will be shown in the error)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <b>
+       Break / Continue
+      </b>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Break used without context
+     </td>
+     <td>
+      You have not used break within a switch or a loop or any other permitted structure
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Continue used without context
+     </td>
+     <td>
+      You have not used continue within the correct context
+     </td>
+    </tr>
+    <tr>
+     <td>
+      continue statement is not allowed at this point
+     </td>
+     <td>
+      You have used continue within a apart of your code where it is not permitted
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <b>
+       Enums
+      </b>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      enum num is invalid
+     </td>
+     <td>
+      The enum number is invalid for the enum
+     </td>
+    </tr>
+    <tr>
+     <td>
+      malformed enum
+     </td>
+     <td>
+      You have not created the enum correctly
+     </td>
+    </tr>
+    <tr>
+     <td>
+      enum [enum] has already been defined
+     </td>
+     <td>
+      You have tried to define an enum using the same name as another previously defined
+     </td>
+    </tr>
+    <tr>
+     <td>
+      malformed enum entry
+     </td>
+     <td>
+      The enum has an invalid entry
+     </td>
+    </tr>
+    <tr>
+     <td>
+      enum expression must be an integer constant
+     </td>
+     <td>
+      The enum entry does not evaluate as an integer constant
+     </td>
+    </tr>
+    <tr>
+     <td>
+      enum reference [key] does not exist in [enum]
+     </td>
+     <td>
+      You have tried to reference an enum entry using a key that has not previously been defined for that enum
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <strong>
+       Expected Symbols / Values
+      </strong>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Symbol ( expected
+          Symbol ) expected
+          Symbol , or ) expected
+          Symbol { expected
+          Symbol } expected
+          Symbol , or } expected
+          Symbol : expected
+          Symbol ; expected
+          Symbol [ expected
+          symbol ] expected
+          Symbol , or ] expected
+     </td>
+     <td>
+      You have not used a required symbol when writing your code
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Expected id or string
+     </td>
+     <td>
+      You have used a value that is not either a layer ID or a layer name - as a string - in one of the Layer functions
+     </td>
+    </tr>
+    <tr>
+     <td>
+      keyword Until expected
+     </td>
+     <td>
+      You have created a do... until loop but neglected to supply an until expression
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Function name expected
+     </td>
+     <td>
+      You have used something other than a function name in your code where a function should go
+     </td>
+    </tr>
+    <tr>
+     <td>
+      variable name expected
+     </td>
+     <td>
+      You have supplied a name that is not a variable name where one is expected
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Assignment operator expected
+     </td>
+     <td>
+      You have created an assignment which expects an operator but none has been supplied
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <b>
+       Android Exclusive
+      </b>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Android ARM ToolChain directory [dir] does not exist
+     </td>
+     <td>
+      The link given in the Android Preferences for the ARM toolchain is incorrect and does not exist.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Android MIPS ToolChain directory [dir] does not exist
+     </td>
+     <td>
+      The link given in the Android Preferences for the MIPS toolchain is incorrect and does not exist.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Android x86 ToolChain directory [dir] does not exist
+     </td>
+     <td>
+      The link given in the Android Preferences for the x86 toolchain is incorrect and does not exist.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Android NDK directory [dir] does not exist
+     </td>
+     <td>
+      The link given in the Android Preferences for the Android NDK is incorrect and does not exist.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </body>
+</html>

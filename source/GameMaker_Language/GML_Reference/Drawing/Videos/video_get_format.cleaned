@@ -1,0 +1,67 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   video_get_format
+  </h1>
+  This function returns the colour format of the currently loaded video. This can be any one of the following constants:
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      <span>
+       Video Format Constant
+      </span>
+     </th>
+    </tr>
+    <tr>
+     <th>
+      Constant
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       video_format_rgba
+      </span>
+     </td>
+     <td>
+      The video surface uses the RGBA color model
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       video_format_yuv
+      </span>
+     </td>
+     <td>
+      The video surface uses the YUV color model
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  Windows, macOS, Opera GX, Android, iOS, and HTML5 use the RGBA model for videos. All other platforms use the YUV model.
+   
+   
+    As the drawing methods for RGBA and YUV videos are different, the return value from this function may be used to run different code based on the format of the playing video. See
+  <a href="YUV_Videos.htm#h">
+   Draw Video
+  </a>
+  for an example.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">video_get_format();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">Video Format Constant
+</code></pre>
+ </body>
+</html>

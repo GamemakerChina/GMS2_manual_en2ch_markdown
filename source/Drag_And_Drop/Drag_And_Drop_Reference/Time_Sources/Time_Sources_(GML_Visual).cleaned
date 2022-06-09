@@ -1,0 +1,154 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Time Sources (GML Visual)
+  </h1>
+  This page lists the GML Visual actions available for Time Sources.
+  <a href="../../../GameMaker_Language/GML_Reference/Time_Sources/Time_Sources.htm">
+   Read an overview of Time Sources here
+  </a>
+  .
+   
+   
+    The following actions are available for Time Sources in GML Visual:
+  <ul>
+   <li>
+    <a href="Create_Time_Source.htm">
+     Create Time Source
+    </a>
+   </li>
+   <li>
+    <a href="Destroy_Time_Source.htm">
+     Destroy Time Source
+    </a>
+   </li>
+   <li>
+    <a href="Start_Time_Source.htm">
+     Start Time Source
+    </a>
+   </li>
+   <li>
+    <a href="Stop_Time_Source.htm">
+     Stop Time Source
+    </a>
+   </li>
+   <li>
+    <a href="Pause_Time_Source.htm">
+     Pause Time Source
+    </a>
+   </li>
+   <li>
+    <a href="Reconfigure_Time_Source.htm">
+     Reconfigure Time Source
+    </a>
+   </li>
+   <li>
+    <a href="Reset_Time_Source.htm">
+     Reset Time Source
+    </a>
+   </li>
+   <li>
+    <a href="Get_Children.htm">
+     Get Children
+    </a>
+   </li>
+   <li>
+    <a href="Get_Parent.htm">
+     Get Parent
+    </a>
+   </li>
+   <li>
+    <a href="Get_Period.htm">
+     Get Period
+    </a>
+   </li>
+   <li>
+    <a href="Get_Reps_Completed.htm">
+     Get Reps Completed
+    </a>
+   </li>
+   <li>
+    <a href="Get_Reps_Remaining.htm">
+     Get Reps Remaining
+    </a>
+   </li>
+   <li>
+    <a href="Get_State.htm">
+     Get State
+    </a>
+   </li>
+   <li>
+    <a href="Get_Time_Remaining.htm">
+     Get Time Remaining
+    </a>
+   </li>
+   <li>
+    <a href="Get_Units.htm">
+     Get Units
+    </a>
+   </li>
+   <li>
+    <a href="If_Time_Source_Exists.htm">
+     If Time Source Exists
+    </a>
+   </li>
+   <li>
+    <a href="If_Time_Source_Parent.htm">
+     If Time Source Parent
+    </a>
+   </li>
+   <li>
+    <a href="If_Time_Source_State.htm">
+     If Time Source State
+    </a>
+   </li>
+   <li>
+    <a href="If_Time_Source_Units.htm">
+     If Time Source Units
+    </a>
+   </li>
+  </ul>
+  The following actions are provided for converting time periods:
+  <ul>
+   <li>
+    <a href="Seconds_to_BPM.htm">
+     Seconds to BPM
+    </a>
+   </li>
+   <li>
+    <a href="BPM_to_Seconds.htm">
+     BPM to Seconds
+    </a>
+   </li>
+  </ul>
+  The following constants are used with
+  <span>
+   Time Source
+  </span>
+  actions:
+  <ul>
+   <li>
+    <a href="../../../GameMaker_Language/GML_Reference/Time_Sources/Built_In_Time_Sources.htm">
+     Built-In Time Sources
+    </a>
+   </li>
+   <li>
+    <a href="../../../GameMaker_Language/GML_Reference/Time_Sources/Time_Source_Units.htm">
+     Time Source Units
+    </a>
+   </li>
+   <li>
+    <a href="../../../GameMaker_Language/GML_Reference/Time_Sources/Time_Source_Expiry_Types.htm">
+     Time Source Expiry Types
+    </a>
+   </li>
+   <li>
+    <a href="../../../GameMaker_Language/GML_Reference/Time_Sources/Time_Source_States.htm">
+     Time Source States
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

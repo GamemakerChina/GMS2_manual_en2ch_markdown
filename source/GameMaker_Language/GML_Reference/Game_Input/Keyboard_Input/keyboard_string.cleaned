@@ -1,0 +1,56 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   keyboard_string
+  </h1>
+  This variable holds a string containing the last (at most) 1024 characters typed on the keyboard. This string will only contain printable characters typed, but it
+  <i>
+   will
+  </i>
+  correctly respond to pressing the backspace key by erasing the last character. This variable is
+  <i>
+   not
+  </i>
+  read only and you can change it, for example to set it to "" (an empty string) if you handled it already, and you can use the
+  <a href="../../Strings/Strings.htm">
+   String Functions
+  </a>
+  to manipulate it. Note that when using the on-screen
+  <a href="../Virtual_Keys_And_Keyboards/Virtual_Keys_And_Keyboards.htm">
+   Virtual Keyboard
+  </a>
+  ,
+  <i>
+   only
+  </i>
+  this variable will be updated with the keyboard input.
+  <h4>
+   <b>
+    Syntax:
+   </b>
+  </h4>
+  <pre><code class="language-gml">keyboard_string;
+</code></pre>
+  <h4>
+   <b>
+    Returns:
+   </b>
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   <b>
+    Example:
+   </b>
+  </h4>
+  <pre><code class="language-gml">if string_length(keyboard_string) &amp;amp;gt; 15
+{
+    keyboard_string = string_copy(keyboard_string, 1, 15);
+}
+</code></pre>
+  The above code will limit the length of the keyboard string to 15 characters, removing those that are over that limit by copying the first fifteen characters back into the variable.
+ </body>
+</html>

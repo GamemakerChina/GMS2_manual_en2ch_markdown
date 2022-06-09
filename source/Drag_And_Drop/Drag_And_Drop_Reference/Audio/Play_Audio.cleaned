@@ -1,0 +1,60 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Audio/i_Audio_Play_Audio.png"/><br/>
+   Play Audio
+  </h1>
+  This action will set the given sound playing. You select the sound from the Asset Explorer and then set whether you would like the sound to be looped or not (a looped sound will play again and again until stopped) by setting the "Loop" flag.
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Audio/a_Audio_Play_Audio.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Sound
+     </td>
+     <td>
+      The sound resource to play
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Loop
+     </td>
+     <td>
+      Whether to loop the sound or not (off by default)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Audio/e_Audio_Play_Audio.png"/><br/>
+  The above action block code checks for a mouse button press and if one is detected it then checks a
+    global variable to see if it is not true. If it is not true, then a sound is played (and looped) and the global variable set to
+  <span>
+   true
+  </span>
+  , otherwise the sound is stopped and the global variable is set to
+  <span>
+   false
+  </span>
+  .
+ </body>
+</html>

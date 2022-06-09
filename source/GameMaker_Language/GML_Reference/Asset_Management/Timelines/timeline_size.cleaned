@@ -1,0 +1,71 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   timeline_size
+  </h1>
+  With this function you can get the total number of active moments for a timeline (an "active" moment is one which has code or GML Visual added to it). This can be handy when creating dynamic timelines using the
+  <a href="timeline_moment_add_script.htm">
+   <span>
+    timeline_moment_add_script()
+   </span>
+  </a>
+  and
+  <a href="timeline_moment_clear.htm">
+   <span>
+    timeline_moment_clear()
+   </span>
+  </a>
+  functions, as you can check to see if a given timeline has the correct number of active moments or none at all.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">timeline_size(ind);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      ind
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Timelines.htm">
+        Timeline Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the timeline get the information from.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if timeline_size(global.tl) == 0
+{
+    timeline_moment_add_script(global.tl, room_speed + irandom(room_speed), spawn_enemy);
+}
+</code></pre>
+  The above code check the given timeline size, and if it returns 0 (ie: the timeline has no active moments) it will add a script function to be used at a random moment within the timeline indexed in the global variable "tl".
+ </body>
+</html>

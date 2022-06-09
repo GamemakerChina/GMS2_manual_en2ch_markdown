@@ -1,0 +1,91 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   sprite_get_nineslice
+  </h1>
+  This function returns the
+  <a href="../Nine_Slice_Struct.htm">
+   Nine Slice struct
+  </a>
+  for a sprite, containing all its Nine Slice properties as set in the
+  <a href="../../../../../The_Asset_Editors/Sprites.htm">
+   Sprite Editor
+  </a>
+  or using
+  <a href="../Sprite_Manipulation/sprite_set_nineslice.htm">
+   sprite_set_nineslice()
+  </a>
+  . The contents of this struct are detailed on
+  <a href="../Nine_Slice_Struct.htm">
+   this page
+  </a>
+  .
+  
+  
+   If the supplied sprite does not have a Nine Slice struct assigned to it, a new struct with default Nine Slice properties will be created for the sprite and returned.
+  
+  
+   Changing any values in this struct
+  <strong>
+   will
+  </strong>
+  modify the Nine Slice properties of the original sprite, affecting any future draw calls made with that sprite.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">sprite_get_nineslice(ind);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      ind
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../The_Asset_Editors/Sprites.htm">
+        Sprite Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the sprite from which the Nine Slice struct will be retrieved
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Nine_Slice_Struct.htm">
+ Nine Slice Struct
+</a>
+(or -1 if the sprite doesn't exist)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var _box_nineslice = sprite_get_nineslice(spr_box_0);
+
+_box_nineslice.enabled = true;
+_box_nineslice.left = 10;
+_box_nineslice.right = 10;
+_box_nineslice.top = 10;
+_box_nineslice.bottom = 10;
+</code></pre>
+  The code above retrieves the Nine Slice struct from a sprite, enables Nine Slicing for it and sets the guide offsets.
+ </body>
+</html>

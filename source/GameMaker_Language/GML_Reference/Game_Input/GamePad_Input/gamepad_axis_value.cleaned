@@ -1,0 +1,117 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   gamepad_axis_value
+  </h1>
+  You can use this function to get the value of the different axes from a given gamepad slot. You supply the gamepad slot index to check, along with either an axis index constant (as listed
+  <a href="Gamepad_Input.htm">
+   here
+  </a>
+  ), or an integer value between
+  <span>
+   0
+  </span>
+  and
+  <span>
+   <a href="gamepad_axis_count.htm">
+    gamepad_axis_count()
+   </a>
+  </span>
+  <span>
+   -1
+  </span>
+  . The returned value will be between
+  <span>
+   -1
+  </span>
+  and
+  <span>
+   1
+  </span>
+  for each of the available horizontal and vertical axes.
+  
+  
+   Note that the returned value is normalised to take into consideration the value set for the axis deadzone (using the function
+  <span>
+   <a href="gamepad_set_axis_deadzone.htm">
+    gamepad_set_axis_deadzone()
+   </a>
+  </span>
+  ), and so will always be between -1 and 0, and 0 and 1. For example, setting the deadzone to 0.2 will mean that pushing the stick right will only start returning a value from 0 - 1 when the
+  <em>
+   raw
+  </em>
+  axis value is over 0.2 - so for example, when the raw value is 0.2, the return value will be 0, when the raw value is at 0.5, the return value will be 0.375, or if the raw value is 0.9, then the return value would be 0.875.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">gamepad_axis_value(device, axisIndex);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      device
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      Which gamepad device "slot" to check.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      axisIndex
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Game_Input/GamePad_Input/gamepad_axis_value.htm">
+        Gamepad Axis Constant
+       </a>
+      </span>
+     </td>
+     <td>
+      The axis index to check (see the
+      <a href="Gamepad_Input.htm">
+       constants list
+      </a>
+      ).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var haxis = gamepad_axis_value(0, gp_axislh);
+var vaxis = gamepad_axis_value(0, gp_axislv);
+direction = point_direction(0, 0, haxis, vaxis);
+speed = point_distance(0 ,0, haxis, vaxis) * 5;
+</code></pre>
+  The above code sets the speed and direction of the instance based on the returned values of the left analog controller of the gamepad plugged into device "slot" 0.
+ </body>
+</html>

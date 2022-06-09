@@ -1,0 +1,27 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   url_get_domain
+  </h1>
+  You can use this to get the domain where your HTML5 game is being played.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">url_get_domain();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">dom_name=url_get_domain();
+</code></pre>
+  This will store the domain of your game in the variable "dom_name".
+ </body>
+</html>

@@ -1,0 +1,58 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   skeleton_get_minmax
+  </h1>
+  This function will return an array with the total bounding box value for all the individual bounding boxes assigned to a skeleton animation sprite. The returned array will have 4 elements:
+  <ul>
+   <li>
+    [0] - the minimum x position for all bounding boxes
+   </li>
+   <li>
+    [1] - the minimum y position for all bounding boxes
+   </li>
+   <li>
+    [2] - the maximum x position for all bounding boxes
+   </li>
+   <li>
+    [3] - the maximum y position for all bounding boxes
+   </li>
+  </ul>
+  <span>
+   NOTE
+  </span>
+  The bounding box of a Spine sprite is set up in Spine itself, not in
+  <span>
+   GameMaker
+  </span>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">skeleton_get_minmax();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../../GameMaker_Language/GML_Overview/Arrays.htm">
+ Array
+</a>
+(4 elements: xMin, yMin, xMax, yMax)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var frame = skeleton_animation_get_frame(0);
+if frame &amp;amp;gt; 0 &amp;amp;amp;&amp;amp;amp; frame &amp;amp;lt; 2
+{
+    var box = skeleton_get_minmax();
+    var ww = (box[2] - box[0]) / 2;
+    var hh = (box[3] - box[1]) / 2;
+    part_particles_create(global.p_sys, box[0] + ww, box[1] + hh, global.Stars, 10);
+}
+</code></pre>
+  The above code will check the current frame of the animation assigned to track 0 and then burst some particles from a point in the middle of the total bounding box for the sprite.
+ </body>
+</html>

@@ -1,0 +1,1122 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Building via Command Line
+  </h1>
+  <span>
+   <strong>
+    NOTE
+   </strong>
+  </span>
+  Building executable packages via command line is only available on specific licences, so please look at
+  <a href="https://help.yoyogames.com/hc/en-us/articles/115002637011">
+   this page
+  </a>
+  to find out whether your licence supports that. For all other licences, you can run and debug your project through a command line without any restrictions.
+  
+  
+   In addition to building your project through the IDE,
+  <span>
+   GameMaker
+  </span>
+  allows you to build your projects through a command-line interface using the many options and commands described below. You can use this to build your project, test it and deploy it to multiple platforms by running one batch file, and to set up continuous integration through an automation server such as
+  <a href="https://www.jenkins.io/">
+   Jenkins
+  </a>
+  .
+  
+  
+   This is done by running the
+  <span>
+   Igor.exe
+  </span>
+  executable present within your runtime folder and passing in the options and commands listed on this page. On Windows this will be present in the
+  <span>
+   C:\ProgramData\GameMaker\Cache\runtimes\runtime-[version]\bin
+  </span>
+  folder and on Mac under
+  <span>
+   /Users/Shared/GameMaker/Cache/runtimes/runtime-[version]/bin
+  </span>
+  .
+  <h1>
+   Igor CI Building
+  </h1>
+  <h2>
+   Setting Up
+  </h2>
+  To set up CI building on a machine, you will need to do the following:
+  <ul>
+   <li>
+    Install
+    <span>
+     GameMaker
+    </span>
+    and the runtimes needed
+   </li>
+   <li>
+    Build the projects through the IDE for the targets required, to make sure that they work fine
+   </li>
+   <li>
+    Test building from the command line (see examples below)
+   </li>
+   <li>
+    Create a batch file that will do the build that you require within the task (test this from the command line)
+   </li>
+   <li>
+    Set up a CI environment (this depends on how you are going to build your games); we suggest using
+    <a href="https://www.jenkins.io/">
+     Jenkins
+    </a>
+   </li>
+   <li>
+    Set up your CI task and ensure that all the prerequisites are setup (i.e. source control sync to your project)
+   </li>
+   <li>
+    Hook the batch file into the CI task and test within the Jenkins environment
+   </li>
+  </ul>
+  <h2>
+   Notes
+  </h2>
+  <ul>
+   <li>
+    Some platforms may have issues with the length of your file paths, in which case you will need to
+    <span>
+     <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/subst">
+      subst
+     </a>
+    </span>
+    virtual drives on your PC (like the IDE does) before passing them into your commands
+   </li>
+   <li>
+    Some platforms (notably Android) will automatically
+    <span>
+     subst
+    </span>
+    a drive while building, so you may need to manually clean this up in the event of an error
+   </li>
+  </ul>
+  <h2>
+   Options
+  </h2>
+  Here are the options that you can use while running the
+  <strong>
+   Igor
+  </strong>
+  executable:
+  <table>
+   <colgroup>
+    <col/>
+    <col/>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      Option
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       /uf=[user_folder]
+       <strong>
+       </strong>
+      </span>
+     </td>
+     <td>
+      The user folder used for retrieving licence information
+            
+            
+            On Windows, this will be:
+      <span>
+       <span>
+        %appdata%\GameMaker\_
+       </span>
+      </span>
+      On macOS, this will be:
+      <span>
+       <span>
+        ~/.config/GameMaker/_
+       </span>
+      </span>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       /rp=[runtime_root]
+      </span>
+     </td>
+     <td>
+      The root folder of the runtime
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       /project=[project_YYP_file]
+      </span>
+     </td>
+     <td>
+      The full path to the project's
+      <span>
+       .yyp
+      </span>
+      file
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       /cache=[cache_dir_path]
+      </span>
+     </td>
+     <td>
+      The cache directory to use (defaults to
+      <span>
+       \cache
+      </span>
+      in the current directory)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       /temp=[temp_dir_path]
+      </span>
+     </td>
+     <td>
+      The temporary directory to use (defaults to
+      <span>
+       c:\temp
+      </span>
+      )
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       /of=[output_folder_filename]
+      </span>
+     </td>
+     <td>
+      The output directory where the build will be extracted; do not specify just a directory as the trailing entry is always removed (e.g.: specifying
+      <span>
+       d:\game\output
+      </span>
+      will place the game files in
+      <span>
+       d:\game
+      </span>
+      )
+            
+            
+            If this is not specified, a directory named
+      <span>
+       output
+      </span>
+      will be created in the same directory as the
+      <span>
+       .bat
+      </span>
+      file (or where the command is running from), containing the extracted build files
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       /tf=[target_file]
+      </span>
+     </td>
+     <td>
+      The actual file name of the ZIP file or NSIS installer that is created
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       /config=[configName]
+      </span>
+     </td>
+     <td>
+      The name of the configuration to use (defaults to
+      <span>
+       Default
+      </span>
+      )
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       /runtime=YYC|VM
+      </span>
+     </td>
+     <td>
+      The output type (either YYC or VM), defaults to VM
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       /j=[NumCPUs]
+      </span>
+     </td>
+     <td>
+      The number of CPUs to use during the build process
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       /device=[device_name_from_IDE]
+      </span>
+     </td>
+     <td>
+      The name of the target device as set up in the IDE
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2>
+   Examples
+  </h2>
+  Below you can find examples of build commands for all platforms:
+  <a href="#">
+   <span>
+    Opera GX
+   </span>
+   <span>
+    Opera GX
+   </span>
+  </a>
+  Cleaning Opera GX project:
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] -- OperaGX Clean
+</code></pre>
+  Running Opera GX:
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] -- OperaGX Run
+</code></pre>
+  <a href="#">
+   <span>
+    Windows
+   </span>
+   <span>
+    Windows
+   </span>
+  </a>
+  Cleaning Windows project:
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] -- Windows Clean
+</code></pre>
+  Building VM for Windows --
+  <span>
+   Run
+  </span>
+  ,
+  <span>
+   PackageZip
+  </span>
+  and
+  <span>
+   PackageNsis
+  </span>
+  :
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] -- Windows Run
+</code></pre>
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] -- Windows PackageZip
+</code></pre>
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] -- Windows PackageNsis
+</code></pre>
+  Building YYC for Windows--
+  <span>
+   Run
+  </span>
+  ,
+  <span>
+   PackageZip
+  </span>
+  and
+  <span>
+   PackageNsis
+  </span>
+  :
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /platform=YYC -- Windows Run
+</code></pre>
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /platform=YYC -- Windows PackageZip
+</code></pre>
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /platform=YYC -- Windows PackageNsis
+</code></pre>
+  <a href="#">
+   <span>
+    macOS
+   </span>
+   <span>
+    macOS
+   </span>
+  </a>
+  Cleaning macOS project:
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] -- Mac Clean
+</code></pre>
+  Building VM for macOS while on a Mac:
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] -- Mac Package
+</code></pre>
+  <strong>
+   Note
+  </strong>
+  that on Mac you will need to use mono to run Igor, so you will need to write
+  <span>
+   <strong>
+    mono
+   </strong>
+  </span>
+  before all your commands, e.g.:
+  <span>
+   mono Igor.exe [options]
+  </span>
+  Building VM for macOS while on a PC:
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /device=[device_IDE_Name] -- Mac Package
+</code></pre>
+  Building YYC for macOS while on a Mac:
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /platform=YYC -- Mac Package
+</code></pre>
+  Building YYC for macOS while on a PC:
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /platform=YYC /device=[device_IDE_Name] -- Mac Package
+</code></pre>
+  <a href="#">
+   <span>
+    Linux / Ubuntu
+   </span>
+   <span>
+    Linux / Ubuntu
+   </span>
+  </a>
+  Cleaning Linux project:
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] -- Linux Clean
+</code></pre>
+  Building VM for Linux while on a PC:
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /device=[device_IDE_Name] -- Linux Package
+</code></pre>
+  Building YYC for Linux while on a PC:
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /platform=YYC /device=[device_IDE_Name] -- Linux Package
+</code></pre>
+  <a href="#">
+   <span>
+    HTML5
+   </span>
+   <span>
+    HTML5
+   </span>
+  </a>
+  Cleaning HTML5 project:
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] -- HTML5 Clean
+</code></pre>
+  Building HTML5 folder (make sure to specify a target folder with
+  <span>
+   /tf)
+  </span>
+  :
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_folder] -- HTML5 folder
+</code></pre>
+  <a href="#">
+   <span>
+    iOS
+   </span>
+   <span>
+    iOS
+   </span>
+  </a>
+  Building VM for iOS while on a Mac:
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] -- ios Package
+</code></pre>
+  Building VM for iOS while on a PC:
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /device=[device_IDE_Name] -- ios Package
+</code></pre>
+  Building YYC for iOS while on a Mac:
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /platform=YYC -- ios Package
+</code></pre>
+  Building YYC for iOS while on a PC:
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /platform=YYC /device=[device_IDE_Name] -- ios Package
+</code></pre>
+  <a href="#">
+   <span>
+    Android
+   </span>
+   <span>
+    Android
+   </span>
+  </a>
+  Cleaning Android project:
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] -- Windows Clean
+</code></pre>
+  Building an Android APK using VM:
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] -- Android Package
+</code></pre>
+  Building an Android APK using YYC:
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /platform=YYC -- Android Package
+</code></pre>
+  <a href="#">
+   <span>
+    tvOS
+   </span>
+   <span>
+    tvOS
+   </span>
+  </a>
+  Cleaning tvOS project:
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] -- tvos Clean
+</code></pre>
+  Building VM for tvOS while on a Mac:
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] -- tvos Package
+</code></pre>
+  Building VM for tvOS while on a PC:
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /device=[device_IDE_Name] -- tvos Package
+</code></pre>
+  Building YYC for tvOS while on a Mac:
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /platform=YYC -- tvos Package
+</code></pre>
+  Building YYC for tvOS while on a PC:
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /platform=YYC /device=[device_IDE_Name] -- tvos Package
+</code></pre>
+  <a href="#">
+   <span>
+    PS4
+   </span>
+   <span>
+    PS4
+   </span>
+  </a>
+  Cleaning PS4 project:
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] -- ps4 Clean
+</code></pre>
+  Building VM for PS4 while on a PC:
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /device=[device_IDE_Name] -- ps4 Package
+</code></pre>
+  Building YYC for PS4 while on a PC:
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /platform=YYC /device=[device_IDE_Name] -- ps4 Package
+</code></pre>
+  <a href="#">
+   <span>
+    PS5
+   </span>
+   <span>
+    PS5
+   </span>
+  </a>
+  Cleaning PS5 project:
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] -- ps5 Clean
+</code></pre>
+  Building VM for PS5 while on a PC:
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /device=[device_IDE_Name] -- ps5 Package
+</code></pre>
+  Building YYC for PS5 while on a PC:
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /platform=YYC /device=[device_IDE_Name] -- ps5 Package
+</code></pre>
+  <a href="#">
+   <span>
+    Xbox One
+   </span>
+   <span>
+    Xbox One
+   </span>
+  </a>
+  Cleaning Xbox One project:
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] -- XBoxOne Clean
+</code></pre>
+  Building VM for Xbox One while on a PC:
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /device=[device_IDE_Name] -- XBoxOne Package
+</code></pre>
+  Building YYC for Xbox One while on a PC:
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /platform=YYC /device=[device_IDE_Name] -- XBoxOne Package
+</code></pre>
+  <a href="#">
+   <span>
+    Xbox Series X/S
+   </span>
+   <span>
+    Xbox Series X/S
+   </span>
+  </a>
+  Cleaning Xbox Series X/S project:
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] -- XBoxOneSeriesXS Clean
+</code></pre>
+  Building VM for Xbox Series X/S:
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /device=[device_IDE_Name] -- XBoxOneSeriesXS Package
+</code></pre>
+  Building YYC for Xbox Series X/S:
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /platform=YYC /device=[device_IDE_Name] -- XBoxOneSeriesXS Package
+</code></pre>
+  <a href="#">
+   <span>
+    Switch
+   </span>
+   <span>
+    Switch
+   </span>
+  </a>
+  Cleaning Switch project:
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] -- Switch Clean
+</code></pre>
+  Building VM for Switch while on a PC:
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /device=[device_IDE_Name] -- Switch Package
+</code></pre>
+  Building VM for YYC while on a PC:
+  <pre><code class="language-gml">Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /platform=YYC /device=[device_IDE_Name] -- Switch Package
+</code></pre>
+  <h1>
+   Igor Runtime
+  </h1>
+  Here are the options that can be used with the Igor runtime:
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Option
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       /uf=[user_folder]
+       <strong>
+       </strong>
+      </span>
+     </td>
+     <td>
+      Set the user folder used for retrieving licence information so
+      <span>
+       GameMaker
+      </span>
+      knows which modules can be installed
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       /lf=[license_file]
+      </span>
+     </td>
+     <td>
+      Set the direct path to a licence file, can be used as an alternative to setting a user folder (
+      <span>
+       /uf
+      </span>
+      )
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       /ru=[runtime_url]
+      </span>
+     </td>
+     <td>
+      Set the URL to fetch runtime information from (defaults to the stable release)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       /rp=[runtime_root]
+      </span>
+     </td>
+     <td>
+      Set the local runtime install folder to list the installed runtimes or install new runtimes
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  Here are the commands that can be used with the Igor runtime:
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">Igor.exe [command]
+</code></pre>
+  <table>
+   <colgroup>
+    <col/>
+    <col/>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      Command
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       Runtime List
+      </span>
+     </td>
+     <td>
+      Lists the runtimes available on a feed (version number, date/time of build)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       Runtime ListInstalled [directory]
+      </span>
+     </td>
+     <td>
+      Lists the runtimes available in the current folder (
+      <span>
+       directory
+      </span>
+      =full path to the folder)
+            
+            
+            You can specify a directory to look in, but if it's not specified it will default to the current directory
+            
+            
+            This also checks whether there is a
+      <span>
+       receipt.json
+      </span>
+      file and a
+      <span>
+       manifest
+      </span>
+      folder inside the directory (making sure that it's actually a runtime)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       Runtime Info [version]
+      </span>
+     </td>
+     <td>
+      Prints out information about the most recent runtime on the given feed; also needs a licence file to show information regarding the modules available for the user
+      <span>
+       version
+      </span>
+      can either by a string used to search through the feed titles (e.g.:
+      <span>
+       "739"
+      </span>
+      would show information for all builds containing 739 in their version numbers), or it can be
+      <span>
+       all
+      </span>
+      to show information for all feeds
+            
+            
+            It will list the modules with the
+      <span>
+       .zip
+      </span>
+      file names for each module
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       Runtime Install [version]
+      </span>
+     </td>
+     <td>
+      Installs the latest runtime from the given feed using the given
+      <span>
+       version
+      </span>
+      as a search filter; if that is not specified, it defaults to the latest version. It will get all the modules that the user has on their licence.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       Runtime Verify [folder=.]
+      </span>
+     </td>
+     <td>
+      Calculates the checksums for all the installed files and compares them to the checksums written into the manifest
+      <span>
+       folder
+      </span>
+      . You can specify a folder to check, however if that is not specified it will default to the current directory.
+            
+            
+            This will flag any files where the checksums don't match, files that are missing and files that should not be there.
+            
+            
+            Do note that the manifest files themselves are not verified and a user can alter the manifest files to match the installed ones.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h1>
+   Igor Testing
+  </h1>
+  Here are the options that can be used for testing your builds with Igor:
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Option
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       /uf=[user_folder]
+       <strong>
+       </strong>
+      </span>
+     </td>
+     <td>
+      Set the user folder used for retrieving licence information so
+      <span>
+       GameMaker
+      </span>
+      knows which modules can be installed
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       /lf=[license_file]
+      </span>
+     </td>
+     <td>
+      Set a direct path to a licence file, can be used as an alternative to setting a user folder (
+      <span>
+       /uf
+      </span>
+      )
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       /df=[device_file]
+      </span>
+     </td>
+     <td>
+      Set a direct path to a
+      <span>
+       devices.json
+      </span>
+      file, can be used as an alternative to setting a user folder (
+      <span>
+       /uf
+      </span>
+      )
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       /timeout=[number_of_seconds_to_wait]
+      </span>
+     </td>
+     <td>
+      The timeout to use for the test in seconds, defaults to 120 seconds; the test will be stopped after this timeout is over and will be marked as failed
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       /waittime=[number_of_seconds_to_wait]
+      </span>
+     </td>
+     <td>
+      Number of seconds to wait in the main loop before declaring the test as passed, defaults to 30 seconds
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       /device=[device_name]
+      </span>
+     </td>
+     <td>
+      Used to look up the device name in the user folder's
+      <span>
+       devices.json
+      </span>
+      file
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       /target=[list_of_targets]
+      </span>
+     </td>
+     <td>
+      Comma-separated list of targets in the
+      <span>
+       PLATFORM|DEVICE
+      </span>
+      format, e.g.:
+      <span>
+       /target="Windows|Local,HTML|Firefox"
+      </span>
+      If you specify
+      <strong>
+       all
+      </strong>
+      , the tests will attempt to run for every device in the
+      <span>
+       devices.json
+      </span>
+      file
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  There is one command that you can use to run tests with Igor:
+  <pre><code class="language-gml">Igor.exe Tests RunTests [test_directory/test_filename]
+</code></pre>
+  You must specify either a test directory or a test file name.
+  <ul>
+   <li>
+    If it's a directory, Igor will look for a file called
+    <span>
+     tests.json
+    </span>
+    in the directory
+    <ul>
+     <li>
+      If the file
+      <strong>
+       is not found
+      </strong>
+      , Igor will recursively search for
+      <span>
+       .yyz
+      </span>
+      and
+      <span>
+       .yyp
+      </span>
+      files in the directory
+      <ul>
+       <li>
+        Each project found will be built and run on Windows
+       </li>
+       <li>
+        It will wait till the runner reaches the main loop
+        <ul>
+         <li>
+          The test passes if the runner is still running after the wait time
+         </li>
+         <li>
+          The test fails if the project does not compile within the timeout period, or crashes before the wait time is over
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </li>
+     <li>
+      If a
+      <span>
+       tests.json
+      </span>
+      file
+      <strong>
+       is found
+      </strong>
+      , Igor will run the tests described in the file (see example below)
+     </li>
+    </ul>
+   </li>
+   <li>
+    Alternatively, you can supply a direct path to a
+    <span>
+     tests.json
+    </span>
+    file instead of a directory
+   </li>
+  </ul>
+  <h1>
+   Tests.json File
+  </h1>
+  <h2>
+   Format
+  </h2>
+  The
+  <span>
+   tests.json
+  </span>
+  file must have the following format:
+  <ul>
+   <li>
+    The JSON file should contain an array of objects
+   </li>
+   <li>
+    Each object should describe one test
+    <ul>
+     <li>
+      The test object must contain these keys:
+      <ul>
+       <li>
+        <span>
+         name
+        </span>
+        : A name used to report whether the test has passed or failed
+       </li>
+       <li>
+        <span>
+         path
+        </span>
+        : A path to a
+        <span>
+         .yyp
+        </span>
+        ,
+        <span>
+         .yyz
+        </span>
+        ,
+        <span>
+         .gml
+        </span>
+        ,
+        <span>
+         .js
+        </span>
+        file or folder for the test
+       </li>
+       <li>
+        <span>
+         command
+        </span>
+        : The Igor command for the test (
+        <span>
+         Run
+        </span>
+        ,
+        <span>
+         CreatePackage
+        </span>
+        , etc. as described above)
+       </li>
+      </ul>
+     </li>
+     <li>
+      The test object may also contain these keys:
+      <ul>
+       <li>
+        <span>
+         platform
+        </span>
+        : Passed directly through to Igor to do the test
+       </li>
+       <li>
+        <span>
+         device
+        </span>
+        : The device name from the
+        <span>
+         devices.json
+        </span>
+        file
+       </li>
+       <li>
+        <span>
+         target
+        </span>
+        : The target in a "
+        <span>
+         PLATFORM|TARGET"
+        </span>
+        format, e.g.: "
+        <span>
+         Windows|Local"
+        </span>
+       </li>
+       <li>
+        <span>
+         timeout
+        </span>
+        : A timeout for the total test including compile and run; if exceeded the test will be stopped and marked as failed
+       </li>
+       <li>
+        <span>
+         waittime
+        </span>
+        : The length of time to wait after entering the main loop before deciding whether the test has passed
+       </li>
+       <li>
+        <span>
+         owner
+        </span>
+        : the e-mail address of the user who will be e-mailed if this test fails
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+  <h2>
+   Example
+  </h2>
+  Here is an example of a
+  <span>
+   tests.json
+  </span>
+  file:
+  <pre><code class="language-gml">[
+  
+  {
+  
+  "name" : "Game Idea Windows",
+  
+  "path" : "C:/scratch/GameIdea.yyz",
+  
+  "platform" : "Windows",
+  
+  "command" : "Run",
+  
+  "timeout" : "500",
+  
+  "waittime" : "30"
+  
+  },
+  
+  {
+  
+  "name" : "Platformer Game Windows",
+  
+  "path" : "C:/Users/&amp;amp;lt;MY USERNAME&amp;amp;gt;/Documents/GameMaker/Platformer Game/PlatformerGame.yyp",
+  
+  "target" : "Windows|Local,HTML5|selenium:firefox,PS4|Default",
+  
+  "command" : "Run"
+  
+  },
+  
+  {
+  
+  "name" : "Puzzle Game Windows",
+  
+  "path" : "C:/Users/&amp;amp;lt;MY USERNAME&amp;amp;gt;/Documents/GameMaker/Puzzle Game/PuzzleGame.yyp",
+  
+  "platform" : "HTML5",
+  
+  "command" : "Run",
+  
+  "device" : "selenium:chrome"
+  
+  }
+  
+  ]
+</code></pre>
+ </body>
+</html>

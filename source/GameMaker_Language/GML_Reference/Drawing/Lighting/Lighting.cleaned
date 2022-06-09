@@ -1,0 +1,56 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Lighting
+  </h1>
+  When working with 3D scenes, what you draw with the
+  <span>
+   GameMaker
+  </span>
+  functions may look rather "flat" because there is no lighting to give them realism and life. This means that the colour of the primitive faces are equal all over, independent of their orientation or position, therefore, to create more realistic looking scenes you must enable lighting and place lights at the correct places within the 3D world. This section outlines the functions available to help you achieve that:
+  <ul>
+   <li>
+    <a href="draw_light_define_ambient.htm">
+     draw_light_define_ambient
+    </a>
+   </li>
+   <li>
+    <a href="draw_light_define_point.htm">
+     draw_light_define_point
+    </a>
+   </li>
+   <li>
+    <a href="draw_light_define_direction.htm">
+     draw_light_define_direction
+    </a>
+   </li>
+   <li>
+    <a href="draw_light_enable.htm">
+     draw_light_enable
+    </a>
+   </li>
+   <li>
+    <a href="draw_set_lighting.htm">
+     draw_set_lighting
+    </a>
+   </li>
+   <li>
+    <a href="draw_light_get_ambient.htm">
+     draw_light_get_ambient
+    </a>
+   </li>
+   <li>
+    <a href="draw_light_get.htm">
+     draw_light_get
+    </a>
+   </li>
+   <li>
+    <a href="draw_get_lighting.htm">
+     draw_get_lighting
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

@@ -1,0 +1,56 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   instance_id
+  </h1>
+  This
+  <b>
+   read only
+  </b>
+  <a href="../../../GML_Overview/Arrays.htm">
+   array
+  </a>
+  holds all the
+  <a href="Instance_Variables/id.htm">
+   <span>
+    id
+   </span>
+   s
+  </a>
+  of every
+  <em>
+   active
+  </em>
+  instance within the room. This means that if you have used any of the
+  <a href="Deactivating_Instances/Deactivating_Instances.htm">
+   Instance Deactivate
+  </a>
+  functions those instances that have been deactivated will not be included in this array (if you have used a value from this array previously, it will now return the keyword
+  <a href="../../../GML_Overview/Instance_Keywords.htm">
+   noone
+  </a>
+  ).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">instance_id[num];
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/id.htm">
+ Instance ID
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">for (var i = 0; i &amp;amp;lt; instance_count; i ++;)
+{
+    with (instance_id[i]) speed += 0.1;
+}
+</code></pre>
+  The above code will loop through all instances within the room and add 0.1 to their speed.
+ </body>
+</html>

@@ -1,0 +1,46 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   event_action
+   <span>
+    DEPRECATED
+   </span>
+  </h1>
+  This
+  <b>
+   read-only
+  </b>
+  variable returns the index of the action currently being executed, starting at 0 on previous versions of GameMaker. However, this is
+  <b>
+   now an obsolete variable
+  </b>
+  in
+  <span>
+   GameMaker
+  </span>
+  . It has been left in for legacy support only, and will
+  <b>
+   always return 0
+  </b>
+  as all actions are concatenated together to improve execution speed.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">event_action;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">num = event_action;
+</code></pre>
+  The above code stores the current action number in the variable "num".
+ </body>
+</html>

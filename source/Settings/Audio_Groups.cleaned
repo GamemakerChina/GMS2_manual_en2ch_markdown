@@ -1,0 +1,121 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Audio Groups
+  </h1>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Settings/Audio_Groups.png"/><br/>
+  The
+  <strong>
+   Audio Group Manager
+  </strong>
+  is available from the
+  <a href="../IDE_Navigation/Menus/The_Tools_Menu.htm">
+   Tools Menu
+  </a>
+  in the IDE. Here you can
+  <em>
+   add
+  </em>
+  ,
+  <em>
+   delete
+  </em>
+  and
+  <em>
+   rename
+  </em>
+  <strong>
+   Audio Groups
+  </strong>
+  , as well as set their platform export options.
+  <span>
+   GameMaker
+  </span>
+  permits you to assign each of the audio resources (sound effects and music) to different audio groups
+    to try and optimise the number of sounds that are being played at any one time, as well as give you further control over what platforms they are exported to.
+  
+  
+   To define an audio group you need to click
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  on the
+  <strong>
+   Add New
+  </strong>
+  button which will create new group that you can then name. To change group,
+    click
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  on the drop-down menu and select the one you wish to edit.
+  <strong>
+   NOTE
+  </strong>
+  : If you select streamed audio for a sound in the
+  <a href="../The_Asset_Editors/Sounds.htm">
+   Sound Editor
+  </a>
+  , you will not be able to assign the sound to an Audio Group as streamed sounds are not packaged in the same way as other
+    sounds and you have full control over when they are loaded, played and unloaded using code.
+  
+  
+   To add a sound to an audio group, you need to open the
+  <a href="../The_Asset_Editors/Sounds.htm">
+   Sound Editor
+  </a>
+  for that sound and then select the group from the option you will find there, or alternatively you can add assets to an audio group via
+    the right mouse button
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_RMB.png"/><br/>
+  menu in the
+  <a href="../Introduction/The_Asset_Browser.htm">
+   Asset Browser
+  </a>
+  . You can select one or more sound assets (or
+    an entire asset group folder) and then use the RMB menu to add the sounds to any group. You can also click the
+  <strong>
+   Add Resource
+  </strong>
+  button at the bottom of the Audio Group Editor to add assets that way.
+  
+  
+   Once you have a sound added to a custom audio group then you can use this window to selectively choose which platform to export that sound to. It may be that by default you have all your sounds at the highest quality, but that for HTML5 (for example)
+    you want to use a lower quality sound file set to use less memory. In that case you add the lower quality files to
+  <span>
+   GameMaker
+  </span>
+  and then assign them to a new audio group. You would then select that audio group from the drop down menu and set
+    it to export
+  <em>
+   only
+  </em>
+  to HTML5, and remove the HTML5 export from the higher quality audio group export options. It is important to note that you cannot change the export options for the "default" audio group and that it will always
+    be exported to all available platforms when you build a final game package.
+  
+  
+   Once you have defined audio groups and assigned sounds to them you can see them in the list on the left when you select the group. There will always be a "default" audio group available and all the sounds that are within this group will always
+    be included in the game package for all platforms and they will all be loaded into memory on start-up (unless flagged as "streamed" in the Sound Editor properties), but when you create a custom audio group, the files that are added to it
+  <em>
+   will not be loaded into memory
+  </em>
+  until you call the function
+  <a href="../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Groups/audio_group_load.htm">
+   <span>
+    audio_group_load()
+   </span>
+  </a>
+  . In this way you can control
+    what audio is resident in memory at any time. Note too that for all the
+  <a href="../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Groups/Audio_Groups.htm">
+   audio group functions
+  </a>
+  , you will need to supply the audio group ID value.
+    This is simply the name that you have given the audio group.
+  
+  
+   Audio Groups are also linked to the
+  <a href="Configurations.htm">
+   Configurations
+  </a>
+  settings. When you select a configuration, you can then open the Audio Groups window and select the export targets from the right hand side for that configuration, and
+    then changing configurations will change these output targets. Note that you cannot set sound resources to different groups on a per-configuration basis, only the export target for the given group.
+ </body>
+</html>

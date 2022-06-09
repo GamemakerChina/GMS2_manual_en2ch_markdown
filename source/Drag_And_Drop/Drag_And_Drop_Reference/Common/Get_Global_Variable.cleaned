@@ -1,0 +1,81 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/i_Common_Get_Global.png"/><br/>
+   Get Global Variable
+  </h1>
+  This action is used to retrieve the value of a global variable and assign it to another instance or temporary (local) variable. The variable you assign the global value to can be one that was previously created, or you can check the "Temp"
+    check-box and give a new variable name to have the action create a new temporary (local) variable specifically to hold the returned value.
+  
+  
+   Note that you can add additional variables in the same action by clicking the plus icon
+  <span>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Icon_Expand_Arguments.png"/><br/>
+  </span>
+  beside the action, and giving another global
+    variable name and temporary local variable name. For more advanced information on variables please see the section on
+  <a href="../../../GameMaker_Language/GML_Overview/Variables_And_Variable_Scope.htm">
+   Variables And Variable Scope
+  </a>
+  .
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/a_Common_Get_Global_Var.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Name
+     </td>
+     <td>
+      The name of the global variable to get the value of.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Target
+     </td>
+     <td>
+      The target variable to hold the returned value - it should have been created previously if "Temp" is not checked (see below).
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Temp
+     </td>
+     <td>
+      Create a temporary (local) variable to hold the returned value (off by default)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Get_Global_Var.png"/><br/>
+  The above action block code retrieves two global variable values and assigns them to
+    temporary (local) variables which are then used in an "
+  <span>
+   if
+  </span>
+  " comparison. If the result is
+  <span>
+   true
+  </span>
+  , three global variables are set to new values.
+ </body>
+</html>

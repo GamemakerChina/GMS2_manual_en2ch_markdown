@@ -1,0 +1,62 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   part_type_clear
+  </h1>
+  With this function you can "reset" a particle, returning all the values for each of the functions relating to the particle (life, colour, alpha, orientation etc...) to their default values. Note that this function does not remove any particles currently visible in the room from the screen, for that you should be using
+  <a href="../Particle_Systems/part_particles_clear.htm">
+   <span>
+    part_particles_clear()
+   </span>
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">part_type_clear(ind);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      ind
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Types/part_type_create.htm">
+        Particle Type ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the particle type to clear.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">part_type_clear(global.explode_part);
+</code></pre>
+  The above code will clear the particle type indexed in the global variable "explode_part" to its default values.
+ </body>
+</html>

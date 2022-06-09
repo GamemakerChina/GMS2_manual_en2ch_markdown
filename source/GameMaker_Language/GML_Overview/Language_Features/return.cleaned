@@ -1,0 +1,82 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   return
+  </h1>
+  The
+  <span>
+   return
+  </span>
+  statement has the following syntax:
+  <pre><code class="language-gml">return (&amp;amp;lt;expression&amp;amp;gt;)
+</code></pre>
+  You only use the
+  <span>
+   return
+  </span>
+  statement in
+  <span>
+   <a href="../Script_Functions.htm">
+    script functions
+   </a>
+   and
+   <a href="../Method_Variables.htm">
+    methods
+   </a>
+  </span>
+  , and it is used to return a value from the function to be used in further code or function calls. It should be noted that the
+  <i>
+   execution of the function ends at the
+   <span>
+    return
+   </span>
+   statement
+  </i>
+  , meaning that any code which comes after
+  <span>
+   return
+  </span>
+  has been called will not be run. Here is a short example script called
+  <span>
+   sqr_calc
+  </span>
+  which calculates the square of whatever value is passed to it, and it includes error catching in case the parameter that it is passed is not a real number:
+  <pre><code class="language-gml">/// @function            sqr_calc(val);
+/// @param {real}  val   The value to calculate the square of
+/// @description         Calculate the square of the given value
+
+function sqr_calc(value)
+{
+    if !is_real(value)
+    {
+        return 0;
+    }
+    else
+    {
+        return (value * value);
+    }
+}
+</code></pre>
+  To call a function from within a piece of code, just use it the same way as when calling runtime functions - that is, write the function name with the parameter values in parentheses. So, the above function would be called like this:
+  <pre><code class="language-gml">if keyboard_check_pressed(vk_enter)
+{
+    val = scr_sqr(amount);
+}
+</code></pre>
+  Here the variable
+  <span>
+   val
+  </span>
+  will either be 0 (because the variable
+  <span>
+   amount
+  </span>
+  is not a real number) or the total for
+  <span>
+   value * value
+  </span>
+  .
+ </body>
+</html>

@@ -1,0 +1,52 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Types/i_Types_Number_To_String.png"/><br/>
+   Number To String
+  </h1>
+  This action will convert a real number into a string. If the number is not an integer value and has decimal places, these will be rounded to the nearest two places, so, for example, the number 123.45678 would return the string "123.46".
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Types/a_Types_Number_To_String.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Value
+     </td>
+     <td>
+      The real number to convert
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Target
+     </td>
+     <td>
+      The target variable to hold the returned value
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Types/e_Types_Decimal_To_Integer.png"/><br/>
+  The above action block code takes a decimal value and converts it to an integer,
+    storing the returned value in a temporary local variable. This value is then turned into a string and drawn to the screen.
+ </body>
+</html>

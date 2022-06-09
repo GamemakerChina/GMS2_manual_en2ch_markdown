@@ -1,0 +1,97 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   time_source_get_state
+  </h1>
+  This function returns the
+  <a href="Time_Source_States.htm">
+   state
+  </a>
+  of the given
+  <span>
+   Time Source
+  </span>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">time_source_get_state(id);
+</code></pre>
+  <table>
+   <colgroup>
+    <col/>
+    <col/>
+    <col/>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Time_Sources/time_source_create.htm">
+        Time Source ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The
+      <span>
+       Time Source
+      </span>
+      to get the state of
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Reference/Time_Sources/Time_Source_States.htm">
+ Time Source State Constant
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if (keyboard_check_pressed(vk_space))
+{
+    var _state = time_source_get_state(time_source);
+
+    if (_state == time_source_state_active)
+    {
+        time_source_pause(time_source);
+    }
+    else if (_state == time_source_state_paused)
+    {
+        time_source_start(time_source);
+    }
+}
+</code></pre>
+  When the Space key is pressed, this code will get a
+  <span>
+   Time Source
+  </span>
+  's state.
+   
+   
+    When the state is active, it will pause the
+  <span>
+   Time Source
+  </span>
+  , and when it's paused, it will resume it.
+ </body>
+</html>

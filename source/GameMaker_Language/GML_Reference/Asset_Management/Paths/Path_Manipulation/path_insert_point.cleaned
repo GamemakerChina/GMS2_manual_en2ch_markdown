@@ -1,0 +1,122 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   path_insert_point
+  </h1>
+  With this function you can insert a new point into a path (the path can have been created in the path editor or through code using
+  <a href="path_add.htm">
+   <span>
+    path_add()
+   </span>
+  </a>
+  ). The point will be added into the path before the point "n" that is specified in the function.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">path_insert_point(index, n, x, y, speed);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../The_Asset_Editors/Paths.htm">
+        Path Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the path to insert the point into.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      n
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The defining point to insert the new point BEFORE.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      x
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x coordinate (relative to the path) of the new point.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y coordinate (relative to the path) of the new point.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      speed
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The speed factor of the point.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">path_insert_point(mypath, 0, 50, 50, 100);
+</code></pre>
+  This will insert a point at the very beginning of the path indexed in the variable "mypath", at (50,50), with a speed factor of 100%.
+ </body>
+</html>

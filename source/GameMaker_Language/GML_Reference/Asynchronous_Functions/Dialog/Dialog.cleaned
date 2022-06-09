@@ -1,0 +1,72 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Dialog
+  </h1>
+  Most modern computers and mobile devices do not like it when a game is stopped while a dialog window is shown. They tend to interpret this as game runner having stopped, and may consider it an error and close the app prematurely. To prevent this
+  <span>
+   GameMaker
+  </span>
+  has
+  <strong>
+   asynchronous
+  </strong>
+  dialog functions that permit you to request certain forms of user feedback or input, but without blocking the game runner at any time, meaning that - when called - the game will run as normal in the background while the user responds to the shown dialog window. Once the user has responded, a
+  <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Dialog.htm">
+   Dialog Asynchronous Event
+  </a>
+  will be called so that you can deal with the results.
+  <strong>
+   NOTE
+  </strong>
+  : With the exception of
+  <a href="shop_leave_rating.htm">
+   <span>
+    shop_leave_rating()
+   </span>
+  </a>
+  , these functions are
+  <span>
+   for
+   <strong>
+    debugging and testing use only
+   </strong>
+   and should not be used in released games. For that purpose you should create a custom user interface to receive input from players so that you have complete control over how the dialogs look and behave.
+  </span>
+  Below is a list of all the available asynchronous dialog functions:
+  <ul>
+   <li>
+    <a href="get_login_async.htm">
+     get_login_async
+    </a>
+   </li>
+   <li>
+    <a href="get_string_async.htm">
+     get_string_async
+    </a>
+   </li>
+   <li>
+    <a href="get_integer_async.htm">
+     get_integer_async
+    </a>
+   </li>
+   <li>
+    <a href="show_message_async.htm">
+     show_message_async
+    </a>
+   </li>
+   <li>
+    <a href="show_question_async.htm">
+     show_question_async
+    </a>
+   </li>
+   <li>
+    <a href="shop_leave_rating.htm">
+     shop_leave_rating
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

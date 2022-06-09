@@ -1,0 +1,88 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   font_set_cache_size
+  </h1>
+  When performing image blending and colouring, HTML5 cannot do it dynamically in the same way an executable could be performed. Therefore
+  <span>
+   GameMaker
+  </span>
+  has to temporarily save a blended copy of the images and load
+    them in when needed. This function sets how many blended copies of the given font can be cached before old ones are overwritten. The default value is 4.
+  <b>
+   <span>
+    NOTE
+   </span>
+  </b>
+  for sprite fonts you should be using the equivalent function for sprites,
+  <a href="../Sprites/Sprite_Manipulation/sprite_set_cache_size.htm">
+   <span>
+    sprite_set_cache_size()
+   </span>
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">font_set_cache_size(ind, max);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      ind
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Fonts.htm">
+        Font Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the font to change the cache size of.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      max
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The maximum number of cached copies of the font that can be stored.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">font_set_cache_size(fnt_MainMenu, 2);
+</code></pre>
+  This will set the font cache of the font indexed in the variable "fnt_MainMenu" to 2 copies.
+ </body>
+</html>

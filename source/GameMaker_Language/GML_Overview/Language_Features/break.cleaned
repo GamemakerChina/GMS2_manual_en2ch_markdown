@@ -1,0 +1,200 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   break
+  </h1>
+  The
+  <span>
+   <span>
+    break
+   </span>
+  </span>
+  statement is used to end prematurely a
+  <a href="for.htm">
+   <span>
+    for
+   </span>
+  </a>
+  ,
+  <a href="repeat.htm">
+   <span>
+    repeat
+   </span>
+  </a>
+  ,
+  <a href="while.htm">
+   <span>
+    while
+   </span>
+  </a>
+  or
+  <a href="do___until.htm">
+   <span>
+    do / until
+   </span>
+  </a>
+  loop of some kind, or to tell a
+  <a href="switch.htm">
+   <span>
+    switch
+   </span>
+  </a>
+  statement to end at that point, or to prematurely end a
+  <a href="with.htm">
+   <span>
+    with
+   </span>
+  </a>
+  call. Please see the individual pages for these different functions to get a more in-depth explanation of how it can be used under each circumstance. Note that if
+  <span>
+   break
+  </span>
+  is used outside of any of these contexts it will give an error.
+  
+  
+   Below you can see a few basic examples of how
+  <span>
+   break
+  </span>
+  can be used, and its syntax is simply:
+  <pre><code class="language-gml">break;
+</code></pre>
+  <span>
+   break
+  </span>
+  in a
+  <span>
+   for
+  </span>
+  loop:
+  <pre><code class="language-gml">for (var i = 0; i &amp;amp;lt; 10; i += 1)
+{
+    if (array[i] == 234)
+    {
+        break;
+    }
+}
+
+num = i;
+</code></pre>
+  <span>
+   break
+  </span>
+  in a
+  <span>
+   repeat
+  </span>
+  loop:
+  <pre><code class="language-gml">var i = 0;
+var temp = 0;
+repeat (10)
+{
+    temp += array[i];
+    if (temp &amp;amp;gt; max_total)
+    {
+        break;
+    }
+    else
+    {
+        i += 1;
+    }
+}
+</code></pre>
+  <span>
+   break
+  </span>
+  in a
+  <span>
+   while
+  </span>
+  loop:
+  <pre><code class="language-gml">var i = 0;
+while (!place_free(x, y))
+{
+    x = random(room_width);
+    y = random(room_height);
+    if (i &amp;amp;gt; 50)
+    {
+        break;
+    }
+    else
+    {
+        i+=1;
+    }
+}
+</code></pre>
+  <span>
+   break
+  </span>
+  in a
+  <span>
+   do / until
+  </span>
+  loop:
+  <pre><code class="language-gml">var _id = noone;
+do
+{
+    _id = list[| 0];
+    if instance_exists(_id)
+    {
+        break;
+    }
+    ds_list_delete(list, 0);
+}
+until (ds_list_empty(list));
+target = _id;
+</code></pre>
+  <span>
+   break
+  </span>
+  when using
+  <span>
+   with
+  </span>
+  :
+  <pre><code class="language-gml">var count = 0;
+with (obj_Enemy)
+{
+    count++;
+    if (count &amp;amp;gt; 10)
+    {
+        break;
+    }
+    hp = 100;
+}
+</code></pre>
+  <span>
+   break
+  </span>
+  in a
+  <span>
+   switch
+  </span>
+  :
+  <pre><code class="language-gml">switch (keyboard_key)
+{
+    case vk_left:
+    case ord("A"):
+        x -= 4;
+    break;
+
+    case vk_right:
+    case ord("D"):
+        x += 4;
+    break;
+
+    case vk_up:
+    case ord("W"):
+        y -= 4;
+    break;
+
+    case vk_down:
+    case ord("S"):
+        y += 4;
+    break;
+}
+</code></pre>
+ </body>
+</html>

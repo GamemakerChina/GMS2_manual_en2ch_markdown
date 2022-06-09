@@ -1,0 +1,83 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   layer_destroy_instances
+  </h1>
+  This function can be used to destroy all the instances assigned to the given layer. You supply the layer ID (which you get when you create the layer using
+  <a href="layer_create.htm">
+   <span>
+    layer_create()
+   </span>
+  </a>
+  ) or the layer name (as a string - this will have a performance impact), and then all instances that are on the layer will be removed from the game, triggering their
+  <strong>
+   Destroy
+  </strong>
+  and
+  <strong>
+   Clean Up
+  </strong>
+  events.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">layer_destroy_instances(layer_id)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      layer_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+      or
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/General_Layer_Functions/layer_get_id.htm">
+        Layer ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The unique ID value of the layer (or the layer name as a string)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if global.game_over
+{
+    layer_destroy_instances(layer);
+}
+</code></pre>
+  The above code will check a global variable and if it's
+  <span>
+   true
+  </span>
+  then all instances that are on the layer of the calling instance will be destroyed (including the calling instance).
+ </body>
+</html>

@@ -1,0 +1,133 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   gpu_set_colourwriteenable
+  </h1>
+  With this function you can switch on or off the colour channels and the alpha channel for all further drawing. For example, you can use this function to create alpha-channel only surfaces (switch off the RGB writing before using the surface), or to create special effects while drawing to the screen. The default value for each of the components is
+  <span>
+   true
+  </span>
+  , and can be supplied as either four unique arguments or as a 4 element 1D array with the following elements in it which will be either
+  <span>
+   true
+  </span>
+  (enabled) or
+  <span>
+   false
+  </span>
+  (disabled):
+  <ul>
+   <li>
+    [0] = Red channel enabled/disabled
+   </li>
+   <li>
+    [1] = Green channel enabled/disabled
+   </li>
+   <li>
+    [2] = Blue channel enabled/disabled
+   </li>
+   <li>
+    [3] = Alpha channel enabled/disabled
+   </li>
+  </ul>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">gpu_set_colorwriteenable(red, green, blue, alpha);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      red
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Enable/disable the red channel
+     </td>
+    </tr>
+    <tr>
+     <td>
+      green
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Enable/disable the green channel
+     </td>
+    </tr>
+    <tr>
+     <td>
+      blue
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Enable/disable the blue channel
+     </td>
+    </tr>
+    <tr>
+     <td>
+      alpha
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Enable/disable the alpha channel
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var cw = gpu_get_colorwriteenable();
+cw[3] = false;
+gpu_set_colorwriteenable(cw);
+</code></pre>
+  The above code gets the current colour write values and then sets the alpha component to
+  <span>
+   false
+  </span>
+  .
+ </body>
+</html>

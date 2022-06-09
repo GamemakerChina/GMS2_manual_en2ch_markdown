@@ -1,0 +1,70 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   object_get_visible
+  </h1>
+  This function will tell you whether the object you are checking has been flagged as "visible" (runs its draw event) or not (does not run its draw event). Please note that this is not an instance function! So, you can have a visible object and an invisible instance of the same object and vice-versa. You can set an individual instances visibility using the
+  <a href="../Instances/Instance_Variables/visible.htm">
+   <span>
+    visible
+   </span>
+  </a>
+  instance variable.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">object_get_visible(obj);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      obj
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Objects.htm">
+        Object Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the object to check.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if (!visible) &amp;amp;amp;&amp;amp;amp; (object_get_visible(object_index))
+{
+    visible = true;
+}
+</code></pre>
+  The above code will check the instance running it to see if it is visible or not as well as check the object index of the instance to see if it is flagged as visible or not. If the instance is
+  <i>
+   not
+  </i>
+  visible yet the object index is flagged as on, it will set "visible" to true for that instance.
+ </body>
+</html>

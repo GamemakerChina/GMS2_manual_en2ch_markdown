@@ -1,0 +1,28 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Push Notifications
+  </h1>
+  Functionality for Mobile Push Notifications has been separated into extensions. Please read the following articles for implementing notifications:
+  <ul>
+   <li>
+    Remote Push Notifications:
+    <a href="https://marketplace.yoyogames.com/assets/10451/firebase-cloud-messaging-ext">
+     Extension
+    </a>
+    |
+    <a href="https://extension-manuals.yoyogames.com/FirebaseDocs/CloudMessaging/Overview.htm">
+     Manual
+    </a>
+   </li>
+   <li>
+    Local Push Notifications:
+    <a href="https://help.yoyogames.com/hc/en-us/articles/360024582692">
+     Guide
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

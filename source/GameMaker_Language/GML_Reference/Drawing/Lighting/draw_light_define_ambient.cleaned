@@ -1,0 +1,61 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   draw_light_define_ambient
+  </h1>
+  This function is used to control the ambient light of a scene, which is the light that you have in a scene even without having defined any point or directional light sources. It is effectively the overall colour and brightness (or darkness) of a scene.
+    The default colour is
+  <span>
+   c_black
+  </span>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">draw_light_define_ambient(col);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      col
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Drawing/Colour_And_Alpha/Colour_And_Alpha.htm">
+        Colour
+       </a>
+      </span>
+     </td>
+     <td>
+      The colour to use (either a constant, a real or a hex value).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">draw_light_define_ambient(c_white);
+</code></pre>
+  The above code will define the ambient lighting as being white.
+ </body>
+</html>

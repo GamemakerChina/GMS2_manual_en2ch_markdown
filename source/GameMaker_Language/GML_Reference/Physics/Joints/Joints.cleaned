@@ -1,0 +1,111 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Joints
+  </h1>
+  In the
+  <span>
+   GameMaker
+  </span>
+  physics world, joints are used to constrain instances to the world or to each other. Typical examples in games include ragdolls, teeters, and pulleys, but joints can be combined in many different ways to create interesting motions or add realism to your game world.
+  <b>
+   NOTE
+  </b>
+  : A joint does not need to be deleted when you destroy an instance joined to another instance, nor does it need to be deleted at the end of a room. Except in very specific cases (see the
+  <a href="physics_joint_gear_create.htm">
+   gear joint
+  </a>
+  ) as this is dealt with automatically by
+  <span>
+   GameMaker
+  </span>
+  .
+  
+  
+   The following pages explain the available joints and how they can be created:
+  <ul>
+   <li>
+    <a href="physics_joint_distance_create.htm">
+     physics_joint_distance_create
+    </a>
+   </li>
+   <li>
+    <a href="physics_joint_revolute_create.htm">
+     physics_joint_revolute_create
+    </a>
+   </li>
+   <li>
+    <a href="physics_joint_prismatic_create.htm">
+     physics_joint_prismatic_create
+    </a>
+   </li>
+   <li>
+    <a href="physics_joint_pulley_create.htm">
+     physics_joint_pulley_create
+    </a>
+   </li>
+   <li>
+    <a href="physics_joint_gear_create.htm">
+     physics_joint_gear_create
+    </a>
+   </li>
+   <li>
+    <a href="physics_joint_rope_create.htm">
+     physics_joint_rope_create
+    </a>
+   </li>
+   <li>
+    <a href="physics_joint_wheel_create.htm">
+     physics_joint_wheel_create
+    </a>
+   </li>
+   <li>
+    <a href="physics_joint_weld_create.htm">
+     physics_joint_weld_create
+    </a>
+   </li>
+   <li>
+    <a href="physics_joint_friction_create.htm">
+     physics_joint_friction_create
+    </a>
+   </li>
+   <li>
+    <a href="physics_joint_delete.htm">
+     physics_joint_delete
+    </a>
+   </li>
+  </ul>
+  Once a joint has been created, it can often be necessary to know its properties in order to change them at specific times in your game. The following functions (with their corresponding internal constants) are available to test and change joint values:
+  <ul>
+   <li>
+    <a href="physics_joint_enable_motor.htm">
+     physics_joint_enable_motor
+    </a>
+   </li>
+   <li>
+    <a href="physics_joint_get_value.htm">
+     physics_joint_get_value
+    </a>
+   </li>
+   <li>
+    <a href="physics_joint_set_value.htm">
+     physics_joint_set_value
+    </a>
+   </li>
+  </ul>
+  Additionally, you can use a number of constants from within
+  <span>
+   GameMaker
+  </span>
+  functions to get (or set) different properties of certain joints. These constants can all be found in the following section:
+  <ul>
+   <li>
+    <a href="Physics_Joint_Constants.htm">
+     Physics Joint Constants
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

@@ -1,0 +1,74 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   is_vec4
+  </h1>
+  In some cases you want to check and see what data type a variable holds in
+  <span>
+   GameMaker
+  </span>
+  and that's when you would use this function. It returns
+  <span>
+   true
+  </span>
+  or
+  <span>
+   false
+  </span>
+  depending on whether the value is a 4 value vector or not.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">is_vec4(n);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      n
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm#variable">
+        Variable
+       </a>
+      </span>
+     </td>
+     <td>
+      The argument to check.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   <b>
+    Example:
+   </b>
+  </h4>
+  <pre><code class="language-gml">if !is_vec4(val)
+{
+    show_debug_message("Not a 4 value vector!");
+}
+</code></pre>
+  The above code checks the variable "val" to see if it contains a vec4 and if it is not then it shows a message in the debug console.
+ </body>
+</html>

@@ -1,0 +1,87 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   string
+  </h1>
+  With this function you can turn any real number into a string. If the real number is an integer, it will be saved with no decimal places, otherwise, it will be saved with two decimal places. If you require more decimal places, then use the function
+  <a href="string_format.htm">
+   <span>
+    string_format()
+   </span>
+  </a>
+  . Also note that using this function on a variable storing an
+  <a href="../../GML_Overview/Arrays.htm">
+   array
+  </a>
+  , a
+  <a href="../Data_Structures/Data_Structures.htm">
+   data structure
+  </a>
+  , or a
+  <a href="../../GML_Overview/Structs.htm">
+   struct
+  </a>
+  will convert the contents of these variables into a string which can then be output to the console or saved to a file for debugging.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">string(val);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      val
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The real number to be turned into a string.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">draw_text(100, 100, "Score: " + string(score) + " / Health: " + string(health));
+</code></pre>
+  The above code uses the
+  <span>
+   string
+  </span>
+  function to draw both real numbers and strings together (draw will only accept
+  <i>
+   either
+  </i>
+  a string
+  <i>
+   or
+  </i>
+  a real, but not both).
+ </body>
+</html>

@@ -1,0 +1,56 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/i_Instance_Set_Speed.png"/><br/>
+   Set Animation Speed
+  </h1>
+  This action block sets the
+  <span>
+   image_speed
+  </span>
+  (animation speed) for the sprite assigned to the instance. You set the ideal frames per second in the
+  <a href="../../../The_Asset_Editors/Sprites.htm">
+   Sprite Editor
+  </a>
+  and then you can use this value
+    to modify it. The default animation speed is set to 1, meaning that the game will try to maintain the number of frames per second that you have defined for the sprite, but you can use values greater than 1 to animate faster (frames may be skipped),
+    or decimal values to animate slower (frames will be shown over various steps) or even negative values to reverse the speed of the animation.
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/a_Instance_Set_Speed.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Speed
+     </td>
+     <td>
+      The new modifier speed value.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <span>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/e_Instance_Set_Sprite.png"/><br/>
+  </span>
+  The above action block code sets a new sprite as well as a number of other
+    properties for how that sprite is to be displayed, including setting it to animate at half the defined speed.
+ </body>
+</html>

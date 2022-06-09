@@ -1,0 +1,36 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   physics_particle_get_max_count
+  </h1>
+  With this function you can find out what the current cap value is on particles permitted in the physics simulation (you can set this value using
+  <a href="physics_particle_set_max_count.htm">
+   <span>
+    physics_particle_set_max_count()
+   </span>
+  </a>
+  ).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">physics_particle_get_max_count()
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if (physics_particle_count() &amp;amp;lt; physics_particle_get_max_count())
+{
+    physics_particle_create(0, x, y, 0, 0, c_white, 1, 1)
+}
+</code></pre>
+  The above code will check to see if there are less than the maximum number of permitted particles in the room, and if so create one more.
+ </body>
+</html>

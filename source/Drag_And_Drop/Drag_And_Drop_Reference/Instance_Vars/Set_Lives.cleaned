@@ -1,0 +1,57 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance_Vars/i_IV_Set_Lives.png"/><br/>
+   Set Lives
+  </h1>
+  With this action you can create or set an instance variable for lives. You supply the value to either set the lives variable to or to add to the lives variable (if you tick the
+  <i>
+   relative
+  </i>
+  checkbox then the value will be added to the current "lives"
+    value). Note that unlike regular instance variables the variable name for "lives" is stored internally so to retrieve the score value you need to use the action
+  <a href="Get_Lives.htm">
+   Get Lives
+  </a>
+  .
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance_Vars/a_IV_Set_Lives.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Lives
+     </td>
+     <td>
+      The amount to set the lives to (or to add on to the lives if
+      <i>
+       relative
+      </i>
+      is checked)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance_Vars/e_IV_Set_Score.png"/><br/>
+  The above action block code will check to see if the room is the first in the game and if it is it
+    sets up "score", "lives" and "health" variables for the instance.
+ </body>
+</html>

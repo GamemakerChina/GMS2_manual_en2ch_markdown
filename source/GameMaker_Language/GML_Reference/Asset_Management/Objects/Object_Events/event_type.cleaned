@@ -1,0 +1,106 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   event_type
+  </h1>
+  This
+  <b>
+   read-only
+  </b>
+  variable returns the type of event currently being executed, which can be one of the following constants:
+  <ul>
+   <li>
+    <b>
+     ev_create
+    </b>
+   </li>
+   <li>
+    <b>
+     ev_destroy
+    </b>
+   </li>
+   <li>
+    <b>
+     ev_step
+    </b>
+   </li>
+   <li>
+    <b>
+     ev_alarm
+    </b>
+   </li>
+   <li>
+    <b>
+     ev_keyboard
+    </b>
+   </li>
+   <li>
+    <b>
+     ev_keypress
+    </b>
+   </li>
+   <li>
+    <b>
+     ev_keyrelease
+    </b>
+   </li>
+   <li>
+    <b>
+     ev_mouse
+    </b>
+   </li>
+   <li>
+    <b>
+     ev_collision
+    </b>
+   </li>
+   <li>
+    <b>
+     ev_other
+    </b>
+   </li>
+   <li>
+    <strong>
+     ev_gesture
+    </strong>
+   </li>
+   <li>
+    <b>
+     ev_draw
+    </b>
+   </li>
+  </ul>
+  For a full list of the constants that are related to the different events see
+  <a href="event_perform.htm">
+   <span>
+    event_perform()
+   </span>
+  </a>
+  , and if you should need the event number (ie: the sub event), you should be checking the
+  <a href="event_number.htm">
+   <span>
+    event_number
+   </span>
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">event_type;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Objects/Object_Events/event_perform.htm">
+ Event Type Constant
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">show_debug_message("Current Event = " + string(event_type));
+</code></pre>
+  The above code will show a debug message with the event type currently being performed.
+ </body>
+</html>

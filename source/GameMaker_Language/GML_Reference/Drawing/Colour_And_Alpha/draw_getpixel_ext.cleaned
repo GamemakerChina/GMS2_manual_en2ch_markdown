@@ -1,0 +1,86 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   draw_getpixel_ext
+  </h1>
+  With this function you can get the full
+  <b>
+   AGBR 32-bit
+  </b>
+  value of any pixel that is being drawn to the current render target. This means that the results will depend on the event in which the function is called, and also on the target surface being used.
+  <b>
+  </b>
+  <span>
+   IMPORTANT
+  </span>
+  This function will cause a huge performance hit and so should only be used when absolutely necessary.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">draw_getpixel_ext(x, y);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      x
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x coordinate of the pixel to check
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y coordinate of the pixel to check
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">col = draw_getpixel_ext(mouse_x, mouse_y);
+alpha = (col &amp;amp;gt;&amp;amp;gt; 24) &amp;amp;amp; 255;
+blue = (col &amp;amp;gt;&amp;amp;gt; 16) &amp;amp;amp; 255;
+green = (col &amp;amp;gt;&amp;amp;gt; 8) &amp;amp;amp; 255;
+red = col &amp;amp;amp; 255;
+</code></pre>
+  The above code will get the 32bit colour value at the position of the mouse and then split it into its component values, storing them in variables.
+ </body>
+</html>

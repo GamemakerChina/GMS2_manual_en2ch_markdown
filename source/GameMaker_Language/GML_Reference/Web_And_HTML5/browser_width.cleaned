@@ -1,0 +1,52 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   browser_width
+  </h1>
+  This variable holds the width (in pixels) of the browser the game is being run in. If no browser is present then the window size is returned. the following image illustrates how this variable relates to the rest of the positioning functions available through the
+  <a href="../Cameras_And_Display/The_Game_Window/The_Game_Window.htm">
+   Window Functions
+  </a>
+  .
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/GML/Reference/Web/window_position.png"/><br/>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">browser_width
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if (browser_height &amp;amp;gt; window_get_height()) || (browser_width &amp;amp;gt; window_get_width())
+{
+    var xx, yy;
+    if (browser_width &amp;amp;gt; window_get_width())
+    {
+        xx = (browser_width - window_get_width()) / 2;
+    }
+    else
+    {
+        xx = 0;
+    }
+    if (browser_height &amp;amp;gt; window_get_height())
+    {
+        yy = (browser_height - window_get_height()) / 2;
+    }
+    else
+    {
+        yy = 0;
+    }
+    window_set_position(xx, yy);
+}
+</code></pre>
+  The above code checks the width and height of the browser to see if either is larger than the current window width and height. If either of them are, it then calculates a new position for the game window within the browser.
+ </body>
+</html>

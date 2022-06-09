@@ -1,0 +1,138 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   dot_product_normalised
+  </h1>
+  The dot product is a value expressing the angular relationship between two vectors and is found by taking two vectors, multiplying them together and then adding the results. The name "dot product" is derived from the centered dot "·"
+    that is often used to designate this operation (the alternative name "scalar product" emphasizes the scalar rather than vector nature of the result).
+  
+  
+   The actual mathematical formula can be written like this:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/GML/Reference/Maths/dot_product_image.png"/><br/>
+  So, in 2D the dot product of vectors
+  <span>
+   a[x1,y1]
+  </span>
+  and
+  <span>
+   b[x2,2]
+  </span>
+  is
+  <span>
+   x1x2 + y1y2
+  </span>
+  , meaning that the dot_product in
+  <span>
+   GameMaker
+  </span>
+  is calculated as:
+  <pre><code class="language-gml">a · b = (x1*x2)+(y1*y2);
+</code></pre>
+  What about the
+  <i>
+   normalised
+  </i>
+  dot product? The normalised dot product has been corrected in such a way as to bring the return value into the range of -1 and 1 (see the section on
+  <a href="../../../../Additional_Information/Vectors.htm">
+   Vectors
+  </a>
+  for more detailed information), which is exceptionally useful in many circumstances, particularly when dealing with lighting and other 3D functions.
+  <h4>
+   <b>
+    Syntax:
+   </b>
+  </h4>
+  <pre><code class="language-gml">dot_product_normalised(x1, y1, x2, y2)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      x1
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x coordinate of the first vector.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y1
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y coordinate of the first vector.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      x2
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x coordinate of the second vector.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y2
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y coordinate of the second vector.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var x1, y1, x2, y2; x1 = lengthdir_x(1, image_angle); y1 = lengthdir_y(1, image_angle); x2 = o_Player.x - x; y2 = o_Player.y - y; if dot_product_normalised(x1, y1, x2, y2) &amp;amp;gt; 0 seen=true else seen=false;
+</code></pre>
+  The above code creates a vector using the instances image angle, and then gets the vector of the player object "o_Player" to itself. Finally it calculates the dot product of these two vectors and if it is greater than 0 it sets the variable
+    "seen" to true, and if it is equal to or less than 0 it sets it to "false".
+ </body>
+</html>

@@ -1,0 +1,46 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Power Saving Preferences
+  </h1>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Setup_And_Version/Preferences/General_Power_Prefs.png"/><br/>
+  The
+  <strong>
+   Power Saving
+  </strong>
+  preferences here will affect how much CPU power and GPU power will be used to generate the
+  <span>
+   GameMaker
+  </span>
+  IDE (essentially this will lower the base framerate at which the program runs and so lower power consumption).
+  
+  
+   The options here are:
+  <ul>
+   <li>
+    <strong>
+     AC power framerate (%)
+    </strong>
+    : The base IDE framerate modifier when connected to a power input. Default is 100%.
+   </li>
+   <li>
+    <strong>
+     Battery power framerate (%)
+    </strong>
+    : The base IDE framerate modifier when using battery to power the machine. Default is 35%.
+   </li>
+   <li>
+    <strong>
+     Background framerate (%)
+    </strong>
+    : The base IDE framerate modifier when
+    <span>
+     GameMaker
+    </span>
+    is not in focus (regardless of the power supply). Default is 15%.
+   </li>
+  </ul>
+ </body>
+</html>

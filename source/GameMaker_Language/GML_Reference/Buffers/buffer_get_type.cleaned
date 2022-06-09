@@ -1,0 +1,130 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   buffer_get_type
+  </h1>
+  With this function you retrieve the type of buffer that is being referenced by a buffer ID value. The return value will be one of the following constants:
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Constant
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       buffer_fixed
+      </span>
+     </td>
+     <td>
+      A buffer of fixed size.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       buffer_grow
+      </span>
+     </td>
+     <td>
+      A buffer that will "grow" dynamically as data is added
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       buffer_wrap
+      </span>
+     </td>
+     <td>
+      A buffer where the data will "wrap". When the data being added reaches the limit of the buffer size, the overwrite will be placed back at the start of the buffer, and further writing will continue from that point.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       buffer_fast
+      </span>
+     </td>
+     <td>
+      Special "stripped" buffer that is extremely fast to read/write to. Can only be used with
+      <span>
+       buffer_u8
+      </span>
+      <a href="buffer_read.htm">
+       data types
+      </a>
+      , and
+      <i>
+       must
+      </i>
+      be 1 byte aligned.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       buffer_vbuffer
+      </span>
+     </td>
+     <td>
+      A vertex buffer
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">buffer_get_type(buffer);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      buffer
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Buffers/buffer_create.htm">
+        Buffer ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the buffer to check.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Reference/Buffers/buffer_create.htm">
+ Buffer Type Constant
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">type = buffer_get_type(buff);
+</code></pre>
+  The above code will get the type of buffer from the value indexed in the variable "buff" and store it in a variable.
+ </body>
+</html>

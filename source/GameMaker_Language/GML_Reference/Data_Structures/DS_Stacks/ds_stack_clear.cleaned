@@ -1,0 +1,71 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   ds_stack_clear
+  </h1>
+  With this function you can clear all data from the given stack data-structure. This does
+  <i>
+   NOT
+  </i>
+  destroy the data-structure (for that you should use
+  <a href="ds_stack_destroy.htm">
+   <span>
+    ds_stack_destroy()
+   </span>
+  </a>
+  ) it only wipes all data from it and returns an empty stack.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">ds_stack_clear(id);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Stacks/ds_stack_create.htm">
+        DS Stack ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The id of the data structure to clear.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if (ai_count = 15 &amp;amp;amp;&amp;amp;amp; !ds_stack_empty(AI_stack))
+{
+    ds_stack_clear(AI_stack);
+    alarm[0] = room_speed;
+    ai_count = 0;
+}
+</code></pre>
+  The above code checks a variable to see if it has reached a specific value and if it has it clears the DS stack indexed in the variable "AI_stack", sets an alarm, and resets the variable to 0.
+ </body>
+</html>

@@ -1,0 +1,69 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   sprite_flush
+  </h1>
+  With this function you can remove the given texture page for the given sprite from texture memory. You supply the sprite index (as defined when creating the sprite resource) and the texture page it is assigned to will be removed from texture memory.
+    Note that if the texture page is used elsewhere in the room (by another instance sprite or a background, etc...) you may get a minor performance hit as the page is immediately reloaded, so care should be taken when using this function. Note that the
+    function will return
+  <span>
+   -1
+  </span>
+  if flush is not supported for the chosen resource, or it will return
+  <span>
+   0
+  </span>
+  if all worked correctly.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">sprite_flush(ind)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      ind
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../The_Asset_Editors/Sprites.htm">
+        Sprite Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index (resource name) of the sprite asset to flush
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a>
+(-1 or 0)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">sprite_flush(spr_Player_Aura);
+</code></pre>
+  The above code flushes the sprite "spr_Player_Aura" from memory.
+ </body>
+</html>

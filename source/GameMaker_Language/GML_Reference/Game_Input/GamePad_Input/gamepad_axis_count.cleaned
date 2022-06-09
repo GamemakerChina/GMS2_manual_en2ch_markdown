@@ -1,0 +1,57 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   gamepad_axis_count
+  </h1>
+  This function will return the number of "axis" controls on the device being checked. These controls are the analogue direction "thumbsticks" on most controllers.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">gamepad_axis_count(device);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      device
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      Which gamepad device "slot" to check.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">axis = gamepad_axis_count(0))
+</code></pre>
+  The above code stores the number of axes available for the gamepad connected to device "slot" 0 in the variable "axis".
+ </body>
+</html>

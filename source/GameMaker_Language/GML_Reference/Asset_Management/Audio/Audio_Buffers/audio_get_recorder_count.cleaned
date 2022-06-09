@@ -1,0 +1,46 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   audio_get_recorder_count
+  </h1>
+  This function will return the number of audio recording sources (like microphones, etc...) currently available to your game. So, if you have a return value of, for example, four, then you will have audio input on the sources 0, 1, 2 and 3, with one of these values being that which you use to start recording from using the function
+  <a href="audio_start_recording.htm">
+   <span>
+    audio_start_recording()
+   </span>
+  </a>
+  . This value can change at any time as people plug/unplug microphones or other input sources to the device. Note that you can use the function
+  <a href="audio_get_recorder_info.htm">
+   <span>
+    audio_get_recorder_info()
+   </span>
+  </a>
+  to get information on each device connected.
+  <b>
+   IMPORTANT!
+  </b>
+  This function will always return 0 when used on the HTML5 target.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">audio_get_recorder_count();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if audio_get_recorder_count() &amp;amp;gt; 0
+{
+    channel_index = audio_start_recording(0);
+}
+</code></pre>
+  The above code checks the audio recorders available and if there are 1 or more, it starts recording from the first one indexed (source 0).
+ </body>
+</html>

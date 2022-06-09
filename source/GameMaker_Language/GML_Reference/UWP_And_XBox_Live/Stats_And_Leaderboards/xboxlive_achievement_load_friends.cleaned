@@ -1,0 +1,105 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   xboxlive_achievement_load_friends
+  </h1>
+  This function will send a request to the server for information on all the logged in users friends and will trigger a callback
+  <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Social.htm">
+   Social Asynchronous Event
+  </a>
+  which contains the
+  <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">
+   <span>
+    async_load
+   </span>
+  </a>
+  map populated with the relevant key/value pairs. The
+  <i>
+   id
+  </i>
+  key of this
+  <span>
+   DS Map
+  </span>
+  is used to identify the correct callback (there can be more than one trigger function for any given asynchronous event), and will be paired with the
+  <b>
+   constant
+  </b>
+  <span>
+   xboxlive_achievement_friends_info
+  </span>
+  as well as a number of other key/value pairs for each friend. The exact contents of the map are shown below:
+  <ul>
+   <li>
+    "
+    <b>
+     id
+    </b>
+    " - For this function it should be
+    <span>
+     xboxlive_achievement_friends_info
+    </span>
+   </li>
+   <li>
+    "
+    <b>
+     FriendN
+    </b>
+    " - The name of the friend, where "N" is an integer value corresponding to their position within the friends list.
+   </li>
+   <li>
+    "
+    <b>
+     FriendidN
+    </b>
+    " - The unique user id of the friend, "N".
+   </li>
+  </ul>
+  <h4>
+   <b>
+    Syntax:
+   </b>
+  </h4>
+  <pre><code class="language-gml">xboxlive_achievement_load_friends();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Extended Example:
+  </h4>
+  The following code would probably be called after the player has logged into their game account to get a list of all that users friends:
+  <pre><code class="language-gml">xboxlive_achievement_load_friends();
+</code></pre>
+  This will send off a request for the information on the users friends and generate an asynchronous callback with the special
+  <span>
+   async_load
+  </span>
+  DS map containing the following data:
+  <pre><code class="language-gml">var ident = ds_map_find_value(async_load, "id");
+if ident == xboxlive_achievement_friends_info
+{
+    var numfriends = ds_map_find_value(async_load, "numfriends");
+    global.numfriends = numfriends;
+    for(var i=0; i &amp;amp;lt; numfriends; i++;)
+    {
+        global.friendname[i] = ds_map_find_value(async_load, "Friend" + string(i));
+        global.friendid[i] = ds_map_find_value(async_load, "Friendid" + string(i));
+    }
+}
+</code></pre>
+  The above code checks the returned
+  <span>
+   DS Map
+  </span>
+  in the
+  <b>
+   Social Asynchronous Event
+  </b>
+  and if its "id" matches the constant being checked, it then loops through the map storing all the different values in a number of arrays.
+ </body>
+</html>

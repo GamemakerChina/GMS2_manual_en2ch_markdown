@@ -1,0 +1,50 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Paths/i_Paths_Get_Position_Along_Path.png"/><br/>
+   Get Position Along Path
+  </h1>
+  This action will get the position of an instance along a path. The returned value is normalised from 0 - 1, so if you get a result of, for example, 0.5, the instance exactly in the middle of the path. Note that you must have called the
+  <a href="Start_Following_Path.htm">
+   Start Following Path
+  </a>
+  action to assign a path to the instance for this action to return a value other than 0. The returned value will be stored in the target variable you give, or you can flag the variable as a temporary local variable to create it and assign the value.
+  <h4>
+   Action Syntax:
+  </h4>
+  <span>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Paths/a_Paths_Get_Position_Along_Path.png"/><br/>
+  </span>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Target
+     </td>
+     <td>
+      The target variable to hold the returned path position
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Paths/e_Paths_Get_Position_Along_Path.png"/><br/>
+  The above action block code gets the current position on the assigned path
+    for the instance and if it is less than 0.5 it is set to 0.5.
+ </body>
+</html>

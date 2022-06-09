@@ -1,0 +1,41 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   keyboard_lastchar
+  </h1>
+  This variable stores a string of the last key pressed. This variable is
+  <i>
+   not
+  </i>
+  read only and you can change it, for example to set it to "" (an empty string) if you handled it already.
+  <h4>
+   <b>
+    Syntax:
+   </b>
+  </h4>
+  <pre><code class="language-gml">keyboard_lastchar;
+</code></pre>
+  <h4>
+   <b>
+    Returns:
+   </b>
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   <b>
+    Example:
+   </b>
+  </h4>
+  <pre><code class="language-gml">if keyboard_lastkey != -1
+{
+    str += keyboard_lastchar;
+    keyboard_lastkey = -1;
+}
+</code></pre>
+  The above code checks to see if the lastkey variable is greater than -1, and if it is it adds whatever the last key was as a string to the variable "str".
+ </body>
+</html>

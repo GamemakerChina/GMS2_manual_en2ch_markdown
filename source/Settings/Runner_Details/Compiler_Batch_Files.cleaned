@@ -1,0 +1,178 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Compiler Batch Files / Scripts
+  </h1>
+  The
+  <span>
+   GameMaker
+  </span>
+  compiler allows you to place Batch files (Windows) or Shell scripts (on macOS and Linux) in your project directory, and in the directory for each extension in your project.
+  <h2>
+   Placement
+  </h2>
+  A script file may be placed at the root of your project directory, alongside the project's
+  <span>
+   .yyp
+  </span>
+  file.
+   
+   
+    A script file may also be placed in the directory of an extension, which may look like this:
+  <span>
+   /extensions//
+  </span>
+  .
+   
+   
+    The extension versions of a script file will be executed first, and its root version will be executed last. The order in which extensions are executed can't be controlled, so an extension developer must ensure that one extension's scripts don't rely on another extension's scripts.
+  <h2>
+   Execution
+  </h2>
+  Script files with specific names, placed in any of the directories described above, are executed at various points during the compilation process:
+  <table>
+   <colgroup>
+    <col/>
+    <col/>
+    <col/>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      Windows Batch File Name
+     </th>
+     <th>
+      macOS/Linux Shell Script Name
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <strong>
+       pre_run_step.bat
+      </strong>
+     </td>
+     <td>
+      <strong>
+       pre_run_step.sh
+      </strong>
+     </td>
+     <td>
+      This is executed before the game deployment is about to start
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <strong>
+       post_run_step.bat
+      </strong>
+     </td>
+     <td>
+      <strong>
+       post_run_step.sh
+      </strong>
+     </td>
+     <td>
+      This is executed when the game is prepared and ready to run; after the script's execution the game is started
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <strong>
+       pre_build_step.bat
+      </strong>
+     </td>
+     <td>
+      <strong>
+       pre_build_step.sh
+      </strong>
+     </td>
+     <td>
+      This is executed before the asset compiler is started for building the game
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <strong>
+       post_build_step.bat
+      </strong>
+     </td>
+     <td>
+      <strong>
+       post_build_step.sh
+      </strong>
+     </td>
+     <td>
+      This is executed after the asset compiler has been started for building the game
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <strong>
+       pre_package_step.bat
+      </strong>
+     </td>
+     <td>
+      <strong>
+       pre_package_step.sh
+      </strong>
+     </td>
+     <td>
+      This is executed before the final packaging step, which is when all files are ready but the final ZIP file or store package is about to be created
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <strong>
+       post_package_step.bat
+      </strong>
+     </td>
+     <td>
+      <strong>
+       post_package_step.sh
+      </strong>
+     </td>
+     <td>
+      This is executed after the final packaging step has completed and the final ZIP file or store package has been prepared
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <strong>
+       post_textures.bat
+      </strong>
+     </td>
+     <td>
+      <strong>
+       post_textures.sh
+      </strong>
+     </td>
+     <td>
+      This is executed after the textures for your game have been generated. You can use this step to optimise your game textures manually.
+          
+          This script receives an environment variable called
+      <span>
+       TexturesDir
+      </span>
+      , which stores the path to the generated textures.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  These script files are supported when building on all target platforms.
+  <h2>
+   Disabling Scripts for an Extension
+  </h2>
+  If you use multiple extensions that run scripts, for example, Steamworks and GDK, then you'll want to disable Steamworks when exporting to GDK, and vice-versa.
+   
+   
+    For that, see:
+  <a href="../../The_Asset_Editors/Extension_Creation/Disabling_Extensions.htm">
+   How to Disable Extensions?
+  </a>
+ </body>
+</html>

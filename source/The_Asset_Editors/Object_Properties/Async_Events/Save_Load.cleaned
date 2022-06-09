@@ -1,0 +1,102 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Save / Load
+  </h1>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Async_SaveLoad.png"/><br/>
+  This event will be triggered by the
+  <a>
+   callback
+  </a>
+  from certain functions related to loading
+    and saving buffers to files, as well as when loading or unloading audio from memory. The event itself will contain the built in
+  <a href="../../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">
+   <span>
+    async_load
+   </span>
+  </a>
+  DS map which will be populated by the keys required for the specific function. These are listed in the sections below.
+  <h2>
+   Buffers
+  </h2>
+  When you use the functions
+  <a href="../../../GameMaker_Language/GML_Reference/Buffers/buffer_save_async.htm">
+   <span>
+    buffer_save_async()
+   </span>
+  </a>
+  or
+  <a href="../../../GameMaker_Language/GML_Reference/Buffers/buffer_load_async.htm">
+   <span>
+    buffer_load_async()
+   </span>
+  </a>
+  an
+    asynchronous event will be triggered when the data transfer has been completed. This event will populate the
+  <span>
+   async_load
+  </span>
+  map with the following key/value pairs
+  <ul>
+   <li>
+    "
+    <span>
+     id
+    </span>
+    ": the ID of the async function as returned by the function used.
+   </li>
+   <li>
+    "
+    <span>
+     status
+    </span>
+    ": will return true if the data was saved/loaded correctly, and false otherwise.
+   </li>
+  </ul>
+  This permits you to poll the saving/loading progress and display a message or change rooms etc... when the process is complete.
+  <h2>
+   Audio Groups
+  </h2>
+  When working with
+  <a href="../../../Settings/Audio_Groups.htm">
+   Audio Groups
+  </a>
+  , you can load them an unload them from memory using the functions
+  <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Groups/audio_group_load.htm">
+   <span>
+    audio_group_load()
+   </span>
+  </a>
+  and
+  <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Groups/audio_group_unload.htm">
+   <span>
+    audio_group_unload()
+   </span>
+  </a>
+  . When using the load function, it will trigger this event when the full set of audio
+    files set for the group has been loaded into memory and will populate the map with the following key/value pairs:
+  <ul>
+   <li>
+    "
+    <span>
+     type
+    </span>
+    ": this tells us the type of event being called and will be "audiogroup_load" for loading audio.
+   </li>
+   <li>
+    "
+    <span>
+     group_id
+    </span>
+    ": will return the ID of the audio group that has been loaded (as defined in the
+    <a href="../../../Settings/Audio_Groups.htm">
+     Audio Group Editor
+    </a>
+    ).
+   </li>
+  </ul>
+  When all audio has been loaded for a group, this event will trigger and it can then be used to change rooms, or play a music track etc...
+ </body>
+</html>

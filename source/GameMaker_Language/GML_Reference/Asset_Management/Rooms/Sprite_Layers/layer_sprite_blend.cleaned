@@ -1,0 +1,114 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   layer_sprite_blend
+  </h1>
+  This function controls the blending (or "tinting") of the sprite sprite and the default value is -1 (which represents the constant
+  <span>
+   c_white
+  </span>
+  , which can also be used). Any other value (including internal colour constants like
+  <span>
+   c_red
+  </span>
+  ,
+    or
+  <span>
+   c_aqua
+  </span>
+  ) will blend the specified colour with the original sprite. You give the sprite element ID (which you get when you create a sprite element using
+  <a href="layer_sprite_create.htm">
+   <span>
+    layer_sprite_create()
+   </span>
+  </a>
+  or when you use
+    the function
+  <a href="layer_sprite_get_id.htm">
+   <span>
+    layer_sprite_get_id()
+   </span>
+  </a>
+  ), and then set the blending colour to use. Below you can see an example of a sprite that has been blended with different colours:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/GML/Reference/Rooms/blend_image.png"/><br/>
+  Please note that you should try to limit blending on the
+  <b>
+   HTML5
+  </b>
+  platform (unless using WebGL),
+    as each blended sprite has to be cached separately and so having many blended sprites may adversely affect performance (you can also set the cache size using the function
+  <a href="../../Sprites/Sprite_Manipulation/sprite_set_cache_size.htm">
+   <span>
+    sprite_set_cache_size()
+   </span>
+  </a>
+  ).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">layer_sprite_blend(sprite_element_id, blend);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      sprite_element_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Sprite_Layers/layer_sprite_get_id.htm">
+        Sprite Element ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The unique ID value of the sprite element to change
+     </td>
+    </tr>
+    <tr>
+     <td>
+      blend
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Colour_And_Alpha/Colour_And_Alpha.htm">
+        Colour
+       </a>
+      </span>
+     </td>
+     <td>
+      The colour to blend with the sprite sprite (default is
+      <span>
+       c_white
+      </span>
+      )
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var lay_id = layer_get_id("Asset_sky"); var spr_id = layer_sprite_get_id(lay_id, "Clouds"); layer_sprite_blend(spr_id, c_gray);
+</code></pre>
+  The above code gets the ID value of the sprite called "Clouds" assigned to the layer "Asset_sky" and then tints it to a colour.
+ </body>
+</html>

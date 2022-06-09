@@ -1,0 +1,97 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   zip_unzip
+  </h1>
+  This function will open a stored zip file and extract its contents to the given directory. Note that if you do not supply a full path to the ZIP directory then the current drive
+  <i>
+   root
+  </i>
+  will be used, and if you want to place it in a relative path to the game bundle working directory then you should use the
+  <a href="../File_Directories/working_directory.htm">
+   <span>
+    working_directory
+   </span>
+  </a>
+  variable as part of the path (relative paths using "." or ".." will not work as expected so should be avoided). Note too that the zip must be either part of the game bundle (ie: an
+  <a href="../../../../Settings/Included_Files.htm">
+   Included File
+  </a>
+  ) or have been downloaded to the storage area using
+  <a href="../../Asynchronous_Functions/HTTP/http_get_file.htm">
+   http_get_file()
+  </a>
+  .
+  
+  
+   The function will return a value indicating the number of files extracted, or it will return 0 or less if the extraction has failed.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">zip_unzip(zip_file, target_directory)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      zip_file
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The zip file to open
+     </td>
+    </tr>
+    <tr>
+     <td>
+      target_directory
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The target directory to extract the files to
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var num = zip_unzip("/downloads/level_data.zip", working_directory + "extracted/");
+if num &amp;amp;lt;= 0
+{
+    show_debug_message("Extraction Failed!");
+}
+</code></pre>
+  The above code will open the zip file stored in the directory "downloads" and extract its contents to the directory "extracted" (creating that directory if it doesn't already exist) and then check to see that the extraction has been correct, showing a debug message should it fail.
+ </body>
+</html>

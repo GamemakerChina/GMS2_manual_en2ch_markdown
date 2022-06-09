@@ -1,0 +1,88 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   audio_emitter_set_listener_mask
+  </h1>
+  This function can be used to set the the bit-mask for an emitter so that all sounds played through the emitter will play only from those listeners specified. You can create a bit-mask by using the
+  <a href="../Audio_Listeners/audio_get_listener_info.htm">
+   <span>
+    audio_get_listener_info()
+   </span>
+  </a>
+  and then using the bitwise
+  <span>
+   or
+  </span>
+  ("|") to create a custom mask with those listeners that you require the sound to play from, and then apply this custom mask to the emitter. This mask will over-ride the default mask or that which you may have set using the function
+  <a href="../Audio_Listeners/audio_set_listener_mask.htm">
+   <span>
+    audio_set_listener_mask()
+   </span>
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">audio_emitter_set_listener_mask(emitterID, mask);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      emitterID
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Emitters/audio_emitter_create.htm">
+        Audio Emitter ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The unique ID of the emitter to set the mask of
+     </td>
+    </tr>
+    <tr>
+     <td>
+      mask
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The bitmask data to set for the sound
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">s_emit = audio_emitter_create();
+audio_emitter_set_listener_mask(snd, global.PlayerMask);
+</code></pre>
+  The above code creates an audio emitter and then sets the listener(s) to play from using the mask data stored in a global variable.
+ </body>
+</html>

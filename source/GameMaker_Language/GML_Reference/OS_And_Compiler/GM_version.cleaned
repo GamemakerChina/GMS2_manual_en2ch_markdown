@@ -1,0 +1,31 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   GM_version
+  </h1>
+  This constant hold the version number as defined in the
+  <a href="../../../Settings/Game_Options.htm">
+   Game Options
+  </a>
+  for each target platform. The value is stored as a string.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">GM_version;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">draw_text(32, 32, date_time_string(GM_build_date)); draw_text(32, 64, "v" + GM_version);
+</code></pre>
+  The above code takes the GM date and version constants and draws them to the screen.
+ </body>
+</html>

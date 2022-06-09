@@ -1,0 +1,224 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   xboxlive_matchmaking_create
+  </h1>
+  This function will create a multi-player session using the Session Template, matchmaking hopper and Secure Device Association template, which you should have created beforehand in the XDP dashboard. The user ID you can retrieve for a particular game pad by calling the
+  <a href="../Users_And_Accounts/xboxlive_user_for_pad.htm">
+   <span>
+    xboxlive_user_for_pad()
+   </span>
+  </a>
+  function and visibility will be one of the following constants:
+  <table>
+   <colgroup>
+    <col/>
+    <col/>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/UWP_And_XBox_Live/Match_Making/xboxlive_matchmaking_create.htm">
+        Xbox Match Visibility Constant
+       </a>
+      </span>
+     </th>
+    </tr>
+    <tr>
+     <th>
+      Constant
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       xboxlive_match_visibility_open
+      </span>
+     </td>
+     <td>
+      specifies that the session can be joined by the others.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       xboxlive_match_visibility_private
+      </span>
+     </td>
+     <td>
+      specifies that the session is not visible to users who are not session members.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       xboxlive_match_visibility_usetemplate
+      </span>
+     </td>
+     <td>
+      specifies that the value used in the session template should be used (this should normally be used as you can't override a template's value if one has been set in XDP).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  The function returns a unique Request ID value, which can then be used to identify the correct Social Asynchronous Event for this function. This event will be triggered when the session has been created and will contain a DS Map in the variable
+  <span>
+   async_load
+  </span>
+  with the following key/value pairs:
+  <ul>
+   <li>
+    "requestid" – contains the request ID as returned by the calling function
+   </li>
+   <li>
+    "status" – contains the string "session_created" to inform you of what type of event has been triggered.
+   </li>
+   <li>
+    "sessionid" – contains the session ID, or -1 in case of failure
+   </li>
+   <li>
+    "error" – contains 0 on success, or -1 in case of failure
+   </li>
+   <li>
+    "correlationid" - the session handle for correlation with the function
+    <span>
+     <a href="xboxlive_matchmaking_join_session.htm">
+      xboxlive_matchmaking_join_session()
+     </a>
+    </span>
+   </li>
+  </ul>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">xboxlive_matchmaking_create(user_id, visibility, template, hopper, sdatemplate, [matchattributes]);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      user_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/UWP_And_XBox_Live/Users_And_Accounts/xboxlive_get_user.htm">
+        Xbox User ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The user ID pointer to use
+     </td>
+    </tr>
+    <tr>
+     <td>
+      visibility
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/UWP_And_XBox_Live/Match_Making/xboxlive_matchmaking_create.htm">
+        Xbox Match Visibility Constant
+       </a>
+      </span>
+     </td>
+     <td>
+      One of the constants listed above
+     </td>
+    </tr>
+    <tr>
+     <td>
+      template
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The name of the session template
+     </td>
+    </tr>
+    <tr>
+     <td>
+      hopper
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The name of the matchmaking hopper
+     </td>
+    </tr>
+    <tr>
+     <td>
+      sdatemplate
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The name of the secure device association template
+     </td>
+    </tr>
+    <tr>
+     <td>
+      matchattributes
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      <span>
+       OPTIONAL
+      </span>
+      The match attributes
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Reference/Asynchronous_Functions/Asynchronous_Functions.htm">
+ Async Request ID
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var userID = xboxlive_user_for_pad(global.PadIndex);
+result = xboxlive_matchmaking_create(userID, xboxlive_match_visibility_usetemplate, "MatchTicketSession", "MatchTicketHopper", "PeerServerTraffic");
+</code></pre>
+  The above will retrieve the user ID for the user on the given gamepad and then initialise a matchmaking session for them.
+ </body>
+</html>

@@ -1,0 +1,441 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   The Script Editor
+  </h1>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Scripts.png"/><br/>
+  This section deals with the
+  <strong>
+   script editor
+  </strong>
+  (also called the
+  <strong>
+   text editor
+  </strong>
+  ) which is where you type in all the code that your game will require to run. This editor is used for creating custom script assets, as well as for coding
+  <a href="Object_Properties/Object_Events.htm">
+   object events
+  </a>
+  , for adding
+  <a href="Room_Properties/Room_Properties.htm">
+   room creation code
+  </a>
+  , and for many other things.
+  
+  
+   This section simply details how the script
+  <strong>
+   editor
+  </strong>
+  works, and
+  <em>
+   not
+  </em>
+  how to create script assets nor how to use
+  <span>
+   GML Code
+  </span>
+  or
+  <span>
+   GML Visual
+  </span>
+  to make scripts. For that please see the following sections:
+  <ul>
+   <li>
+    <a href="../GameMaker_Language/GML_Overview/Script_Functions.htm">
+     GML Code Scripts
+    </a>
+   </li>
+   <li>
+    <a href="../Drag_And_Drop/Drag_And_Drop_Overview/Action_Block_Functions.htm">
+     GML Visual Scripts
+    </a>
+   </li>
+  </ul>
+  On creating a script asset, you may be asked to choose between
+  <span>
+   GML Visual
+  </span>
+  and
+  <span>
+   GML Code
+  </span>
+  . See
+  <a href="../GameMaker_Language.htm">
+   GameMaker Language
+  </a>
+  for more information.
+  
+  
+   The script editor is where you write your GameMaker Language code, which is the built-in programming language that
+  <span>
+   GameMaker
+  </span>
+  uses (see the
+  <a href="../GameMaker_Language.htm">
+   GameMaker Language
+  </a>
+  section for more details). Once you become more familiar with
+  <span>
+   GameMaker
+  </span>
+  and want to use it to its fullest extent, it is advisable to start learning to use this language, as it greatly expands your possibilities when creating games.
+  
+  
+   A script asset can be renamed by right-clicking
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_RMB.png"/><br/>
+  on it in the
+  <a href="../Introduction/The_Asset_Browser.htm">
+   Asset Browser
+  </a>
+  and selecting
+  <em>
+   Rename
+  </em>
+  , but note that the script name must conform to the scripting rules for assets, so they can only be alpha-numeric, must start with a letter, and the only symbol they can contain is the "_" under-bar symbol. The script editor in other places cannot be renamed and will have a name specific to what is being edited, like an object event for example.
+  
+  
+   When you open the script editor window it will have the following options and layout:
+  <a href="#">
+   <span>
+    Script / Event Tab
+   </span>
+   <span>
+    Script / Event Tab
+   </span>
+  </a>
+  The script editor opens in a window with tabs across the top to let you have multiple scripts or events in one window (although this behaviour can be changed from the
+  <a href="../Setting_Up_And_Version_Information/IDE_Preferences/Text_Editor_Preferences.htm">
+   Preferences
+  </a>
+  to give a new window to each script or event). You can click
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  on a tab and then drag it to change the tab order, or - if you prefer - you can pull
+      it out of the current window and place it on the workspace to create a new window for that script (or add it to a different window), and you can also maximise the script editor to create a new workspace too. If you drag a script tab out of the
+  <a>
+   IDE
+  </a>
+  window, then a new IDE will be spawned to hold this script resource, and it can be used as you would the Main window.
+   
+   
+    Note that if you are editing code from an
+  <strong>
+   object event
+  </strong>
+  in the script editor and you have maximised the script editor or have it on a separate window or workspace, then the right-click
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_RMB.png"/><br/>
+  editor menu will have some extra options:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Scripts_RMB_Object_Menu.png"/><br/>
+  <ul>
+   <li>
+    <strong>
+     Restore to workspace
+    </strong>
+    : This will take the script editor out of a maximised/workspace state and re-chain it to the object in the workspace.
+   </li>
+   <li>
+    <strong>
+     Go to Object
+    </strong>
+    : This will take you to the workspace that the object with the code is on and focus on the object.
+   </li>
+   <li>
+    <strong>
+     Add /Open Event
+    </strong>
+    : This permits you to add a new event to the object the current script belongs to, and will open a new code tab in the Script Editor for the added event. If the event selected already has code in it, then this will
+        be opened in a new tab.
+   </li>
+  </ul>
+  For information on the rest of the right-click
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_RMB.png"/><br/>
+  menu options, see the section on
+  <strong>
+   Editing
+  </strong>
+  , below.
+  <a href="#">
+   <span>
+    Gutter
+   </span>
+   <span>
+    Gutter
+   </span>
+  </a>
+  The
+  <strong>
+   Gutter
+  </strong>
+  is used to show the line numbers for your code and also to convey some specific pieces of information about the state of the code. Most importantly, if you make a
+  <a>
+   typo
+  </a>
+  or construct the code incorrectly, then the
+  <span>
+   GameMaker
+  </span>
+  <a>
+   IDE
+  </a>
+  will inform you of the issue by flagging the line of code with a red exclamation mark
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_CodeError.png"/><br/>
+  showing a
+  <a>
+   syntax
+  </a>
+  error. You can then mouse over the symbol to get a brief description of what the issue is:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Scripts_Errors.png"/><br/>
+  You can find more information on Syntax errors (and general errors when testing or compiling your code) from the following section:
+  <ul>
+   <li>
+    <a href="../Additional_Information/Error_Reporting.htm">
+     Error Reporting
+    </a>
+   </li>
+  </ul>
+  The gutter will also mark any line of the script that has had a
+  <strong>
+   breakpoint
+  </strong>
+  added. A breakpoint is simply a place in the script where you want the
+  <a href="../IDE_Tools/The_Debugger.htm">
+   debugger
+  </a>
+  to pause the execution of your
+      game when it is reached. You can toggle a breakpoint from any line of any script or object event by pressing "
+  <span>
+   f9
+  </span>
+  " or using the right-click
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_RMB.png"/><br/>
+  menu. When you add a breakpoint, it will show up like this in the gutter:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Scripts_Breakpoint.png"/><br/>
+  Finally, the gutter will also show any bookmarked items too. To bookmark a line of code simply hold down
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Ctrl.png"/><br/>
+  /
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Cmd.png"/><br/>
+  +
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Shift.png"/><br/>
+  +
+  <span>
+   Number
+  </span>
+  (from 0 to 9), and this will permit you to skip back to this line of code from anywhere in the IDE simply by using
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Ctrl.png"/><br/>
+  /
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Cmd.png"/><br/>
+  +
+  <span>
+   Number
+  </span>
+  (from 0 to 9). To delete the bookmark, simply perform the same action as you used to add it
+      on the line of code again. When a bookmark has been added, it will show like this:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Scripts_Bookmark.png"/><br/>
+  <a href="#">
+   <span>
+    Search / Replace
+   </span>
+   <span>
+    Search / Replace
+   </span>
+  </a>
+  While working in the script editor, you can press
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Ctrl.png"/><br/>
+  /
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Cmd.png"/><br/>
+  + "
+  <span>
+   F
+  </span>
+  " to open up the Search box or
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Ctrl.png"/><br/>
+  /
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Cmd.png"/><br/>
+  + "
+  <span>
+   H
+  </span>
+  " to open up Search and Replace:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Asset_Editors/Editor_Scripts_Search.png"/><br/>
+  Here you can perform a
+  <em>
+   local
+  </em>
+  search for the keyword you input and once you have entered your search term, you can then use
+      the arrows at the top right of the search window to skip from one found term to the next in the script. You can change how the search operation is carried out by toggling the following buttons:
+  <table>
+   <tbody>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_ExactWord.png"/><br/>
+     </td>
+     <td>
+      When you toggle this, the search function will only highlight those strings that match the whole input string. For example, with it off a search for "
+      <em>
+       random
+      </em>
+      " will show up all words that contain this string - like
+      <span>
+       irandom()
+      </span>
+      ,
+            or
+      <span>
+       randomise()
+      </span>
+      - while toggling it to on would only show the function
+      <span>
+       random()
+      </span>
+      .
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_CaseSensitive.png"/><br/>
+     </td>
+     <td>
+      When this option is toggled, you are telling
+      <span>
+       GameMaker
+      </span>
+      to check not only the contents of the search string, but the case too. For example, if you have a sprite called "
+      <span>
+       spr_Dog
+      </span>
+      " and do a search for
+            "
+      <em>
+       dog
+      </em>
+      " with this toggle
+      <em>
+       off
+      </em>
+      , then the sprite string will be highlighted, however if the toggle is
+      <em>
+       on
+      </em>
+      then it won't since "
+      <em>
+       Dog
+      </em>
+      " is no longer considered the same as "
+      <em>
+       dog
+      </em>
+      ".
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  If you have opened the search window using
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Ctrl.png"/><br/>
+  /
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Cmd.png"/><br/>
+  + "
+  <span>
+   F
+  </span>
+  ", then the replace functionality will not be visible, so you need to click the Replace button
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_ReplaceToggle.png"/><br/>
+  to open
+      it. Once open, you can then enter a string that will be used to replace any given search string, using the following buttons to perform the action:
+  <table>
+   <tbody>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_ReplaceNext.png"/><br/>
+     </td>
+     <td>
+      Clicking this will replace the next search string found in the script with the given replace string. Note that the "next" term is considered the next one after the current cursor position, and you can skip to different ones using arrow
+            buttons at the top right of the search window.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_ReplaceAll.png"/><br/>
+     </td>
+     <td>
+      Clicking this will replace
+      <em>
+       all
+      </em>
+      examples of the search string within the script using the given replace string.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  Note that if you want to do a
+  <em>
+   global
+  </em>
+  search (ie: search the whole project rather than the current script or event), then you can press
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Ctrl.png"/><br/>
+  /
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Cmd.png"/><br/>
+  +
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Shift.png"/><br/>
+  + "F".
+  <a href="#">
+   <span>
+    Main Code Editor
+   </span>
+   <span>
+    Main Code Editor
+   </span>
+  </a>
+  The main code editor is where you'll write all your code to create the script asset or fill an object event. The actual edition of your code is covered in the section on
+  <strong>
+   Editing
+  </strong>
+  further down this page.
+  <a href="#">
+   <span>
+    Information
+   </span>
+   <span>
+    Information
+   </span>
+  </a>
+  The information bar at the bottom of the IDE shows you the current line number you are on and the position along the line. It is also where you can see the code helper, which is a line of text that shows the function you are currently editing along
+      with the arguments it requires. As you fill in the function in the editor, the arguments will highlight to show you which one you are currently editing.
+   
+   
+    Note that any optional arguments in your script functions will be shown with
+  <span>
+   []
+  </span>
+  brackets around them. If you have used the
+  <a href="Code_Editor_Properties/JSDoc_Script_Comments.htm">
+   JSDoc Script Comments
+  </a>
+  within a script asset then the
+      information you have supplied will also show here.
+   
+  
+  
+  
+  
+   You can get further information about using the script and code editors from the following pages:
+  <ul>
+   <li>
+    <a href="Code_Editor_Properties/Editing_Code.htm">
+     Editing Code
+    </a>
+   </li>
+   <li>
+    <a href="Code_Editor_Properties/JSDoc_Script_Comments.htm">
+     JSDoc Comments
+    </a>
+   </li>
+   <li>
+    <a href="Code_Editor_Properties/Code_Snippets.htm">
+     Code Snippets
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

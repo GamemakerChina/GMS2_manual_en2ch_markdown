@@ -1,0 +1,36 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   physics_particle_get_damping
+  </h1>
+  With this function you can find out what the current linear damping is for particles in the physics simulation (you can set this value using
+  <a href="physics_particle_set_damping.htm">
+   <span>
+    physics_particle_set_damping()
+   </span>
+  </a>
+  ).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">physics_particle_get_damping()
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if (physics_particle_get_damping() &amp;amp;lt; 1)
+{
+    physics_particle_set_damping(physics_particle_get_damping() + 0.01);
+}
+</code></pre>
+  The above code will check the current damping value for all particles in the system and if it is less than 1 then it will add 0.01 to it.
+ </body>
+</html>

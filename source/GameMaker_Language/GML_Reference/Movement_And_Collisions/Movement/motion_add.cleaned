@@ -1,0 +1,92 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   motion_add
+  </h1>
+  This function will modify the current
+  <span>
+   <a href="../../Asset_Management/Instances/Instance_Variables/direction.htm">
+    direction
+   </a>
+  </span>
+  and
+  <span>
+   <a href="../../Asset_Management/Instances/Instance_Variables/speed.htm">
+    speed
+   </a>
+  </span>
+  of the instance running the code, adding the new values to the current values. If you wish to simply change these values, you should be using the function
+  <span>
+   <a href="motion_set.htm">
+    motion_set()
+   </a>
+  </span>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">motion_add(dir, speed);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      dir
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The added direction.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      speed
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The added speed.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var pdir;
+pdir = point_direction(other.x, other.y, x, y);
+motion_add(pdir, other.speed);
+if speed &amp;amp;gt; 8 speed = 8;
+</code></pre>
+  the above code would be called in the collision event with another object. It adds to the direction of motion and the speed of the instance a vector based on the position and speed of the other instance involved in the collision. It then limits the speed if it goes over 8 (pixels per step).
+ </body>
+</html>

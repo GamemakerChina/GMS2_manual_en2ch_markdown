@@ -1,0 +1,61 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/i_Files_Rename_File.png"/><br/>
+   Rename File
+  </h1>
+  With this action you can rename any file that has been saved by your game. You give the name of the file to change (as a string) and then the new name (also as a string and including the file extension), and the file will be renamed. Note that you
+  <i>
+   cannot
+  </i>
+  rename any file that was bundled as an Included File with your game (see the section on
+  <a href="../../../Additional_Information/The_File_System.htm">
+   The File System
+  </a>
+  for more information).
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/a_Files_Rename_File.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Filename
+     </td>
+     <td>
+      The name (as a string) of the file to rename
+     </td>
+    </tr>
+    <tr>
+     <td>
+      New Name
+     </td>
+     <td>
+      The new name (as a string) for the file
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/e_Files_Rename_File.png"/><br/>
+  The above action block code will check to see if the file "checkpoint.sav" exists, and if
+    it does it then checks to see if the file "checkpoint_OLD.sav" exists. If that file exists as well, then it is deleted, and then the original "checkpoint.sav" file is renamed to "checkpoint_OLD.sav". Finally a buffer
+    is saved as "checkpoint.sav" (essentially we are backing up a saved buffer file each time we save it, so that there is always a "current" save and an "old" save file).
+ </body>
+</html>

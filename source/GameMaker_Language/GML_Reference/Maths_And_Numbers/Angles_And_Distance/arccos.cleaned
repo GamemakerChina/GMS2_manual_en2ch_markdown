@@ -1,0 +1,73 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   arccos
+  </h1>
+  Returns the inverse cosine of x, in that if
+  <span>
+   cos(val)=n
+  </span>
+  ,
+  <span>
+   arccos(n)=val
+  </span>
+  , and the resulting number will be between pi and 0.
+  <b>
+   NOTE
+  </b>
+  :This will only accept a number between -1 and 1 (anything else will throw an error).
+  <strong>
+   NOTE
+  </strong>
+  : This function takes a value in radians, not degrees.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">arccos(x)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      x
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The angle (in radians) to return the inverse cosine of.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">val = arccos(0);
+</code></pre>
+  This will set val to pi/2.
+ </body>
+</html>

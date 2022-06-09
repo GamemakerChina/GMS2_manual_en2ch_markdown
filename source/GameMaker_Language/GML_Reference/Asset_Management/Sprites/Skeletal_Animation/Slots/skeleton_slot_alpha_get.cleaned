@@ -1,0 +1,68 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   skeleton_slot_alpha_get
+  </h1>
+  With this function you can get an attachment slot alpha value. You supply the slot name (a string) and the function will return an real value for the alpha between 0 and 1.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">skeleton_slot_alpha_get(slot);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      slot
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The slot name to check, a string
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">slot_list = ds_list_create();
+skeleton_find_slot(mouse_x, mouse_y, slot_list);
+if !ds_list_empty(slot_list)
+{
+    for (var i = 0; i &amp;amp;lt; ds_list_size(slot_list); ++i)
+    {
+        if skeleton_slot_alpha_get(slot_list[| i]) != 1
+        {
+            skeleton_slot_colour_set(slot_list[| i], c_white, 1);
+        }
+    }
+}
+</code></pre>
+  The above code creates a DS list and then populates it with the slot names found at the position of the mouse in the room. It then loops through the slot list and resets the colour for the found slots to white with an alpha of 1 if the alpha is not already 1.
+ </body>
+</html>

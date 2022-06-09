@@ -1,0 +1,88 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   tilemap_tileset
+  </h1>
+  Using this function you can change the tile set asset assigned to a given tile map element on a layer. You give the tile map element ID (which you get when you create a tile map element using
+  <a href="layer_tilemap_create.htm">
+   <span>
+    layer_tilemap_create()
+   </span>
+  </a>
+  or when you use the function
+  <a href="layer_tilemap_get_id.htm">
+   <span>
+    layer_tilemap_get_id()
+   </span>
+  </a>
+  ), and then supply a tile set index and the tile map will be given the new sprite.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">tilemap_tileset(tilemap_element_id, tileset_index)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      tilemap_element_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/layer_tilemap_get_id.htm">
+        Tile Map Element ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The unique ID value of the tile map element to change
+     </td>
+    </tr>
+    <tr>
+     <td>
+      tileset_index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../The_Asset_Editors/Tile_Sets.htm">
+        Tile Set Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The new tile set index to use
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var lay_id = layer_get_id("Tiles_trees");
+var tile_id = layer_tilemap_get_id(lay_id);
+if tilemap_get_tileset(tile_id) != ts_Nighttime
+{
+    tilemap_tileset(tile_id, ts_Nighttime);
+}
+</code></pre>
+  The above code checks the current tile set assigned to the tile map on the layer "Tiles_trees" and if it is not "ts_Nighttime" then that tile set is assigned to the tile map.
+ </body>
+</html>

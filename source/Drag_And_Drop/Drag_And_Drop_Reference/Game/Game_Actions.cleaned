@@ -1,0 +1,65 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Game Action Library
+  </h1>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Game/Lib_Game.png"/><br/>
+  <b>
+  </b>
+  <span>
+   The
+  </span>
+  <b>
+   Game
+  </b>
+  <span>
+   action library is related to things that affect the main game loop and has the following actions:
+  </span>
+  <table>
+   <tbody>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Game/i_Game_Restart_Game.png"/><br/>
+     </td>
+     <td>
+      <a href="Restart_Game.htm">
+       Restart Game
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Game/i_Game_Exit_Game.png"/><br/>
+     </td>
+     <td>
+      <a href="Exit_Game.htm">
+       Exit Game
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Game/i_Game_Save_Game.png"/><br/>
+     </td>
+     <td>
+      <a href="Save_Game.htm">
+       Save Game
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Game/i_Game_Load_Game.png"/><br/>
+     </td>
+     <td>
+      <a href="Load_Game.htm">
+       Load Game
+      </a>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </body>
+</html>

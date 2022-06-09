@@ -1,0 +1,141 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   GameMaker Language
+  </h1>
+  You can use GameMaker Language to program your games in two different ways: by placing blocks to "write" code visually, or by writing code manually.
+   
+   
+    The first option,
+  <a href="Drag_And_Drop/Drag_And_Drop_Index.htm">
+   GML Visual
+  </a>
+  , is best suited for beginners and hobbyists who want to get started making their own games quickly.
+   
+   
+    The second option,
+  <a href="GameMaker_Language/GameMaker_Language_Index.htm">
+   GML Code
+  </a>
+  , allows you to harness the full power of GameMaker Language by writing your code manually.
+   
+   
+    While
+  <span>
+   GML Visual
+  </span>
+  is easier to start with,
+  <span>
+   GML Code
+  </span>
+  is still an easy-to-use programming language with powerful features (
+  <a href="GameMaker_Language/GML_Overview/Script_Functions.htm">
+   Functions
+  </a>
+  ,
+  <a href="GameMaker_Language/GML_Overview/Method_Variables.htm">
+   Methods
+  </a>
+  ,
+  <a href="GameMaker_Language/GML_Overview/Structs.htm">
+   Structs &amp; Constructors
+  </a>
+  , etc.).
+  <h2>
+   Creating Visual/Code Scripts
+  </h2>
+  You are asked to choose between
+  <span>
+   GML Code
+  </span>
+  and
+  <span>
+   GML Visual
+  </span>
+  on creating a new Object event, a new Script asset, or anything else that results in the creation of a script:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/GML_Visual_Code_Dialog.png"/><br/>
+  In addition to the choice between
+  <span>
+   GML Code
+  </span>
+  and
+  <span>
+   GML Visual
+  </span>
+  , this window contains two checkboxes:
+  <ul>
+   <li>
+    <strong>
+     Don't ask again for this project
+    </strong>
+    : When this is enabled, it sets the "Default scripting language"
+    <a href="Settings/Game_Options.htm">
+     Game Option
+    </a>
+    to your new selection, so you are not asked to choose again for the current project.
+   </li>
+   <li>
+    <strong>
+     Don't ask again ever
+    </strong>
+    : When this is enabled, it sets the "Default scripting language"
+    <a href="Setting_Up_And_Version_Information/IDE_Preferences/Language_Preferences.htm">
+     Preference
+    </a>
+    to your new selection, so you are never asked to choose again, for
+    <em>
+     any
+    </em>
+    projects.
+   </li>
+  </ul>
+  <h2>
+   <span>
+    GML Visual
+   </span>
+  </h2>
+  This is GameMaker's
+  <strong>
+   Visual Scripting
+  </strong>
+  method that uses blocks of
+  <em>
+   actions
+  </em>
+  which are chained together to create your game's logic. The following sections explain how to use these actions:
+  <ul>
+   <li>
+    <a href="Drag_And_Drop/Drag_And_Drop_Overview/DnD_Overview.htm">
+     GML Visual​​​​​​​ Overview
+    </a>
+   </li>
+   <li>
+    <a href="Drag_And_Drop/Drag_And_Drop_Reference/DnD_Reference.htm">
+     GML Visual​​​​​​​ Reference
+    </a>
+   </li>
+  </ul>
+  <h2>
+   <span>
+    GML Code
+   </span>
+  </h2>
+  Write GML code using functions, variables and other coding constructs, and create your game's logic. The following sections explain how to code using GML:
+  <ul>
+   <li>
+    <a href="GameMaker_Language/GML_Overview/GML_Overview.htm">
+     GML Code Overview
+    </a>
+   </li>
+   <li>
+    <a href="GameMaker_Language/GML_Reference/GML_Reference.htm">
+     GML Code Reference
+    </a>
+   </li>
+  </ul>
+  <ul>
+  </ul>
+ </body>
+</html>

@@ -1,0 +1,112 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   variable_instance_set
+  </h1>
+  With this function you can set the value of a given variable in an instance. You supply the unique instance ID value (which can be found from the
+  <a href="../../../The_Asset_Editors/Room_Properties/Layer_Properties.htm">
+   Instance Properties
+  </a>
+  in the room editor, or is returned when you call the function
+  <a href="../Asset_Management/Instances/instance_create_layer.htm">
+   <span>
+    instance_create_layer()
+   </span>
+  </a>
+  ) as well as the name of the variable to set the value of
+  <i>
+   as a string
+  </i>
+  (see example code below), and then finally the value to set (can be any valid
+  <a href="../../GML_Overview/Data_Types.htm">
+   data type
+  </a>
+  ). If the variable does not exist already in the instance it will be created and then assigned the value.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">variable_instance_set(instance_id, name, val);
+</code></pre>
+  <table>
+   <colgroup>
+    <col/>
+    <col/>
+    <col/>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      instance_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/id.htm">
+        Instance ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The unique ID value of the instance to use
+     </td>
+    </tr>
+    <tr>
+     <td>
+      name
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The name of the variable to set (as a string)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      val
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm#variable">
+        Variable
+       </a>
+      </span>
+     </td>
+     <td>
+      The value to set the variable to
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if !variable_instance_exists(id, "shields")
+{
+    variable_instance_set(id, "shields", 0);
+}
+</code></pre>
+  The above code will check to see if an instance variable exists in the calling instance and if it does not then it is created and set to 0.
+ </body>
+</html>

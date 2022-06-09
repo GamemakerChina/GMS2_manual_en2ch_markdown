@@ -1,0 +1,156 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   buffer_seek
+  </h1>
+  This function can be used to move through a buffer, finding the start, the end, or a position relative to that which was last used when reading or writing data. The "offset" value is the offset (in bytes) to add to the given seek position, for example, if the base is relative and the offset is 4, then the buffer position will move along 4 bytes from its current position. Please note the following:
+  <ul>
+   <li>
+    You can use negative values for the offset to seek back through the buffer as well as positive values.
+   </li>
+   <li>
+    If the buffer is of the "wrap" type and you offset past the end of the buffer, the seek position will also wrap.
+   </li>
+   <li>
+    If the buffer is not of the "wrap" type, the seek will clamp to the beginning or end of the buffer, even when the offset would take the seek outside of the buffer limits.
+   </li>
+  </ul>
+  The following constants are accepted as the "base" argument for seeking to:
+  <table>
+   <colgroup>
+    <col/>
+    <col/>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Buffers/buffer_seek.htm">
+        Buffer Seek Constant
+       </a>
+      </span>
+     </th>
+    </tr>
+    <tr>
+     <th>
+      Constant
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       buffer_seek_start
+      </span>
+     </td>
+     <td>
+      The start of the buffer
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       buffer_seek_relative
+      </span>
+     </td>
+     <td>
+      A position relative to the current read/write position
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       buffer_seek_end
+      </span>
+     </td>
+     <td>
+      The end of the buffer
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">buffer_seek(buffer, base, offset);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      buffer
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Buffers/buffer_create.htm">
+        Buffer ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the buffer to use.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      base
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The base position to seek.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      offset
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The data offset value.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">buffer_seek(buff, buffer_seek_start, 0);
+buffer_write(buff, buffer_s16, 0);
+buffer_write(buff, buffer_s16, x);
+buffer_write(buff, buffer_s16, y);
+</code></pre>
+  The above code finds the start of the buffer with the id stored in the variable "buff" them writes a series of signed 16bit integer values to it.
+ </body>
+</html>

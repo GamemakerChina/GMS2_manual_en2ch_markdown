@@ -1,0 +1,131 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   skeleton_bone_data_get
+  </h1>
+  Your skeletal animation is made up of a number of "bones", which you will have defined and given names to in your animation program. This function can be used to get information on the named bone at any time and store the data in an empty
+  <a href="../../../../Data_Structures/DS_Maps/DS_Maps.htm">
+   DS map
+  </a>
+  , which you must have created previously. Note that this data refers to the
+  <b>
+   default
+  </b>
+  pose for the skeleton, and not the current pose that is being drawn. If you need the data from the
+  <b>
+   current
+  </b>
+  pose, use
+  <a href="skeleton_bone_state_get.htm">
+   <span>
+    skeleton_bone_state_get()
+   </span>
+  </a>
+  .
+  
+  
+   When you call this function the map will be populated with the following keys:
+  <ul>
+   <li>
+    <b>
+     "x":
+    </b>
+    The local x position of the bone relative to the parent bone.
+   </li>
+   <li>
+    <b>
+     "y":
+    </b>
+    The local y position of the bone relative to the parent bone.
+   </li>
+   <li>
+    <b>
+     "angle":
+    </b>
+    The local rotation of the bone relative to the parent bone.
+   </li>
+   <li>
+    <b>
+     "xscale":
+    </b>
+    The local horizontal scale of the bone, in reference to the parent bone.
+   </li>
+   <li>
+    <b>
+     "yscale":
+    </b>
+    The local vertical scale of the bone, in reference to the parent bone.
+   </li>
+   <li>
+    <b>
+     "parent":
+    </b>
+    The name (a string) of the parent bone.
+   </li>
+  </ul>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">skeleton_bone_data_get(bone, map);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      bone
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The name (as a string) of the bone.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      map
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/ds_map_create.htm">
+        DS Map ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The (previously created) DS map that will get the bone data.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">bone_map = ds_map_create();
+skeleton_bone_data_get("leftarm", bone_map);
+</code></pre>
+  The above code creates a DS map and then populates it with the data from the bone named "leftarm".
+ </body>
+</html>

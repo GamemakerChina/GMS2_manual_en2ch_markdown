@@ -1,0 +1,139 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   screen_save_part
+  </h1>
+  With this function you can save a screenshot of a part of the game as it currently appears in the game display. The selection coordinates are based on the
+  <i>
+   absolute
+  </i>
+  size of the display (or window if not fullscreen), so (0,0) is always the top left hand corner of the screen (or window). Below is an image that shows how this function works:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/GML/Reference/Cameras_Display/screen_save.png"/><br/>
+  The file will be saved to the
+  <a href="../File_Handling/File_Directories/working_directory.htm">
+   working directory
+  </a>
+  of the game. It is important to note that the function is designed to be called in the
+  <b>
+   Draw GUI End Event
+  </b>
+  , which should give consistent results across all platforms. Using it in any other event may not work as expected, and may give different results across different targets and even devices.
+  <b>
+   <span>
+    NOTE
+   </span>
+  </b>
+  This function does not work on the HTML5 target.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">screen_save_part(fname,x,y,w,h);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      fname
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The filename for the screenshot to save
+     </td>
+    </tr>
+    <tr>
+     <td>
+      x
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x coordinate of the top left corner of the area of the screen to capture
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y coordinate of the top left corner of the area of the screen to capture
+     </td>
+    </tr>
+    <tr>
+     <td>
+      w
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The width of the area of the screen to capture
+     </td>
+    </tr>
+    <tr>
+     <td>
+      h
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The height of the area of the screen to capture
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if keyboard_check_pressed(ord("S"))
+{
+    screen_save_part("Screens\Screen_" + string(num++) + ".png", 0, 0, 100, 100)
+}
+</code></pre>
+  The above code takes a screenshot of a part of the game screen that is 100 pixels square when the user presses the "S" key. This screen shot is saved to a specific folder and numbered using a variable which is then incremented.
+ </body>
+</html>

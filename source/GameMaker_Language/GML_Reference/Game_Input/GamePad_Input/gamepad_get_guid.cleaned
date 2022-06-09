@@ -1,0 +1,119 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   gamepad_get_guid
+  </h1>
+  With this function you can retrieve the GUID for the gamepad connected to the given slot index. You supply the gamepad slot to check (from 0 - 11), and the function will return one of the following strings:
+  <ul>
+   <li>
+    "
+    <b>
+     none
+    </b>
+    " if no GUID is available or no gamepad is connected
+   </li>
+   <li>
+    "
+    <b>
+     device index out of range
+    </b>
+    " if the gamepad slot index is out of range
+   </li>
+   <li>
+    The GUID string, something like "050000005e040000fd020000ffff3f00", if the slot has a gamepad assigned and can get the GUID for it
+   </li>
+  </ul>
+  This function would usually be used in conjunction with
+  <a href="gamepad_get_description.htm">
+   <span>
+    gamepad_get_description()
+   </span>
+  </a>
+  to generate part of the SDL string required for remapping controllers on Windows, Android and macOS.
+  <table>
+   <colgroup>
+    <col/>
+    <col/>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxWarning.png"/><br/>
+      Platform-Specific Notes
+     </th>
+    </tr>
+    <tr>
+     <th>
+      Platform
+     </th>
+     <th>
+      Note
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Opera GX
+     </td>
+     <td>
+      On the Opera GX target platform, this function will always return
+      <strong>
+       "none"
+      </strong>
+      for non-DirectInput devices
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">gamepad_get_guid(index);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      Which gamepad "slot" index to check
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var _guid = gamepad_get_guid(global.PadIndex);
+var _desc = gamepad_get_description(global.PadIndex);
+global.GamepadID = _guid + "," + _desc;
+</code></pre>
+  The above code gets the GUID and name description strings, then concatenates them and stores the final string in a global variable for future reference.
+ </body>
+</html>

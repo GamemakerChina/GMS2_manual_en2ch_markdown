@@ -1,0 +1,150 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Time_Sources/Action_Icons/Reconfigure_Time_Source.png"/><br/>
+   Reconfigure Time Source
+  </h1>
+  This action allows you to change the settings for an existing
+  <span>
+   Time Source
+  </span>
+  , specified in the "Time Source" field.
+   
+   
+    The settings supplied here are the same as
+  <a href="Create_Time_Source.htm">
+   Create Time Source
+  </a>
+  , except for the parent.
+   
+   
+    It will reset and deactivate the
+  <span>
+   Time Source
+  </span>
+  so you have to start it again.
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Time_Sources/Action_Syntax/Reconfig_TS.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Time Source
+     </td>
+     <td>
+      The
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Time_Sources/time_source_create.htm">
+        Time Source ID
+       </a>
+      </span>
+      to reconfigure
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Period
+     </td>
+     <td>
+      The period length of the
+      <span>
+       Time Source
+      </span>
+      , how long it takes to expire
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Units
+     </td>
+     <td>
+      The
+      <a href="../../../GameMaker_Language/GML_Reference/Time_Sources/Time_Source_Units.htm">
+       units
+      </a>
+      that the period is expressed in (seconds or frames)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Callback
+     </td>
+     <td>
+      The
+      <a href="../../../GameMaker_Language/GML_Overview/Method_Variables.htm">
+       method
+      </a>
+      to call when the
+      <span>
+       Time Source
+      </span>
+      expires
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Arguments
+     </td>
+     <td>
+      <span>
+       OPTIONAL
+      </span>
+      An
+      <a href="../../../GameMaker_Language/GML_Overview/Arrays.htm">
+       array
+      </a>
+      containing the arguments to pass into the callback function
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Repetitions
+     </td>
+     <td>
+      <span>
+       OPTIONAL
+      </span>
+      How many times the
+      <span>
+       Time Source
+      </span>
+      should run in total, or -1 for indefinite repetition
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Expiry Type
+     </td>
+     <td>
+      <span>
+       OPTIONAL
+      </span>
+      The
+      <a href="../../../GameMaker_Language/GML_Reference/Time_Sources/Time_Source_Expiry_Types.htm">
+       expiry type
+      </a>
+      for the
+      <span>
+       Time Source
+      </span>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </body>
+</html>

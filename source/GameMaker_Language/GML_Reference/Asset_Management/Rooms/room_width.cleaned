@@ -1,0 +1,30 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   room_width
+  </h1>
+  This variable holds the width of the current room in pixels. You can change this variable to change the width of the room at any time.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">room_width;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if bbox_right &amp;amp;gt; room_width
+{
+    x += room_width - bbox_right;
+}
+</code></pre>
+  The above code checks to see if the current instance's sprite bounding box is greater than the width of the room, and if it is it moves the instance up.
+ </body>
+</html>

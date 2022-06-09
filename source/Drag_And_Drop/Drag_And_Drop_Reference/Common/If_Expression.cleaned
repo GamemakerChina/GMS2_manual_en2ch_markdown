@@ -1,0 +1,149 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/i_Common_If_Expression.png"/><br/>
+   If Expression
+  </h1>
+  This action is used to check that an expression as either
+  <span>
+   true
+  </span>
+  or
+  <span>
+   false
+  </span>
+  , and you can check any logical expression here as long as it evaluates to one or the other value. For example, any of the following expressions could be used:
+  <pre><code class="language-gml">x &amp;amp;lt; (room_width / 2) a == b ++val &amp;amp;gt;= 100
+</code></pre>
+  If you flag the "Not" argument, then the above will be negated expressions, for example "
+  <span>
+   ==
+  </span>
+  " becomes "
+  <span>
+   <i>
+    not
+   </i>
+   =
+  </span>
+  ". Also note that the
+  <a>
+   expression
+  </a>
+  is not limited to numeric values and you can check strings, pointers, resource IDs or anything else that a function can return or use (see the section on
+  <a href="../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+   data types
+  </a>
+  for more information), but you cannot compare two different data types without getting an error - for example if you try to use a string and an integer in the expression you will get an error. For more information on expressions, see
+  <a href="../../../GameMaker_Language/GML_Overview/Expressions_And_Operators.htm">
+   here
+  </a>
+  .
+  <b>
+   IMPORTANT NOTE
+  </b>
+  : Due to
+  <a href="http://floating-point-gui.de/formats/fp/">
+   floating point precision issues
+  </a>
+  , checking to see if two values are exactly equal may return
+  <span>
+   false
+  </span>
+  , since one may be exactly 1, while
+    the other may be 1.00000000000001. This can be avoided by using the
+  <a href="../Data_Types/Decimal_To_Integer.htm">
+   Decimal to Integer
+  </a>
+  action before checking or using the "greater than (>)" or "less than (
+  
+   Note that to add actions into the "
+  <span>
+   if
+  </span>
+  " block, they should be dropped to the side of the action, as shown in the image below:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/drop_if_expression.png"/><br/>
+  These actions will now be run if the "if" evaluates to
+  <span>
+   true
+  </span>
+  , while
+    any actions dropped elsewhere will be performed after the "if" block. Note that you can "stack" expressions in the same action by clicking the plus icon
+  <span>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Icon_Expand_Arguments.png"/><br/>
+  </span>
+  beside
+    the action, and giving another expression to check. This will check if
+  <i>
+   all
+  </i>
+  the expressions given return
+  <span>
+   true
+  </span>
+  in one check and only perform the added action code if they do (see the example given below).
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/a_common_if_expression.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Expression
+     </td>
+     <td>
+      The expression to check.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Not
+     </td>
+     <td>
+      Set to check if the expression does
+      <i>
+       not
+      </i>
+      evaluate to true.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_common_if_expression.png"/><br/>
+  The above action block code checks to see if the instance variable "
+  <span>
+   player_score
+  </span>
+  "
+    is greater than 1000
+  <i>
+   and
+  </i>
+  that the instance variable "
+  <span>
+   player_level
+  </span>
+  " is less than 10. if both checks return
+  <span>
+   true
+  </span>
+  then the action code goes on to assign new values to these variables.
+ </body>
+</html>

@@ -1,0 +1,48 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   phy_sleeping
+  </h1>
+  This
+  <b>
+   read-only
+  </b>
+  variable returns whether or not the instance is currently "sleeping" (
+  <span>
+   true
+  </span>
+  ) or not (
+  <span>
+   false
+  </span>
+  ), A "sleeping" instance is one that is not actively engaged in any physical simulation.
+  <span>
+   GameMaker
+  </span>
+  will put objects to sleep to save simulation cycles when an instance is at rest and not in collision with another instance
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">phy_sleeping;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a>
+(or undefined if the instance is not physics enabled)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if phy_sleeping
+{
+    instance_destroy();
+}
+</code></pre>
+  The above code checks to see if the object is being actively simulated or not and if it is not it is destroyed.
+ </body>
+</html>

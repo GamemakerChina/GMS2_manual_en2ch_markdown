@@ -1,0 +1,116 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   game_get_speed
+  </h1>
+  This function can be used to get the game speed as either the number of game frames to run per second or as the number of micro seconds per game frame. Note that this is
+  <b>
+   not
+  </b>
+  the actual running speed FPS value (for that use the
+  <a href="../Debugging/fps_real.htm">
+   <span>
+    fps_real
+   </span>
+  </a>
+  variable) but rather the number of game frames (FPS) that the game will attempt to maintain each second, or the length of each game frame in microseconds that the game will try to maintain (MPF). When you use this function you need to give one of the following constants which will determine the type of the return value:
+  <table>
+   <colgroup>
+    <col/>
+    <col/>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/General_Game_Control/game_get_speed.htm">
+        Game Speed Constant
+       </a>
+      </span>
+     </th>
+    </tr>
+    <tr>
+     <th>
+      Constant
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       gamespeed_fps
+      </span>
+     </td>
+     <td>
+      Gets the game speed using frames per second.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       gamespeed_microseconds
+      </span>
+     </td>
+     <td>
+      Gets the game speed using microseconds per frame.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  So, for example, if the game speed is set at 30 in the Game Options and you use the FPS type, then the function will return 30, but if you use the MPF then the function will return 33333.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">game_get_speed(type);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      type
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/General_Game_Control/game_get_speed.htm">
+        Game Speed Constant
+       </a>
+      </span>
+     </td>
+     <td>
+      The type of method used to get the game speed (see the constants above).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if game_get_speed(gamespeed_fps) != 60
+{
+    game_set_speed(60, gamespeed_fps);
+}
+</code></pre>
+  The above code checks to see if the game is running with a game speed of 60 FPS and if not it is set to 60 FPS.
+ </body>
+</html>

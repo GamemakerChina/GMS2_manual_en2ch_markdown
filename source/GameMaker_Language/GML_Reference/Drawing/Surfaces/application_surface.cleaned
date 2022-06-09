@@ -1,0 +1,62 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   application_surface
+  </h1>
+  This global, built-in variable can be used to access the application surface, for use in any of the
+  <a href="Surfaces.htm">
+   surface functions
+  </a>
+  . This surface is permanently available and is where the game is drawn by
+  <span>
+   GameMaker
+  </span>
+  .
+  
+  
+   The regular Draw events (
+  <em>
+   Draw Begin
+  </em>
+  ,
+  <em>
+   Draw
+  </em>
+  and
+  <em>
+   Draw End
+  </em>
+  ) draw to this surface by default. Other Draw events (like
+  <em>
+   Pre/Post Draw
+  </em>
+  and
+  <em>
+   Draw GUI
+  </em>
+  ) do not draw on the application surface. See
+  <a href="../../../../The_Asset_Editors/Object_Properties/Draw_Events.htm">
+   Draw Events
+  </a>
+  for more information on how those events work.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">application_surface;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Reference/Drawing/Surfaces/surface_create.htm">
+ Surface ID
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">surface_resize(application_surface, display_get_gui_width(), display_get_gui_height())
+</code></pre>
+  The above code will resize the application surface to have a 1:1 ratio with the GUI layer.
+ </body>
+</html>

@@ -1,0 +1,294 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   General Layer Functions
+  </h1>
+  The
+  <span>
+   GameMaker
+  </span>
+  <a href="../../../../../The_Asset_Editors/Rooms.htm">
+   Room Editor
+  </a>
+  permits you to add
+  <i>
+   layers
+  </i>
+  of different assets to your room. These can be tile maps (using tile sets), backgrounds, sprites or sequences, and instances, but note that unlike the room editor, you are
+  <i>
+   not
+  </i>
+  limited to a single asset type per layer, and can add multiple asset types to the same layer - for example you can have a background and a tile map all on the same layer. Note that each asset that is added to a layer is considered an
+  <strong>
+   element
+  </strong>
+  of that layer.
+  
+  
+   This section outlines the general functions used when working with room layers, as well as a few functions specific to working with
+  <strong>
+   <a href="../../../../../The_Asset_Editors/Room_Properties/Layer_Properties.htm">
+    instance layer
+   </a>
+  </strong>
+  elements:
+  <ul>
+   <li>
+    <a href="layer_exists.htm">
+     layer_exists
+    </a>
+   </li>
+   <li>
+    <a href="layer_get_id.htm">
+     layer_get_id
+    </a>
+   </li>
+   <li>
+    <a href="layer_depth.htm">
+     layer_get_depth
+    </a>
+   </li>
+   <li>
+    <a href="layer_get_id_at_depth.htm">
+     layer_get_id_at_depth
+    </a>
+   </li>
+   <li>
+    <a href="layer_get_name.htm">
+     layer_get_name
+    </a>
+   </li>
+   <li>
+    <a href="layer_get_all.htm">
+     layer_get_all
+    </a>
+   </li>
+   <li>
+    <a href="layer_get_all_elements.htm">
+     layer_get_all_elements
+    </a>
+   </li>
+   <li>
+    <a href="layer_get_element_layer.htm">
+     layer_get_element_layer
+    </a>
+   </li>
+   <li>
+    <a href="layer_get_element_type.htm">
+     layer_get_element_type
+    </a>
+   </li>
+   <li>
+    <a href="layer_get_x.htm">
+     layer_get_x
+    </a>
+   </li>
+   <li>
+    <a href="layer_get_y.htm">
+     layer_get_y
+    </a>
+   </li>
+   <li>
+    <a href="layer_get_hspeed.htm">
+     layer_get_hspeed
+    </a>
+   </li>
+   <li>
+    <a href="layer_get_vspeed.htm">
+     layer_get_vspeed
+    </a>
+   </li>
+   <li>
+    <a href="layer_create.htm">
+     layer_create
+    </a>
+   </li>
+   <li>
+    <a href="layer_destroy.htm">
+     layer_destroy
+    </a>
+   </li>
+   <li>
+    <a href="layer_x.htm">
+     layer_x
+    </a>
+   </li>
+   <li>
+    <a href="layer_y.htm">
+     layer_y
+    </a>
+   </li>
+   <li>
+    <a href="layer_hspeed.htm">
+     layer_hspeed
+    </a>
+   </li>
+   <li>
+    <a href="layer_vspeed.htm">
+     layer_vspeed
+    </a>
+   </li>
+   <li>
+    <a href="layer_add_instance.htm">
+     layer_add_instance
+    </a>
+   </li>
+   <li>
+    <a href="layer_has_instance.htm">
+     layer_has_instance
+    </a>
+   </li>
+   <li>
+    <a href="layer_instance_get_instance.htm">
+     layer_instance_get_instance
+    </a>
+   </li>
+   <li>
+    <a href="layer_destroy_instances.htm">
+     layer_destroy_instances
+    </a>
+   </li>
+   <li>
+    <a href="layer_element_move.htm">
+     layer_element_move
+    </a>
+   </li>
+   <li>
+    <a href="layer_set_visible.htm">
+     layer_set_visible
+    </a>
+   </li>
+   <li>
+    <a href="layer_get_visible.htm">
+     layer_get_visible
+    </a>
+   </li>
+   <li>
+    <a href="layer_depth.htm">
+     layer_depth
+    </a>
+   </li>
+   <li>
+    <a href="layer_force_draw_depth.htm">
+     layer_force_draw_depth
+    </a>
+   </li>
+   <li>
+    <a href="layer_is_draw_depth_forced.htm">
+     layer_is_draw_depth_forced
+    </a>
+   </li>
+   <li>
+    <a href="layer_get_forced_depth.htm">
+     layer_get_forced_depth
+    </a>
+   </li>
+   <li>
+    <a href="layer_script_begin.htm">
+     layer_script_begin
+    </a>
+   </li>
+   <li>
+    <a href="layer_script_end.htm">
+     layer_script_end
+    </a>
+   </li>
+   <li>
+    <a href="layer_shader.htm">
+     layer_shader
+    </a>
+   </li>
+   <li>
+    <a href="layer_get_script_begin.htm">
+     layer_get_script_begin
+    </a>
+   </li>
+   <li>
+    <a href="layer_get_script_end.htm">
+     layer_get_script_end
+    </a>
+   </li>
+   <li>
+    <a href="layer_get_shader.htm">
+     layer_get_shader
+    </a>
+   </li>
+  </ul>
+  We also have a couple of extra functions relating to targeting layers in a different room. It may be that you want to change something in a room that is not the current room, or maybe you want to generate rooms procedurally, or any number of things. To enable this we use the following functions:
+  <ul>
+   <li>
+    <a href="layer_set_target_room.htm">
+     layer_set_target_room
+    </a>
+   </li>
+   <li>
+    <a href="layer_get_target_room.htm">
+     layer_get_target_room
+    </a>
+   </li>
+   <li>
+    <a href="layer_reset_target_room.htm">
+     layer_reset_target_room
+    </a>
+   </li>
+  </ul>
+  What you do here is set the target room using the appropriate function and then call the layer functions are normal. These layer functions will now apply
+  <i>
+   only
+  </i>
+  to the target room and not the current one. When you are finished you'd call the reset function to return the code scope back to the current room again.
+  <b>
+   WARNING!
+  </b>
+  While targeting another room, you can use all the regular layer functions
+  <b>
+   except
+  </b>
+  you cannot create instances using
+  <span>
+   <a href="../../Instances/instance_create_layer.htm">
+    <span>
+     instance_create_layer()
+    </span>
+   </a>
+  </span>
+  or
+  <span>
+   <a href="../../Instances/instance_create_depth.htm">
+    <span>
+     instance_create_depth()
+    </span>
+   </a>
+  </span>
+  , nor will the layer function
+  <a href="layer_add_instance.htm">
+   <span>
+    <span>
+     layer_add_instance()
+    </span>
+   </span>
+  </a>
+  be available.
+  
+  
+   Finally, and this is exclusively for use with
+  <i>
+   instances
+  </i>
+  on layers (although the layer itself can have other elements, they will not be affected by the following functions), you have a couple of functions that can be used to deactivate or reactivate all instances:
+  <ul>
+   <li>
+    <a href="../../Instances/Deactivating_Instances/instance_deactivate_layer.htm">
+     instance_deactivate_layer
+    </a>
+   </li>
+   <li>
+    <a href="../../Instances/Deactivating_Instances/instance_activate_layer.htm">
+     instance_activate_layer
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

@@ -1,0 +1,61 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   gravity
+  </h1>
+  <span>
+   gravity
+  </span>
+  is one of the "built in" variables all instances have and, when set, will apply a constant force in the
+  <a href="gravity_direction.htm">
+   <span>
+    gravity_direction
+   </span>
+  </a>
+  of the instance, influencing both the instance
+  <span>
+   <a href="speed.htm">
+    speed
+   </a>
+  </span>
+  and
+  <span>
+   <a href="direction.htm">
+    direction
+   </a>
+  </span>
+  . Note that gravity is a cumulative force and will accelerate the object if you choose not to cap the final speed, and it's usual that you'd set this variable to small decimal values like 0.01. If you set the
+  <span>
+   gravity
+  </span>
+  to 0, then no gravity will be applied to the instance (this is the default value).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">gravity;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a>
+(single precision floating point value)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if !place_meeting(x, y + 1, obj_Ground)
+{
+    gravity = 0.01;
+}
+else
+{
+    gravity = 0;
+}
+</code></pre>
+  The above code will only apply gravity if the instance does not find any instances of "obj_Ground" beneath it.
+ </body>
+</html>

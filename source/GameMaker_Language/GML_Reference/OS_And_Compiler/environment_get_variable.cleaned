@@ -1,0 +1,95 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   environment_get_variable
+  </h1>
+  This function returns the value (a string) of the environment variable with the given name (also a string). You can get the available environment variables on macOS and Ubuntu (Linux) by typing "
+  <span>
+   env
+  </span>
+  " into the terminal app, and for
+    information on Windows environment variables, if you are using the command prompt then type "
+  <span>
+   echo %PATH%
+  </span>
+  ", and using PowerShell it's "
+  <span>
+   ls env
+  </span>
+  ". Note that on both macOS and Ubuntu (Linux) the "HOME"
+    environment variable will return the "
+  <span>
+   ~/
+  </span>
+  " path which maps to "
+  <span>
+   /Users/
+  </span>
+  " on macOS and "
+  <span>
+   /home/
+  </span>
+  " on Ubuntu (Linux).
+  <b>
+   NOTE
+  </b>
+  : This function is for Windows, macOS and Ubuntu (Linux) only.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">environment_get_variable(name);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      name
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The name (a string) of the environment variable to check.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">e_str = environment_get_variable("APPDATA");
+</code></pre>
+  The above code will return the full path for the environment variable "
+  <span>
+   %appdata%
+  </span>
+  ", which is normally "
+  <span>
+   C:\Users\{username}\AppData\Roaming
+  </span>
+  ".
+ </body>
+</html>

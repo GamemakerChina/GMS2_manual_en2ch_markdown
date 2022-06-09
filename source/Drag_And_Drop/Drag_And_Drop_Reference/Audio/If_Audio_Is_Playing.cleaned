@@ -1,0 +1,74 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Audio/i_Audio_If_Audio_Is_Playing.png"/><br/>
+   If Audio Is Playing
+  </h1>
+  This action can be used to check whether an instance of any sound resource is currently playing in your game. You give the sound resource to check for from the asset explorer and the function will return
+  <span>
+   true
+   <span>
+    if it is playing and
+   </span>
+   false
+  </span>
+  if it is not, although if you check the "not" flag, this is reversed and the function will return
+  <span>
+   true
+  </span>
+  if the sound is
+  <i>
+   not
+  </i>
+  playing and
+  <span>
+   false
+  </span>
+  otherwise.
+  
+  
+   Note that to add actions into the "if" block, they should be dropped to the side of the action, as shown in the image below:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Audio/a_Audio_If_Drop.png"/><br/>
+  These actions will now be run if the "if" evaluates to
+  <span>
+   true
+  </span>
+  , while any
+    actions dropped elsewhere will be performed after the "if" block.
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Audio/a_Audio_If_Audio_Is_Playing.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Sound
+     </td>
+     <td>
+      The sound resource to check
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Audio/e_Audio_If_Audio_Is_Playing.png"/><br/>
+  The above action block code checks to see if the given sound is currently being played
+    and if it is, it stops it.
+ </body>
+</html>

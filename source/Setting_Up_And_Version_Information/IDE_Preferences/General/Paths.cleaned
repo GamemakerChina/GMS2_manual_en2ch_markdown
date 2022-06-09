@@ -1,0 +1,144 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Path Preferences
+  </h1>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Setup_And_Version/Preferences/General_Paths_Prefs.png"/><br/>
+  The
+  <strong>
+   Path
+  </strong>
+  preferences control the different file paths required by elements in the
+  <span>
+   GameMaker
+  </span>
+  IDE as well as for any external editors that you require. The following options exist for the IDE:
+  <ul>
+   <li>
+    <strong>
+     Temp directory
+    </strong>
+    : The location for saving all the temporary folders. By default on Windows this is
+    <pre><code class="language-gml">\Users\&amp;amp;lt;Username&amp;amp;gt;\AppData\Local\Temp\GameMaker
+</code></pre>
+    And on macOS it's:
+    <pre><code class="language-gml">/var/folders/&amp;amp;lt;Path_Hash&amp;amp;gt;/GameMaker
+</code></pre>
+   </li>
+   <li>
+    <strong>
+     IDE cache directory
+    </strong>
+    : The location for saving the IDE cache. By default on Windows this is
+    <pre><code class="language-gml">\Users\&amp;amp;lt;Username&amp;amp;gt;\AppData\Roaming\GameMaker\Cache
+</code></pre>
+    And on macOS it's:
+    <pre><code class="language-gml">/Users/&amp;amp;lt;Username&amp;amp;gt;/.config/GameMaker/Cache
+</code></pre>
+   </li>
+   <li>
+    <strong>
+     Asset cache directory
+    </strong>
+    : The location for saving the asset cache for each project. By default on Windows this is
+    <pre><code class="language-gml">\Users\&amp;amp;lt;Username&amp;amp;gt;\AppData\Roaming\GameMaker\Cache
+</code></pre>
+    And on macOS it's:
+    <pre><code class="language-gml">/Users/&amp;amp;lt;Username&amp;amp;gt;/.config/GameMaker/Cache
+</code></pre>
+   </li>
+   <li>
+    <strong>
+     "My Projects" Location
+    </strong>
+    : The location where
+    <span>
+     GameMaker
+    </span>
+    will initially create new projects. By default on Windows this is
+    <pre><code class="language-gml">\Users\&amp;amp;lt;Username&amp;amp;gt;\Documents\GameMaker
+</code></pre>
+    And on macOS it's
+    <pre><code class="language-gml">/Users/&amp;amp;lt;Username&amp;amp;gt;/GameMaker
+</code></pre>
+   </li>
+   <li>
+    <strong>
+     Automatically delete temp directory on close
+    </strong>
+    : Checking this will force
+    <span>
+     GameMaker
+    </span>
+    to automatically delete the Temp folder that it creates per project for compiling etc... This setting is on by default, and un-checking it will switch it off (meaning that you will have to manually remove any temp files later).
+   </li>
+   <li>
+    <strong>
+     Automatically delete asset cache on close
+    </strong>
+    : If this is checked then the asset compiler cache folder will be removed when you quit
+    <span>
+     GameMaker
+    </span>
+    . This is off by default, and enabling it will mean that every time you load and run any project the cache will need to be rebuilt (which can take time depending on the size of the game).
+   </li>
+   <li>
+    <strong>
+     Automatically delete IDE cache on close
+    </strong>
+    : If this is checked then the IDE compiler cache folder will be removed when you quit
+    <span>
+     GameMaker
+    </span>
+    . This is off by default, and enabling it will mean that every time you start
+    <span>
+     GameMaker
+    </span>
+    the cache will need to be rebuilt.
+   </li>
+   <li>
+    <strong>
+     Delete Temp Folder
+    </strong>
+    : Clicking this button will delete the temp folder for the project.
+   </li>
+   <li>
+    <strong>
+     Delete Asset Cache
+    </strong>
+    : Clicking this button will delete the compiler asset cache for the project.
+   </li>
+   <li>
+    <strong>
+     Delete IDE Cache
+    </strong>
+    : Clicking this button will delete the IDE cache
+   </li>
+  </ul>
+  The following options exist for setting paths to external editors:
+  <ul>
+   <li>
+    <strong>
+     Path to external editor/viewer for SWF files
+    </strong>
+    : If you are working with SWF format sprites, you can set this to the path of your preferred viewer/editor and when you click the
+    <em>
+     Edit Image
+    </em>
+    button in the Sprite Editor then it will open the given program. The default value here is to have no path.
+   </li>
+   <li>
+    <strong>
+     Path to external editor/viewer for Spine files
+    </strong>
+    : If you are working with Spine format sprites, you can set this to the path of your preferred viewer/editor and when you click the
+    <em>
+     Edit Image
+    </em>
+    button in the Sprite Editor then it will open the given program. The default value here is to have no path.
+   </li>
+  </ul>
+ </body>
+</html>

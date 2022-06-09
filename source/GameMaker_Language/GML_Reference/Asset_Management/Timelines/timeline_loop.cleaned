@@ -1,0 +1,30 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   timeline_loop
+  </h1>
+  This variable will return whether the time line is looping (true) or not (false). You can change this variable to switch looping on or off and it works with a negative time line speed (if the time line position goes below 0 it will start again at the last defined moment).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">timeline_loop;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if !timeline_loop
+{
+    timeline_loop = true;
+}
+</code></pre>
+  The above code checks to see of the time line currently assigned to an instance will loop or not and if it doesn't it sets it to true.
+ </body>
+</html>

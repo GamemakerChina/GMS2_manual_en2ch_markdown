@@ -1,0 +1,45 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   keyboard_virtual_status
+  </h1>
+  This function can be used to get the status of the virtual keyboard on the device running the game. The function will return
+  <span>
+   true
+  </span>
+  if the OS virtual keyboard is visible/being shown or
+  <span>
+   false
+  </span>
+  if it is hidden/hiding.
+  <h4>
+   Syntax
+  </h4>
+  <pre><code class="language-gml">keyboard_virtual_status();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var _status = keyboard_virtual_status();
+if _status == false
+{
+    keyboard_virtual_show(kbv_type_numbers, kbv_returnkey_default, kbv_autocapitalize_none, false);
+}
+</code></pre>
+  The above code will show the OS virtual keyboard if the current status is
+  <span>
+   false
+  </span>
+  .
+  <b>
+  </b>
+ </body>
+</html>

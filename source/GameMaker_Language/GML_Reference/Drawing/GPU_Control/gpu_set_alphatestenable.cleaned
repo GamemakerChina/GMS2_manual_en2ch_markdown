@@ -1,0 +1,79 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   gpu_set_alphatestenable
+  </h1>
+  This function will enable or disable alpha testing for your game (by default this is disabled). By switching alpha testing on you can then use the companion function
+  <a href="gpu_set_alphatestref.htm">
+   <span>
+    gpu_set_alphatestref()
+   </span>
+  </a>
+  to set the "cut-off" value at which all alpha values will be set to 0. The image below shows the difference that can be seen when alpha testing is switched on or off:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/GML/Reference/Drawing/alpha_test_on_off.png"/><br/>
+  <b>
+   NOTE
+  </b>
+  : This function may negatively affect performance on iOS and Android devices.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">gpu_set_alphatestenable(enable);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      enable
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Enable or disable alpha testing (
+      <span>
+       true
+      </span>
+      /
+      <span>
+       false
+      </span>
+      )
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if !gpu_get_alphatestenable()
+{
+    gpu_set_alphatestenable(true);
+    gpu_set_alphatestref(128);
+}
+</code></pre>
+  The above code will check to see if alpha testing is enabled and if not it will switch on alpha testing and set the test threshold to 128 (only pixels with an alpha over 0.5 will be drawn).
+ </body>
+</html>

@@ -1,0 +1,81 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Workspace Preferences
+  </h1>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Setup_And_Version/Preferences/General_Workspace_Prefs.png"/><br/>
+  The preferences here will affect how you move around within the different
+  <span>
+   GameMaker
+  </span>
+  <a href="../../../Introduction/Workspaces.htm">
+   <strong>
+    workspaces
+   </strong>
+  </a>
+  . The options are:
+  <ul>
+   <li>
+    <strong>
+     Workspace keyboard navigation degree range
+    </strong>
+    : Within a workspace you can have multiple windows open for different objects and resources, and so to move around quickly between them you can use the keyboard shortcut
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Ctrl.png"/><br/>
+    /
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Cmd.png"/><br/>
+    +
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Alt.png"/><br/>
+    +
+    <span>
+    </span>
+    to move between them. Given that the windows within a workspace are not grid aligned the IDE has to choose which window you mean when you press any of the possible 8 directions, and
+      this option permits you to set the "look angle" that is used. The default value is 40°.
+   </li>
+   <li>
+    <strong>
+     Workspace chain column padding (px)
+    </strong>
+    : Workspace elements are often "chained" to each other (for example, the Code Editor is chained to the Event Editor is chained to the Object Editor), and this option permits you to set
+      the horizontal distance between any two chained windows. The default value is 30px.
+   </li>
+   <li>
+    <strong>
+     Workspace chain row padding (px)
+    </strong>
+    : As mentioned above, workspace elements are often "chained" to each other and this option permits you to set the vertical distance between any two chained windows. The default value is 20px.
+   </li>
+   <li>
+    <strong>
+     Workspace chain rendering segment count
+    </strong>
+    : Here you can set the maximum number of segments for render chains. Lowering this value may help performance on lower end machines. The default value is 20.
+   </li>
+   <li>
+    <strong>
+     Workspace chain link colour
+    </strong>
+    : This is the colour that will be used to display chains between workspace elements. Default colour is ARGB $99DD00.
+   </li>
+   <li>
+    <strong>
+     Workspace keyboard navigation resets zoom
+    </strong>
+    : As mentioned above, you can skip from window to window within the workspace using keyboard shortcuts. You can also zoom the workspace in and out using the
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Ctrl.png"/><br/>
+    /
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_Cmd.png"/><br/>
+    + the mouse wheel
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_MMB.png"/><br/>
+    . Setting this option will mean that if you have the workspace zoomed and use the shortcuts to skip to another window, then the workspace will be returned to a 1:1 view and centered on the selected window. This option is off by default.
+   </li>
+   <li>
+    <strong>
+     Workspace chains can overlap
+    </strong>
+    : When enabled this option will permit workspace chains to cross and overlap. This is off by default.
+   </li>
+  </ul>
+ </body>
+</html>

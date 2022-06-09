@@ -1,0 +1,307 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Audio
+  </h1>
+  <span>
+   GameMaker
+  </span>
+  has a complete audio engine that is based on the
+  <span>
+   *.ogg
+  </span>
+  ,
+  <span>
+   *.mp3
+  </span>
+  and
+  <span>
+   *.wav
+  </span>
+  sound formats. Sounds of these types added to the IDE can then be used in your game using the basic audio functions shown below. For things more complex than basic sound effects or playing a single piece of music you can refer to the advanced audio functions which let you modify how a sound is played. There are also a selection of more specialised functions dedicated to streaming audio, positioning audio - to give 3D sound - and grouping audio.
+  <b>
+   IMPORTANT!
+  </b>
+  When using audio on the HTML5 target, you should be aware that not all browsers support Web Audio and so may not play any sound for your project when run. You can get a general idea of Web Audio support from the following link:
+  <a href="https://caniuse.com/#search=WebAudio">
+   Can I Use Web Audio?
+  </a>
+  .
+  
+  
+   The following functions are for dealing with audio in the most straightforward and simple way possible, avoiding the use of emitters and permitting the user to generate sounds and play music easily as these sounds are always generated at the
+  <i>
+   listener position
+  </i>
+  (see the section linked below for more details on the
+  <i>
+   listener
+  </i>
+  ) and so are generally not affected by any changes to the
+  <i>
+   listener
+  </i>
+  :
+  <ul>
+   <li>
+    <a href="audio_exists.htm">
+     audio_exists
+    </a>
+   </li>
+   <li>
+    <a href="audio_get_name.htm">
+     audio_get_name
+    </a>
+   </li>
+   <li>
+    <a href="audio_get_type.htm">
+     audio_get_type
+    </a>
+   </li>
+   <li>
+    <a href="audio_play_sound.htm">
+     audio_play_sound
+    </a>
+   </li>
+   <li>
+    <a href="audio_play_sound_at.htm">
+     audio_play_sound_at
+    </a>
+   </li>
+   <li>
+    <a href="audio_pause_sound.htm">
+     audio_pause_sound
+    </a>
+   </li>
+   <li>
+    <a href="audio_pause_all.htm">
+     audio_pause_all
+    </a>
+   </li>
+   <li>
+    <a href="audio_resume_sound.htm">
+     audio_resume_sound
+    </a>
+   </li>
+   <li>
+    <a href="audio_resume_all.htm">
+     audio_resume_all
+    </a>
+   </li>
+   <li>
+    <a href="audio_stop_sound.htm">
+     audio_stop_sound
+    </a>
+   </li>
+   <li>
+    <a href="audio_stop_all.htm">
+     audio_stop_all
+    </a>
+   </li>
+   <li>
+    <a href="audio_is_playing.htm">
+     audio_is_playing
+    </a>
+   </li>
+   <li>
+    <a href="audio_is_paused.htm">
+     audio_is_paused
+    </a>
+   </li>
+   <li>
+    <a href="audio_create_stream.htm">
+     audio_create_stream
+    </a>
+   </li>
+   <li>
+    <a href="audio_destroy_stream.htm">
+     audio_destroy_stream
+    </a>
+   </li>
+  </ul>
+  The following functions are designed to give more control over how the audio engine works, and how the sounds played through it will be "heard" by the listener. As such it is recommended that you have a good working knowledge of how the rest of the
+  <span>
+   GameMaker
+  </span>
+  audio engine works before using any of the following functions:
+  <ul>
+   <li>
+    <a href="audio_sound_set_track_position.htm">
+     audio_sound_set_track_position
+    </a>
+   </li>
+   <li>
+    <a href="audio_sound_get_track_position.htm">
+     audio_sound_get_track_position
+    </a>
+   </li>
+   <li>
+    <a href="audio_sound_set_listener_mask.htm">
+     audio_sound_set_listener_mask
+    </a>
+   </li>
+   <li>
+    <a href="audio_sound_get_listener_mask.htm">
+     audio_sound_get_listener_mask
+    </a>
+   </li>
+   <li>
+    <a href="audio_sound_length.htm">
+     audio_sound_length
+    </a>
+   </li>
+   <li>
+    <a href="audio_sound_pitch.htm">
+     audio_sound_pitch
+    </a>
+   </li>
+   <li>
+    <a href="audio_sound_get_pitch.htm">
+     audio_sound_get_pitch
+    </a>
+   </li>
+   <li>
+    <a href="audio_sound_is_playable.htm">
+     audio_sound_is_playable
+    </a>
+   </li>
+   <li>
+    <a href="audio_falloff_set_model.htm">
+     audio_falloff_set_model
+    </a>
+   </li>
+   <li>
+    <a href="audio_sound_gain.htm">
+     audio_sound_gain
+    </a>
+   </li>
+   <li>
+    <a href="audio_sound_get_gain.htm">
+     audio_sound_get_gain
+    </a>
+   </li>
+   <li>
+    <a href="audio_master_gain.htm">
+     audio_master_gain
+    </a>
+   </li>
+   <li>
+    <a href="audio_set_master_gain.htm">
+     audio_set_master_gain
+    </a>
+   </li>
+   <li>
+    <a href="audio_get_master_gain.htm">
+     audio_get_master_gain
+    </a>
+   </li>
+   <li>
+    <a href="audio_channel_num.htm">
+     audio_channel_num
+    </a>
+   </li>
+   <li>
+    <a href="audio_debug.htm">
+     audio_debug
+    </a>
+   </li>
+  </ul>
+  Further advanced functionality, like setting listeners, recording audio, or synchronising multiple audio tracks over time can all be found from the sub-sections listed below:
+  <ul>
+   <li>
+    <a href="Audio_Emitters/Audio_Emitters.htm">
+     Audio Emitters
+    </a>
+   </li>
+   <li>
+    <a href="Audio_Listeners/Audio_Listeners.htm">
+     Audio Listeners
+    </a>
+   </li>
+   <li>
+    <a href="Audio_Groups/Audio_Groups.htm">
+     Audio Groups
+    </a>
+   </li>
+   <li>
+    <a href="Audio_Buffers/Audio_Buffers.htm">
+     Audio Buffers
+    </a>
+   </li>
+   <li>
+    <a href="Audio_Synchronisation/Audio_Synchronisation.htm">
+     Audio Synchronisation
+    </a>
+   </li>
+  </ul>
+  <h2>
+   Web Audio
+  </h2>
+  When creating games for the HTML5 target platform, the audio engine requires
+  <b>
+   Web Audio
+  </b>
+  support, and this in turn means that sometimes your audio won't play when or how you expect it. This is because the Web Audio context may not be running or may stop running when your game is being played. What causes this varies greatly between browsers, and even between different versions of the same browser, and so detecting when the web audio context status changes is very important, e.g.: to detect when the context changes and pause/start looping audio like background music.
+  
+  
+   To help with this issue,
+  <span>
+   GameMaker
+  </span>
+  has two separate ways to detect the change in Web Audio context status, either using the following function:
+  <ul>
+   <li>
+    <a href="audio_system_is_available.htm">
+     audio_system_is_available
+    </a>
+   </li>
+  </ul>
+  You may also use the
+  <b>
+   Asynchronous System Event
+  </b>
+  , which will be triggered whenever the Web Audio status changes. In this event you will get the built in
+  <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">
+   <span>
+    async_load
+   </span>
+  </a>
+  <span>
+   DS map
+  </span>
+  populated with the key "
+  <span>
+   event_type
+  </span>
+  " which in turn will hold the string "
+  <span>
+   audio_system_status
+  </span>
+  " if it is an audio event. When this key exists, there will also be a further "
+  <span>
+   status
+  </span>
+  " key which will be either "
+  <span>
+   available
+  </span>
+  " or "
+  <span>
+   unavailable
+  </span>
+  ". Note that this event will be triggered on
+  <i>
+   all
+  </i>
+  platforms, but on everything except HTML5 it will only be triggered once on Game Start when the audio engine is first initialised. For more information please see the section:
+  <ul>
+   <li>
+    <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/System.htm">
+     The Asynchronous System Event
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

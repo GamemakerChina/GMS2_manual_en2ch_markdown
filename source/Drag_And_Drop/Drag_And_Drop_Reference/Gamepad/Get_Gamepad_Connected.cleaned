@@ -1,0 +1,57 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Gamepad/i_GamePad_Get_Connected.png"/><br/>
+   Get Gamepad Connected
+  </h1>
+  You can use this action to check and see if a given gamepad "slot" has a gamepad connected. You supply the gamepad index (this is the number of "slot" that a gamepad occupies) and the returned value will be stored in the target variable
+    that you supply for future use (this can be flagged as a temporary local variable that you create for this event or script).
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Gamepad/a_GamePad_Get_Connected.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Gamepad
+     </td>
+     <td>
+      The gamepad index to check.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Target
+     </td>
+     <td>
+      The target variable to store the returned value in.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Gamepad/e_GamePad_Get_Connected.png"/><br/>
+  The above action block code runs a
+  <span>
+   for
+  </span>
+  loop to check and see if a gamepad
+    is connected to any of the 12 available "slots". If a gamepad is discovered, a global variable is set to the current slot number and the loop is broken.
+ </body>
+</html>

@@ -1,0 +1,75 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   time_source_get_period
+  </h1>
+  This function returns the period value set for the given
+  <span>
+   Time Source
+  </span>
+  .
+   
+   
+    This period value will be expressed in the
+  <a href="Time_Source_Units.htm">
+   units
+  </a>
+  set for the
+  <span>
+   Time Source
+  </span>
+  (seconds or frames).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">time_source_get_period(id);
+</code></pre>
+  <table>
+   <colgroup>
+    <col/>
+    <col/>
+    <col/>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Time_Sources/time_source_create.htm">
+        Time Source ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The
+      <span>
+       Time Source
+      </span>
+      to get the period value for
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+ </body>
+</html>

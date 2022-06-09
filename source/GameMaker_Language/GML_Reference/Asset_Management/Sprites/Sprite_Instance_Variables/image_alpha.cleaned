@@ -1,0 +1,55 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   image_alpha
+  </h1>
+  This variable is used to get or to set the alpha value for the sprite. Alpha is always calculated as a value between 0 and 1 where 0 is completely transparent and 1 is completely opaque. Please note that for changes in this variable to be visible, the instance should have either
+  <i>
+   no
+  </i>
+  draw event (and so
+  <span>
+   GameMaker
+  </span>
+  will default draw the sprite) or be drawn using one of the extended drawing functions like
+  <a href="https://docs2.yoyogames.com/source/_build/3_scripting/4_gml_reference/drawing/sprites_and_tiles/draw_self.html">
+   <span>
+   </span>
+  </a>
+  <a href="../../../Drawing/Sprites_And_Tiles/draw_self.htm">
+   <span>
+    draw_self()
+   </span>
+  </a>
+  <a href="https://docs2.yoyogames.com/source/_build/3_scripting/4_gml_reference/drawing/sprites_and_tiles/draw_self.html">
+   <span>
+   </span>
+  </a>
+  or
+  <a href="../../../Drawing/Sprites_And_Tiles/draw_sprite_ext.htm">
+   <span>
+    draw_sprite_ext()
+   </span>
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">image_alpha;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">image_alpha = clamp(image_alpha - 0.01, 0, 1);
+</code></pre>
+  The above code will slowly reduce the image_alpha until it reaches 0.
+ </body>
+</html>

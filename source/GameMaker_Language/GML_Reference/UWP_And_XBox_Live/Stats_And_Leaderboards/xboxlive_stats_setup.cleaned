@@ -1,0 +1,96 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   xboxlive_stats_setup
+  </h1>
+  This function needs to be called before you can use any of the other Xbox Live stat functions, and simply initialises the required libraries on the system. The "user_id" argument is the raw user ID as returned by the function
+  <a href="../Users_And_Accounts/xboxlive_get_user.htm">
+   <span>
+    xboxlive_get_user()
+   </span>
+  </a>
+  , while the "service_config" and "title_id" is the unique ID for your game on the Xbox Live Dev Center.
+  
+  
+   This function is only for use with Event-Based (2013) stats.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">xboxlive_stats_setup(user_id, service_config_id, title_id);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      user_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/UWP_And_XBox_Live/Users_And_Accounts/xboxlive_get_user.htm">
+        Xbox User ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The ID pointer of the user to check.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      service_config_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      This is the config_id string for the game.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      title_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The unique ID for your game on the Xbox Dev Center.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var user = xboxlive_get_user(0);
+xboxlive_stats_setup(user, "4d61a1aa-61ac-4541-badd-31f91244fea6", $1244FEA6);
+</code></pre>
+  The above code initialises the stats system for the given user ID.
+ </body>
+</html>

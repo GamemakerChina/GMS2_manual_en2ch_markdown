@@ -1,0 +1,45 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Bones
+  </h1>
+  As the name implies, skeleton animation sprites are comprised of a series of "bones", over which a
+  <a href="../Skins/Skins.htm">
+   skin
+  </a>
+  is added to create the final character animation. Normally you'd want to set these bones up in the animation software (Spine) and then export the sprite with a set of animations already preset so you can simply
+  <a href="../Animation/Animation.htm">
+   switch between
+  </a>
+  them as required. However, there are times when you may want to intercept the bone data and manually manipulate it or get information about the position of specific bones, and in these cases you can use the following functions:
+  <ul>
+   <li>
+    <a href="skeleton_bone_data_get.htm">
+     skeleton_bone_data_get
+    </a>
+   </li>
+   <li>
+    <a href="skeleton_bone_data_set.htm">
+     skeleton_bone_data_set
+    </a>
+   </li>
+   <li>
+    <a href="skeleton_bone_state_get.htm">
+     skeleton_bone_state_get
+    </a>
+   </li>
+   <li>
+    <a href="skeleton_bone_state_set.htm">
+     skeleton_bone_state_set
+    </a>
+   </li>
+   <li>
+    <a href="skeleton_bone_list.htm">
+     skeleton_bone_list
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

@@ -1,0 +1,80 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   layer_sequence_get_instance
+  </h1>
+  With this function you supply the sequence element ID - as returned by
+  <a href="layer_sequence_create.htm">
+   <span>
+    layer_sequence_create()
+   </span>
+  </a>
+  or by one of the
+  <a href="../General_Layer_Functions/General_Layer_Functions.htm">
+   layer element functions
+  </a>
+  - and it will return the sequence
+  <i>
+   instance
+  </i>
+  <a href="../../../../GML_Overview/Structs.htm">
+   struct
+  </a>
+  . You can find out more about the format of the sequence instance struct on
+  <a href="../../Sequences/Sequence_Structs/The_Sequence_Instance_Struct.htm">
+   this page
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">layer_sequence_get_instance(sequence_element_id)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      sequence_element_id
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Sequence_Layers/layer_sequence_create.htm">
+        Sequence Element ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The unique ID value of the sequence element to target
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Sequences/Sequence_Structs/The_Sequence_Instance_Struct.htm">
+ Sequence Instance Struct
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var _seq = layer_sequence_create("Background", 0, 0, seq_AnimatedBackground);
+var _struct = layer_sequence_get_instance(_seq);
+_struct.speedScale = 0.5;
+</code></pre>
+  The above code creates a new sequence element and then retrieves its sequence instance ID. This is then used to change the playback speed scale property of the sequence instance.
+ </body>
+</html>

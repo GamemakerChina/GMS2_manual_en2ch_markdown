@@ -1,0 +1,83 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   vertex_begin
+  </h1>
+  With this function you begin the definition of a custom primitive. You assign a buffer to write the primitive to, and the vertex format to use (previously defined using the vertex format functions). You would then define the necessary points for each vertex of the primitive before calling
+  <a href="vertex_end.htm">
+   <span>
+    vertex_end()
+   </span>
+  </a>
+  to finalise the primitive creation.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">vertex_begin(buffer, format);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      buffer
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Drawing/Primitives/vertex_create_buffer.htm">
+        Vertex Buffer ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The buffer to be written to.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      format
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Drawing/Primitives/vertex_format_end.htm">
+        Vertex Format ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The vertex format to use.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">vertex_format_begin();
+vertex_format_add_position();
+vertex_format_add_colour();
+vertex_format_add_textcoord();
+v_format = vertex_format_end();
+v_buff = vertex_create_buffer();
+vertex_begin(v_buff, v_format);
+</code></pre>
+  The above code will define a new vertex format, create a new buffer and start the definition process of a new primitive.
+ </body>
+</html>

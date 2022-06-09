@@ -1,0 +1,60 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   The Marketplace Menu
+  </h1>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/IDE_Input/Marketplace_Menu.png"/><br/>
+  Apart from creating your own assets and code for your projects, you also have access to the
+  <span>
+   GameMaker
+  </span>
+  Marketplace where you can download both free and paid assets to be added to your projects. You can find out more about the Marketplace from
+    the section on the
+  <a href="../../Introduction/The_Marketplace.htm">
+   GameMaker Marketplace
+  </a>
+  , and the options from this menu are given below:
+  <ul>
+   <li>
+    <strong>
+     Go to the Marketplace
+    </strong>
+    - Open the Marketplace window where you can browse for assets.
+   </li>
+   <li>
+    <strong>
+     My Library
+    </strong>
+    - View your current Marketplace content library.
+   </li>
+   <li>
+    <strong>
+     My Purchase History
+    </strong>
+    - This option will open a browser and take you to the account page for the logged in user so you can see the purchase history for that account.
+   </li>
+   <li>
+    <strong>
+     Update Existing Package
+    </strong>
+    - This option will open the
+    <strong>
+     Update Package Wizard
+    </strong>
+    so you can update an existing Marketplace package that you have previously created.
+   </li>
+   <li>
+    <strong>
+     Create Package
+    </strong>
+    - With this option you can open the
+    <strong>
+     Create Package Wizard
+    </strong>
+    to create a new asset package or tutorial for the Marketplace.
+   </li>
+  </ul>
+ </body>
+</html>

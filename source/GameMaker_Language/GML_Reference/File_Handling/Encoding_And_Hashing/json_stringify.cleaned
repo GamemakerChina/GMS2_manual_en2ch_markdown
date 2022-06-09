@@ -1,0 +1,182 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   json_stringify
+  </h1>
+  With this function you can convert single or nested structs and arrays into a valid JSON string. You supply the initial value to use (an array index or a struct reference) and then the function will "stringify" it, converting it into a JSON string (converting GameMaker arrays into JSON arrays, and GameMaker structs into JSON objects).
+  
+  
+   When using this function there are some important things to note:
+  <ul>
+   <li>
+    The function will
+    <em>
+     not
+    </em>
+    convert DS maps, lists or any other data structure into JSON, and will simply store the internal index value for the structure (which is of little use as the index will change between runs of the game), and as such you should not try to stringify any value that may contain references to data structures (for that you have
+    <a href="json_encode.htm">
+     <span>
+      json_encode()
+     </span>
+    </a>
+    ).
+   </li>
+   <li>
+    The function will convert just about any value into a "valid" JSON string, however the actual values contained in the string may not be exactly what you expect due to the way that the JSON standard operates:
+      
+      "JSON is agnostic about numbers. In any programming language, there can be a variety of number types of various capacities and complements, fixed or floating, binary or decimal. That can make interchange between different programming languages difficult. JSON instead offers only the representation of numbers that humans use: a sequence of digits. All programming languages know how to make sense of digit sequences even if they disagree on internal representations."
+      
+      For more information see the
+    <a href="http://www.ecma-international.org/publications/standards/Ecma-404.htm">
+     ECMA JSON Standard
+    </a>
+    .
+   </li>
+   <li>
+    If you include an int64 in the values to convert to JSON it will write it as an
+    <i>
+     int
+    </i>
+    if it is in the valid range for an int32, as a
+    <i>
+     double
+    </i>
+    if it can do so without losing precision or (if neither of those cases is applicable) as a
+    <i>
+     string
+    </i>
+    with an identifier "
+    <span>
+     @i64@
+    </span>
+    " before it and "
+    <span>
+     $i64$
+    </span>
+    " after it. When you come to parse the JSON again
+    <span>
+     GameMaker
+    </span>
+    will pick these identifiers up and re-convert the value back into an int64. This does mean that if the JSON is intended for a server or some other non-GameMaker target, these values will not be appropriate and so should be avoided.
+   </li>
+   <li>
+    If you include
+    <span>
+     infinity
+    </span>
+    ,
+    <span>
+     -infinity
+    </span>
+    or
+    <span>
+     NaN
+    </span>
+    in the values to convert to JSON, they will be encoded as strings as these values are not part of the JSON standard, and on parsing the resulting JSON they will
+    <strong>
+     not
+    </strong>
+    be converted back into their runtime values and will stay as strings. Note that
+    <span>
+     NaN
+    </span>
+    will be converted into "nan" (lowercase) upon stringifying.
+   </li>
+   <li>
+    Care should be taken when writing any returned JSON string to an
+    <span>
+     ini
+    </span>
+    file, as the
+    <span>
+     ini
+    </span>
+    specifications can cause issues when using quotes and escape characters. See the function
+    <a href="../Ini_Files/ini_write_string.htm">
+     <span>
+      ini_write_string()
+     </span>
+    </a>
+    for more information.
+   </li>
+  </ul>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">json_stringify(val)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      val
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Structs.htm">
+        Struct
+       </a>
+      </span>
+      or
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Arrays.htm">
+        Array
+       </a>
+      </span>
+     </td>
+     <td>
+      The reference value for a struct or array to convert into a JSON string
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var _contents =
+{
+    version : "1.0.0",
+    data:
+    {
+        coins : 4,
+        mana : 15,
+        playername : "Gurpreet",
+        items :
+        [
+            ITEM.SWORD,
+            ITEM.BOW,
+            ITEM.GUITAR
+        ]
+    }
+};
+
+var _json_string = json_stringify(_contents);
+</code></pre>
+  The above code will convert the
+  <span>
+   _contents
+  </span>
+  struct into a JSON string and store the string in a variable. The returned string would look like this:
+  <pre><code class="language-gml">{ "data": { "items": [ 0.0, 1.0, 2.0 ], "coins": 4.0, "mana": 15.0, "playername": "Gurpreet" }, "version": "1.0.0" }
+</code></pre>
+ </body>
+</html>

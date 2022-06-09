@@ -1,0 +1,34 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   shader_reset
+  </h1>
+  This function resets the shader used for drawing and should be called when you no longer wish to use the current shader (set using
+  <a href="shader_set.htm">
+   <span>
+    shader_set()
+   </span>
+  </a>
+  ).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">shader_reset();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">shader_set(shader_Glass);
+draw_self();
+shader_reset();
+</code></pre>
+  The above code will set a shader to be used for drawing, then draw the current sprite used for the instance using it. Finally it will reset the shader to revert to GameMaker's default shader.
+ </body>
+</html>

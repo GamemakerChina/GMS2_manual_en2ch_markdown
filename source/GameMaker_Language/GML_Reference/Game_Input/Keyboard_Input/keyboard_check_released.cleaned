@@ -1,0 +1,90 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   keyboard_check_released
+  </h1>
+  With this function you can check to see if a key has been released or not. Unlike the
+  <a href="keyboard_check.htm">
+   <span>
+    keyboard_check()
+   </span>
+  </a>
+  function, this function will only run once for every time the key is lifted, so for it to trigger again, the key must be first pressed and then released again. The function will take a keycode value as returned by the function
+  <a href="../../Strings/ord.htm">
+   <span>
+    ord()
+   </span>
+  </a>
+  (only
+  <i>
+   capital
+  </i>
+  letters from A-Z or numbers from 0-9), or any of the
+  <span>
+   vk_*
+  </span>
+  constants listed on the main
+  <a href="Keyboard_Input.htm">
+   Keyboard Input
+  </a>
+  page.
+  <h4>
+   <b>
+    Syntax:
+   </b>
+  </h4>
+  <pre><code class="language-gml">keyboard_check_released(key);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      key
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Game_Input/Keyboard_Input/Keyboard_Input.htm">
+        Virtual Key Constant (vk_*)
+       </a>
+      </span>
+     </td>
+     <td>
+      The key to check the released state of.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   <b>
+    Returns:
+   </b>
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   <b>
+    Example:
+   </b>
+  </h4>
+  <pre><code class="language-gml">if keyboard_check_released(ord("P"))
+{
+    instance_create_layer(0, 0, "Controllers", obj_Pause);
+}
+</code></pre>
+  The above code will check to see if the "P" key has been released and if so, create an instance of "obj_Pause".
+ </body>
+</html>

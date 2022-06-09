@@ -1,0 +1,83 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   room_goto
+  </h1>
+  This function permits you to go to any room in your game project, whether created using code or in the Asset Browser. You supply the room index (stored in the variable for the room name, or as a variable returned from the function
+  <a href="room_add.htm">
+   <span>
+    room_add()
+   </span>
+  </a>
+  ). Note that the room will not change until the end of the event where the function was called, so any code after this has been called will still run if in the same event. This function will also trigger the
+  <b>
+   Room End
+  </b>
+  event.
+  <span>
+   NOTE
+  </span>
+  You will not be able to create new instances in the same event after this function has been called.
+  <span>
+   NOTE
+  </span>
+  Room IDs are not based on their order in the Asset Browser or the Room Manager, and so you should avoid supplying a number value directly. Instead, use the room
+  <a>
+   constant
+  </a>
+  for the asset you want to reference (which is simply its name) or retrieve it through a function.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">room_goto(index);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Rooms.htm">
+        Room Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the room to go to.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">switch (global.level)
+{
+    case 0: room_goto(rm_level1); break;
+    case 1: room_goto(rm_level2); break;
+    case 2: room_goto(rm_level3); break;
+}
+</code></pre>
+  The above code will check a global variable and change room based on the value that it holds.
+ </body>
+</html>

@@ -1,0 +1,63 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   sprite_exists
+  </h1>
+  This function returns whether a sprite with the specified index exists or not in the project being run.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">sprite_exists(index);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../The_Asset_Editors/Sprites.htm">
+        Sprite Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the sprite to check.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if sprite_exists(spr_array[0])
+{
+    sprite_index = spr_array[0];
+}
+else
+{
+    sprite_index = spr_BaseSprite;
+}
+</code></pre>
+  The above code checks an array to see if it contains a valid sprite index and if so it assigns that sprite to the instance, but if not, it assigns a sprite from the included resources.
+ </body>
+</html>

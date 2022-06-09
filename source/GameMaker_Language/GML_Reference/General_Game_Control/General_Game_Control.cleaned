@@ -1,0 +1,142 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   General Game Control
+  </h1>
+  These functions and variables are all related to game specific functionality, like loading/saving, restarting and so on.
+  
+  
+   The following
+  <a href="../../GML_Overview/Variables/Global_Variables.htm">
+   global scope
+  </a>
+  <strong>
+   built-in
+  </strong>
+  variables are useful for debugging your game - they can be used as the output to a log file in the case of issues, for example - as well as for showing the current build ID, etc... to the user:
+  <ul>
+   <li>
+    <a href="game_id.htm">
+     game_id
+    </a>
+   </li>
+   <li>
+    <a href="game_save_id.htm">
+     game_save_id
+    </a>
+   </li>
+   <li>
+    <a href="game_display_name.htm">
+     game_display_name
+    </a>
+   </li>
+   <li>
+    <a href="game_project_name.htm">
+     game_project_name
+    </a>
+   </li>
+  </ul>
+  The following functions are used for general game control:
+  <ul>
+   <li>
+    <a href="game_end.htm">
+     game_end
+    </a>
+   </li>
+   <li>
+    <a href="game_restart.htm">
+     game_restart
+    </a>
+   </li>
+   <li>
+    <a href="game_load.htm">
+     game_load
+    </a>
+   </li>
+   <li>
+    <a href="game_load_buffer.htm">
+     game_load_buffer
+    </a>
+   </li>
+   <li>
+    <a href="game_save.htm">
+     game_save
+    </a>
+   </li>
+   <li>
+    <a href="game_save_buffer.htm">
+     game_save_buffer
+    </a>
+   </li>
+   <li>
+    <a href="game_get_speed.htm">
+     game_get_speed
+    </a>
+   </li>
+   <li>
+    <a href="game_set_speed.htm">
+     game_set_speed
+    </a>
+   </li>
+  </ul>
+  To help you create and maintain highscores for your games,
+  <span>
+   GameMaker
+  </span>
+  creates a global high score
+  <a href="../../GML_Overview/Arrays.htm">
+   array
+  </a>
+  of 10 places which you can access, add to, and change to create your own custom high score lists without too much fuss. This functionality is local to the game and works on all platforms, so you can easily store and maintain a basic high score table using these functions along with the
+  <a href="../File_Handling/File_Handling.htm">
+   File Handling Functions
+  </a>
+  .
+  
+  
+   The following functions exist that deal with the internal high score list.
+  <ul>
+   <li>
+    <a href="highscore_add.htm">
+     highscore_add
+    </a>
+   </li>
+   <li>
+    <a href="highscore_name.htm">
+     highscore_name
+    </a>
+   </li>
+   <li>
+    <a href="highscore_value.htm">
+     highscore_value
+    </a>
+   </li>
+   <li>
+    <a href="highscore_clear.htm">
+     highscore_clear
+    </a>
+   </li>
+  </ul>
+  <span>
+   GameMaker
+  </span>
+  also includes a function for drawing the highscores out on the screen as a list, however it is very basic and it is recommended that you use this for debugging more than anything else as making your own high score table is easy and will give you far more control over how it is displayed:
+  <ul>
+   <li>
+    <a href="../Drawing/Text/draw_highscore.htm">
+     draw_highscore
+    </a>
+   </li>
+  </ul>
+  Finally, we have a function that permits you to assign a sprite to the mouse cursor:
+  <ul>
+   <li>
+    <a href="cursor_sprite.htm">
+     cursor_sprite
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

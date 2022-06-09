@@ -1,0 +1,88 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/i_Instance_Set_Sprite.png"/><br/>
+   Set Sprite
+  </h1>
+  This action block sets the
+  <span>
+   sprite_index
+  </span>
+  of the instance to another sprite from the Asset Browser. You select the sprite to change to, and then give the image (animation frame) to show. Note that if you don't want the sprite to animate after
+    setting the frame, you'll need to use the
+  <a href="Set_Animation_Speed.htm">
+   Set Animation Speed
+  </a>
+  action and set it to 0, or if you want the sprite to continue animating then set the value to use the
+  <span>
+   image_index
+  </span>
+  built-in variable variable
+    instead.
+  
+  
+   Changing the sprite will also change the collision mask of the instance, unless you have also specified a separate
+  <span>
+   mask_index
+  </span>
+  in the
+  <a href="../../../The_Asset_Editors/Objects.htm">
+   Object Editor
+  </a>
+  . Please note that for changes in this action
+    to be visible, the instance should have either
+  <i>
+   no
+  </i>
+  draw event (and so
+  <span>
+   GameMaker
+  </span>
+  will default draw the sprite) or be drawn using
+  <a href="../Drawing/Draw_Self.htm">
+   Draw Self
+  </a>
+  action.
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/a_Instance_Set_Sprite.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Sprite
+     </td>
+     <td>
+      The new sprite to use (-1 if you want to remove the sprite).
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Frame
+     </td>
+     <td>
+      The animation frame to show initially (if no extra frames are used, then use 0).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  The above action block code sets a new sprite as well as a number of other properties for how that sprite is to be displayed.
+ </body>
+</html>

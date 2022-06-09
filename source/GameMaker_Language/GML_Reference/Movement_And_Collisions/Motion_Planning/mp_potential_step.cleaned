@@ -1,0 +1,111 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   mp_potential_step
+  </h1>
+  This function lets the instance take a step towards a particular position defined by xgoal/ygoal, all the while trying to avoid obstacles. When the instance would run into a solid instance (or any instance when checkall is true) it will change the direction of motion to try to avoid that instance and move around it. This approach is not guaranteed to work but in most easy cases it will effectively move the instance towards the goal. The function returns whether the goal was reached or not.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">mp_potential_step(xgoal, ygoal, stepsize, checkall)
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      xgoal
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The target x position.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      ygoal
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The target y position.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      stepsize
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The speed the instance moves in pixels per step.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      checkall
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Whether to check all instances (true) or just solid ones (false).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if instance_exists(obj_Enemy)
+{
+    var inst;
+    inst = instance_nearest(x, y, obj_Enemy);
+    mp_potential_step(inst.x, inst.y, 5, false);
+}
+</code></pre>
+  The above code first checks to see if there are any instances of "obj_Enemy" in the room. If there are it then finds the nearest one and stores its id in a variable. This variable is then used to tell
+  <span>
+   mp_potential_step
+  </span>
+  to move the instance with the code towards the x/y position of the object that was found at a speed of 5 pixels per step while avoiding only instances flagged as solid.
+ </body>
+</html>

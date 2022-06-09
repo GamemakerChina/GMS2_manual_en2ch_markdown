@@ -1,0 +1,153 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   gpu_get_blendmode
+  </h1>
+  This function can be used to retrieve the current blend mode being used for drawing. The returned value will be one of the following constants (the default value is
+  <span>
+   bm_normal
+  </span>
+  ):
+  <table>
+   <colgroup>
+    <col/>
+    <col/>
+    <col/>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_get_blendmode.htm">
+        Blend Mode Constant
+       </a>
+      </span>
+     </th>
+    </tr>
+    <tr>
+     <th>
+      Constant
+     </th>
+     <th>
+      Description
+     </th>
+     <th>
+      Extended Blend Mode
+     </th>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       bm_normal
+      </span>
+     </td>
+     <td>
+      Normal blending (the default blend mode).
+     </td>
+     <td>
+      (
+      <span>
+       bm_src_alpha
+      </span>
+      ,
+      <span>
+       bm_inv_src_alpha
+      </span>
+      )
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       bm_add
+      </span>
+     </td>
+     <td>
+      Additive blending. Luminosity values of light areas are added.
+     </td>
+     <td>
+      (
+      <span>
+       bm_src_alpha
+      </span>
+      ,
+      <span>
+       bm_one
+      </span>
+      )
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       bm_subtract
+      </span>
+     </td>
+     <td>
+      Subtractive blending. Luminosity values of light areas are subtracted.
+     </td>
+     <td>
+      (
+      <span>
+       bm_zero
+      </span>
+      ,
+      <span>
+       bm_inv_src_colour
+      </span>
+      )
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <span>
+       bm_max
+      </span>
+     </td>
+     <td>
+      Max blending. Similar to additive blending.
+     </td>
+     <td>
+      (
+      <span>
+       bm_src_alpha
+      </span>
+      ,
+      <span>
+       bm_inv_src_colour
+      </span>
+      )
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">gpu_get_blendmode();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_get_blendmode.htm">
+ Blend Mode Constant
+</a>
+(see above for constants)
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if gpu_get_blendmode() != bm_normal
+{
+    gpu_set_blendmode(bm_normal);
+}
+</code></pre>
+  The above code gets the current blend mode and if it is not
+  <span>
+   bm_normal
+  </span>
+  it is set to that constant.
+ </body>
+</html>

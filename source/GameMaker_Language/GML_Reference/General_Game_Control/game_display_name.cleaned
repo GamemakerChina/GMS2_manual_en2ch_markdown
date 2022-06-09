@@ -1,0 +1,35 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   game_display_name
+  </h1>
+  This
+  <b>
+   read only
+  </b>
+  variable returns the display name of your game for the target platform, as set in the
+  <a href="../../../Settings/Game_Options.htm">
+   Game Options
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">game_display_name
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ String
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var name = game_display_name; var ver = string(GM_version); draw_text(32, 32, name + ":" + ver);
+</code></pre>
+  The above code gets the display name and the version number of the game and draws them.
+ </body>
+</html>

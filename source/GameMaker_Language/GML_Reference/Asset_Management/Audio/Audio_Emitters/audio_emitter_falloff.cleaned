@@ -1,0 +1,131 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   audio_emitter_falloff
+  </h1>
+  With this function you can set the fall-off distance for an emitter. This is the distance from the
+  <i>
+   listener
+  </i>
+  the emitter has to be before the sound will have "fallen off" to a volume of 0. The default value for this is 100, but beware of setting this to any value lower than 1 as that will make any sound played through this emitter inaudible to the
+  <i>
+   listener
+  </i>
+  , however any other value will cause the sound to fade away the further that the emitter is from the
+  <i>
+   listener
+  </i>
+  .
+  
+  
+   How the sound itself is heard will depend on the falloff reference (which is the distance under which the volume for the source would normally drop by half) and the roll off factor (which affects the sound past the falloff reference distance only). The default factor is normally 1, and the effect of the different falloff values will depend on the model chosen.
+  
+  
+   For a complete guide to the different falloff models and how these values are used, please see the function
+  <span>
+   <a href="../audio_falloff_set_model.htm">
+    audio_falloff_set_model()
+   </a>
+   .
+  </span>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">audio_emitter_falloff(emitter, falloff_ref, falloff_max, falloff_factor);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      emitter
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Emitters/audio_emitter_create.htm">
+        Audio Emitter ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the emitter to change.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      falloff_ref
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The falloff reference relative to the listener (clamp).
+     </td>
+    </tr>
+    <tr>
+     <td>
+      falloff_max
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The maximum falloff distance relative to the listener.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      falloff_factor
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The falloff factor (default 1).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">s_emit = audio_emitter_create();
+audio_emitter_position(s_emit, x, y, 0);
+audio_emitter_falloff(s_emit, 100, 300, 1);
+</code></pre>
+  The above code creates an audio emitter and assigns its index to the variable "s_emit". This emitter is then placed at the position of the instance creating it and is given a fall-off distance of 300, meaning that when the emitter is further than 300 pixels from the
+  <i>
+   listener
+  </i>
+  position it will be silent. Its falloff factor is the default 1 and the falloff reference is 100, so at 100 pixels from the listener the falloff will start.
+ </body>
+</html>

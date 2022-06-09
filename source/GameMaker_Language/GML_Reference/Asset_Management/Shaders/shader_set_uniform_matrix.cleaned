@@ -1,0 +1,96 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   shader_set_uniform_matrix
+  </h1>
+  With this function you can set the value (or values) of a shader constant to the current transform matrix (as set using the
+  <a href="../../Maths_And_Numbers/Matrix_Functions/Matrix_Functions.htm">
+   Matrix Functions
+  </a>
+  ). You must previously have gotten the "handle" of the constant using the function
+  <a href="shader_get_uniform.htm">
+   <span>
+    shader_get_uniform()
+   </span>
+  </a>
+  .
+  <b>
+  </b>
+  <b>
+   NOTE
+  </b>
+  : All uniforms must be set
+  <b>
+   after
+  </b>
+  calling the function
+  <span>
+   <a href="shader_set.htm">
+    <span>
+     shader_set()
+    </span>
+   </a>
+  </span>
+  , and before calling
+  <span>
+   <a href="shader_reset.htm">
+    <span>
+     shader_reset()
+    </span>
+   </a>
+  </span>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">shader_set_uniform_matrix(handle);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      handle
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Shaders/shader_get_uniform.htm">
+        Shader Uniform Handle
+       </a>
+      </span>
+     </td>
+     <td>
+      The handle of the shader constant to set.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">shader_set(shader_Glass);
+shader_matrix = shader_get_uniform(shader_glass, "u_vMatrix");
+shader_set_uniform_matrix(shader_matrix);
+draw_self();
+shader_reset();
+</code></pre>
+  The above code will get the handle of the shader constant "u_vMatrix" then set that constant to the current transform matrix.
+ </body>
+</html>

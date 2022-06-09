@@ -1,0 +1,50 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   sprite_height
+  </h1>
+  This
+  <b>
+   read only
+  </b>
+  variable returns the height of the sprite that has been assigned to the instance. This height is returned in pixels and will be dependent on the
+  <a href="image_yscale.htm">
+   <span>
+    image_yscale
+   </span>
+  </a>
+  . If you need the un-scaled height you should use
+  <a href="../Sprite_Information/sprite_get_height.htm">
+   <span>
+    sprite_get_height()
+   </span>
+  </a>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">sprite_height;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if sprite_height != sprite_get_height(sprite_index)
+{
+    image_yscale = 1;
+}
+</code></pre>
+  The above code checks the height of the sprite assigned to the instance running the code against the height of the sprite resource and if it is not the same, it resets the
+  <span>
+   image_yscale
+  </span>
+  to 1,
+ </body>
+</html>

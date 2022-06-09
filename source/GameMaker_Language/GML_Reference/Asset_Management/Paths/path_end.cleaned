@@ -1,0 +1,35 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   path_end
+  </h1>
+  Calling this function will end the current path that the instance is following, as set when the function
+  <a href="path_start.htm">
+   <span>
+    path_start()
+   </span>
+  </a>
+  was called..
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">path_end();
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if place_meeting(x, y, obj_Blocker)
+{
+    path_end();
+}
+</code></pre>
+  The above code will end the current path if the instance detects any collision with any instance of the given object.
+ </body>
+</html>

@@ -1,0 +1,135 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Source Control
+  </h1>
+  <strong>
+   Source Control Management
+  </strong>
+  (SCM) is the name given to the method of working with
+  <strong>
+   sub-versions
+  </strong>
+  or backups of your projects through a repository and local source. Basically, an SCM solution is an independent software package which controls all the aspects of maintaining, changing and comparing versions of your project as you work on it. This is especially useful to those that work in a team and need to be able to control who does what and not worry about losing data or making changes that may need to be undone at a later date, but individuals can benefit from this powerful yet flexible system too.
+  <span>
+   GameMaker
+  </span>
+  makes use of
+  <a href="https://git-scm.com/">
+   Git
+  </a>
+  for its SCM, which must be installed and set up separately before SCM can be used within GameMaker. See the
+  <a href="https://git-scm.com/doc">
+   Git Documentation
+  </a>
+  for more specific info regarding Git.
+  
+  
+   Below you can find links to a small tutorial on how to set up this plugin and use the SCM tools with a project.
+  <strong>
+   IMPORTANT!
+  </strong>
+  We recommend that you have some working knowledge of how source control works before attempting to use it in
+  <span>
+   GameMaker
+  </span>
+  .
+  <ul>
+   <li>
+    <a href="Source_Control/Setting_Up_Git_Plugin.htm">
+     Setting Up The Git Plugin
+    </a>
+   </li>
+   <li>
+    <a href="Source_Control/Repository_Options.htm">
+     Repository Options
+    </a>
+   </li>
+   <li>
+    <a href="Source_Control/Standard_Workflow.htm">
+     Standard Workflow
+    </a>
+   </li>
+   <li>
+    <a href="Source_Control/Reverting_Files.htm">
+     Reverting Files
+    </a>
+   </li>
+   <li>
+    <a href="Source_Control/Cloning_A_Repository.htm">
+     Cloning A Repository
+    </a>
+   </li>
+   <li>
+    <a href="Source_Control/Conflicts.htm">
+     Conflicts
+    </a>
+   </li>
+   <li>
+    <a href="Source_Control/External_Merge_Diff_Tools.htm">
+     Setting Up External Merge/Diff Tools
+    </a>
+   </li>
+  </ul>
+  <span>
+   GameMaker
+  </span>
+  will show a drop-down menu in the Menu Bar for Source Control, which will be populated with the following options once Source Control has been activated for your project (see the section
+  <a href="Source_Control/Setting_Up_Git_Plugin.htm">
+   Setting Up The Git Plugin
+  </a>
+  above for details):
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/IDE%20Tools/SCM_ContextMenu.png"/><br/>
+  Here we outline each of the available options (most of them are explained in more depth in the tutorial sections above):
+  <ul>
+   <li>
+    <strong>
+     Create Project Repository
+    </strong>
+    : This option permits you to create a local repository in the same directory as your project files.
+   </li>
+   <li>
+    <strong>
+     Clone Repository
+    </strong>
+    : This option will permit you to clone a repository from a source to a new destination.
+   </li>
+   <li>
+    <strong>
+     Commit Changes
+    </strong>
+    : With this option you can stage changed files in your project and then commit them to the repository.
+   </li>
+   <li>
+    <strong>
+     Push Changes
+    </strong>
+    : After doing a commit or a merge this option is used to push the changes to the master repository.
+   </li>
+   <li>
+    <strong>
+     Pull Changes
+    </strong>
+    : With this option you can update the local repository by pulling the changed files from the master repository.
+   </li>
+   <li>
+    <strong>
+     View History
+    </strong>
+    : This will open the history window where you can view all the version history of the project and choose to roll back specific file paths or whole revisions.
+   </li>
+   <li>
+    <strong>
+     Show Conflicts
+    </strong>
+    : This will open the Conflicts window and list any conflicted files that may exist in the project, permitting you to deal with them either through the
+    <span>
+     GameMaker
+    </span>
+    IDE or using a specific Merge Tool.
+   </li>
+  </ul>
+ </body>
+</html>

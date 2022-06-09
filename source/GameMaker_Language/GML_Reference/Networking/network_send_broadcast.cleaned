@@ -1,0 +1,124 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   network_send_broadcast
+  </h1>
+  With this function you can broadcast the data from a buffer locally to a range of IP addresses (for more information on buffers see
+  <a href="../Buffers/Buffers.htm">
+   Reference - Buffers
+  </a>
+  ). The range is limited to that of the device running the server, such that if the device has an IP of 92.168.11.130, then the data will be broadcast over the range 92.168.11.*. The function will return the number of bytes of data sent, or a number less than 0 if the send has failed.
+  <b>
+   NOTE
+  </b>
+  : This function will only work when used with UDP - your server needs to be TCP and your client needs to have a UDP client socket created with
+  <span>
+   <a href="network_create_socket_ext.htm">
+    <span>
+     network_create_socket_ext()
+    </span>
+   </a>
+  </span>
+  in order to receive any broadcasts sent from the server.
+  <b>
+   NOTE
+  </b>
+  : This function will not work when used in a project running on the HTML5 target.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">network_send_broadcast(socket, port, bufferid, size);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      socket
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Networking/network_create_socket.htm">
+        Network Socket ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The id of the socket to use.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      port
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The port that the server will use.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      bufferid
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Buffers/buffer_create.htm">
+        Buffer ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The id of the buffer to get the data from.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      size
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The size (in bytes) of the data.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">buffer_seek(broadcast_buffer, buffer_seek_start, 0);
+buffer_write(broadcast_buffer, buffer_string, global.ServerName);
+network_send_broadcast(server, 6511, broadcast_buffer, buffer_tell(broadcast_buffer));
+</code></pre>
+  The above code writes the name string of the current server (stored in "global.ServerName"), then writes it to a binary buffer with the id "broadcast_buffer". This data is then broadcast locally to a range of IPs (the device IP is currently implied as the broadcast base range) to port 6511.
+ </body>
+</html>

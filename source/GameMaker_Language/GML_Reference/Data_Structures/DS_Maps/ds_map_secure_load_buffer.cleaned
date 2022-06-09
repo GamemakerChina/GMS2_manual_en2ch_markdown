@@ -1,0 +1,79 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   ds_map_secure_load_buffer
+  </h1>
+  This function will load a secure saved DS map from a buffer. You must previously have loaded the buffer into memory (using
+  <a href="../../Buffers/buffer_load.htm">
+   <span>
+    buffer_load()
+   </span>
+  </a>
+  ) and then passing that into this function will return a DS map populated with the contents of the buffer. Note that the buffer must have been created using the function
+  <span>
+   <a href="ds_map_secure_save_buffer.htm">
+    ds_map_secure_save_buffer()
+   </a>
+  </span>
+  for this to work correctly, and also note that if the DS map being loaded contained an array, this will be converted into a DS list instead on load.
+  <b>
+   IMPORTANT!
+  </b>
+  One of the features of a secure saved file is that it is locked to the device that it was created on, so you cannot load a file saved on one device into a project running on another device.
+  <strong>
+   NOTE
+  </strong>
+  : This function is not supported on HTML5 and UWP.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">ds_map_secure_load_buffer(buffer);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      buffer
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Buffers/buffer_create.htm">
+        Buffer ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The buffer ID of the buffer to load the map data from.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/ds_map_create.htm">
+ DS Map ID
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var buff = buffer_load("save.dat");
+map = ds_map_secure_load_buffer(buff);
+buffer_delete(buff);
+</code></pre>
+  The above code will load a securely saved DS map from a buffer and store its index value in a variable for future use.
+ </body>
+</html>

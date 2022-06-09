@@ -1,0 +1,99 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   draw_enable_drawevent
+  </h1>
+  With this function you can choose to enable (
+  <span>
+   true
+  </span>
+  ) or disable (
+  <span>
+   false
+  </span>
+  ) the draw event for
+  <b>
+   all instances in the game
+  </b>
+  , thus giving you control over how and when things are drawn, which is useful if you wish to implement a "frame skip" technique. Note that this doesn't just prevent instances drawing to the screen, it suppresses the draw event completely meaning that care should be taken since any game logic that is present in that event will not be run either.
+  
+  
+   One important thing to understand about this function is that if you call it right at the start of the game, before the initial frame is rendered (i.e.: the Create Event of the first object in the first room of the game), then the game window
+  <b>
+   will not be rendered
+  </b>
+  . This could be useful for multiplayer projects that require a dedicated server which doesn't need to render anything, however keep in mind that this does
+  <strong>
+   not
+  </strong>
+  make it headless as GameMaker does not support that -- so you will not be able to run it on a server that does not have a graphical interface.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">draw_enable_drawevent(enable);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Enable
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Set to
+      <span>
+       true
+      </span>
+      or
+      <span>
+       false
+      </span>
+      .
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">frame_skip ++;
+if (frame_skip mod 5) == 0
+{
+    draw_enable_drawevent(true);
+}
+else
+{
+    draw_enable_drawevent(false);
+}
+</code></pre>
+  The above code checks a variable and if it returns
+  <span>
+   true
+  </span>
+  , it enables the draw event, otherwise the draw event is disabled.
+ </body>
+</html>

@@ -1,0 +1,65 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   shader_enable_corner_id
+  </h1>
+  With this function you can set a global state for all shaders being used where, when enabled, the shader "steals" 2 bits from the input colour values. The first is from the lower bit of the red colour value, and the second is from the lower
+    bit of the blue colour value. These values can get then be recovered in the shader to work out which vertex you are dealing with (ie: which corner).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">shader_enable_corner_id(enable);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      enable
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Enable (
+      <span>
+       true
+      </span>
+      ) or disable (
+      <span>
+       false
+      </span>
+      ) this function.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">shader_enable_corner_id(true);
+</code></pre>
+  The above code will enable the use of colour bits for the corner id for all shaders.
+ </body>
+</html>

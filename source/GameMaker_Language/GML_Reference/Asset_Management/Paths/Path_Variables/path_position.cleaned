@@ -1,0 +1,27 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   path_position
+  </h1>
+  This function can be used to get or to set the position of an instance along a path. The value is normalised from 0 - 1, so if you set it to, for example, 0.5, the instance will be moved to exactly the middle of the path.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">path_position;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">path_position = random(1);
+</code></pre>
+  The above code sets the instance to a random position anywhere on the current path.
+ </body>
+</html>

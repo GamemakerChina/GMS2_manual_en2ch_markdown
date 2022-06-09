@@ -1,0 +1,134 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Textures
+  </h1>
+  The following functions are all related to "textures", ie: images that are stored in
+  <a>
+   VRAM
+  </a>
+  to be used as sprites or other things within your game. The first set of functions available are used to retrieve information about specific images and their position or size on the
+  <a href="../../../../Settings/Texture_Information/Texture_Pages.htm">
+   Texture Page
+  </a>
+  , as well as set certain texture features:
+  <ul>
+   <li>
+    <a href="texture_get_width.htm">
+     texture_get_width
+    </a>
+   </li>
+   <li>
+    <a href="texture_get_width.htm">
+     texture_get_height
+    </a>
+   </li>
+   <li>
+    <a href="texture_get_texel_width.htm">
+     texture_get_texel_width
+    </a>
+   </li>
+   <li>
+    <a href="texture_get_texel_height.htm">
+     texture_get_texel_height
+    </a>
+   </li>
+   <li>
+    <a href="texture_get_uvs.htm">
+     texture_get_uvs
+    </a>
+   </li>
+   <li>
+    <a href="texture_set_stage.htm">
+     texture_set_stage
+    </a>
+   </li>
+   <li>
+    <a href="texture_global_scale.htm">
+     texture_global_scale
+    </a>
+   </li>
+  </ul>
+  <span>
+   GameMaker
+  </span>
+  also has a number of functions related to the managing the VRAM associated with individual textures as well as whole texture groups:
+  <ul>
+   <li>
+    <a href="draw_texture_flush.htm">
+     draw_texture_flush
+    </a>
+   </li>
+   <li>
+    <a href="texture_prefetch.htm">
+     texture_prefetch
+    </a>
+   </li>
+   <li>
+    <a href="texture_flush.htm">
+     texture_flush
+    </a>
+   </li>
+   <li>
+    <a href="../../Asset_Management/Sprites/Sprite_Manipulation/sprite_flush.htm">
+     sprite_flush
+    </a>
+   </li>
+   <li>
+    <a href="../../Asset_Management/Sprites/Sprite_Manipulation/sprite_flush_multi.htm">
+     sprite_flush_multi
+    </a>
+   </li>
+   <li>
+    <a href="../../Asset_Management/Sprites/Sprite_Manipulation/sprite_prefetch.htm">
+     sprite_prefetch
+    </a>
+   </li>
+   <li>
+    <a href="../../Asset_Management/Sprites/Sprite_Manipulation/sprite_prefetch_multi.htm">
+     sprite_prefetch_multi
+    </a>
+   </li>
+   <li>
+    <a href="../draw_flush.htm">
+     draw_flush
+    </a>
+   </li>
+  </ul>
+  Finally, we have the following functions which are primarily for use to debug the project and ensure efficient use of texture memory:
+  <ul>
+   <li>
+    <a href="texture_debug_messages.htm">
+     texture_debug_messages
+    </a>
+   </li>
+   <li>
+    <a href="texture_is_ready.htm">
+     texture_is_ready
+    </a>
+   </li>
+   <li>
+    <a href="texturegroup_get_textures.htm">
+     texturegroup_get_textures
+    </a>
+   </li>
+   <li>
+    <a href="texturegroup_get_sprites.htm">
+     texturegroup_get_sprites
+    </a>
+   </li>
+   <li>
+    <a href="texturegroup_get_fonts.htm">
+     texturegroup_get_fonts
+    </a>
+   </li>
+   <li>
+    <a href="texturegroup_get_tilesets.htm">
+     texturegroup_get_tilesets
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

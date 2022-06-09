@@ -1,0 +1,78 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   room_set_height
+  </h1>
+  With this function you can change (or set) the height of any room in your game
+  <i>
+   except the current one
+  </i>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">room_set_height(index, h);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Rooms.htm">
+        Room Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the room to set the height of.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      h
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The new height of the room in pixels.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">global.myroom = room_add();
+room_set_width(global.myroom, 640);
+room_set_height(global.myroom, 480);
+room_set_persistent(global.myroom, false);
+</code></pre>
+  This will create a new room and store its index in the variable "global.myroom". It will then set its width to 640 pixels, its height to 480 pixels, its caption to 'Game Room' and its persistence to 'false'.
+ </body>
+</html>

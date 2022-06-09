@@ -1,0 +1,101 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   part_type_colour3
+  </h1>
+  This function can be used to set a three colour gradient for each particle created of the given type. The first colour is that which all particles will start with, and the second colour is the one that will be blended to half way through its lifetime and the third colour is the one with which the particle will end with. A smooth gradient change will occur through the colours over the particles lifetime from one colour to the other.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">part_type_colour3( ind, colour1, colour2, colour3 );
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      ind
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Types/part_type_create.htm">
+        Particle Type ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the particle type to change.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      colour1
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Colour_And_Alpha/Colour_And_Alpha.htm">
+        Colour
+       </a>
+      </span>
+     </td>
+     <td>
+      The colour the particle will start at.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      colour2
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Colour_And_Alpha/Colour_And_Alpha.htm">
+        Colour
+       </a>
+      </span>
+     </td>
+     <td>
+      The colour the particle will be halfway through its lifespan.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      colour3
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Colour_And_Alpha/Colour_And_Alpha.htm">
+        Colour
+       </a>
+      </span>
+     </td>
+     <td>
+      The colour the particle will end at.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">part_type_colour3( part_Health, c_red, c_white, c_maroon);
+</code></pre>
+  The above code will make all particles created of the type indexed in the variable "part_Health" have a colour blend from red to white to maroon over their lifetime.
+ </body>
+</html>

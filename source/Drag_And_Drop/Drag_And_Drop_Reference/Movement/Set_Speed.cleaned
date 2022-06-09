@@ -1,0 +1,71 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/i_Movement_Set_Speed.png"/><br/>
+   Set Speed
+  </h1>
+  This action is used to set the movement speed of the instance. The speed as calculated as the number of pixels that an instance has to move in a single game frame (step). By default the speed value will be added to the direction vector - so if you set
+    speed to 2 and the direction to 45° the instance will move up and right 2 pixels every game frame - but you can also click on the
+  <span>
+   direction
+  </span>
+  field and select either
+  <i>
+   Horizontal
+  </i>
+  or
+  <i>
+   Vertical
+  </i>
+  speed.
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/speed_vectors.png"/><br/>
+  Choosing either of these will set the speed
+  <i>
+   only
+  </i>
+  for the horizontal or vertical vectors. Note
+    that you can flag the value as being relative to the current speed, which will add or subtract the value from the actual speed of the instance, and you can also supply negative numbers, which will make it move in the opposite direction to the current
+    direction value.
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/a_Movement_Set_Speed.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      speed
+     </td>
+     <td>
+      The speed value (can be negative).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <span>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/e_Movement_Set_Direction_Fixed.png"/><br/>
+  </span>
+  The above action block code checks for a left mouse
+  <span>
+   button
+  </span>
+  press
+    on the instance and if one is detected it sets the direction to down (270°) and the speed to 5.
+ </body>
+</html>

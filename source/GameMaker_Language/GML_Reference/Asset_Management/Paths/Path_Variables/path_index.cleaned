@@ -1,0 +1,52 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   path_index
+  </h1>
+  All resources in
+  <span>
+   GameMaker
+  </span>
+  have a unique identifying number, and the
+  <span>
+   path_index
+  </span>
+  is a
+  <b>
+   read-only
+  </b>
+  variable that holds the index value for a given path asset that has been assigned to an instance using the
+  <span>
+   <a href="../path_start.htm">
+    path_start()
+   </a>
+  </span>
+  function. If the instance has no path assigned, the variable will be set to -1.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">path_index;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../The_Asset_Editors/Paths.htm">
+ Path Asset
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if (path_index == -1)
+{
+    path_start(pth_enemy3, 4, path_action_reverse, 0);
+}
+</code></pre>
+  The above code checks to see if a path has been assigned to the instance, and if not it starts a new path (assigning it to the
+  <span>
+   path_index
+  </span>
+  at the same time).
+ </body>
+</html>

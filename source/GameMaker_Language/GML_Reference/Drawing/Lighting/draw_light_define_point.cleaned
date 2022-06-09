@@ -1,0 +1,138 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   draw_light_define_point
+  </h1>
+  This function is for defining a positional light, where you can define the x, y and z position of the light, the light range and its colour (which will also affect the perceived intensity of the light as certain colours appear "darker" than
+    others). You must also give the light an index number which what will be used in other functions to reference it.
+  <b>
+  </b>
+  <b>
+   NOTE
+  </b>
+  : There are only 8 hardware lights available, so only 8 defined lights can be enabled at any one time (although more can be defined).
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">draw_light_define_point(ind, x, y, z, range, col);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      ind
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The index number of the light (arbitrary)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      x
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The x position of the light
+     </td>
+    </tr>
+    <tr>
+     <td>
+      y
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The y position of the light
+     </td>
+    </tr>
+    <tr>
+     <td>
+      z
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The z position of the light
+     </td>
+    </tr>
+    <tr>
+     <td>
+      range
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The light range (in pixels)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      col
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Drawing/Colour_And_Alpha/Colour_And_Alpha.htm">
+        Colour
+       </a>
+      </span>
+     </td>
+     <td>
+      The colour to use for the light (either a constant, a real or a hex value).
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">draw_set_lighting(true); draw_light_define_point(1, 200, 123, 50, 2000, c_white); draw_light_enable(1, true);
+</code></pre>
+  The above code will enable lighting for the whole scene, then define a white light at a specific point in the room space, and then finally turn that light on.
+ </body>
+</html>

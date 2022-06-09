@@ -1,0 +1,160 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Basic Forms
+  </h1>
+  <span>
+   GameMaker
+  </span>
+  has a whole collection of functions available for drawing different forms and shapes. These functions should only ever be used in the draw event of an instance (you
+  <i>
+   can
+  </i>
+  use them elsewhere but you won't see anything!) and create purely graphic effects, which means that they do not generate collision events as those can only be done through the sprite or collision mask that has been assigned to an instance. All these functions are affected by the current draw colour, alpha and blend mode (see the section on
+  <a href="../Colour_And_Alpha/Colour_And_Alpha.htm">
+   Colour
+  </a>
+  ).
+  <b>
+   IMPORTANT!
+  </b>
+  Lines, points and forms are always drawn at 1:1 with the
+  <strong>
+   screen resolution
+  </strong>
+  , regardless of the event they are drawn in.
+  <strong>
+   IMPORTANT!
+  </strong>
+  These functions will break the vertex batching and increase the number of texture swaps in your game, so having multiple calls to any of them in a single draw frame may lead to performace issues.
+  
+  
+   The following drawing functions exist for drawing basic shapes. Note that these functions are slow to call and only supplied as basic drawing tools:
+  <ul>
+   <li>
+    <a href="draw_arrow.htm">
+     draw_arrow
+    </a>
+   </li>
+   <li>
+    <a href="draw_circle.htm">
+     draw_circle
+    </a>
+   </li>
+   <li>
+    <a href="draw_circle_colour.htm">
+     draw_circle_colour
+    </a>
+   </li>
+   <li>
+    <a href="draw_ellipse.htm">
+     draw_ellipse
+    </a>
+   </li>
+   <li>
+    <a href="draw_ellipse_colour.htm">
+     draw_ellipse_colour
+    </a>
+   </li>
+   <li>
+    <a href="draw_line.htm">
+     draw_line
+    </a>
+   </li>
+   <li>
+    <a href="draw_line_colour.htm">
+     draw_line_colour
+    </a>
+   </li>
+   <li>
+    <a href="draw_line_width.htm">
+     draw_line_width
+    </a>
+   </li>
+   <li>
+    <a href="draw_line_width_colour.htm">
+     draw_line_width_colour
+    </a>
+   </li>
+   <li>
+    <a href="draw_point.htm">
+     draw_point
+    </a>
+   </li>
+   <li>
+    <a href="draw_point_colour.htm">
+     draw_point_colour
+    </a>
+   </li>
+   <li>
+    <a href="draw_rectangle.htm">
+     draw_rectangle
+    </a>
+   </li>
+   <li>
+    <a href="draw_rectangle_colour.htm">
+     draw_rectangle_colour
+    </a>
+   </li>
+   <li>
+    <a href="draw_roundrect.htm">
+     draw_roundrect
+    </a>
+   </li>
+   <li>
+    <a href="draw_roundrect_colour.htm">
+     draw_roundrect_colour
+    </a>
+   </li>
+   <li>
+    <a href="draw_roundrect_ext.htm">
+     draw_roundrect_ext
+    </a>
+   </li>
+   <li>
+    <a href="draw_roundrect_colour_ext.htm">
+     draw_roundrect_colour_ext
+    </a>
+   </li>
+   <li>
+    <a href="draw_triangle.htm">
+     draw_triangle
+    </a>
+   </li>
+   <li>
+    <a href="draw_triangle_colour.htm">
+     draw_triangle_colour
+    </a>
+   </li>
+  </ul>
+  The following functions are also included in
+  <span>
+   GameMaker
+  </span>
+  to set drawing precision and draw some very specific things:
+  <ul>
+   <li>
+    <a href="draw_set_circle_precision.htm">
+     draw_set_circle_precision
+    </a>
+   </li>
+   <li>
+    <a href="draw_button.htm">
+     draw_button
+    </a>
+   </li>
+   <li>
+    <a href="draw_healthbar.htm">
+     draw_healthbar
+    </a>
+   </li>
+   <li>
+    <a href="draw_path.htm">
+     draw_path
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

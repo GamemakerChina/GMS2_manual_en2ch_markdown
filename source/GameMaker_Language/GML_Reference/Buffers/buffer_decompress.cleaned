@@ -1,0 +1,63 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   buffer_decompress
+  </h1>
+  With this function you can decompress a previously compressed buffer using
+  <a href="https://en.wikipedia.org/wiki/Zlib">
+   zlib compression
+  </a>
+  . You supply the buffer ID to decompress, and the function will return a new buffer ID that contains the uncompressed data. If the decompression has failed (for example, you are supplying a buffer that hasn't been compressed) then the function will instead return a value less than 0.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">buffer_decompress(buffer);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      buffer
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Buffers/buffer_create.htm">
+        Buffer ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the buffer to decompress.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Reference/Buffers/buffer_create.htm">
+ Buffer ID
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">var cmpBuff = buffer_load("Player_Save.sav");
+var srcBuff = buffer_decompress(cmpBuff);
+global.DataString = buffer_read(srcBuff, buffer_string);
+</code></pre>
+  The above code will first load a saved buffer, then decompress it and finally read the string data from the decompressed buffer into a global variable.
+ </body>
+</html>

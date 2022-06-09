@@ -1,0 +1,61 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   string_byte_length
+  </h1>
+  This function returns the number of bytes in a string, but you should note that due to their being held as UTF8, this will
+  <i>
+   not
+  </i>
+  be equal to their string length.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">string_byte_length(string);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      string
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        String
+       </a>
+      </span>
+     </td>
+     <td>
+      The string to measure the number of bytes of.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">bytesize = string_byte_length("Hello World");
+</code></pre>
+  This would set bytesize to the number of bytes in "Hello World".
+ </body>
+</html>

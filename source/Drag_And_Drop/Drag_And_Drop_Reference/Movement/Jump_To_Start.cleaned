@@ -1,0 +1,33 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/i_Movement_Jump_To_Start.png"/><br/>
+   Jump To Start
+  </h1>
+  This action is used to move an instance from its current position to the position where it was originally created. The original position where an instance is created is stored in two
+  <a href="../Instance/Get_Instance_Variable.htm">
+   instance variables
+  </a>
+  called
+  <span>
+   xstart
+  </span>
+  and
+  <span>
+   ystart
+  </span>
+  . These variables can be used in any other action and can also be set to change the recorded start position.
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/a_Movement_Jump_To_Start.png"/><br/>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/e_Movement_Jump_To_Start.png"/><br/>
+  The above action block code checks to see if the top of the instances bounding box is below
+    the room height and if it is it moves the instance back to the position it was created at.
+ </body>
+</html>

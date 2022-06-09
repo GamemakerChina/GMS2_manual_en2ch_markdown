@@ -1,0 +1,84 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   keyboard_get_map
+  </h1>
+  Sometimes you may wish to get the ascii code for a mapped key (to see if it is already mapped, for example) which is what this function returns. The function will take a keycode value as returned by the function
+  <a href="../../Strings/ord.htm">
+   <span>
+    ord()
+   </span>
+  </a>
+  (only
+  <i>
+   capital
+  </i>
+  letters from A-Z or numbers from 0-9), or any of the
+  <span>
+   vk_*
+  </span>
+  constants listed on the main
+  <a href="Keyboard_Input.htm">
+   Keyboard Input
+  </a>
+  page.
+  <h4>
+   <b>
+    Syntax:
+   </b>
+  </h4>
+  <pre><code class="language-gml">keyboard_get_map(key);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      key
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Reference/Game_Input/Keyboard_Input/Keyboard_Input.htm">
+        Virtual Key Constant (vk_*)
+       </a>
+      </span>
+     </td>
+     <td>
+      This is the key that you wish to get the mapped value from
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   <b>
+    Returns:
+   </b>
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   <b>
+    Example:
+   </b>
+  </h4>
+  <pre><code class="language-gml">if keyboard_get_map(ord("A")) = ord("A")
+{
+    keyboard_set_map(ord("A"), keyboard_lastkey);
+}
+</code></pre>
+  The above example code will first check and see if "A" has been mapped to another key, and if it hasn't it will map it to the last key that the user has pressed.
+ </body>
+</html>

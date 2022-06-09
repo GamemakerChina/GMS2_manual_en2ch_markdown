@@ -1,0 +1,50 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   debug_mode
+  </h1>
+  This
+  <b>
+   read only
+  </b>
+  variable returns
+  <span>
+   true
+  </span>
+  when the game is being played in debug mode and
+  <span>
+   false
+  </span>
+  when being played as normal.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">debug_mode
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if debug_mode
+{
+    ini_open("Cheats.ini");
+}
+else
+{
+    ini_open("Game.ini");
+}
+</code></pre>
+  The above code opens a different ini file depending on the value of the read-only variable
+  <span>
+   debug_mode
+  </span>
+  .
+ </body>
+</html>

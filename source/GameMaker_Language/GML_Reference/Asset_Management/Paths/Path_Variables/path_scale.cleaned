@@ -1,0 +1,34 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   path_scale
+  </h1>
+  This value can be used to get or to set the scale of the currently assigned path for the instance (as set by the function
+  <span>
+   <a href="../path_start.htm">
+    path_start()
+   </a>
+  </span>
+  ) with a default value of 1. This is a scalar value, so
+    1 is a scale of 1:1, while setting it to 2, for example, will be double the scale and setting it to 0.5 would be halving the scale.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">path_scale;
+</code></pre>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">path_scale = 1 + random(2);
+</code></pre>
+  The above code will set the current path's scale to a random size between 1 (its original size) and 3 (3 times its original size).
+ </body>
+</html>

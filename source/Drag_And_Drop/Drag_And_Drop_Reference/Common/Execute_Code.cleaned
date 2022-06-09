@@ -1,0 +1,35 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/i_Common_Execute_Code.png"/><br/>
+   Execute Code
+  </h1>
+  This action simply adds a
+  <a href="../../../The_Asset_Editors/Scripts.htm">
+   code editor
+  </a>
+  block into the GML Visual list where you can add any valid GML code that you require for the object. Note that all the code in the action will be run before the next
+    action in the list is run. To make it easier to track what these actions do you can name them by using the
+  <a href="../../../The_Asset_Editors/Code_Editor_Properties/JSDoc_Script_Comments.htm">
+   JSDoc
+  </a>
+  <span>
+   @description
+  </span>
+  identifier, as shown in
+    the image below:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/a_Common_Execute_Code_JSDoc_Description.png"/><br/>
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/a_Common_Execute_Code.png"/><br/>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Execute_Code.png"/><br/>
+  The above action block code creates a couple of global scope variables to create an MP grid and
+    a path.
+ </body>
+</html>

@@ -1,0 +1,309 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   macOS Game Options
+  </h1>
+  This section outlines the different options available to you that control how your macOS game projects will be compiled. The different sections are:
+  <h2>
+   General
+  </h2>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Settings/Game_Options/Mac_General_Options.png"/><br/>
+  In the
+  <strong>
+   Product Information
+  </strong>
+  section, the first thing to do is fill in the
+  <strong>
+   Display Name
+  </strong>
+  of your game then fill in its
+  <strong>
+   Version Number
+  </strong>
+  ,
+  <strong>
+   App ID
+  </strong>
+  ,
+  <strong>
+   App Output file
+  </strong>
+  and the
+  <strong>
+   Copyright
+  </strong>
+  details. The App Output is the location to which your game installation files go to on your Mac development machine. When you create your
+  <span>
+   .app.zip
+  </span>
+  , that file can go anywhere (the location you specify when doing the save dialogue is not the only copy made of that
+  <span>
+   .app.zip
+  </span>
+  ), but the
+  <span>
+   .pkg
+  </span>
+  and other files are left in this folder, permitting you to test local installations via Terminal in such a way as to simulate Mac Store purchasing, etc...
+  
+  
+   Here you also need to give the
+  <strong>
+   Team Identifier
+  </strong>
+  that you wish to use for signing the final application that
+  <span>
+   GameMaker
+  </span>
+  creates for you. Setting it here will overide the Team ID that you have supplied in the
+  <a href="../../Setting_Up_And_Version_Information/Platform_Preferences/macOS.htm">
+   macOS Preferences
+  </a>
+  . After the Team Identifier you also have the option to supply the
+  <strong>
+   Signing Identifier
+  </strong>
+  , which is required by Apple for all non-appstore applications (like Steam games, for example).
+  
+  
+   The next option is for enabling
+  <strong>
+   Steam
+  </strong>
+  in your game. If you enable this option, make sure you have the Steamworks SDK installed (see
+  <a href="../../Setting_Up_And_Version_Information/Platform_Preferences/Steam.htm">
+   here
+  </a>
+  ), and that you have added the
+  <strong>
+   Steam app ID
+  </strong>
+  into the
+  <a href="../Game_Options.htm">
+   General Options
+  </a>
+  for the game.
+  
+  
+   Finally you have the option to
+  <strong>
+   Disable file system sandbox
+  </strong>
+  . Checking this will disable the
+  <span>
+   GameMaker
+  </span>
+  sandboxing for saving and loading files, permitting your games to access files from anywhere on the system running the game. This option is unchecked by default, as we recomend that you maintain the
+  <span>
+   GameMaker
+  </span>
+  sandbox for files on all systems and when checked, some save/load areas may still not be available depending on the OS-level permissions. For more information on the sandbox, please see the pages on the
+  <span>
+   GameMaker
+  </span>
+  <a href="../../Additional_Information/The_File_System.htm">
+   File System
+  </a>
+  .
+  <h2>
+   Graphics
+  </h2>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Settings/Game_Options/Mac_Graphics_Options.png"/><br/>
+  The graphics options are those that you should configure to determine how your game will use the graphics card of your target Mac. The following options are included for you to modify:
+  <ul>
+   <li>
+    <strong>
+     Allow Menu And Dock In Fullscreen
+    </strong>
+    : When checked, this option will show the OS menu and dock if the game is in fullscreen mode. This is off by default.
+   </li>
+   <li>
+    <strong>
+     Display Cursor
+    </strong>
+    : When this is checked the regular macOS cursor will be show, and un-checking it will mean that no cursor is shown unless you have created one in your game code. This is off by default.
+   </li>
+   <li>
+    <strong>
+     Start Fullscreen
+    </strong>
+    : If this is checked, the game will start in fullscreen mode otherwise it will start windowed. This is off by default.
+   </li>
+   <li>
+    <strong>
+     Allow Fullscreen Switching
+    </strong>
+    : With this ticked the user can switch from fullscreen to windowed and back again using the standard macOS shortcuts. This is off by default.
+   </li>
+   <li>
+    <strong>
+     Interpolate colours between pixels
+    </strong>
+    : Turns on
+    <a>
+     linear interpolation
+    </a>
+    , which basically "smooths" pixels. For crisp pixel graphics, it should be off, but if you have nice alpha blends and smoothed edged graphics it is better left on. This is off by default.
+   </li>
+   <li>
+    <strong>
+     Use synchronization to avoid tearing
+    </strong>
+    : This toggles
+    <a>
+     v-sync
+    </a>
+    on or off. Note, that if you have a game with a room speed of 120 and the player has a monitor with a refresh rate of 60, turning this option on will lock your game speed to 60 too. This is off by default.
+   </li>
+   <li>
+    <strong>
+     Allow window resize
+    </strong>
+    : Checking this permits the user to change the size of the game window (the Borderless Window option needs to be off for this to work). This option is off by default.
+   </li>
+   <li>
+    <strong>
+     Enable Retina
+    </strong>
+    : Checking this will set the back buffer to be at the higher (actual) resolution when the game is run on a retina enabled monitor, while un-checking it will set the back buffer to be at the apparent (lower) resolution. What this means is that the initial game window will be set to twice the width and height that the room/view port that the first room is set to. However, this does NOT scale the application surface to suit, and so if you want your game to make the most of the retina display you should also set the application surface to be the same as the window size (note that this will double the pixels along the width and height, so only enable this and scale the application surface if your game will benefit from the increased resolution).
+      
+      This option is off by default, and enabling it will not show any difference when you run or debug the game using VM, as the runner is pre-built in that case. It will only work if you build an executable through VM, or use YYC for testing or building the game, as that will rebuild the runner with your customised Game Options.
+   </li>
+   <li>
+    <strong>
+     Scaling
+    </strong>
+    : Here you can choose to maintain aspect ratio (so a 4:3 room will be "letter boxed" on a 16:9) or to scale fully (stretching the image to fit the full screen).
+    <span>
+     <strong>
+      WARNING!
+     </strong>
+     <em>
+      Switching off the application surface will disable all the scaling options set in the Windows Game Options until it has been switched back on again. See The Application Surface for further details.
+     </em>
+    </span>
+   </li>
+  </ul>
+  Finally there is the option to set the size of the
+  <a>
+   texture page
+  </a>
+  . The default (and most compatible) size is 2048x2048, but you can choose from anywhere between 256x256 up to 8192x8192. There is also a button marked
+  <strong>
+   <strong>
+    Preview
+   </strong>
+  </strong>
+  which will generate the texture pages for this platform and then open a window so that you can see how they look. This can be very useful if you wish to see how the texture pages are structured and to prevent having texture pages larger (or smaller) than necessary. For more information on texture pages, please see
+  <a href="../Texture_Information/Texture_Pages.htm">
+   here
+  </a>
+  .
+  <strong>
+   NOTE
+  </strong>
+  : Be aware that the larger the size of the texture page, the less compatible your game will be on PC's with lower specifications.
+  <h2>
+   Images
+  </h2>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Settings/Game_Options/Mac_Images_Options.png"/><br/>
+  The images section is where you supply the images that your game requires. For Mac, you need to supply an
+  <strong>
+   Icon
+  </strong>
+  file (that must be in
+  <span>
+   .png
+  </span>
+  format and 1024x1024px) and a
+  <strong>
+   Splash Screen
+  </strong>
+  (which can be
+  <span>
+   .png
+  </span>
+  ,
+  <span>
+   .bmp
+  </span>
+  ,
+  <span>
+   .jpg
+  </span>
+  or
+  <span>
+   .gif
+  </span>
+  format). The splash screen will be shown while the game loads.
+  
+  
+   For DMG packages, you can supply an
+  <strong>
+   Installer Background
+  </strong>
+  image which will appear as the background of the DMG installer.
+  
+  
+   It is worth noting that
+  <span>
+   GameMaker
+  </span>
+  has a
+  <a href="../../IDE_Tools/Project_Image_Generator.htm">
+   Project Image Generator
+  </a>
+  tool which can be used to automatically create all the images required for all the different target platforms your game is being compiled to. If you use this tool, you should revise the images created to ensure that they are what you require.
+  <h2>
+   Packaging
+  </h2>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Settings/Game_Options/Mac_Packaging_Options.png"/><br/>
+  If you wish the finished game to be App Store Ready then you need to check the
+  <strong>
+   Build for Mac App Store
+  </strong>
+  option, but be aware that this will only function if you are a registered Developer and have the necessary certificates. Under that are the app
+  <strong>
+   Permissions
+  </strong>
+  which you should only check if they are true as Apple can reject your app if they are checked when they are not needed or vice-versa. These options simply permit your game to use the
+  <span>
+   http_
+  </span>
+  and
+  <span>
+   url_
+  </span>
+  functions. It is worth noting that if you wish to support GamePads in your game then the option to create an App Store ready package should be
+  <em>
+   off
+  </em>
+  .
+  
+  
+   Finally, you need to select its
+  <strong>
+   App Category
+  </strong>
+  (for more information, see
+  <a href="https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/LaunchServicesKeys.html">
+   here
+  </a>
+  ).
+  <h2>
+   Social
+  </h2>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Settings/Game_Options/Mac_Social_Options.png"/><br/>
+  This option is for using the
+  <strong>
+   Apple Sign In Extension
+  </strong>
+  on Mac. You can get this extension from the
+  <a href="https://marketplace.yoyogames.com/publishers/23/yoyo-games">
+   YoYo Games Marketplace
+  </a>
+  , and the extension itself contains full instructions for use. If you are not using this extension then you should not tick this option.
+ </body>
+</html>

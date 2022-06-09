@@ -1,0 +1,91 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   is_struct
+  </h1>
+  This function checks if the supplied value is a struct. It returns
+  <span>
+   true
+  </span>
+  if it is, otherwise it returns
+  <span>
+   false
+  </span>
+  .
+  
+  
+   Note that
+  <a href="../../GML_Overview/Method_Variables.htm">
+   method variables
+  </a>
+  will also return
+  <span>
+   true
+  </span>
+  , and
+  <a href="../Asset_Management/Instances/Instances.htm">
+   object instances
+  </a>
+  will return
+  <span>
+   false
+  </span>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">is_struct(val);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      val
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm#variable">
+        Variable
+       </a>
+      </span>
+     </td>
+     <td>
+      The value to check.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Boolean
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if is_struct(a)
+{
+    delete(a);
+}
+</code></pre>
+  The above code checks a variable to see if it is a struct, and if the function returns
+  <span>
+   true
+  </span>
+  , the struct is deleted.
+ </body>
+</html>

@@ -1,0 +1,146 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   Fonts
+  </h1>
+  <span>
+   GameMaker
+  </span>
+  has a number of functions that can be used to get information about the included font assets, as well as a further set of functions that can be used to change, add or remove fonts from your game at run-time. In particular the function
+  <span>
+   font_add()
+  </span>
+  can be used to add non-standard fonts, like Asian glyph fonts, from a
+  <span>
+   *.ttf
+  </span>
+  or
+  <span>
+   *.otf
+  </span>
+  file.
+  
+  
+   It is worth noting is that if you add a font to your game that doesn't have the glyphs required by the text you wish to write, then the Unicode character 9647 (▯) is used to substitute those missing glyphs when rendering it in the draw event. So if your font doesn't have, for example, the º symbol, then writing 90º will actually produce 90▯.
+  
+  
+   The following functions can be used to get information about font resources:
+  <ul>
+   <li>
+    <a href="font_get_name.htm">
+     font_get_name
+    </a>
+   </li>
+   <li>
+    <a href="font_get_fontname.htm">
+     font_get_fontname
+    </a>
+   </li>
+   <li>
+    <a href="font_get_first.htm">
+     font_get_first
+    </a>
+   </li>
+   <li>
+    <a href="font_get_last.htm">
+     font_get_last
+    </a>
+   </li>
+   <li>
+    <a href="font_get_italic.htm">
+     font_get_italic
+    </a>
+   </li>
+   <li>
+    <a href="font_get_bold.htm">
+     font_get_bold
+    </a>
+   </li>
+   <li>
+    <a href="font_get_size.htm">
+     font_get_size
+    </a>
+   </li>
+   <li>
+    <a href="font_get_texture.htm">
+     font_get_texture
+    </a>
+   </li>
+   <li>
+    <a href="font_get_uvs.htm">
+     font_get_uvs
+    </a>
+   </li>
+   <li>
+    <a href="font_get_info.htm">
+     font_get_info
+    </a>
+   </li>
+  </ul>
+  The following functions can be used to change and manipulate fonts during a game:
+  <ul>
+   <li>
+    <a href="font_exists.htm">
+     font_exists
+    </a>
+   </li>
+   <li>
+    <a href="font_set_cache_size.htm">
+     font_set_cache_size
+    </a>
+   </li>
+   <li>
+    <a href="font_add_enable_aa.htm">
+     font_add_enable_aa
+    </a>
+   </li>
+   <li>
+    <a href="font_add_get_enable_aa.htm">
+     font_add_get_enable_aa
+    </a>
+   </li>
+   <li>
+    <a href="font_add.htm">
+     font_add
+    </a>
+   </li>
+   <li>
+    <a href="font_add_sprite.htm">
+     font_add_sprite
+    </a>
+   </li>
+   <li>
+    <a href="font_add_sprite_ext.htm">
+     font_add_sprite_ext
+    </a>
+   </li>
+   <li>
+    <a href="font_replace.htm">
+     font_replace
+    </a>
+   </li>
+   <li>
+    <a href="font_replace_sprite.htm">
+     font_replace_sprite
+    </a>
+   </li>
+   <li>
+    <a href="font_replace_sprite_ext.htm">
+     font_replace_sprite_ext
+    </a>
+   </li>
+   <li>
+    <a href="font_delete.htm">
+     font_delete
+    </a>
+   </li>
+   <li>
+    <a href="font_texture_page_size.htm">
+     font_texture_page_size
+    </a>
+   </li>
+  </ul>
+ </body>
+</html>

@@ -1,0 +1,143 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   sprite_set_bbox
+  </h1>
+  This function can be used to set the bounding box values for a sprite. You supply the sprite index to use and then the left, top, right and bottom values for the bounding box positions. The positions are
+  <i>
+   absolute
+  </i>
+  values, where the (0, 0) position corresponds to the top left corner of the sprite, regardless of the offset for the sprite, any "empty" pixels the sprite may have, or where it is being drawn in the room.
+  <span>
+   NOTE
+  </span>
+  This function affects the sprite
+  <b>
+   asset
+  </b>
+  so that all further instances with this sprite will have the same bounding box.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">sprite_set_bbox(ind, left, top, right, bottom);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      ind
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../The_Asset_Editors/Sprites.htm">
+        Sprite Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the sprite to set the bounding box on.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      left
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The left side of the bounding box
+     </td>
+    </tr>
+    <tr>
+     <td>
+      top
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The top of the bounding box.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      right
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The right side of the bounding box
+     </td>
+    </tr>
+    <tr>
+     <td>
+      bottom
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The bottom of the bounding box.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">if sprite_get_bbox_mode(sprite_index) == 2
+{
+    left = irandom(sprite_width / 2);
+    right = irandom((sprite_width / 2) + irandom(sprite_width / 2));
+    top = irandom(sprite_height / 2);
+    bottom = irandom((sprite_height / 2) + irandom(sprite_height / 2));
+    sprite_set_bbox(sprite_index, left, top, right, bottom);
+}
+</code></pre>
+  The above code will check the bounding box mode of the sprite assigned to the
+  <span>
+   sprite_index
+  </span>
+  , and if it is set to
+  <span>
+   manual
+  </span>
+  then it will have its bounding box changed.
+ </body>
+</html>

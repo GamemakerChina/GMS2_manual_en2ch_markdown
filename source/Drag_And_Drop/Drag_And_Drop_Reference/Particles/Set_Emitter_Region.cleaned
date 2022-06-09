@@ -1,0 +1,133 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Emitter_Region.png"/><br/>
+   Set Emitter Region
+  </h1>
+  This action is used to set the region and shape of an emitter within a particle system. You supply the particle system ID that the emitter belongs to (as returned by the action
+  <a href="Create_Particle_System.htm">
+   Create Particle System
+  </a>
+  ) and then
+    the actual emitter ID (as returned by the action
+  <a href="Create_Particle_Emitter.htm">
+   Create Particle Emitter
+  </a>
+  ), and then give a shape for the emitter to take within the given bounding box values. The possible emitter shapes are:
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/Emitter_Shapes.png"/><br/>
+  To define your shapes, you give the coordinates for a "bounding box" into which the given
+    shape will be placed (in the case of rectangle, ellipse and diamond shapes) or the first and second coordinates for the start and finish points (in the case of a line). All particles that are burst or streamed from the emitter will be created within
+    the confines of the shape within this bounding box. You can also set the distribution of the particles with the option of:
+  <ul>
+   <li>
+    <b>
+     Linear
+    </b>
+    : Particles will be created anywhere at random within the given shape.
+   </li>
+   <li>
+    <b>
+     Gaussian
+    </b>
+    : Particles will be created predominantly in the middle of the shape with fewer along the edges.
+   </li>
+   <li>
+    <b>
+     Inverse Gaussian
+    </b>
+    : Particles will be created predominantly along the edges of the shape with fewer in the middle.
+   </li>
+  </ul>
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Set_Emitter_Region.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      System
+     </td>
+     <td>
+      The unique ID of the system the emitter belongs to
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Emitter
+     </td>
+     <td>
+      The unique ID of the emitter to set the shape of
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Shape
+     </td>
+     <td>
+      The particle shape that is to be used
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Distribution
+     </td>
+     <td>
+      The distribution of particles within the given shape
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Left
+     </td>
+     <td>
+      The position of the left side of the shape bounding box (in pixels)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Top
+     </td>
+     <td>
+      The position of the top of the shape bounding box (in pixels)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Right
+     </td>
+     <td>
+      The position of the right side of the shape bounding box (in pixels)
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Bottom
+     </td>
+     <td>
+      The position of the bottom of the shape bounding box (in pixels)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Create_Particle_Emitter.png"/><br/>
+  The above action block code will create a particle emitter, set it's
+    region, and then set it to emit a stream of particles.
+ </body>
+</html>

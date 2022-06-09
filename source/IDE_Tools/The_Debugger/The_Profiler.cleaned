@@ -1,0 +1,200 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   The Profiler
+  </h1>
+  The Debugger permits you to step through your code and find any issues with the code base, but sometimes you need to check for subtler details in order to properly optimise your games. The
+  <strong>
+   Profile
+  </strong>
+  option helps to do just that by giving you a performance overview, showing the time it takes to call functions, scripts, and even how long it took a specific event to complete.
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/IDE%20Tools/Debug_Profile.png"/><br/>
+  Apart from the main window showing all the different events, scripts and functions being called, you also have the following options for using the Profiler:
+  <a href="#">
+   <span>
+    Enable / Disable
+   </span>
+   <span>
+    Enable / Disable
+   </span>
+  </a>
+  This is the button to enable or disable the Profiler. When enabled, the profiler will start and you will start to see events, scripts and functions be listed in the main window along with different data values for each of them. How this data is displayed
+      will depend on the
+  <strong>
+   Time Display
+  </strong>
+  and the
+  <strong>
+   View Mode
+  </strong>
+  (both explained in more depth below).
+  <a href="#">
+   <span>
+    Time Display
+   </span>
+   <span>
+    Time Display
+   </span>
+  </a>
+  This checkbox permits you to switch between the
+  <strong>
+   average
+  </strong>
+  time and the
+  <strong>
+   absolute
+  </strong>
+  time for the profiler. When it is not checked, the values shown in the main window will be the
+  <em>
+   total
+  </em>
+  number of calls made to the
+      function, script or event and the
+  <em>
+   total
+  </em>
+  time taken (times are in
+  <strong>
+   microseconds
+  </strong>
+  ) over the course of the profile. However if you enable this then these columns show the
+  <em>
+   average
+  </em>
+  time taken per step for each function,
+      script or event, and the
+  <em>
+   average
+  </em>
+  number of times that it was called.
+  <a href="#">
+   <span>
+    View Mode
+   </span>
+   <span>
+    View Mode
+   </span>
+  </a>
+  This menu lets you choose the view mode, which can be either
+  <strong>
+   Top Down
+  </strong>
+  or
+  <strong>
+   Bottom Up
+  </strong>
+  .
+   
+   
+    Selecting the
+  <strong>
+   Top Down
+  </strong>
+  view mode will show the profile from the top down (more or less the same as the callstack hierarchy) so it will show the event, then the script and then any functions used. Note that you can double click
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+  on any of the entries to have it open in the
+  <strong>
+   Source
+  </strong>
+  debug window if you
+      have one. If you see a
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Debug_Expand.png"/><br/>
+  icon beside a name then there are further script or function calls within that
+      section, and clicking the
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Debug_Expand.png"/><br/>
+  will expand the tree to show them.
+   
+   
+    Selecting the
+  <strong>
+   Bottom Up
+  </strong>
+  view mode will show things from the bottom up so you can see all the functions and script calls individually. When using this view mode, clicking on the
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Debug_Expand.png"/><br/>
+  will expand the function or script to show what actually called it.
+  <a href="#">
+   <span>
+    View Target
+   </span>
+   <span>
+    View Target
+   </span>
+  </a>
+  The
+  <strong>
+   View Target
+  </strong>
+  permits you to choose between viewing the project GML (event and code data), the background engine processes or both. If you choose "GML", then you will get the events, functions and scripts being called
+      each step while the "Engine" view will only show the engine calls required by the project, enabling you to see any bottlenecks in the way that your project is handling things. If you select "Both", then both sets of data will
+      be displayed, but note that when combined with the "Bottom Up" view, the different script and function calls will be nested within the engine calls and you will need to click the
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Debug_Expand.png"/><br/>
+  to expand these out to see them.
+   
+   
+   
+  
+  
+   The profile data is shown in four columns, and clicking on any of them will sort the data according to the column criteria.
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/IDE%20Tools/Profiler_Display.gif"/><br/>
+  <ul>
+   <li>
+    <strong>
+     Name
+    </strong>
+    : This is the name of the event, script or function being called, and may have a
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Debug_Expand.png"/><br/>
+    beside it to denote further calls to it or from it (depending on the
+    <strong>
+     View Mode
+    </strong>
+    you have selected). You can double click
+    <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Icons/Icon_LMB.png"/><br/>
+    on any of the names to have it open the code block or script within the Source window. Clicking the top of this column will sort the names in alphabetical order.
+   </li>
+   <li>
+    <strong>
+     Time
+    </strong>
+    : This will show either the
+    <em>
+     total
+    </em>
+    time that a function (or script or event) has taken while profiling, or the
+    <em>
+     average
+    </em>
+    time that it has taken each step to be called (depending on the
+    <strong>
+     Time Display
+    </strong>
+    option selected) and it is displayed in microseconds.
+   </li>
+   <li>
+    <strong>
+     Calls
+    </strong>
+    : Here you can see either the
+    <em>
+     total
+    </em>
+    number of calls to the given event, function or script, or the
+    <em>
+     average
+    </em>
+    number of calls to it in a single step (again, depending on the
+    <strong>
+     Time Display
+    </strong>
+    option selected).
+   </li>
+   <li>
+    <strong>
+     Step%
+    </strong>
+    : The value shown here is the overall percentage of a single step that the call has taken.
+   </li>
+  </ul>
+ </body>
+</html>

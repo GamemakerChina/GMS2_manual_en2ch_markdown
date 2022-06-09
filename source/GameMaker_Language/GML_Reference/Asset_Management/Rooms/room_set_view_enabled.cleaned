@@ -1,0 +1,92 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   room_set_view_enabled
+  </h1>
+  With this function you can enable (
+  <span>
+   true
+  </span>
+  ) or disable (
+  <span>
+   false
+  </span>
+  ) the view of any room within your game
+  <i>
+   except the current one
+  </i>
+  .
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">room_set_view_enabled(index, val);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      index
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Rooms.htm">
+        Room Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      The index of the room to set.
+     </td>
+    </tr>
+    <tr>
+     <td>
+      val
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Boolean
+       </a>
+      </span>
+     </td>
+     <td>
+      Whether to enable (
+      <span>
+       true
+      </span>
+      ) or disable (
+      <span>
+       false
+      </span>
+      ) views in the given room.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml">N/A
+</code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">global.myroom = room_add();
+room_set_view_enabled(global.myroom, true);
+</code></pre>
+  This will enable views in the room indexed in "global.myroom".
+ </body>
+</html>

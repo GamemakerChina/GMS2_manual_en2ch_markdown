@@ -1,0 +1,519 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   time_source_create
+  </h1>
+  This function creates a new
+  <span>
+   Time Source
+  </span>
+  . Read
+  <a href="Time_Sources.htm">
+   Time Sources
+  </a>
+  for an overview.
+   
+   
+    Creating a new
+  <span>
+   Time Source
+  </span>
+  does not start it automatically; you must call
+  <a href="time_source_start.htm">
+   <span>
+    time_source_start()
+   </span>
+  </a>
+  to activate it.
+   
+   
+    A new
+  <span>
+   Time Source
+  </span>
+  only runs once, unless the
+  <span>
+   repetitions
+  </span>
+  argument is specified (read below).
+   
+   
+    You must destroy a
+  <span>
+   Time Source
+  </span>
+  using
+  <a href="time_source_destroy.htm">
+   <span>
+    time_source_destroy()
+   </span>
+  </a>
+  when you no longer need it.
+  <h2>
+   Arguments
+  </h2>
+  Here is a breakdown of the function's arguments:
+  <h3>
+   <a href="#">
+    <span>
+     Parent Time Source
+    </span>
+    <span>
+     Parent Time Source
+    </span>
+   </a>
+  </h3>
+  This is the parent
+  <span>
+   Time Source
+  </span>
+  which controls the new
+  <span>
+   Time Source
+  </span>
+  . This may be
+  <span>
+   time_source_global
+  </span>
+  ,
+  <span>
+   time_source_game
+  </span>
+  or a custom
+  <span>
+   Time Source
+  </span>
+  that already exists.
+      
+      See:
+  <a href="Built_In_Time_Sources.htm">
+   Built-In Time Sources
+  </a>
+  <h3>
+   <a href="#">
+    <span>
+     Period
+    </span>
+    <span>
+     Period
+    </span>
+   </a>
+  </h3>
+  This is a period of time that may be expressed in seconds or frames, depending on the unit specified in the next argument.
+    
+    
+     When using frames as the unit, the period must be an integer. Non-integer values are rounded down (floored), with the exception of values lower than 1, which are rounded up to 1.
+  <h3>
+   <a href="#">
+    <span>
+     Unit
+    </span>
+    <span>
+     Unit
+    </span>
+   </a>
+  </h3>
+  This is the unit that the period is expressed in, and may be
+  <span>
+   time_source_units_seconds
+  </span>
+  or
+  <span>
+   time_source_units_frames
+  </span>
+  .
+    
+    
+     See:
+  <a href="Time_Source_Units.htm">
+   Time Source Units
+  </a>
+  You can use a beats-per-minute value by using
+  <span>
+   <a href="time_bpm_to_seconds.htm">
+    time_bpm_to_seconds()
+   </a>
+  </span>
+  .
+  <h3>
+   <a href="#">
+    <span>
+     Callback &amp; Args
+    </span>
+    <span>
+     Callback &amp; Args
+    </span>
+   </a>
+  </h3>
+  You must specify a "callback"
+  <a href="../../GML_Overview/Method_Variables.htm">
+   method
+  </a>
+  that is called when the
+  <span>
+   Time Source
+  </span>
+  expires.
+    
+    
+     You can optionally specify an array containing the arguments that should be passed into the method when it's called.
+    
+    
+     The array itself will not be passed into the method, rather each element of the array will be passed as a separate argument.
+    
+    
+     For example, if your function expects the arguments
+  <span>
+   (x, y, object)
+  </span>
+  , then your
+  <span>
+   args
+  </span>
+  array may look like this:
+  <span>
+   [30, 600, obj_player]
+  </span>
+  .
+  <h3>
+   <a href="#">
+    <span>
+     Repetitions
+    </span>
+    <span>
+     Repetitions
+    </span>
+   </a>
+  </h3>
+  You can optionally specify how many times your
+  <span>
+   Time Source
+  </span>
+  should repeat. A value of
+  <span>
+   1
+  </span>
+  means it only runs once, which is the default value.
+    
+    
+     You can specify the total number of times it should repeat, or
+  <span>
+   -1
+  </span>
+  to make it repeat indefinitely.
+    
+    
+     For example, if you set this to 3, and your
+  <span>
+   Time Source
+  </span>
+  period is "4 seconds", then the
+  <span>
+   Time Source
+  </span>
+  will be active for a total of 12 seconds and will call the callback method every 4 seconds.
+  <h3>
+   <a href="#">
+    <span>
+     Expiry Type
+    </span>
+    <span>
+     Expiry Type
+    </span>
+   </a>
+  </h3>
+  This may be
+  <span>
+   time_source_expire_nearest
+  </span>
+  or
+  <span>
+   time_source_expire_after
+  </span>
+  .
+    
+    
+     See:
+  <a href="Time_Source_Expiry_Types.htm">
+   Time Source Expiry Types
+  </a>
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">time_source_create(parent, period, units, callback, [args, repetitions, expiry_type]);
+</code></pre>
+  <table>
+   <colgroup>
+    <col/>
+    <col/>
+    <col/>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      parent
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Time_Sources/time_source_create.htm">
+        Time Source ID
+       </a>
+      </span>
+     </td>
+     <td>
+      The parent
+      <span>
+       Time Source
+      </span>
+      that controls the new
+      <span>
+       Time Source
+      </span>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      period
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      The period that the
+      <span>
+       Time Source
+      </span>
+      runs for, in the given units
+     </td>
+    </tr>
+    <tr>
+     <td>
+      units
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Time_Sources/Time_Source_Units.htm">
+        Time Source Unit Constant
+       </a>
+      </span>
+     </td>
+     <td>
+      The units that the given period is in
+     </td>
+    </tr>
+    <tr>
+     <td>
+      callback
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Method_Variables.htm">
+        Method
+       </a>
+      </span>
+     </td>
+     <td>
+      The method to call when the
+      <span>
+       Time Source
+      </span>
+      expires
+     </td>
+    </tr>
+    <tr>
+     <td>
+      args
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Arrays.htm">
+        Array
+       </a>
+      </span>
+     </td>
+     <td>
+      <span>
+       OPTIONAL
+      </span>
+      An array containing the arguments to pass into the method
+     </td>
+    </tr>
+    <tr>
+     <td>
+      repetitions
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+        Real
+       </a>
+      </span>
+     </td>
+     <td>
+      <span>
+       OPTIONAL
+      </span>
+      The number of times the
+      <span>
+       Time Source
+      </span>
+      should repeat, or -1 for indefinite repetition
+     </td>
+    </tr>
+    <tr>
+     <td>
+      expiry_type
+     </td>
+     <td>
+      <span>
+       <a href="../../../../GameMaker_Language/GML_Reference/Time_Sources/Time_Source_Expiry_Types.htm">
+        Time Source Expiry Constant
+       </a>
+      </span>
+     </td>
+     <td>
+      <span>
+       OPTIONAL
+      </span>
+      Whether the
+      <span>
+       Time Source
+      </span>
+      expires on the frame nearest to its expiry, or on the next frame
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../GameMaker_Language/GML_Reference/Time_Sources/time_source_create.htm">
+ Time Source ID
+</a></code></pre>
+  <h4>
+   Example 1:
+  </h4>
+  <pre><code class="language-gml">var _my_method = function()
+{
+    instance_destroy();
+}
+
+var _time_source = time_source_create(time_source_game, 300, time_source_units_frames, _my_method);
+
+time_source_start(_time_source);
+</code></pre>
+  In this example, we want the instance to destroy itself 300 frames later.
+   
+   
+    The code first creates a method that simply calls
+  <a href="../Asset_Management/Instances/instance_destroy.htm">
+   <span>
+    instance_destroy()
+   </span>
+  </a>
+  .
+   
+   
+    It then creates a
+  <span>
+   Time Source
+  </span>
+  , inheriting from the Game
+  <span>
+   Time Source
+  </span>
+  . It sets its period to
+  <strong>
+   300 frames
+  </strong>
+  .
+   
+   
+    Finally, it starts the
+  <span>
+   Time Source
+  </span>
+  .
+  <h4>
+   Example 2:
+  </h4>
+  <pre><code class="language-gml">var _my_method = function()
+{
+    show_debug_message("A second has passed!");
+}
+
+global.time_per_second = time_source_create(time_source_game, 1, time_source_units_seconds, _my_method, [], -1, time_source_expire_after);
+
+time_source_start(global.time_per_second);
+</code></pre>
+  In this example, we're creating a global
+  <span>
+   Time Source
+  </span>
+  that expires once every second. This code would be placed at the root of a
+  <a href="../../../The_Asset_Editors/Scripts.htm">
+   script
+  </a>
+  .
+   
+   
+    The code first creates a method that prints a message to the output log, saying
+  <strong>
+   "A second has passed!"
+  </strong>
+  .
+   
+   
+    It then creates a new
+  <span>
+   Time Source
+  </span>
+  , inheriting from the Game
+  <span>
+   Time Source
+  </span>
+  . It sets its period to
+  <strong>
+   1 second
+  </strong>
+  .
+   
+   
+    The method is passed into the
+  <span>
+   Time Source
+  </span>
+  so it can be called each time it expires. An empty array is given for the arguments.
+   
+   
+    The repetition count is set to -1, so the
+  <span>
+   Time Source
+  </span>
+  never stops and keeps repeating forever. Its expiry type is set so the callback runs on the first frame after its expiry.
+   
+   
+    Finally, the
+  <span>
+   Time Source
+  </span>
+  is started.
+ </body>
+</html>

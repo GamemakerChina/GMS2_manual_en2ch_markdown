@@ -1,0 +1,77 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Particle_Sprite.png"/><br/>
+   Set Particle Sprite
+  </h1>
+  This action can be used to set the sprite that a particle can use when drawing. You supply the unique ID value for the type to set the sprite of (as returned when you created the type with the action
+  <a href="Create_Particle_Type.htm">
+   Create Particle Type
+  </a>
+  )
+    and the sprite resource to use. If the sprite has sub-images, then the particle will animate through the frames at the speed set in the Image Editor for the sprite. Also note that if you set a colour value for the particle (using the
+  <a href="Set_Particle_Colour.htm">
+   Set Particle Colour
+  </a>
+  action) then this colour will be blended with the sprite used, much like setting the image blend on an instance will blend a colour with the instance sprite (use white for no blending).
+  <b>
+   NOTE
+  </b>
+  : If you use this action then you should
+  <b>
+   not
+  </b>
+  use the action
+  <a href="Set_Particle_Shape.htm">
+   Set Particle Shape
+  </a>
+  as you can only have a sprite
+  <b>
+   or
+  </b>
+  a shape, but not both.
+  <h4>
+   Action Syntax:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Set_Particle_Sprite.png"/><br/>
+  <h4>
+   Arguments:
+  </h4>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Type
+     </td>
+     <td>
+      The ID value for the type to set the sprite of
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Sprite
+     </td>
+     <td>
+      The sprite to assign to the particle type
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Example:
+  </h4>
+  <br/><img src="https://gms.magecorn.com/Manual/assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Create_Particle_Type.png"/><br/>
+  The above action block code will create a new particle type and assign its unique
+    ID value to a global variable. It then proceeds to set all the properties for the particle type.
+ </body>
+</html>

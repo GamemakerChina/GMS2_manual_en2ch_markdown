@@ -1,0 +1,67 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>
+   font_get_last
+  </h1>
+  When defining a font in
+  <span>
+   GameMaker
+  </span>
+  , you can define a range of characters to include. This is because the font itself is not actually included with your game (for legal reasons) but an
+  <i>
+   image
+  </i>
+  of
+    the font is included on a texture page and that is what your game will use (just like any other graphics asset). This means that you will want to keep the number of characters that you use to a minimum and specify only the range of characters that
+    your game will need so as to keep texture memory as optimised as possible. This function can be used to find the last character (as an UTF8 value) that was used when your font asset was added to your game.
+  <h4>
+   Syntax:
+  </h4>
+  <pre><code class="language-gml">font_get_last(ind);
+</code></pre>
+  <table>
+   <tbody>
+    <tr>
+     <th>
+      Argument
+     </th>
+     <th>
+      Type
+     </th>
+     <th>
+      Description
+     </th>
+    </tr>
+    <tr>
+     <td>
+      ind
+     </td>
+     <td>
+      <span>
+       <a href="../../../../../The_Asset_Editors/Fonts.htm">
+        Font Asset
+       </a>
+      </span>
+     </td>
+     <td>
+      Index of the font to check.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h4>
+   Returns:
+  </h4>
+  <pre><code class="language-gml"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">
+ Real
+</a></code></pre>
+  <h4>
+   Example:
+  </h4>
+  <pre><code class="language-gml">num = font_get_last(fnt_Main);
+</code></pre>
+  The above code will store the ASCII value of the last letter of the font range for the font indexed in "fnt_Main".
+ </body>
+</html>
