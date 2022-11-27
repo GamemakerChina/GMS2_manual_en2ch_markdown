@@ -1,3 +1,6 @@
+# Deprecated（已弃用项目）
+该项目已被弃用，对文档的翻译工作已转到 [https://github.com/GamemakerChina/gamemaker-maunl-zh](https://github.com/GamemakerChina/gamemaker-maunl-zh) 继续进行。
+
 # GMS2_manual_en2ch_markdown
 (Beta) GMS 2 中文文档翻译 Markdown 版，基于 Docsify 构建
 
